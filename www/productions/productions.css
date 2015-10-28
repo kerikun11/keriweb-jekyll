@@ -1,0 +1,14 @@
+/*
+index.css
+Date:	2015.10.06
+Author:	Ryotaro Onuki
+*/
+
+@charset "utf-8"
+
+html{}
+
+li#production{
+		background:#99AAFF;
+}
+
