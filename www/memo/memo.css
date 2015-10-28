@@ -23,6 +23,7 @@ article pre{
 	padding-left:2em;
 	background-color:#FFCCCC;
 	line-height:1.2;
+	white-space:pre-wrap;
 }
 article ol{
 	margin-left:1em;

@@ -44,13 +44,9 @@
 			<h1>無線LANの接続</h1>
 			<article>
 				<p>　WiFiドングルをラズパイに差す。</p>
-				<pre>
-$ifconfig
-</pre>
+				<pre>$ifconfig</pre>
 				<p>このコマンドで、インターフェースを確認する。</p>
-				<pre>
-$iwconfig
-</pre>
+				<pre>$iwconfig</pre>
 				<p>このコマンドでWiFi情報を確認できる。</p>
 				<p>　次のファイルを編集して、ハードウェアインターフェースの設定をする。</p>
 				<pre>
@@ -98,14 +94,15 @@ network={
 		pairwise=CCMP TKIP
 		group=CCMP TKIP WEP104 WEP40
 }						</pre>
-				<p>　これでラズパイを再起動すればつながるはず。
-				</article>
+				<p>　これでラズパイを再起動すればつながるはず。</p>
+			</article>
 
-				<h1>Webサーバー作り</h1>
-				<article>
-					<p>　まずは、ラズパイのローカルIPを固定にする。</p>
-					<ol>
-						<li>ラズパイ上でラズパイ自身のローカルIPアドレスを確認しておく。<pre>$ip addr</pre></li>
+			<h1>Webサーバー作り</h1>
+			<article>
+				<p>　まずは、ラズパイのローカルIPを固定にする。</p>
+				<ol>
+					<li>ラズパイ上でラズパイ自身のローカルIPアドレスを確認しておく。</li>
+						<pre>$ip addr</pre>
 					<li>家のルーターの管理設定にログインして、ラズパイのIPの設定を、「自動割り当て」から「手動割り当て」に変更する。</li>
 				</ol>
 				<p>　次に、Webサーバーアプリの「Apache2」をインストールする。</p>
@@ -123,8 +120,7 @@ network={
 					<li>ポート変換の新規追加で、LAN側IPアドレスをラズパイのローカルIPアドレスに、LAN側ポートを80にする。</li>
 					<li>同じように22ポートも開放する。（80はHTTP用、22はSSH用である）</li>
 					<li>ラズパイをDMZ(非武装地帯)に置くことですべてのポートを開放することができるが、ファイアウォールなどを適切に設定して、使わないポートをふさがなくてはならない。グローバルからローカルに入るとき、ルーターのファイアウォールによって守られているがDMZはその外にある。したがって、ラズパイは破壊されやすくなるが、たとえラズパイが破壊されてもローカルまで破壊されることは少なくなる。</li>
-					<li>ポートの開放状況は以下のコマンドで確認できる。
-					<pre>$nmap</pre></li>
+						<li>ポートの開放状況は以下のコマンドで確認できる。<pre>$nmap</pre></li>
 				</ol>
 				<p>　次に、<a href="http://www.ugtop.com/spill.shtml" target="_blank">確認くん</a>により自分の家のグローバルIPアドレスを確認する。家のネットワークからアクセスしましょう。</p>
 				<p>　これで、適当なブラウザから、このグローバルIPアドレスにアクセスすれば、どこからでもラズパイのWebサーバーにアクセスできる。（ドメインはまだ取得していないので、IPアドレスを直打ちして接続している）</p>
@@ -165,20 +161,11 @@ network={
 			</article>
 		</section>
 
-		<h1>cronの使い方</h1>
-		<section>
-			<h1>cronとは</h1>
-			<article>
-				<p></p>
-			</article>
-		</section>
-
 		<h1>vim の設定</h1>
 		<section>
 
 			<h1>.vimrc</h1>
-			<article>
-				<pre>
+			<pre>
 syntax enable
 set number
 set autoindent
@@ -212,59 +199,47 @@ endif
 
 filetype plugin indent on
 </pre>
-		</article>
 
-		<h1>pluginの設定</h1>
-		<article>
-			<p>　NeoBundleをダウンロードする。</p>
-			<pre>
+			<h1>pluginの設定</h1>
+			<article>
+				<p>　NeoBundleをダウンロードする。</p>
+				<pre>
 $ mkdir -p ~.vim/bundle
 $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</pre>
-			<p>　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、
+				<p>　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
 				<pre>:NeoBundleInstall</pre>
-			<p>または</p>
+				<p>または</p>
 				<pre>:NeoBundleUpdate</pre>
-			<p>を実行する。</p>
-		</article>
-	</section>
+				<p>を実行する。</p>
+			</article>
+		</section>
 
-	<h1>Git</h1>
-	<section>
-		<h1>clone</h1>
-		<article>
-			<p>　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。</p>
-				<pre>$git clone https://github.com/your_username/your_repository.git</pre>
-			<p>　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。</p>
-		</article>
-
-		<h1>add</h1>
-		<article>
-			<p>　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。</p>
-				<pre>$git add filename</pre>
-		</article>
-
-		<h1>commit</h1>
-		<article>
-			<p>ファイルを変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。（ローカルで使える。）その後pushすることで変更をサーバーへ送る。-aオプションをつけるとaddも一緒にできる。</p>
-				<pre>$git commit filename -m 'message'</pre>
-			<h1>push</h1>
+		<h1>Git</h1>
+		<section>
+			<h1>主なコマンド</h1>
 			<article>
+				<h1>clone</h1>
+				<p>　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。</p>
+				<pre>$git clone https://github.com/your_username/your_repository.git</pre>
+				<p>　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。</p>
+				<h1>add</h1>
+				<p>　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。</p>
+				<pre>$git add filename</pre>
+				<h1>commit</h1>
+				<p>ファイルを変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。（ローカルで使える。）その後pushすることで変更をサーバーへ送る。-aオプションをつけるとaddも一緒にできる。</p>
+				<pre>$git commit filename -m 'message'</pre>
+				<h1>push</h1>
 				<p>　commitしたら、cloneしているディレクトリに入って、</p>
 				<pre>$git push</pre>
 				<p>を実行すると、Git上のファイルが更新される。</p>
-			</article>
-
-			<h1>pull</h1>
-			<article>
+				<h1>pull</h1>
 				<p>　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。</p>
 				<pre>$git pull</pre>
-			</article>
-
-			<h1>diff</h1>
-			<article>
+				<h1>diff</h1>
 				<p>変更の差分を表示する。</p>
 				<pre>$git diff filename</pre>
 			</article>
+
 		</section>
 
 		<h1>Shell Script</h1>
@@ -277,95 +252,118 @@ $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim<
 			</article>
 
 			<h1>実行する</h1>
+				<pre>$ ./filename.sh</pre>
+		</section>
+
+		<h1>tarコマンド</h1>
+		<section>
+
+			<h1>アーカイブ</h1>
 			<article>
-				<pre>$./filename.sh</pre>
-		</article>
-	</section>
-
-	<h1>tarコマンド</h1>
-	<section>
-
-		<h1>アーカイブ</h1>
-		<article>
-			<ul>
-				<li>アーカイブ</li>
+				<ul>
+					<li>アーカイブ</li>
 					<pre>$ tar cvf directory</pre>
-				<li>アーカイブして圧縮</li>
+					<li>アーカイブして圧縮</li>
 					<pre>$ tar cvzf directory</pre>
-			</ul>
-		</article>
+				</ul>
+			</article>
 
-		<h1>展開</h1>
-		<article>
-			<ul>
-				<li>展開</li>
+			<h1>展開</h1>
+			<article>
+				<ul>
+					<li>展開</li>
 					<pre>$ tar xvf file.tar</pre>
-				<li>解凍して展開</li>
+					<li>解凍して展開</li>
 					<pre>$ tar xvzf file.tar.gz</pre>
-			</ul>
-		</article>
-	</section>
+				</ul>
+			</article>
+		</section>
 
-	<h1>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</h1>
-	<section>
+		<h1>lnコマンド</h1>
+		<section>
+			<h1>ハードリンクとシンボリックリンク</h1>
+			<article>
+				<p>　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。</p>
+				<p>　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。</p>
+			</article>
+			<h1>コマンド形式</h1>
+			<article>
+				<p>　以下のようなコマンドを実行する。</p>
+			<pre>$ ln -fids &lt;ターゲット&gt; &lt;リンク&gt;</pre>
+				<ul>
+					<li>-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする</li>
+					<li>-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる</li>
+					<li>-d	ディレクトリのリンクを作成</li>
+					<li>-s	シンボリックリンクを作成（デフォルトはハードリンク）</li>
+				</ul>
+			</article>
+			<h1>例</h1>
+			<article>
+				<p>　Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド</p>
+			<pre>$ ln -sf ~/dotfiles/.vimrc ~/.vimrc</pre>
+			</article>
+		</section>
 
-		<h1>UEFIとは</h1>
-		<article>
-			<p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。</p>
-		</article>
+		<h1>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</h1>
+		<section>
 
-		<h1>ホームディレクトリのフォルダを日本語にする。</h1>
-		<article>
-			<p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
+			<h1>UEFIとは</h1>
+			<article>
+				<p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。</p>
+			</article>
+
+			<h1>ホームディレクトリのフォルダを日本語にする。</h1>
+			<article>
+				<p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
 				<pre>$LANG=C xdg-user-dirs-gtk-update</pre>
-			<p>を実行して、現れたダイアログで「Don't ask me again」にチェックを入れて、「Update Names」を押す。</p>
-		</article>
-	</section>
+				<p>を実行して、現れたダイアログで「Don't ask me again」にチェックを入れて、「Update Names」を押す。</p>
+			</article>
+		</section>
 
-	<h1>SSH</h1>
-	<section>
+		<h1>SSH</h1>
+		<section>
 
-		<h1>SSHとは</h1>
-		<article>
-			<p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。</p>
-		</article>
+			<h1>SSHとは</h1>
+			<article>
+				<p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。</p>
+			</article>
 
-		<h1>ホスト側設定</h1>
-		<article>
-			<p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
+			<h1>ホスト側設定</h1>
+			<article>
+				<p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
 				<pre>$sudo apt-get install openssh-server</pre>
-			<p>を実行すると外部からアクセスできるようになる。</p>
+				<p>を実行すると外部からアクセスできるようになる。</p>
 				<pre>$ sudo vim /etc/ssh/sshd_config</pre>
-			<p>　ここで各種設定をする。</p>
-			<pre>
+				<p>　ここで各種設定をする。</p>
+				<pre>
 Port 22
 </pre>
-		</article>
+			</article>
 
-		<h1>鍵の生成</h1>
-		<article>
-			<p>　鍵はクライアント側で生成することが多い。</p>
+			<h1>鍵の生成</h1>
+			<article>
+				<p>　鍵はクライアント側で生成することが多い。</p>
 				<pre>$ssh-keygen -t ecdsa -C "comment"</pre>
-			<p>を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pu」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。</p>
-			<p>　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。</p>
+				<p>を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pu」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。</p>
+				<p>　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。</p>
 				<pre>$ mkdir ~/.ssh</pre>
-			<p>　ここに「authorized_keys」というファイルがあれば、以下のように追加する。</p>
-				<pre>$ cat id_ecdsa.pub >> authorized_keys</pre>
-			<p>なければ、新規作成してから、鍵を追加する。</p>
-		</article>
+				<p>　ここに「authorized_keys」というファイルがあれば、以下のように追加する。</p>
+				<pre>$ cat id_ecdsa.pub &gt;&gt; authorized_keys</pre>
+				<p>なければ、新規作成してから、鍵を追加する。</p>
+			</article>
 
-		<h1>SSHの接続</h1>
-		<article>
-			<p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
+			<h1>SSHの接続</h1>
+			<article>
+				<p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
 				<pre>$ssh your_username@your_domain.com</pre>
-			<p>　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)</p>
-			<p>　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。</p>
-		</article>
+				<p>　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)</p>
+				<p>　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。</p>
+			</article>
 
-		<h1>.ssh/config</h1>
-		<article>
-			<p>　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。</p>
-			<pre>
+			<h1>.ssh/config</h1>
+			<article>
+				<p>　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。</p>
+				<pre>
 $vim ~/.ssh/config
 
 Host local_raspi
@@ -380,17 +378,17 @@ Host global_raspi
 	User		kerikun11
 	Port		22
 </pre>
-			<p>　接続の仕方は、以下の通り。とても簡単。</p>
+				<p>　接続の仕方は、以下の通り。とても簡単。</p>
 				<pre>$ssh global_raspi</pre>
-		</article>
-	</section>
+			</article>
+		</section>
 
-	<hr/>
+		<hr/>
 
-	<footer>
-		<p><small>Copyright (C) KERI-Server All Rights Reserved.</small></p>
-	</footer>
-</body>
+		<footer>
+			<p><small>Copyright (C) KERI-Server All Rights Reserved.</small></p>
+		</footer>
+	</body>
 
 </html>
 
