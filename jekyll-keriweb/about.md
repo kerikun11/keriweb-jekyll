@@ -3,13 +3,13 @@ layout: page
 title: About
 permalink: /about/
 ---
+# Profile
+管理人	：けり（大学２年生）  
+出身	：神奈川県  
+趣味	：電子工作  
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# あいさつ
+こんにちは。けりです。電子工作が大好きで、普段はPICマイコンで遊んでいます。今はLinuxとサーバーにづくりに挑戦中です。このホームページでは、電子工作やサーバー作りなどの情報を発信していこうと思います。どうぞよろしくお願い致します。
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+# このサーバーについて
+このHPを動かしているサーバーは「Raspberry Pi 2 Type B」により動いています。また、家のIPアドレスは動的IPなので、たまにサーバーにつながらなくなることがありますのでご注意ください。
