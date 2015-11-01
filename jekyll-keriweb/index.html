@@ -4,20 +4,29 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+	<h1 class="page-heading">Gallery</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+	<div class="home-gallery">
+		<img src="home_gallery/KERI_LCD.jpg" title="KERI" alt="KERI">
+		<img src="home_gallery/CPU.jpg" title="4 bit CPU" alt="4 bit CPU">
+		<img src="home_gallery/killifish_light.jpg" title="メダカ水槽の照明" alt="メダカ水槽の照明">
+		<img src="home_gallery/solar_panel.jpg" title="100Wソーラーパネル" alt="100Wソーラーパネル">
+	</div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+	<h1 class="page-heading">Posts</h1>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<ul class="post-list">
+		{% for post in site.posts %}
+		<li>
+			<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+			<h2>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</h2>
+		</li>
+		{% endfor %}
+	</ul>
+
+	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

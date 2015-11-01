@@ -283,6 +283,15 @@ pre {
   display: block;
   font-size: 24px; }
 
+.home-gallery {
+  text-align: center; }
+  .home-gallery > img {
+    list-style: none;
+    display: inline-block;
+    width: 20%;
+    min-width: 8em;
+    padding: 1% 2%; }
+
 /**
  * Posts
  */
