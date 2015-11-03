@@ -1,0 +1,17 @@
+---
+layout: post
+title: Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)
+category: memo
+---
+<h2>UEFIとは</h2>
+<article>
+	<p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。</p>
+</article>
+
+<h2>ホームディレクトリのフォルダを日本語にする。</h2>
+<article>
+	<p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
+	<pre>$LANG=C xdg-user-dirs-gtk-update</pre>
+	<p>を実行して、現れたダイアログで「Don't ask me again」にチェックを入れて、「Update Names」を押す。</p>
+</article>
+

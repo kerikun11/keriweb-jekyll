@@ -5,9 +5,470 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Nov 2015 09:48:09 +0900</pubDate>
-    <lastBuildDate>Tue, 03 Nov 2015 09:48:09 +0900</lastBuildDate>
+    <pubDate>Wed, 04 Nov 2015 00:13:00 +0900</pubDate>
+    <lastBuildDate>Wed, 04 Nov 2015 00:13:00 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</title>
+        <description>&lt;h2&gt;UEFIとは&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;ホームディレクトリのフォルダを日本語にする。&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。&lt;/p&gt;
+	&lt;pre&gt;$LANG=C xdg-user-dirs-gtk-update&lt;/pre&gt;
+	&lt;p&gt;を実行して、現れたダイアログで「Don&#39;t ask me again」にチェックを入れて、「Update Names」を押す。&lt;/p&gt;
+&lt;/article&gt;
+
+</description>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>SSHの使い方</title>
+        <description>&lt;h1&gt;SSH&lt;/h1&gt;
+&lt;section&gt;
+
+	&lt;h2&gt;SSHとは&lt;/h2&gt;
+	&lt;article&gt;
+		&lt;p&gt;　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。&lt;/p&gt;
+	&lt;/article&gt;
+
+	&lt;h2&gt;ホスト側設定&lt;/h2&gt;
+	&lt;article&gt;
+		&lt;p&gt;openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。&lt;/p&gt;
+		&lt;pre&gt;$sudo apt-get install openssh-server&lt;/pre&gt;
+		&lt;p&gt;を実行すると外部からアクセスできるようになる。&lt;/p&gt;
+		&lt;pre&gt;$ sudo vim /etc/ssh/sshd_config&lt;/pre&gt;
+		&lt;p&gt;　ここで各種設定をする。&lt;/p&gt;
+		&lt;pre&gt;
+Port 22
+		&lt;/pre&gt;
+	&lt;/article&gt;
+
+	&lt;h2&gt;鍵の生成&lt;/h2&gt;
+	&lt;article&gt;
+		&lt;p&gt;　鍵はクライアント側で生成することが多い。&lt;/p&gt;
+		&lt;pre&gt;$ssh-keygen -t ecdsa -C &quot;comment&quot;&lt;/pre&gt;
+		&lt;p&gt;を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pu」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。&lt;/p&gt;
+		&lt;p&gt;　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。&lt;/p&gt;
+		&lt;pre&gt;$ mkdir ~/.ssh&lt;/pre&gt;
+		&lt;p&gt;　ここに「authorized_keys」というファイルがあれば、以下のように追加する。&lt;/p&gt;
+		&lt;pre&gt;$ cat id_ecdsa.pub &amp;gt;&amp;gt; authorized_keys&lt;/pre&gt;
+		&lt;p&gt;なければ、新規作成してから、鍵を追加する。&lt;/p&gt;
+	&lt;/article&gt;
+
+	&lt;h2&gt;SSHの接続&lt;/h2&gt;
+	&lt;article&gt;
+		&lt;p&gt;　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。&lt;/p&gt;
+		&lt;pre&gt;$ssh your_username@your_domain.com&lt;/pre&gt;
+		&lt;p&gt;　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)&lt;/p&gt;
+		&lt;p&gt;　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。&lt;/p&gt;
+	&lt;/article&gt;
+
+	&lt;h2&gt;.ssh/config&lt;/h2&gt;
+	&lt;article&gt;
+		&lt;p&gt;　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。&lt;/p&gt;
+		&lt;pre&gt;
+$vim ~/.ssh/config
+
+Host local_raspi
+	HostName	192.168.11.2 ←ラズパイのIP
+	IdentityFile	~/.ssh/id_ecdsa
+	User		kerikun11
+	Port		22
+
+Host global_raspi
+	HostName	kerikeri.top ←ドメイン
+	IdentityFile	~/.ssh/id_ecdsa
+	User		kerikun11
+	Port		22
+		&lt;/pre&gt;
+		&lt;p&gt;　接続の仕方は、以下の通り。とても簡単。&lt;/p&gt;
+		&lt;pre&gt;$ssh global_raspi&lt;/pre&gt;
+	&lt;/article&gt;
+&lt;/section&gt;
+</description>
+        <pubDate>Sat, 31 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>linkを作る「ln」コマンド</title>
+        <description>&lt;h2&gt;ハードリンクとシンボリックリンク&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。&lt;/p&gt;
+	&lt;p&gt;　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。&lt;/p&gt;
+&lt;/article&gt;
+&lt;h2&gt;コマンド形式&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　以下のようなコマンドを実行する。&lt;/p&gt;
+	&lt;pre&gt;$ ln -fids &amp;lt;ターゲット&amp;gt; &amp;lt;リンク&amp;gt;&lt;/pre&gt;
+	&lt;ul&gt;
+		&lt;li&gt;-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする&lt;/li&gt;
+		&lt;li&gt;-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる&lt;/li&gt;
+		&lt;li&gt;-d	ディレクトリのリンクを作成&lt;/li&gt;
+		&lt;li&gt;-s	シンボリックリンクを作成（デフォルトはハードリンク）&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/article&gt;
+&lt;h2&gt;例&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド&lt;/p&gt;
+	&lt;pre&gt;$ ln -sf ~/dotfiles/.vimrc ~/.vimrc&lt;/pre&gt;
+
+</description>
+        <pubDate>Wed, 28 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-28-link/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>Shell Scriptの使い方</title>
+        <description>&lt;h2&gt;実行権限をつける&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　テキストファイルを実行可能ファイルにする。&lt;/p&gt;
+	&lt;pre&gt;$chmod u+x filename.sh&lt;/pre&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;実行する&lt;/h2&gt;
+&lt;pre&gt;$ ./filename.sh&lt;/pre&gt;
+</description>
+        <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-21-shell-script/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-shell-script/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>Gitの使い方</title>
+        <description>&lt;h2&gt;主なコマンド&lt;/h2&gt;
+&lt;article&gt;
+	&lt;h3&gt;clone&lt;/h3&gt;
+	&lt;p&gt;　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。&lt;/p&gt;
+	&lt;pre&gt;$git clone https://github.com/your_username/your_repository.git&lt;/pre&gt;
+	&lt;p&gt;　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。&lt;/p&gt;
+	&lt;h3&gt;add&lt;/h3&gt;
+	&lt;p&gt;　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。&lt;/p&gt;
+	&lt;pre&gt;$git add filename&lt;/pre&gt;
+	&lt;h3&gt;commit&lt;/h3&gt;
+	&lt;p&gt;ファイルを変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。（ローカルで使える。）その後pushすることで変更をサーバーへ送る。-aオプションをつけるとaddも一緒にできる。&lt;/p&gt;
+	&lt;pre&gt;$git commit filename -m &#39;message&#39;&lt;/pre&gt;
+	&lt;h3&gt;push&lt;/h3&gt;
+	&lt;p&gt;　commitしたら、cloneしているディレクトリに入って、&lt;/p&gt;
+	&lt;pre&gt;$git push&lt;/pre&gt;
+	&lt;p&gt;を実行すると、Git上のファイルが更新される。&lt;/p&gt;
+	&lt;h3&gt;pull&lt;/h3&gt;
+	&lt;p&gt;　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。&lt;/p&gt;
+	&lt;pre&gt;$git pull&lt;/pre&gt;
+	&lt;h3&gt;diff&lt;/h3&gt;
+	&lt;p&gt;変更の差分を表示する。&lt;/p&gt;
+	&lt;pre&gt;$git diff filename&lt;/pre&gt;
+&lt;/article&gt;
+</description>
+        <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-21-git/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>Charge Station</title>
+        <description>&lt;figure class=&quot;home-gallery&quot;&gt;
+	&lt;img src=&quot;/images/2015-10-09-charge-station-6/top.jpg&quot;&gt;
+	&lt;img src=&quot;/images/2015-10-09-charge-station-6/charge.jpg&quot;&gt;
+	&lt;img src=&quot;/images/2015-10-09-charge-station-6/board_top.jpg&quot;&gt;
+	&lt;img src=&quot;/images/2015-10-09-charge-station-6/board_bottom.jpg&quot;&gt;
+&lt;/figure&gt;
+&lt;section class=&quot;item&quot;&gt;
+	&lt;article&gt;
+		&lt;h1&gt;概要&lt;/h1&gt;
+		&lt;p&gt;　ChargeStationとは自作の携帯電話充電器です。僕が命名しました。充電が終わると自動で給電を止めるので、電気の節約になります。&lt;/p&gt;
+	&lt;/article&gt;
+
+	&lt;article&gt;
+		&lt;h1&gt;機能&lt;/h1&gt;
+		&lt;ol&gt;
+			&lt;li&gt;自動給電オフ&lt;/li&gt;
+			&lt;li&gt;充電電流、積算電流、充電時間表示&lt;/li&gt;
+			&lt;li&gt;LEDインジケータ&lt;/li&gt;
+			&lt;li&gt;時計表示&lt;/li&gt;
+			&lt;li&gt;充電データ出力（USBシリアル）&lt;/li&gt;
+			&lt;li&gt;各種設定&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/article&gt;
+
+	&lt;article&gt;
+		&lt;h1&gt;仕様&lt;/h1&gt;
+		&lt;ul&gt;
+			&lt;li&gt;使用マイコン：PIC18F27J53&lt;/li&gt;
+			&lt;li&gt;電力供給能力：5V・最大6A&lt;/li&gt;
+			&lt;li&gt;ファームの書き換え：USBシリアル&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/article&gt;
+
+	&lt;article&gt;
+		&lt;h1&gt;使い方&lt;/h1&gt;
+		&lt;ol&gt;
+			&lt;li&gt;ChargeStationにACアダプタをつなぐ→液晶に文字が表示される&lt;/li&gt;
+			&lt;li&gt;充電したいUSB機器を、３つの充電ポートのうちの１つにつなぐ&lt;/li&gt;
+			&lt;li&gt;各充電ポートのタッチボタンに触れる→充電開始&lt;/li&gt;
+			&lt;li&gt;充電電流に応じて、充電ポートの脇のLEDが点滅します&lt;/li&gt;
+			&lt;li&gt;各ポートのタッチボタンに触れると充電電流、積算電流、充電時間が順に表示される&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/article&gt;
+
+&lt;/section&gt;
+&lt;section class=&quot;settings&quot;&gt;
+	&lt;article&gt;
+		&lt;h1&gt;設定&lt;/h1&gt;
+		&lt;p&gt;　ChargeStation左側面のタッチボタンを長押しすると、設定モードに入る。再度ボタンを押すと設定を終わる。ChargeStation表面の左右のボタンをセレクトボタン、真ん中のボタンを決定ボタンとして使う。設定項目は以下の通り。&lt;/p&gt;
+		&lt;ol&gt;
+			&lt;li&gt;時計合わせ&lt;/li&gt;
+			&lt;li&gt;充電完了後自動給電停止機能のオンオフ&lt;/li&gt;
+			&lt;li&gt;LEDインジケータのオンオフ&lt;/li&gt;
+			&lt;li&gt;積算データのリセット&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/article&gt;
+&lt;/section&gt;
+</description>
+        <pubDate>Fri, 09 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
+        
+        
+        <category>production</category>
+        
+      </item>
+    
+      <item>
+        <title>vimの設定</title>
+        <description>&lt;h1&gt;vim の設定&lt;/h1&gt;
+
+&lt;h2&gt;.vimrc&lt;/h2&gt;
+&lt;pre&gt;
+syntax enable
+set number
+set autoindent
+set smartindent
+set backspace=start,eol,indent
+set mouse=a
+set tabstop=4
+set shiftwidth=4
+&quot;set expandtab
+set encoding=utf-8
+set cursorline
+set nocompatible
+
+filetype plugin indent off
+
+if has(&#39;vim_starting&#39;)
+		set runtimepath+=~/.vim/bundle/neobundle.vim
+		call neobundle#begin(expand(&#39;~/.vim/bundle&#39;))
+endif
+
+NeoBundle &#39;mattn/emmet-vim&#39;
+NeoBundle &#39;anyakichi/vim-surround&#39;
+NeoBundle &#39;scrooloose/nerdcommenter&#39;
+NeoBundle &#39;hail2u/vim-css3-syntax&#39;
+NeoBundle &#39;taichouchou2/html5.vim&#39;
+NeoBundle &#39;taichouchou2/vim-javascript&#39;
+
+if has(&#39;vim_starting&#39;)
+		call neobundle#end()
+endif
+
+filetype plugin indent on
+&lt;/pre&gt;
+
+&lt;h2&gt;pluginの設定&lt;/h2&gt;
+&lt;article&gt;
+	&lt;p&gt;　NeoBundleをダウンロードする。&lt;/p&gt;
+	&lt;pre&gt;
+$ mkdir -p ~.vim/bundle
+$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim&lt;/pre&gt;
+	&lt;p&gt;　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、&lt;/p&gt;
+	&lt;pre&gt;:NeoBundleInstall&lt;/pre&gt;
+	&lt;p&gt;または&lt;/p&gt;
+	&lt;pre&gt;:NeoBundleUpdate&lt;/pre&gt;
+	&lt;p&gt;を実行する。&lt;/p&gt;
+&lt;/article&gt;
+
+
+</description>
+        <pubDate>Wed, 07 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-07-vim/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-07-vim/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>Raspberry Pi 2 Type Bでサーバー作り</title>
+        <description>&lt;h2&gt;ラズパイの用意&lt;/h2&gt;
+&lt;article&gt;
+&lt;ol&gt;
+&lt;li&gt;ラズパイ用のOS「NOOBS」を&lt;a href=&quot;http://raspberrypi.org/downloads/&quot; target=&quot;_blank&quot;&gt;raspberrypi.org&lt;/a&gt;からDLして解凍する。&lt;/li&gt;
+&lt;li&gt;microSDカードをFAT32でフォーマットする。&lt;/li&gt;
+&lt;li&gt;解凍したファイルをSDカードにコピーする。&lt;/li&gt;
+&lt;li&gt;ラズパイにSDカード、キーボード、LANケーブル（またはWiFiドングル）をつないで電源を入れる。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;無線LANの接続&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　WiFiドングルをラズパイに差す。&lt;/p&gt;
+&lt;pre&gt;$ifconfig&lt;/pre&gt;
+&lt;p&gt;このコマンドで、インターフェースを確認する。&lt;/p&gt;
+&lt;pre&gt;$iwconfig&lt;/pre&gt;
+&lt;p&gt;このコマンドでWiFi情報を確認できる。&lt;/p&gt;
+&lt;p&gt;　次のファイルを編集して、ハードウェアインターフェースの設定をする。&lt;/p&gt;
+&lt;pre&gt;
+$sudo vim /etc/network/interfaces
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+address 192.168.11.2	←your IP
+netmask 255.255.255.0	←your subnetmask
+gateway 192.168.11.1	←your router IP
+dns-nameserver 8.8.8.8 10.255.0.1
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+address 192.168.11.2	←your IP
+netmask 255.255.255.0	←your subnetmask
+gateway 192.168.11.1	←your router IP
+dns-nameserver 8.8.8.8 10.255.0.1
+
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+auto wlan1
+allow-hotplug wlan1
+iface wlan0 inet manual
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+&lt;/pre&gt;
+&lt;p&gt;次のコマンド&lt;/p&gt;
+&lt;pre&gt;$wpa_passphrase &quot;your SSID&quot; &quot;Password&quot;&lt;/pre&gt;
+&lt;p&gt;で表示された内容をもとに次のファイルの下に追加で記述する。&lt;/p&gt;
+&lt;pre&gt;
+$sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+
+~~~
+network={
+	ssid=&quot;your SSID&quot;
+#psk=&quot;Password&quot;
+		psk=&quot;.......&quot;
+		key_mgmt=WPA-PSK
+		proto=WPA WPA2
+		pairwise=CCMP TKIP
+		group=CCMP TKIP WEP104 WEP40
+}						&lt;/pre&gt;
+&lt;p&gt;　これでラズパイを再起動すればつながるはず。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;Webサーバー作り&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　まずは、ラズパイのローカルIPを固定にする。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ラズパイ上でラズパイ自身のローカルIPアドレスを確認しておく。&lt;/li&gt;
+&lt;pre&gt;$ip addr&lt;/pre&gt;
+&lt;li&gt;家のルーターの管理設定にログインして、ラズパイのIPの設定を、「自動割り当て」から「手動割り当て」に変更する。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　次に、Webサーバーアプリの「Apache2」をインストールする。&lt;/p&gt;
+&lt;pre&gt;$sudo apt-get install apache2&lt;/pre&gt;
+&lt;p&gt;　これで、とりあえずはローカルでサーバーとして使うことができる。ローカルネットワークの端末のブラウザでラズパイのローカルIPアドレスを入力すれば、アクセスできる。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;サーバーを外部へ公開する&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　今の状態では、LANからしかサーバーにアクセスできない。これを外のネットワークからでもアクセスできるようにする。&lt;/p&gt;
+&lt;p&gt;　まず、家のルーターから外への接続用のポートを開放する。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ルーターの管理設定に入る。&lt;/li&gt;
+&lt;li&gt;ルータ設定のポート変換を選ぶ&lt;/li&gt;
+&lt;li&gt;ポート変換の新規追加で、LAN側IPアドレスをラズパイのローカルIPアドレスに、LAN側ポートを80にする。&lt;/li&gt;
+&lt;li&gt;同じように22ポートも開放する。（80はHTTP用、22はSSH用である）&lt;/li&gt;
+&lt;li&gt;ラズパイをDMZ(非武装地帯)に置くことですべてのポートを開放することができるが、ファイアウォールなどを適切に設定して、使わないポートをふさがなくてはならない。グローバルからローカルに入るとき、ルーターのファイアウォールによって守られているがDMZはその外にある。したがって、ラズパイは破壊されやすくなるが、たとえラズパイが破壊されてもローカルまで破壊されることは少なくなる。&lt;/li&gt;
+&lt;li&gt;ポートの開放状況は以下のコマンドで確認できる。&lt;pre&gt;$nmap&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　次に、&lt;a href=&quot;http://www.ugtop.com/spill.shtml&quot; target=&quot;_blank&quot;&gt;確認くん&lt;/a&gt;により自分の家のグローバルIPアドレスを確認する。家のネットワークからアクセスしましょう。&lt;/p&gt;
+&lt;p&gt;　これで、適当なブラウザから、このグローバルIPアドレスにアクセスすれば、どこからでもラズパイのWebサーバーにアクセスできる。（ドメインはまだ取得していないので、IPアドレスを直打ちして接続している）&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;独自ドメインを取得する&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　ポートの開放により外部からサーバーにアクセスできるようになった。しかし、今のままではIPアドレスにアクセスなのでいまいち。そこで次は独自ドメインを取得して自分専用のURLをGETする。&lt;/p&gt;
+&lt;p&gt;　ドメイン取得をできるサイトはいくつかあるが、ネット上で評価のよかった「&lt;a href=&quot;http://www.muumuudomain.com&quot; target=&quot;_blank&quot;&gt;ムームードメイン&lt;/a&gt;」で取得した。[.top]一番安くて、なんと77円＋税/年！とても安い。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;DNSサーバーとは&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　独自ドメインを取得しましたが、取得したドメインはまだラズパイのIPアドレス（家のグローバルIPアドレス）に紐ついていません。それを紐つけるのがDNSサーバーです。DNS情報はあまりにも多いので、一つのDNSサーバーで管理しているわけではなく、ネット上に無数に散らばっています。したがってあるDNSサーバーに登録すれば、いろいろなDNSサーバーを経由して目的のIPアドレスを知ることができます。DNS情報のことをレコードと言い、以下に分類されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aレコード：ドメイン名からIPアドレスを返す（正引き）&lt;/li&gt;
+&lt;li&gt;PTRレコード：IPアドレスからドメイン名を返す（逆引き）&lt;/li&gt;
+&lt;li&gt;CNAMEレコード：ドメイン名から別のドメイン名を返す&lt;/li&gt;
+&lt;li&gt;NSレコード：「再起問い合わせ」や「反復問い合わせ」の際に、「ここへ問い合わせよ」と教えてくれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;MyDNS.jpの登録&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　普通、グローバルIPアドレスは動的に割り当てられるので、それとホスト名（ドメイン名）を動的に登録・管理するのがDDNSです。無料DDNSのひとつに&lt;a href=&quot;http://www.mydns.jp&quot; target=&quot;_blank&quot;&gt;MyDNS.jp&lt;/a&gt;があるので、今回はそれを使います。まずは会員登録をします。そして「IP ADDR DIRECT」のところに家のグローバルIPアドレスを記載します。次に、「DOMAIN INFO」のところに自分の取得したホスト名（独自ドメイン）を記載します。欄が多いですが、それ以外は何も書かなくて大丈夫です。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;DNSの浸透時間&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　ここまでの作業をすれば、取得した独自ドメインをブラウザのURLに書くだけで自分のサーバーにつなことができます。しかし、すぐにつなぐことはできません。先にも書いたようにDNSサーバーはネット上に無数に散らばっていますので、最初にアクセスしたDNSが自分のドメインとIPの関連付けを持っているとは限りません。DNSからDNSへと広がっていき、次第に世界中からアクセスできるようになります。&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;動的IPの自動更新&lt;/h2&gt;
+&lt;article&gt;
+&lt;p&gt;　ムームードメインで、独自ドメインを取得した。MyDNS.jpにも登録した。次にやることは、動的IPアドレスの自動更新である。定期的にグローバルIPの変更をチェックして&lt;a href=&quot;http://www.mydns.jp&quot; target=&quot;_blank&quot;&gt;MyDNS.jp&lt;/a&gt;に通知をすればよい。それには以下のコマンドを実行する。&lt;/p&gt;
+&lt;pre&gt;$ wget -O- &#39;http://mydnsXXXXXX:PASSWORD@www.mydns.jp/login.html&#39;&lt;/pre&gt;
+&lt;p&gt;これをcronなどを使って定期的に実行すればよい。&lt;/p&gt;
+&lt;/article&gt;
+
+
+</description>
+        <pubDate>Mon, 05 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-05-raspi-server/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-05-raspi-server/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>シンガポールでロボコンしてきました</title>
@@ -131,9 +592,11 @@ Day offが終わると、ロボコンへラストスパートです。&lt;br /&g
 	
 </description>
         <pubDate>Wed, 12 Aug 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/2015/08/12/idc-robocon.html</link>
-        <guid isPermaLink="true">http://kerikeri.top/2015/08/12/idc-robocon.html</guid>
+        <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
         
+        
+        <category>blog</category>
         
       </item>
     
@@ -308,266 +771,11 @@ pcがなくても基板の上の半固定抵抗を回すことで明るさを細
 &lt;br /&gt;
 </description>
         <pubDate>Thu, 04 Jun 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/2015/06/04/killifish-light.html</link>
-        <guid isPermaLink="true">http://kerikeri.top/2015/06/04/killifish-light.html</guid>
+        <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
         
         
-      </item>
-    
-      <item>
-        <title>ChargeStationの紹介</title>
-        <description>みなさん、こんにちは。&lt;br /&gt;
-14の けり &lt;a href=&quot;https://twitter.com/Ryokeri14&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt; です。&lt;br /&gt;
-春休みになりました。&lt;br /&gt;
-みなさん、進捗どうですか？&lt;br /&gt;
-&lt;br /&gt;
-今日ご紹介するのは&lt;br /&gt;
-&lt;b&gt;&lt;span  style=&quot;font-size: large;&quot;&gt;Charge Station&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;
-です。&lt;br /&gt;
-&lt;br /&gt;
-これだけだと何かわからないので簡単に説明すると、&lt;br /&gt;
-自動制御の充電器です。携帯などを充電します。&lt;br /&gt;
-下の写真がCharge Station Ver.1です。&lt;br /&gt;
-&lt;a  title=&quot;Charging&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;Charging&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-1.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-ソーラーで発電した電気で携帯電話などを充電するためにつくりました。&lt;br /&gt;
-以前、自宅ソーラーシステムの記事を書いたので&lt;br /&gt;
-時間があればそちらもご覧ください。&lt;br /&gt;
-&lt;a  title=&quot;100W級ソーラーシステム自作&quot; href=&quot;http://kerikeri.top/2014/09/14/solar-system.html&quot; target=&quot;_blank&quot;&gt;100W級ソーラーシステムの自作&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;100W級ソーラーシステム&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/solar.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;100W級ソーラーシステム&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/solar.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-Charge Station ですが、今はVer.5まで製作が進んでいます。&lt;br /&gt;
-今回の記事では、Ver.1～Ver.5の紹介をしたいと思います。&lt;br /&gt;
-&lt;br /&gt;
-突然ですが、みなさんは夜寝るとき、携帯電話を充電器に差しっぱなしで寝ますよね？&lt;br /&gt;
-そして朝になったら100%になっている。&lt;br /&gt;
-しかし、僕は充電器に差しっぱなしというのが嫌いです。&lt;br /&gt;
-充電は3時間ほどで終了しているのに、そのあとも3時間以上充電器につないでおいたら&lt;br /&gt;
-携帯電話には負担がかかります。100%を維持しようとして充電を繰り返しているかもしれません。&lt;br /&gt;
-実際、充電しつづけていると携帯電話は熱を持ってしまいます。&lt;br /&gt;
-だから僕は、充電が終わると給電がストップする充電器を作ろうと思いました。&lt;br /&gt;
-&lt;br /&gt;
-以上より、Charge Stationのポイントをまとめます。&lt;br /&gt;
-&lt;b&gt;&lt;span  style=&quot;font-size: medium;&quot;&gt;1. 入力電圧はソーラーまたは鉛蓄電池の12V。&lt;br /&gt;
-2. 出力は５Ｖで、ＵＳＢ出力。&lt;br /&gt;
-3. 充電が終わったら、自動で給電を止める。&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;
-&lt;br /&gt;
-まずは、Ver.1から。&lt;br /&gt;
-&lt;a  title=&quot;1-02&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ChargeStation Ver.1&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-2.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;1-03&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ChargeStation Ver.1&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-3.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;1-01&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ChargeStation Ver.1&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS01-1.jpg&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;こちらは金属ケースに入れてあり、完成度も高いのですが、&lt;br /&gt;
-金属ケースに入れたことで、4ポートのUSBのシールドがショートしてしまい、&lt;br /&gt;
-個別に給電のオンオフができなくなってしまいました。&lt;br /&gt;
-&lt;a  title=&quot;非反転増幅回路&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/non-reverse.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;非反転増幅回路&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/non-reverse.png&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-電流検出のために、Charge Station Ver.1ではオペアンプの非反転増幅回路を使用しました。&lt;br /&gt;
-しかしそれはGNDからの電位差しか測れないので、充電回路のGND側に電流計を挟むことになりました。&lt;br /&gt;
-よって各充電ポートのGNDがショートすると個別に電流検出ができませんでした。&lt;br /&gt;
-&lt;br /&gt;
-次にVer.2&lt;br /&gt;
-こちらではVer.1のミスである、GNDが共通化されると個別に給電管理ができない問題を修正しました。&lt;br /&gt;
-そのためにオペアンプの勉強をしました。ここではオペアンプの減算回路を使用します。&lt;br /&gt;
-&lt;a  title=&quot;減算回路&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/sub-circuit.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;減算回路&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/sub-circuit.png&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;減算回路ではGNDからの電位ではなく、2点間の電位差を測ることができます。&lt;br /&gt;
-これにより、各充電ポートでGNDを共通に接続しても、個別に電流を検出することができます。&lt;br /&gt;
-Charge Station Ver.2 の概観は、Ver.1と同じです。&lt;br /&gt;
-&lt;br /&gt;
-次にCharge Station Ver.3です。&lt;br /&gt;
-ここからは、切削基板で実装しています。&lt;br /&gt;
-&lt;a  title=&quot;3-01&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-01&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-1.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-02&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-02&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-2.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-03&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-04&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-3.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-04&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-4.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-04&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-4.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-05&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-5.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-05&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-5.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-06&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-6.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-06&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03-6.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-こちらではUARTの通信機能が付きました。充電電流を出力してくれます。&lt;br /&gt;
- &lt;iframe src=&quot;//www.youtube.com/embed/1e8nEOJw4gM?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt; &lt;br /&gt;
-こちらの動画で出力の様子が見れます。ドットマトリクスの表示器も自作しました。&lt;br /&gt;
-&lt;br /&gt;
-まだまだ続きます。&lt;br /&gt;
-次は、Ver.3.5です。&lt;br /&gt;
-Charge Station Ver.3に小型液晶が付きました。&lt;br /&gt;
-&lt;a  title=&quot;3-14&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-14&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-1.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;3-01&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;3-01&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-2.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-中央上の黒い８ｐｉｎのＩＣがＥＥＰＲＯＭ&lt;br /&gt;
-&lt;a  title=&quot;CS&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;CS&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-3.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;CS&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-4.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;CS&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-4.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;CS&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-5.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;CS&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS03.5-5.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-また、電流の積算機能も追加しました。外付けEEPROMを使って、電源が切れても積算電流値を記憶します。&lt;br /&gt;
-&lt;br /&gt;
-次にVer.4&lt;br /&gt;
-こちらはVer.3と回路は同じですが、黒の小型ケースに入れました。&lt;br /&gt;
-&lt;a  title=&quot;4-01&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-1.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;4-01&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-1.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;4-02&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;4-02&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-2.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;4-03&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;4-03&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-3.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;4-04&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-4.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;4-04&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS04-4.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-最後にCharge Station Ver.5&lt;br /&gt;
-現在の最新バージョンです。&lt;br /&gt;
-Ver.5では僕自身初の基板発注に挑戦しました。&lt;br /&gt;
-Elecrowという、プリント基板を作ってくれる会社が中国にあります。&lt;br /&gt;
-&lt;a  title=&quot;5-02&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-1.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-02&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-1.png&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;こんな基板を発注しました。&lt;br /&gt;
-同じ基板を10枚で$29で、日本円では3500円ほどです。（円安クソォ…）&lt;br /&gt;
-届くまでに2週間弱かかり、待っているのが辛かったです。&lt;br /&gt;
-&lt;a  title=&quot;5-03&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-2.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-03&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-2.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-こんな感じで届き、さあ、製作開始です。&lt;br /&gt;
-&lt;a  title=&quot;5-09&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-3.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-09&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-3.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-部品を並べてみました。表面実装部品多めです。なるべく小型化しようと思います。&lt;br /&gt;
-&lt;a  title=&quot;5-06&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-4.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-06&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-4.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-フラックスを塗りながら最難関のSSOPをまず半田付けします。&lt;br /&gt;
-これが終わればもう安心。部品をどんどん取り付けていきます。&lt;br /&gt;
-&lt;a  title=&quot;5-12&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-5.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-12&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-5.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;5-13&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-6.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-13&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-6.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;5-14&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-7.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-14&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-7.jpg&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;部品がすべて基板に乗りました。ここで動作チェックします。&lt;br /&gt;
-はぁ。案の定、1か所不具合がありました。FETがスイッチングをしないのです。&lt;br /&gt;
-テスターを使ってPICからの信号を確かめたり、配線を確認しても、特に問題がありません。&lt;br /&gt;
-不意にFETを触ってみると…熱い…！&lt;br /&gt;
-FETのデータシートを見てみるとなんとピンアサインが思っていたのと違うじゃありませんか！！&lt;br /&gt;
-やってしまいました。基板発注までしてピンアサインを間違える。はぁ。&lt;br /&gt;
-&lt;a  title=&quot;5-20&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-8.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-20&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-8.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-しょうがないのでFETを回転させて浮いた足を導線でつないだら、しっかり動きました。&lt;br /&gt;
-ケースに組み込んでこれでやっと完成です。&lt;br /&gt;
-&lt;a  title=&quot;5-17&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-9.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-17&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-9.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;5-22&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-10.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-22&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-10.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;5-23&quot; href=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-11.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;5-23&quot; src=&quot;/images/2015-02-16-ChargeStation-1-5/CS05-11.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-ケース内部にまだ余裕があるので、今後回路を追加するかもしれません。&lt;br /&gt;
-Ver.5では液晶が少し大きくなりました。秋月電子の新商品です。みなさまも是非どうぞ。&lt;br /&gt;
-&lt;a  title=&quot;I2C　小型液晶&quot; href=&quot;http://akizukidenshi.com/catalog/g/gK-08896/&quot; target=&quot;_blank&quot;&gt;http://akizukidenshi.com/catalog/g/gK-08896/&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-記事が長くなってしまいましてすみません。そろそろ終わります。&lt;br /&gt;
-&lt;br /&gt;
-まとめ&lt;br /&gt;
-僕が大学に入ってから1年、Charge Stationについてかなりの時間をかけて研究してきました。&lt;br /&gt;
-PICマイコン、オペアンプ、FETなど電子部品の知識が相当ついたと思います。&lt;br /&gt;
-シリアル通信も1から勉強して、今ではI2C液晶やEEPROMなどを使用できるようになりました。&lt;br /&gt;
-基板発注の経験も今後役に立つと思います。&lt;br /&gt;
-この工作は自分がほしいと思った機能を自分で実装し、実際に使い、改善を繰り返しています。&lt;br /&gt;
-誰かに依頼されて作っているのではないので、時間に縛られず、自由な発想で作ることができました。&lt;br /&gt;
-Charge Stationは今後も改良を続けていきます。僕とともに成長します。
-</description>
-        <pubDate>Mon, 16 Feb 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/2015/02/16/chargestation-1-5.html</link>
-        <guid isPermaLink="true">http://kerikeri.top/2015/02/16/chargestation-1-5.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>100W級ソーラーシステムの自作</title>
-        <description>どーも。椋けり（twitter:&lt;a href=&quot;https://twitter.com/Ryokeri14/&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt;）です。id研です。&lt;br /&gt;
-そう、秋月バイトの彼です。 &lt;br /&gt;
-&lt;br /&gt;
-夏休みにもかかわらず、バイトを入れすぎて&lt;br /&gt;
-全然遊んでないじゃないか！&lt;br /&gt;
-&lt;br /&gt;
-じゃあ電子工作をしよう！&lt;br /&gt;
-&lt;br /&gt;
-秋月電子で稼いだお金は秋月電子で使おう。そう、還元。&lt;br /&gt;
-ということで、どん！&lt;br /&gt;
-&lt;img  name=&quot;solar panel&quot;alt=&quot;ソーラーパネル&quot; src=&quot;/images/2014-09-14-solar-system/solar_amazon.jpg&quot;&gt;&lt;br /&gt;
-あれ？こんなの秋月では売ってないぞ？&lt;br /&gt;
-はい。これはAmazonでポチりましｔ…&lt;br /&gt;
-お値段&lt;br /&gt;
-&lt;span  style=&quot;font-size: large;&quot;&gt;¥13,800&lt;br /&gt;
-&lt;/span&gt;高いよぉ...&lt;br /&gt;
-&lt;br /&gt;
-秋月での買い物はこちら。 &lt;br /&gt;
-&lt;img  name=&quot;ソーラー充電コントローラー（１２／２４Ｖ）１０／１０Ａ　ＣＸＮ１０－１．１&quot;alt=&quot;ソーラー充電コントローラー（１２／２４Ｖ）１０／１０Ａ　ＣＸＮ１０－１．１&quot; src=&quot;/images/2014-09-14-solar-system/solar_controller.jpg&quot;&gt;&lt;br /&gt;
-ソーラー充電コントローラー[CXN10-1.1]&lt;br /&gt;
-&lt;a  href=&quot;http://akizukidenshi.com/catalog/g/gM-02824/&quot; target=&quot;_blank&quot;&gt;http://akizukidenshi.com/catalog/g/gM-02824/&lt;/a&gt;&lt;br /&gt;
-¥6,000&lt;br /&gt;
-&lt;br /&gt;
-&lt;img  name=&quot;remote display&quot;alt=&quot;ソーラー充電コントローラー用リモートディスプレイＣＸＭ－１．２&quot; src=&quot;/images/2014-09-14-solar-system/remote_display.jpg&quot;&gt;&lt;br /&gt;
-ソーラー充電コントローラー用リモートディスプレイ[CXM-1.2]&lt;br /&gt;
-&lt;a  href=&quot;http://akizukidenshi.com/catalog/g/gM-02826/&quot; target=&quot;_blank&quot;&gt;http://akizukidenshi.com/catalog/g/gM-02826/&lt;/a&gt;&lt;br /&gt;
-¥4,000&lt;br /&gt;
-&lt;br /&gt;
-&lt;img  name=&quot;battery&quot;alt=&quot;完全密封型鉛蓄電池（１２Ｖ２２Ａｈ）　ＷＰ２２－１２&quot; src=&quot;/images/2014-09-14-solar-system/battery.jpg&quot;&gt;&lt;br /&gt;
-鉛蓄電池12V22Ah[WP22-12]&lt;br /&gt;
-&lt;a  href=&quot;http://akizukidenshi.com/catalog/g/gB-00020/&quot; target=&quot;_blank&quot;&gt;http://akizukidenshi.com/catalog/g/gB-00020/&lt;/a&gt;&lt;br /&gt;
-¥4,500&lt;br /&gt;
-&lt;br /&gt;
-ソーラーパネルの設置には&lt;br /&gt;
-近くのホームセンターで売っていた&lt;br /&gt;
-「イレクターパイプ」という金属パイプを使用。&lt;br /&gt;
-あとはステンレス製のワイヤーで固定。&lt;br /&gt;
-パイプ、ジョイント、ワイヤー、VVFケーブル代&lt;br /&gt;
-¥5,166&lt;br /&gt;
-&lt;br /&gt;
-さらにAmazonで36Ahの鉛蓄電池を増設。¥5,000&lt;br /&gt;
-&lt;br /&gt;
-とまあ、システムに必要なものをはこんな感じ。&lt;br /&gt;
-&lt;br /&gt;
-★作り方★&lt;br /&gt;
-イレクターパイプを切って組み立てる。&lt;br /&gt;
-VVFケーブルでソーラーパネルと鉛蓄電池をつなぐ&lt;br /&gt;
-終わた＼(^o^)／&lt;br /&gt;
-&lt;br /&gt;
-はい、できました！&lt;br /&gt;
-&lt;a  title=&quot;ソーラーパネル&quot; href=&quot;/images/2014-09-14-solar-system/solar_top.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ソーラーパネル&quot; src=&quot;/images/2014-09-14-solar-system/solar_top.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;ソーラーパネル台&quot; href=&quot;/images/2014-09-14-solar-system/solar_side.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ソーラーパネル台&quot; src=&quot;/images/2014-09-14-solar-system/solar_side.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;span  style=&quot;color: rgb(0, 0, 0);&quot;&gt;　↑ベランダにイレクターパイプを使って設置。&lt;br /&gt;
-&lt;/span&gt;&lt;br /&gt;
-&lt;a  title=&quot;ソーラーコントローラーと配電盤&quot; href=&quot;/images/2014-09-14-solar-system/controller.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ソーラーコントローラーと配電盤&quot; src=&quot;/images/2014-09-14-solar-system/controller.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;　↑部屋ではこんな感じ&lt;br /&gt;
-&lt;br /&gt;
-下の配電盤にはDCジャックがずらりと並んで&lt;br /&gt;
-様々な機器に電気を供給する。&lt;br /&gt;
-&lt;a  title=&quot;配電盤&quot; href=&quot;/images/2014-09-14-solar-system/pwm.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;配電盤&quot; src=&quot;/images/2014-09-14-solar-system/pwm.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-真ん中のつまみは机の照明の明るさ調整用の可変抵抗。&lt;br /&gt;
-PICを使ってPWM制御だぜ！&lt;br /&gt;
-&lt;a  title=&quot;机の照明&quot; href=&quot;/images/2014-09-14-solar-system/light.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;机の照明&quot; src=&quot;/images/2014-09-14-solar-system/light.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-これが机の照明。1WのパワーLEDを18個も使ってチョー明るい！&lt;br /&gt;
-&lt;br /&gt;
-次にこれがUSB電源出力&lt;br /&gt;
-&lt;a  title=&quot;充電器(小)&quot; href=&quot;/images/2014-09-14-solar-system/mini_top.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;充電器(小)&quot; src=&quot;/images/2014-09-14-solar-system/mini_top.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;充電器(小)&quot; href=&quot;/images/2014-09-14-solar-system/mini_side.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;充電器(小)&quot; src=&quot;/images/2014-09-14-solar-system/mini_side.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-DCDCコンバーターを使って5Vに安定化している。&lt;br /&gt;
-&lt;a  title=&quot;iPodを充電中&quot; href=&quot;/images/2014-09-14-solar-system/charging.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;iPodを充電中&quot; src=&quot;/images/2014-09-14-solar-system/charging.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;最高6Aまで出力できる超優れものだ。&lt;br /&gt;
-&lt;br /&gt;
-あと、電気が余ってるときは&lt;br /&gt;
-DC/ACインバータを使ってAC100Vを作る。&lt;br /&gt;
-&lt;a  title=&quot;DC-ACインバータ&quot; href=&quot;/images/2014-09-14-solar-system/dcac.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;DC-ACインバータ&quot; src=&quot;/images/2014-09-14-solar-system/dcac.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-この形になれば、パソコンでもテレビでもなんでも使える！&lt;br /&gt;
-ただし、やりすぎるとすぐに鉛蓄電池が空になるから注意。&lt;br /&gt;
-&lt;br /&gt;
-ここまでは2Fの自分の部屋の中で電気を使っていた。&lt;br /&gt;
-&lt;br /&gt;
-次に出窓の穴とアンテナの穴をとおして&lt;br /&gt;
-電源を1Fに通す。 &lt;br /&gt;
-&lt;a  title=&quot;2Fから1Fへ&quot; href=&quot;/images/2014-09-14-solar-system/wire.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;2Fから1Fへ&quot; src=&quot;/images/2014-09-14-solar-system/wire.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;このへんはテキトーに。&lt;br /&gt;
-これで1Fのリビングでも充電可能に。&lt;br /&gt;
-&lt;a  title=&quot;充電器&quot; href=&quot;/images/2014-09-14-solar-system/slanting.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;充電器&quot; src=&quot;/images/2014-09-14-solar-system/slanting.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;充電器&quot; href=&quot;/images/2014-09-14-solar-system/top.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;充電器&quot; src=&quot;/images/2014-09-14-solar-system/top.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;充電器&quot; href=&quot;/images/2014-09-14-solar-system/side.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;充電器&quot; src=&quot;/images/2014-09-14-solar-system/side.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-こちらのUSB電源給電器には、アナログ電流計が取りつけてあって&lt;br /&gt;
-リアルタイムで充電電流を見ることができる。&lt;br /&gt;
-充電が終わると電流計もちゃんと0を指していてなかなかおもしろい。 &lt;br /&gt;
-&lt;br /&gt;
-今回のシステムの概要図です。&lt;br /&gt;
-&lt;a  title=&quot;概要図&quot; href=&quot;/images/2014-09-14-solar-system/concept.jpg&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;概要図&quot; src=&quot;/images/2014-09-14-solar-system/concept.jpg&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-まあ、今のところはこんなとこですかね&lt;br /&gt;
-費用はシステムづくりに3万円程度ってところ。&lt;br /&gt;
-照明用LED代を含めると恐ろしい金額に( ;∀;)&lt;br /&gt;
-発電でこの分を賄うのは何十年先のことやら…&lt;br /&gt;
-やはり、重要なのは自分で使う電気を自分で作り出すことですね&lt;br /&gt;
-さあ、これからも電子工作の毎日だ！
-
-</description>
-        <pubDate>Sun, 14 Sep 2014 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/2014/09/14/solar-system.html</link>
-        <guid isPermaLink="true">http://kerikeri.top/2014/09/14/solar-system.html</guid>
-        
-        <category>ソーラー,PIC,電子工作,太陽光電池,秋月電子,工作,自作,マイコン,充電器,節電</category>
-        
+        <category>blog</category>
         
       </item>
     
