@@ -5,9 +5,78 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Nov 2015 00:13:00 +0900</pubDate>
-    <lastBuildDate>Wed, 04 Nov 2015 00:13:00 +0900</lastBuildDate>
+    <pubDate>Wed, 04 Nov 2015 23:26:17 +0900</pubDate>
+    <lastBuildDate>Wed, 04 Nov 2015 23:26:17 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>CPUの創り方</title>
+        <description>&lt;h2 id=&quot;cpu2003-&quot;&gt;書籍「CPUの創り方」（2003年）渡波郁 著&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/book.jpg&quot; alt=&quot;CPUの創り方&quot; title=&quot;CPUの創り方&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　この本は電子工作の入門書です。しかし入門書と言っても内容は壮大で、CPUを設計して自作しようというものです。電子工作初心者だけでなく、ある程度電子工作をしてきた人にも読みごたえのある一冊になっています。&lt;/p&gt;
+
+&lt;h2 id=&quot;td4&quot;&gt;作ったもの : TD4&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_top.jpg&quot; alt=&quot;TD4&quot; title=&quot;TD4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　この本の中で設計しているCPUを実際に作りました。TD4とは&lt;strong&gt;T&lt;/strong&gt;ada &lt;strong&gt;D&lt;/strong&gt;ousa-suru-dakei-no &lt;strong&gt;4&lt;/strong&gt;-bit CPU という意味です。&lt;/p&gt;
+
+&lt;h2 id=&quot;iccpu&quot;&gt;ICとCPUの違い&lt;/h2&gt;
+&lt;p&gt;　ICとは、決まった動作をしかできません。「こんな機能が欲しい」という時は、その機能を持ったICを買いに行かなければなりません。しかし、CPUは「プログラム」を実行することができます。これにより、プログラム次第で様々な動作をすることができます。今回は、決まった動作しかできない「IC」を使って柔軟な動作の「CPU」を作りました。（と言っても、回路を設計したのは本の作者です。）&lt;/p&gt;
+
+&lt;h2 id=&quot;cpu&quot;&gt;CPUの構成&lt;/h2&gt;
+
+&lt;h3 id=&quot;cpubit&quot;&gt;CPUのbit数&lt;/h3&gt;
+&lt;p&gt;　先にも書いたとおり、これは4bitのCPCです。4bit CPUというのは各レジスタが4bitでできているということです。&lt;/p&gt;
+
+&lt;h3 id=&quot;rom&quot;&gt;プログラムメモリ（ROM）&lt;/h3&gt;
+&lt;p&gt;　写真左側に、16個のDIPスイッチが並んでいます。これがプログラムメモリ(ROM)です。8bitのDIPスイッチが16個あるので、16ByteのROMになります。普通、ROMといえば不揮発性のフラッシュメモリですが、TD4では物理的スイッチにより再現してあります。&lt;/p&gt;
+
+&lt;h3 id=&quot;ram&quot;&gt;レジスタ（RAM）&lt;/h3&gt;
+&lt;p&gt;　TD4には4bitのレジスタが４つあり、以下の役割があります。写真中央に縦に並んだ４つのICです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;プログラム・カウンタ&lt;/li&gt;
+  &lt;li&gt;汎用レジスタA&lt;/li&gt;
+  &lt;li&gt;汎用レジスタB&lt;/li&gt;
+  &lt;li&gt;出力レジスタ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;alu&quot;&gt;算術論理演算装置（ALU）&lt;/h3&gt;
+&lt;p&gt;　TD4は、4bit + 4bit の加算器を持っています。以上。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;入出力&lt;/h2&gt;
+&lt;p&gt;　入力は、写真中央最下部の４つのスライドスイッチです。これらのHigh/Lowをレジスタに取り込むことができます。&lt;br /&gt;
+　出力には、４つのLEDがつながっています。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;動作&lt;/h2&gt;
+&lt;p&gt;　TD4にプログラミングするには、まずはアセンブリ言語を書きます。それをハンドアセンブル（アセンブリ言語を、２進法に変えること）をして、TD4のDIPスイッチにプログラムを書き込みます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;アセンブリ言語命令一覧&lt;/h3&gt;
+&lt;p&gt;　プログラムメモリは8bitで1かたまりです。8bitのうち、左4bitがオペレーションコード、右4bitがデータになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/asm.jpg&quot; alt=&quot;アセンブリコード表&quot; title=&quot;アセンブリコード表&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;動作周波数&lt;/h3&gt;
+&lt;p&gt;　本の中ではハンドクロック（ボタンを押すたびにクロックが進む）と1HzのRCクロックが用意されていました。これに加えて、可変抵抗による可変クロックをつけました。&lt;br /&gt;
+　クロックの最速は、344Hzでした。オシロスコープでクロックを見てみるっと、波が少し汚いです。これはRC発振を標準ロジックICのシュミットトリガで行ってるためだと思われます。
+&lt;img src=&quot;/images/2015-11-04-create-CPU/344Hz.jpg&quot; alt=&quot;オシロスコープ&quot; title=&quot;オシロスコープ&quot; /&gt; 
+　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりません。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスいと思い込んでしまうのはだめです。
+　TD4を作るとハンダ付けの技術が上がります。本を読むだけでなく、実際に作ってみましょう。作り終わったら、&lt;strong&gt;楽しい楽しいデバック作業&lt;/strong&gt;が待ってますよ(^^)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_back.jpg&quot; alt=&quot;TD4 裏面&quot; title=&quot;TD4 裏面&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</title>
@@ -594,185 +663,6 @@ Day offが終わると、ロボコンへラストスパートです。&lt;br /&g
         <pubDate>Wed, 12 Aug 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>メダカの照明の自作</title>
-        <description>こんにちは。&lt;br /&gt;
-けり(@Ryokeri14)です。&lt;br /&gt;
-みなさん、進捗いかがですか？&lt;br /&gt;
-僕は、ぼちぼちです。&lt;br /&gt;
-&lt;br /&gt;
-今回紹介するのは、&lt;br /&gt;
-&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: x-large;&quot;&gt;メダカの水槽の照明&lt;/span&gt;です。&lt;br /&gt;
-&lt;br /&gt;
-高校時代の親友の刺激を受け、&lt;br /&gt;
-5月ごろからメダカを飼い始めました。&lt;br /&gt;
-生き物を飼うと、実に癒されます〜&lt;br /&gt;
-&lt;a  title=&quot;メダカ&quot; href=&quot;/images/2015-06-04-killifish-light/fish1.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;メダカ&quot; src=&quot;/images/2015-06-04-killifish-light/fish1.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-水槽には水草があるので、&lt;br /&gt;
-程よく光を当てなければなりません。&lt;br /&gt;
-普通のLEDライトで照らしてもよいのですが、&lt;br /&gt;
-ここはロ技研民として、自分で照明を作ることにしました。&lt;br /&gt;
-&lt;br /&gt;
-ところで、皆さんが帰宅する時間は何時ごろですか？&lt;br /&gt;
-帰宅するころには暗くなってますよね？&lt;br /&gt;
-朝、家を出るときに照明をつけて置くと、帰ってきても点きっぱなしです。&lt;br /&gt;
-それでは、メダカの時間感覚が狂ってしまい、かわいそう…&lt;br /&gt;
-ということで、&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt;マイコンで明るさを自動制御&lt;/span&gt;することにします。&lt;br /&gt;
-&lt;br /&gt;
-さらに、こんなことで電気を無駄使いしていると、親に叱られるので、&lt;br /&gt;
-電力源はソーラーにします。&lt;br /&gt;
-&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt;とても運がいいことに、&lt;/span&gt;僕の家には&lt;a  title=&quot;自作の１００Ｗ級ソーラーシステム&quot; href=&quot;http://kerikeri.top/blogs/blog_20140914/article.html&quot; target=&quot;_blank&quot;&gt;自作の１００Ｗ級ソーラーシステム&lt;/a&gt;（←リンク）があります。&lt;br /&gt;
-これを電力源に使います。&lt;br /&gt;
-&lt;a  title=&quot;100Wソーラーパネル&quot; href=&quot;/images/2015-06-04-killifish-light/solar.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;solar.JPG&quot; src=&quot;/images/2015-06-04-killifish-light/solar.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-メダカのことを英語でkillifishと言います。&lt;br /&gt;
-なので、今回の工作の名前は&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt; killifish light&lt;/span&gt;としました。&lt;br /&gt;
-&lt;br /&gt;
-&lt;span  style=&quot;font-size: medium;&quot;&gt;killifish light の&lt;span  style=&quot;color: rgb(255, 0, 0);&quot;&gt;ポイント&lt;/span&gt;は&lt;br /&gt;
-1．時間に合わせて明るさが自動で変わる。&lt;br /&gt;
-2．ソーラーを電力源にする。&lt;br /&gt;
-3．電子工作を楽しむ。&lt;br /&gt;
-&lt;/span&gt;&lt;br /&gt;
-です。&lt;br /&gt;
-&lt;br /&gt;
-マイコンは、いつも使っているPICマイコンにしました。&lt;br /&gt;
-PIC18F27J53です。↓秋月URL&lt;br /&gt;
-&lt;a  title=&quot;PIC18F27J53&quot; href=&quot;http://akizukidenshi.com/catalog/g/gI-05847/&quot; target=&quot;_blank&quot;&gt;http://akizukidenshi.com/catalog/g/gI-05847/&lt;br /&gt;
-&lt;/a&gt;このPICはPICの中でもかなりハイスペックです。内蔵モジュールも多く、とても便利に使えます。&lt;br /&gt;
-そのなかでも、今回の目玉は、&lt;span  style=&quot;color: rgb(255, 0, 0);&quot;&gt;RTCC（リアルタイムクロック&amp;amp;カレンダー）&lt;/span&gt;モジュールです。&lt;br /&gt;
-クロックを取り付けるだけで自動で時計のカウントをしてくれます。&lt;br /&gt;
-これをもとに、水槽の照明の明るさを制御します。&lt;br /&gt;
-&lt;br /&gt;
-LEDは秋月電子のパワーLEDを使いました。&lt;br /&gt;
-&lt;a  title=&quot;1WパワーLED&quot; href=&quot;/images/2015-06-04-killifish-light/Power_LED.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;I-07750&quot; src=&quot;/images/2015-06-04-killifish-light/Power_LED.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;常用の1W白色パワーLEDを12個と&lt;br /&gt;
-装飾用として赤、緑、青の1WパワーLEDをそれそれ6個ずつ用意しました。&lt;br /&gt;
-LEDは全部で30個です！LED好きにはたまらないですね！&lt;br /&gt;
-&lt;br /&gt;
-それらを放熱用のアルミ板にのせて、LEDを取り付けました。&lt;br /&gt;
-けっこう熱が出ます(汗&lt;br /&gt;
-&lt;a  title=&quot;LED&quot; href=&quot;/images/2015-06-04-killifish-light/LED.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;IMG_0562&quot; src=&quot;/images/2015-06-04-killifish-light/LED.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;LED&quot; href=&quot;/images/2015-06-04-killifish-light/under.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;IMG_0563&quot; src=&quot;/images/2015-06-04-killifish-light/under.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-次に基板を作ります。&lt;br /&gt;
-今回はユニバーサル基板で作りました。&lt;br /&gt;
-部品も少ないので2時間くらいでできました。こんな感じです。&lt;br /&gt;
-&lt;br /&gt;
-&lt;a  title=&quot;基板&quot; href=&quot;/images/2015-06-04-killifish-light/main_board.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;基板&quot; src=&quot;/images/2015-06-04-killifish-light/main_board.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-写真左が電源ケーブル、右がLEDのケーブルです。&lt;br /&gt;
-上の青くて丸いものは半固定抵抗です。つまみを回して明るさを変える機能も付けました。&lt;br /&gt;
-右下のコネクタは、シリアル通信UARTの端子です。PCと接続できます。&lt;br /&gt;
-&lt;br /&gt;
-&lt;a  title=&quot;PC&quot; href=&quot;/images/2015-06-04-killifish-light/with_PC.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;PC&quot; src=&quot;/images/2015-06-04-killifish-light/with_PC.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-今回は、&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt;ソフトウェア&lt;/span&gt;も気合を入れて作りました！&lt;br /&gt;
-シリアル通信UARTによってPCから様々な機能を設定できるようにしました。&lt;br /&gt;
-&lt;a  title=&quot;接続&quot; href=&quot;/images/2015-06-04-killifish-light/upper.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;transfer.JPG&quot; src=&quot;/images/2015-06-04-killifish-light/upper.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;/a&gt;USB⇔シリアル変換器&lt;br /&gt;
-&lt;a  title=&quot;USBシリアル変換器&quot; href=&quot;/images/2015-06-04-killifish-light/transfer.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;IMG_0570&quot; src=&quot;/images/2015-06-04-killifish-light/transfer.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-ターミナルを操作しているようなイメージです。&lt;br /&gt;
-コマンドを入力してENTERを押すと、レスポンスが返ってきます。&lt;br /&gt;
-PC側ではTera Termでシリアル通信をします。&lt;br /&gt;
-まず、PCで「help」と入力するとメニューが現れます。&lt;br /&gt;
-&lt;a  title=&quot;help2&quot; href=&quot;/images/2015-06-04-killifish-light/tera/help2.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;help2&quot; src=&quot;/images/2015-06-04-killifish-light/tera/help2.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-メニューにあるように「t」と入力すると現在時刻が表示されます。&lt;a  title=&quot;adc&quot; href=&quot;http://livedoor.blogimg.jp/rogyweb314/imgs/6/c/6cd173a2.png&quot; target=&quot;_blank&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  title=&quot;t&quot; href=&quot;/images/2015-06-04-killifish-light/tera/t.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;t&quot; src=&quot;/images/2015-06-04-killifish-light/tera/t.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-「adjust_the_time(at)」コマンドを用いて時計合わせをします。&lt;br /&gt;
-「at y 15」と入力すると、年が2015年になります。&lt;br /&gt;
-&lt;a  title=&quot;aty&quot; href=&quot;/images/2015-06-04-killifish-light/tera/aty.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;aty&quot; src=&quot;/images/2015-06-04-killifish-light/tera/aty.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;/a&gt;同様に「at M 6」と入力すると、月が6月になります。&lt;br /&gt;
-続けて、日、時、分、秒を設定して、時計合わせ完了です。&lt;a  title=&quot;atM&quot; href=&quot;/images/2015-06-04-killifish-light/tera/ats.png&quot; target=&quot;_blank&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  title=&quot;ats&quot; href=&quot;/images/2015-06-04-killifish-light/tera/ats.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;ats&quot; src=&quot;/images/2015-06-04-killifish-light/tera/ats.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-一度設定してしまえば、もう設定はいりません。&lt;br /&gt;
-見てわかるように、曜日も表示されます。&lt;br /&gt;
-&lt;br /&gt;
-「set sync」と入力すると、&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt;時間同期モード&lt;/span&gt;になり、&lt;br /&gt;
-昼間は明るく、夕方には徐々に暗くなり、夜は消灯というように、&lt;br /&gt;
-&lt;span  style=&quot;font-size: medium;&quot;&gt;照明を自動制御&lt;/span&gt;をしてくれます。&lt;br /&gt;
-&lt;a  title=&quot;setsync&quot; href=&quot;/images/2015-06-04-killifish-light/tera/setsync.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;setsync&quot; src=&quot;/images/2015-06-04-killifish-light/tera/setsync.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-こんな感じです。&lt;br /&gt;
-&lt;a  title=&quot;水槽&quot; href=&quot;/images/2015-06-04-killifish-light/white.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;white.JPG&quot; src=&quot;/images/2015-06-04-killifish-light/white.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-ここまでで、一応、目的の機能はできました。&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-ここからは、&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: large;&quot;&gt;フルカラーLED&lt;/span&gt;で遊びます(^0^)/&lt;br /&gt;
-白色LEDのほかに光の三原色のLEDも付けたので、それを使います。&lt;br /&gt;
-シリアル通信でコマンドを送るとその通りに色が変わります〜&lt;br /&gt;
-&lt;br /&gt;
-まずは、「pwm clear」コマンドで全部のLEDを消灯します。&lt;br /&gt;
-&lt;a  title=&quot;pwmclear&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmclear.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmclear&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmclear.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;IMG_0571&quot; href=&quot;/images/2015-06-04-killifish-light/black.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;black.JPG&quot; src=&quot;/images/2015-06-04-killifish-light/black.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-次に「pwm R 100」などと、色とパーセンテージを入力するとその明るさで光ります。&lt;br /&gt;
-&lt;a  title=&quot;pwmr&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmr.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmr&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmr.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;赤&quot; href=&quot;/images/2015-06-04-killifish-light/red.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;赤&quot; src=&quot;/images/2015-06-04-killifish-light/red.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-緑色&lt;br /&gt;
-&lt;a  title=&quot;pwmg&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmg.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmg&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmg.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;img_0579&quot; href=&quot;/images/2015-06-04-killifish-light/greesn.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;緑&quot; src=&quot;/images/2015-06-04-killifish-light/green.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-青色&lt;br /&gt;
-&lt;a  title=&quot;pwmb&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmb.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmb&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmb.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;img_0580&quot; href=&quot;/images/2015-06-04-killifish-light/blue.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;青&quot; src=&quot;/images/2015-06-04-killifish-light/blue.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-赤＋青＝マゼンタ&lt;br /&gt;
-&lt;a  title=&quot;pwmrb&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmrb.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmrb&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmrb.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;マゼンタ&quot; href=&quot;/images/2015-06-04-killifish-light/magenta.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;マゼンタ&quot; src=&quot;/images/2015-06-04-killifish-light/magenta.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-赤＋緑＝イエロー&lt;br /&gt;
-&lt;a  title=&quot;pwmrg&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmrg.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmrg&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmrg.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  title=&quot;イエロー&quot; href=&quot;/images/2015-06-04-killifish-light/yellow.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;イエロー&quot; src=&quot;/images/2015-06-04-killifish-light/yellow.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-緑＋青＝シアン&lt;br /&gt;
-&lt;a  title=&quot;pwmgb&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmgb.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmgb&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmgb.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  title=&quot;シアン&quot; href=&quot;/images/2015-06-04-killifish-light/syan.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;シアン&quot; src=&quot;/images/2015-06-04-killifish-light/syan.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-最後に全色をつけてみました。&lt;br /&gt;
-写真ではなんだか赤っぽいですが、直接目で見るとけっこういい感じです。&lt;br /&gt;
-&lt;a  title=&quot;pwmrgb&quot; href=&quot;/images/2015-06-04-killifish-light/tera/pwmrgb.png&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;pwmrgb&quot; src=&quot;/images/2015-06-04-killifish-light/tera/pwmrgb.png&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  title=&quot;白&quot; href=&quot;/images/2015-06-04-killifish-light/RGB.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;RGB.JPG&quot; src=&quot;/images/2015-06-04-killifish-light/RGB.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-pcがなくても基板の上の半固定抵抗を回すことで明るさを細かく変えることができます。&lt;br /&gt;
-また、タクトスイッチで時間同期の設定やledのオンオフ設定ができます。&lt;br /&gt;
-&lt;a  title=&quot;基板&quot; href=&quot;/images/2015-06-04-killifish-light/main_board.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;基板&quot; src=&quot;/images/2015-06-04-killifish-light/main_board.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-まとめ&lt;br /&gt;
-メダカの照明というのをきっかけに、電子工作を繰り広げました。作っていてとても楽しいですw&lt;br /&gt;
-しかも、これはソーラーの電力で動いているので、どれだけledを光らせても電気代は0円です！！&lt;br /&gt;
-これほど素晴らしいことはほかにありますかね？？&lt;br /&gt;
-電子工作ってなんでこんなに楽しいんだろう！&lt;br /&gt;
-メダカちゃんたちも元気いっぱいです！！&lt;br /&gt;
-&lt;a  title=&quot;メダカ&quot; href=&quot;/images/2015-06-04-killifish-light/fish2.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;pict&quot; alt=&quot;メダカ&quot; src=&quot;/images/2015-06-04-killifish-light/fish2.JPG&quot; border=&quot;0&quot; hspace=&quot;5&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-</description>
-        <pubDate>Thu, 04 Jun 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
         
         
         <category>blog</category>

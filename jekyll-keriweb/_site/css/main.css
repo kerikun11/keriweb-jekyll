@@ -337,11 +337,13 @@ pre {
   .post-content p {
     margin-left: 3em; }
   .post-content ol {
-    margin-left: 3em; }
+    margin-left: 5em; }
   .post-content ul {
-    margin-left: 3em; }
+    margin-left: 5em; }
   .post-content pre {
     margin-left: 3em; }
+  .post-content table {
+    border: 1px solid #111111; }
 
 /**
  * Syntax highlighting styles
