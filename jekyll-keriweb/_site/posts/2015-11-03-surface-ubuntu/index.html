@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート) - KERI's Lab</title>
-  <meta name="description" content="UEFIとは	　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。">
+  <title>Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート) - KERI's Lab</title>
+  <meta name="description" content="UEFIとは　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://kerikeri.top/posts/2015-11-03-surface-ubuntu/">
@@ -73,22 +73,52 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</h1>
+    <h1 class="post-title" itemprop="name headline">Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</h1>
     <p class="post-meta"><time datetime="2015-11-03T00:00:00+09:00" itemprop="datePublished">Nov 3, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2>UEFIとは</h2>
-<article>
-	<p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。</p>
-</article>
+    <h2 id="uefi">UEFIとは</h2>
+<p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。</p>
 
-<h2>ホームディレクトリのフォルダを日本語にする。</h2>
-<article>
-	<p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
-	<pre>$LANG=C xdg-user-dirs-gtk-update</pre>
-	<p>を実行して、現れたダイアログで「Don't ask me again」にチェックを入れて、「Update Names」を押す。</p>
-</article>
+<h2 id="section">今現在できること、できないこと</h2>
+
+<h3 id="section-1">できること</h3>
+
+<ul>
+  <li>Surface Pro 3 に Ubuntu 15.10 を入れること。</li>
+  <li>Surface Type cover のキーボードを使うこと。</li>
+  <li>Surface Type cover のタッチパッドを使うこと。</li>
+  <li>タッチ画面を使うこと。</li>
+  <li>Surface Pen を使うこと。</li>
+</ul>
+
+<h3 id="section-2">できないこと</h3>
+
+<ul>
+  <li>Surface Type cover のタッチパッドの２本指スクロール。</li>
+  <li>スリープボタン、音量ボタン</li>
+  <li>電力効率が悪い</li>
+</ul>
+
+<h2 id="section-3">用意するもの</h2>
+
+<ul>
+  <li>Surface Pro 3</li>
+  <li>Ubuntuインストール用のUSBメモリ（4GB以上）</li>
+  <li>USBハブ</li>
+  <li>USBキーボード（最初はSurface Type coverを認識しません）</li>
+</ul>
+
+<h2 id="section-4">ホームディレクトリのフォルダを日本語から英語に変える</h2>
+
+<p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
+
+<p><code>
+$ LANG=C xdg-user-dirs-gtk-update
+</code></p>
+
+<p>を実行して、現れたダイアログで「Don’t ask me again」にチェックを入れて、「Update Names」を押す。</p>
 
 
   </div>

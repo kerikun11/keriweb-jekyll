@@ -334,6 +334,24 @@ pre {
     @media screen and (max-width: 800px) {
       .post-content h4 {
         font-size: 18px; } }
+    .post-content h4 ::before {
+      content: "";
+      position: absolute;
+      background: #108095 none repeat scroll 0% 0%;
+      top: 0px;
+      left: -5px;
+      height: 12px;
+      width: 12px;
+      transform: rotate(45deg); }
+    .post-content h4 ::after {
+      content: "";
+      position: absolute;
+      background: #777 none repeat scroll 0% 0%;
+      top: 15px;
+      left: -10px;
+      height: 8px;
+      width: 8px;
+      transform: rotate(15deg); }
   .post-content p {
     margin-left: 3em; }
   .post-content ol {

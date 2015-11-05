@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Nov 2015 23:26:17 +0900</pubDate>
-    <lastBuildDate>Wed, 04 Nov 2015 23:26:17 +0900</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 14:42:29 +0900</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 14:42:29 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -64,7 +64,7 @@
 　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりません。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスいと思い込んでしまうのはだめです。
+&lt;p&gt;　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスと思い込んでしまうのはだめです。&lt;br /&gt;
 　TD4を作るとハンダ付けの技術が上がります。本を読むだけでなく、実際に作ってみましょう。作り終わったら、&lt;strong&gt;楽しい楽しいデバック作業&lt;/strong&gt;が待ってますよ(^^)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_back.jpg&quot; alt=&quot;TD4 裏面&quot; title=&quot;TD4 裏面&quot; /&gt;&lt;/p&gt;
@@ -79,18 +79,48 @@
       </item>
     
       <item>
-        <title>Surface Pro 3 に Ubuntu15.04を入れる(UEFI環境のデュアルブート)</title>
-        <description>&lt;h2&gt;UEFIとは&lt;/h2&gt;
-&lt;article&gt;
-	&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。&lt;/p&gt;
-&lt;/article&gt;
+        <title>Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</title>
+        <description>&lt;h2 id=&quot;uefi&quot;&gt;UEFIとは&lt;/h2&gt;
+&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。&lt;/p&gt;
 
-&lt;h2&gt;ホームディレクトリのフォルダを日本語にする。&lt;/h2&gt;
-&lt;article&gt;
-	&lt;p&gt;　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。&lt;/p&gt;
-	&lt;pre&gt;$LANG=C xdg-user-dirs-gtk-update&lt;/pre&gt;
-	&lt;p&gt;を実行して、現れたダイアログで「Don&#39;t ask me again」にチェックを入れて、「Update Names」を押す。&lt;/p&gt;
-&lt;/article&gt;
+&lt;h2 id=&quot;section&quot;&gt;今現在できること、できないこと&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;できること&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Surface Pro 3 に Ubuntu 15.10 を入れること。&lt;/li&gt;
+  &lt;li&gt;Surface Type cover のキーボードを使うこと。&lt;/li&gt;
+  &lt;li&gt;Surface Type cover のタッチパッドを使うこと。&lt;/li&gt;
+  &lt;li&gt;タッチ画面を使うこと。&lt;/li&gt;
+  &lt;li&gt;Surface Pen を使うこと。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;できないこと&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Surface Type cover のタッチパッドの２本指スクロール。&lt;/li&gt;
+  &lt;li&gt;スリープボタン、音量ボタン&lt;/li&gt;
+  &lt;li&gt;電力効率が悪い&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;用意するもの&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Surface Pro 3&lt;/li&gt;
+  &lt;li&gt;Ubuntuインストール用のUSBメモリ（4GB以上）&lt;/li&gt;
+  &lt;li&gt;USBハブ&lt;/li&gt;
+  &lt;li&gt;USBキーボード（最初はSurface Type coverを認識しません）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;ホームディレクトリのフォルダを日本語から英語に変える&lt;/h2&gt;
+
+&lt;p&gt;　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ LANG=C xdg-user-dirs-gtk-update
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;を実行して、現れたダイアログで「Don’t ask me again」にチェックを入れて、「Update Names」を押す。&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
