@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Nov 2015 17:20:47 +0900</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2015 17:20:47 +0900</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 20:39:09 +0900</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 20:39:09 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -59,9 +59,11 @@
 
 &lt;h3 id=&quot;section-3&quot;&gt;動作周波数&lt;/h3&gt;
 &lt;p&gt;　本の中ではハンドクロック（ボタンを押すたびにクロックが進む）と1HzのRCクロックが用意されていました。これに加えて、可変抵抗による可変クロックをつけました。&lt;br /&gt;
-　クロックの最速は、344Hzでした。オシロスコープでクロックを見てみるっと、波が少し汚いです。これはRC発振を標準ロジックICのシュミットトリガで行ってるためだと思われます。
-&lt;img src=&quot;/images/2015-11-04-create-CPU/344Hz.jpg&quot; alt=&quot;オシロスコープ&quot; title=&quot;オシロスコープ&quot; /&gt; 
-　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりません。&lt;/p&gt;
+　クロックの最速は、344Hzでした。オシロスコープでクロックを見てみるっと、波が少し汚いです。これはRC発振を標準ロジックICのシュミットトリガで行ってるためだと思われます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/344Hz.jpg&quot; alt=&quot;オシロスコープ&quot; title=&quot;オシロスコープ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりません。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスと思い込んでしまうのはだめです。&lt;br /&gt;
