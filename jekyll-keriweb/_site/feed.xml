@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Nov 2015 22:52:16 +0900</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2015 22:52:16 +0900</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 23:13:04 +0900</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 23:13:04 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -580,7 +580,7 @@ network={
 今回の話題は僕が参加してきたIDCロボコンについてです。&lt;br /&gt;
 &lt;br /&gt;
 東工大の制御システム工学科2年には「創造設計第一」という授業があり、授業の中で個人戦のロボコンをします。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; title=&quot;創造設計第一のロボコン&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;創造設計第一のロボコン&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; title=&quot;創造設計第一のロボコン&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; border=&quot;0&quot; alt=&quot;創造設計第一のロボコン&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 そこで優秀な成績を収めると、世界大会のIDCロボコンに参加することができます。&lt;br /&gt;
 1年生のみなさん、4類からも5類からも制御システム工学科に来ることができます。是非来てね！&lt;br /&gt;
@@ -599,9 +599,9 @@ network={
 &lt;br /&gt;
 &lt;br /&gt;
 〈ルールについて〉（東京電機大学のHPより引用）&lt;br /&gt;
-&lt;a  target=&quot;_blank&quot; title=&quot;title&quot; href=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;img  class=&quot;pict&quot; hspace=&quot;5&quot; alt=&quot;theme&quot; border=&quot;0&quot; height=&quot;227&quot; width=&quot;480&quot; src=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  target=&quot;_blank&quot; title=&quot;title&quot; href=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;img  class=&quot;pict&quot; hspace=&quot;5&quot; alt=&quot;theme&quot; border=&quot;0&quot; src=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; title=&quot;field&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; width=&quot;480&quot; height=&quot;348&quot; border=&quot;0&quot; alt=&quot;field&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; title=&quot;field&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; border=&quot;0&quot; alt=&quot;field&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 今年のテーマは「Space Cleaner」です。デブリに見立てたオブジェクトを回収して、運搬するゲームです。&lt;br /&gt;
 &lt;div&gt;ゲームフィールドは、軌道ゾーン、スペースゾーン、地球ゾーンの3つからなります。外側の軌道ゾーンにあるオブジェクトを集め、地球ゾーンに運ぶことで得点できるルールです。軌道ゾーンでオブジェクトを回収するオービットロボットとスペースゾーンから地球ゾーンに運搬するスペースロボットの2台を製作していきます。&lt;/div&gt;&lt;br /&gt;
@@ -610,14 +610,14 @@ network={
 フィールド上の青いゾーンにロボットが触れてしまうと、かなり大きな減点ペナルティがあります。&lt;br /&gt;
 &lt;br /&gt;
 競技時間は予選ラウンドが150秒、決勝トーナメントが180秒です。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; title=&quot;フィールド&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; width=&quot;480&quot; height=&quot;640&quot; border=&quot;0&quot; alt=&quot;フィールド&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; title=&quot;フィールド&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; border=&quot;0&quot; alt=&quot;フィールド&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;&lt;br /&gt;
 東京電機大学のホームページに特設ページがあり、デイリーレポートがあるのでこれを見るとわかりやすいです。&lt;br /&gt;
 URL : &lt;a  href=&quot;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dailyreport.html&quot; target=&quot;_blank&quot;&gt;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dailyreport.html&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;
 僕のチームは以下の通りです。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; title=&quot;チームメンバー&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; width=&quot;480&quot; height=&quot;480&quot; border=&quot;0&quot; alt=&quot;チームメンバー&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; title=&quot;チームメンバー&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; border=&quot;0&quot; alt=&quot;チームメンバー&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;左から&lt;br /&gt;
 機械担当、スペースロボット操縦のタイ人&lt;br /&gt;
 機械担当の中国人&lt;br /&gt;
@@ -629,15 +629,15 @@ URL : &lt;a  href=&quot;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dail
 各チームには、2種類のArduino、サーボモーター、DCモーター、アクリル板、アルミ板などロボットを作るには十分な材料が与えられます。しかも、各チームに1台ずつ3Dプリンタも与えられました。&lt;br /&gt;
 初日には、Arduino講習会や、3DCAD講習会もあり、環境は十分といえます。&lt;br /&gt;
 ただし、言語はすべて英語です。英語です！！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; title=&quot;ロボット作り&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;ロボット作り&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; title=&quot;ロボット作り&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; border=&quot;0&quot; alt=&quot;ロボット作り&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;&lt;br /&gt;
 僕はロボット作りは好きです。&lt;br /&gt;
 しかし、英語は全然できません。&lt;br /&gt;
 チームメイトはみんな英語が話せたので、&lt;br /&gt;
 僕だけ話せない状況でした。&lt;br /&gt;
 僕は絵を描いたり、辞書を駆使したりして必死にコミュニケーションを試みました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  href=&quot;note2.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note2.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;a  href=&quot;note2.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note2.jpg&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 ↑こんな感じです。&lt;br /&gt;
 &lt;br /&gt;
 午前9時から午後6時までワークショップで、そのあとはたまにチームミーティングがあったりしたので、かなり忙しい毎日でした。しかも最後2日は、午後6時までだったのが午後9時30分までに延長され、ずっと作業をしていました。まぁ、ロボコン直前はどこもこんな感じでしょうか。&lt;br /&gt;
@@ -647,20 +647,20 @@ URL : &lt;a  href=&quot;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dail
 6日目の土曜日の午後と、7日目の日曜日はお休みでした。&lt;br /&gt;
 そこで観光を楽しみます。シンガポールの参加者が僕たちを案内してくれました。&lt;br /&gt;
 世界3大がっかり観光名所、マーライオン！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; title=&quot;マーライオンその１&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; width=&quot;480&quot; height=&quot;315&quot; border=&quot;0&quot; alt=&quot;マーライオンその1&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; title=&quot;マーライオンその１&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; border=&quot;0&quot; alt=&quot;マーライオンその1&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;&lt;br /&gt;
 みなさん、知ってますか？&lt;br /&gt;
 シンガポールにはマーライオンが5つあります！！←ここ、がっかりポイント☆&lt;br /&gt;
 &lt;br /&gt;
 そのうち、２つを見てきました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; title=&quot;マーライオンその２&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; width=&quot;480&quot; height=&quot;640&quot; border=&quot;0&quot; alt=&quot;マーライオンその２&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; title=&quot;マーライオンその２&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; border=&quot;0&quot; alt=&quot;マーライオンその２&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;&lt;br /&gt;
 それなりに楽しめました。&lt;br /&gt;
 &lt;br /&gt;
 Day offが終わると、ロボコンへラストスパートです。&lt;br /&gt;
 僕のチームは下の写真のようなロボットを作りました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; title=&quot;僕の班が創ったロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;僕の班が作ったロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; title=&quot;僕の操縦したロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;僕の操縦したロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; title=&quot;僕の班が創ったロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; border=&quot;0&quot; alt=&quot;僕の班が作ったロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; title=&quot;僕の操縦したロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; border=&quot;0&quot; alt=&quot;僕の操縦したロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
 &lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 戦略は単純で、スペースデブリであるボールをオービットロボットがアームで一つずつ拾い、それをスペースロボットが受け取って、地球に入れるだけです。１０チームの中で僕のチームが一番シンプルだったと思います。&lt;br /&gt;
@@ -668,7 +668,7 @@ Day offが終わると、ロボコンへラストスパートです。&lt;br /&g
 本戦の前にはシーディングコンテストという予選リーグがありました。5チームずつ2つのリーグに分かれてリーグ戦をします。各リーグの最下位、つまり１０チームのうち2チームはこの時点で落ちてしまいます。（けっこう厳しい）&lt;br /&gt;
 &lt;br /&gt;
 シーディングコンテストの段階では、多くのチームが安定性を欠いていて、僕らのシンプルな構造のロボットは全勝で単独首位に立つことができました！！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; title=&quot;決勝トーナメント&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; width=&quot;480&quot; height=&quot;360&quot; border=&quot;0&quot; alt=&quot;決勝トーナメント&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; title=&quot;決勝トーナメント&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; border=&quot;0&quot; alt=&quot;決勝トーナメント&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 僕のチーム名は「MEC-JT」です。Morocco Egypt China Japan Thailandの頭文字をとっています。（ハイフンはなんとなくらしい。僕がいない間にいつのまにかチーム名が決まっていた。）&lt;br /&gt;
 &lt;br /&gt;
 本戦は、8チームのトーナメントです。さすがに本戦ではどのチームも安定性が向上しており、簡単には勝てませんでしたが、なんとか決勝まで勝ち残りました！&lt;br /&gt;
@@ -676,9 +676,9 @@ Day offが終わると、ロボコンへラストスパートです。&lt;br /&g
 &lt;br /&gt;
 決勝では、相手の大量得点に敵わず、負けてしまいました。残念です。&lt;br /&gt;
 ということで、準優勝に終わりました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; title=&quot;表彰式&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; width=&quot;480&quot; height=&quot;480&quot; border=&quot;0&quot; alt=&quot;表彰式&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; title=&quot;表彰式&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; border=&quot;0&quot; alt=&quot;表彰式&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; title=&quot;集合写真&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; width=&quot;480&quot; height=&quot;480&quot; border=&quot;0&quot; alt=&quot;集合写真&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; title=&quot;集合写真&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; border=&quot;0&quot; alt=&quot;集合写真&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;
 まとめ&lt;br /&gt;
