@@ -14,6 +14,14 @@
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script language="JavaScript">
+$(document).ready( function () {
+	   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+  </script>
+
 </head>
 
 
@@ -139,7 +147,7 @@
 		<div class="footer-col-wrapper">
 			<div class="footer-col footer-col-1">
 				<ul class="contact-list">
-					<li>Contact to KERI</li>
+					<li>Contact KERI</li>
 					<li>Mail : <a href="mailto:メールサーバー作成中">メールサーバー作成中</a></li>
 				</ul>
 			</div>

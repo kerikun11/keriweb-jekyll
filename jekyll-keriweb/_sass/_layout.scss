@@ -216,6 +216,7 @@
 	font-size: 42px;
 	letter-spacing: -1px;
 	line-height: 1;
+	border-bottom: 3px solid #115599;
 
 	@include media-query($on-laptop) {
 		font-size: 36px;
@@ -258,26 +259,6 @@
 		@include media-query($on-laptop) {
 			font-size: 18px;
 		}
-		::before {
-			content: "";
-			position: absolute;
-			background: #108095 none repeat scroll 0% 0%;
-			top: 0px;
-			left: -5px;
-			height: 12px;
-			width: 12px;
-			transform: rotate(45deg);
-		}
-		::after {
-			content: "";
-			position: absolute;
-			background: #777 none repeat scroll 0% 0%;
-			top: 15px;
-			left: -10px;
-			height: 8px;
-			width: 8px;
-			transform: rotate(15deg);
-		}
 	}
 
 	p {
@@ -296,7 +277,4 @@
 		margin-left:3em;
 	}
 
-	table{
-		border:1px solid #111111;
-	}
 }
