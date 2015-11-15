@@ -5,9 +5,170 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2015 08:25:30 +0900</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2015 08:25:30 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2015 23:29:33 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 23:29:33 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>delayやwhileを使わないI2C液晶表示プログラム</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。&lt;/p&gt;
+
+&lt;p&gt;秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-06795/&quot;&gt;秋月のI2C液晶(AQM0802)&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/2015-11-15-I2C-LCD/AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;ロジック・アナライザで一目瞭然！&lt;/h2&gt;
+
+&lt;p&gt;実際にプログラムが動作している様子をロジック・アナライザで確かめた。&lt;br /&gt;
+上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。&lt;br /&gt;
+※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけので今回は無視して欲しい。&lt;/p&gt;
+
+&lt;p&gt;ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
+&lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot; alt=&quot;old program&quot; title=&quot;ダメな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;良い方（I2C通信をしながらメインループもしっかり動いている。）
+&lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot; alt=&quot;new program&quot; title=&quot;良いな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;プログラム&lt;/h2&gt;
+
+&lt;p&gt;僕は普段からPICを使っているので、PIC18F27J53用のプログラムを書いた。&lt;/p&gt;
+
+&lt;p&gt;ダメな方&lt;br /&gt;
+&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
+良い方&lt;br /&gt;
+&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
+（MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)&lt;/p&gt;
+
+&lt;p&gt;以下はプログラムの要点だけ抜粋&lt;br /&gt;
+mainループに&lt;code&gt;ST7032_task();&lt;/code&gt;があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数う内には&lt;code&gt;ST7032_ISR();&lt;/code&gt;があり、送信完了割り込みなどで任意のフラグを上げる。&lt;code&gt;ST7032_task();&lt;/code&gt;ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。&lt;/p&gt;
+
+&lt;p&gt;main.c&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;My_ST7032.h&quot;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interrupt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Hardware_initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// いろいろ初期設定する
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ST7032_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;ST7032_cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_puts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PIC18F27J53&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// main loop
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;ST7032_task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kerikun11/MPLABXProjects/blob/master/My_library/My_ST7032.h&quot;&gt;My_ST7032.h&lt;/a&gt;←リンク&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_STATE&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_IDOLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_START&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_SEND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_STOP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ST7032_WAIT&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_state_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kerikun11/MPLABXProjects/blob/master/My_library/My_ST7032.c&quot;&gt;My_ST7032.c&lt;/a&gt;←リンク&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;My_ST7032.h&quot;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;st7032_state_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ringbuf_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ST7032_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ringbuf_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ST7032_ADDRESS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;W_0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ringbuf_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b11000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// control byte
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ringbuf_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// data byte 
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ringbuf_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// stop bit
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ringbuf_put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WAIT_26US&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// wait
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ST7032_ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIE1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSP1IE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSP1IF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSP1IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;st7032_flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIE2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BCL1IE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BCL1IF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;PIR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BCL1IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ST7032_task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSP1CON2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSP1STAT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;// SSP is busy
+&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_state_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_IDOLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_IDOLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ringbuf_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_START&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_START&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;st7032_flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;SSP1CON2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_SEND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_SEND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st7032_flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;c1&quot;&gt;// no SSPIF
+&lt;/span&gt;				&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ringbuf_pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;st7032_flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;SSP1BUF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ringbuf_pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lcd_tx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WAIT_0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+						&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+						&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+					&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WAIT_26US&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+						&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+						&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+					&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WAIT_1MS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+						&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+						&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+					&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WAIT_40MS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+						&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+						&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+					&lt;span class=&quot;nl&quot;&gt;default:&lt;/span&gt;
+						&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+						&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_STOP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_STOP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;SSP1CON2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_WAIT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_WAIT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st7032_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ST7032_IDOLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sun, 15 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-i2c-lcd/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>CPUの創り方</title>
@@ -909,136 +1070,6 @@ network={
         
         
         <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>シンガポールでロボコンしてきました</title>
-        <description>みなさんこんにちは！&lt;br /&gt;
-椋けり(@Ryokeri14)です。&lt;br /&gt;
-夏休みになりました。ロ技研のみなさんは進捗めまぐるしいことでしょう。&lt;br /&gt;
-&lt;br /&gt;
-今回の話題は僕が参加してきたIDCロボコンについてです。&lt;br /&gt;
-&lt;br /&gt;
-東工大の制御システム工学科2年には「創造設計第一」という授業があり、授業の中で個人戦のロボコンをします。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; title=&quot;創造設計第一のロボコン&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/creative_design.jpg&quot; border=&quot;0&quot; alt=&quot;創造設計第一のロボコン&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-そこで優秀な成績を収めると、世界大会のIDCロボコンに参加することができます。&lt;br /&gt;
-1年生のみなさん、4類からも5類からも制御システム工学科に来ることができます。是非来てね！&lt;br /&gt;
-&lt;br /&gt;
-ほぼ毎年、ロボット技術研究会の中にIDCロボコン参加者が出ます。今年は僕が行って参りました！&lt;br /&gt;
-&lt;br /&gt;
-今年のIDCロボコンはシンガポールで行われました。ちなみに去年はモロッコ、一昨年はブラジルでした。来年はタイで行われます。&lt;br /&gt;
-&lt;br /&gt;
-日本からは東工大4名、東京電機大学6名の計10名が参加しました。 東京電機大学の選考方式は、東工大とは違い、英語のプレゼンなどが含まれているそうです。（もし僕が電機大生だったら参加できなかっただろう...）&lt;br /&gt;
-&lt;br /&gt;
-参加国は、アメリカ、モロッコ、日本、中国、シンガポール、エジプト、タイ、韓国です。&lt;br /&gt;
-人数は合計54人で、10チームに分かれて、ロボットを作り、ロボコンをします。&lt;br /&gt;
-一つのチームには、基本的に同じ国の人はいないので、コミュニケーションをとるのがとても大変です。&lt;br /&gt;
-&lt;br /&gt;
-大会の開催期間は12日間です。最終日にロボコンがあります。&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-〈ルールについて〉（東京電機大学のHPより引用）&lt;br /&gt;
-&lt;a  target=&quot;_blank&quot; title=&quot;title&quot; href=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;img  class=&quot;pict&quot; hspace=&quot;5&quot; alt=&quot;theme&quot; border=&quot;0&quot; src=&quot;/images/2015-08-12-IDC-robocon/theme.jpg&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; title=&quot;field&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/field.jpg&quot; border=&quot;0&quot; alt=&quot;field&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-今年のテーマは「Space Cleaner」です。デブリに見立てたオブジェクトを回収して、運搬するゲームです。&lt;br /&gt;
-&lt;div&gt;ゲームフィールドは、軌道ゾーン、スペースゾーン、地球ゾーンの3つからなります。外側の軌道ゾーンにあるオブジェクトを集め、地球ゾーンに運ぶことで得点できるルールです。軌道ゾーンでオブジェクトを回収するオービットロボットとスペースゾーンから地球ゾーンに運搬するスペースロボットの2台を製作していきます。&lt;/div&gt;&lt;br /&gt;
-&lt;div&gt;軌道ゾーンには回収の難易度に応じて得点が異なる2種類のオブジェクト（白球と黄色球）があり、それ以外に総得点が2倍になるボーナスオブジェクト（オレンジ球）があります。&lt;br /&gt;
-&lt;br /&gt;
-フィールド上の青いゾーンにロボットが触れてしまうと、かなり大きな減点ペナルティがあります。&lt;br /&gt;
-&lt;br /&gt;
-競技時間は予選ラウンドが150秒、決勝トーナメントが180秒です。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; title=&quot;フィールド&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/real_field.jpg&quot; border=&quot;0&quot; alt=&quot;フィールド&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-東京電機大学のホームページに特設ページがあり、デイリーレポートがあるのでこれを見るとわかりやすいです。&lt;br /&gt;
-URL : &lt;a  href=&quot;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dailyreport.html&quot; target=&quot;_blank&quot;&gt;http://www.fr.dendai.ac.jp/education/idc2015/idc2015dailyreport.html&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-僕のチームは以下の通りです。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; title=&quot;チームメンバー&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/member.jpg&quot; border=&quot;0&quot; alt=&quot;チームメンバー&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;左から&lt;br /&gt;
-機械担当、スペースロボット操縦のタイ人&lt;br /&gt;
-機械担当の中国人&lt;br /&gt;
-制御担当、チームリーダーのモロッコ人&lt;br /&gt;
-機械担当のエジプト人&lt;br /&gt;
-制御担当、オービットロボット操縦の僕、日本人&lt;br /&gt;
-です。&lt;br /&gt;
-&lt;br /&gt;
-各チームには、2種類のArduino、サーボモーター、DCモーター、アクリル板、アルミ板などロボットを作るには十分な材料が与えられます。しかも、各チームに1台ずつ3Dプリンタも与えられました。&lt;br /&gt;
-初日には、Arduino講習会や、3DCAD講習会もあり、環境は十分といえます。&lt;br /&gt;
-ただし、言語はすべて英語です。英語です！！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; title=&quot;ロボット作り&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/ardin.jpg&quot; border=&quot;0&quot; alt=&quot;ロボット作り&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-僕はロボット作りは好きです。&lt;br /&gt;
-しかし、英語は全然できません。&lt;br /&gt;
-チームメイトはみんな英語が話せたので、&lt;br /&gt;
-僕だけ話せない状況でした。&lt;br /&gt;
-僕は絵を描いたり、辞書を駆使したりして必死にコミュニケーションを試みました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note1.jpg&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;a  href=&quot;note2.jpg&quot; title=&quot;ホワイトボード&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/note2.jpg&quot; border=&quot;0&quot; alt=&quot;ホワイトボード&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-↑こんな感じです。&lt;br /&gt;
-&lt;br /&gt;
-午前9時から午後6時までワークショップで、そのあとはたまにチームミーティングがあったりしたので、かなり忙しい毎日でした。しかも最後2日は、午後6時までだったのが午後9時30分までに延長され、ずっと作業をしていました。まぁ、ロボコン直前はどこもこんな感じでしょうか。&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-6日目の土曜日の午後と、7日目の日曜日はお休みでした。&lt;br /&gt;
-そこで観光を楽しみます。シンガポールの参加者が僕たちを案内してくれました。&lt;br /&gt;
-世界3大がっかり観光名所、マーライオン！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; title=&quot;マーライオンその１&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion1.jpg&quot; border=&quot;0&quot; alt=&quot;マーライオンその1&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-みなさん、知ってますか？&lt;br /&gt;
-シンガポールにはマーライオンが5つあります！！←ここ、がっかりポイント☆&lt;br /&gt;
-&lt;br /&gt;
-そのうち、２つを見てきました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; title=&quot;マーライオンその２&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/marlion2.jpg&quot; border=&quot;0&quot; alt=&quot;マーライオンその２&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-それなりに楽しめました。&lt;br /&gt;
-&lt;br /&gt;
-Day offが終わると、ロボコンへラストスパートです。&lt;br /&gt;
-僕のチームは下の写真のようなロボットを作りました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; title=&quot;僕の班が創ったロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2robots.jpg&quot; border=&quot;0&quot; alt=&quot;僕の班が作ったロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; title=&quot;僕の操縦したロボット&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/orbit_robot.jpg&quot; border=&quot;0&quot; alt=&quot;僕の操縦したロボット&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;br /&gt;
-&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-戦略は単純で、スペースデブリであるボールをオービットロボットがアームで一つずつ拾い、それをスペースロボットが受け取って、地球に入れるだけです。１０チームの中で僕のチームが一番シンプルだったと思います。&lt;br /&gt;
-&lt;br /&gt;
-本戦の前にはシーディングコンテストという予選リーグがありました。5チームずつ2つのリーグに分かれてリーグ戦をします。各リーグの最下位、つまり１０チームのうち2チームはこの時点で落ちてしまいます。（けっこう厳しい）&lt;br /&gt;
-&lt;br /&gt;
-シーディングコンテストの段階では、多くのチームが安定性を欠いていて、僕らのシンプルな構造のロボットは全勝で単独首位に立つことができました！！&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; title=&quot;決勝トーナメント&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/tournament.jpg&quot; border=&quot;0&quot; alt=&quot;決勝トーナメント&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-僕のチーム名は「MEC-JT」です。Morocco Egypt China Japan Thailandの頭文字をとっています。（ハイフンはなんとなくらしい。僕がいない間にいつのまにかチーム名が決まっていた。）&lt;br /&gt;
-&lt;br /&gt;
-本戦は、8チームのトーナメントです。さすがに本戦ではどのチームも安定性が向上しており、簡単には勝てませんでしたが、なんとか決勝まで勝ち残りました！&lt;br /&gt;
-創造設計第一は50人のトーナメントだったのでそれに比べればかなり短いトーナメントでした。&lt;br /&gt;
-&lt;br /&gt;
-決勝では、相手の大量得点に敵わず、負けてしまいました。残念です。&lt;br /&gt;
-ということで、準優勝に終わりました。&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; title=&quot;表彰式&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/2nd_place.jpg&quot; border=&quot;0&quot; alt=&quot;表彰式&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;a  href=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; title=&quot;集合写真&quot; target=&quot;_blank&quot;&gt;&lt;img  src=&quot;/images/2015-08-12-IDC-robocon/end.jpg&quot; border=&quot;0&quot; alt=&quot;集合写真&quot; hspace=&quot;5&quot; class=&quot;pict&quot;&gt;&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-まとめ&lt;br /&gt;
-&lt;br /&gt;
-このロボコンで感じたことは、英語力のなさです。&lt;br /&gt;
-コミュニケーションは、まぁ何とかなります。相手が聞こうとしてくれていれば伝わります。しかし、コミュニケーション以外にも英語はあります。ルール説明や工作機械の説明など、 理解しなければならないこと、理解していて当然のことも、英語がわからないせいで全く理解できませんでした。それにより有意義な活動ができないのはもったいない！ということで、英語を勉強しましょう...&lt;br /&gt;
-&lt;br /&gt;
-留学でも旅行でもなく、ロボコンをしにシンガポールに行ってきました。異国混成チームでロボットを作る。このような機会はほとんどないと思います。作業を進めるのはそう簡単ではありませんでしたが、チームメイトみんなで話し合い、協力して、苦労して、ロボットを作ることができました。ロボコン本番で点を獲得したときの感動は今でも忘れられません。すばらしいイベントに参加できて、感謝の気持ちでいっぱいです。&lt;/div&gt;
-
-	&lt;/body&gt;
-&lt;/html&gt;
-	
-</description>
-        <pubDate>Wed, 12 Aug 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
-        
-        
-        <category>blog</category>
         
       </item>
     
