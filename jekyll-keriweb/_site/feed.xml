@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Nov 2015 23:29:33 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 23:29:33 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2015 23:35:11 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 23:35:11 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -22,14 +22,15 @@
 &lt;h2 id=&quot;section-1&quot;&gt;ロジック・アナライザで一目瞭然！&lt;/h2&gt;
 
 &lt;p&gt;実際にプログラムが動作している様子をロジック・アナライザで確かめた。&lt;br /&gt;
-上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。&lt;br /&gt;
-※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけので今回は無視して欲しい。&lt;/p&gt;
+上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。&lt;/p&gt;
 
 &lt;p&gt;ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
 &lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot; alt=&quot;old program&quot; title=&quot;ダメな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;良い方（I2C通信をしながらメインループもしっかり動いている。）
 &lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot; alt=&quot;new program&quot; title=&quot;良いな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;プログラム&lt;/h2&gt;
 
