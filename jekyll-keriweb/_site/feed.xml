@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Nov 2015 23:35:11 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 23:35:11 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2015 23:38:13 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2015 23:38:13 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -39,7 +39,7 @@
 &lt;p&gt;ダメな方&lt;br /&gt;
 &lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
 良い方&lt;br /&gt;
-&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_new01.zip&quot;&gt;PIC18F27J53-I2C-LCD-new.zip&lt;/a&gt;&lt;br /&gt;
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)&lt;/p&gt;
 
 &lt;p&gt;以下はプログラムの要点だけ抜粋&lt;br /&gt;
