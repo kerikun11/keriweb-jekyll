@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Nov 2015 23:38:13 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Nov 2015 23:38:13 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Nov 2015 09:46:46 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Nov 2015 09:46:46 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -43,9 +43,10 @@
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)&lt;/p&gt;
 
 &lt;p&gt;以下はプログラムの要点だけ抜粋&lt;br /&gt;
-mainループに&lt;code&gt;ST7032_task();&lt;/code&gt;があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数う内には&lt;code&gt;ST7032_ISR();&lt;/code&gt;があり、送信完了割り込みなどで任意のフラグを上げる。&lt;code&gt;ST7032_task();&lt;/code&gt;ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。&lt;/p&gt;
+mainループに&lt;code&gt;ST7032_task();&lt;/code&gt;があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数内には&lt;code&gt;ST7032_ISR();&lt;/code&gt;があり、送信完了割り込みなどで任意のフラグを上げる。&lt;code&gt;ST7032_task();&lt;/code&gt;ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。&lt;/p&gt;
 
-&lt;p&gt;main.c&lt;/p&gt;
+&lt;p&gt;使い方&lt;br /&gt;
+main.c&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;My_ST7032.h&quot;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interrupt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
