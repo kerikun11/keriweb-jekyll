@@ -5,9 +5,49 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Nov 2015 09:46:46 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Nov 2015 09:46:46 +0900</lastBuildDate>
+    <pubDate>Wed, 18 Nov 2015 01:02:11 +0900</pubDate>
+    <lastBuildDate>Wed, 18 Nov 2015 01:02:11 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>ファイアウォールの設定</title>
+        <description>&lt;pre&gt;&lt;code&gt;$ sudo apt-get install ufw
+
+$ sudo ufw status
+Status: inactive
+
+$ sudo ufw enable
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? 
+y
+
+$ sudo ufw disenable
+$ sudo ufw reset
+Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation (y|n)?
+y
+
+$ sudo ufw disenable
+$ sudo ufw default deny
+$ sudo ufw allow 80
+$ sudo ufw allow 22
+$ sudo ufw enable
+
+$ sudo ufw status
+Status: active
+ 
+ To                         Action      From
+ --                         ------      ----
+ 22		                    ALLOW       Anywhere
+ 80                         ALLOW       Anywhere
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Tue, 17 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>delayやwhileを使わないI2C液晶表示プログラム</title>
@@ -927,148 +967,6 @@ $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim&
         <pubDate>Wed, 07 Oct 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-10-07-vim/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-07-vim/</guid>
-        
-        
-        <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>Raspberry Pi 2 Type Bでサーバー作り</title>
-        <description>&lt;h2&gt;ラズパイの用意&lt;/h2&gt;
-&lt;article&gt;
-&lt;ol&gt;
-&lt;li&gt;ラズパイ用のOS「NOOBS」を&lt;a href=&quot;http://raspberrypi.org/downloads/&quot; target=&quot;_blank&quot;&gt;raspberrypi.org&lt;/a&gt;からDLして解凍する。&lt;/li&gt;
-&lt;li&gt;microSDカードをFAT32でフォーマットする。&lt;/li&gt;
-&lt;li&gt;解凍したファイルをSDカードにコピーする。&lt;/li&gt;
-&lt;li&gt;ラズパイにSDカード、キーボード、LANケーブル（またはWiFiドングル）をつないで電源を入れる。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;無線LANの接続&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　WiFiドングルをラズパイに差す。&lt;/p&gt;
-&lt;pre&gt;$ifconfig&lt;/pre&gt;
-&lt;p&gt;このコマンドで、インターフェースを確認する。&lt;/p&gt;
-&lt;pre&gt;$iwconfig&lt;/pre&gt;
-&lt;p&gt;このコマンドでWiFi情報を確認できる。&lt;/p&gt;
-&lt;p&gt;　次のファイルを編集して、ハードウェアインターフェースの設定をする。&lt;/p&gt;
-&lt;pre&gt;
-$sudo vim /etc/network/interfaces
-
-auto lo
-iface lo inet loopback
-
-auto eth0
-allow-hotplug eth0
-iface eth0 inet static
-address 192.168.11.2	←your IP
-netmask 255.255.255.0	←your subnetmask
-gateway 192.168.11.1	←your router IP
-dns-nameserver 8.8.8.8 10.255.0.1
-
-auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet static
-address 192.168.11.2	←your IP
-netmask 255.255.255.0	←your subnetmask
-gateway 192.168.11.1	←your router IP
-dns-nameserver 8.8.8.8 10.255.0.1
-
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-
-auto wlan1
-allow-hotplug wlan1
-iface wlan0 inet manual
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-&lt;/pre&gt;
-&lt;p&gt;次のコマンド&lt;/p&gt;
-&lt;pre&gt;$wpa_passphrase &quot;your SSID&quot; &quot;Password&quot;&lt;/pre&gt;
-&lt;p&gt;で表示された内容をもとに次のファイルの下に追加で記述する。&lt;/p&gt;
-&lt;pre&gt;
-$sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
-
-~~~
-network={
-	ssid=&quot;your SSID&quot;
-#psk=&quot;Password&quot;
-		psk=&quot;.......&quot;
-		key_mgmt=WPA-PSK
-		proto=WPA WPA2
-		pairwise=CCMP TKIP
-		group=CCMP TKIP WEP104 WEP40
-}						&lt;/pre&gt;
-&lt;p&gt;　これでラズパイを再起動すればつながるはず。&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;Webサーバー作り&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　まずは、ラズパイのローカルIPを固定にする。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ラズパイ上でラズパイ自身のローカルIPアドレスを確認しておく。&lt;/li&gt;
-&lt;pre&gt;$ip addr&lt;/pre&gt;
-&lt;li&gt;家のルーターの管理設定にログインして、ラズパイのIPの設定を、「自動割り当て」から「手動割り当て」に変更する。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;　次に、Webサーバーアプリの「Apache2」をインストールする。&lt;/p&gt;
-&lt;pre&gt;$sudo apt-get install apache2&lt;/pre&gt;
-&lt;p&gt;　これで、とりあえずはローカルでサーバーとして使うことができる。ローカルネットワークの端末のブラウザでラズパイのローカルIPアドレスを入力すれば、アクセスできる。&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;サーバーを外部へ公開する&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　今の状態では、LANからしかサーバーにアクセスできない。これを外のネットワークからでもアクセスできるようにする。&lt;/p&gt;
-&lt;p&gt;　まず、家のルーターから外への接続用のポートを開放する。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ルーターの管理設定に入る。&lt;/li&gt;
-&lt;li&gt;ルータ設定のポート変換を選ぶ&lt;/li&gt;
-&lt;li&gt;ポート変換の新規追加で、LAN側IPアドレスをラズパイのローカルIPアドレスに、LAN側ポートを80にする。&lt;/li&gt;
-&lt;li&gt;同じように22ポートも開放する。（80はHTTP用、22はSSH用である）&lt;/li&gt;
-&lt;li&gt;ラズパイをDMZ(非武装地帯)に置くことですべてのポートを開放することができるが、ファイアウォールなどを適切に設定して、使わないポートをふさがなくてはならない。グローバルからローカルに入るとき、ルーターのファイアウォールによって守られているがDMZはその外にある。したがって、ラズパイは破壊されやすくなるが、たとえラズパイが破壊されてもローカルまで破壊されることは少なくなる。&lt;/li&gt;
-&lt;li&gt;ポートの開放状況は以下のコマンドで確認できる。&lt;pre&gt;$nmap&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;　次に、&lt;a href=&quot;http://www.ugtop.com/spill.shtml&quot; target=&quot;_blank&quot;&gt;確認くん&lt;/a&gt;により自分の家のグローバルIPアドレスを確認する。家のネットワークからアクセスしましょう。&lt;/p&gt;
-&lt;p&gt;　これで、適当なブラウザから、このグローバルIPアドレスにアクセスすれば、どこからでもラズパイのWebサーバーにアクセスできる。（ドメインはまだ取得していないので、IPアドレスを直打ちして接続している）&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;独自ドメインを取得する&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　ポートの開放により外部からサーバーにアクセスできるようになった。しかし、今のままではIPアドレスにアクセスなのでいまいち。そこで次は独自ドメインを取得して自分専用のURLをGETする。&lt;/p&gt;
-&lt;p&gt;　ドメイン取得をできるサイトはいくつかあるが、ネット上で評価のよかった「&lt;a href=&quot;http://www.muumuudomain.com&quot; target=&quot;_blank&quot;&gt;ムームードメイン&lt;/a&gt;」で取得した。[.top]一番安くて、なんと77円＋税/年！とても安い。&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;DNSサーバーとは&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　独自ドメインを取得しましたが、取得したドメインはまだラズパイのIPアドレス（家のグローバルIPアドレス）に紐ついていません。それを紐つけるのがDNSサーバーです。DNS情報はあまりにも多いので、一つのDNSサーバーで管理しているわけではなく、ネット上に無数に散らばっています。したがってあるDNSサーバーに登録すれば、いろいろなDNSサーバーを経由して目的のIPアドレスを知ることができます。DNS情報のことをレコードと言い、以下に分類されます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Aレコード：ドメイン名からIPアドレスを返す（正引き）&lt;/li&gt;
-&lt;li&gt;PTRレコード：IPアドレスからドメイン名を返す（逆引き）&lt;/li&gt;
-&lt;li&gt;CNAMEレコード：ドメイン名から別のドメイン名を返す&lt;/li&gt;
-&lt;li&gt;NSレコード：「再起問い合わせ」や「反復問い合わせ」の際に、「ここへ問い合わせよ」と教えてくれる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;MyDNS.jpの登録&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　普通、グローバルIPアドレスは動的に割り当てられるので、それとホスト名（ドメイン名）を動的に登録・管理するのがDDNSです。無料DDNSのひとつに&lt;a href=&quot;http://www.mydns.jp&quot; target=&quot;_blank&quot;&gt;MyDNS.jp&lt;/a&gt;があるので、今回はそれを使います。まずは会員登録をします。そして「IP ADDR DIRECT」のところに家のグローバルIPアドレスを記載します。次に、「DOMAIN INFO」のところに自分の取得したホスト名（独自ドメイン）を記載します。欄が多いですが、それ以外は何も書かなくて大丈夫です。&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;DNSの浸透時間&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　ここまでの作業をすれば、取得した独自ドメインをブラウザのURLに書くだけで自分のサーバーにつなことができます。しかし、すぐにつなぐことはできません。先にも書いたようにDNSサーバーはネット上に無数に散らばっていますので、最初にアクセスしたDNSが自分のドメインとIPの関連付けを持っているとは限りません。DNSからDNSへと広がっていき、次第に世界中からアクセスできるようになります。&lt;/p&gt;
-&lt;/article&gt;
-
-&lt;h2&gt;動的IPの自動更新&lt;/h2&gt;
-&lt;article&gt;
-&lt;p&gt;　ムームードメインで、独自ドメインを取得した。MyDNS.jpにも登録した。次にやることは、動的IPアドレスの自動更新である。定期的にグローバルIPの変更をチェックして&lt;a href=&quot;http://www.mydns.jp&quot; target=&quot;_blank&quot;&gt;MyDNS.jp&lt;/a&gt;に通知をすればよい。それには以下のコマンドを実行する。&lt;/p&gt;
-&lt;pre&gt;$ wget -O- &#39;http://mydnsXXXXXX:PASSWORD@www.mydns.jp/login.html&#39;&lt;/pre&gt;
-&lt;p&gt;これをcronなどを使って定期的に実行すればよい。&lt;/p&gt;
-&lt;/article&gt;
-
-
-</description>
-        <pubDate>Mon, 05 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-05-raspi-server/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-05-raspi-server/</guid>
         
         
         <category>memo</category>
