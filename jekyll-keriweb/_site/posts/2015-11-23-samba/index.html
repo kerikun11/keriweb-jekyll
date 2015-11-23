@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Production - KERI's Lab</title>
-  <meta name="description" content="KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。">
+  <title>Raspberry Pi で NAS 作り - KERI's Lab</title>
+  <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kerikeri.top/production/">
+  <link rel="canonical" href="http://kerikeri.top/posts/2015-11-23-samba/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
@@ -78,56 +78,150 @@ $(document).ready( function () {
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="posts">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-	<h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Raspberry Pi で NAS 作り</h1>
+    <p class="post-meta"><time datetime="2015-11-23T00:00:00+09:00" itemprop="datePublished">Nov 23, 2015</time></p>
+  </header>
 
-	<ul class="post-list">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<li>
-			<span class="post-meta">2015年10月09日</span>
+ <div class="post-content" itemprop="articleBody">
+    <h2 id="section">概要</h2>
 
-			<h2>
-				<a class="post-link" href="/posts/2015-10-09-charge-station-6/">Charge Station</a>
-			</h2>
-		</li>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</ul>
+<p>NASがほしい！<br />
+じゃあ作ろう。</p>
 
-</div>
+<p>スペック<br />
+サーバ：Raspberrypi 2 Type B<br />
+HDD：Western Digital 2TB 3.5 inch<br />
+転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）</p>
 
+<h2 id="samba">Sambaをインストール</h2>
+
+<pre><code>$ sudo apt-get install samba
+</code></pre>
+
+<h2 id="hdd">HDDを設定する</h2>
+
+<h3 id="hdd-1">HDDをラズパイに繋ぐ。</h3>
+<p>ポータブルHDDだと電力が足りなくなるかもしれないので、3.5inchのHDDを使用した。</p>
+
+<h3 id="hdd-2">HDDをフォーマット＆マウント</h3>
+
+<p>HDDをラズパイに繋ぐ</p>
+
+<pre><code>$ lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda 		  8:0    0  1.8T  0 disk 
+└─sda1		  8:1    0  1.8T  0 part 
+mmcblk0		179:0    0 58.2G  0 disk 
+├─mmcblk0p1	179:1    0    1G  0 part 
+├─mmcblk0p2	179:2    0    1K  0 part 
+├─mmcblk0p3	179:3    0   32M  0 part 
+├─mmcblk0p5	179:5    0   60M  0 part /boot
+└─mmcblk0p6	179:6    0 57.1G  0 part /
+</code></pre>
+
+<p>HDDが<code>/dev/sda</code>につながれていることがわかる。<br />
+今までのパーティションを消して、新たに作る。</p>
+
+<pre><code>$ sudo fdisk /dev/sda
+Command (m for help): d
+Command (m for help): n
+Enter を 連打
+Command (m for help): w
+</code></pre>
+
+<p>HDDをフォーマット</p>
+
+<pre><code>$ sudo mkfs.ext4 /dev/sda1
+</code></pre>
+
+<p>フォーマットが完了したらマウント<br />
+毎回同じ所にマウントされるように設定する。</p>
+
+<pre><code>$ sudo mkdir /media/hdd-2tb
+$ sudo blkid /dev/sda1
+/dev/sda1: UUID="21600e41-2f5a-4954-8575-5e89f0e11560" TYPE="ext4" PARTUUID="983fd59f-2b2b-41a4-b409-acac2fa62f5c" 
+</code></pre>
+
+<p>ここで表示されるUUIDをコピーしておく。</p>
+
+<pre><code>$ sudo vim /etc/fstab
+</code></pre>
+
+<p>ここの最下部に以下を追記(UUIDはさっきコピーしたもの)</p>
+
+<pre><code>UUID=*************	/media/hdd-2tb	ext4	defaults	0	0
+</code></pre>
+
+<p>ラズパイを再起動<br />
+これでしっかりマウントされているはず。</p>
+
+<pre><code>$ lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda 		  8:0    0  1.8T  0 disk 
+└─sda1		  8:1    0  1.8T  0 part /hdd-2tb
+mmcblk0		179:0    0 58.2G  0 disk 
+├─mmcblk0p1	179:1    0    1G  0 part 
+├─mmcblk0p2	179:2    0    1K  0 part 
+├─mmcblk0p3	179:3    0   32M  0 part 
+├─mmcblk0p5	179:5    0   60M  0 part /boot
+└─mmcblk0p6	179:6    0 57.1G  0 part /
+</code></pre>
+
+<p>共有フォルダの作成と所有権の変更</p>
+
+<pre><code>$ cd /media/hdd-2tb
+$ sudo mkdir share
+$ sudo chown *myuser* share
+$ sudo chgrp *myuser* share
+</code></pre>
+
+<h2 id="samba-1">Sambaの設定</h2>
+
+<pre><code>$ sudo vim /etc/samba/smb.conf
+</code></pre>
+
+<p>ここにの最下部に以下を追記</p>
+
+<pre><code>[share]
+   path = /media/hdd-2tb
+   read only = no
+   browsable = yes
+   guest ok = yes
+   force user = kerikun11
+</code></pre>
+
+<p>ファイアウォールを設定している場合はSamba用にポートを開放</p>
+
+<pre><code>$ sudo ufw allow 137/udp
+$ sudo ufw allow 138/udp
+$ sudo ufw allow 139/tcp
+$ sudo ufw allow 445/tcp
+
+$ sudo service ufw restart
+</code></pre>
+
+<p>Sambaを起動</p>
+
+<pre><code>$ sudo service samba-ad-bc start
+</code></pre>
+
+<p>これでつながるはず。</p>
+
+<h2 id="windows">Windowsからアクセス</h2>
+
+<ol>
+  <li>エクスプローラーの左側のナビゲーションウィンドウのネットワークを開く。</li>
+  <li>RASPBERRYPIがあるのでそれを開く。</li>
+  <li>shareというフォルダを開けたら完成！</li>
+  <li>shareというフォルダを右クリックで「ネットワークドライブの割り当て」とすると、マイコンピュータにあたかもHDDが繋がれているかのように表示されて便利に使える。</li>
+</ol>
+
+  </div>
+
+</article>
 
       </div>
     </div>
