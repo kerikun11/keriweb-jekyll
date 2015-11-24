@@ -13,12 +13,27 @@ layout: default
 		<a href="{% post_url 2014-09-14-solar-system %}"><img src="images/home-gallery/solar_panel.jpg" title="100Wソーラーパネル" alt="100Wソーラーパネル"></a>
 	</div>
 
+	<h1 class="page-heading">Pick Up</h1>
+
+	<ul class="post-list">
+		{% for post in site.posts %}
+		{% if post.title == "CPUの創り方" or post.title == "100W級ソーラーシステムの自作" or post.title == "Charge Station" %}
+		<li>
+			<span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
+			<h2>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</h2>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+
 	<h1 class="page-heading">All Posts</h1>
 
 	<ul class="post-list">
 		{% for post in site.posts %}
 		<li>
-			<span class="post-meta">{{ post.date | date: "%Y.%m.%d" }}</span>
+			<span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
 
 			<h2>
 				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

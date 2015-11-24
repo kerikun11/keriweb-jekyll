@@ -270,7 +270,7 @@ pre {
   font-size: 20px; }
 
 .post-list {
-  margin-left: 0;
+  margin-left: 1em;
   list-style: none; }
   .post-list > li {
     margin-bottom: 30px; }

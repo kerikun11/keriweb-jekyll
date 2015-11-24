@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Nov 2015 23:57:12 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Nov 2015 23:57:12 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Nov 2015 12:14:29 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2015 12:14:29 +0900</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -147,6 +147,14 @@ $ sudo service ufw restart
         <pubDate>Mon, 23 Nov 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-11-23-samba/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-23-samba/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>ラズパイ</category>
+        
+        <category>サーバー</category>
+        
+        <category>Samba</category>
         
         
         <category>memo</category>
