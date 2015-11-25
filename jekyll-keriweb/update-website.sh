@@ -1,6 +1,6 @@
 #!/bin/sh
-tmpdir=/home/kerikun11/keriweb
-repo=git://github.com/kerikun11/keriweb.git
+tmpdir=/home/kerikun11/Downloads/keriweb
+repo=https://github.com/kerikun11/keriweb.git
 rsyncfrom=./jekyll-keriweb/_site/
 rsyncto=/var/keriweb
 rsync='rsync -vrtl --delete'
