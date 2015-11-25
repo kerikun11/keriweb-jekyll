@@ -1,17 +1,30 @@
-#!/bin/bash
-set -eu
+#!/bin/sh
+tmpdir=/home/kerikun11/keriweb
+repo=git://github.com/kerikun11/keriweb.git
+rsyncfrom=./jekyll-keriweb/_site/
+rsyncto=/var/keriweb
+rsync='rsync -vrtl --delete'
 
-GIT_LOCATION=/home/kerikun11/keriweb_sync
-REPO=git@github.com:kerikun11/keriweb.git
-WWW_LOCATION=/var/keriweb
-BUNDLE_GEMFILE=$GIT_LOCATION/Gemfile
+if [ -d "$tmpdir" ];then
+	echo "found keriweb directory"
+	cd "$tmpdir"
+	if git pull; then
+		$rsync "$rsyncfrom" "$rsyncto"
+		echo "end"
+		exit 0
+	fi
+fi
 
-# update_repo
-[ -d $GIT_LOCATION ] || mkdir -p $GIT_LOCATION
-[ -d $GIT_LOCATION/.git ] || git clone $REPO $GIT_LOCATION
-cd $GIT_LOCATION && git pull origin master
+dirname=`dirname "$tmpdir"`
+basename=`basename "$tmpdir"`
 
-# build and sync
-[ -d ./.bundle ] || bundle install --path vendor
-bundle exec rake build
-rsync -a --delete $GIT_LOCATION/_site/ $WWW_LOCATION
+mkdir -p "$dirname"
+cd "$dirname"
+rm -rf "$basename"
+
+if git clone "$repo" "$basename"; then
+	echo "clone keriweb"
+	cd "$basename"
+	$rsync "$rsyncfrom" "$rsyncto"
+fi
+
