@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Dec 2015 07:25:33 +0900</pubDate>
-    <lastBuildDate>Sat, 05 Dec 2015 07:25:33 +0900</lastBuildDate>
+    <pubDate>Sat, 05 Dec 2015 23:53:00 +0900</pubDate>
+    <lastBuildDate>Sat, 05 Dec 2015 23:53:00 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -500,8 +500,8 @@ main.c&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 15 Nov 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-15-I2C-LCD/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-I2C-LCD/</guid>
+        <link>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-i2c-lcd/</guid>
         
         
         <category>memo</category>
@@ -571,8 +571,8 @@ main.c&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_back.jpg&quot; alt=&quot;TD4 裏面&quot; title=&quot;TD4 裏面&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 04 Nov 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-04-create-CPU/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-CPU/</guid>
+        <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
         
         
         <category>blog</category>
