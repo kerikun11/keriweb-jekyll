@@ -80,13 +80,14 @@ $(document).ready( function () {
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">delayやwhileを使わないI2C液晶表示プログラム</h1>
-    <p class="post-meta"><time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">Nov 15, 2015</time></p>
-  </header>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">delayやwhileを使わないI2C液晶表示プログラム</h1>
+		<p class="post-meta"><time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">2015年11月15日</time></p>
+	</header>
 
- <div class="post-content" itemprop="articleBody">
-    <h2 id="section">概要</h2>
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="section">概要</h2>
 
 <p>秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。</p>
 
@@ -238,9 +239,33 @@ main.c</p>
 <span class="p">}</span></code></pre></figure>
 
 
-  </div>
+	</div>
 
 </article>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
       </div>
     </div>
@@ -255,7 +280,7 @@ main.c</p>
 			<div class="footer-col footer-col-1">
 				<ul class="contact-list">
 					<li>Contact KERI</li>
-					<li>Mail : <a href="mailto:メールサーバー作成中">メールサーバー作成中</a></li>
+					<li>Mail : <a href="mailto:kerikun11@gmail.com">kerikun11@gmail.com</a></li>
 				</ul>
 			</div>
 

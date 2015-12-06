@@ -80,13 +80,14 @@ $(document).ready( function () {
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</h1>
-    <p class="post-meta"><time datetime="2015-11-03T00:00:00+09:00" itemprop="datePublished">Nov 3, 2015</time></p>
-  </header>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</h1>
+		<p class="post-meta"><time datetime="2015-11-03T00:00:00+09:00" itemprop="datePublished">2015年11月03日</time></p>
+	</header>
 
- <div class="post-content" itemprop="articleBody">
-    <h2 id="uefi">UEFIとは</h2>
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="uefi">UEFIとは</h2>
 <p>　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。</p>
 
 <h2 id="section">今現在できること、できないこと</h2>
@@ -331,9 +332,33 @@ $ LANG=C xdg-user-dirs-gtk-update
 <p>Surface Pro 3 最高ーーー！！<br />
 Linux 最高ーーー！</p>
 
-  </div>
+	</div>
 
 </article>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
       </div>
     </div>
@@ -348,7 +373,7 @@ Linux 最高ーーー！</p>
 			<div class="footer-col footer-col-1">
 				<ul class="contact-list">
 					<li>Contact KERI</li>
-					<li>Mail : <a href="mailto:メールサーバー作成中">メールサーバー作成中</a></li>
+					<li>Mail : <a href="mailto:kerikun11@gmail.com">kerikun11@gmail.com</a></li>
 				</ul>
 			</div>
 

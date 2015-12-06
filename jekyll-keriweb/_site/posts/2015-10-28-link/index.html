@@ -80,13 +80,14 @@ $(document).ready( function () {
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">linkを作る「ln」コマンド</h1>
-    <p class="post-meta"><time datetime="2015-10-28T00:00:00+09:00" itemprop="datePublished">Oct 28, 2015</time></p>
-  </header>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">linkを作る「ln」コマンド</h1>
+		<p class="post-meta"><time datetime="2015-10-28T00:00:00+09:00" itemprop="datePublished">2015年10月28日</time></p>
+	</header>
 
- <div class="post-content" itemprop="articleBody">
-    <h2>ハードリンクとシンボリックリンク</h2>
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2>ハードリンクとシンボリックリンク</h2>
 <article>
 	<p>　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。</p>
 	<p>　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。</p>
@@ -108,9 +109,33 @@ $(document).ready( function () {
 	<pre>$ ln -sf ~/dotfiles/.vimrc ~/.vimrc</pre>
 
 
-  </div>
+	</div>
 
 </article>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
       </div>
     </div>
@@ -125,7 +150,7 @@ $(document).ready( function () {
 			<div class="footer-col footer-col-1">
 				<ul class="contact-list">
 					<li>Contact KERI</li>
-					<li>Mail : <a href="mailto:メールサーバー作成中">メールサーバー作成中</a></li>
+					<li>Mail : <a href="mailto:kerikun11@gmail.com">kerikun11@gmail.com</a></li>
 				</ul>
 			</div>
 
