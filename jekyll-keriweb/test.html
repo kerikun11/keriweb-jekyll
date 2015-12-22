@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<style type="text/css">
+body{
+	margin:10%;
+	text-align:center;
+	background-color;#123456;
+}
+button.send{
+	font-size:2em;
+	width:30%;
+	font-weight:bold;
+}
+</style>
+<title>ESP8266-Remocon</title>
+</head>
+<body>
+
+<h1>Welcome to ESP8266-Remocon!</h1>
+
+<form method="get"><p>
+	<button class="send" type="submit" name="s1">Send</button>
+	<button class="send" type="submit" name="s1">Send</button>
+	<button class="send" type="submit" name="s1">Send</button>
+</P></form>
+
+<form method="get">	<p>ch 0 (empty):<input type="text" name="r1"/><button type="submit">Recode</button></p></form>
+
+<hr/>
+
+<form method="get">
+	<p>SSID:<input type="text" name="ssid"/></p>
+	<p>Password:<input type="text" name="pass"/></p>
+	<p><button type="submit">OK</button></p>
+</form>
+
+<hr/>
+
+<form method="get">
+	<p>SSID: 
+	<select name="ssid">
+		<option value="ssid1">SSID1</option>
+		<option value="ssid2">ABCDEFG SSID2</option>
+	</select>
+	<p>Password: <input name="pass" type="password"></p>
+	<p><a href="/"><button type="button">Reload</button></a><button type="submit">OK</button></p>
+</form>
+
+<hr/>
+
+</body>
+</html>
+
