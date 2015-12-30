@@ -5,9 +5,89 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Dec 2015 09:18:30 +0900</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 09:18:30 +0900</lastBuildDate>
+    <pubDate>Thu, 31 Dec 2015 00:22:33 +0900</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2015 00:22:33 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>ESP8266で赤外線学習リモコン</title>
+        <description>&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266とは&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;日本の技適を取得済み！！&lt;/h3&gt;
+
+&lt;p&gt;ESP8266とはWiFi制御用マイコンです。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;とにかく安い！&lt;/h3&gt;
+
+&lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子で売っています。&lt;br /&gt;
+&lt;img src=&quot;/images/2015-12-30-ir-station/esp8266.jpg&quot; alt=&quot;ESP8266&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;開発の簡単さも流行りの理由&lt;/h3&gt;
+
+&lt;p&gt;このマイコンのすごいところは、Arduino IDEで開発ができることです。とても簡単に開発ができます。関数もArduinoで使われているものと同じ名前です。&lt;/p&gt;
+
+&lt;p&gt;さらに、Arduinoをよく使う人は知っている通り、サンプルプログラムがとても充実しています。それを書き込むだけでそれなりのことができます。&lt;/p&gt;
+
+&lt;p&gt;それを少しずついじっているといつの間にかオリジナルのプログラムが完成しているという感じ。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;スペックが十分すぎる…&lt;/h3&gt;
+
+&lt;p&gt;しかも、このESP8266マイコンはスペックがかなり高く、WiFiモジュールとしてだけでなく格安マイコンとしても十分使うことができるほどです。メモリが十分にあるので、自由なプログラムを書くことができます。&lt;/p&gt;
+
+&lt;p&gt;マイコンは、&lt;strong&gt;32bit&lt;/strong&gt;マイコンです。&lt;br /&gt;
+動作周波数は、160MHzまで対応しています。&lt;br /&gt;
+外付けのSPIFlashがついていて、プログラムメモリが&lt;strong&gt;１MB&lt;/strong&gt;ほどあります。&lt;br /&gt;
+RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&lt;/p&gt;
+
+&lt;p&gt;参考までにPICやAVRマイコンなどはROMが32kBくらい、RAMは4kBほどです。&lt;/p&gt;
+
+&lt;p&gt;今回はこのWiFiモジュールで遊びます。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;赤外線学習リモコン&lt;/h2&gt;
+
+&lt;p&gt;赤外線学習リモコンとは自作の赤外線リモコンです。一番最初に本物のリモコンの信号を記憶して、2回目からはその記憶した赤外線を発します。こうしてリモコンを複製することができるのです。&lt;/p&gt;
+
+&lt;p&gt;今回はWiFi経由でスマホからコントロールできる赤外線学習リモコンを作りました。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;作ったもの&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;本体&lt;/h3&gt;
+
+&lt;p&gt;電源を入れるとまずWiFiのアクセスポイントになって、「ESP8266-Remocon」というWiFi電波を発します。
+スマホなどでそれにつないで、「http://esp8266.local」に接続すると下の画面が表示されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi&quot;&gt;WiFiの設定&lt;/h3&gt;
+
+&lt;p&gt;ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page2.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;スマホでの操作画面&lt;/h3&gt;
+
+&lt;p&gt;うまく接続できると、下の画面が出てきて、リモコンが使えるようになります。&lt;/p&gt;
+
+&lt;p&gt;リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page1.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;とりあえず実用的なものができました。&lt;br /&gt;
+ESP8266はすごいマイコンです。&lt;br /&gt;
+みなさんもぜひ使ってみてください！&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Cygwinの使い方</title>
@@ -1139,75 +1219,6 @@ $ git config --global core.editor vim (or emacs)
         
         
         <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>Charge Station</title>
-        <description>&lt;figure class=&quot;home-gallery&quot;&gt;
-	&lt;img src=&quot;/images/2015-10-09-charge-station-6/top.jpg&quot;&gt;
-	&lt;img src=&quot;/images/2015-10-09-charge-station-6/charge.jpg&quot;&gt;
-	&lt;img src=&quot;/images/2015-10-09-charge-station-6/board_top.jpg&quot;&gt;
-	&lt;img src=&quot;/images/2015-10-09-charge-station-6/board_bottom.jpg&quot;&gt;
-&lt;/figure&gt;
-&lt;section class=&quot;item&quot;&gt;
-	&lt;article&gt;
-		&lt;h1&gt;概要&lt;/h1&gt;
-		&lt;p&gt;　ChargeStationとは自作の携帯電話充電器です。僕が命名しました。充電が終わると自動で給電を止めるので、電気の節約になります。&lt;/p&gt;
-	&lt;/article&gt;
-
-	&lt;article&gt;
-		&lt;h1&gt;機能&lt;/h1&gt;
-		&lt;ol&gt;
-			&lt;li&gt;自動給電オフ&lt;/li&gt;
-			&lt;li&gt;充電電流、積算電流、充電時間表示&lt;/li&gt;
-			&lt;li&gt;LEDインジケータ&lt;/li&gt;
-			&lt;li&gt;時計表示&lt;/li&gt;
-			&lt;li&gt;充電データ出力（USBシリアル）&lt;/li&gt;
-			&lt;li&gt;各種設定&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/article&gt;
-
-	&lt;article&gt;
-		&lt;h1&gt;仕様&lt;/h1&gt;
-		&lt;ul&gt;
-			&lt;li&gt;使用マイコン：PIC18F27J53&lt;/li&gt;
-			&lt;li&gt;電力供給能力：5V・最大6A&lt;/li&gt;
-			&lt;li&gt;ファームの書き換え：USBシリアル&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/article&gt;
-
-	&lt;article&gt;
-		&lt;h1&gt;使い方&lt;/h1&gt;
-		&lt;ol&gt;
-			&lt;li&gt;ChargeStationにACアダプタをつなぐ→液晶に文字が表示される&lt;/li&gt;
-			&lt;li&gt;充電したいUSB機器を、３つの充電ポートのうちの１つにつなぐ&lt;/li&gt;
-			&lt;li&gt;各充電ポートのタッチボタンに触れる→充電開始&lt;/li&gt;
-			&lt;li&gt;充電電流に応じて、充電ポートの脇のLEDが点滅します&lt;/li&gt;
-			&lt;li&gt;各ポートのタッチボタンに触れると充電電流、積算電流、充電時間が順に表示される&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/article&gt;
-
-&lt;/section&gt;
-&lt;section class=&quot;settings&quot;&gt;
-	&lt;article&gt;
-		&lt;h1&gt;設定&lt;/h1&gt;
-		&lt;p&gt;　ChargeStation左側面のタッチボタンを長押しすると、設定モードに入る。再度ボタンを押すと設定を終わる。ChargeStation表面の左右のボタンをセレクトボタン、真ん中のボタンを決定ボタンとして使う。設定項目は以下の通り。&lt;/p&gt;
-		&lt;ol&gt;
-			&lt;li&gt;時計合わせ&lt;/li&gt;
-			&lt;li&gt;充電完了後自動給電停止機能のオンオフ&lt;/li&gt;
-			&lt;li&gt;LEDインジケータのオンオフ&lt;/li&gt;
-			&lt;li&gt;積算データのリセット&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/article&gt;
-&lt;/section&gt;
-</description>
-        <pubDate>Fri, 09 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
-        
-        
-        <category>production</category>
         
       </item>
     
