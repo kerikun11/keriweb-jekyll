@@ -5,38 +5,38 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Dec 2015 00:22:33 +0900</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2015 00:22:33 +0900</lastBuildDate>
+    <pubDate>Thu, 31 Dec 2015 00:33:29 +0900</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2015 00:33:29 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>ESP8266で赤外線学習リモコン</title>
         <description>&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266とは&lt;/h2&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;日本の技適を取得済み！！&lt;/h3&gt;
+&lt;h3 id=&quot;wifi&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
 
-&lt;p&gt;ESP8266とはWiFi制御用マイコンです。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
+&lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;とにかく安い！&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;とにかく安い！&lt;/h3&gt;
 
 &lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子で売っています。&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
 &lt;img src=&quot;/images/2015-12-30-ir-station/esp8266.jpg&quot; alt=&quot;ESP8266&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;開発の簡単さも流行りの理由&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;開発の簡単さも流行りの理由&lt;/h3&gt;
 
-&lt;p&gt;このマイコンのすごいところは、Arduino IDEで開発ができることです。とても簡単に開発ができます。関数もArduinoで使われているものと同じ名前です。&lt;/p&gt;
+&lt;p&gt;このマイコンのすごいところは、&lt;strong&gt;Arduino IDE&lt;/strong&gt;で開発ができることです。とても簡単に開発ができます。関数もArduinoで使われているものと同じ名前です。Arduinoと同じように書き込みボタンを押せば書き込みができます。&lt;/p&gt;
 
-&lt;p&gt;さらに、Arduinoをよく使う人は知っている通り、サンプルプログラムがとても充実しています。それを書き込むだけでそれなりのことができます。&lt;/p&gt;
+&lt;p&gt;さらに、Arduinoをよく使う人は知っている通り、Arduino IDEに付属したサンプルプログラムがとても充実しています。それを書き込むだけでそれなりのことができます。&lt;/p&gt;
 
-&lt;p&gt;それを少しずついじっているといつの間にかオリジナルのプログラムが完成しているという感じ。&lt;/p&gt;
+&lt;p&gt;それを少しずついじっているといつの間にかオリジナルのプログラムが完成しているという感じです。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;スペックが十分すぎる…&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;スペックが十分すぎる…&lt;/h3&gt;
 
 &lt;p&gt;しかも、このESP8266マイコンはスペックがかなり高く、WiFiモジュールとしてだけでなく格安マイコンとしても十分使うことができるほどです。メモリが十分にあるので、自由なプログラムを書くことができます。&lt;/p&gt;
 
 &lt;p&gt;マイコンは、&lt;strong&gt;32bit&lt;/strong&gt;マイコンです。&lt;br /&gt;
-動作周波数は、160MHzまで対応しています。&lt;br /&gt;
+動作周波数は、&lt;strong&gt;160MHz&lt;/strong&gt;まで対応しています。&lt;br /&gt;
 外付けのSPIFlashがついていて、プログラムメモリが&lt;strong&gt;１MB&lt;/strong&gt;ほどあります。&lt;br /&gt;
 RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&lt;/p&gt;
 
@@ -44,28 +44,30 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;今回はこのWiFiモジュールで遊びます。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;赤外線学習リモコン&lt;/h2&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;赤外線学習リモコン&lt;/h2&gt;
 
 &lt;p&gt;赤外線学習リモコンとは自作の赤外線リモコンです。一番最初に本物のリモコンの信号を記憶して、2回目からはその記憶した赤外線を発します。こうしてリモコンを複製することができるのです。&lt;/p&gt;
 
-&lt;p&gt;今回はWiFi経由でスマホからコントロールできる赤外線学習リモコンを作りました。&lt;/p&gt;
+&lt;p&gt;今回は&lt;strong&gt;WiFi経由&lt;/strong&gt;でスマホからコントロールできる赤外線学習リモコンを作りました。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;作ったもの&lt;/h2&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;作ったもの&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;本体&lt;/h3&gt;
+&lt;h3 id=&quot;section-5&quot;&gt;本体&lt;/h3&gt;
 
-&lt;p&gt;電源を入れるとまずWiFiのアクセスポイントになって、「ESP8266-Remocon」というWiFi電波を発します。
-スマホなどでそれにつないで、「http://esp8266.local」に接続すると下の画面が表示されます。&lt;/p&gt;
+&lt;p&gt;とりあえずブレッドボードで作りました。&lt;br /&gt;
+右に４つの赤外線LEDがついています。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;wifi&quot;&gt;WiFiの設定&lt;/h3&gt;
+&lt;h3 id=&quot;wifi-1&quot;&gt;WiFiの設定&lt;/h3&gt;
+
+&lt;p&gt;電源を入れるとまずWiFiのアクセスポイントになって、「ESP8266-Remocon」というWiFi電波を発します。スマホなどでそれにつないで、「http://esp8266.local」に接続すると下の画面が表示されます。&lt;/p&gt;
 
 &lt;p&gt;ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page2.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;スマホでの操作画面&lt;/h3&gt;
+&lt;h3 id=&quot;section-6&quot;&gt;スマホでの操作画面&lt;/h3&gt;
 
 &lt;p&gt;うまく接続できると、下の画面が出てきて、リモコンが使えるようになります。&lt;/p&gt;
 
@@ -73,7 +75,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page1.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;とりあえず実用的なものができました。&lt;br /&gt;
 ESP8266はすごいマイコンです。&lt;br /&gt;
