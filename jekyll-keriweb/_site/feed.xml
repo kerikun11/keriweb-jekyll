@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Dec 2015 00:33:29 +0900</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2015 00:33:29 +0900</lastBuildDate>
+    <pubDate>Sun, 03 Jan 2016 08:45:03 +0900</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2016 08:45:03 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -54,7 +54,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;h3 id=&quot;section-5&quot;&gt;本体&lt;/h3&gt;
 
-&lt;p&gt;とりあえずブレッドボードで作りました。&lt;br /&gt;
+&lt;p&gt;今回は試作なのでブレッドボードで作りました。&lt;br /&gt;
 右に４つの赤外線LEDがついています。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
@@ -77,9 +77,12 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;h2 id=&quot;section-7&quot;&gt;まとめ&lt;/h2&gt;
 
-&lt;p&gt;とりあえず実用的なものができました。&lt;br /&gt;
-ESP8266はすごいマイコンです。&lt;br /&gt;
-みなさんもぜひ使ってみてください！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IoT(Internet of Things)&lt;/strong&gt;という言葉があります。&lt;br /&gt;
+&lt;strong&gt;人と人が&lt;/strong&gt;インターネットにつなぐだけでなく&lt;strong&gt;ものとものが&lt;/strong&gt;互いにインターネットでつながり、相互に作用し合うということです。&lt;br /&gt;
+ESP8266 WiFiモジュールはIoTに最適です。より多くのものがインターネットによりつながるといいですね！&lt;/p&gt;
+
+&lt;p&gt;このWiFiモジュールを使ってとりあえず実用的なものができました。&lt;br /&gt;
+ESP8266はとにかくすごいマイコンです！みなさんもぜひ使ってみてください！&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +0900</pubDate>
