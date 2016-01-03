@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jan 2016 09:00:11 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Jan 2016 09:00:11 +0900</lastBuildDate>
+    <pubDate>Sun, 03 Jan 2016 09:08:49 +0900</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2016 09:08:49 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -65,7 +65,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page2.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page_wifi.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;スマホでの操作画面&lt;/h3&gt;
 
@@ -73,7 +73,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page1.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page_button.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;まとめ&lt;/h2&gt;
 

@@ -60,7 +60,7 @@ RAMも大量にあって、**81kB**もあります。
 
 ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。
 
-![ESP8266-Remocon](/images/2015-12-30-ir-station/page2.png)
+![ESP8266-Remocon](/images/2015-12-30-ir-station/page_wifi.png)
 
 ###スマホでの操作画面
 
@@ -68,7 +68,7 @@ RAMも大量にあって、**81kB**もあります。
 
 リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。
 
-![ESP8266-Remocon](/images/2015-12-30-ir-station/page1.png)
+![ESP8266-Remocon](/images/2015-12-30-ir-station/page_button.png)
 
 
 ##まとめ
