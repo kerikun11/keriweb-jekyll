@@ -5,9 +5,9 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jan 2016 09:08:49 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Jan 2016 09:08:49 +0900</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Wed, 06 Jan 2016 11:00:12 +0900</pubDate>
+    <lastBuildDate>Wed, 06 Jan 2016 11:00:12 +0900</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>ESP8266で赤外線学習リモコン</title>
@@ -106,8 +106,8 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
   &lt;li&gt;&lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin.com&lt;/a&gt;からCygwinのインストーラをダウンロードする。32bitマシン用と64bitマシン用があるので適当なほうを選ぶ。&lt;/li&gt;
   &lt;li&gt;DLしたインストーラを起動する。&lt;/li&gt;
   &lt;li&gt;デフォルトの設定で次へを押す。&lt;/li&gt;
-  &lt;li&gt;URLを選択するところでは&lt;code class=&quot;highlighter-rouge&quot;&gt;~~~.jp&lt;/code&gt;など、日本のURLを選ぶとダウンロードが早く終わる。&lt;/li&gt;
-  &lt;li&gt;インストールするファイルを選ぶところでは、一番上で&lt;code class=&quot;highlighter-rouge&quot;&gt;wget&lt;/code&gt;と検索して、&lt;code class=&quot;highlighter-rouge&quot;&gt;Web&lt;/code&gt;の中の&lt;code class=&quot;highlighter-rouge&quot;&gt;wget: Utility to ~&lt;/code&gt;の回転矢印アイコンをクリックして次へを押し、インストールする。他のソフトは後で&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-cyg&lt;/code&gt;でインストールするので、今はこれだけでいい。&lt;/li&gt;
+  &lt;li&gt;URLを選択するところでは&lt;code&gt;~~~.jp&lt;/code&gt;など、日本のURLを選ぶとダウンロードが早く終わる。&lt;/li&gt;
+  &lt;li&gt;インストールするファイルを選ぶところでは、一番上で&lt;code&gt;wget&lt;/code&gt;と検索して、&lt;code&gt;Web&lt;/code&gt;の中の&lt;code&gt;wget: Utility to ~&lt;/code&gt;の回転矢印アイコンをクリックして次へを押し、インストールする。他のソフトは後で&lt;code&gt;apt-cyg&lt;/code&gt;でインストールするので、今はこれだけでいい。&lt;/li&gt;
   &lt;li&gt;インストールしたらcygwinを開く。&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -144,24 +144,22 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
 
 &lt;p&gt;Cygwinを起動したら、以下のコマンドを実行する。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
+&lt;pre&gt;&lt;code&gt;$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
 $ chmod 755 apt-cyg
 $ mv apt-cyg /usr/local/bin/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;これでインストールは完了。&lt;/p&gt;
 
 &lt;p&gt;あとは、欲しいソフトをインストールする&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apt-cyg install vim
+&lt;pre&gt;&lt;code&gt;$ apt-cyg install vim
 $ apt-cyg install make
 $ apt-cyg install gcc-core
 $ apt-cyg install gcc-g++
 $ apt-cyg install zsh
 $ apt-cyg install tmux
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;などなど&lt;/p&gt;
 
@@ -174,7 +172,7 @@ $ apt-cyg install tmux
 &lt;ol&gt;
   &lt;li&gt;Cygwinのウィンドウの左上のCygwinアイコンを右クリックする。&lt;/li&gt;
   &lt;li&gt;optionを開く&lt;/li&gt;
-  &lt;li&gt;Keysの中の一番下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Shift+letter shortcuts&lt;/code&gt;にチェックを入れる。&lt;/li&gt;
+  &lt;li&gt;Keysの中の一番下の&lt;code&gt;Ctrl+Shift+letter shortcuts&lt;/code&gt;にチェックを入れる。&lt;/li&gt;
   &lt;li&gt;saveで終了。&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -188,27 +186,24 @@ $ apt-cyg install tmux
 
 &lt;h3 id=&quot;zsh&quot;&gt;デフォルトのシェルをzshにする&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apt-cyg install zsh
+&lt;pre&gt;&lt;code&gt;$ apt-cyg install zsh
 $ ls /etc/passwd
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;ここで&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/passwd&lt;/code&gt;が存在しないときは以下のコマンドを打ち作る。&lt;/p&gt;
+&lt;p&gt;ここで&lt;code&gt;/etc/passwd&lt;/code&gt;が存在しないときは以下のコマンドを打ち作る。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkpasswd &amp;gt; /etc/passwd
+&lt;pre&gt;&lt;code&gt;$ mkpasswd &amp;gt; /etc/passwd
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;作ったら開く&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ vim /etc/passwd
+&lt;pre&gt;&lt;code&gt;$ vim /etc/passwd
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;一番下のほうの自分のユーザー名のところで、&lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/bash&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/zsh&lt;/code&gt;に変更する。&lt;br /&gt;
+&lt;p&gt;一番下のほうの自分のユーザー名のところで、&lt;code&gt;/bin/bash&lt;/code&gt;を&lt;code&gt;/bin/zsh&lt;/code&gt;に変更する。&lt;br /&gt;
 あとはCygwinを再起動すればデフォルトがzshellになっている。&lt;/p&gt;
 
-&lt;p&gt;ついでに僕の&lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;を書いておく。&lt;/p&gt;
+&lt;p&gt;ついでに僕の&lt;code&gt;.zshrc&lt;/code&gt;を書いておく。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/kerikun11/dotfiles/blob/master/.zshrc&quot;&gt;.zshrc&lt;/a&gt;&lt;/p&gt;
 
@@ -238,9 +233,8 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 &lt;h2 id=&quot;samba&quot;&gt;Sambaをインストール&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install samba
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install samba
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;hdd&quot;&gt;HDDを設定する&lt;/h2&gt;
 
@@ -251,7 +245,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 &lt;p&gt;HDDをラズパイに繋ぐ&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ lsblk
+&lt;pre&gt;&lt;code&gt;$ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda 		  8:0    0  1.8T  0 disk 
 └─sda1		  8:1    0  1.8T  0 part 
@@ -262,50 +256,44 @@ mmcblk0		179:0    0 58.2G  0 disk
 ├─mmcblk0p5	179:5    0   60M  0 part /boot
 └─mmcblk0p6	179:6    0 57.1G  0 part /
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;HDDが&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda&lt;/code&gt;につながれていることがわかる。&lt;br /&gt;
+&lt;p&gt;HDDが&lt;code&gt;/dev/sda&lt;/code&gt;につながれていることがわかる。&lt;br /&gt;
 今までのパーティションを消して、新たに作る。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo fdisk /dev/sda
+&lt;pre&gt;&lt;code&gt;$ sudo fdisk /dev/sda
 Command (m for help): d
 Command (m for help): n
 Enter を 連打
 Command (m for help): w
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;HDDをフォーマット&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo mkfs.ext4 /dev/sda1
+&lt;pre&gt;&lt;code&gt;$ sudo mkfs.ext4 /dev/sda1
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;フォーマットが完了したらマウント&lt;br /&gt;
 毎回同じ所にマウントされるように設定する。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo mkdir /media/hdd-2tb
+&lt;pre&gt;&lt;code&gt;$ sudo mkdir /media/hdd-2tb
 $ sudo blkid /dev/sda1
 /dev/sda1: UUID=&quot;21600e41-2f5a-4954-8575-5e89f0e11560&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;983fd59f-2b2b-41a4-b409-acac2fa62f5c&quot; 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ここで表示されるUUIDをコピーしておく。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim /etc/fstab
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/fstab
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ここの最下部に以下を追記(UUIDはさっきコピーしたもの)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UUID=*************	/media/hdd-2tb	ext4	defaults	0	0
+&lt;pre&gt;&lt;code&gt;UUID=*************	/media/hdd-2tb	ext4	defaults	0	0
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ラズパイを再起動&lt;br /&gt;
 これでしっかりマウントされているはず。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ lsblk
+&lt;pre&gt;&lt;code&gt;$ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda 		  8:0    0  1.8T  0 disk 
 └─sda1		  8:1    0  1.8T  0 part /hdd-2tb
@@ -316,50 +304,44 @@ mmcblk0		179:0    0 58.2G  0 disk
 ├─mmcblk0p5	179:5    0   60M  0 part /boot
 └─mmcblk0p6	179:6    0 57.1G  0 part /
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;共有フォルダの作成と所有権の変更&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /media/hdd-2tb
+&lt;pre&gt;&lt;code&gt;$ cd /media/hdd-2tb
 $ sudo mkdir share
 $ sudo chown *myuser* share
 $ sudo chgrp *myuser* share
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;samba-1&quot;&gt;Sambaの設定&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim /etc/samba/smb.conf
+&lt;pre&gt;&lt;code&gt;$ sudo vim /etc/samba/smb.conf
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ここにの最下部に以下を追記&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[share]
+&lt;pre&gt;&lt;code&gt;[share]
    path = /media/hdd-2tb
    read only = no
    browsable = yes
    guest ok = yes
    force user = kerikun11
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ファイアウォールを設定している場合はSamba用にポートを開放&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo ufw allow 137/udp
+&lt;pre&gt;&lt;code&gt;$ sudo ufw allow 137/udp
 $ sudo ufw allow 138/udp
 $ sudo ufw allow 139/tcp
 $ sudo ufw allow 445/tcp
 
 $ sudo service ufw restart
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;Sambaを起動&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo service samba-ad-bc start
+&lt;pre&gt;&lt;code&gt;$ sudo service samba-ad-bc start
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;これでつながるはず。&lt;/p&gt;
 
@@ -391,7 +373,7 @@ $ sudo service ufw restart
     
       <item>
         <title>ファイアウォールの設定</title>
-        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ufw
+        <description>&lt;pre&gt;&lt;code&gt;$ sudo apt-get install ufw
 
 $ sudo ufw status
 Status: inactive
@@ -419,7 +401,6 @@ Status: active
  22		                    ALLOW       Anywhere
  80                         ALLOW       Anywhere
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Nov 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
@@ -464,7 +445,7 @@ Status: active
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)&lt;/p&gt;
 
 &lt;p&gt;以下はプログラムの要点だけ抜粋&lt;br /&gt;
-mainループに&lt;code class=&quot;highlighter-rouge&quot;&gt;ST7032_task();&lt;/code&gt;があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数内には&lt;code class=&quot;highlighter-rouge&quot;&gt;ST7032_ISR();&lt;/code&gt;があり、送信完了割り込みなどで任意のフラグを上げる。&lt;code class=&quot;highlighter-rouge&quot;&gt;ST7032_task();&lt;/code&gt;ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。&lt;/p&gt;
+mainループに&lt;code&gt;ST7032_task();&lt;/code&gt;があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数内には&lt;code&gt;ST7032_ISR();&lt;/code&gt;があり、送信完了割り込みなどで任意のフラグを上げる。&lt;code&gt;ST7032_task();&lt;/code&gt;ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。&lt;/p&gt;
 
 &lt;p&gt;使い方&lt;br /&gt;
 main.c&lt;/p&gt;
@@ -784,9 +765,9 @@ main.c&lt;/p&gt;
 
 &lt;p&gt;Terminal などで以下のファイルを開き下の文を最下部に追記する。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo vi /usr/share/X11/xorg.conf.d/10-evdev.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ sudo vi /usr/share/X11/xorg.conf.d/10-evdev.conf&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Section &quot;InputClass&quot;  
+&lt;pre&gt;&lt;code&gt;Section &quot;InputClass&quot;  
 	Identifier &quot;Surface Pro 3 cover&quot;
 	MatchIsPointer &quot;on&quot;
 	MatchDevicePath &quot;/dev/input/event*&quot;
@@ -796,42 +777,38 @@ main.c&lt;/p&gt;
 	Option &quot;IgnoreAbsoluteAxes&quot; &quot;True&quot;
 EndSection
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;「product」の”07dd”はJIS配列のキーボードの場合。US配列は”07dc”とする。&lt;/p&gt;
 
 &lt;p&gt;同様に次のファイルにも追記する。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo vi /usr/share/X11/xorg.conf.d/50-synaptics.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ sudo vi /usr/share/X11/xorg.conf.d/50-synaptics.conf&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Section &quot;InputClass&quot;
+&lt;pre&gt;&lt;code&gt;Section &quot;InputClass&quot;
     Identifier &quot;Disable clickpad buttons on Apple touchpads&quot;
     MatchProduct &quot;Apple|bcm5974&quot;
     MatchDriver &quot;synaptics&quot;
     Option &quot;SoftButtonAreas&quot; &quot;0 0 0 0 0 0 0 0&quot;
 EndSection
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;再起動する。&lt;/p&gt;
 
 &lt;h3 id=&quot;section-4&quot;&gt;7.センサー設定&lt;/h3&gt;
 &lt;p&gt;様々なドライバをインストール&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install -y lm-sensors
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install -y lm-sensors
 $ sudo sensors-detect
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;これを実行するといろいろ聞かれるので、yesを打ち続ける。&lt;/p&gt;
 
 &lt;p&gt;Bluetoothドライバをインストール&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone git://git.marvell.com/mwifiex-firmware.git
+&lt;pre&gt;&lt;code&gt;$ git clone git://git.marvell.com/mwifiex-firmware.git
 $ mkdir -p /lib/firmware/mrvl/
 $ sudo cp mwifiex-firmware/mrvl/\* /lib/firmware/mrvl/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;linux-kernel&quot;&gt;8.必要に応じてLinux-kernelをインストールする。&lt;/h3&gt;
 
@@ -840,16 +817,15 @@ $ sudo cp mwifiex-firmware/mrvl/\* /lib/firmware/mrvl/
 &lt;p&gt;不満な点があるならば、&lt;a href=&quot;http://kernel.ubuntu.com/~kernel-ppa/mainline/&quot;&gt;Index of /~kernel-ppa/mainline&lt;/a&gt;から最新のkernelのdebファイルをダウンロードする。
 例えば、v4.3が最新なら、&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
+&lt;pre&gt;&lt;code&gt;v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 v4.3-wily/linux-headers-4.3.0-040300_4.3.0-040300.201511020949_all.deb
 v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;の３つのファイルをダウンロードする。&lt;/p&gt;
 
 &lt;p&gt;Terminalで、ダウンロードしたdebのあるディレクトリで
-&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo dpkg -i linux-*.deb&lt;/code&gt;
+&lt;code&gt;$ sudo dpkg -i linux-*.deb&lt;/code&gt;
 を実行してインストールする。再起動して直っていたら完成。治らないならば、kernelのソースを入手して、パッチを当ててリビルドする必要があるが、とてもめんどくさい。公式に対応されるのを待つほうが早いかも。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;困った時は？&lt;/h2&gt;
@@ -876,8 +852,8 @@ v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 
 &lt;ol&gt;
   &lt;li&gt;正常に動く別のPCで&lt;a href=&quot;/files/Shell.efi&quot;&gt;UEFIshell&lt;/a&gt;をダウンロードする。&lt;/li&gt;
-  &lt;li&gt;FAT32でフォーマットしたUSBメモリに、&lt;code class=&quot;highlighter-rouge&quot;&gt;EFI/Boot/&lt;/code&gt;というフォルダを作る。&lt;/li&gt;
-  &lt;li&gt;その中に先ほどダウンロードしたUEFIシェルを&lt;code class=&quot;highlighter-rouge&quot;&gt;Bootx64.efi&lt;/code&gt;という名前にリネームして入れる。&lt;/li&gt;
+  &lt;li&gt;FAT32でフォーマットしたUSBメモリに、&lt;code&gt;EFI/Boot/&lt;/code&gt;というフォルダを作る。&lt;/li&gt;
+  &lt;li&gt;その中に先ほどダウンロードしたUEFIシェルを&lt;code&gt;Bootx64.efi&lt;/code&gt;という名前にリネームして入れる。&lt;/li&gt;
   &lt;li&gt;終わり。&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -887,11 +863,11 @@ v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
   &lt;li&gt;Surfaceの電源が切れた状態でボリュームアップボタンを押しながら電源を入れる→UEFI設定画面が現れる。&lt;/li&gt;
   &lt;li&gt;セキュアブートをdisenableにする。UEFIシェルはUbuntuと違ってセキュアブートに弾かれてしまうから。&lt;/li&gt;
   &lt;li&gt;今度は、ボリュームダウンボタンを押しながらSurfaceを起動する。するとUEFIシェルが現れる。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fs1:&lt;/code&gt;と入力する。これで、SSDのUEFIシステムパーティションの中に入った。&lt;code class=&quot;highlighter-rouge&quot;&gt;fs0:&lt;/code&gt;は今シェルを使っているUSBだと思われる。SSDの他にディスクがつながっているときは、&lt;code class=&quot;highlighter-rouge&quot;&gt;fs1:&lt;/code&gt;じゃなくて&lt;code class=&quot;highlighter-rouge&quot;&gt;fs2:&lt;/code&gt;とかになるかもしれない。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bcfg boot dump -v&lt;/code&gt;と入力する。するとブートエントリが表示される。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;fs1:&lt;/code&gt;と入力する。これで、SSDのUEFIシステムパーティションの中に入った。&lt;code&gt;fs0:&lt;/code&gt;は今シェルを使っているUSBだと思われる。SSDの他にディスクがつながっているときは、&lt;code&gt;fs1:&lt;/code&gt;じゃなくて&lt;code&gt;fs2:&lt;/code&gt;とかになるかもしれない。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bcfg boot dump -v&lt;/code&gt;と入力する。するとブートエントリが表示される。&lt;/li&gt;
   &lt;li&gt;その中のUbuntuの２桁のブート優先順位の番号（おそらく01）を確認する。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bcfg boot rm 01&lt;/code&gt;と入力すると、Ubuntu のブートエントリを削除できる。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reboot&lt;/code&gt;で再起動する。次からはWindowsが起動するはずだ。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bcfg boot rm 01&lt;/code&gt;と入力すると、Ubuntu のブートエントリを削除できる。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;reboot&lt;/code&gt;で再起動する。次からはWindowsが起動するはずだ。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;section-9&quot;&gt;細部の設定&lt;/h2&gt;
@@ -900,7 +876,7 @@ v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 
 &lt;p&gt;　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;p&gt;&lt;code&gt;
 $ LANG=C xdg-user-dirs-gtk-update
 &lt;/code&gt;&lt;/p&gt;
 
@@ -1036,10 +1012,9 @@ Host global_raspi
 &lt;h3 id=&quot;clone&quot;&gt;clone&lt;/h3&gt;
 &lt;p&gt;　Git上にあるファイルをローカルにクローンする。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/your_username/your_repository.git
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/your_username/your_repository.git
 $ git clone git@github.com:your_username/your_password/your_repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。&lt;/p&gt;
 
@@ -1047,39 +1022,34 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 &lt;p&gt;　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。
 　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add filename
+&lt;pre&gt;&lt;code&gt;$ git add filename
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;commit&quot;&gt;commit&lt;/h3&gt;
 &lt;p&gt;ファイルを追加または変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。ローカルリポジトリでの変更が記録される。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit filename -m &#39;message&#39;
+&lt;pre&gt;&lt;code&gt;$ git commit filename -m &#39;message&#39;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;push&quot;&gt;push&lt;/h3&gt;
 &lt;p&gt;　commitしたら、cloneしているディレクトリに入って、&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push -u origin master
+&lt;pre&gt;&lt;code&gt;$ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;を実行すると、Git上のファイルが更新される。&lt;/p&gt;
 
 &lt;h3 id=&quot;pull&quot;&gt;pull&lt;/h3&gt;
 &lt;p&gt;　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull
+&lt;pre&gt;&lt;code&gt;$ git pull
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;diff&quot;&gt;diff&lt;/h3&gt;
 &lt;p&gt;変更の差分を表示する。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git diff filename
+&lt;pre&gt;&lt;code&gt;$ git diff filename
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;ssh&quot;&gt;SSHの設定&lt;/h2&gt;
 &lt;p&gt;Githubに繋ぐには、httpsとsshの２通りある。httpsの場合、UserIDとPasswordを入力する必要があるため、セキュリティに不安がある。そこでSSHを使って接続してみる。この場合、SSH鍵のPasswordのみで通信できる。SSH鍵にパスワードをかけなければ、passwordなしで、公開鍵認証の安全な通信ができる。&lt;/p&gt;
@@ -1089,50 +1059,44 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 &lt;h4 id=&quot;section-2&quot;&gt;鍵の作成&lt;/h4&gt;
 &lt;p&gt;ホームディレクトリに.sshディレクトリがない場合&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir ~/.ssh
+&lt;pre&gt;&lt;code&gt;$ mkdir ~/.ssh
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;共通&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd ~/.ssh
+&lt;pre&gt;&lt;code&gt;$ cd ~/.ssh
 $ ssh-keygen -t ecdsa -C &quot;for github&quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;この時ファイル名とパスワードを求められるが、ファイル名は空欄で良い。パスワードは任意。なくても大丈夫。&lt;/p&gt;
 
 &lt;p&gt;次に以下のファイルを開く。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim config
+&lt;pre&gt;&lt;code&gt;$ sudo vim config
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;ここで、以下を記述または追記&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github
+&lt;pre&gt;&lt;code&gt;Host github
 	User			git
 	HostName		github.com
 	Port			22
 	IdentityFile	~/.ssh/id_ecdsa
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h4 id=&quot;section-3&quot;&gt;鍵の登録&lt;/h4&gt;
 
-&lt;p&gt;次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/id_ecdsa.pub&lt;/code&gt;の内容を貼り付ける。&lt;/p&gt;
+&lt;p&gt;次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの&lt;code&gt;~/.ssh/id_ecdsa.pub&lt;/code&gt;の内容を貼り付ける。&lt;/p&gt;
 
 &lt;h4 id=&quot;clone-1&quot;&gt;新たにcloneするときは&lt;/h4&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://your_usermame/your_repository.git
+&lt;pre&gt;&lt;code&gt;$ git clone https://your_usermame/your_repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;の代わりに&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:your_username/your_repository.git
+&lt;pre&gt;&lt;code&gt;$ git clone github:your_username/your_repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;でcloneすればよい。&lt;/p&gt;
 
@@ -1140,9 +1104,8 @@ $ ssh-keygen -t ecdsa -C &quot;for github&quot;
 
 &lt;p&gt;すでにcloneしているリポジトリや、新たなリポジトリでさっき設定したSSHを使うには、リポジトリの設定を変更すればよい。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote set-url origin github:your_username/your_repository.git
+&lt;pre&gt;&lt;code&gt;$ git remote set-url origin github:your_username/your_repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;git&quot;&gt;Gitを使う手順&lt;/h2&gt;
 
@@ -1150,17 +1113,15 @@ $ ssh-keygen -t ecdsa -C &quot;for github&quot;
 
 &lt;p&gt;自分の情報を登録する&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global user.name &quot;Your Name&quot;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &quot;Your Name&quot;
 $ git config --global user.email &quot;your_email@smaple.com&quot;
 $ git config --global core.editor vim (or emacs)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;設定の確認&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --list
+&lt;pre&gt;&lt;code&gt;$ git config --list
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;clone-2&quot;&gt;他人のリポジトリをclone&lt;/h3&gt;
 
@@ -1168,9 +1129,8 @@ $ git config --global core.editor vim (or emacs)
   &lt;li&gt;cloneしたいリポジトリに入って、&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:username/repository.git
+&lt;pre&gt;&lt;code&gt;$ git clone github:username/repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;section-5&quot;&gt;自分のレポジトリを使う&lt;/h3&gt;
 
@@ -1180,42 +1140,37 @@ $ git config --global core.editor vim (or emacs)
   &lt;li&gt;cloneしたいリポジトリに入って、&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:my_username/my_repository.git
+&lt;pre&gt;&lt;code&gt;$ git clone github:my_username/my_repository.git
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;ファイルを編集する&lt;/li&gt;
   &lt;li&gt;変更を追加&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
+&lt;pre&gt;&lt;code&gt;$ git add .
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;変更をコミット&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m &quot;any comment&quot;
+&lt;pre&gt;&lt;code&gt;$ git commit -m &quot;any comment&quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;変更をプッシュ&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push -u origin master
+&lt;pre&gt;&lt;code&gt;$ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h4 id=&quot;section-6&quot;&gt;新たにリポジトリを作る&lt;/h4&gt;
 
 &lt;p&gt;1.新しくリポジトリにするディレクトリ内に入って、&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git init 
+&lt;pre&gt;&lt;code&gt;$ git init 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 </description>
         <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
