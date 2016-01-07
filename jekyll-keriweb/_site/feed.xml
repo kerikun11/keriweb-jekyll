@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jan 2016 09:08:49 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Jan 2016 09:08:49 +0900</lastBuildDate>
+    <pubDate>Thu, 07 Jan 2016 10:24:00 +0900</pubDate>
+    <lastBuildDate>Thu, 07 Jan 2016 10:24:00 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -165,7 +165,7 @@ $ apt-cyg install tmux
 
 &lt;p&gt;などなど&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;おまけ&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;おまけ（各種設定）&lt;/h2&gt;
 
 &lt;h3 id=&quot;windows&quot;&gt;Windowsのコピペを使う&lt;/h3&gt;
 
@@ -174,7 +174,9 @@ $ apt-cyg install tmux
 &lt;ol&gt;
   &lt;li&gt;Cygwinのウィンドウの左上のCygwinアイコンを右クリックする。&lt;/li&gt;
   &lt;li&gt;optionを開く&lt;/li&gt;
-  &lt;li&gt;Keysの中の一番下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Shift+letter shortcuts&lt;/code&gt;にチェックを入れる。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Keys&lt;/code&gt;の中の一番下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Shift+letter shortcuts&lt;/code&gt;にチェックを入れる。&lt;/li&gt;
+  &lt;li&gt;ついでに&lt;code class=&quot;highlighter-rouge&quot;&gt;Looks&lt;/code&gt;のなかの&lt;code class=&quot;highlighter-rouge&quot;&gt;Cursor&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;Block&lt;/code&gt;にするとよい。&lt;/li&gt;
+  &lt;li&gt;さらに&lt;code class=&quot;highlighter-rouge&quot;&gt;Looks&lt;/code&gt;のなかの&lt;code class=&quot;highlighter-rouge&quot;&gt;Transparency&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;Medium&lt;/code&gt;か&lt;code class=&quot;highlighter-rouge&quot;&gt;High&lt;/code&gt;にするとブラウザなどを下に置いたときに透かして見れるので便利。&lt;/li&gt;
   &lt;li&gt;saveで終了。&lt;/li&gt;
 &lt;/ol&gt;
 
