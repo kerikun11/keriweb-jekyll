@@ -5,9 +5,168 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 10:27:36 +0900</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 10:27:36 +0900</lastBuildDate>
+    <pubDate>Thu, 07 Jan 2016 16:43:34 +0900</pubDate>
+    <lastBuildDate>Thu, 07 Jan 2016 16:43:34 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>yamyでキーボードをカスタマイズ</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
+
+&lt;h3 id=&quot;capsctrl&quot;&gt;CapsキーをCtrlキーにする&lt;/h3&gt;
+
+&lt;p&gt;WindowのPCは&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;キーの位置が小指から遠く押しづらい！&lt;br /&gt;
+ということで、&lt;code class=&quot;highlighter-rouge&quot;&gt;Caps&lt;/code&gt;の位置に&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;キーを置く。&lt;br /&gt;
+ちなみに、もともと&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;があったところにも&lt;code class=&quot;highlighter-rouge&quot;&gt;Caps&lt;/code&gt;を置くこともできる。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;半角/全角をトグルではなく、決めうちにする&lt;/h3&gt;
+
+&lt;p&gt;日本語を入力したくて&lt;code class=&quot;highlighter-rouge&quot;&gt;半角/全角&lt;/code&gt;キーを押したら、英語で入力されてイラッと来ることがある。&lt;br /&gt;
+そこで、普段使わない&lt;code class=&quot;highlighter-rouge&quot;&gt;変換&lt;/code&gt;キーを日本語切り替えに、&lt;code class=&quot;highlighter-rouge&quot;&gt;無変換&lt;/code&gt;キーを英語切り替えにする。&lt;/p&gt;
+
+&lt;h3 id=&quot;vim&quot;&gt;Vimユーザー必見！&lt;/h3&gt;
+
+&lt;p&gt;Vimで日本語を入力をしたとき、保存などをしようと&lt;code class=&quot;highlighter-rouge&quot;&gt;:w&lt;/code&gt;と打つと、それが全角で入力されて困ることがある。&lt;br /&gt;
+そこで、インサートモードからノーマルモードに入ると自動的に日本語をオフにして英語入力にする&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;今回用いた方法&lt;/h3&gt;
+
+&lt;p&gt;キー割り当てを変えるには以下のような方法がある。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Windowsのレジストリを書き換える。（玄人向け）&lt;/li&gt;
+  &lt;li&gt;Ctrl2Cap.exeというアプリを使う。（機能が少ない）&lt;/li&gt;
+  &lt;li&gt;yamyというアプリを使う。(便利)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;今回はyamyという便利なアプリを使う。&lt;/p&gt;
+
+&lt;h2 id=&quot;yamy&quot;&gt;yamyインストール方法&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;yamyはインストールをする必要がない。zip形式でダウンロードして解凍して、yamy.exeを起動するだけ！！&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;ダウンロード&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://osdn.jp/projects/yamy/&quot;&gt;yamyダウンロードページ&lt;/a&gt;からzipファイルをダウンロードする。&lt;br /&gt;
+執筆時点の最新バージョンは0.03。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;解凍&amp;amp;配置&lt;/h3&gt;
+
+&lt;p&gt;あとで起動時に自動起動するように設定するので、わかりやすいところに置いておくとよい。例えば、Cドライブ直下など。&lt;/p&gt;
+
+&lt;h3 id=&quot;pc&quot;&gt;PC起動時に自動で起動するように設定&lt;/h3&gt;
+
+&lt;p&gt;Windows10の場合を説明する。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;スタートメニューで&lt;code class=&quot;highlighter-rouge&quot;&gt;タスクスケジューラ&lt;/code&gt;を起動する(検索するとよい)。&lt;/li&gt;
+  &lt;li&gt;右のほうの&lt;code class=&quot;highlighter-rouge&quot;&gt;タスクを作成&lt;/code&gt;をクリック。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;全般タグ&lt;/code&gt;では、 1. 名前を&lt;code class=&quot;highlighter-rouge&quot;&gt;yamy&lt;/code&gt;とする。 2. &lt;code class=&quot;highlighter-rouge&quot;&gt;最上位の特権で実行する&lt;/code&gt;にチェックする。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;トリガータブ&lt;/code&gt;では、新規→ 1. タスクの開始：&lt;code class=&quot;highlighter-rouge&quot;&gt;ログオン時&lt;/code&gt;にする。 2. 設定：&lt;code class=&quot;highlighter-rouge&quot;&gt;特定のユーザー&lt;/code&gt;で自分だけにする。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;操作タブ&lt;/code&gt;では、新規→ 1. 操作：&lt;code class=&quot;highlighter-rouge&quot;&gt;プログラムの開始&lt;/code&gt; 2. プログラム/スクリプト：yamy.exeのパスとする。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;条件タブ&lt;/code&gt;では、&lt;code class=&quot;highlighter-rouge&quot;&gt;コンピュータをAC電源で使用している場合のみ...&lt;/code&gt;のチェックを外す。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;設定タブ&lt;/code&gt;では、&lt;code class=&quot;highlighter-rouge&quot;&gt;タスクを要求時に実行する&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;要求時に終了しない場合、タスクを強制的に停止する&lt;/code&gt;のみにチェック。他は外す。&lt;/li&gt;
+  &lt;li&gt;OKを押して終了。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;再起動すると、タスクバーにアイコンが現れる。&lt;/p&gt;
+
+&lt;p&gt;参考画像&lt;br /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/02.png&quot; alt=&quot;設定画面02&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/03.png&quot; alt=&quot;設定画面03&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/04.png&quot; alt=&quot;設定画面04&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/05.png&quot; alt=&quot;設定画面05&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/06.png&quot; alt=&quot;設定画面06&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/07.png&quot; alt=&quot;設定画面07&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/08.png&quot; alt=&quot;設定画面08&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/09.png&quot; alt=&quot;設定画面09&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;yamy-1&quot;&gt;yamyの設定&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;オリジナルの設定ファイルを作成&lt;/h3&gt;
+
+&lt;p&gt;yamy.exeのあるフォルダ内に&lt;code class=&quot;highlighter-rouge&quot;&gt;mysettings.mayu&lt;/code&gt;など適当なテキストファイルを作成する。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;設定を書く&lt;/h3&gt;
+
+&lt;p&gt;さっき作ったmysettings.mayuの中に以下を書く。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;include &quot;109.mayu&quot;
+keymap Global
+
+# My Settings
+key *E0ひらがな = S-*F10
+
+key *変換 = &amp;amp;Ignore
+key *IC-~IL-変換 = $ToggleIME # 変換で IME-ON
+
+key *E0無変換 = &amp;amp;Ignore
+key *IC-IL-E0無変換 = $ToggleIME # 無変換で IME-OFF
+
+mod Control += E0英数
+key *E0英数  = *LControl
+
+# For Cygwin
+window Cygwin /cygwin/ : Global
+  key A-v = RButton # Paste
+
+  key IL-~IC-Esc = $ToggleIME Esc   
+  key IC-Esc = Esc
+
+  key IL-*IC-C-LeftSquareBracket = Esc $ToggleIME Esc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;次に、同じフォルダ内にある&lt;code class=&quot;highlighter-rouge&quot;&gt;yamy.ini&lt;/code&gt;テキストエディタで開いて、下のほうの&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;escapeNLSKeys=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;とする。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;作った設定を読み込む&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;タスクバーのアイコンを右クリックして設定を開く。&lt;/li&gt;
+  &lt;li&gt;追加ボタンを押す。&lt;/li&gt;
+  &lt;li&gt;名前は適当なものを。ファイルは&lt;code class=&quot;highlighter-rouge&quot;&gt;mysettings.mayu&lt;/code&gt;。シンボルには&lt;code class=&quot;highlighter-rouge&quot;&gt;-DUSE109&lt;/code&gt;と書く。&lt;/li&gt;
+  &lt;li&gt;OKを押して画面を閉じる。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-01-07-yamy/10.png&quot; alt=&quot;設定画面10&quot; /&gt;
+&lt;img src=&quot;/images/2016-01-07-yamy/11.png&quot; alt=&quot;設定画面11&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;任務完了&lt;/h2&gt;
+
+&lt;p&gt;これで設定は完了。&lt;/p&gt;
+
+&lt;p&gt;あとは、自分でmysettingsにいろいろ書けば好きな割り当てができる。さらに、タスクバーのアイコンを右クリックして「調査」を開くと、実際にキーボードを押したときそのボタンが何に割り当てられているか教えてくれるので便利！&lt;/p&gt;
+
+&lt;p&gt;キーの名前は、同じディレクトリ内の&lt;code class=&quot;highlighter-rouge&quot;&gt;109.mayu&lt;/code&gt;というファイルの中に書いてあるので、そこで確認できる。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-10&quot;&gt;参考サイト&lt;/h2&gt;
+
+&lt;p&gt;参考にさせていただきました。ありがとうございます。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rcmdnk.github.io/blog/tags/yamy/&quot;&gt;rcmdnk’s blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://d.hatena.ne.jp/kaosf/20111122/1321969965&quot;&gt;kaosfield blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 07 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>ESP8266で赤外線学習リモコン</title>
@@ -150,6 +309,9 @@ $ mv apt-cyg /usr/local/bin/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;インストール画面
+&lt;img src=&quot;/images/2015-12-04-cygwin/12.png&quot; alt=&quot;インストール画面12&quot; title=&quot;インストール画面12&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;これでインストールは完了。&lt;/p&gt;
 
 &lt;p&gt;あとは、欲しいソフトをインストールする&lt;/p&gt;
@@ -160,6 +322,7 @@ $ apt-cyg install gcc-core
 $ apt-cyg install gcc-g++
 $ apt-cyg install zsh
 $ apt-cyg install tmux
+$ apt-cyg install git
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -183,7 +346,6 @@ $ apt-cyg install tmux
 &lt;p&gt;Shiftキー＋いつものコピペキーでコピペができる。&lt;/p&gt;
 
 &lt;p&gt;設定画像&lt;br /&gt;
-&lt;img src=&quot;/images/2015-12-04-cygwin/12.png&quot; alt=&quot;インストール画面12&quot; title=&quot;インストール画面12&quot; /&gt; 
 &lt;img src=&quot;/images/2015-12-04-cygwin/13.png&quot; alt=&quot;インストール画面13&quot; title=&quot;インストール画面13&quot; /&gt; 
 &lt;img src=&quot;/images/2015-12-04-cygwin/14.png&quot; alt=&quot;インストール画面14&quot; title=&quot;インストール画面14&quot; /&gt; 
 &lt;img src=&quot;/images/2015-12-04-cygwin/15.png&quot; alt=&quot;インストール画面15&quot; title=&quot;インストール画面15&quot; /&gt;&lt;/p&gt;
@@ -1023,206 +1185,6 @@ Host global_raspi
         <pubDate>Wed, 28 Oct 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-10-28-link/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
-        
-        
-        <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>Gitの使い方</title>
-        <description>&lt;p&gt;ここではGithubを使ったGitの使い方を説明する。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;主なコマンド&lt;/h2&gt;
-
-&lt;h3 id=&quot;clone&quot;&gt;clone&lt;/h3&gt;
-&lt;p&gt;　Git上にあるファイルをローカルにクローンする。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/your_username/your_repository.git
-$ git clone git@github.com:your_username/your_password/your_repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。&lt;/p&gt;
-
-&lt;h3 id=&quot;add&quot;&gt;add&lt;/h3&gt;
-&lt;p&gt;　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。
-　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add filename
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;commit&quot;&gt;commit&lt;/h3&gt;
-&lt;p&gt;ファイルを追加または変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。ローカルリポジトリでの変更が記録される。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit filename -m &#39;message&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;push&quot;&gt;push&lt;/h3&gt;
-&lt;p&gt;　commitしたら、cloneしているディレクトリに入って、&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;を実行すると、Git上のファイルが更新される。&lt;/p&gt;
-
-&lt;h3 id=&quot;pull&quot;&gt;pull&lt;/h3&gt;
-&lt;p&gt;　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;diff&quot;&gt;diff&lt;/h3&gt;
-&lt;p&gt;変更の差分を表示する。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git diff filename
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;ssh&quot;&gt;SSHの設定&lt;/h2&gt;
-&lt;p&gt;Githubに繋ぐには、httpsとsshの２通りある。httpsの場合、UserIDとPasswordを入力する必要があるため、セキュリティに不安がある。そこでSSHを使って接続してみる。この場合、SSH鍵のPasswordのみで通信できる。SSH鍵にパスワードをかけなければ、passwordなしで、公開鍵認証の安全な通信ができる。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;設定の手順&lt;/h3&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;鍵の作成&lt;/h4&gt;
-&lt;p&gt;ホームディレクトリに.sshディレクトリがない場合&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir ~/.ssh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;共通&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd ~/.ssh
-$ ssh-keygen -t ecdsa -C &quot;for github&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;この時ファイル名とパスワードを求められるが、ファイル名は空欄で良い。パスワードは任意。なくても大丈夫。&lt;/p&gt;
-
-&lt;p&gt;次に以下のファイルを開く。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim config
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;ここで、以下を記述または追記&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github
-	User			git
-	HostName		github.com
-	Port			22
-	IdentityFile	~/.ssh/id_ecdsa
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;section-3&quot;&gt;鍵の登録&lt;/h4&gt;
-
-&lt;p&gt;次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/id_ecdsa.pub&lt;/code&gt;の内容を貼り付ける。&lt;/p&gt;
-
-&lt;h4 id=&quot;clone-1&quot;&gt;新たにcloneするときは&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://your_usermame/your_repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;の代わりに&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:your_username/your_repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;でcloneすればよい。&lt;/p&gt;
-
-&lt;h4 id=&quot;cloneinit&quot;&gt;すでにcloneしているまたは、新しくinitしたときは&lt;/h4&gt;
-
-&lt;p&gt;すでにcloneしているリポジトリや、新たなリポジトリでさっき設定したSSHを使うには、リポジトリの設定を変更すればよい。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote set-url origin github:your_username/your_repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;git&quot;&gt;Gitを使う手順&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;初期設定&lt;/h3&gt;
-
-&lt;p&gt;自分の情報を登録する&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global user.name &quot;Your Name&quot;
-$ git config --global user.email &quot;your_email@smaple.com&quot;
-$ git config --global core.editor vim (or emacs)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;設定の確認&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --list
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;clone-2&quot;&gt;他人のリポジトリをclone&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;cloneしたいリポジトリに入って、&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:username/repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;自分のレポジトリを使う&lt;/h3&gt;
-
-&lt;h4 id=&quot;clone-3&quot;&gt;もともとあるリポジトリをclone&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;cloneしたいリポジトリに入って、&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone github:my_username/my_repository.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ファイルを編集する&lt;/li&gt;
-  &lt;li&gt;変更を追加&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;変更をコミット&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m &quot;any comment&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;変更をプッシュ&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;section-6&quot;&gt;新たにリポジトリを作る&lt;/h4&gt;
-
-&lt;p&gt;1.新しくリポジトリにするディレクトリ内に入って、&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git init 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-21-git/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
         
         
         <category>memo</category>
