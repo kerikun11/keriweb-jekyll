@@ -444,7 +444,79 @@ $(document).ready( function () {
 
 <p>同じく長くなりそうなので、(元気があれば)後日記事を書きます。</p>
 
-<h2 id="section-10">さいごに</h2>
+<h2 id="section-10">プログラムの例</h2>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/*
+PIC18F27J53用プログラム 
+Date:	2016.01.08
+Author:	@Ryokeri
+*/</span>
+
+<span class="c1">// CONFIG1L
+</span><span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
+</span><span class="c1">// CONFIG1H
+</span><span class="cp">#pragma config CPUDIV = OSC1, CP0 = OFF
+</span><span class="c1">// CONFIG2L
+</span><span class="cp">#pragma config OSC = INTOSCPLL, SOSCSEL = LOW, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
+</span><span class="c1">// CONFIG2H
+</span><span class="cp">#pragma config WDTPS = 1024
+</span><span class="c1">// CONFIG3L
+</span><span class="cp">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
+</span><span class="c1">// CONFIG3H
+</span><span class="cp">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
+</span><span class="c1">// CONFIG4L
+</span><span class="cp">#pragma config WPFP = PAGE_127, WPCFG = OFF
+</span><span class="c1">// CONFIG4H
+</span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
+</span>
+<span class="cp">#include &lt;xc.h&gt;
+</span>
+<span class="c1">// __delay_ms()関数を使うために周波数を定義
+</span><span class="cp">#define _XTAL_FREQ 48000000
+</span>
+<span class="c1">// 割り込み関数
+</span><span class="kt">void</span> <span class="n">interrupt</span> <span class="nf">ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* 内容を書く */</span>
+<span class="p">}</span>
+
+<span class="c1">// 自作delay関数
+</span><span class="kt">void</span> <span class="n">delay_ms</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">t</span><span class="p">){</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 必要な関数を書く
+</span><span class="cm">/*
+OSC_init()やTimer1_init()など
+*/</span>
+
+<span class="c1">// main関数
+</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 初期設定
+</span>    <span class="n">OSC_init</span><span class="p">();</span>
+    <span class="n">IO_init</span><span class="p">();</span>
+    <span class="n">timer0_init</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+    <span class="n">timer1_init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T1OSC</span><span class="p">);</span>
+    <span class="n">timer3_init</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// 割り込み許可
+</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// RA0ピンを0→1→0→・・・
+</span>	<span class="n">LATAbits</span><span class="p">.</span><span class="n">LATA0</span> <span class="o">=</span> <span class="o">!</span><span class="n">LATAbits</span><span class="p">.</span><span class="n">LATA0</span><span class="p">;</span>
+	<span class="c1">// UART送信
+</span>	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'H'</span><span class="p">);</span>
+	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'e'</span><span class="p">);</span>
+	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'l'</span><span class="p">);</span>
+	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'l'</span><span class="p">);</span>
+	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'o'</span><span class="p">);</span>
+	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'\n'</span><span class="p">);</span>
+	<span class="n">delay_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="section-11">さいごに</h2>
 
 <h3 id="pic">PICを使おう！</h3>
 
@@ -461,7 +533,7 @@ $(document).ready( function () {
 
 <p>主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。</p>
 
-<h3 id="section-11">何か気づいたら</h3>
+<h3 id="section-12">何か気づいたら</h3>
 
 <p>もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。<a href="https://twitter.com/Ryokeri14">@Ryokeri14</a>←遠慮なくリプしてください。</p>
 
