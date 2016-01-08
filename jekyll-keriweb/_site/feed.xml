@@ -5,9 +5,399 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 18:51:13 +0900</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 18:51:13 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Jan 2016 23:34:11 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Jan 2016 23:34:11 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>PIC18F27J53のすすめ</title>
+        <description>&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;秋月で売っている&lt;/h3&gt;
+
+&lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
+
+&lt;p&gt;もちろん、秋月なので値段が安い！！&lt;br /&gt;
+&lt;strong&gt;1個270円&lt;/strong&gt;です(2016年1月現在)。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;メモリが豊富&lt;/h3&gt;
+
+&lt;p&gt;我が宿敵のATMEGA328Pのメモリと比べてみましょう。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;機能&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;ATMEGA328P&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;PIC18F27J53&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;プログラムメモリ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;32kB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;128kB&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SRAM&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2kB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;3.8kB&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;メモリがありすぎて、困っちゃうなぁ。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;周辺モジュールが豊富&lt;/h3&gt;
+
+&lt;p&gt;主な機能を表にまとめました。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;機能&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;個数&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;備考&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;8bitタイマ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4個&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;16bitタイマ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4個&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PWM&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;個&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;内3つは超高機能PWM&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;I2C/SPI&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2個&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;マスタ&amp;amp;スレーブ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;12bit-ADC&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10ch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;モジュールは1個&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CTMU&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ADCのピン&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;タッチセンサ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RTCC&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;リアルタイムクロック&amp;amp;カレンダー&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;USB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1個&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;スレーブ側&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;タイマとPWMがたくさんあるのでロボットは動かし放題ですね！&lt;/p&gt;
+
+&lt;h3 id=&quot;usb&quot;&gt;USBでパソコンと通信&lt;/h3&gt;
+
+&lt;p&gt;マイコンがデバックのためにパソコンと通信するときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。&lt;/p&gt;
+
+&lt;p&gt;USBで接続するとCOMポートが現れるので、UARTとまったく同じように使うことができるのです。&lt;/p&gt;
+
+&lt;p&gt;これで、FT232のUSBシリアル変換モジュールは必要なくなります！！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;usb-1&quot;&gt;USBブートローダーに対応&lt;/h3&gt;
+
+&lt;p&gt;USB通信を使って、自分自身のプログラムの書き換えをすることができます。ブートローダです。&lt;/p&gt;
+
+&lt;p&gt;初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずに書き込むことができます。これなら、スマートに開発をすることができます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;周辺もージュールのピンを後から割り当て&lt;/h3&gt;
+
+&lt;p&gt;周辺モジュールが多いので、ピンの重複が気になるところです。しかし、PIC18F27J53は「Remappable Pin」といものがあります。&lt;/p&gt;
+
+&lt;p&gt;Remappable PinはPWMやI2Cなどのピンをプログラム内で指定することができます。これなら好きなピンに機能を割り当てられるので、重複を回避できます。&lt;/p&gt;
+
+&lt;p&gt;さらに基板に合わせてピンを決められるので結構便利です。&lt;/p&gt;
+
+&lt;h2 id=&quot;pic18f27j53-1&quot;&gt;PIC18F27J53の使い方(ハードウェア)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;ピンアサイン&lt;/h3&gt;
+
+&lt;p&gt;PIC18F27J53のピンアサイン（データシートより）&lt;br /&gt;
+&lt;img src=&quot;/images/2016-01-08-pic18f27j53/pin-assign.png&quot; alt=&quot;PIC18F27J53のピンアサイン&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RPx&lt;/strong&gt;というピンが「Remappable Pin」です。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;電源について&lt;/h3&gt;
+
+&lt;p&gt;電源電圧は&lt;strong&gt;3.3V&lt;/strong&gt;です。注意してください。&lt;/p&gt;
+
+&lt;p&gt;誤って5Vを接続したことがありますが、壊れませんでした（PICは強い！）。しかし正常には動作しませんでした。&lt;/p&gt;
+
+&lt;p&gt;上のピンアサインの図の灰色のピンは、5.5Vトレラントなので、5.5Vの入力もそのまま接続できます。&lt;/p&gt;
+
+&lt;p&gt;PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に」10uFのコンデンサをつなぐ必要があります。&lt;/p&gt;
+
+&lt;h3 id=&quot;pic18f27j53-2&quot;&gt;PIC18F27J53の一般的な回路図&lt;/h3&gt;
+
+&lt;p&gt;PIC18F27J53の基本的な回路図&lt;br /&gt;
+&lt;a href=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;SPIやPWMなどは「Remappable」のピンに割り当てればOKです。&lt;/p&gt;
+
+&lt;p&gt;回路図を見てわかるように、実際に使えるGPIO(General Purpose Input Output)は、12本(内10本ADC対応&amp;amp;Remappable)です。&lt;/p&gt;
+
+&lt;p&gt;UARTやI2Cを使わないならば、GPIOはもう少し増えます。&lt;/p&gt;
+
+&lt;p&gt;この回路図をもとに回路を作っていきましょう。&lt;/p&gt;
+
+&lt;h2 id=&quot;pic18f27j53-3&quot;&gt;PIC18F27J53の使い方(ソフトウェア)&lt;/h2&gt;
+
+&lt;p&gt;ソフトウェアもほかのPICと少し違うので少し注意が必要です。&lt;/p&gt;
+
+&lt;h3 id=&quot;configration-bits&quot;&gt;Configration Bits&lt;/h3&gt;
+
+&lt;p&gt;いつも変わらないので、コピペしましょう。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG1L
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WDTEN = ON, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG1H
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config CPUDIV = OSC1, CP0 = OFF
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG2L
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config OSC = INTOSCPLL, SOSCSEL = LOW, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG2H
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WDTPS = 8
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG3L
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG3H
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG4L
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WPFP = PAGE_127, WPCFG = OFF
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG4H
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;動作クロックの設定&lt;/h3&gt;
+
+&lt;p&gt;クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// OSC Settings
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OSC_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;OSCCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IRCF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// 内蔵発振周波数は8MHz
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;OSCTUNEbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PLLEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// PLL(x6)をEnable
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;OSCCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SCS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// クロックソースは内蔵発振or外部クロック
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;ここに記述した内容と、Configration Bitsの内容によりクロックソースと周波数が決まります。&lt;/p&gt;
+
+&lt;h3 id=&quot;io&quot;&gt;I/Oポート関連&lt;/h3&gt;
+
+&lt;p&gt;PIC18F27J53には8bitの入出力ポートが3つあります。PORTA,PORTB,PORTCです。&lt;/p&gt;
+
+&lt;p&gt;I/Oの設定はTRISA,TRISB,TRISCレジスタで行います。出力が0で、入力が1です。&lt;/p&gt;
+
+&lt;p&gt;アナログ/デジタルの切り替えはANCONレジスタで行います。アナログが0でデジタルが1で、他のPICとは逆なので注意しましょう。&lt;/p&gt;
+
+&lt;p&gt;内蔵プルアップはポートBのみについているので、デジタル入力はポートBでするのがいいでしょう。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// I/O Port Settings
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IO_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// 0が出力、1が入力
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;TRISA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bxxx1xxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;TRISB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bxx11xxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;TRISC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b10111x10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
+&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// 0がアナログ、1がデジタル
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ANCON0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b111xxxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;ANCON1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b000xxxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;INTCON2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RBPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// PORTB Pull-up Pnable
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;※「x」となっているところは自分で適当に0/1を入れる。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;タイマ関連&lt;/h3&gt;
+
+&lt;h4 id=&quot;timer-0-8bit&quot;&gt;Timer 0 (8bit)&lt;/h4&gt;
+
+&lt;p&gt;割り込み周波数 = Fosc / (4 * 256 * prescaler) = 46875/prescaler [Hz]&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// prescaler is 0~8
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Timer0_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR0ON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T08BIT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 8-bit timer
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0CS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// use internal-OSC
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PSA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Not use prescaler
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PSA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// use prescaler
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;T0CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0PS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0IE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Timer 0 Enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR0IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// interrupt Flag clear
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;INTCON2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR0IP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// low priority
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;timer-1&quot;&gt;Timer 1&lt;/h4&gt;
+
+&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define FOSC_4 0 // Fosc/4
+#define T1OSC  2 // Timer 1 OSC
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// prescaler is 0~3
+// clock_select is FOSC_4(Fosc/4) or T1OSC(32.768kHz)
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Timer1_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clock_select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1CS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clock_select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clock_select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T1OSC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1OSCEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Drive Crystal
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1OSCEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1CKPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nT1SYNC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// No Sync
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RD16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Timer1=16bit timer
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T1CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1ON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;IPR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// low priority
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;PIE1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;timer-3&quot;&gt;Timer 3&lt;/h4&gt;
+
+&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// prescaler is 0~3
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timer3_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// prescaler is 0~3
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T3CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3CS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Clock = Fosc/4
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T3CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T3OSCEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Not Drive Crystal
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T3CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T3CKPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;T3CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RD163&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Timer3=16bit timer
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;T3CONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3ON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;IPR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// low priority
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;PIR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;PIE2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;uart&quot;&gt;UARTの設定&amp;amp;動作&lt;/h3&gt;
+
+&lt;p&gt;ここではとりあえずUART通信できるプログラムを示します。本来ならばリングバッファを使って実装します。長くなりそうなので、そのやり方はまた改めて説明します。&lt;/p&gt;
+
+&lt;p&gt;最初に1回&lt;code class=&quot;highlighter-rouge&quot;&gt;UART_init();&lt;/code&gt;を呼び出せば、後は&lt;code class=&quot;highlighter-rouge&quot;&gt;rx_send(data);&lt;/code&gt;で送信する子ができます。&lt;/p&gt;
+
+&lt;p&gt;ボーレートは115200bpsに設定されています。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// UART初期化関数
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UART_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TXSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TX9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0:8-bit
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;TXSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TXEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//1:enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;TXSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYNC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0:Asynchronous mode
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;TXSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BRGH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1:High Speed
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;RCSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SPEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1:Serial Port enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;RCSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RX9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0:8-bit
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;RCSTA1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CREN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1:continuous receive enable
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;BAUDCON1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BRG16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1:use 16-bit SPBRG
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;SPBRG1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_XTAL_FREQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;115200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SPBRGH1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_XTAL_FREQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;115200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 送信関数
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tx_send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TXREG1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TXIF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 送信完了まで待つ
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;割り込み関数&lt;/h3&gt;
+
+&lt;p&gt;割り込み関数はPIC16FやPIC18Fと同様です。&lt;/p&gt;
+
+&lt;p&gt;今回説明した内容の機能をを使う場合、割り込み関数は以下のようになります。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 割り込み関数
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interrupt&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// UART受信割り込み処理
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIE1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RCIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RCIF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recv_char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RCREG1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// RCREG1を読み取ることで割り込みフラグはクリアされる
+&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* 何らかの処理 */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// I2C割り込み処理
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;I2C_ISR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// タイマ0割り込み処理
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0IE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T0IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 割り込みフラグをクリア
+&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* 何らかの処理 */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// タイマ1割り込み処理
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIE1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR1IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 割り込みフラグをクリア
+&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;TMR1H&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xC0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0.5秒ごとの割り込みにするため
+&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* 何らかの処理 */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// タイマ3割り込み処理
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIE2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;PIR2bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TMR3IF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 割り込みフラグをクリア
+&lt;/span&gt;	&lt;span class=&quot;cm&quot;&gt;/* 何らかの処理 */&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;usb-2&quot;&gt;USB関連&lt;/h3&gt;
+
+&lt;p&gt;USB関連は結構複雑で長くなりそうなので、改めて後日書こうと思います。&lt;/p&gt;
+
+&lt;h3 id=&quot;remappable-pin&quot;&gt;Remappable Pinの使い方&lt;/h3&gt;
+
+&lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
+
+&lt;h3 id=&quot;rtcc&quot;&gt;RTCC(リアルタイムクロック)モジュールの使い方&lt;/h3&gt;
+
+&lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;タッチセンサの使い方&lt;/h3&gt;
+
+&lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
+
+&lt;h3 id=&quot;pwmi2cspi&quot;&gt;PWM、I2C、SPIの使い方&lt;/h3&gt;
+
+&lt;p&gt;同じく長くなりそうなので、(元気があれば)後日記事を書きます。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-10&quot;&gt;さいごに&lt;/h2&gt;
+
+&lt;h3 id=&quot;pic&quot;&gt;PICを使おう！&lt;/h3&gt;
+
+&lt;p&gt;僕がググった感じだとPIC18F27J53を使っている人はかなり少ないと思います。この記事を読んで使ってくれる人がいたら嬉しいです。このマイコンは魅力的ですよ～&lt;/p&gt;
+
+&lt;p&gt;PICはとてもおもしろいですね！バンバン使って電子工作を楽しみましょう！&lt;/p&gt;
+
+&lt;p&gt;やっぱり、AVRなんかより&lt;strong&gt;PIC&lt;/strong&gt;の方がいいですね～&lt;/p&gt;
+
+&lt;h3 id=&quot;pic-1&quot;&gt;PIC用ライブラリ&lt;/h3&gt;
+
+&lt;p&gt;僕の作ったPIC用ライブラリのリンクを貼っておきます。参考にしてください。&lt;br /&gt;
+&lt;a href=&quot;https://github.com/kerikun11/MPLABXProjects/tree/master/My_library&quot;&gt;PICライブラリ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-11&quot;&gt;何か気づいたら&lt;/h3&gt;
+
+&lt;p&gt;もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。&lt;a href=&quot;https://twitter.com/Ryokeri14&quot;&gt;@Ryokeri14&lt;/a&gt;←遠慮なくリプしてください。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>yamyでキーボードをカスタマイズ</title>
@@ -1152,39 +1542,6 @@ Host global_raspi
         <pubDate>Sat, 31 Oct 2015 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
-        
-        
-        <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>linkを作る「ln」コマンド</title>
-        <description>&lt;h2&gt;ハードリンクとシンボリックリンク&lt;/h2&gt;
-&lt;article&gt;
-	&lt;p&gt;　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。&lt;/p&gt;
-	&lt;p&gt;　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。&lt;/p&gt;
-&lt;/article&gt;
-&lt;h2&gt;コマンド形式&lt;/h2&gt;
-&lt;article&gt;
-	&lt;p&gt;　以下のようなコマンドを実行する。&lt;/p&gt;
-	&lt;pre&gt;$ ln -fids &amp;lt;ターゲット&amp;gt; &amp;lt;リンク&amp;gt;&lt;/pre&gt;
-	&lt;ul&gt;
-		&lt;li&gt;-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする&lt;/li&gt;
-		&lt;li&gt;-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる&lt;/li&gt;
-		&lt;li&gt;-d	ディレクトリのリンクを作成&lt;/li&gt;
-		&lt;li&gt;-s	シンボリックリンクを作成（デフォルトはハードリンク）&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/article&gt;
-&lt;h2&gt;例&lt;/h2&gt;
-&lt;article&gt;
-	&lt;p&gt;　Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド&lt;/p&gt;
-	&lt;pre&gt;$ ln -sf ~/dotfiles/.vimrc ~/.vimrc&lt;/pre&gt;
-
-</description>
-        <pubDate>Wed, 28 Oct 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-28-link/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
         
         
         <category>memo</category>
