@@ -186,7 +186,7 @@ $(document).ready( function () {
 
 <h3 id="usb">USBでパソコンと通信</h3>
 
-<p>マイコンがデバックのためにパソコンと通信するときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。</p>
+<p>デバックのためにマイコンとパソコンで通信をするときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。</p>
 
 <p>USBで接続するとCOMポートが現れるので、UARTとまったく同じように使うことができるのです。</p>
 
@@ -198,7 +198,7 @@ $(document).ready( function () {
 
 <p>USB通信を使って、自分自身のプログラムの書き換えをすることができます。ブートローダです。</p>
 
-<p>初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずに書き込むことができます。これなら、スマートに開発をすることができます。</p>
+<p>初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずにUSBで書き込むことができます。これなら、スマートに開発をすることができます。</p>
 
 <h3 id="section-3">周辺もージュールのピンを後から割り当て</h3>
 
@@ -208,16 +208,26 @@ $(document).ready( function () {
 
 <p>さらに基板に合わせてピンを決められるので結構便利です。</p>
 
+<h3 id="section-4">タッチセンサ</h3>
+
+<p>PIC18F27J53にはCTMUというタッチセンサ機能を持ったモジュールがあります。押しボタンの代わりに使えるのでなかなか便利です。</p>
+
+<h3 id="section-5">リアルタイムクロックモジュール</h3>
+
+<p>リアルタイムモジュールがあれば、32.768kHzの水晶をつなぐだけで時計とカレンダーをカウントしてくれます。レジスタの数を見るだけで時間や日にちをGETできるのでとても簡単！実用的！</p>
+
+<p>しかも、スリープ中でも時計は止まらないので、電池でも十分動かすことができます。</p>
+
 <h2 id="pic18f27j53-1">PIC18F27J53の使い方(ハードウェア)</h2>
 
-<h3 id="section-4">ピンアサイン</h3>
+<h3 id="section-6">ピンアサイン</h3>
 
 <p>PIC18F27J53のピンアサイン（データシートより）<br />
 <img src="/images/2016-01-08-pic18f27j53/pin-assign.png" alt="PIC18F27J53のピンアサイン" /></p>
 
 <p><strong>RPx</strong>というピンが「Remappable Pin」です。</p>
 
-<h3 id="section-5">電源について</h3>
+<h3 id="section-7">電源について</h3>
 
 <p>電源電圧は<strong>3.3V</strong>です。注意してください。</p>
 
@@ -225,7 +235,7 @@ $(document).ready( function () {
 
 <p>上のピンアサインの図の灰色のピンは、5.5Vトレラントなので、5.5Vの入力もそのまま接続できます。</p>
 
-<p>PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に」10uFのコンデンサをつなぐ必要があります。</p>
+<p>PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に10uFのコンデンサをつなぐ必要があります。</p>
 
 <h3 id="pic18f27j53-2">PIC18F27J53の一般的な回路図</h3>
 
@@ -265,7 +275,7 @@ $(document).ready( function () {
 </span><span class="c1">// CONFIG4H
 </span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8</span></code></pre></figure>
 
-<h3 id="section-6">動作クロックの設定</h3>
+<h3 id="section-8">動作クロックの設定</h3>
 
 <p>クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。</p>
 
@@ -302,7 +312,7 @@ $(document).ready( function () {
 
 <p>※「x」となっているところは自分で適当に0/1を入れる。</p>
 
-<h3 id="section-7">タイマ関連</h3>
+<h3 id="section-9">タイマ関連</h3>
 
 <h4 id="timer-0-8bit">Timer 0 (8bit)</h4>
 
@@ -391,7 +401,7 @@ $(document).ready( function () {
     <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">// 送信完了まで待つ
 </span><span class="p">}</span></code></pre></figure>
 
-<h3 id="section-8">割り込み関数</h3>
+<h3 id="section-10">割り込み関数</h3>
 
 <p>割り込み関数はPIC16FやPIC18Fと同様です。</p>
 
@@ -436,7 +446,7 @@ $(document).ready( function () {
 
 <p>同じく長くなりそうなので、後日記事を書きます。</p>
 
-<h3 id="section-9">タッチセンサの使い方</h3>
+<h3 id="section-11">タッチセンサの使い方</h3>
 
 <p>同じく長くなりそうなので、後日記事を書きます。</p>
 
@@ -444,7 +454,7 @@ $(document).ready( function () {
 
 <p>同じく長くなりそうなので、(元気があれば)後日記事を書きます。</p>
 
-<h2 id="section-10">プログラムの例</h2>
+<h2 id="section-12">プログラムの例</h2>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/*
 PIC18F27J53用プログラム 
@@ -516,7 +526,7 @@ OSC_init()やTimer1_init()など
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="section-11">さいごに</h2>
+<h2 id="section-13">さいごに</h2>
 
 <h3 id="pic">PICを使おう！</h3>
 
@@ -533,7 +543,7 @@ OSC_init()やTimer1_init()など
 
 <p>主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。</p>
 
-<h3 id="section-12">何か気づいたら</h3>
+<h3 id="section-14">何か気づいたら</h3>
 
 <p>もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。<a href="https://twitter.com/Ryokeri14">@Ryokeri14</a>←遠慮なくリプしてください。</p>
 

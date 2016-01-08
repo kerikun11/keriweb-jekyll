@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jan 2016 00:16:24 +0900</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 00:16:24 +0900</lastBuildDate>
+    <pubDate>Sat, 09 Jan 2016 01:08:22 +0900</pubDate>
+    <lastBuildDate>Sat, 09 Jan 2016 01:08:22 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -110,7 +110,7 @@
 
 &lt;h3 id=&quot;usb&quot;&gt;USBでパソコンと通信&lt;/h3&gt;
 
-&lt;p&gt;マイコンがデバックのためにパソコンと通信するときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。&lt;/p&gt;
+&lt;p&gt;デバックのためにマイコンとパソコンで通信をするときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。&lt;/p&gt;
 
 &lt;p&gt;USBで接続するとCOMポートが現れるので、UARTとまったく同じように使うことができるのです。&lt;/p&gt;
 
@@ -122,7 +122,7 @@
 
 &lt;p&gt;USB通信を使って、自分自身のプログラムの書き換えをすることができます。ブートローダです。&lt;/p&gt;
 
-&lt;p&gt;初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずに書き込むことができます。これなら、スマートに開発をすることができます。&lt;/p&gt;
+&lt;p&gt;初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずにUSBで書き込むことができます。これなら、スマートに開発をすることができます。&lt;/p&gt;
 
 &lt;h3 id=&quot;section-3&quot;&gt;周辺もージュールのピンを後から割り当て&lt;/h3&gt;
 
@@ -132,16 +132,26 @@
 
 &lt;p&gt;さらに基板に合わせてピンを決められるので結構便利です。&lt;/p&gt;
 
+&lt;h3 id=&quot;section-4&quot;&gt;タッチセンサ&lt;/h3&gt;
+
+&lt;p&gt;PIC18F27J53にはCTMUというタッチセンサ機能を持ったモジュールがあります。押しボタンの代わりに使えるのでなかなか便利です。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;リアルタイムクロックモジュール&lt;/h3&gt;
+
+&lt;p&gt;リアルタイムモジュールがあれば、32.768kHzの水晶をつなぐだけで時計とカレンダーをカウントしてくれます。レジスタの数を見るだけで時間や日にちをGETできるのでとても簡単！実用的！&lt;/p&gt;
+
+&lt;p&gt;しかも、スリープ中でも時計は止まらないので、電池でも十分動かすことができます。&lt;/p&gt;
+
 &lt;h2 id=&quot;pic18f27j53-1&quot;&gt;PIC18F27J53の使い方(ハードウェア)&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;ピンアサイン&lt;/h3&gt;
+&lt;h3 id=&quot;section-6&quot;&gt;ピンアサイン&lt;/h3&gt;
 
 &lt;p&gt;PIC18F27J53のピンアサイン（データシートより）&lt;br /&gt;
 &lt;img src=&quot;/images/2016-01-08-pic18f27j53/pin-assign.png&quot; alt=&quot;PIC18F27J53のピンアサイン&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;RPx&lt;/strong&gt;というピンが「Remappable Pin」です。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;電源について&lt;/h3&gt;
+&lt;h3 id=&quot;section-7&quot;&gt;電源について&lt;/h3&gt;
 
 &lt;p&gt;電源電圧は&lt;strong&gt;3.3V&lt;/strong&gt;です。注意してください。&lt;/p&gt;
 
@@ -149,7 +159,7 @@
 
 &lt;p&gt;上のピンアサインの図の灰色のピンは、5.5Vトレラントなので、5.5Vの入力もそのまま接続できます。&lt;/p&gt;
 
-&lt;p&gt;PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に」10uFのコンデンサをつなぐ必要があります。&lt;/p&gt;
+&lt;p&gt;PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に10uFのコンデンサをつなぐ必要があります。&lt;/p&gt;
 
 &lt;h3 id=&quot;pic18f27j53-2&quot;&gt;PIC18F27J53の一般的な回路図&lt;/h3&gt;
 
@@ -189,7 +199,7 @@
 &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG4H
 &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;動作クロックの設定&lt;/h3&gt;
+&lt;h3 id=&quot;section-8&quot;&gt;動作クロックの設定&lt;/h3&gt;
 
 &lt;p&gt;クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。&lt;/p&gt;
 
@@ -226,7 +236,7 @@
 
 &lt;p&gt;※「x」となっているところは自分で適当に0/1を入れる。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;タイマ関連&lt;/h3&gt;
+&lt;h3 id=&quot;section-9&quot;&gt;タイマ関連&lt;/h3&gt;
 
 &lt;h4 id=&quot;timer-0-8bit&quot;&gt;Timer 0 (8bit)&lt;/h4&gt;
 
@@ -315,7 +325,7 @@
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIR1bits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TXIF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 送信完了まで待つ
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;section-8&quot;&gt;割り込み関数&lt;/h3&gt;
+&lt;h3 id=&quot;section-10&quot;&gt;割り込み関数&lt;/h3&gt;
 
 &lt;p&gt;割り込み関数はPIC16FやPIC18Fと同様です。&lt;/p&gt;
 
@@ -360,7 +370,7 @@
 
 &lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-9&quot;&gt;タッチセンサの使い方&lt;/h3&gt;
+&lt;h3 id=&quot;section-11&quot;&gt;タッチセンサの使い方&lt;/h3&gt;
 
 &lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
 
@@ -368,7 +378,7 @@
 
 &lt;p&gt;同じく長くなりそうなので、(元気があれば)後日記事を書きます。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-10&quot;&gt;プログラムの例&lt;/h2&gt;
+&lt;h2 id=&quot;section-12&quot;&gt;プログラムの例&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*
 PIC18F27J53用プログラム 
@@ -440,7 +450,7 @@ OSC_init()やTimer1_init()など
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-11&quot;&gt;さいごに&lt;/h2&gt;
+&lt;h2 id=&quot;section-13&quot;&gt;さいごに&lt;/h2&gt;
 
 &lt;h3 id=&quot;pic&quot;&gt;PICを使おう！&lt;/h3&gt;
 
@@ -457,7 +467,7 @@ OSC_init()やTimer1_init()など
 
 &lt;p&gt;主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-12&quot;&gt;何か気づいたら&lt;/h3&gt;
+&lt;h3 id=&quot;section-14&quot;&gt;何か気づいたら&lt;/h3&gt;
 
 &lt;p&gt;もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。&lt;a href=&quot;https://twitter.com/Ryokeri14&quot;&gt;@Ryokeri14&lt;/a&gt;←遠慮なくリプしてください。&lt;/p&gt;
 
