@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jan 2016 11:27:42 +0900</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 11:27:42 +0900</lastBuildDate>
+    <pubDate>Sat, 09 Jan 2016 12:42:26 +0900</pubDate>
+    <lastBuildDate>Sat, 09 Jan 2016 12:42:26 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -162,6 +162,8 @@
 &lt;p&gt;PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に10uFのコンデンサをつなぐ必要があります。&lt;/p&gt;
 
 &lt;h3 id=&quot;pic18f27j53-2&quot;&gt;PIC18F27J53の一般的な回路図&lt;/h3&gt;
+
+&lt;p&gt;USBから電源をとるときは、3端子レギュレータを通して3.3Vにするのを忘れずに。&lt;/p&gt;
 
 &lt;p&gt;PIC18F27J53の基本的な回路図&lt;br /&gt;
 &lt;a href=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
