@@ -5,15 +5,15 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jan 2016 01:08:22 +0900</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 01:08:22 +0900</lastBuildDate>
+    <pubDate>Sat, 09 Jan 2016 11:27:42 +0900</pubDate>
+    <lastBuildDate>Sat, 09 Jan 2016 11:27:42 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>PIC18F27J53のすすめ</title>
         <description>&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;秋月で売っている&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;秋月で売っていること&lt;/h3&gt;
 
 &lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
 
@@ -22,7 +22,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;メモリが豊富&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;豊富なメモリ&lt;/h3&gt;
 
 &lt;p&gt;我が宿敵のATMEGA328Pのメモリと比べてみましょう。&lt;/p&gt;
 
@@ -50,7 +50,7 @@
 
 &lt;p&gt;メモリがありすぎて、困っちゃうなぁ。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;周辺モジュールが豊富&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;豊富な周辺モジュール&lt;/h3&gt;
 
 &lt;p&gt;主な機能を表にまとめました。&lt;/p&gt;
 
@@ -124,7 +124,7 @@
 
 &lt;p&gt;初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずにUSBで書き込むことができます。これなら、スマートに開発をすることができます。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;周辺もージュールのピンを後から割り当て&lt;/h3&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;周辺モジュールのピンを後から割り当て&lt;/h3&gt;
 
 &lt;p&gt;周辺モジュールが多いので、ピンの重複が気になるところです。しかし、PIC18F27J53は「Remappable Pin」といものがあります。&lt;/p&gt;
 
