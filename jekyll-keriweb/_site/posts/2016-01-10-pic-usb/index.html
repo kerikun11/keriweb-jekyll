@@ -93,7 +93,15 @@ $(document).ready( function () {
 
 <p>今回紹介する方法では、USBをUARTの代わりに使えるようにするものです。PICをPCにつなぐとCOMポートが現れます。</p>
 
+<p>これならUSBシリアル変換モジュールを使う必要はなくります。</p>
+
+<p><img src="/images/2016-01-10-pic-usb/FT232.jpg" alt="AE-FT232" /></p>
+
 <h2 id="section-1">ハードウェアについて</h2>
+
+<p>PIC18F27J53を使用します。</p>
+
+<p><img src="/images/2016-01-10-pic-usb/view.jpg" alt="PIC18F27J53" /></p>
 
 <p>15,16pinがそれぞれUSBのD-,D+なのでUSBコネクタに接続します。さらに14pinのV_USB端子には3.3VのVCCをつなぎます。</p>
 
@@ -104,11 +112,54 @@ $(document).ready( function () {
 
 <h2 id="section-2">ソフトウェアについて</h2>
 
+<h3 id="picusb-cdc">PIC用USB-CDCライブラリ</h3>
+
 <p>Microchipの公式ライブラリ（MLA）を参考に僕がライブラリを作ったので、それを利用します。</p>
 
-<p>USBのプログラムを自分で実装するのはかなり厳しいです。ライブラリーを使います。</p>
+<p>USBのプログラムを自分で実装するのはかなり厳しいです。ライブラリを使いましょう。</p>
 
-<h3 id="myusbcdch">My_USB_CDC.h</h3>
+<h3 id="section-3">必要なファイル一覧</h3>
+
+<p>USB関連のファイル</p>
+
+<ul>
+  <li>My_USB_CDC.h</li>
+  <li>My_USB_CDC.c</li>
+  <li>usb_config.h</li>
+  <li>usb_descriptors.c</li>
+  <li>usb/usb.h</li>
+  <li>usb/usb_ch9.h</li>
+  <li>usb/usb_common.h</li>
+  <li>usb/usb_device.c</li>
+  <li>usb/usb_device.h</li>
+  <li>usb/usb_device_cdc.c</li>
+  <li>usb/usb_device_cdc.h</li>
+  <li>usb/usb_device_local.h</li>
+  <li>usb/usb_hal.h</li>
+  <li>usb/usb_hal_pic18.h</li>
+</ul>
+
+<p>送受信バッファ用ファイル</p>
+
+<ul>
+  <li>My_ringbuf.h</li>
+  <li>My_ringbuf.c</li>
+</ul>
+
+<p>これらのファイルは<a href="/images/2016-01-10-pic-usb/USB_CDC.zip">ここ</a>からダウンロードできます。</p>
+
+<h3 id="section-4">ユーザーが使う関数</h3>
+
+<p>このうちユーザーが使う関数が含まれるのは、</p>
+
+<ul>
+  <li>My_USB_CDC.h</li>
+  <li>My_ringbuf.h</li>
+</ul>
+
+<p>の2つです。</p>
+
+<h4 id="myusbcdch">My_USB_CDC.h</h4>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/*******************************************************************
  * Microchip PIC, USB-CDC Library
@@ -133,16 +184,16 @@ $(document).ready( function () {
 <span class="cp">#define USB_RX_BUFFER_SIZE 250
 #define USB_TX_BUFFER_SIZE 250
 </span>
-<span class="cm">/** VARIABLES **************************************************/</span>
+<span class="cm">/** VARIABLES *****************************************************/</span>
 <span class="k">extern</span> <span class="n">ringbuf_t</span> <span class="n">usb_rx</span><span class="p">;</span>
 <span class="k">extern</span> <span class="n">ringbuf_t</span> <span class="n">usb_tx</span><span class="p">;</span>
 
-<span class="cm">/** USER FUNCTIONS **********************************************/</span>
+<span class="cm">/** USER FUNCTIONS ************************************************/</span>
 <span class="kt">void</span> <span class="n">USB_CDC_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">USB_CDC_ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">USB_CDC_task</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 
-<span class="cm">/** FUNCTIONS ************************************************/</span>
+<span class="cm">/** FUNCTIONS *****************************************************/</span>
 <span class="k">static</span> <span class="kt">void</span> <span class="n">USB_CDC_buffer_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <span class="k">static</span> <span class="kt">void</span> <span class="n">USB_CDC_send</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">length</span><span class="p">);</span>
 <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">USB_CDC_get</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
@@ -152,166 +203,132 @@ $(document).ready( function () {
 
 <span class="cp">#endif</span></code></pre></figure>
 
-<h3 id="myusbcdcc">My_USB_CDC.c</h3>
+<h4 id="myringbufh">My_ringbuf.h</h4>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include "My_USB_CDC.h"
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/* 
+ * File:   My_ringbuf.h
+ * Author: kerikun11
+ *
+ * Created on 2015/02/26, 19:21
+ */</span>
+
+<span class="cp">#ifndef MY_RINGBUF_H
+#define	MY_RINGBUF_H
 </span>
-<span class="cm">/** INCLUDES *******************************************************/</span>
 <span class="cp">#include &lt;stdint.h&gt;
-#include &lt;string.h&gt;
-#include &lt;stddef.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdint.h&gt;
-#include &lt;string.h&gt;
 </span>
-<span class="cp">#include &lt;usb/usb.h&gt;
-#include "usb_config.h"
+<span class="c1">//*************************** ringbuf ***************************//
+// headは次に入れるバッファを指す。tailは次に出すバッファを指す。
 </span>
-<span class="cm">/** VARIABLES ******************************************************/</span>
-<span class="n">ringbuf_t</span> <span class="n">usb_rx</span><span class="p">;</span>
-<span class="n">ringbuf_t</span> <span class="n">usb_tx</span><span class="p">;</span>
-<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">readBuffer</span><span class="p">[</span><span class="n">CDC_DATA_OUT_EP_SIZE</span><span class="p">];</span>
-<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">writeBuffer</span><span class="p">[</span><span class="n">CDC_DATA_IN_EP_SIZE</span><span class="p">];</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">ringbuf</span> <span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buf</span><span class="p">;</span>
+    <span class="kt">uint16_t</span> <span class="n">size</span><span class="p">;</span>
+    <span class="kt">uint16_t</span> <span class="n">head</span><span class="p">;</span>
+    <span class="kt">uint16_t</span> <span class="n">tail</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">ringbuf_t</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">USB_CDC_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">USBDeviceInit</span><span class="p">();</span>
-    <span class="n">USBDeviceAttach</span><span class="p">();</span>
-    <span class="n">USB_CDC_buffer_init</span><span class="p">();</span>
+<span class="kt">void</span> <span class="n">ringbuf_init</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">internal_buf</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">bufsize</span><span class="p">);</span>
+
+<span class="kt">uint16_t</span> <span class="n">ringbuf_num</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">ringbuf_put</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">data</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">ringbuf_put_num</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">value</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">digits</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">ringbuf_put_str</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span>
+
+<span class="kt">uint8_t</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">ringbuf_backspace</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">ringbuf_delete</span><span class="p">(</span><span class="n">ringbuf_t</span> <span class="o">*</span><span class="n">rb</span><span class="p">);</span>
+
+<span class="cp">#endif	</span><span class="cm">/* MY_RINGBUF_H */</span></code></pre></figure>
+
+<h2 id="section-5">ライブラリファイルの追加</h2>
+
+<h3 id="c">Cファイルとヘッダーファイル</h3>
+
+<p>外部のライブラリを使用するとき、Cファイルとヘッダーファイルではプロジェクトへの読み込み方が異なります。</p>
+
+<p>Cファイルは「Add Existing Item…」からプロジェクトにファイルを追加します。</p>
+
+<p>一方、ヘッダーファイルは、プロジェクトのプロパティの「Include directory」にヘッダーファイルのあるディレクトリを指定するだけで、プロジェクトに直接ファイルを追加する必要はありません。</p>
+
+<h3 id="section-6">ファイル追加の仕方</h3>
+
+<ol>
+  <li>ダウンロードして解凍したUSB-CDCディレクトリをMPLABのプロジェクトのフォルダ内にコピーします。</li>
+  <li>MPLABXプロジェクトの「Source Files」ディレクトリを右クリックして「Add Existing Item…」からCファイルを追加します。</li>
+  <li>プロジェクトを右クリック→Properties→XC8 Compiler→Include directoriesにUSB_CDCディレクトリを追加します。</li>
+  <li>mainファイルを作成して以下のソースを書けばOKです。</li>
+</ol>
+
+<p><img src="/images/2016-01-10-pic-usb/p1.png" alt="プロジェクトのプロパティ" />
+<img src="/images/2016-01-10-pic-usb/p2.png" alt="プロジェクトのプロパティ" /></p>
+
+<h2 id="section-7">プログラムの例</h2>
+
+<p>以上の設定がすでにされているMPLAB Xのプロジェクトファイルは<a href="/images/2016-01-10-pic-usb/PIC18F27J53-USB_CDC-sample.zip">ここ</a>からダウンロードできます。</p>
+
+<h3 id="mainc">main.c</h3>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/*
+ * PIC18F27J53用USB-CDCサンプルプログラム 
+ * Date:	2016.01.08
+ * Author:	@Ryokeri
+ */</span>
+
+<span class="c1">// CONFIG1L
+</span><span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
+</span><span class="c1">// CONFIG1H
+</span><span class="cp">#pragma config CPUDIV = OSC1, CP0 = OFF
+</span><span class="c1">// CONFIG2L
+</span><span class="cp">#pragma config OSC = INTOSCPLL, SOSCSEL = LOW, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
+</span><span class="c1">// CONFIG2H
+</span><span class="cp">#pragma config WDTPS = 1024
+</span><span class="c1">// CONFIG3L
+</span><span class="cp">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
+</span><span class="c1">// CONFIG3H
+</span><span class="cp">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
+</span><span class="c1">// CONFIG4L
+</span><span class="cp">#pragma config WPFP = PAGE_127, WPCFG = OFF
+</span><span class="c1">// CONFIG4H
+</span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
+</span>
+<span class="cp">#include &lt;xc.h&gt;
+#include &lt;My_USB_CDC.h&gt;
+</span>
+<span class="kt">void</span> <span class="n">interrupt</span> <span class="nf">ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">USB_CDC_ISR</span><span class="p">();</span>
 <span class="p">}</span>
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">USB_CDC_buffer_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">rxbuf</span><span class="p">[</span><span class="n">USB_RX_BUFFER_SIZE</span><span class="p">];</span>
-    <span class="n">ringbuf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">,</span> <span class="n">rxbuf</span><span class="p">,</span> <span class="k">sizeof</span> <span class="p">(</span><span class="n">rxbuf</span><span class="p">));</span>
-    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">txbuf</span><span class="p">[</span><span class="n">USB_TX_BUFFER_SIZE</span><span class="p">];</span>
-    <span class="n">ringbuf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">,</span> <span class="n">txbuf</span><span class="p">,</span> <span class="k">sizeof</span> <span class="p">(</span><span class="n">txbuf</span><span class="p">));</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">USB_CDC_ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-<span class="cp">#if defined(USB_INTERRUPT)
-</span>    <span class="n">USBDeviceTasks</span><span class="p">();</span>
-<span class="cp">#endif
-</span><span class="p">}</span>
-<span class="kt">void</span> <span class="nf">USB_CDC_task</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-<span class="cp">#if defined(USB_POLLING)
-</span>    <span class="c1">// Interrupt or polling method.  If using polling, must call
-</span>    <span class="c1">// this function periodically.  This function will take care
-</span>    <span class="c1">// of processing and responding to SETUP transactions
-</span>    <span class="c1">// (such as during the enumeration process when you first
-</span>    <span class="c1">// plug in).  USB hosts require that USB devices should accept
-</span>    <span class="c1">// and process SETUP packets in a timely fashion.  Therefore,
-</span>    <span class="c1">// when using polling, this function should be called
-</span>    <span class="c1">// regularly (such as once every 1.8ms or faster** [see
-</span>    <span class="c1">// inline code comments in usb_device.c for explanation when
-</span>    <span class="c1">// "or faster" applies])  In most cases, the USBDeviceTasks()
-</span>    <span class="c1">// function does not take very long to execute (ex: &lt;100
-</span>    <span class="c1">// instruction cycles) before it returns.
-</span>    <span class="n">USBDeviceTasks</span><span class="p">();</span>
-<span class="cp">#endif
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">IRCF</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">OSCTUNEbits</span><span class="p">.</span><span class="n">PLLEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">SCS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00010000</span><span class="p">;</span> <span class="c1">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0
+</span>    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111111</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
+</span>    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10111010</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
+</span>    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
+</span>    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
+</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">RBPU</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// PORTB Pull-up Pnable
 </span>
+    <span class="n">USB_CDC_init</span><span class="p">();</span>
 
-    <span class="cm">/* If the USB device isn't configured yet, we can't really do anything
-     * else since we don't have a host to talk to.  So jump back to the
-     * top of the while loop. */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">USBGetDeviceState</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">CONFIGURED_STATE</span><span class="p">)</span> <span class="p">{</span>
-	<span class="cm">/* Jump back to the top of the while loop. */</span>
-	<span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="cm">/* If we are currently suspended, then we need to see if we need to
-     * issue a remote wakeup.  In either case, we shouldn't process any
-     * keyboard commands since we aren't currently communicating to the host
-     * thus just continue back to the start of the while loop. */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">USBIsDeviceSuspended</span><span class="p">()</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
-	<span class="cm">/* Jump back to the top of the while loop. */</span>
-	<span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Tx task
-</span>    <span class="kt">uint16_t</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">))</span> <span class="p">{</span>
-	<span class="n">writeBuffer</span><span class="p">[</span><span class="n">length</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">);</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&gt;=</span> <span class="n">CDC_DATA_IN_EP_SIZE</span><span class="p">)</span> <span class="p">{</span>
-	    <span class="k">break</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// 受信したデータをそのまま送信する。
+</span>	<span class="k">if</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">))</span> <span class="p">{</span>
+	    <span class="kt">uint8_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">);</span>
+	    <span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
 	<span class="p">}</span>
+	<span class="n">USB_CDC_task</span><span class="p">();</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">USB_CDC_send</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// Rx task
-</span>    <span class="n">length</span> <span class="o">=</span> <span class="n">USB_CDC_get</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">uint16_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-	    <span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">,</span> <span class="n">readBuffer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-	<span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">USB_CDC_send</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">mUSBUSARTIsTxTrfReady</span><span class="p">()</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">putUSBUSART</span><span class="p">(</span><span class="n">writeBuffer</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">CDCTxService</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="k">static</span> <span class="kt">uint8_t</span> <span class="nf">USB_CDC_get</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">uint8_t</span> <span class="n">numBytesRead</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">USBUSARTIsTxTrfReady</span><span class="p">()</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">numBytesRead</span> <span class="o">=</span> <span class="n">getsUSBUSART</span><span class="p">(</span><span class="n">readBuffer</span><span class="p">,</span> <span class="k">sizeof</span> <span class="p">(</span><span class="n">readBuffer</span><span class="p">));</span>
-    <span class="p">}</span>
-    <span class="n">CDCTxService</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">numBytesRead</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">APP_DeviceCDCBasicDemoInitialize</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">CDCInitEP</span><span class="p">();</span>
-
-    <span class="n">line_coding</span><span class="p">.</span><span class="n">bCharFormat</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">line_coding</span><span class="p">.</span><span class="n">bDataBits</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-    <span class="n">line_coding</span><span class="p">.</span><span class="n">bParityType</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">line_coding</span><span class="p">.</span><span class="n">dwDTERate</span> <span class="o">=</span> <span class="mi">115200</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">bool</span> <span class="nf">USER_USB_CALLBACK_EVENT_HANDLER</span><span class="p">(</span><span class="n">USB_EVENT</span> <span class="n">event</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pdata</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">switch</span> <span class="p">((</span><span class="kt">int</span><span class="p">)</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">case</span> <span class="n">EVENT_TRANSFER</span><span class="p">:</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_SOF</span><span class="p">:</span>
-	    <span class="cm">/* We are using the SOF as a timer to time the LED indicator.  Call
-	     * the LED update function here. */</span>
-	    <span class="c1">//APP_LEDUpdateUSBStatus();
-</span>	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_SUSPEND</span><span class="p">:</span>
-	    <span class="cm">/* Update the LED status for the suspend event. */</span>
-	    <span class="c1">//APP_LEDUpdateUSBStatus();
-</span>	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_RESUME</span><span class="p">:</span>
-	    <span class="cm">/* Update the LED status for the resume event. */</span>
-	    <span class="c1">//APP_LEDUpdateUSBStatus();
-</span>	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_CONFIGURED</span><span class="p">:</span>
-	    <span class="cm">/* When the device is configured, we can (re)initialize the 
-	     * demo code. */</span>
-	    <span class="n">APP_DeviceCDCBasicDemoInitialize</span><span class="p">();</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_SET_DESCRIPTOR</span><span class="p">:</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_EP0_REQUEST</span><span class="p">:</span>
-	    <span class="cm">/* We have received a non-standard USB request.  The HID driver
-	     * needs to check to see if the request was for it. */</span>
-	    <span class="n">USBCheckCDCRequest</span><span class="p">();</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_BUS_ERROR</span><span class="p">:</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="k">case</span> <span class="n">EVENT_TRANSFER_TERMINATED</span><span class="p">:</span>
-	    <span class="k">break</span><span class="p">;</span>
-
-	<span class="nl">default:</span>
-	    <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
+<h2 id="section-8">まとめ</h2>
+
+<p>USBでシリアル通信ができるととても便利です。ぜひ使ってみてください！</p>
 
 
     </div>

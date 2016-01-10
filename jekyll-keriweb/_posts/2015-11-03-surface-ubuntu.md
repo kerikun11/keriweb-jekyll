@@ -181,7 +181,7 @@ exfatでフォーマットしたUSBメモリに、UEFIシェルファイルを�
 
 #### UEFIシェルの入ったUSBメモリを作る
 
-1. 正常に動く別のPCで[UEFIshell](/files/Shell.efi)をダウンロードする。
+1. 正常に動く別のPCで[UEFIshell](/images/2015-11-03-surface-ubuntu/Shell.efi)をダウンロードする。
   1. FAT32でフォーマットしたUSBメモリに、`EFI/Boot/`というフォルダを作る。
   1. その中に先ほどダウンロードしたUEFIシェルを`Bootx64.efi`という名前にリネームして入れる。
   1. 終わり。
