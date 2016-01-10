@@ -321,7 +321,7 @@ $(document).ready( function () {
 <p>割り込み周波数 = Fosc / (4 * 256 * prescaler) = 46875/prescaler [Hz]</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// prescaler is 0~8
-</span><span class="kt">void</span> <span class="nf">Timer0_init</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="kt">void</span> <span class="nf">Timer0_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">T0CONbits</span><span class="p">.</span><span class="n">TMR0ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">T0CONbits</span><span class="p">.</span><span class="n">T08BIT</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 8-bit timer
 </span>    <span class="n">T0CONbits</span><span class="p">.</span><span class="n">T0CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// use internal-OSC
@@ -345,7 +345,7 @@ $(document).ready( function () {
 #define T1OSC  2 // Timer 1 OSC
 </span><span class="c1">// prescaler is 0~3
 // clock_select is FOSC_4(Fosc/4) or T1OSC(32.768kHz)
-</span><span class="kt">void</span> <span class="nf">Timer1_init</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">prescaler</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">clock_select</span><span class="p">)</span> <span class="p">{</span> 
+</span><span class="kt">void</span> <span class="nf">Timer1_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span>  <span class="n">prescaler</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">clock_select</span><span class="p">)</span> <span class="p">{</span> 
     <span class="n">T1CONbits</span><span class="p">.</span><span class="n">TMR1CS</span> <span class="o">=</span> <span class="n">clock_select</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">clock_select</span> <span class="o">==</span> <span class="n">T1OSC</span><span class="p">)</span> <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Drive Crystal
 </span>    <span class="k">else</span> <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -364,8 +364,8 @@ $(document).ready( function () {
 <p>割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// prescaler is 0~3
-</span><span class="kt">void</span> <span class="nf">timer3_init</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// prescaler is 0~3
-</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Clock = Fosc/4
+</span><span class="kt">void</span> <span class="nf">Timer3_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Clock = Fosc/4
 </span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3OSCEN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Not Drive Crystal
 </span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3CKPS</span> <span class="o">=</span> <span class="n">prescaler</span><span class="p">;</span>
     <span class="n">T3CONbits</span><span class="p">.</span><span class="n">RD163</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Timer3=16bit timer
@@ -396,12 +396,15 @@ $(document).ready( function () {
 </span>    <span class="n">BAUDCON1bits</span><span class="p">.</span><span class="n">BRG16</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:use 16-bit SPBRG
 </span>    <span class="n">SPBRG1</span> <span class="o">=</span> <span class="n">_XTAL_FREQ</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">115200</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">SPBRGH1</span> <span class="o">=</span> <span class="p">(</span><span class="n">_XTAL_FREQ</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">115200</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
-<span class="p">}</span>
+    <span class="n">IPR1bits</span><span class="p">.</span><span class="n">RCIP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Low Priority
+</span>    <span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Interrupt Enable
+</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Peripheral Interrupt Enable
+</span><span class="p">}</span>
 <span class="c1">// 送信関数
 </span><span class="kt">void</span> <span class="n">tx_send</span><span class="p">(</span><span class="kt">char</span> <span class="n">send_data</span><span class="p">){</span>
-    <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">send_data</span><span class="p">;</span>
-    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">// 送信完了まで待つ
-</span><span class="p">}</span></code></pre></figure>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">// 前のデータの送信完了まで待つ
+</span>    <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">send_data</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="section-10">割り込み関数</h3>
 
@@ -414,10 +417,8 @@ $(document).ready( function () {
     <span class="c1">// UART受信割り込み処理
 </span>    <span class="k">if</span> <span class="p">(</span><span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span> <span class="o">&amp;&amp;</span> <span class="n">PIR1bits</span><span class="p">.</span><span class="n">RCIF</span><span class="p">)</span> <span class="p">{</span>
 	<span class="kt">char</span> <span class="n">recv_char</span> <span class="o">=</span> <span class="n">RCREG1</span><span class="p">;</span> <span class="c1">// RCREG1を読み取ることで割り込みフラグはクリアされる
-</span>	<span class="cm">/* 何らかの処理 */</span>
+</span>	<span class="cm">/* 受信データrecv_charを使った何らかの処理 */</span>
     <span class="p">}</span>
-    <span class="c1">// I2C割り込み処理
-</span>    <span class="n">I2C_ISR</span><span class="p">();</span>
     <span class="c1">// タイマ0割り込み処理
 </span>    <span class="k">if</span> <span class="p">(</span><span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IF</span> <span class="o">&amp;&amp;</span> <span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IE</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 割り込みフラグをクリア
@@ -426,7 +427,6 @@ $(document).ready( function () {
     <span class="c1">// タイマ1割り込み処理
 </span>    <span class="k">if</span> <span class="p">(</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">&amp;&amp;</span> <span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 割り込みフラグをクリア
-</span>	<span class="n">TMR1H</span> <span class="o">=</span> <span class="mh">0xC0</span><span class="p">;</span> <span class="c1">// 0.5秒ごとの割り込みにするため
 </span>	<span class="cm">/* 何らかの処理 */</span>
     <span class="p">}</span>
     <span class="c1">// タイマ3割り込み処理
@@ -458,12 +458,13 @@ $(document).ready( function () {
 
 <h2 id="section-12">プログラムの例</h2>
 
+<p>このままコピペで動くはずです。</p>
+
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/*
-PIC18F27J53用プログラム 
+   PIC18F27J53用サンプルプログラム 
 Date:	2016.01.08
 Author:	@Ryokeri
-*/</span>
-
+ */</span>
 <span class="c1">// CONFIG1L
 </span><span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
 </span><span class="c1">// CONFIG1H
@@ -486,36 +487,132 @@ Author:	@Ryokeri
 <span class="c1">// __delay_ms()関数を使うために周波数を定義
 </span><span class="cp">#define _XTAL_FREQ 48000000
 </span>
+<span class="c1">// 自作delay関数
+</span><span class="kt">void</span> <span class="nf">delay_ms</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// OSC Settings
+</span><span class="kt">void</span> <span class="nf">OSC_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">IRCF</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// 内蔵発振周波数は8MHz
+</span>    <span class="n">OSCTUNEbits</span><span class="p">.</span><span class="n">PLLEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// PLL(x6)をEnable
+</span>    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">SCS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// クロックソースは内蔵発振or外部クロック
+</span><span class="p">}</span>
+<span class="c1">// I/O Port Settings
+</span><span class="kt">void</span> <span class="nf">IO_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 0が出力、1が入力
+</span>    <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00010000</span><span class="p">;</span> <span class="c1">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0
+</span>    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111111</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
+</span>    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10111010</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
+</span>    <span class="c1">// 0がアナログ、1がデジタル
+</span>    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
+</span>    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
+</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">RBPU</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// PORTB Pull-up Pnable
+</span><span class="p">}</span>
+<span class="c1">// prescaler is 0~8
+</span><span class="kt">void</span> <span class="nf">Timer0_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">T0CONbits</span><span class="p">.</span><span class="n">TMR0ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">T0CONbits</span><span class="p">.</span><span class="n">T08BIT</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 8-bit timer
+</span>    <span class="n">T0CONbits</span><span class="p">.</span><span class="n">T0CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// use internal-OSC
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">prescaler</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">T0CONbits</span><span class="p">.</span><span class="n">PSA</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Not use prescaler
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="n">T0CONbits</span><span class="p">.</span><span class="n">PSA</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// use prescaler
+</span>	<span class="n">T0CONbits</span><span class="p">.</span><span class="n">T0PS</span> <span class="o">=</span> <span class="n">prescaler</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Timer 0 Enable
+</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">TMR0IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// interrupt Flag clear
+</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">TMR0IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// low priority
+</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">#define FOSC_4 0 // Fosc/4
+#define T1OSC  2 // Timer 1 OSC
+</span><span class="c1">// prescaler is 0~3
+// clock_select is FOSC_4(Fosc/4) or T1OSC(32.768kHz)
+</span><span class="kt">void</span> <span class="nf">Timer1_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">clock_select</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">TMR1CS</span> <span class="o">=</span> <span class="n">clock_select</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">clock_select</span> <span class="o">==</span> <span class="n">T1OSC</span><span class="p">)</span> <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Drive Crystal
+</span>    <span class="k">else</span> <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1CKPS</span> <span class="o">=</span> <span class="n">prescaler</span><span class="p">;</span>
+    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">nT1SYNC</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// No Sync
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">RD16</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Timer1=16bit timer
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">TMR1ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//enable
+</span>    <span class="n">IPR1bits</span><span class="p">.</span><span class="n">TMR1IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// low priority
+</span>    <span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prescaler is 0~3
+</span><span class="kt">void</span> <span class="nf">Timer3_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// prescaler is 0~3
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Clock = Fosc/4
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3OSCEN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Not Drive Crystal
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3CKPS</span> <span class="o">=</span> <span class="n">prescaler</span><span class="p">;</span>
+    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">RD163</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Timer3=16bit timer
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//enable
+</span>    <span class="n">IPR2bits</span><span class="p">.</span><span class="n">TMR3IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// low priority
+</span>    <span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PIE2bits</span><span class="p">.</span><span class="n">TMR3IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// UART初期化関数
+</span><span class="kt">void</span> <span class="nf">UART_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">TX9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:8-bit
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">TXEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//1:enable
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">SYNC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:Asynchronous mode
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">BRGH</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 1:High Speed
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">SPEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:Serial Port enable
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">RX9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:8-bit
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">CREN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:continuous receive enable
+</span>    <span class="n">BAUDCON1bits</span><span class="p">.</span><span class="n">BRG16</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:use 16-bit SPBRG
+</span>    <span class="n">SPBRG1</span> <span class="o">=</span> <span class="n">_XTAL_FREQ</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">115200</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">SPBRGH1</span> <span class="o">=</span> <span class="p">(</span><span class="n">_XTAL_FREQ</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">115200</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">IPR1bits</span><span class="p">.</span><span class="n">RCIP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 送信関数
+</span><span class="kt">void</span> <span class="nf">tx_send</span><span class="p">(</span><span class="kt">char</span> <span class="n">send_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">// 送信完了まで待つ
+</span>    <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">send_data</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="c1">// 割り込み関数
 </span><span class="kt">void</span> <span class="n">interrupt</span> <span class="nf">ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="cm">/* 内容を書く */</span>
+    <span class="c1">// UART受信割り込み処理
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span> <span class="o">&amp;&amp;</span> <span class="n">PIR1bits</span><span class="p">.</span><span class="n">RCIF</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kt">char</span> <span class="n">recv_char</span> <span class="o">=</span> <span class="n">RCREG1</span><span class="p">;</span> <span class="c1">// RCREG1を読み取ることで割り込みフラグはクリアされる
+</span>	<span class="n">tx_send</span><span class="p">(</span><span class="n">recv_char</span><span class="p">);</span>
+	<span class="cm">/* 何らかの処理 */</span>
+    <span class="p">}</span>
+    <span class="c1">// タイマ0割り込み処理
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IF</span> <span class="o">&amp;&amp;</span> <span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IE</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">T0IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 割り込みフラグをクリア
+</span>	<span class="cm">/* 何らかの処理 */</span>
+    <span class="p">}</span>
+    <span class="c1">// タイマ1割り込み処理
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">&amp;&amp;</span> <span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 割り込みフラグをクリア
+</span>	<span class="n">TMR1H</span> <span class="o">=</span> <span class="mh">0xC0</span><span class="p">;</span> <span class="c1">// 0.5秒ごとの割り込みにするため
+</span>	<span class="cm">/* 何らかの処理 */</span>
+    <span class="p">}</span>
+    <span class="c1">// タイマ3割り込み処理
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span> <span class="o">&amp;&amp;</span> <span class="n">PIE2bits</span><span class="p">.</span><span class="n">TMR3IE</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 割り込みフラグをクリア
+</span>	<span class="cm">/* 何らかの処理 */</span>
+    <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="c1">// 自作delay関数
-</span><span class="kt">void</span> <span class="n">delay_ms</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">t</span><span class="p">){</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// 必要な関数を書く
-</span><span class="cm">/*
-OSC_init()やTimer1_init()など
-*/</span>
-
 <span class="c1">// main関数
-</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 初期設定
 </span>    <span class="n">OSC_init</span><span class="p">();</span>
     <span class="n">IO_init</span><span class="p">();</span>
-    <span class="n">timer0_init</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-    <span class="n">timer1_init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T1OSC</span><span class="p">);</span>
-    <span class="n">timer3_init</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Timer0_init</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+    <span class="n">Timer1_init</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T1OSC</span><span class="p">);</span>
+    <span class="n">Timer3_init</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">UART_init</span><span class="p">();</span>
 
     <span class="c1">// 割り込み許可
 </span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// RA0ピンを0→1→0→・・・
-</span>	<span class="n">LATAbits</span><span class="p">.</span><span class="n">LATA0</span> <span class="o">=</span> <span class="o">!</span><span class="n">LATAbits</span><span class="p">.</span><span class="n">LATA0</span><span class="p">;</span>
 	<span class="c1">// UART送信
 </span>	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'H'</span><span class="p">);</span>
 	<span class="n">tx_send</span><span class="p">(</span><span class="sc">'e'</span><span class="p">);</span>
