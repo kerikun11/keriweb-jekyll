@@ -267,7 +267,42 @@ $(document).ready( function () {
 <p><img src="/images/2016-01-10-pic-usb/p1.png" alt="プロジェクトのプロパティ" />
 <img src="/images/2016-01-10-pic-usb/p2.png" alt="プロジェクトのプロパティ" /></p>
 
-<h2 id="section-7">プログラムの例</h2>
+<h3 id="usb">USB通信の仕方</h3>
+
+<h4 id="usb-1">USB機能の有効化</h4>
+
+<ol>
+  <li>main関数で、<code class="highlighter-rouge">USB_CDC_ini();</code>を呼び出します。</li>
+  <li>mainループで、<code class="highlighter-rouge">USB_CDC_task();</code>を呼び出します。</li>
+  <li>割り込み関数内で、<code class="highlighter-rouge">USB_CDC_ISR();</code>を呼び出します。</li>
+</ol>
+
+<h4 id="section-7">データの送信</h4>
+
+<p>送りたいデータをusb_txというリングバッファにプットすると自動で送信されます。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put(&amp;usb_tx, data);
+</code></pre>
+</div>
+
+<p>または</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put_str(&amp;usb_tx, "Hello World!\n");
+</code></pre>
+</div>
+
+<h4 id="section-8">データの受信</h4>
+
+<p>受信データはusb_rxというリングバッファに入っているのでポップします。<br />
+受信データの個数は<code class="highlighter-rouge">ringbuf_num(&amp;usb_rx)</code>関数で確認できます。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if(ringbuf_num(&amp;usb_rx)){
+    recieved_data = ringbuf_pop(&amp;usb_rx);
+}
+</code></pre>
+</div>
+
+<h2 id="section-9">プログラムの例</h2>
 
 <p>以上の設定がすでにされているMPLAB Xのプロジェクトファイルは<a href="/images/2016-01-10-pic-usb/PIC18F27J53-USB_CDC-sample.zip">ここ</a>からダウンロードできます。</p>
 
@@ -326,7 +361,7 @@ $(document).ready( function () {
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="section-8">まとめ</h2>
+<h2 id="section-10">まとめ</h2>
 
 <p>USBでシリアル通信ができるととても便利です。ぜひ使ってみてください！</p>
 

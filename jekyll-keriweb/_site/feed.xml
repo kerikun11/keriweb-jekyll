@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jan 2016 21:11:33 +0900</pubDate>
-    <lastBuildDate>Sun, 10 Jan 2016 21:11:33 +0900</lastBuildDate>
+    <pubDate>Sun, 10 Jan 2016 21:42:03 +0900</pubDate>
+    <lastBuildDate>Sun, 10 Jan 2016 21:42:03 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -191,7 +191,42 @@
 &lt;p&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/p1.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;
 &lt;img src=&quot;/images/2016-01-10-pic-usb/p2.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-7&quot;&gt;プログラムの例&lt;/h2&gt;
+&lt;h3 id=&quot;usb&quot;&gt;USB通信の仕方&lt;/h3&gt;
+
+&lt;h4 id=&quot;usb-1&quot;&gt;USB機能の有効化&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;main関数で、&lt;code class=&quot;highlighter-rouge&quot;&gt;USB_CDC_ini();&lt;/code&gt;を呼び出します。&lt;/li&gt;
+  &lt;li&gt;mainループで、&lt;code class=&quot;highlighter-rouge&quot;&gt;USB_CDC_task();&lt;/code&gt;を呼び出します。&lt;/li&gt;
+  &lt;li&gt;割り込み関数内で、&lt;code class=&quot;highlighter-rouge&quot;&gt;USB_CDC_ISR();&lt;/code&gt;を呼び出します。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;データの送信&lt;/h4&gt;
+
+&lt;p&gt;送りたいデータをusb_txというリングバッファにプットすると自動で送信されます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ringbuf_put(&amp;amp;usb_tx, data);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;または&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ringbuf_put_str(&amp;amp;usb_tx, &quot;Hello World!\n&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;データの受信&lt;/h4&gt;
+
+&lt;p&gt;受信データはusb_rxというリングバッファに入っているのでポップします。&lt;br /&gt;
+受信データの個数は&lt;code class=&quot;highlighter-rouge&quot;&gt;ringbuf_num(&amp;amp;usb_rx)&lt;/code&gt;関数で確認できます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if(ringbuf_num(&amp;amp;usb_rx)){
+    recieved_data = ringbuf_pop(&amp;amp;usb_rx);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;プログラムの例&lt;/h2&gt;
 
 &lt;p&gt;以上の設定がすでにされているMPLAB Xのプロジェクトファイルは&lt;a href=&quot;/images/2016-01-10-pic-usb/PIC18F27J53-USB_CDC-sample.zip&quot;&gt;ここ&lt;/a&gt;からダウンロードできます。&lt;/p&gt;
 
@@ -250,7 +285,7 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&quot;section-10&quot;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;USBでシリアル通信ができるととても便利です。ぜひ使ってみてください！&lt;/p&gt;
 
