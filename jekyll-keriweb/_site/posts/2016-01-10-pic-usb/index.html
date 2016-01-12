@@ -333,14 +333,20 @@ $(document).ready( function () {
 
     <span class="c1">// メインループ
 </span>    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 関数の二重呼び出しを防ぐために割り込み禁止
-</span>	<span class="c1">// 受信したデータをそのまま送信する。
-</span>	<span class="k">if</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">))</span> <span class="p">{</span>
-	    <span class="kt">uint8_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">);</span>
-	    <span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="n">USB_CDC_task</span><span class="p">();</span>
+</span>	<span class="cm">/* 何らかの処理1 */</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 割り込み禁止の解除
+</span>
+        <span class="c1">// ここで割り込みが起きる
+</span>	
+	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 関数の二重呼び出しを防ぐために割り込み禁止
+</span>	<span class="cm">/* 何らかの処理2 */</span>
+	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 割り込み禁止の解除
+</span>        
+	<span class="c1">// ここで割り込みが起きる
+</span>
+        <span class="n">__delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// delayなどは割り込み許可エリアに書く
 </span>    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
