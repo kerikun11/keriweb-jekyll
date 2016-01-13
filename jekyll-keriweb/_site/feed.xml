@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jan 2016 17:47:24 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 17:47:24 +0900</lastBuildDate>
+    <pubDate>Wed, 13 Jan 2016 18:07:54 +0900</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 18:07:54 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -25,7 +25,11 @@
 
 &lt;h2 id=&quot;section-3&quot;&gt;回路&lt;/h2&gt;
 
-&lt;p&gt;ブートローダを使う上での回路変更は特にありません。ただ、RC2(13 pin)がブートローダのステータスLEDをつけるといいでしょう。&lt;/p&gt;
+&lt;p&gt;後述のI/Oピンによるブートロードモードへの移行をオンにする場合はRB0(21 pin)をプルアップしておいてください。そこをLOWにするとブートロードモードに入るので、SWなどをつけてもいいでしょう。&lt;/p&gt;
+
+&lt;p&gt;また、RC2(13 pin)がブートローダのステータスを出力するのでLEDをつけるといいでしょう。&lt;/p&gt;
+
+&lt;p&gt;どちらもユーザープログラムには影響はありません。&lt;/p&gt;
 
 &lt;p&gt;回路図&lt;br /&gt;
 &lt;a href=&quot;/images/2016-01-10-pic-usb/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -102,7 +106,7 @@
 
 &lt;h3 id=&quot;io&quot;&gt;I/Oピンでブートロードモードへ移行&lt;/h3&gt;
 
-&lt;p&gt;PICをリセットしたときに、RB0端子がHIGHならばユーザープログラム、LOWならばブートローダプログラムが起動します。&lt;/p&gt;
+&lt;p&gt;PICに電源を投入またはPICをリセットしたときに、RB0端子がHIGHならばユーザープログラム、LOWならばブートローダプログラムが起動します。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-8&quot;&gt;ユーザープログラムを書き込み&lt;/h2&gt;
 
