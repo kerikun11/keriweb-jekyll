@@ -89,6 +89,10 @@ $(document).ready( function () {
     <div class="post-content" itemprop="articleBody">
 	<h2 id="section">概要</h2>
 
+<h3 id="pic18f27j53">PIC18F27J53を使おう</h3>
+
+<p>以前 <a href="/posts/2016-01-08-pic18f27j53/">PIC18F27J53のすすめ</a> という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。</p>
+
 <h3 id="section-1">ブートローダとは</h3>
 
 <p>ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。</p>
@@ -114,7 +118,7 @@ $(document).ready( function () {
 
 <h3 id="hex">HEXファイル</h3>
 
-<p>以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた<code class="highlighter-rouge">MPLAVB IPE.exe</code>を使います。</p>
+<p>以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた<code class="highlighter-rouge">MPLAB IPE.exe</code>を使います。</p>
 
 <p>以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)</p>
 
@@ -123,16 +127,11 @@ $(document).ready( function () {
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)<br />
 <a href="/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(software-enter).hex">HID_Bootloader_PIC18F27J53(software-enter).hex</a></p>
 
-<p>MPLAB IPE<br />
-<img src="/images/2016-01-13-pic-bootloader/MPLAB IPE.png" alt="MPLAB IPE" /></p>
-
 <h2 id="section-5">ユーザープログラムの書き方</h2>
-
-<p>ユーザープログラムとは、ブートローダによりPICに書き込むプログラムです。</p>
 
 <h3 id="configration-bits">Configration Bitsは不要</h3>
 
-<p>Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsが書き込まれています。</p>
+<p>Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。</p>
 
 <p>なお、このConfigration Bitsを変更したい場合は、ブートローダプログラムを再コンパイルする必要があるので、XC8コンパイラのPROライセンスが必要です。</p>
 
@@ -201,7 +200,7 @@ $(document).ready( function () {
 
 <p>USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！</p>
 
-<p>PICサイコーーー！！！</p>
+<p>PIC最高ーーー！！！</p>
 
 
     </div>

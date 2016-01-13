@@ -5,13 +5,17 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jan 2016 20:40:12 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 20:40:12 +0900</lastBuildDate>
+    <pubDate>Wed, 13 Jan 2016 23:32:19 +0900</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 23:32:19 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>PICでブートローダ</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
+
+&lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;ブートローダとは&lt;/h3&gt;
 
@@ -38,7 +42,7 @@
 
 &lt;h3 id=&quot;hex&quot;&gt;HEXファイル&lt;/h3&gt;
 
-&lt;p&gt;以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた&lt;code class=&quot;highlighter-rouge&quot;&gt;MPLAVB IPE.exe&lt;/code&gt;を使います。&lt;/p&gt;
+&lt;p&gt;以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた&lt;code class=&quot;highlighter-rouge&quot;&gt;MPLAB IPE.exe&lt;/code&gt;を使います。&lt;/p&gt;
 
 &lt;p&gt;以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)&lt;/p&gt;
 
@@ -47,16 +51,11 @@
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)&lt;br /&gt;
 &lt;a href=&quot;/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(software-enter).hex&quot;&gt;HID_Bootloader_PIC18F27J53(software-enter).hex&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;MPLAB IPE&lt;br /&gt;
-&lt;img src=&quot;/images/2016-01-13-pic-bootloader/MPLAB IPE.png&quot; alt=&quot;MPLAB IPE&quot; /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;section-5&quot;&gt;ユーザープログラムの書き方&lt;/h2&gt;
-
-&lt;p&gt;ユーザープログラムとは、ブートローダによりPICに書き込むプログラムです。&lt;/p&gt;
 
 &lt;h3 id=&quot;configration-bits&quot;&gt;Configration Bitsは不要&lt;/h3&gt;
 
-&lt;p&gt;Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsが書き込まれています。&lt;/p&gt;
+&lt;p&gt;Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。&lt;/p&gt;
 
 &lt;p&gt;なお、このConfigration Bitsを変更したい場合は、ブートローダプログラムを再コンパイルする必要があるので、XC8コンパイラのPROライセンスが必要です。&lt;/p&gt;
 
@@ -125,7 +124,7 @@
 
 &lt;p&gt;USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！&lt;/p&gt;
 
-&lt;p&gt;PICサイコーーー！！！&lt;/p&gt;
+&lt;p&gt;PIC最高ーーー！！！&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 13 Jan 2016 00:00:00 +0900</pubDate>

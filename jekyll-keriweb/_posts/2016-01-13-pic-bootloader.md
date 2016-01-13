@@ -6,6 +6,10 @@ category: memo
 
 ## 概要
 
+### PIC18F27J53を使おう
+
+以前 [PIC18F27J53のすすめ]({% post_url 2016-01-08-pic18f27j53 %}) という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。
+
 ### ブートローダとは
 
 ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。
@@ -32,7 +36,7 @@ category: memo
 
 ### HEXファイル
 
-以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた`MPLAVB IPE.exe`を使います。
+以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた`MPLAB IPE.exe`を使います。
 
 以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)
 
@@ -41,16 +45,11 @@ category: memo
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)  
 [HID\_Bootloader\_PIC18F27J53(software-enter).hex](/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(software-enter).hex)  
 
-MPLAB IPE  
-![MPLAB IPE](/images/2016-01-13-pic-bootloader/MPLAB IPE.png)
-
 ## ユーザープログラムの書き方
-
-ユーザープログラムとは、ブートローダによりPICに書き込むプログラムです。
 
 ### Configration Bitsは不要
 
-Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsが書き込まれています。
+Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。
 
 なお、このConfigration Bitsを変更したい場合は、ブートローダプログラムを再コンパイルする必要があるので、XC8コンパイラのPROライセンスが必要です。
 
@@ -116,5 +115,5 @@ PICに電源を投入またはPICをリセットしたときに、RB0端子がHI
 
 USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！
 
-PICサイコーーー！！！
+PIC最高ーーー！！！
 
