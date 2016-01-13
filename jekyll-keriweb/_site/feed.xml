@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jan 2016 18:37:44 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 18:37:44 +0900</lastBuildDate>
+    <pubDate>Wed, 13 Jan 2016 20:40:12 +0900</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 20:40:12 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -112,7 +112,7 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html&quot;&gt;ここ&lt;/a&gt;からMicrochip Libraris for Applicationsをダウンロードし、インストールする。&lt;/li&gt;
-  &lt;li&gt;インストール場所/mla_v2014_07_22/apps/usb/device/bootloaders/utilities/bin/win/HIDBootloader.exeを起動する。&lt;/li&gt;
+  &lt;li&gt;インストール場所/mla_v2014_07_22/ apps/usb/device/bootloaders/ utilities/bin/win/ HIDBootloader.exeを起動する。&lt;/li&gt;
   &lt;li&gt;ブートロードモ：ｗードのPICをUSBで接続する。&lt;/li&gt;
   &lt;li&gt;上手く接続できると、右下に&lt;code class=&quot;highlighter-rouge&quot;&gt;connected&lt;/code&gt;と表示されるので、ユーザープログラムのHEXファイルをロードして書き込めばOK。&lt;/li&gt;
 &lt;/ol&gt;
