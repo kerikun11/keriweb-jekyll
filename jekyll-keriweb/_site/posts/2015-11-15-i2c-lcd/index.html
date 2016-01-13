@@ -82,7 +82,7 @@ $(document).ready( function () {
 
     <header class="post-header">
 	<h1 class="post-title" itemprop="name headline">delayやwhileを使わないI2C液晶表示プログラム</h1>
-	<p class="post-meta"><time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">2015年11月15日</time></p>
+	<p class="post-meta"><time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">2015年11月15日</time><span><br />Category: <a href="/memo/">memo</a></span></p>
     </header>
 
     <span class="post-meta"></span>
@@ -145,7 +145,7 @@ main.c</p>
 <p><a href="https://github.com/kerikun11/MPLABXProjects/blob/master/My_library/My_ST7032.h">My_ST7032.h</a>←リンク</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">enum</span> <span class="n">ST7032_STATE</span> <span class="p">{</span>
-	<span class="n">ST7032_IDOLE</span><span class="p">,</span>
+	<span class="n">ST7032_IDLE</span><span class="p">,</span>
 	<span class="n">ST7032_START</span><span class="p">,</span>
 	<span class="n">ST7032_SEND</span><span class="p">,</span>
 	<span class="n">ST7032_STOP</span><span class="p">,</span>
@@ -183,10 +183,10 @@ main.c</p>
 </span>		<span class="k">return</span><span class="p">;</span>
 	<span class="p">}</span>
 	<span class="k">static</span> <span class="kt">uint16_t</span> <span class="n">wait</span><span class="p">;</span>
-	<span class="k">static</span> <span class="n">st7032_state_t</span> <span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_IDOLE</span><span class="p">;</span>
+	<span class="k">static</span> <span class="n">st7032_state_t</span> <span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_IDLE</span><span class="p">;</span>
 
 	<span class="k">switch</span> <span class="p">(</span><span class="n">st7032_state</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">case</span> <span class="n">ST7032_IDOLE</span><span class="p">:</span>
+		<span class="k">case</span> <span class="n">ST7032_IDLE</span><span class="p">:</span>
 			<span class="k">if</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">))</span> <span class="p">{</span>
 				<span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_START</span><span class="p">;</span>
 			<span class="p">}</span>
@@ -232,7 +232,7 @@ main.c</p>
 			<span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_WAIT</span><span class="p">;</span>
 			<span class="k">break</span><span class="p">;</span>
 		<span class="k">case</span> <span class="n">ST7032_WAIT</span><span class="p">:</span>
-			<span class="k">if</span> <span class="p">(</span><span class="n">wait</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_IDOLE</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">wait</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_IDLE</span><span class="p">;</span>
 			<span class="k">else</span> <span class="n">wait</span><span class="o">--</span><span class="p">;</span>
 			<span class="k">break</span><span class="p">;</span>
 	<span class="p">}</span>
