@@ -318,7 +318,7 @@ $(document).ready( function () {
 
 <h4 id="timer-0-8bit">Timer 0 (8bit)</h4>
 
-<p>割り込み周波数 = Fosc / (4 * 256 * prescaler) = 46875/prescaler [Hz]</p>
+<p>割り込み周波数 = Fosc / (4 * 256 * 2^prescaler) = 46875/(2^prescaler) [Hz]</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// prescaler is 0~8
 </span><span class="kt">void</span> <span class="nf">Timer0_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>
@@ -337,9 +337,9 @@ $(document).ready( function () {
 </span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="timer-1">Timer 1</h4>
+<h4 id="timer-1-16bit">Timer 1 (16bit)</h4>
 
-<p>割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]</p>
+<p>割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#define FOSC_4 0 // Fosc/4
 #define T1OSC  2 // Timer 1 OSC
@@ -359,9 +359,9 @@ $(document).ready( function () {
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="timer-3">Timer 3</h4>
+<h4 id="timer-3-16bit">Timer 3 (16bit)</h4>
 
-<p>割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]</p>
+<p>割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// prescaler is 0~3
 </span><span class="kt">void</span> <span class="nf">Timer3_init</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescaler</span><span class="p">)</span> <span class="p">{</span>

@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jan 2016 23:32:19 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jan 2016 23:32:19 +0900</lastBuildDate>
+    <pubDate>Thu, 21 Jan 2016 00:01:21 +0900</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 00:01:21 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -711,7 +711,7 @@
 
 &lt;h4 id=&quot;timer-0-8bit&quot;&gt;Timer 0 (8bit)&lt;/h4&gt;
 
-&lt;p&gt;割り込み周波数 = Fosc / (4 * 256 * prescaler) = 46875/prescaler [Hz]&lt;/p&gt;
+&lt;p&gt;割り込み周波数 = Fosc / (4 * 256 * 2^prescaler) = 46875/(2^prescaler) [Hz]&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// prescaler is 0~8
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Timer0_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -730,9 +730,9 @@
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;timer-1&quot;&gt;Timer 1&lt;/h4&gt;
+&lt;h4 id=&quot;timer-1-16bit&quot;&gt;Timer 1 (16bit)&lt;/h4&gt;
 
-&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]&lt;/p&gt;
+&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define FOSC_4 0 // Fosc/4
 #define T1OSC  2 // Timer 1 OSC
@@ -752,9 +752,9 @@
     &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;timer-3&quot;&gt;Timer 3&lt;/h4&gt;
+&lt;h4 id=&quot;timer-3-16bit&quot;&gt;Timer 3 (16bit)&lt;/h4&gt;
 
-&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * prescaler) [Hz]&lt;/p&gt;
+&lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// prescaler is 0~3
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Timer3_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prescaler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
