@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2016 09:45:18 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 09:45:18 +0900</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2016 10:06:22 +0900</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2016 10:06:22 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -1065,7 +1065,7 @@
 
 &lt;h3 id=&quot;section-1&quot;&gt;半角/全角を切り替えではなく、決めうちにする&lt;/h3&gt;
 
-&lt;p&gt;日本語を入力したくて&lt;code class=&quot;highlighter-rouge&quot;&gt;半角/全角&lt;/code&gt;キーを押したら、英語で入力されてイラッと来ることがある。&lt;br /&gt;
+&lt;p&gt;日本語を入力したくて&lt;code class=&quot;highlighter-rouge&quot;&gt;半角/全角&lt;/code&gt;キーを押したら、英語で入力されてイラッとすることがある。&lt;br /&gt;
 そこで、普段使わない&lt;code class=&quot;highlighter-rouge&quot;&gt;変換&lt;/code&gt;キーを日本語切り替えに、&lt;code class=&quot;highlighter-rouge&quot;&gt;無変換&lt;/code&gt;キーを英語切り替えにする。&lt;/p&gt;
 
 &lt;h3 id=&quot;vim&quot;&gt;Vimユーザー必見！&lt;/h3&gt;
@@ -1078,9 +1078,9 @@
 &lt;p&gt;キー割り当てを変えるには以下のような方法がある。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Windowsのレジストリを書き換える。（玄人向け）&lt;/li&gt;
-  &lt;li&gt;Ctrl2Cap.exeというアプリを使う。（機能が少ない）&lt;/li&gt;
-  &lt;li&gt;yamyというアプリを使う。(便利)&lt;/li&gt;
+  &lt;li&gt;Windowsの&lt;code class=&quot;highlighter-rouge&quot;&gt;レジストリ&lt;/code&gt;を書き換える。（玄人向け）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl2Cap.exe&lt;/code&gt;というアプリを使う。（機能が少ない）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yamy.exe&lt;/code&gt;というアプリを使う。(便利)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;今回はyamyという便利なアプリを使う。&lt;/p&gt;
@@ -1102,7 +1102,7 @@
 
 &lt;h3 id=&quot;pc&quot;&gt;3. PC起動時に自動で起動するように設定&lt;/h3&gt;
 
-&lt;p&gt;Windows10の場合を説明する。&lt;/p&gt;
+&lt;p&gt;Windows10の場合を説明する。下に設定中の画像が貼り付けてあるので参照のこと。&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;スタートメニューで&lt;code class=&quot;highlighter-rouge&quot;&gt;タスクスケジューラ&lt;/code&gt;を起動する(検索するとよい)。&lt;/li&gt;
@@ -1141,17 +1141,24 @@
 keymap Global
 
 # My Settings
-key *E0ひらがな = S-*F10
+
+# ひらがなで 右クリックメニュー
+key *ひらがな = &amp;amp;Ignore
 key *ひらがな = S-*F10
+key *E0ひらがな = &amp;amp;Ignore
+key *E0ひらがな = S-*F10
 
+# 変換で IME-ON
 key *変換 = &amp;amp;Ignore
-key *IC-~IL-変換 = $ToggleIME # 変換で IME-ON
+key *IC-~IL-変換 = $ToggleIME
 
+# 無変換で IME-OFF
 key *無変換 = &amp;amp;Ignore
-key *IC-IL-無変換 = $ToggleIME # 無変換で IME-OFF
+key *IC-IL-無変換 = $ToggleIME
 key *E0無変換 = &amp;amp;Ignore
-key *IC-IL-E0無変換 = $ToggleIME # 無変換で IME-OFF
-
+key *IC-IL-E0無変換 = $ToggleIME
+   
+# Caps/英数で Ctrl
 mod Control += 英数
 key *英数  = *LControl
 mod Control += E0英数

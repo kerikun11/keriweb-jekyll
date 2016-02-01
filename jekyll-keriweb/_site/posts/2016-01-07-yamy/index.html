@@ -99,7 +99,7 @@ $(document).ready( function () {
 
 <h3 id="section-1">半角/全角を切り替えではなく、決めうちにする</h3>
 
-<p>日本語を入力したくて<code class="highlighter-rouge">半角/全角</code>キーを押したら、英語で入力されてイラッと来ることがある。<br />
+<p>日本語を入力したくて<code class="highlighter-rouge">半角/全角</code>キーを押したら、英語で入力されてイラッとすることがある。<br />
 そこで、普段使わない<code class="highlighter-rouge">変換</code>キーを日本語切り替えに、<code class="highlighter-rouge">無変換</code>キーを英語切り替えにする。</p>
 
 <h3 id="vim">Vimユーザー必見！</h3>
@@ -112,9 +112,9 @@ $(document).ready( function () {
 <p>キー割り当てを変えるには以下のような方法がある。</p>
 
 <ol>
-  <li>Windowsのレジストリを書き換える。（玄人向け）</li>
-  <li>Ctrl2Cap.exeというアプリを使う。（機能が少ない）</li>
-  <li>yamyというアプリを使う。(便利)</li>
+  <li>Windowsの<code class="highlighter-rouge">レジストリ</code>を書き換える。（玄人向け）</li>
+  <li><code class="highlighter-rouge">Ctrl2Cap.exe</code>というアプリを使う。（機能が少ない）</li>
+  <li><code class="highlighter-rouge">yamy.exe</code>というアプリを使う。(便利)</li>
 </ol>
 
 <p>今回はyamyという便利なアプリを使う。</p>
@@ -136,7 +136,7 @@ $(document).ready( function () {
 
 <h3 id="pc">3. PC起動時に自動で起動するように設定</h3>
 
-<p>Windows10の場合を説明する。</p>
+<p>Windows10の場合を説明する。下に設定中の画像が貼り付けてあるので参照のこと。</p>
 
 <ol>
   <li>スタートメニューで<code class="highlighter-rouge">タスクスケジューラ</code>を起動する(検索するとよい)。</li>
@@ -175,17 +175,24 @@ $(document).ready( function () {
 keymap Global
 
 # My Settings
-key *E0ひらがな = S-*F10
+
+# ひらがなで 右クリックメニュー
+key *ひらがな = &amp;Ignore
 key *ひらがな = S-*F10
+key *E0ひらがな = &amp;Ignore
+key *E0ひらがな = S-*F10
 
+# 変換で IME-ON
 key *変換 = &amp;Ignore
-key *IC-~IL-変換 = $ToggleIME # 変換で IME-ON
+key *IC-~IL-変換 = $ToggleIME
 
+# 無変換で IME-OFF
 key *無変換 = &amp;Ignore
-key *IC-IL-無変換 = $ToggleIME # 無変換で IME-OFF
+key *IC-IL-無変換 = $ToggleIME
 key *E0無変換 = &amp;Ignore
-key *IC-IL-E0無変換 = $ToggleIME # 無変換で IME-OFF
-
+key *IC-IL-E0無変換 = $ToggleIME
+   
+# Caps/英数で Ctrl
 mod Control += 英数
 key *英数  = *LControl
 mod Control += E0英数
