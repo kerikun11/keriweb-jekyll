@@ -87,7 +87,7 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2 id="section">概要</h2>
+	<h1 id="section">概要</h1>
 
 <p>NASがほしい！<br />
 じゃあ作ろう。</p>
@@ -97,18 +97,18 @@ $(document).ready( function () {
 HDD：Western Digital 2TB 3.5 inch<br />
 転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）</p>
 
-<h2 id="samba">Sambaをインストール</h2>
+<h1 id="samba">Sambaをインストール</h1>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install samba
 </code></pre>
 </div>
 
-<h2 id="hdd">HDDを設定する</h2>
+<h1 id="hdd">HDDを設定する</h1>
 
-<h3 id="hdd-1">HDDをラズパイに繋ぐ。</h3>
+<h2 id="hdd-1">HDDをラズパイに繋ぐ。</h2>
 <p>ポータブルHDDだと電力が足りなくなるかもしれないので、3.5inchのHDDを使用した。</p>
 
-<h3 id="hdd-2">HDDをフォーマット＆マウント</h3>
+<h2 id="hdd-2">HDDをフォーマット＆マウント</h2>
 
 <p>HDDをラズパイに繋ぐ</p>
 
@@ -188,7 +188,7 @@ $ sudo chgrp *myuser* share
 </code></pre>
 </div>
 
-<h2 id="samba-1">Sambaの設定</h2>
+<h1 id="samba-1">Sambaの設定</h1>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/samba/smb.conf
 </code></pre>
@@ -224,7 +224,7 @@ $ sudo service ufw restart
 
 <p>これでつながるはず。</p>
 
-<h2 id="windows">Windowsからアクセス</h2>
+<h1 id="windows">Windowsからアクセス</h1>
 
 <ol>
   <li>エクスプローラーの左側のナビゲーションウィンドウのネットワークを開く。</li>

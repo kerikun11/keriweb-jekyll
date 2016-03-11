@@ -309,32 +309,41 @@ pre {
 
 .post-content {
   margin-bottom: 30px; }
-  .post-content h2 {
+  .post-content h1 {
     font-size: 32px;
     border-left: 7px solid #115599;
     border-bottom: 1px solid #115599;
     padding: .4em .8em; }
     @media screen and (max-width: 800px) {
-      .post-content h2 {
+      .post-content h1 {
         font-size: 28px; } }
-  .post-content h3 {
+  .post-content h2 {
     font-size: 26px;
     border-left: 5px solid #995511;
     border-bottom: 1px solid #995511;
     margin-left: 1em;
     padding: .2em .5em; }
     @media screen and (max-width: 800px) {
-      .post-content h3 {
+      .post-content h2 {
         font-size: 22px; } }
-  .post-content h4 {
+  .post-content h3 {
     font-size: 20px;
     border-left: 5px solid #559911;
     border-bottom: 1px solid #559911;
     margin-left: 2em;
     padding: .1em .4em; }
     @media screen and (max-width: 800px) {
-      .post-content h4 {
+      .post-content h3 {
         font-size: 18px; } }
+  .post-content h4 {
+    font-size: 16px;
+    border-left: 4px solid #559911;
+    border-bottom: 1px solid #559911;
+    margin-left: 2em;
+    padding: .1em .4em; }
+    @media screen and (max-width: 800px) {
+      .post-content h4 {
+        font-size: 16px; } }
   .post-content p {
     margin-left: 3em; }
   .post-content ol {

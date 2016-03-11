@@ -87,27 +87,27 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2 id="section">概要</h2>
+	<h1 id="section">概要</h1>
 
 <p>Windowsのキーボードをカスタマイズして使いやすくする。</p>
 
-<h3 id="capsctrl">CapsキーをCtrlキーにする</h3>
+<h2 id="capsctrl">CapsキーをCtrlキーにする</h2>
 
 <p>WindowのPCは<code class="highlighter-rouge">Ctrl</code>キーの位置が小指から遠く押しづらい！<br />
 ということで、<code class="highlighter-rouge">Caps</code>の位置に<code class="highlighter-rouge">Ctrl</code>キーを置く。<br />
 ちなみに、もともと<code class="highlighter-rouge">Ctrl</code>があったところにも<code class="highlighter-rouge">Caps</code>を置くこともできる。</p>
 
-<h3 id="section-1">半角/全角を切り替えではなく、決めうちにする</h3>
+<h2 id="section-1">半角/全角を切り替えではなく、決めうちにする</h2>
 
 <p>日本語を入力したくて<code class="highlighter-rouge">半角/全角</code>キーを押したら、英語で入力されてイラッとすることがある。<br />
 そこで、普段使わない<code class="highlighter-rouge">変換</code>キーを日本語切り替えに、<code class="highlighter-rouge">無変換</code>キーを英語切り替えにする。</p>
 
-<h3 id="vim">Vimユーザー必見！</h3>
+<h2 id="vim">Vimユーザー必見！</h2>
 
 <p>Vimで日本語を入力をしたとき、保存などをしようと<code class="highlighter-rouge">:w</code>と打つと、それが全角で入力されて困ることがある。<br />
 そこで、インサートモードからノーマルモードに入ると自動的に日本語をオフにして英語入力にする</p>
 
-<h3 id="section-2">今回用いた方法</h3>
+<h2 id="section-2">今回用いた方法</h2>
 
 <p>キー割り当てを変えるには以下のような方法がある。</p>
 
@@ -119,22 +119,22 @@ $(document).ready( function () {
 
 <p>今回はyamyという便利なアプリを使う。</p>
 
-<h2 id="yamy">yamyインストール方法</h2>
+<h1 id="yamy">yamyインストール方法</h1>
 
-<h3 id="section-3">概要</h3>
+<h2 id="section-3">概要</h2>
 
 <p>yamyはインストールをする必要がない。zip形式でダウンロードして解凍して、yamy.exeを起動するだけ！！（ただし、後述の設定が必要です。）</p>
 
-<h3 id="section-4">1. ダウンロード</h3>
+<h2 id="section-4">1. ダウンロード</h2>
 
 <p><a href="https://osdn.jp/projects/yamy/">yamyダウンロードページ</a>からzipファイルをダウンロードする。<br />
 執筆時点の最新バージョンは0.03。</p>
 
-<h3 id="section-5">2. 解凍&amp;配置</h3>
+<h2 id="section-5">2. 解凍&amp;配置</h2>
 
 <p>あとで起動時に自動起動するように設定するので、わかりやすいところに置いておくとよい。例えば、Cドライブ直下など。</p>
 
-<h3 id="pc">3. PC起動時に自動で起動するように設定</h3>
+<h2 id="pc">3. PC起動時に自動で起動するように設定</h2>
 
 <p>Windows10の場合を説明する。下に設定中の画像が貼り付けてあるので参照のこと。</p>
 
@@ -152,22 +152,22 @@ $(document).ready( function () {
 <p>再起動すると、タスクバーにアイコンが現れる。</p>
 
 <p>参考画像<br />
-<img src="/images/2016-01-07-yamy/02.png" alt="設定画面02" />
-<img src="/images/2016-01-07-yamy/03.png" alt="設定画面03" />
-<img src="/images/2016-01-07-yamy/04.png" alt="設定画面04" />
-<img src="/images/2016-01-07-yamy/05.png" alt="設定画面05" />
-<img src="/images/2016-01-07-yamy/06.png" alt="設定画面06" />
-<img src="/images/2016-01-07-yamy/07.png" alt="設定画面07" />
-<img src="/images/2016-01-07-yamy/08.png" alt="設定画面08" />
-<img src="/images/2016-01-07-yamy/09.png" alt="設定画面09" /></p>
+<img src="02.png" alt="設定画面02" />
+<img src="03.png" alt="設定画面03" />
+<img src="04.png" alt="設定画面04" />
+<img src="05.png" alt="設定画面05" />
+<img src="06.png" alt="設定画面06" />
+<img src="07.png" alt="設定画面07" />
+<img src="08.png" alt="設定画面08" />
+<img src="09.png" alt="設定画面09" /></p>
 
-<h2 id="yamy-1">yamyの設定</h2>
+<h1 id="yamy-1">yamyの設定</h1>
 
-<h3 id="section-6">オリジナルの設定ファイルを作成</h3>
+<h2 id="section-6">オリジナルの設定ファイルを作成</h2>
 
 <p>yamy.exeのあるフォルダ内に<code class="highlighter-rouge">mysettings.mayu</code>など適当なテキストファイルを作成する。</p>
 
-<h3 id="section-7">設定を書く</h3>
+<h2 id="section-7">設定を書く</h2>
 
 <p>さっき作ったmysettings.mayuの中に以下を書く。</p>
 
@@ -223,7 +223,7 @@ window Cygwin /cygwin/ : Global
 
 <p>とする。</p>
 
-<h3 id="section-8">作った設定を読み込む</h3>
+<h2 id="section-8">作った設定を読み込む</h2>
 
 <ol>
   <li>タスクバーのアイコンを右クリックして設定を開く。</li>
@@ -232,10 +232,10 @@ window Cygwin /cygwin/ : Global
   <li>OKを押して画面を閉じる。</li>
 </ol>
 
-<p><img src="/images/2016-01-07-yamy/10.png" alt="設定画面10" />
-<img src="/images/2016-01-07-yamy/11.png" alt="設定画面11" /></p>
+<p><img src="10.png" alt="設定画面10" />
+<img src="11.png" alt="設定画面11" /></p>
 
-<h2 id="section-9">任務完了</h2>
+<h1 id="section-9">任務完了</h1>
 
 <p>これで設定は完了。</p>
 
@@ -243,7 +243,7 @@ window Cygwin /cygwin/ : Global
 
 <p>キーの名前は、同じディレクトリ内の<code class="highlighter-rouge">109.mayu</code>というファイルの中に書いてあるので、そこで確認できる。</p>
 
-<h2 id="section-10">参考サイト</h2>
+<h1 id="section-10">参考サイト</h1>
 
 <p>参考にさせていただきました。ありがとうございます。</p>
 

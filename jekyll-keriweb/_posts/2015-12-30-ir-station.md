@@ -14,7 +14,7 @@ ESP8266とはWiFi制御用マイコンです。もともと中国で流行って
 
 その価格はなんと、たったの**550円**です！！  
 [ESP-WROOM-02](http://akizukidenshi.com/catalog/g/gM-09607/)←秋月電子などで売っています。  
-![ESP8266](/images/2015-12-30-ir-station/esp8266.jpg)
+![ESP8266](esp8266.jpg)
 
 ###開発の簡単さも流行りの理由
 
@@ -52,7 +52,7 @@ RAMも大量にあって、**81kB**もあります。
 今回は試作なのでブレッドボードで作りました。  
 右に４つの赤外線LEDがついています。
 
-![ESP8266-Remocon](/images/2015-12-30-ir-station/body.jpg)
+![ESP8266-Remocon](body.jpg)
 
 ###WiFiの設定
 
@@ -60,7 +60,7 @@ RAMも大量にあって、**81kB**もあります。
 
 ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。
 
-![ESP8266-Remocon](/images/2015-12-30-ir-station/page_wifi.png)
+![ESP8266-Remocon](page_wifi.png)
 
 ###スマホでの操作画面
 
@@ -68,7 +68,7 @@ RAMも大量にあって、**81kB**もあります。
 
 リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。
 
-![ESP8266-Remocon](/images/2015-12-30-ir-station/page_button.png)
+![ESP8266-Remocon](page_button.png)
 
 
 ##まとめ

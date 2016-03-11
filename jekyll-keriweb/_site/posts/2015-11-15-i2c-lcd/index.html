@@ -87,35 +87,35 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2 id="section">概要</h2>
+	<h1 id="section">概要</h1>
 
 <p>秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。</p>
 
 <p>秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。<br />
 <a href="http://akizukidenshi.com/catalog/g/gK-06795/">秋月のI2C液晶(AQM0802)</a><br />
-<img src="/images/2015-11-15-I2C-LCD/AQM0802.jpg" alt="AQM0802" title="I2C_LCD" /></p>
+<img src="AQM0802.jpg" alt="AQM0802" title="I2C_LCD" /></p>
 
-<h2 id="section-1">ロジック・アナライザで一目瞭然！</h2>
+<h1 id="section-1">ロジック・アナライザで一目瞭然！</h1>
 
 <p>実際にプログラムが動作している様子をロジック・アナライザで確かめた。<br />
 上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。</p>
 
 <p>ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
-<a href="/images/2015-11-15-I2C-LCD/i2c_old.png"><img src="/images/2015-11-15-I2C-LCD/i2c_old.png" alt="old program" title="ダメな方" /></a></p>
+<a href="i2c_old.png"><img src="i2c_old.png" alt="old program" title="ダメな方" /></a></p>
 
 <p>良い方（I2C通信をしながらメインループもしっかり動いている。）
-<a href="/images/2015-11-15-I2C-LCD/i2c_new.png"><img src="/images/2015-11-15-I2C-LCD/i2c_new.png" alt="new program" title="良いな方" /></a></p>
+<a href="i2c_new.png"><img src="i2c_new.png" alt="new program" title="良いな方" /></a></p>
 
 <p>※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。</p>
 
-<h2 id="section-2">プログラム</h2>
+<h1 id="section-2">プログラム</h1>
 
 <p>僕は普段からPICを使っているので、PIC18F27J53用のプログラムを書いた。</p>
 
 <p>ダメな方<br />
-<a href="/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip">PIC18F27J53-I2C-LCD-old.zip</a><br />
+<a href="PIC18F27J53-I2C_LCD_old01.zip">PIC18F27J53-I2C-LCD-old.zip</a><br />
 良い方<br />
-<a href="/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_new01.zip">PIC18F27J53-I2C-LCD-new.zip</a><br />
+<a href="PIC18F27J53-I2C_LCD_new01.zip">PIC18F27J53-I2C-LCD-new.zip</a><br />
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)</p>
 
 <p>以下はプログラムの要点だけ抜粋<br />

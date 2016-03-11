@@ -5,29 +5,281 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2016 10:06:22 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 10:06:22 +0900</lastBuildDate>
+    <pubDate>Fri, 11 Mar 2016 15:16:10 +0900</pubDate>
+    <lastBuildDate>Fri, 11 Mar 2016 15:16:10 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>PICでブートローダ</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <title>Reference of IR-station</title>
+        <description>&lt;h1 id=&quot;ir-station&quot;&gt;IR station&lt;/h1&gt;
 
-&lt;h3 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
+&lt;p&gt;Infrared Remote Controller with ESP8266 WiFi-module&lt;br /&gt;
+You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
+
+&lt;h1 id=&quot;hardware&quot;&gt;Hardware&lt;/h1&gt;
+
+&lt;h2 id=&quot;main-parts&quot;&gt;Main parts&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ESP-WROOM-02 (ESP8266 WiFi Module)&lt;/li&gt;
+  &lt;li&gt;IR Receiver&lt;/li&gt;
+  &lt;li&gt;IR LED&lt;/li&gt;
+  &lt;li&gt;Indicator LED&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;how-to-use&quot;&gt;How to Use&lt;/h1&gt;
+
+&lt;h2 id=&quot;setup-the-device&quot;&gt;Setup the Device&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Supply power to the device.&lt;/li&gt;
+  &lt;li&gt;Connect your cellphone or laptop to Wi-Fi SSID “ESP8266-Remocon”.&lt;/li&gt;
+  &lt;li&gt;Access http://esp8266.local in a browser&lt;/li&gt;
+  &lt;li&gt;Enter Wi-Fi SSID of your router and its password&lt;/li&gt;
+  &lt;li&gt;Enter a device name you like. Because it will be a part of URL, you cannot use space or symbol character.&lt;/li&gt;
+  &lt;li&gt;Click OK button.&lt;/li&gt;
+  &lt;li&gt;If connection succeeded, Wi-Fi “ESP8266-Remocon” will automatically disappear.&lt;/li&gt;
+  &lt;li&gt;Reconnect the power to reboot the device.&lt;/li&gt;
+  &lt;li&gt;Connect your cellphone or laptop to your router’s Wi-Fi.&lt;/li&gt;
+  &lt;li&gt;Access http://DEVICE_NAME.local in a browser.&lt;/li&gt;
+  &lt;li&gt;If something appears, setup is complete.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;store-signals&quot;&gt;Store Signals&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Access http://DEVICE_NAME.local in a browser. DEVICE_NAME is the device name you entered previous form.&lt;/li&gt;
+  &lt;li&gt;Look at the form of the bottom of the screen.&lt;/li&gt;
+  &lt;li&gt;Select a channel you want to assign a signal.&lt;/li&gt;
+  &lt;li&gt;Enter a name of the signal. Don’t use Japanese character.&lt;/li&gt;
+  &lt;li&gt;Click Recode button. An LED indicator will light.&lt;/li&gt;
+  &lt;li&gt;Press the button on the remote controller toward the device to store the signal.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;remote-control&quot;&gt;Remote Control&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Access http://DEVICE_NAME.local in a browser.&lt;/li&gt;
+  &lt;li&gt;Click a button which assigned a signal you want to send.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;how-to-make&quot;&gt;How to Make&lt;/h1&gt;
+
+&lt;h2 id=&quot;steps&quot;&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Gather the components.&lt;/li&gt;
+  &lt;li&gt;Assemble the components according to the circuit diagram.&lt;/li&gt;
+  &lt;li&gt;Connect the device and the PC with a serial-to-USB conversion module.&lt;/li&gt;
+  &lt;li&gt;Prepare Arduino IDE and serial-USB converter’s driver.&lt;/li&gt;
+  &lt;li&gt;Open the preferences of Arduino IDE and fill in this URL: http://arduino.esp8266.com/stable/package_esp8266com_index.json to “Additional Boards Manager URLs”.&lt;/li&gt;
+  &lt;li&gt;Add “Generic ESP8266 Module” in the Arduino IDE Board Manager.&lt;/li&gt;
+  &lt;li&gt;Open IR-station firmware in the Arduino IDE.&lt;/li&gt;
+  &lt;li&gt;Select “Generic ESP8266 Module” and configure each item of board settings properly. See Arduino Board Settings below.&lt;/li&gt;
+  &lt;li&gt;Select correct serial COM port and upload program to the device. When upload program, GPIO0 and GPIO2 must be pulled-up, and GPIO15 must be pulled-down. It’s necessary to reset the devie immediately before upload. It’s a little difficult.&lt;/li&gt;
+  &lt;li&gt;The uploading takes about 30 seconds.&lt;/li&gt;
+  &lt;li&gt;Process termination.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;components&quot;&gt;Components&lt;/h2&gt;
+
+&lt;h3 id=&quot;device-components&quot;&gt;Device Components&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Components&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Details&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Quantity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP8266 WiFi Module&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP-WROOM-02&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IR receiver&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PL-IRM0101-3 or equivalents&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IR LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;anything good&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2~4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Nch FET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BS170 or equivalents&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IR LED Current Regulation Resistor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10 ohms, 1W&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Pull-up/down Resistor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10k ohms&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Indicator LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;anything good&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Voltage Regulator&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;output: 3.3V 150mA or more&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Bypass Capacitor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0.1uF&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2~3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Power Stabilization Capacitor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;470uF~1000uF&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;optional-device-components&quot;&gt;Optional Device Components&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Components&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Details&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Quantity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Reset Switch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;tact switch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Program Upload Switch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;tact switch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;requires&quot;&gt;Requires&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Requires&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Details&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Quantity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Serial-to-USB conversion Module&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;such as FT232&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Power Supplyer&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;over 3.3V&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;circuit-diagram&quot;&gt;Circuit Diagram&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;sketch.png&quot; alt=&quot;sketch&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample&quot;&gt;Sample&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;brb.jpg&quot; alt=&quot;sample&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;arduino-board-settings&quot;&gt;Arduino Board Settings&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;item&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;select&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Board&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Generic ESP8266 Module&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash Mode&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;QIO&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash Frequency&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;40MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Upload Using&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Serial&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CPU Frequency&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;80MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash Size&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4M(3M SPIFFS)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Reset Method&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ck&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Upload Speed&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;115200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;latest-information-and-source-file&quot;&gt;Latest Information and Source File&lt;/h1&gt;
+
+&lt;p&gt;URL:&lt;a href=&quot;https://github.com/kerikun11/IR-station.git&quot;&gt;https://github.com/kerikun11/IR-station.git&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>PICでブートローダ</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53を使おう&lt;/h2&gt;
 
 &lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;ブートローダとは&lt;/h3&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;ブートローダとは&lt;/h2&gt;
 
 &lt;p&gt;ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。&lt;/p&gt;
 
 &lt;p&gt;ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;ユーザープログラム&lt;/h3&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;ユーザープログラム&lt;/h2&gt;
 
 &lt;p&gt;ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;回路&lt;/h2&gt;
+&lt;h1 id=&quot;section-3&quot;&gt;回路&lt;/h1&gt;
 
 &lt;p&gt;後述のI/Oピンによるブートロードモードへの移行をオンにする場合はRB0(21 pin)をプルアップしておいてください。そこをLOWにするとブートロードモードに入るので、SWなどをつけてもいいでしょう。&lt;/p&gt;
 
@@ -38,22 +290,22 @@
 &lt;p&gt;回路図&lt;br /&gt;
 &lt;a href=&quot;/images/2016-01-10-pic-usb/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;ブートローダプログラム&lt;/h2&gt;
+&lt;h1 id=&quot;section-4&quot;&gt;ブートローダプログラム&lt;/h1&gt;
 
-&lt;h3 id=&quot;hex&quot;&gt;HEXファイル&lt;/h3&gt;
+&lt;h2 id=&quot;hex&quot;&gt;HEXファイル&lt;/h2&gt;
 
 &lt;p&gt;以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた&lt;code class=&quot;highlighter-rouge&quot;&gt;MPLAB IPE.exe&lt;/code&gt;を使います。&lt;/p&gt;
 
 &lt;p&gt;以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)&lt;/p&gt;
 
 &lt;p&gt;ソフトウェアまたはハードウェアでブートモードへ切り替えHEX（推奨）&lt;br /&gt;
-&lt;a href=&quot;/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(RB0-software-enter).hex&quot;&gt;HID_Bootloader_PIC18F27J53(RB0-software-enter).hex&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;HID_Bootloader_PIC18F27J53(RB0-software-enter).hex&quot;&gt;HID_Bootloader_PIC18F27J53(RB0-software-enter).hex&lt;/a&gt;&lt;br /&gt;
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)&lt;br /&gt;
-&lt;a href=&quot;/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(software-enter).hex&quot;&gt;HID_Bootloader_PIC18F27J53(software-enter).hex&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;HID_Bootloader_PIC18F27J53(software-enter).hex&quot;&gt;HID_Bootloader_PIC18F27J53(software-enter).hex&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;ユーザープログラムの書き方&lt;/h2&gt;
+&lt;h1 id=&quot;section-5&quot;&gt;ユーザープログラムの書き方&lt;/h1&gt;
 
-&lt;h3 id=&quot;configration-bits&quot;&gt;Configration Bitsは不要&lt;/h3&gt;
+&lt;h2 id=&quot;configration-bits&quot;&gt;Configration Bitsは不要&lt;/h2&gt;
 
 &lt;p&gt;Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。&lt;/p&gt;
 
@@ -76,7 +328,7 @@
 &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG4H
 &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;rom&quot;&gt;ROMの範囲とオフセットを指定&lt;/h3&gt;
+&lt;h2 id=&quot;rom&quot;&gt;ROMの範囲とオフセットを指定&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;プロジェクトを右クリックして、&lt;code class=&quot;highlighter-rouge&quot;&gt;Properties&lt;/code&gt;を開きます。&lt;/li&gt;
@@ -88,12 +340,12 @@
   &lt;li&gt;以上。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-13-pic-bootloader/Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png&quot; alt=&quot;ROM rages&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-13-pic-bootloader/Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png&quot; alt=&quot;Codeoffset&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png&quot; alt=&quot;ROM rages&quot; /&gt;
+&lt;img src=&quot;Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png&quot; alt=&quot;Codeoffset&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-6&quot;&gt;ブートロードモードへ移行するには&lt;/h2&gt;
+&lt;h1 id=&quot;section-6&quot;&gt;ブートロードモードへ移行するには&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;ソフトウェアでブートロードモードへ移行&lt;/h3&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;ソフトウェアでブートロードモードへ移行&lt;/h2&gt;
 
 &lt;p&gt;ユーザープログラムからソフトウェアでブートモードへ移るには、以下のコードを書きます。&lt;/p&gt;
 
@@ -103,11 +355,11 @@
 
 &lt;p&gt;※ブートロードモードから、ユーザープログラムに移るにはMCLRなどのリセットが必要です。&lt;/p&gt;
 
-&lt;h3 id=&quot;io&quot;&gt;I/Oピンでブートロードモードへ移行&lt;/h3&gt;
+&lt;h2 id=&quot;io&quot;&gt;I/Oピンでブートロードモードへ移行&lt;/h2&gt;
 
 &lt;p&gt;PICに電源を投入またはPICをリセットしたときに、RB0端子がHIGHならばユーザープログラム、LOWならばブートローダプログラムが起動します。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;ユーザープログラムを書き込み&lt;/h2&gt;
+&lt;h1 id=&quot;section-8&quot;&gt;ユーザープログラムを書き込み&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html&quot;&gt;ここ&lt;/a&gt;からMicrochip Libraris for Applicationsをダウンロードし、インストールする。&lt;/li&gt;
@@ -118,9 +370,9 @@
 
 &lt;p&gt;上手くいかないときは、ドライバをインストールすればうまくいくかもしれない。ドライバも先ほどインストールしたMLAの中のutilities/usb_drivers/に入っている。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-13-pic-bootloader/util1.png&quot; alt=&quot;HIDbootloader.exe&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;util1.png&quot; alt=&quot;HIDbootloader.exe&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-9&quot;&gt;まとめ&lt;/h2&gt;
+&lt;h1 id=&quot;section-9&quot;&gt;まとめ&lt;/h1&gt;
 
 &lt;p&gt;USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！&lt;/p&gt;
 
@@ -138,7 +390,7 @@
     
       <item>
         <title>PICでUSB通信</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
 &lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBの使い方について書きたいと思います。&lt;/p&gt;
 
@@ -146,30 +398,30 @@
 
 &lt;p&gt;これならUSBシリアル変換モジュールを使う必要はなくります。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;ハードウェアについて&lt;/h2&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;ハードウェアについて&lt;/h1&gt;
 
 &lt;p&gt;PIC18F27J53を使用します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;15,16pinがそれぞれUSBのD-,D+なのでUSBコネクタに接続します。さらに14pinのV_USB端子には3.3VのVCCをつなぎます。&lt;/p&gt;
 
 &lt;p&gt;USBから電源をとるときは、3端子レギュレータを通して3.3Vにするのを忘れずに。&lt;/p&gt;
 
 &lt;p&gt;回路図&lt;br /&gt;
-&lt;a href=&quot;/images/2016-01-10-pic-usb/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;sketch.png&quot;&gt;&lt;img src=&quot;sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;ソフトウェアについて&lt;/h2&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;ソフトウェアについて&lt;/h1&gt;
 
-&lt;h3 id=&quot;picusb-cdc&quot;&gt;PIC用USB-CDCライブラリ&lt;/h3&gt;
+&lt;h2 id=&quot;picusb-cdc&quot;&gt;PIC用USB-CDCライブラリ&lt;/h2&gt;
 
 &lt;p&gt;Microchipの公式ライブラリ（MLA）を参考に僕がライブラリを作ったので、それを利用します。&lt;/p&gt;
 
 &lt;p&gt;USBのプログラムを自分で実装するのはかなり厳しいです。ライブラリを使いましょう。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;必要なファイル一覧&lt;/h3&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;必要なファイル一覧&lt;/h2&gt;
 
 &lt;p&gt;USB関連のファイル&lt;/p&gt;
 
@@ -197,9 +449,9 @@
   &lt;li&gt;My_ringbuf.c&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;これらのファイルは&lt;a href=&quot;/images/2016-01-10-pic-usb/USB_CDC.zip&quot;&gt;ここ&lt;/a&gt;からダウンロードできます。&lt;/p&gt;
+&lt;p&gt;これらのファイルは&lt;a href=&quot;USB_CDC.zip&quot;&gt;ここ&lt;/a&gt;からダウンロードできます。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;ユーザーが使う関数&lt;/h3&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;ユーザーが使う関数&lt;/h2&gt;
 
 &lt;p&gt;このうちユーザーが使う関数が含まれるのは、&lt;/p&gt;
 
@@ -210,7 +462,7 @@
 
 &lt;p&gt;の2つです。&lt;/p&gt;
 
-&lt;h4 id=&quot;myusbcdch&quot;&gt;My_USB_CDC.h&lt;/h4&gt;
+&lt;h3 id=&quot;myusbcdch&quot;&gt;My_USB_CDC.h&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*******************************************************************
  * Microchip PIC, USB-CDC Library
@@ -254,7 +506,7 @@
 
 &lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;myringbufh&quot;&gt;My_ringbuf.h&lt;/h4&gt;
+&lt;h3 id=&quot;myringbufh&quot;&gt;My_ringbuf.h&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* 
  * File:   My_ringbuf.h
@@ -296,9 +548,9 @@
 
 &lt;span class=&quot;cp&quot;&gt;#endif	&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* MY_RINGBUF_H */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;ライブラリファイルの追加&lt;/h2&gt;
+&lt;h1 id=&quot;section-5&quot;&gt;ライブラリファイルの追加&lt;/h1&gt;
 
-&lt;h3 id=&quot;c&quot;&gt;Cファイルとヘッダーファイル&lt;/h3&gt;
+&lt;h2 id=&quot;c&quot;&gt;Cファイルとヘッダーファイル&lt;/h2&gt;
 
 &lt;p&gt;外部のライブラリを使用するとき、Cファイルとヘッダーファイルではプロジェクトへの読み込み方が異なります。&lt;/p&gt;
 
@@ -306,7 +558,7 @@
 
 &lt;p&gt;一方、ヘッダーファイルは、プロジェクトのプロパティの「Include directory」にヘッダーファイルのあるディレクトリを指定するだけで、プロジェクトに直接ファイルを追加する必要はありません。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;ファイル追加の仕方&lt;/h3&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;ファイル追加の仕方&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;ダウンロードして解凍したUSB-CDCディレクトリをMPLABのプロジェクトのフォルダ内にコピーします。&lt;/li&gt;
@@ -315,12 +567,12 @@
   &lt;li&gt;mainファイルを作成して以下のソースを書けばOKです。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-10-pic-usb/p1.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-10-pic-usb/p2.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;p1.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;
+&lt;img src=&quot;p2.png&quot; alt=&quot;プロジェクトのプロパティ&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;usb&quot;&gt;USB通信の仕方&lt;/h3&gt;
+&lt;h2 id=&quot;usb&quot;&gt;USB通信の仕方&lt;/h2&gt;
 
-&lt;h4 id=&quot;usb-1&quot;&gt;USB機能の有効化&lt;/h4&gt;
+&lt;h3 id=&quot;usb-1&quot;&gt;USB機能の有効化&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;main関数で、&lt;code class=&quot;highlighter-rouge&quot;&gt;USB_CDC_ini();&lt;/code&gt;を呼び出します。&lt;/li&gt;
@@ -328,7 +580,7 @@
   &lt;li&gt;割り込み関数内で、&lt;code class=&quot;highlighter-rouge&quot;&gt;USB_CDC_ISR();&lt;/code&gt;を呼び出します。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;section-7&quot;&gt;データの送信&lt;/h4&gt;
+&lt;h3 id=&quot;section-7&quot;&gt;データの送信&lt;/h3&gt;
 
 &lt;p&gt;送りたいデータを&lt;code class=&quot;highlighter-rouge&quot;&gt;usb_tx&lt;/code&gt;というリングバッファにプットすると自動で送信されます。&lt;/p&gt;
 
@@ -342,7 +594,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;section-8&quot;&gt;データの受信&lt;/h4&gt;
+&lt;h3 id=&quot;section-8&quot;&gt;データの受信&lt;/h3&gt;
 
 &lt;p&gt;受信データは&lt;code class=&quot;highlighter-rouge&quot;&gt;usb_rx&lt;/code&gt;というリングバッファに入っているのでポップします。&lt;br /&gt;
 受信データの個数は&lt;code class=&quot;highlighter-rouge&quot;&gt;ringbuf_num(&amp;amp;usb_rx)&lt;/code&gt;関数で確認できます。&lt;/p&gt;
@@ -353,21 +605,21 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section-9&quot;&gt;注意&lt;/h2&gt;
+&lt;h1 id=&quot;section-9&quot;&gt;注意&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-10&quot;&gt;関数の二重呼び出しの禁止&lt;/h3&gt;
+&lt;h2 id=&quot;section-10&quot;&gt;関数の二重呼び出しの禁止&lt;/h2&gt;
 
 &lt;p&gt;PICでは同じ関数の二重呼び出しができません（正常に動作しません）。今回のプログラムでは、メインループと割り込み関数の双方でリングバッファの関数を使用しているので、二重呼び出しに該当します。&lt;/p&gt;
 
 &lt;p&gt;→追記：PICが二重呼び出しを禁止しているというより、リングバッファ関数がリエントラントではないことが問題なようです。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-11&quot;&gt;対策&lt;/h3&gt;
+&lt;h2 id=&quot;section-11&quot;&gt;対策&lt;/h2&gt;
 
 &lt;p&gt;メインループでリングバッファ関数を使用する前に割り込み禁止をします。&lt;/p&gt;
 
 &lt;p&gt;リングバッファ関数を使用し終わったら割り込みを許可します。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-12&quot;&gt;めんどくさい&lt;/h3&gt;
+&lt;h2 id=&quot;section-12&quot;&gt;めんどくさい&lt;/h2&gt;
 
 &lt;p&gt;リングバッファ関数を使うごとに割り込み禁止、許可を繰り返すのはとても面倒ですし、忘れてしまったらバグにつながり、危険です。&lt;/p&gt;
 
@@ -401,13 +653,13 @@
 &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-13&quot;&gt;プログラムの例&lt;/h2&gt;
+&lt;h1 id=&quot;section-13&quot;&gt;プログラムの例&lt;/h1&gt;
 
-&lt;p&gt;以上の設定がすでにされているMPLAB Xのプロジェクトファイルは&lt;a href=&quot;/images/2016-01-10-pic-usb/PIC18F27J53-USB_CDC-sample.zip&quot;&gt;ここ&lt;/a&gt;からダウンロードできます。&lt;/p&gt;
+&lt;p&gt;以上の設定がすでにされているMPLAB Xのプロジェクトファイルは&lt;a href=&quot;PIC18F27J53-USB_CDC-sample.zip&quot;&gt;ここ&lt;/a&gt;からダウンロードできます。&lt;/p&gt;
 
 &lt;p&gt;コンパイルすると大量の警告が出ますが、これはライブラリ中の未使用関数の警告です。無視して大丈夫です。&lt;/p&gt;
 
-&lt;h3 id=&quot;mainc&quot;&gt;main.c&lt;/h3&gt;
+&lt;h2 id=&quot;mainc&quot;&gt;main.c&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*
  * PIC18F27J53用USB-CDCサンプルプログラム 
@@ -464,7 +716,7 @@
 &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-14&quot;&gt;まとめ&lt;/h2&gt;
+&lt;h1 id=&quot;section-14&quot;&gt;まとめ&lt;/h1&gt;
 
 &lt;p&gt;USBでシリアル通信ができると、とても便利です。ぜひ使ってみてください！&lt;/p&gt;
 
@@ -480,18 +732,18 @@
     
       <item>
         <title>PIC18F27J53のすすめ</title>
-        <description>&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h1&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;秋月で売っていること&lt;/h3&gt;
+&lt;h2 id=&quot;section&quot;&gt;秋月で売っていること&lt;/h2&gt;
 
 &lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
 
 &lt;p&gt;もちろん、秋月なので値段が安い！！&lt;br /&gt;
 &lt;strong&gt;1個270円&lt;/strong&gt;です(2016年1月現在)。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;view.jpg&quot; alt=&quot;PIC18F27J53&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;豊富なメモリ&lt;/h3&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;豊富なメモリ&lt;/h2&gt;
 
 &lt;p&gt;我が宿敵のATMEGA328Pのメモリと比べてみましょう。&lt;/p&gt;
 
@@ -519,7 +771,7 @@
 
 &lt;p&gt;メモリがありすぎて、困っちゃうなぁ。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;豊富な周辺モジュール&lt;/h3&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;豊富な周辺モジュール&lt;/h2&gt;
 
 &lt;p&gt;主な機能を表にまとめました。&lt;/p&gt;
 
@@ -577,7 +829,7 @@
 
 &lt;p&gt;タイマとPWMがたくさんあるのでロボットは動かし放題ですね！&lt;/p&gt;
 
-&lt;h3 id=&quot;usb&quot;&gt;USBでパソコンと通信&lt;/h3&gt;
+&lt;h2 id=&quot;usb&quot;&gt;USBでパソコンと通信&lt;/h2&gt;
 
 &lt;p&gt;デバックのためにマイコンとパソコンで通信をするときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。&lt;/p&gt;
 
@@ -585,15 +837,15 @@
 
 &lt;p&gt;これで、FT232のUSBシリアル変換モジュールは必要なくなります！！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;usb-1&quot;&gt;USBブートローダーに対応&lt;/h3&gt;
+&lt;h2 id=&quot;usb-1&quot;&gt;USBブートローダーに対応&lt;/h2&gt;
 
 &lt;p&gt;USB通信を使って、自分自身のプログラムの書き換えをすることができます。ブートローダです。&lt;/p&gt;
 
 &lt;p&gt;初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずにUSBで書き込むことができます。これなら、スマートに開発をすることができます。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;周辺モジュールのピンを後から割り当て&lt;/h3&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;周辺モジュールのピンを後から割り当て&lt;/h2&gt;
 
 &lt;p&gt;周辺モジュールが多いので、ピンの重複が気になるところです。しかし、PIC18F27J53は「Remappable Pin」といものがあります。&lt;/p&gt;
 
@@ -601,26 +853,26 @@
 
 &lt;p&gt;さらに基板に合わせてピンを決められるので結構便利です。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;タッチセンサ&lt;/h3&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;タッチセンサ&lt;/h2&gt;
 
 &lt;p&gt;PIC18F27J53にはCTMUというタッチセンサ機能を持ったモジュールがあります。押しボタンの代わりに使えるのでなかなか便利です。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;リアルタイムクロックモジュール&lt;/h3&gt;
+&lt;h2 id=&quot;section-5&quot;&gt;リアルタイムクロックモジュール&lt;/h2&gt;
 
 &lt;p&gt;リアルタイムモジュールがあれば、32.768kHzの水晶をつなぐだけで時計とカレンダーをカウントしてくれます。レジスタの数を見るだけで時間や日にちをGETできるのでとても簡単！実用的！&lt;/p&gt;
 
 &lt;p&gt;しかも、スリープ中でも時計は止まらないので、電池でも十分動かすことができます。&lt;/p&gt;
 
-&lt;h2 id=&quot;pic18f27j53-1&quot;&gt;PIC18F27J53の使い方(ハードウェア)&lt;/h2&gt;
+&lt;h1 id=&quot;pic18f27j53-1&quot;&gt;PIC18F27J53の使い方(ハードウェア)&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;ピンアサイン&lt;/h3&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;ピンアサイン&lt;/h2&gt;
 
 &lt;p&gt;PIC18F27J53のピンアサイン（データシートより）&lt;br /&gt;
-&lt;img src=&quot;/images/2016-01-08-pic18f27j53/pin-assign.png&quot; alt=&quot;PIC18F27J53のピンアサイン&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;pin-assign.png&quot; alt=&quot;PIC18F27J53のピンアサイン&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;RPx&lt;/strong&gt;というピンが「Remappable Pin」です。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;電源について&lt;/h3&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;電源について&lt;/h2&gt;
 
 &lt;p&gt;電源電圧は&lt;strong&gt;3.3V&lt;/strong&gt;です。注意してください。&lt;/p&gt;
 
@@ -630,12 +882,12 @@
 
 &lt;p&gt;PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に10uFのコンデンサをつなぐ必要があります。&lt;/p&gt;
 
-&lt;h3 id=&quot;pic18f27j53-2&quot;&gt;PIC18F27J53の一般的な回路図&lt;/h3&gt;
+&lt;h2 id=&quot;pic18f27j53-2&quot;&gt;PIC18F27J53の一般的な回路図&lt;/h2&gt;
 
 &lt;p&gt;USBから電源をとるときは、3端子レギュレータを通して3.3Vにするのを忘れずに。&lt;/p&gt;
 
 &lt;p&gt;PIC18F27J53の基本的な回路図&lt;br /&gt;
-&lt;a href=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot;&gt;&lt;img src=&quot;/images/2016-01-08-pic18f27j53/sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;sketch.png&quot;&gt;&lt;img src=&quot;sketch.png&quot; alt=&quot;PIC18F27J53の回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;SPIやPWMなどは「Remappable」のピンに割り当てればOKです。&lt;/p&gt;
 
@@ -645,11 +897,11 @@
 
 &lt;p&gt;この回路図をもとに回路を作っていきましょう。&lt;/p&gt;
 
-&lt;h2 id=&quot;pic18f27j53-3&quot;&gt;PIC18F27J53の使い方(ソフトウェア)&lt;/h2&gt;
+&lt;h1 id=&quot;pic18f27j53-3&quot;&gt;PIC18F27J53の使い方(ソフトウェア)&lt;/h1&gt;
 
 &lt;p&gt;ソフトウェアもほかのPICと少し違うので少し注意が必要です。&lt;/p&gt;
 
-&lt;h3 id=&quot;configration-bits&quot;&gt;Configration Bits&lt;/h3&gt;
+&lt;h2 id=&quot;configration-bits&quot;&gt;Configration Bits&lt;/h2&gt;
 
 &lt;p&gt;いつも変わらないので、コピペしましょう。&lt;/p&gt;
 
@@ -670,7 +922,7 @@
 &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// CONFIG4H
 &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;section-8&quot;&gt;動作クロックの設定&lt;/h3&gt;
+&lt;h2 id=&quot;section-8&quot;&gt;動作クロックの設定&lt;/h2&gt;
 
 &lt;p&gt;クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。&lt;/p&gt;
 
@@ -683,7 +935,7 @@
 
 &lt;p&gt;ここに記述した内容と、Configration Bitsの内容によりクロックソースと周波数が決まります。&lt;/p&gt;
 
-&lt;h3 id=&quot;io&quot;&gt;I/Oポート関連&lt;/h3&gt;
+&lt;h2 id=&quot;io&quot;&gt;I/Oポート関連&lt;/h2&gt;
 
 &lt;p&gt;PIC18F27J53には8bitの入出力ポートが3つあります。PORTA,PORTB,PORTCです。&lt;/p&gt;
 
@@ -707,9 +959,9 @@
 
 &lt;p&gt;※「x」となっているところは自分で適当に0/1を入れる。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-9&quot;&gt;タイマ関連&lt;/h3&gt;
+&lt;h2 id=&quot;section-9&quot;&gt;タイマ関連&lt;/h2&gt;
 
-&lt;h4 id=&quot;timer-0-8bit&quot;&gt;Timer 0 (8bit)&lt;/h4&gt;
+&lt;h3 id=&quot;timer-0-8bit&quot;&gt;Timer 0 (8bit)&lt;/h3&gt;
 
 &lt;p&gt;割り込み周波数 = Fosc / (4 * 256 * 2^prescaler) = 46875/(2^prescaler) [Hz]&lt;/p&gt;
 
@@ -730,7 +982,7 @@
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;timer-1-16bit&quot;&gt;Timer 1 (16bit)&lt;/h4&gt;
+&lt;h3 id=&quot;timer-1-16bit&quot;&gt;Timer 1 (16bit)&lt;/h3&gt;
 
 &lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]&lt;/p&gt;
 
@@ -752,7 +1004,7 @@
     &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;timer-3-16bit&quot;&gt;Timer 3 (16bit)&lt;/h4&gt;
+&lt;h3 id=&quot;timer-3-16bit&quot;&gt;Timer 3 (16bit)&lt;/h3&gt;
 
 &lt;p&gt;割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]&lt;/p&gt;
 
@@ -769,7 +1021,7 @@
     &lt;span class=&quot;n&quot;&gt;INTCONbits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PEIE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;uart&quot;&gt;UARTの設定&amp;amp;動作&lt;/h3&gt;
+&lt;h2 id=&quot;uart&quot;&gt;UARTの設定&amp;amp;動作&lt;/h2&gt;
 
 &lt;p&gt;ここではとりあえずUART通信できるプログラムを示します。本来ならばリングバッファを使って実装します。長くなりそうなので、そのやり方はまた改めて説明します。&lt;/p&gt;
 
@@ -799,7 +1051,7 @@
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;TXREG1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;section-10&quot;&gt;割り込み関数&lt;/h3&gt;
+&lt;h2 id=&quot;section-10&quot;&gt;割り込み関数&lt;/h2&gt;
 
 &lt;p&gt;割り込み関数はPIC16FやPIC18Fと同様です。&lt;/p&gt;
 
@@ -829,29 +1081,29 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;usb-2&quot;&gt;USB関連&lt;/h3&gt;
+&lt;h2 id=&quot;usb-2&quot;&gt;USB関連&lt;/h2&gt;
 
 &lt;p&gt;USB関連は結構複雑で長くなりそうなので、改めて後日書こうと思います。&lt;/p&gt;
 
 &lt;p&gt;→追記：&lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PICでUSB通信&lt;/a&gt;をご覧ください。&lt;/p&gt;
 
-&lt;h3 id=&quot;remappable-pin&quot;&gt;Remappable Pinの使い方&lt;/h3&gt;
+&lt;h2 id=&quot;remappable-pin&quot;&gt;Remappable Pinの使い方&lt;/h2&gt;
 
 &lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
 
-&lt;h3 id=&quot;rtcc&quot;&gt;RTCC(リアルタイムクロック)モジュールの使い方&lt;/h3&gt;
+&lt;h2 id=&quot;rtcc&quot;&gt;RTCC(リアルタイムクロック)モジュールの使い方&lt;/h2&gt;
 
 &lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-11&quot;&gt;タッチセンサの使い方&lt;/h3&gt;
+&lt;h2 id=&quot;section-11&quot;&gt;タッチセンサの使い方&lt;/h2&gt;
 
 &lt;p&gt;同じく長くなりそうなので、後日記事を書きます。&lt;/p&gt;
 
-&lt;h3 id=&quot;pwmi2cspi&quot;&gt;PWM、I2C、SPIの使い方&lt;/h3&gt;
+&lt;h2 id=&quot;pwmi2cspi&quot;&gt;PWM、I2C、SPIの使い方&lt;/h2&gt;
 
 &lt;p&gt;同じく長くなりそうなので、(元気があれば)後日記事を書きます。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-12&quot;&gt;プログラムの例&lt;/h2&gt;
+&lt;h1 id=&quot;section-12&quot;&gt;プログラムの例&lt;/h1&gt;
 
 &lt;p&gt;このままコピペで動くはずです。&lt;/p&gt;
 
@@ -1020,9 +1272,9 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;section-13&quot;&gt;さいごに&lt;/h2&gt;
+&lt;h1 id=&quot;section-13&quot;&gt;さいごに&lt;/h1&gt;
 
-&lt;h3 id=&quot;pic&quot;&gt;PICを使おう！&lt;/h3&gt;
+&lt;h2 id=&quot;pic&quot;&gt;PICを使おう！&lt;/h2&gt;
 
 &lt;p&gt;僕がググった感じだとPIC18F27J53を使っている人はかなり少ないと思います。この記事を読んで使ってくれる人がいたら嬉しいです。このマイコンは魅力的ですよ～&lt;/p&gt;
 
@@ -1030,14 +1282,14 @@
 
 &lt;p&gt;やっぱり、AVRなんかより&lt;strong&gt;PIC&lt;/strong&gt;の方がいいですね～&lt;/p&gt;
 
-&lt;h3 id=&quot;pic-1&quot;&gt;PIC用ライブラリ&lt;/h3&gt;
+&lt;h2 id=&quot;pic-1&quot;&gt;PIC用ライブラリ&lt;/h2&gt;
 
 &lt;p&gt;僕の作ったPIC用ライブラリのリンクを貼っておきます。参考にしてください。&lt;br /&gt;
 &lt;a href=&quot;https://github.com/kerikun11/MPLABXProjects/tree/master/My_library&quot;&gt;PICライブラリ&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-14&quot;&gt;何か気づいたら&lt;/h3&gt;
+&lt;h2 id=&quot;section-14&quot;&gt;何か気づいたら&lt;/h2&gt;
 
 &lt;p&gt;もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。&lt;a href=&quot;https://twitter.com/Ryokeri14&quot;&gt;@Ryokeri14&lt;/a&gt;←遠慮なくリプしてください。&lt;/p&gt;
 
@@ -1053,27 +1305,27 @@
     
       <item>
         <title>yamyでキーボードをカスタマイズ</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
 &lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
 
-&lt;h3 id=&quot;capsctrl&quot;&gt;CapsキーをCtrlキーにする&lt;/h3&gt;
+&lt;h2 id=&quot;capsctrl&quot;&gt;CapsキーをCtrlキーにする&lt;/h2&gt;
 
 &lt;p&gt;WindowのPCは&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;キーの位置が小指から遠く押しづらい！&lt;br /&gt;
 ということで、&lt;code class=&quot;highlighter-rouge&quot;&gt;Caps&lt;/code&gt;の位置に&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;キーを置く。&lt;br /&gt;
 ちなみに、もともと&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt;があったところにも&lt;code class=&quot;highlighter-rouge&quot;&gt;Caps&lt;/code&gt;を置くこともできる。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;半角/全角を切り替えではなく、決めうちにする&lt;/h3&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;半角/全角を切り替えではなく、決めうちにする&lt;/h2&gt;
 
 &lt;p&gt;日本語を入力したくて&lt;code class=&quot;highlighter-rouge&quot;&gt;半角/全角&lt;/code&gt;キーを押したら、英語で入力されてイラッとすることがある。&lt;br /&gt;
 そこで、普段使わない&lt;code class=&quot;highlighter-rouge&quot;&gt;変換&lt;/code&gt;キーを日本語切り替えに、&lt;code class=&quot;highlighter-rouge&quot;&gt;無変換&lt;/code&gt;キーを英語切り替えにする。&lt;/p&gt;
 
-&lt;h3 id=&quot;vim&quot;&gt;Vimユーザー必見！&lt;/h3&gt;
+&lt;h2 id=&quot;vim&quot;&gt;Vimユーザー必見！&lt;/h2&gt;
 
 &lt;p&gt;Vimで日本語を入力をしたとき、保存などをしようと&lt;code class=&quot;highlighter-rouge&quot;&gt;:w&lt;/code&gt;と打つと、それが全角で入力されて困ることがある。&lt;br /&gt;
 そこで、インサートモードからノーマルモードに入ると自動的に日本語をオフにして英語入力にする&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;今回用いた方法&lt;/h3&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;今回用いた方法&lt;/h2&gt;
 
 &lt;p&gt;キー割り当てを変えるには以下のような方法がある。&lt;/p&gt;
 
@@ -1085,22 +1337,22 @@
 
 &lt;p&gt;今回はyamyという便利なアプリを使う。&lt;/p&gt;
 
-&lt;h2 id=&quot;yamy&quot;&gt;yamyインストール方法&lt;/h2&gt;
+&lt;h1 id=&quot;yamy&quot;&gt;yamyインストール方法&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;概要&lt;/h3&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;yamyはインストールをする必要がない。zip形式でダウンロードして解凍して、yamy.exeを起動するだけ！！（ただし、後述の設定が必要です。）&lt;/p&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;1. ダウンロード&lt;/h3&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;1. ダウンロード&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://osdn.jp/projects/yamy/&quot;&gt;yamyダウンロードページ&lt;/a&gt;からzipファイルをダウンロードする。&lt;br /&gt;
 執筆時点の最新バージョンは0.03。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;2. 解凍&amp;amp;配置&lt;/h3&gt;
+&lt;h2 id=&quot;section-5&quot;&gt;2. 解凍&amp;amp;配置&lt;/h2&gt;
 
 &lt;p&gt;あとで起動時に自動起動するように設定するので、わかりやすいところに置いておくとよい。例えば、Cドライブ直下など。&lt;/p&gt;
 
-&lt;h3 id=&quot;pc&quot;&gt;3. PC起動時に自動で起動するように設定&lt;/h3&gt;
+&lt;h2 id=&quot;pc&quot;&gt;3. PC起動時に自動で起動するように設定&lt;/h2&gt;
 
 &lt;p&gt;Windows10の場合を説明する。下に設定中の画像が貼り付けてあるので参照のこと。&lt;/p&gt;
 
@@ -1118,22 +1370,22 @@
 &lt;p&gt;再起動すると、タスクバーにアイコンが現れる。&lt;/p&gt;
 
 &lt;p&gt;参考画像&lt;br /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/02.png&quot; alt=&quot;設定画面02&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/03.png&quot; alt=&quot;設定画面03&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/04.png&quot; alt=&quot;設定画面04&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/05.png&quot; alt=&quot;設定画面05&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/06.png&quot; alt=&quot;設定画面06&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/07.png&quot; alt=&quot;設定画面07&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/08.png&quot; alt=&quot;設定画面08&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/09.png&quot; alt=&quot;設定画面09&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;02.png&quot; alt=&quot;設定画面02&quot; /&gt;
+&lt;img src=&quot;03.png&quot; alt=&quot;設定画面03&quot; /&gt;
+&lt;img src=&quot;04.png&quot; alt=&quot;設定画面04&quot; /&gt;
+&lt;img src=&quot;05.png&quot; alt=&quot;設定画面05&quot; /&gt;
+&lt;img src=&quot;06.png&quot; alt=&quot;設定画面06&quot; /&gt;
+&lt;img src=&quot;07.png&quot; alt=&quot;設定画面07&quot; /&gt;
+&lt;img src=&quot;08.png&quot; alt=&quot;設定画面08&quot; /&gt;
+&lt;img src=&quot;09.png&quot; alt=&quot;設定画面09&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;yamy-1&quot;&gt;yamyの設定&lt;/h2&gt;
+&lt;h1 id=&quot;yamy-1&quot;&gt;yamyの設定&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;オリジナルの設定ファイルを作成&lt;/h3&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;オリジナルの設定ファイルを作成&lt;/h2&gt;
 
 &lt;p&gt;yamy.exeのあるフォルダ内に&lt;code class=&quot;highlighter-rouge&quot;&gt;mysettings.mayu&lt;/code&gt;など適当なテキストファイルを作成する。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;設定を書く&lt;/h3&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;設定を書く&lt;/h2&gt;
 
 &lt;p&gt;さっき作ったmysettings.mayuの中に以下を書く。&lt;/p&gt;
 
@@ -1189,7 +1441,7 @@ window Cygwin /cygwin/ : Global
 
 &lt;p&gt;とする。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-8&quot;&gt;作った設定を読み込む&lt;/h3&gt;
+&lt;h2 id=&quot;section-8&quot;&gt;作った設定を読み込む&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;タスクバーのアイコンを右クリックして設定を開く。&lt;/li&gt;
@@ -1198,10 +1450,10 @@ window Cygwin /cygwin/ : Global
   &lt;li&gt;OKを押して画面を閉じる。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2016-01-07-yamy/10.png&quot; alt=&quot;設定画面10&quot; /&gt;
-&lt;img src=&quot;/images/2016-01-07-yamy/11.png&quot; alt=&quot;設定画面11&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;10.png&quot; alt=&quot;設定画面10&quot; /&gt;
+&lt;img src=&quot;11.png&quot; alt=&quot;設定画面11&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-9&quot;&gt;任務完了&lt;/h2&gt;
+&lt;h1 id=&quot;section-9&quot;&gt;任務完了&lt;/h1&gt;
 
 &lt;p&gt;これで設定は完了。&lt;/p&gt;
 
@@ -1209,7 +1461,7 @@ window Cygwin /cygwin/ : Global
 
 &lt;p&gt;キーの名前は、同じディレクトリ内の&lt;code class=&quot;highlighter-rouge&quot;&gt;109.mayu&lt;/code&gt;というファイルの中に書いてあるので、そこで確認できる。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-10&quot;&gt;参考サイト&lt;/h2&gt;
+&lt;h1 id=&quot;section-10&quot;&gt;参考サイト&lt;/h1&gt;
 
 &lt;p&gt;参考にさせていただきました。ありがとうございます。&lt;/p&gt;
 
@@ -1240,7 +1492,7 @@ window Cygwin /cygwin/ : Global
 
 &lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
 &lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
-&lt;img src=&quot;/images/2015-12-30-ir-station/esp8266.jpg&quot; alt=&quot;ESP8266&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;開発の簡単さも流行りの理由&lt;/h3&gt;
 
@@ -1276,7 +1528,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 &lt;p&gt;今回は試作なのでブレッドボードで作りました。&lt;br /&gt;
 右に４つの赤外線LEDがついています。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;wifi-1&quot;&gt;WiFiの設定&lt;/h3&gt;
 
@@ -1284,7 +1536,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page_wifi.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;page_wifi.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-6&quot;&gt;スマホでの操作画面&lt;/h3&gt;
 
@@ -1292,7 +1544,7 @@ RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&l
 
 &lt;p&gt;リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2015-12-30-ir-station/page_button.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;page_button.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;まとめ&lt;/h2&gt;
 
@@ -1315,11 +1567,11 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
     
       <item>
         <title>Cygwinの使い方</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
 &lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
 
-&lt;h2 id=&quot;cygwin&quot;&gt;Cygwinのインストール手順&lt;/h2&gt;
+&lt;h1 id=&quot;cygwin&quot;&gt;Cygwinのインストール手順&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin.com&lt;/a&gt;からCygwinのインストーラをダウンロードする。32bitマシン用と64bitマシン用があるので適当なほうを選ぶ。&lt;/li&gt;
@@ -1331,25 +1583,25 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
 &lt;/ol&gt;
 
 &lt;p&gt;インストール画像&lt;br /&gt;
-&lt;img src=&quot;/images/2015-12-04-cygwin/01.png&quot; alt=&quot;インストール画面01&quot; title=&quot;インストール画面01&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/02.png&quot; alt=&quot;インストール画面02&quot; title=&quot;インストール画面02&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/03.png&quot; alt=&quot;インストール画面03&quot; title=&quot;インストール画面03&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/04.png&quot; alt=&quot;インストール画面04&quot; title=&quot;インストール画面04&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/05.png&quot; alt=&quot;インストール画面05&quot; title=&quot;インストール画面05&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/06.png&quot; alt=&quot;インストール画面06&quot; title=&quot;インストール画面06&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/07.png&quot; alt=&quot;インストール画面07&quot; title=&quot;インストール画面07&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/08.png&quot; alt=&quot;インストール画面08&quot; title=&quot;インストール画面08&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/09.png&quot; alt=&quot;インストール画面09&quot; title=&quot;インストール画面09&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/10.png&quot; alt=&quot;インストール画面10&quot; title=&quot;インストール画面10&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/11.png&quot; alt=&quot;インストール画面11&quot; title=&quot;インストール画面11&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;01.png&quot; alt=&quot;インストール画面01&quot; title=&quot;インストール画面01&quot; /&gt; 
+&lt;img src=&quot;02.png&quot; alt=&quot;インストール画面02&quot; title=&quot;インストール画面02&quot; /&gt; 
+&lt;img src=&quot;03.png&quot; alt=&quot;インストール画面03&quot; title=&quot;インストール画面03&quot; /&gt; 
+&lt;img src=&quot;04.png&quot; alt=&quot;インストール画面04&quot; title=&quot;インストール画面04&quot; /&gt; 
+&lt;img src=&quot;05.png&quot; alt=&quot;インストール画面05&quot; title=&quot;インストール画面05&quot; /&gt; 
+&lt;img src=&quot;06.png&quot; alt=&quot;インストール画面06&quot; title=&quot;インストール画面06&quot; /&gt; 
+&lt;img src=&quot;07.png&quot; alt=&quot;インストール画面07&quot; title=&quot;インストール画面07&quot; /&gt; 
+&lt;img src=&quot;08.png&quot; alt=&quot;インストール画面08&quot; title=&quot;インストール画面08&quot; /&gt; 
+&lt;img src=&quot;09.png&quot; alt=&quot;インストール画面09&quot; title=&quot;インストール画面09&quot; /&gt; 
+&lt;img src=&quot;10.png&quot; alt=&quot;インストール画面10&quot; title=&quot;インストール画面10&quot; /&gt; 
+&lt;img src=&quot;11.png&quot; alt=&quot;インストール画面11&quot; title=&quot;インストール画面11&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;apt-cyg&quot;&gt;apt-cygを使う&lt;/h2&gt;
+&lt;h1 id=&quot;apt-cyg&quot;&gt;apt-cygを使う&lt;/h1&gt;
 
-&lt;h3 id=&quot;apt-cyg-1&quot;&gt;apt-cygとは&lt;/h3&gt;
+&lt;h2 id=&quot;apt-cyg-1&quot;&gt;apt-cygとは&lt;/h2&gt;
 
 &lt;p&gt;apt-cygとは普通のシェルスクリプトで、新しくソフトウェアをインストールするときに使う。Macintoshのyumやlinuxのapt-getとほぼ同じ使い方ができる。&lt;/p&gt;
 
-&lt;h3 id=&quot;apt-cyg-2&quot;&gt;apt-cygを使う理由&lt;/h3&gt;
+&lt;h2 id=&quot;apt-cyg-2&quot;&gt;apt-cygを使う理由&lt;/h2&gt;
 
 &lt;p&gt;cygwinでは、新たにソフトをインストールする際には、cygwinインストール時に使ったsetup.exeを使うのが一般的である。&lt;/p&gt;
 
@@ -1359,7 +1611,7 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
 
 &lt;p&gt;が、なんど１晩かかってもDLが終わらず、インストールが終わった後にサイズを確認したら&lt;strong&gt;60GB&lt;/strong&gt;も容量を取られてしまった。もう絶対にやらない。&lt;/p&gt;
 
-&lt;h3 id=&quot;apt-cyg-3&quot;&gt;apt-cygをインストール&lt;/h3&gt;
+&lt;h2 id=&quot;apt-cyg-3&quot;&gt;apt-cygをインストール&lt;/h2&gt;
 
 &lt;p&gt;Cygwinを起動したら、以下のコマンドを実行する。&lt;/p&gt;
 
@@ -1370,7 +1622,7 @@ $ mv apt-cyg /usr/local/bin/
 &lt;/div&gt;
 
 &lt;p&gt;インストール画面
-&lt;img src=&quot;/images/2015-12-04-cygwin/12.png&quot; alt=&quot;インストール画面12&quot; title=&quot;インストール画面12&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;12.png&quot; alt=&quot;インストール画面12&quot; title=&quot;インストール画面12&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;これでインストールは完了。&lt;/p&gt;
 
@@ -1388,9 +1640,9 @@ $ apt-cyg install git
 
 &lt;p&gt;などなど&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;おまけ（各種設定）&lt;/h2&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;おまけ（各種設定）&lt;/h1&gt;
 
-&lt;h3 id=&quot;windows&quot;&gt;Windowsのコピペを使う&lt;/h3&gt;
+&lt;h2 id=&quot;windows&quot;&gt;Windowsのコピペを使う&lt;/h2&gt;
 
 &lt;p&gt;Cygwinのデフォルトの設定ではWindowsのCtrl+C,Ctrl+Vが使えない。これでは不便なので使えるようにする。&lt;/p&gt;
 
@@ -1406,11 +1658,11 @@ $ apt-cyg install git
 &lt;p&gt;Shiftキー＋いつものコピペキーでコピペができる。&lt;/p&gt;
 
 &lt;p&gt;設定画像&lt;br /&gt;
-&lt;img src=&quot;/images/2015-12-04-cygwin/13.png&quot; alt=&quot;インストール画面13&quot; title=&quot;インストール画面13&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/14.png&quot; alt=&quot;インストール画面14&quot; title=&quot;インストール画面14&quot; /&gt; 
-&lt;img src=&quot;/images/2015-12-04-cygwin/15.png&quot; alt=&quot;インストール画面15&quot; title=&quot;インストール画面15&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;13.png&quot; alt=&quot;インストール画面13&quot; title=&quot;インストール画面13&quot; /&gt; 
+&lt;img src=&quot;14.png&quot; alt=&quot;インストール画面14&quot; title=&quot;インストール画面14&quot; /&gt; 
+&lt;img src=&quot;15.png&quot; alt=&quot;インストール画面15&quot; title=&quot;インストール画面15&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;zsh&quot;&gt;デフォルトのシェルをzshにする&lt;/h3&gt;
+&lt;h2 id=&quot;zsh&quot;&gt;デフォルトのシェルをzshにする&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apt-cyg install zsh
 $ ls /etc/passwd
@@ -1450,7 +1702,7 @@ $ ls /etc/passwd
     
       <item>
         <title>Raspberry Pi で NAS 作り</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
 &lt;p&gt;NASがほしい！&lt;br /&gt;
 じゃあ作ろう。&lt;/p&gt;
@@ -1460,18 +1712,18 @@ $ ls /etc/passwd
 HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）&lt;/p&gt;
 
-&lt;h2 id=&quot;samba&quot;&gt;Sambaをインストール&lt;/h2&gt;
+&lt;h1 id=&quot;samba&quot;&gt;Sambaをインストール&lt;/h1&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install samba
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;hdd&quot;&gt;HDDを設定する&lt;/h2&gt;
+&lt;h1 id=&quot;hdd&quot;&gt;HDDを設定する&lt;/h1&gt;
 
-&lt;h3 id=&quot;hdd-1&quot;&gt;HDDをラズパイに繋ぐ。&lt;/h3&gt;
+&lt;h2 id=&quot;hdd-1&quot;&gt;HDDをラズパイに繋ぐ。&lt;/h2&gt;
 &lt;p&gt;ポータブルHDDだと電力が足りなくなるかもしれないので、3.5inchのHDDを使用した。&lt;/p&gt;
 
-&lt;h3 id=&quot;hdd-2&quot;&gt;HDDをフォーマット＆マウント&lt;/h3&gt;
+&lt;h2 id=&quot;hdd-2&quot;&gt;HDDをフォーマット＆マウント&lt;/h2&gt;
 
 &lt;p&gt;HDDをラズパイに繋ぐ&lt;/p&gt;
 
@@ -1551,7 +1803,7 @@ $ sudo chgrp *myuser* share
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;samba-1&quot;&gt;Sambaの設定&lt;/h2&gt;
+&lt;h1 id=&quot;samba-1&quot;&gt;Sambaの設定&lt;/h1&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo vim /etc/samba/smb.conf
 &lt;/code&gt;&lt;/pre&gt;
@@ -1587,7 +1839,7 @@ $ sudo service ufw restart
 
 &lt;p&gt;これでつながるはず。&lt;/p&gt;
 
-&lt;h2 id=&quot;windows&quot;&gt;Windowsからアクセス&lt;/h2&gt;
+&lt;h1 id=&quot;windows&quot;&gt;Windowsからアクセス&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;エクスプローラーの左側のナビゲーションウィンドウのネットワークを開く。&lt;/li&gt;
@@ -1656,35 +1908,35 @@ Status: active
     
       <item>
         <title>delayやwhileを使わないI2C液晶表示プログラム</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
 &lt;p&gt;秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。&lt;/p&gt;
 
 &lt;p&gt;秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。&lt;br /&gt;
 &lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-06795/&quot;&gt;秋月のI2C液晶(AQM0802)&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&quot;/images/2015-11-15-I2C-LCD/AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;ロジック・アナライザで一目瞭然！&lt;/h2&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;ロジック・アナライザで一目瞭然！&lt;/h1&gt;
 
 &lt;p&gt;実際にプログラムが動作している様子をロジック・アナライザで確かめた。&lt;br /&gt;
 上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。&lt;/p&gt;
 
 &lt;p&gt;ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
-&lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_old.png&quot; alt=&quot;old program&quot; title=&quot;ダメな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;i2c_old.png&quot;&gt;&lt;img src=&quot;i2c_old.png&quot; alt=&quot;old program&quot; title=&quot;ダメな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;良い方（I2C通信をしながらメインループもしっかり動いている。）
-&lt;a href=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot;&gt;&lt;img src=&quot;/images/2015-11-15-I2C-LCD/i2c_new.png&quot; alt=&quot;new program&quot; title=&quot;良いな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;i2c_new.png&quot;&gt;&lt;img src=&quot;i2c_new.png&quot; alt=&quot;new program&quot; title=&quot;良いな方&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;プログラム&lt;/h2&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;プログラム&lt;/h1&gt;
 
 &lt;p&gt;僕は普段からPICを使っているので、PIC18F27J53用のプログラムを書いた。&lt;/p&gt;
 
 &lt;p&gt;ダメな方&lt;br /&gt;
-&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;PIC18F27J53-I2C_LCD_old01.zip&quot;&gt;PIC18F27J53-I2C-LCD-old.zip&lt;/a&gt;&lt;br /&gt;
 良い方&lt;br /&gt;
-&lt;a href=&quot;/images/2015-11-15-I2C-LCD/PIC18F27J53-I2C_LCD_new01.zip&quot;&gt;PIC18F27J53-I2C-LCD-new.zip&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;PIC18F27J53-I2C_LCD_new01.zip&quot;&gt;PIC18F27J53-I2C-LCD-new.zip&lt;/a&gt;&lt;br /&gt;
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)&lt;/p&gt;
 
 &lt;p&gt;以下はプログラムの要点だけ抜粋&lt;br /&gt;
@@ -1814,77 +2066,6 @@ main.c&lt;/p&gt;
         
         
         <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>CPUの創り方</title>
-        <description>&lt;h2 id=&quot;cpu2003-&quot;&gt;書籍「CPUの創り方」（2003年）渡波郁 著&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/book.jpg&quot; alt=&quot;CPUの創り方&quot; title=&quot;CPUの創り方&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;　この本は電子工作の入門書です。しかし入門書と言っても内容は壮大で、CPUを設計して自作しようというものです。電子工作初心者だけでなく、ある程度電子工作をしてきた人にも読みごたえのある一冊になっています。&lt;/p&gt;
-
-&lt;h2 id=&quot;td4&quot;&gt;作ったもの : TD4&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_top.jpg&quot; alt=&quot;TD4&quot; title=&quot;TD4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;　この本の中で設計しているCPUを実際に作りました。TD4とは&lt;strong&gt;T&lt;/strong&gt;ada &lt;strong&gt;D&lt;/strong&gt;ousa-suru-dakei-no &lt;strong&gt;4&lt;/strong&gt;-bit CPU という意味です。&lt;/p&gt;
-
-&lt;h2 id=&quot;iccpu&quot;&gt;ICとCPUの違い&lt;/h2&gt;
-&lt;p&gt;　ICは、決まった動作をしかできません。「こんな機能が欲しい」という時は、その機能を持ったICを買いに行かなければなりません。しかし、CPUは「プログラム」を実行することができます。これにより、プログラム次第で様々な動作をさせることができます。今回は、決まった動作しかできない「IC」を使って柔軟な動作の「CPU」を作りました。（と言っても、回路を設計したのは上の本の作者さんです。）&lt;/p&gt;
-
-&lt;h2 id=&quot;cpu&quot;&gt;CPUの構成&lt;/h2&gt;
-
-&lt;h3 id=&quot;cpubit&quot;&gt;CPUのbit数&lt;/h3&gt;
-&lt;p&gt;　先にも書いたとおり、これは4bitのCPUです。4bit CPUというのは各レジスタが4bitでできているということです。&lt;/p&gt;
-
-&lt;h3 id=&quot;rom&quot;&gt;プログラムメモリ（ROM）&lt;/h3&gt;
-&lt;p&gt;　写真左側に、16個のDIPスイッチが並んでいます。これがプログラムメモリ(ROM)です。8bitのDIPスイッチが16個あるので、16ByteのROMになります。普通、ROMといえば不揮発性のフラッシュメモリですが、TD4では物理的スイッチにより実現しています。&lt;/p&gt;
-
-&lt;h3 id=&quot;ram&quot;&gt;レジスタ（RAM）&lt;/h3&gt;
-&lt;p&gt;　TD4には4bitのレジスタが４つあり、以下の役割があります。写真中央の縦に並んだ４つのICです。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;プログラム・カウンタ&lt;/li&gt;
-  &lt;li&gt;汎用レジスタA&lt;/li&gt;
-  &lt;li&gt;汎用レジスタB&lt;/li&gt;
-  &lt;li&gt;出力レジスタ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;alu&quot;&gt;算術論理演算装置（ALU）&lt;/h3&gt;
-&lt;p&gt;　TD4は、4bit + 4bit の加算器を持っています。以上。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;入出力&lt;/h2&gt;
-&lt;p&gt;　入力は4bitで、写真中央最下部の４つのスライドスイッチです。これらのHigh/Lowをレジスタに取り込むことができます。&lt;br /&gt;
-　出力も4bitで、それぞれに黄色のLEDがつながっています。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;動作&lt;/h2&gt;
-&lt;p&gt;　TD4にプログラミングするには、まずはアセンブリ言語を書きます。それをハンドアセンブル（アセンブリ言語を、２進法に変えること）をして、TD4のDIPスイッチにプログラムを書き込みます。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;アセンブリ言語命令一覧&lt;/h3&gt;
-&lt;p&gt;　プログラムメモリは8bitで1かたまりです。8bitのうち、左4bitがオペレーションコード、右4bitがデータになっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/asm.jpg&quot; alt=&quot;アセンブリコード表&quot; title=&quot;アセンブリコード表&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;動作周波数&lt;/h3&gt;
-&lt;p&gt;　本の中ではハンドクロック（ボタンを押すたびにクロックが進む）と1HzのRCクロックが用意されていました。これに加えて、可変抵抗による可変クロックをつけました。&lt;br /&gt;
-　クロックの最速は、344Hzでした。オシロスコープでクロックを見てみるっと、波が少し汚いです。これはRC発振を標準ロジックICのシュミットトリガで行ってるためだと思われます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/344Hz.jpg&quot; alt=&quot;オシロスコープ&quot; title=&quot;オシロスコープ&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりませんでした。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスと思い込んでしまうのはだめです。&lt;br /&gt;
-　TD4を作るとハンダ付けの技術が上がります。本を読むだけでなく、実際に作ってみましょう。作り終わったら、&lt;strong&gt;楽しい楽しいデバック作業&lt;/strong&gt;が待ってますよ(^^)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2015-11-04-create-CPU/board_back.jpg&quot; alt=&quot;TD4 裏面&quot; title=&quot;TD4 裏面&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 04 Nov 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
-        
-        
-        <category>blog</category>
         
       </item>
     

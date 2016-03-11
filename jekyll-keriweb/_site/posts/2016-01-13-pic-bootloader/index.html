@@ -87,23 +87,23 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2 id="section">概要</h2>
+	<h1 id="section">概要</h1>
 
-<h3 id="pic18f27j53">PIC18F27J53を使おう</h3>
+<h2 id="pic18f27j53">PIC18F27J53を使おう</h2>
 
 <p>以前 <a href="/posts/2016-01-08-pic18f27j53/">PIC18F27J53のすすめ</a> という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。</p>
 
-<h3 id="section-1">ブートローダとは</h3>
+<h2 id="section-1">ブートローダとは</h2>
 
 <p>ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。</p>
 
 <p>ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。</p>
 
-<h3 id="section-2">ユーザープログラム</h3>
+<h2 id="section-2">ユーザープログラム</h2>
 
 <p>ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。</p>
 
-<h2 id="section-3">回路</h2>
+<h1 id="section-3">回路</h1>
 
 <p>後述のI/Oピンによるブートロードモードへの移行をオンにする場合はRB0(21 pin)をプルアップしておいてください。そこをLOWにするとブートロードモードに入るので、SWなどをつけてもいいでしょう。</p>
 
@@ -114,22 +114,22 @@ $(document).ready( function () {
 <p>回路図<br />
 <a href="/images/2016-01-10-pic-usb/sketch.png"><img src="/images/2016-01-10-pic-usb/sketch.png" alt="PIC18F27J53の回路図" /></a></p>
 
-<h2 id="section-4">ブートローダプログラム</h2>
+<h1 id="section-4">ブートローダプログラム</h1>
 
-<h3 id="hex">HEXファイル</h3>
+<h2 id="hex">HEXファイル</h2>
 
 <p>以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた<code class="highlighter-rouge">MPLAB IPE.exe</code>を使います。</p>
 
 <p>以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)</p>
 
 <p>ソフトウェアまたはハードウェアでブートモードへ切り替えHEX（推奨）<br />
-<a href="/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(RB0-software-enter).hex">HID_Bootloader_PIC18F27J53(RB0-software-enter).hex</a><br />
+<a href="HID_Bootloader_PIC18F27J53(RB0-software-enter).hex">HID_Bootloader_PIC18F27J53(RB0-software-enter).hex</a><br />
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)<br />
-<a href="/images/2016-01-13-pic-bootloader/HID_Bootloader_PIC18F27J53(software-enter).hex">HID_Bootloader_PIC18F27J53(software-enter).hex</a></p>
+<a href="HID_Bootloader_PIC18F27J53(software-enter).hex">HID_Bootloader_PIC18F27J53(software-enter).hex</a></p>
 
-<h2 id="section-5">ユーザープログラムの書き方</h2>
+<h1 id="section-5">ユーザープログラムの書き方</h1>
 
-<h3 id="configration-bits">Configration Bitsは不要</h3>
+<h2 id="configration-bits">Configration Bitsは不要</h2>
 
 <p>Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。</p>
 
@@ -152,7 +152,7 @@ $(document).ready( function () {
 </span><span class="c1">// CONFIG4H
 </span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8</span></code></pre></figure>
 
-<h3 id="rom">ROMの範囲とオフセットを指定</h3>
+<h2 id="rom">ROMの範囲とオフセットを指定</h2>
 
 <ol>
   <li>プロジェクトを右クリックして、<code class="highlighter-rouge">Properties</code>を開きます。</li>
@@ -164,12 +164,12 @@ $(document).ready( function () {
   <li>以上。</li>
 </ol>
 
-<p><img src="/images/2016-01-13-pic-bootloader/Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png" alt="ROM rages" />
-<img src="/images/2016-01-13-pic-bootloader/Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png" alt="Codeoffset" /></p>
+<p><img src="Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png" alt="ROM rages" />
+<img src="Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png" alt="Codeoffset" /></p>
 
-<h2 id="section-6">ブートロードモードへ移行するには</h2>
+<h1 id="section-6">ブートロードモードへ移行するには</h1>
 
-<h3 id="section-7">ソフトウェアでブートロードモードへ移行</h3>
+<h2 id="section-7">ソフトウェアでブートロードモードへ移行</h2>
 
 <p>ユーザープログラムからソフトウェアでブートモードへ移るには、以下のコードを書きます。</p>
 
@@ -179,11 +179,11 @@ $(document).ready( function () {
 
 <p>※ブートロードモードから、ユーザープログラムに移るにはMCLRなどのリセットが必要です。</p>
 
-<h3 id="io">I/Oピンでブートロードモードへ移行</h3>
+<h2 id="io">I/Oピンでブートロードモードへ移行</h2>
 
 <p>PICに電源を投入またはPICをリセットしたときに、RB0端子がHIGHならばユーザープログラム、LOWならばブートローダプログラムが起動します。</p>
 
-<h2 id="section-8">ユーザープログラムを書き込み</h2>
+<h1 id="section-8">ユーザープログラムを書き込み</h1>
 
 <ol>
   <li><a href="http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html">ここ</a>からMicrochip Libraris for Applicationsをダウンロードし、インストールする。</li>
@@ -194,9 +194,9 @@ $(document).ready( function () {
 
 <p>上手くいかないときは、ドライバをインストールすればうまくいくかもしれない。ドライバも先ほどインストールしたMLAの中のutilities/usb_drivers/に入っている。</p>
 
-<p><img src="/images/2016-01-13-pic-bootloader/util1.png" alt="HIDbootloader.exe" /></p>
+<p><img src="util1.png" alt="HIDbootloader.exe" /></p>
 
-<h2 id="section-9">まとめ</h2>
+<h1 id="section-9">まとめ</h1>
 
 <p>USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！</p>
 

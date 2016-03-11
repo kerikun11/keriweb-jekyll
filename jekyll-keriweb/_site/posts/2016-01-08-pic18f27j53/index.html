@@ -87,18 +87,18 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2 id="pic18f27j53">PIC18F27J53のいいところ</h2>
+	<h1 id="pic18f27j53">PIC18F27J53のいいところ</h1>
 
-<h3 id="section">秋月で売っていること</h3>
+<h2 id="section">秋月で売っていること</h2>
 
 <p>電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。</p>
 
 <p>もちろん、秋月なので値段が安い！！<br />
 <strong>1個270円</strong>です(2016年1月現在)。</p>
 
-<p><img src="/images/2016-01-08-pic18f27j53/view.jpg" alt="PIC18F27J53" /></p>
+<p><img src="view.jpg" alt="PIC18F27J53" /></p>
 
-<h3 id="section-1">豊富なメモリ</h3>
+<h2 id="section-1">豊富なメモリ</h2>
 
 <p>我が宿敵のATMEGA328Pのメモリと比べてみましょう。</p>
 
@@ -126,7 +126,7 @@ $(document).ready( function () {
 
 <p>メモリがありすぎて、困っちゃうなぁ。</p>
 
-<h3 id="section-2">豊富な周辺モジュール</h3>
+<h2 id="section-2">豊富な周辺モジュール</h2>
 
 <p>主な機能を表にまとめました。</p>
 
@@ -184,7 +184,7 @@ $(document).ready( function () {
 
 <p>タイマとPWMがたくさんあるのでロボットは動かし放題ですね！</p>
 
-<h3 id="usb">USBでパソコンと通信</h3>
+<h2 id="usb">USBでパソコンと通信</h2>
 
 <p>デバックのためにマイコンとパソコンで通信をするときは、UARTで通信するのが一般的ですが、PIC18F27J53ならば、それをUSBでできます。</p>
 
@@ -192,15 +192,15 @@ $(document).ready( function () {
 
 <p>これで、FT232のUSBシリアル変換モジュールは必要なくなります！！</p>
 
-<p><img src="/images/2016-01-08-pic18f27j53/FT232.jpg" alt="AE-FT232" /></p>
+<p><img src="FT232.jpg" alt="AE-FT232" /></p>
 
-<h3 id="usb-1">USBブートローダーに対応</h3>
+<h2 id="usb-1">USBブートローダーに対応</h2>
 
 <p>USB通信を使って、自分自身のプログラムの書き換えをすることができます。ブートローダです。</p>
 
 <p>初回に1回だけPICkit3でブートローダプログラムを書きこんでしまえば、2回目からはPICkit3を使わずにUSBで書き込むことができます。これなら、スマートに開発をすることができます。</p>
 
-<h3 id="section-3">周辺モジュールのピンを後から割り当て</h3>
+<h2 id="section-3">周辺モジュールのピンを後から割り当て</h2>
 
 <p>周辺モジュールが多いので、ピンの重複が気になるところです。しかし、PIC18F27J53は「Remappable Pin」といものがあります。</p>
 
@@ -208,26 +208,26 @@ $(document).ready( function () {
 
 <p>さらに基板に合わせてピンを決められるので結構便利です。</p>
 
-<h3 id="section-4">タッチセンサ</h3>
+<h2 id="section-4">タッチセンサ</h2>
 
 <p>PIC18F27J53にはCTMUというタッチセンサ機能を持ったモジュールがあります。押しボタンの代わりに使えるのでなかなか便利です。</p>
 
-<h3 id="section-5">リアルタイムクロックモジュール</h3>
+<h2 id="section-5">リアルタイムクロックモジュール</h2>
 
 <p>リアルタイムモジュールがあれば、32.768kHzの水晶をつなぐだけで時計とカレンダーをカウントしてくれます。レジスタの数を見るだけで時間や日にちをGETできるのでとても簡単！実用的！</p>
 
 <p>しかも、スリープ中でも時計は止まらないので、電池でも十分動かすことができます。</p>
 
-<h2 id="pic18f27j53-1">PIC18F27J53の使い方(ハードウェア)</h2>
+<h1 id="pic18f27j53-1">PIC18F27J53の使い方(ハードウェア)</h1>
 
-<h3 id="section-6">ピンアサイン</h3>
+<h2 id="section-6">ピンアサイン</h2>
 
 <p>PIC18F27J53のピンアサイン（データシートより）<br />
-<img src="/images/2016-01-08-pic18f27j53/pin-assign.png" alt="PIC18F27J53のピンアサイン" /></p>
+<img src="pin-assign.png" alt="PIC18F27J53のピンアサイン" /></p>
 
 <p><strong>RPx</strong>というピンが「Remappable Pin」です。</p>
 
-<h3 id="section-7">電源について</h3>
+<h2 id="section-7">電源について</h2>
 
 <p>電源電圧は<strong>3.3V</strong>です。注意してください。</p>
 
@@ -237,12 +237,12 @@ $(document).ready( function () {
 
 <p>PIC18F27J53のCoreは2.5Vで動作しています。入力電圧は3.3Vなので、内部にレギュレータが入っています。それの安定化のために「V_DDVORE/V_CAP」端子に10uFのコンデンサをつなぐ必要があります。</p>
 
-<h3 id="pic18f27j53-2">PIC18F27J53の一般的な回路図</h3>
+<h2 id="pic18f27j53-2">PIC18F27J53の一般的な回路図</h2>
 
 <p>USBから電源をとるときは、3端子レギュレータを通して3.3Vにするのを忘れずに。</p>
 
 <p>PIC18F27J53の基本的な回路図<br />
-<a href="/images/2016-01-08-pic18f27j53/sketch.png"><img src="/images/2016-01-08-pic18f27j53/sketch.png" alt="PIC18F27J53の回路図" /></a></p>
+<a href="sketch.png"><img src="sketch.png" alt="PIC18F27J53の回路図" /></a></p>
 
 <p>SPIやPWMなどは「Remappable」のピンに割り当てればOKです。</p>
 
@@ -252,11 +252,11 @@ $(document).ready( function () {
 
 <p>この回路図をもとに回路を作っていきましょう。</p>
 
-<h2 id="pic18f27j53-3">PIC18F27J53の使い方(ソフトウェア)</h2>
+<h1 id="pic18f27j53-3">PIC18F27J53の使い方(ソフトウェア)</h1>
 
 <p>ソフトウェアもほかのPICと少し違うので少し注意が必要です。</p>
 
-<h3 id="configration-bits">Configration Bits</h3>
+<h2 id="configration-bits">Configration Bits</h2>
 
 <p>いつも変わらないので、コピペしましょう。</p>
 
@@ -277,7 +277,7 @@ $(document).ready( function () {
 </span><span class="c1">// CONFIG4H
 </span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8</span></code></pre></figure>
 
-<h3 id="section-8">動作クロックの設定</h3>
+<h2 id="section-8">動作クロックの設定</h2>
 
 <p>クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。</p>
 
@@ -290,7 +290,7 @@ $(document).ready( function () {
 
 <p>ここに記述した内容と、Configration Bitsの内容によりクロックソースと周波数が決まります。</p>
 
-<h3 id="io">I/Oポート関連</h3>
+<h2 id="io">I/Oポート関連</h2>
 
 <p>PIC18F27J53には8bitの入出力ポートが3つあります。PORTA,PORTB,PORTCです。</p>
 
@@ -314,9 +314,9 @@ $(document).ready( function () {
 
 <p>※「x」となっているところは自分で適当に0/1を入れる。</p>
 
-<h3 id="section-9">タイマ関連</h3>
+<h2 id="section-9">タイマ関連</h2>
 
-<h4 id="timer-0-8bit">Timer 0 (8bit)</h4>
+<h3 id="timer-0-8bit">Timer 0 (8bit)</h3>
 
 <p>割り込み周波数 = Fosc / (4 * 256 * 2^prescaler) = 46875/(2^prescaler) [Hz]</p>
 
@@ -337,7 +337,7 @@ $(document).ready( function () {
 </span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="timer-1-16bit">Timer 1 (16bit)</h4>
+<h3 id="timer-1-16bit">Timer 1 (16bit)</h3>
 
 <p>割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]</p>
 
@@ -359,7 +359,7 @@ $(document).ready( function () {
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="timer-3-16bit">Timer 3 (16bit)</h4>
+<h3 id="timer-3-16bit">Timer 3 (16bit)</h3>
 
 <p>割り込み周波数 = CLOCK / (4 * 65536 * 2^prescaler) [Hz]</p>
 
@@ -376,7 +376,7 @@ $(document).ready( function () {
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="uart">UARTの設定&amp;動作</h3>
+<h2 id="uart">UARTの設定&amp;動作</h2>
 
 <p>ここではとりあえずUART通信できるプログラムを示します。本来ならばリングバッファを使って実装します。長くなりそうなので、そのやり方はまた改めて説明します。</p>
 
@@ -406,7 +406,7 @@ $(document).ready( function () {
 </span>    <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">send_data</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="section-10">割り込み関数</h3>
+<h2 id="section-10">割り込み関数</h2>
 
 <p>割り込み関数はPIC16FやPIC18Fと同様です。</p>
 
@@ -436,29 +436,29 @@ $(document).ready( function () {
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="usb-2">USB関連</h3>
+<h2 id="usb-2">USB関連</h2>
 
 <p>USB関連は結構複雑で長くなりそうなので、改めて後日書こうと思います。</p>
 
 <p>→追記：<a href="/posts/2016-01-08-pic18f27j53/">PICでUSB通信</a>をご覧ください。</p>
 
-<h3 id="remappable-pin">Remappable Pinの使い方</h3>
+<h2 id="remappable-pin">Remappable Pinの使い方</h2>
 
 <p>同じく長くなりそうなので、後日記事を書きます。</p>
 
-<h3 id="rtcc">RTCC(リアルタイムクロック)モジュールの使い方</h3>
+<h2 id="rtcc">RTCC(リアルタイムクロック)モジュールの使い方</h2>
 
 <p>同じく長くなりそうなので、後日記事を書きます。</p>
 
-<h3 id="section-11">タッチセンサの使い方</h3>
+<h2 id="section-11">タッチセンサの使い方</h2>
 
 <p>同じく長くなりそうなので、後日記事を書きます。</p>
 
-<h3 id="pwmi2cspi">PWM、I2C、SPIの使い方</h3>
+<h2 id="pwmi2cspi">PWM、I2C、SPIの使い方</h2>
 
 <p>同じく長くなりそうなので、(元気があれば)後日記事を書きます。</p>
 
-<h2 id="section-12">プログラムの例</h2>
+<h1 id="section-12">プログラムの例</h1>
 
 <p>このままコピペで動くはずです。</p>
 
@@ -627,9 +627,9 @@ $(document).ready( function () {
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="section-13">さいごに</h2>
+<h1 id="section-13">さいごに</h1>
 
-<h3 id="pic">PICを使おう！</h3>
+<h2 id="pic">PICを使おう！</h2>
 
 <p>僕がググった感じだとPIC18F27J53を使っている人はかなり少ないと思います。この記事を読んで使ってくれる人がいたら嬉しいです。このマイコンは魅力的ですよ～</p>
 
@@ -637,14 +637,14 @@ $(document).ready( function () {
 
 <p>やっぱり、AVRなんかより<strong>PIC</strong>の方がいいですね～</p>
 
-<h3 id="pic-1">PIC用ライブラリ</h3>
+<h2 id="pic-1">PIC用ライブラリ</h2>
 
 <p>僕の作ったPIC用ライブラリのリンクを貼っておきます。参考にしてください。<br />
 <a href="https://github.com/kerikun11/MPLABXProjects/tree/master/My_library">PICライブラリ</a></p>
 
 <p>主に PIC18F27J53 と PIC16F1827、PIC12F1822 用に作られています。</p>
 
-<h3 id="section-14">何か気づいたら</h3>
+<h2 id="section-14">何か気づいたら</h2>
 
 <p>もし、この記事の内容に間違いや疑問をを見つけたら遠慮なく教えてください。Twitterにリプを飛ばしていただけると嬉しいです。<a href="https://twitter.com/Ryokeri14">@Ryokeri14</a>←遠慮なくリプしてください。</p>
 
