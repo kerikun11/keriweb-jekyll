@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>vimの設定 - KERI's Lab</title>
-  <meta name="description" content="vim の設定">
+  <title>メダカの照明2 - KERI's Lab</title>
+  <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kerikeri.top/posts/2015-10-07-vim/">
+  <link rel="canonical" href="http://kerikeri.top/posts/2016-03-14-killifish-light-2/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
@@ -81,63 +81,84 @@ $(document).ready( function () {
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-	<h1 class="post-title" itemprop="name headline">vimの設定</h1>
-	<p class="post-meta"><time datetime="2015-10-07T00:00:00+09:00" itemprop="datePublished">2015年10月07日</time><span><br />Category: <a href="/memo/">memo</a></span></p>
+	<h1 class="post-title" itemprop="name headline">メダカの照明2</h1>
+	<p class="post-meta"><time datetime="2016-03-14T00:00:00+09:00" itemprop="datePublished">2016年03月14日</time><span><br />Category: <a href="/blog/">blog</a></span></p>
     </header>
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h1>vim の設定</h1>
+	<h1 id="section">概要</h1>
 
-<h2>.vimrc</h2>
-<pre>
-syntax enable
-set number
-set autoindent
-set smartindent
-set backspace=start,eol,indent
-set mouse=a
-set tabstop=4
-set shiftwidth=4
-"set expandtab
-set encoding=utf-8
-set cursorline
-set nocompatible
+<h2 id="section-1">メダカの水槽の照明</h2>
 
-filetype plugin indent off
+<p>以前、PICで作った<a href="/posts/2015-06-04-killifish-light/">メダカの水槽の照明</a>(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。</p>
 
-if has('vim_starting')
-		set runtimepath+=~/.vim/bundle/neobundle.vim
-		call neobundle#begin(expand('~/.vim/bundle'))
-endif
+<p><img src="fish.jpg" alt="めだか" /></p>
 
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'anyakichi/vim-surround'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
+<h2 id="wifi">格安WiFiモジュール</h2>
 
-if has('vim_starting')
-		call neobundle#end()
-endif
+<p>今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。</p>
 
-filetype plugin indent on
-</pre>
+<p>このWiFiモジュールを使った赤外線学習リモコンの記事も書きましたので合わせてご覧ください。</p>
 
-<h2>pluginの設定</h2>
-<article>
-	<p>　NeoBundleをダウンロードする。</p>
-	<pre>
-$ mkdir -p ~.vim/bundle
-$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</pre>
-	<p>　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
-	<pre>:NeoBundleInstall</pre>
-	<p>または</p>
-	<pre>:NeoBundleUpdate</pre>
-	<p>を実行する。</p>
-</article>
+<ul>
+  <li><a href="/posts/2015-12-30-ir-station/">日本語による紹介記事</a></li>
+  <li><a href="/posts/2016-03-11-ir-station-reference/">英語によるリファレンス</a></li>
+</ul>
 
+<p><a href="http://akizukidenshi.com/catalog/g/gM-09607/">ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)<img src="esp-wroom-02.jpg" alt="ESP-WROOM-02" /></a></p>
+
+<h1 id="section-2">ギャラリー</h1>
+
+<h2 id="section-3">全体</h2>
+
+<p>LEDはなんと、</p>
+
+<ul>
+  <li>白色LED12個</li>
+  <li>赤色LED6個</li>
+  <li>緑色LED6個</li>
+  <li>青色LED6個</li>
+</ul>
+
+<p>の計30個の1WパワーLEDを備えています。</p>
+
+<p><img src="all.jpg" alt="全体" /></p>
+
+<h2 id="section-4">基板</h2>
+
+<p>Dサイズのユニバーサル基板に実装しました。回路はとても簡単です。</p>
+
+<p><img src="board1.jpg" alt="基板1" />
+<img src="board2.jpg" alt="基板2" /></p>
+
+<h2 id="led">LED</h2>
+
+<p><img src="light.jpg" alt="光っているところ" /></p>
+
+<h1 id="section-5">スマホからの操作画面</h1>
+
+<p>ボタンを押すことでLEDの明るさを11段階で変えることができます。</p>
+
+<p><img src="page.png" alt="操作画面" /></p>
+
+<h1 id="section-6">時間同期モード</h1>
+
+<p>「Set Time Sync」から時間同期モードに設定すると、朝6時から徐々に明るくなり正午にMAXになり、午後6時までに消灯するようになっています。これでめだかは時間間隔が狂わず、健康に生きることができます！！</p>
+
+<p>時刻はNTPサーバーから取得しているので時計合わせも不要で正確です。</p>
+
+<h1 id="section-7">ソースファイル</h1>
+
+<p>ソースファイルはGithubに公開していますので興味がある方はご覧ください。<a href="https://github.com/kerikun11/Light-for-Fish.git">→リンク</a></p>
+
+<p>ただし、他人に見せるつもりで書いたソースではないので説明は皆無です。</p>
+
+<h1 id="section-8">まとめ</h1>
+
+<p>シリアルによるコントロールだった前のバージョンに比べてかなり進化しました！今後はJavaScriptなどを使ってさらに進化させていきたいですね！</p>
+
+<p><img src="fish_up.jpg" alt="めだか" /></p>
 
 
     </div>

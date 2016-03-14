@@ -5,9 +5,94 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Mar 2016 14:12:57 +0900</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2016 14:12:57 +0900</lastBuildDate>
+    <pubDate>Mon, 14 Mar 2016 18:17:50 +0900</pubDate>
+    <lastBuildDate>Mon, 14 Mar 2016 18:17:50 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>メダカの照明2</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;メダカの水槽の照明&lt;/h2&gt;
+
+&lt;p&gt;以前、PICで作った&lt;a href=&quot;/posts/2015-06-04-killifish-light/&quot;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;fish.jpg&quot; alt=&quot;めだか&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wifi&quot;&gt;格安WiFiモジュール&lt;/h2&gt;
+
+&lt;p&gt;今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。&lt;/p&gt;
+
+&lt;p&gt;このWiFiモジュールを使った赤外線学習リモコンの記事も書きましたので合わせてご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2015-12-30-ir-station/&quot;&gt;日本語による紹介記事&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2016-03-11-ir-station-reference/&quot;&gt;英語によるリファレンス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;ギャラリー&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;全体&lt;/h2&gt;
+
+&lt;p&gt;LEDはなんと、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;白色LED12個&lt;/li&gt;
+  &lt;li&gt;赤色LED6個&lt;/li&gt;
+  &lt;li&gt;緑色LED6個&lt;/li&gt;
+  &lt;li&gt;青色LED6個&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の計30個の1WパワーLEDを備えています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;all.jpg&quot; alt=&quot;全体&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;基板&lt;/h2&gt;
+
+&lt;p&gt;Dサイズのユニバーサル基板に実装しました。回路はとても簡単です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;board1.jpg&quot; alt=&quot;基板1&quot; /&gt;
+&lt;img src=&quot;board2.jpg&quot; alt=&quot;基板2&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;led&quot;&gt;LED&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;light.jpg&quot; alt=&quot;光っているところ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;スマホからの操作画面&lt;/h1&gt;
+
+&lt;p&gt;ボタンを押すことでLEDの明るさを11段階で変えることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;page.png&quot; alt=&quot;操作画面&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;時間同期モード&lt;/h1&gt;
+
+&lt;p&gt;「Set Time Sync」から時間同期モードに設定すると、朝6時から徐々に明るくなり正午にMAXになり、午後6時までに消灯するようになっています。これでめだかは時間間隔が狂わず、健康に生きることができます！！&lt;/p&gt;
+
+&lt;p&gt;時刻はNTPサーバーから取得しているので時計合わせも不要で正確です。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;ソースファイル&lt;/h1&gt;
+
+&lt;p&gt;ソースファイルはGithubに公開していますので興味がある方はご覧ください。&lt;a href=&quot;https://github.com/kerikun11/Light-for-Fish.git&quot;&gt;→リンク&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ただし、他人に見せるつもりで書いたソースではないので説明は皆無です。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;シリアルによるコントロールだった前のバージョンに比べてかなり進化しました！今後はJavaScriptなどを使ってさらに進化させていきたいですね！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;fish_up.jpg&quot; alt=&quot;めだか&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Sinatraでアプリケーションを作る</title>
@@ -180,7 +265,7 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-12-sinatra/</guid>
         
         
-        <category>blog</category>
+        <category>memo</category>
         
       </item>
     
@@ -2034,47 +2119,6 @@ $ sudo service ufw restart
         <category>サーバー</category>
         
         <category>Samba</category>
-        
-        
-        <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>ファイアウォールの設定</title>
-        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ufw
-
-$ sudo ufw status
-Status: inactive
-
-$ sudo ufw enable
-Command may disrupt existing ssh connections. Proceed with operation (y|n)? 
-y
-
-$ sudo ufw disenable
-$ sudo ufw reset
-Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation (y|n)?
-y
-
-$ sudo ufw disenable
-$ sudo ufw default deny
-$ sudo ufw allow 80
-$ sudo ufw allow 22
-$ sudo ufw enable
-
-$ sudo ufw status
-Status: active
- 
- To                         Action      From
- --                         ------      ----
- 22		                    ALLOW       Anywhere
- 80                         ALLOW       Anywhere
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 17 Nov 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
         
         
         <category>memo</category>
