@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Mar 2016 12:07:24 +0900</pubDate>
-    <lastBuildDate>Tue, 15 Mar 2016 12:07:24 +0900</lastBuildDate>
+    <pubDate>Fri, 18 Mar 2016 20:10:28 +0900</pubDate>
+    <lastBuildDate>Fri, 18 Mar 2016 20:10:28 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -68,7 +68,7 @@
 
 &lt;h1 id=&quot;section-6&quot;&gt;時間同期モード&lt;/h1&gt;
 
-&lt;p&gt;「Set Time Sync」から時間同期モードに設定すると、朝6時から徐々に明るくなり正午にMAXになり、午後6時までに消灯するようになっています。これでめだかは時間間隔が狂わず、健康に生きることができます！！&lt;/p&gt;
+&lt;p&gt;「Set Time Sync」から時間同期モードに設定すると、朝6時から徐々に明るくなり正午にMAXになり、午後6時までに消灯するようになっています。これでめだかは時間感覚が狂わず、健康に生きることができます！！&lt;/p&gt;
 
 &lt;p&gt;時刻はNTPサーバーから取得しているので時計合わせも不要で正確です。&lt;/p&gt;
 
