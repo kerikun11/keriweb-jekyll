@@ -1,7 +1,7 @@
 ---
 # 2016-03-14-killifish-light-2.md
 layout:		post
-title:		メダカの照明2
+title:		メダカの照明 Ver.2
 category:	blog
 ---
 

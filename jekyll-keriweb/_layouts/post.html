@@ -3,21 +3,32 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <header class="post-header">
-	<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-	<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}<span><br />Category: <a href="/{{ page.category }}/">{{ page.category }}</a></span></p>
-    </header>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+		<p class="post-meta">
+			<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>
+			{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+			{% endif %}<span>
+			<br />
+			Category: <a href="/{{ page.category }}/">{{ page.category }}</a></span>
+			<br />
+			Tag: 
+			{% for tag in page.tags %}
+			{{ tag }}, 
+			{% endfor %}
+		</p>
+	</header>
 
-    <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
-    <div class="post-content" itemprop="articleBody">
-	{{ content }}
-    </div>
+	<span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
+	<div class="post-content" itemprop="articleBody">
+		{{ content }}
+	</div>
 
-    {% include ads-flexible.html %}
+	{% include ads-flexible.html %}
 
-    <br />
+	<br />
 
-    {% include comment.html %}
+	{% include comment.html %}
 
 </article>
 

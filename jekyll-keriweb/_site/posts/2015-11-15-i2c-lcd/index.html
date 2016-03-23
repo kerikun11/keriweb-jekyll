@@ -10,7 +10,6 @@
   <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/myset.css">
   <link rel="canonical" href="http://kerikeri.top/posts/2015-11-15-i2c-lcd/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/home/icon.ico">
@@ -81,14 +80,22 @@ $(document).ready( function () {
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <header class="post-header">
-	<h1 class="post-title" itemprop="name headline">delayやwhileを使わないI2C液晶表示プログラム</h1>
-	<p class="post-meta"><time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">2015年11月15日</time><span><br />Category: <a href="/memo/">memo</a></span></p>
-    </header>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">delayやwhileを使わないI2C液晶表示プログラム</h1>
+		<p class="post-meta">
+			<time datetime="2015-11-15T00:00:00+09:00" itemprop="datePublished">2015年11月15日</time>
+			<span>
+			<br />
+			Category: <a href="/memo/">memo</a></span>
+			<br />
+			Tag: 
+			
+		</p>
+	</header>
 
-    <span class="post-meta"></span>
-    <div class="post-content" itemprop="articleBody">
-	<h1 id="section">概要</h1>
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h1 id="section">概要</h1>
 
 <p>秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。</p>
 
@@ -240,9 +247,9 @@ main.c</p>
 <span class="p">}</span></code></pre></figure>
 
 
-    </div>
+	</div>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 1st-ad -->
 <ins class="adsbygoogle"
 	style="display:block"
@@ -254,9 +261,9 @@ main.c</p>
 </script>
 
 
-    <br />
+	<br />
 
-    <div id="disqus_thread"></div>
+	<div id="disqus_thread"></div>
 <script>
 /**
  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -323,6 +330,10 @@ main.c</p>
 
 			<div class="footer-col footer-col-3">
 				<p>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</p>
+			</div>
+
+			<div class="footer-copyright">
+				<p>Copyright© 2014-2016 KERI's Lab All Rights Reserved.</p>
 			</div>
 		</div>
 

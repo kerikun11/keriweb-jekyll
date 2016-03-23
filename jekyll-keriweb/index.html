@@ -17,9 +17,9 @@ layout: default
 
 	<ul class="post-list">
 		{% for post in site.posts %}
-		{% if post.title == "CPUの創り方" or post.title == "100W級ソーラーシステムの自作" or post.title == "メダカの照明の自作" %}
-		{% include post-list.html %}
-		{% endif %}
+			{% if post.title == "CPUの創り方" or post.title == "100W級ソーラーシステムの自作" or post.title == "メダカの照明の自作" or post == "メダカの照明 Ver.2" %}
+				{% include post-list.html %}
+			{% endif %}
 		{% endfor %}
 	</ul>
 
@@ -27,7 +27,7 @@ layout: default
 
 	<ul class="post-list">
 		{% for post in site.posts %}
-		{% include post-list.html %}
+			{% include post-list.html %}
 		{% endfor %}
 	</ul>
 

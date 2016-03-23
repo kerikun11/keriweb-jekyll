@@ -170,8 +170,8 @@ pre {
         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
-    	margin-right: $spacing-unit / 2;
-    	margin-left: $spacing-unit / 2;
+    	margin-right: $spacing-unit / 4;
+    	margin-left: $spacing-unit / 4;
     }
 }
 
