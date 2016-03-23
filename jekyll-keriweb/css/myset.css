@@ -1,11 +1,14 @@
 body {
-	background-image:url('/home/bgi.png');
+	background-image:url('/home/bgi2.png');
 	background-repeat:repeat;
 }
 
 .page-content {
 	padding-top:10px;
 	padding-bottom:10px;
+}
+
+.wrapper {
 }
 
 .site-title {
@@ -33,6 +36,7 @@ body {
 .page-content .wrapper {
 	background-color: rgba(255,255,255,0.5);
 	border-radius:10px;
+	padding-top: 20px;
 	padding-bottom: 20px;
 }
 .site-footer .wrapper {
@@ -43,5 +47,21 @@ body {
 }
 .footer-col {
 	margin-bottom:0;
+}
+.img-small {
+	width:300px;
+}
+.highlight {
+	margin:0 3em;
+}
+.home-gallery{
+	text-align:center;
+}
+.home-gallery img{
+	list-style:none;
+	display:inline-block;
+	max-width:22%;
+	min-width:8em;
+	margin:2% 1%;
 }
 

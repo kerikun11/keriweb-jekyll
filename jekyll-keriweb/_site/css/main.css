@@ -124,7 +124,9 @@ pre {
       max-width: -webkit-calc(800px - (30px));
       max-width: calc(800px - (30px));
       padding-right: 15px;
-      padding-left: 15px; } }
+      padding-left: 15px;
+      margin-right: 15px;
+      margin-left: 15px; } }
 
 /**
  * Clearfix
@@ -281,15 +283,6 @@ pre {
   display: block;
   font-size: 24px; }
 
-.home-gallery {
-  text-align: center; }
-  .home-gallery img {
-    list-style: none;
-    display: inline-block;
-    width: 22%;
-    min-width: 8em;
-    padding: 2% 1%; }
-
 /**
  * Posts
  */
@@ -348,8 +341,6 @@ pre {
     margin-left: 5em; }
   .post-content ul {
     margin-left: 5em; }
-  .post-content pre {
-    margin-left: 3em; }
   .post-content table {
     margin-left: 3em;
     border-collapse: separate;

@@ -14,7 +14,7 @@ ESP8266とはWiFi制御用マイコンです。もともと中国で流行って
 
 その価格はなんと、たったの**550円**です！！  
 [ESP-WROOM-02](http://akizukidenshi.com/catalog/g/gM-09607/)←秋月電子などで売っています。  
-![ESP8266](esp8266.jpg)
+[![ESP8266](esp8266.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
 
 ##開発の簡単さも流行りの理由
 
@@ -70,6 +70,11 @@ RAMも大量にあって、**81kB**もあります。
 
 ![ESP8266-Remocon](page_button.png)
 
+
+# 作り方
+
+Githubに公開しているのでそちらをご覧下さい。  
+[Github - IR-station](https://github.com/kerikun11/IR-station)
 
 #まとめ
 

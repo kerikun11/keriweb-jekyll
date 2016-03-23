@@ -88,51 +88,71 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h1>SSH</h1>
-<section>
+	<h1 id="ssh">SSH</h1>
 
-	<h2>SSHとは</h2>
-	<article>
-		<p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。</p>
-	</article>
+<h2 id="ssh-1">SSHとは</h2>
 
-	<h2>ホスト側設定</h2>
-	<article>
-		<p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
-		<pre>$sudo apt-get install openssh-server</pre>
-		<p>を実行すると外部からアクセスできるようになる。</p>
-		<pre>$ sudo vim /etc/ssh/sshd_config</pre>
-		<p>　ここで各種設定をする。</p>
-		<pre>
-Port 22
-		</pre>
-	</article>
+<p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。</p>
 
-	<h2>鍵の生成</h2>
-	<article>
-		<p>　鍵はクライアント側で生成することが多い。</p>
-		<pre>$ssh-keygen -t ecdsa -C "comment"</pre>
-		<p>を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pu」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。</p>
-		<p>　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。</p>
-		<pre>$ mkdir ~/.ssh</pre>
-		<p>　ここに「authorized_keys」というファイルがあれば、以下のように追加する。</p>
-		<pre>$ cat id_ecdsa.pub &gt;&gt; authorized_keys</pre>
-		<p>なければ、新規作成してから、鍵を追加する。</p>
-	</article>
+<h2 id="section">ホスト側設定</h2>
 
-	<h2>SSHの接続</h2>
-	<article>
-		<p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
-		<pre>$ssh your_username@your_domain.com</pre>
-		<p>　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)</p>
-		<p>　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。</p>
-	</article>
+<p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
 
-	<h2>.ssh/config</h2>
-	<article>
-		<p>　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。</p>
-		<pre>
-$vim ~/.ssh/config
+<div class="highlighter-rouge"><pre class="highlight"><code>$sudo apt-get install openssh-server
+</code></pre>
+</div>
+
+<p>を実行すると外部からアクセスできるようになる。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/ssh/sshd_config
+</code></pre>
+</div>
+
+<p>　ここで各種設定をする。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Port 22
+</code></pre>
+</div>
+
+<h2 id="section-1">鍵の生成</h2>
+
+<p>　鍵はクライアント側で生成することが多い。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ssh-keygen -t ecdsa -C "comment"
+</code></pre>
+</div>
+
+<p>を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pub」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。
+　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
+</code></pre>
+</div>
+
+<p>　ここに「authorized_keys」というファイルがあれば、以下のように追加する。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cat id_ecdsa.pub &gt;&gt; authorized_keys
+</code></pre>
+</div>
+
+<p>なければ、新規作成してから、鍵を追加する。</p>
+
+<h2 id="ssh-2">SSHの接続</h2>
+
+<p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ssh your_username@your_domain.com
+</code></pre>
+</div>
+
+<p>　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)
+　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。</p>
+
+<h2 id="sshconfig">.ssh/config</h2>
+
+<p>　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$vim ~/.ssh/config
 
 Host local_raspi
 	HostName	192.168.11.2 ←ラズパイのIP
@@ -145,11 +165,15 @@ Host global_raspi
 	IdentityFile	~/.ssh/id_ecdsa
 	User		kerikun11
 	Port		22
-		</pre>
-		<p>　接続の仕方は、以下の通り。とても簡単。</p>
-		<pre>$ssh global_raspi</pre>
-	</article>
-</section>
+</code></pre>
+</div>
+
+<p>　接続の仕方は、以下の通り。とても簡単。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ssh global_raspi
+</code></pre>
+</div>
+
 
     </div>
 

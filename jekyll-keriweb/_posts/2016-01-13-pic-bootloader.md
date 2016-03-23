@@ -30,7 +30,7 @@ category: memo
 どちらもユーザープログラムには影響はありません。
 
 回路図  
-[![PIC18F27J53の回路図](/images/2016-01-10-pic-usb/sketch.png)](/images/2016-01-10-pic-usb/sketch.png)
+[![PIC18F27J53の回路図](sketch.png)](sketch.png)
 
 # ブートローダプログラム
 

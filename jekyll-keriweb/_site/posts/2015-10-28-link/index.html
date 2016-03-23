@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>linkを作る「ln」コマンド - KERI's Lab</title>
-  <meta name="description" content="ハードリンクとシンボリックリンク	　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。	　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実...">
+  <meta name="description" content="ハードリンクとシンボリックリンク">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/myset.css">
@@ -88,26 +88,33 @@ $(document).ready( function () {
 
     <span class="post-meta"></span>
     <div class="post-content" itemprop="articleBody">
-	<h2>ハードリンクとシンボリックリンク</h2>
-<article>
-	<p>　ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。</p>
-	<p>　シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。</p>
-</article>
-<h2>コマンド形式</h2>
-<article>
-	<p>　以下のようなコマンドを実行する。</p>
-	<pre>$ ln -fids &lt;ターゲット&gt; &lt;リンク&gt;</pre>
-	<ul>
-		<li>-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする</li>
-		<li>-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる</li>
-		<li>-d	ディレクトリのリンクを作成</li>
-		<li>-s	シンボリックリンクを作成（デフォルトはハードリンク）</li>
-	</ul>
-</article>
-<h2>例</h2>
-<article>
-	<p>　Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド</p>
-	<pre>$ ln -sf ~/dotfiles/.vimrc ~/.vimrc</pre>
+	<h1 id="section">ハードリンクとシンボリックリンク</h1>
+
+<p>ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。
+シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。</p>
+
+<h1 id="section-1">コマンド形式</h1>
+
+<p>以下のようなコマンドを実行する。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ln -fids &lt;ターゲット&gt; &lt;リンク&gt;
+</code></pre>
+</div>
+
+<ul>
+  <li>-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする</li>
+  <li>-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる</li>
+  <li>-d	ディレクトリのリンクを作成</li>
+  <li>-s	シンボリックリンクを作成（デフォルトはハードリンク）</li>
+</ul>
+
+<h1 id="section-2">例</h1>
+
+<p>Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ln -sf ~/dotfiles/.vimrc ~/.vimrc
+</code></pre>
+</div>
 
 
     </div>

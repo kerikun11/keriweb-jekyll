@@ -194,17 +194,6 @@
 	font-size: 24px;
 }
 
-.home-gallery{
-	text-align:center;
-	img {
-		list-style:none;
-		display:inline-block;
-		width:22%;
-		min-width:8em;
-		padding:2% 1%;
-	}
-}
-
 /**
  * Posts
  */
@@ -285,9 +274,6 @@
 		margin-left:5em;
 	}
 
-	pre {
-		margin-left:3em;
-	}
 	table{
 		margin-left:3em;
 		border-collapse: separate;

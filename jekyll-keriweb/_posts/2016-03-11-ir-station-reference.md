@@ -1,7 +1,7 @@
 ---
 layout:	post
-title:	Reference of IR-station
-category:	memo
+title:	IR Station
+category:	production
 ---
 
 

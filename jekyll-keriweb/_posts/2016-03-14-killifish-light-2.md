@@ -22,7 +22,7 @@ category:	blog
   * [赤外線学習リモコン（日本語による紹介記事）]({% post_url 2015-12-30-ir-station %})
   * [赤外線学習リモコン（英語によるリファレンス）]({% post_url 2016-03-11-ir-station-reference %})
 
-[ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)![ESP-WROOM-02](esp-wroom-02.jpg)](http://akizukidenshi.com/catalog/g/gM-09607/)
+[ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)![ESP-WROOM-02](esp-wroom-02.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
 
 # ギャラリー
 
@@ -48,9 +48,14 @@ Dサイズのユニバーサル基板に実装しました。回路はとても�
 
 ## LED
 
+
 ![光っているところ](light.jpg)
 
-# スマホからの操作画面
+## 回路図
+
+[![回路図](sketch.png)](sketch.png)
+
+## スマホからの操作画面
 
 ボタンを押すことでLEDの明るさを11段階で変えることができます。
 
