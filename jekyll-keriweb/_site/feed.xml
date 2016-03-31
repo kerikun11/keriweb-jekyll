@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Mar 2016 00:22:45 +0900</pubDate>
-    <lastBuildDate>Thu, 24 Mar 2016 00:22:45 +0900</lastBuildDate>
+    <pubDate>Wed, 30 Mar 2016 11:02:39 +0900</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2016 11:02:39 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -187,6 +187,20 @@
         <link>http://kerikeri.top/posts/2016-03-23-relay-sensor/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-23-relay-sensor/</guid>
         
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>電流計</category>
+        
+        <category>電圧計</category>
+        
+        <category>電子工作</category>
+        
+        <category>Wi-Fi</category>
+        
+        <category>Arduino</category>
+        
         
         <category>blog</category>
         
@@ -275,6 +289,24 @@
         <pubDate>Mon, 14 Mar 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>サーバー</category>
+        
+        <category>電子工作</category>
+        
+        <category>めだか</category>
+        
+        <category>LED</category>
+        
+        <category>制御</category>
+        
+        <category>時計</category>
+        
+        <category>Arduino</category>
         
         
         <category>blog</category>
@@ -452,6 +484,28 @@
         <pubDate>Sat, 12 Mar 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-03-12-sinatra/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-12-sinatra/</guid>
+        
+        <category>Sinatra</category>
+        
+        <category>ruby</category>
+        
+        <category>サーバー</category>
+        
+        <category>アプリケーション</category>
+        
+        <category>HTTP</category>
+        
+        <category>HTML</category>
+        
+        <category>CSS</category>
+        
+        <category>Active Record</category>
+        
+        <category>SQLite3</category>
+        
+        <category>JQuiry</category>
+        
+        <category>ドットインストール</category>
         
         
         <category>blog</category>
