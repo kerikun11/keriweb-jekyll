@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Apr 2016 17:35:51 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Apr 2016 17:35:51 +0900</lastBuildDate>
+    <pubDate>Sun, 03 Apr 2016 17:50:28 +0900</pubDate>
+    <lastBuildDate>Sun, 03 Apr 2016 17:50:28 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -68,7 +68,7 @@
 
 &lt;p&gt;この中継型電力計は、電力を計測する対象から電気をもらいながら電力を計測します。電源いらずでとても便利でした。&lt;/p&gt;
 
-&lt;p&gt;しかし今回は計測対象がソーラーなので、夜間や曇ったっ時には電気がなくなって動かなくなってしまうのです！&lt;/p&gt;
+&lt;p&gt;しかし今回は計測対象がソーラーなので、夜間や曇った時には電気がなくなって動かなくなってしまうのです！&lt;/p&gt;
 
 &lt;h2 id=&quot;section-12&quot;&gt;中継型電力計を用いるはずが…&lt;/h2&gt;
 
@@ -78,17 +78,19 @@
 
 &lt;p&gt;今は外付けの電源を用意して計測をしています。しかし、今後改良して電気二重層コンデンサなどで昼間に電気をためて夜間使用できるようにしたいと思っています。&lt;/p&gt;
 
-&lt;p&gt;そのために、省電力の工夫をしていきたいです。WiFiって結構電流を消費するので大変です…&lt;/p&gt;
+&lt;p&gt;そのために、省電力の工夫をしなけばなりません。WiFiって結構電流を消費するので大変です…&lt;/p&gt;
 
 &lt;h1 id=&quot;section-14&quot;&gt;まとめ&lt;/h1&gt;
 
 &lt;h2 id=&quot;section-15&quot;&gt;まあ、使える。&lt;/h2&gt;
 
-&lt;p&gt;手軽につけえて便利！と思いきや、意外な問題にぶち当たってしまいました。&lt;/p&gt;
+&lt;p&gt;手軽に使えて便利！と思いきや、意外な問題にぶち当たってしまいました。&lt;/p&gt;
 
 &lt;p&gt;まぁ、外付け電源で使えていますのでとりあえずはよしとしましょう。&lt;/p&gt;
 
 &lt;h2 id=&quot;esp8266&quot;&gt;ESP8266はすごい！&lt;/h2&gt;
+
+&lt;p&gt;今回の工作では流行りのWiFiモジュールESP-WROOM-0(ESP8266)を使用しました。値段はたったの550円!WiFiだけでなくマイコンとしての性能もかなり高く、便利なモジュールです。&lt;/p&gt;
 
 &lt;p&gt;電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。&lt;/p&gt;
 
