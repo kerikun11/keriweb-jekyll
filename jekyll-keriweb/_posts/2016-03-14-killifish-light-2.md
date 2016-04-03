@@ -23,7 +23,9 @@ tags:		[ESP-WROOM-02, ESP8266, サーバー, 電子工作, めだか, LED, 制�
   * [赤外線学習リモコン（日本語による紹介記事）]({% post_url 2015-12-30-ir-station %})
   * [赤外線学習リモコン（英語によるリファレンス）]({% post_url 2016-03-11-ir-station-reference %})
 
-[ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)![ESP-WROOM-02](esp-wroom-02.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
+[ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)](http://akizukidenshi.com/catalog/g/gM-09607/)
+
+![ESP-WROOM-02](esp-wroom-02.jpg){: .img-small}
 
 # ギャラリー
 

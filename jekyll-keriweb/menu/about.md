@@ -4,8 +4,10 @@ title: About
 permalink: /about/
 ---
 
+![@Ryokeri14](/home/KERI_LCD.jpg){: .img-small}
+
 # Profile
-管理人	：けり（大学２年生）  
+管理人	：けり（大学３年生）  
 出身	：神奈川県  
 趣味	：電子工作  
 

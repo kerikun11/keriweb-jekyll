@@ -5,9 +5,118 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Mar 2016 11:02:39 +0900</pubDate>
-    <lastBuildDate>Wed, 30 Mar 2016 11:02:39 +0900</lastBuildDate>
+    <pubDate>Sun, 03 Apr 2016 17:35:51 +0900</pubDate>
+    <lastBuildDate>Sun, 03 Apr 2016 17:35:51 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>電力つぶやきbot</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;中継型電力計&lt;/h2&gt;
+&lt;p&gt;先日の記事で&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;何の電力をつぶやくのか&lt;/h2&gt;
+
+&lt;p&gt;僕の家には&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;solar.jpg&quot; alt=&quot;Solar&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;見た目&lt;/h1&gt;
+
+&lt;p&gt;左側の宙に浮いた基板が今回の電力つぶやきbotです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;power-tweeter1.jpg&quot; alt=&quot;Power-Tweeter&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拡大&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;power-tweeter2.jpg&quot; alt=&quot;Power-Tweeter&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;実際のつぶやき&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;朝8時&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-8h.png&quot; alt=&quot;tweet-8h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;正午12時&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-12h.png&quot; alt=&quot;tweet-12h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;夕方16時&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-16h.png&quot; alt=&quot;tweet-16h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;夜20時時&lt;/h2&gt;
+
+&lt;p&gt;1日のまとめをつぶやく。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-20h.png&quot; alt=&quot;tweet-20h&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-9&quot;&gt;ソフトウェア&lt;/h1&gt;
+
+&lt;p&gt;Githubに公開してあります。興味のある方はご覧ください。&lt;/p&gt;
+
+&lt;p&gt;URL: &lt;a href=&quot;https://github.com/kerikun11/Power-Tweeter&quot;&gt;kerikun11/Power-Tweeter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-10&quot;&gt;大問題発生！！&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-11&quot;&gt;気づいたら止まっている&lt;/h2&gt;
+
+&lt;p&gt;作る過程で大きな問題に遭遇しました。&lt;/p&gt;
+
+&lt;p&gt;取り付けた時には正常に動いているのに、気づくと止まっているのです。&lt;/p&gt;
+
+&lt;p&gt;この中継型電力計は、電力を計測する対象から電気をもらいながら電力を計測します。電源いらずでとても便利でした。&lt;/p&gt;
+
+&lt;p&gt;しかし今回は計測対象がソーラーなので、夜間や曇ったっ時には電気がなくなって動かなくなってしまうのです！&lt;/p&gt;
+
+&lt;h2 id=&quot;section-12&quot;&gt;中継型電力計を用いるはずが…&lt;/h2&gt;
+
+&lt;p&gt;計測対象に挟むだけで計測できる中継型電力計を用いて作ったはずが、外付けの電源が必要になってしまいました。これはスマートではありません。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-13&quot;&gt;ということで…&lt;/h2&gt;
+
+&lt;p&gt;今は外付けの電源を用意して計測をしています。しかし、今後改良して電気二重層コンデンサなどで昼間に電気をためて夜間使用できるようにしたいと思っています。&lt;/p&gt;
+
+&lt;p&gt;そのために、省電力の工夫をしていきたいです。WiFiって結構電流を消費するので大変です…&lt;/p&gt;
+
+&lt;h1 id=&quot;section-14&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-15&quot;&gt;まあ、使える。&lt;/h2&gt;
+
+&lt;p&gt;手軽につけえて便利！と思いきや、意外な問題にぶち当たってしまいました。&lt;/p&gt;
+
+&lt;p&gt;まぁ、外付け電源で使えていますのでとりあえずはよしとしましょう。&lt;/p&gt;
+
+&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266はすごい！&lt;/h2&gt;
+
+&lt;p&gt;電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>Twitter</category>
+        
+        <category>電子工作</category>
+        
+        <category>bot</category>
+        
+        <category>電力計測</category>
+        
+        <category>C++</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>ESP-WROOM-02による中継型電力計</title>
@@ -227,7 +336,9 @@
   &lt;li&gt;&lt;a href=&quot;/posts/2016-03-11-ir-station-reference/&quot;&gt;赤外線学習リモコン（英語によるリファレンス）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-2&quot;&gt;ギャラリー&lt;/h1&gt;
 
@@ -759,6 +870,18 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
         
+        <category>IR</category>
+        
+        <category>Remote Control</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>Server</category>
+        
+        <category>LED</category>
+        
         
         <category>production</category>
         
@@ -885,6 +1008,22 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <pubDate>Wed, 13 Jan 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>USB</category>
+        
+        <category>ブートローダ</category>
+        
+        <category>電子工作</category>
+        
+        <category>C言語</category>
+        
+        <category>Microchip Library for Application</category>
+        
+        <category>MLA</category>
         
         
         <category>memo</category>
@@ -1227,6 +1366,16 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <pubDate>Sun, 10 Jan 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-01-10-pic-usb/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-10-pic-usb/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>電子工作</category>
+        
+        <category>USB</category>
+        
+        <category>FT232</category>
         
         
         <category>memo</category>
@@ -2070,141 +2219,6 @@ ESP8266はとにかくすごいマイコンです！みなさんもぜひ使っ�
         
         
         <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Cygwinの使い方</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
-
-&lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
-
-&lt;h1 id=&quot;cygwin&quot;&gt;Cygwinのインストール手順&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin.com&lt;/a&gt;からCygwinのインストーラをダウンロードする。32bitマシン用と64bitマシン用があるので適当なほうを選ぶ。&lt;/li&gt;
-  &lt;li&gt;DLしたインストーラを起動する。&lt;/li&gt;
-  &lt;li&gt;デフォルトの設定で次へを押す。&lt;/li&gt;
-  &lt;li&gt;URLを選択するところでは&lt;code class=&quot;highlighter-rouge&quot;&gt;~~~.jp&lt;/code&gt;など、日本のURLを選ぶとダウンロードが早く終わる。&lt;/li&gt;
-  &lt;li&gt;インストールするファイルを選ぶところでは、一番上で&lt;code class=&quot;highlighter-rouge&quot;&gt;wget&lt;/code&gt;と検索して、&lt;code class=&quot;highlighter-rouge&quot;&gt;Web&lt;/code&gt;の中の&lt;code class=&quot;highlighter-rouge&quot;&gt;wget: Utility to ~&lt;/code&gt;の回転矢印アイコンをクリックして次へを押し、インストールする。他のソフトは後で&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-cyg&lt;/code&gt;でインストールするので、今はこれだけでいい。&lt;/li&gt;
-  &lt;li&gt;インストールしたらcygwinを開く。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;インストール画像&lt;br /&gt;
-&lt;img src=&quot;01.png&quot; alt=&quot;インストール画面01&quot; title=&quot;インストール画面01&quot; /&gt; 
-&lt;img src=&quot;02.png&quot; alt=&quot;インストール画面02&quot; title=&quot;インストール画面02&quot; /&gt; 
-&lt;img src=&quot;03.png&quot; alt=&quot;インストール画面03&quot; title=&quot;インストール画面03&quot; /&gt; 
-&lt;img src=&quot;04.png&quot; alt=&quot;インストール画面04&quot; title=&quot;インストール画面04&quot; /&gt; 
-&lt;img src=&quot;05.png&quot; alt=&quot;インストール画面05&quot; title=&quot;インストール画面05&quot; /&gt; 
-&lt;img src=&quot;06.png&quot; alt=&quot;インストール画面06&quot; title=&quot;インストール画面06&quot; /&gt; 
-&lt;img src=&quot;07.png&quot; alt=&quot;インストール画面07&quot; title=&quot;インストール画面07&quot; /&gt; 
-&lt;img src=&quot;08.png&quot; alt=&quot;インストール画面08&quot; title=&quot;インストール画面08&quot; /&gt; 
-&lt;img src=&quot;09.png&quot; alt=&quot;インストール画面09&quot; title=&quot;インストール画面09&quot; /&gt; 
-&lt;img src=&quot;10.png&quot; alt=&quot;インストール画面10&quot; title=&quot;インストール画面10&quot; /&gt; 
-&lt;img src=&quot;11.png&quot; alt=&quot;インストール画面11&quot; title=&quot;インストール画面11&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;apt-cyg&quot;&gt;apt-cygを使う&lt;/h1&gt;
-
-&lt;h2 id=&quot;apt-cyg-1&quot;&gt;apt-cygとは&lt;/h2&gt;
-
-&lt;p&gt;apt-cygとは普通のシェルスクリプトで、新しくソフトウェアをインストールするときに使う。Macintoshのyumやlinuxのapt-getとほぼ同じ使い方ができる。&lt;/p&gt;
-
-&lt;h2 id=&quot;apt-cyg-2&quot;&gt;apt-cygを使う理由&lt;/h2&gt;
-
-&lt;p&gt;cygwinでは、新たにソフトをインストールする際には、cygwinインストール時に使ったsetup.exeを使うのが一般的である。&lt;/p&gt;
-
-&lt;p&gt;しかし、setup.exeで欲しいソフトをインストールするとき、そのソフトが他のソフトに依存していることがある。それなのに欲しいソフトだけインストールしても、エラーになってしまう。これを解決するには、Googleでそのソフトの依存関係を調べて、必要なソフトをすべてsetup.exeで選んでインストールしなければならない。はっきり言ってめんどくさい。&lt;/p&gt;
-
-&lt;p&gt;めんどくさいので、setup.exeに表示された&lt;strong&gt;すべてのソフト&lt;/strong&gt;をインストールしてみたことがある。これなら依存関係があっても全部あるんだから大丈夫！と思った。&lt;/p&gt;
-
-&lt;p&gt;が、なんど１晩かかってもDLが終わらず、インストールが終わった後にサイズを確認したら&lt;strong&gt;60GB&lt;/strong&gt;も容量を取られてしまった。もう絶対にやらない。&lt;/p&gt;
-
-&lt;h2 id=&quot;apt-cyg-3&quot;&gt;apt-cygをインストール&lt;/h2&gt;
-
-&lt;p&gt;Cygwinを起動したら、以下のコマンドを実行する。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
-$ chmod 755 apt-cyg
-$ mv apt-cyg /usr/local/bin/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;インストール画面
-&lt;img src=&quot;12.png&quot; alt=&quot;インストール画面12&quot; title=&quot;インストール画面12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これでインストールは完了。&lt;/p&gt;
-
-&lt;p&gt;あとは、欲しいソフトをインストールする&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apt-cyg install vim
-$ apt-cyg install make
-$ apt-cyg install gcc-core
-$ apt-cyg install gcc-g++
-$ apt-cyg install zsh
-$ apt-cyg install tmux
-$ apt-cyg install git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;などなど&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;おまけ（各種設定）&lt;/h1&gt;
-
-&lt;h2 id=&quot;windows&quot;&gt;Windowsのコピペを使う&lt;/h2&gt;
-
-&lt;p&gt;Cygwinのデフォルトの設定ではWindowsのCtrl+C,Ctrl+Vが使えない。これでは不便なので使えるようにする。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Cygwinのウィンドウの左上のCygwinアイコンを右クリックする。&lt;/li&gt;
-  &lt;li&gt;optionを開く&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Keys&lt;/code&gt;の中の一番下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Shift+letter shortcuts&lt;/code&gt;にチェックを入れる。&lt;/li&gt;
-  &lt;li&gt;ついでに&lt;code class=&quot;highlighter-rouge&quot;&gt;Looks&lt;/code&gt;のなかの&lt;code class=&quot;highlighter-rouge&quot;&gt;Cursor&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;Block&lt;/code&gt;にするとよい。&lt;/li&gt;
-  &lt;li&gt;さらに&lt;code class=&quot;highlighter-rouge&quot;&gt;Looks&lt;/code&gt;のなかの&lt;code class=&quot;highlighter-rouge&quot;&gt;Transparency&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;Medium&lt;/code&gt;か&lt;code class=&quot;highlighter-rouge&quot;&gt;High&lt;/code&gt;にするとブラウザなどを下に置いたときに透かして見れるので便利。&lt;/li&gt;
-  &lt;li&gt;saveで終了。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Shiftキー＋いつものコピペキーでコピペができる。&lt;/p&gt;
-
-&lt;p&gt;設定画像&lt;br /&gt;
-&lt;img src=&quot;13.png&quot; alt=&quot;インストール画面13&quot; title=&quot;インストール画面13&quot; /&gt; 
-&lt;img src=&quot;14.png&quot; alt=&quot;インストール画面14&quot; title=&quot;インストール画面14&quot; /&gt; 
-&lt;img src=&quot;15.png&quot; alt=&quot;インストール画面15&quot; title=&quot;インストール画面15&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;zsh&quot;&gt;デフォルトのシェルをzshにする&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ apt-cyg install zsh
-$ ls /etc/passwd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;ここで&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/passwd&lt;/code&gt;が存在しないときは以下のコマンドを打ち作る。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkpasswd &amp;gt; /etc/passwd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;作ったら開く&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ vim /etc/passwd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;一番下のほうの自分のユーザー名のところで、&lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/bash&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;/bin/zsh&lt;/code&gt;に変更する。&lt;br /&gt;
-あとはCygwinを再起動すればデフォルトがzshellになっている。&lt;/p&gt;
-
-&lt;p&gt;ついでに僕の&lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;を書いておく。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kerikun11/dotfiles/blob/master/.zshrc&quot;&gt;.zshrc&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;シェルを起動するとsshのkeyを求められるので入力すると、2回目からは自動で入力してくれるようになってる。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 04 Dec 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
-        
-        
-        <category>memo</category>
         
       </item>
     

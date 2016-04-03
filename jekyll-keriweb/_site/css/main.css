@@ -279,7 +279,7 @@ pre {
   list-style: none;
   margin-bottom: 30px; }
   .post-list > li {
-    margin-bottom: 60px; }
+    margin-bottom: 15px; }
     .post-list > li h2 {
       margin-bottom: 0; }
 
@@ -562,6 +562,9 @@ body {
   border-radius: 10px; }
 
 .img-small {
+  width: 150px; }
+
+.img-medium {
   width: 300px; }
 
 .highlight {

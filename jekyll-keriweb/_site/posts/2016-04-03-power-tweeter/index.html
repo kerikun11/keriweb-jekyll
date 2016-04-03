@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SSHの使い方 - KERI's Lab</title>
-  <meta name="description" content="SSH">
+  <title>電力つぶやきbot - KERI's Lab</title>
+  <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kerikeri.top/posts/2015-10-31-ssh/">
+  <link rel="canonical" href="http://kerikeri.top/posts/2016-04-03-power-tweeter/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/home/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
@@ -81,14 +81,30 @@ $(document).ready( function () {
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title" itemprop="name headline">SSHの使い方</h1>
+		<h1 class="post-title" itemprop="name headline">電力つぶやきbot</h1>
 		<p class="post-meta">
-			<time datetime="2015-10-31T00:00:00+09:00" itemprop="datePublished">2015年10月31日</time>
+			<time datetime="2016-04-03T00:00:00+09:00" itemprop="datePublished">2016年04月03日</time>
 			<span>
 			<br />
-			Category: <a href="/memo/">memo</a></span>
+			Category: <a href="/blog/">blog</a></span>
 			<br />
 			Tag: 
+			
+			ESP-WROOM-02, 
+			
+			ESP8266, 
+			
+			Twitter, 
+			
+			電子工作, 
+			
+			bot, 
+			
+			電力計測, 
+			
+			C++, 
+			
+			Arduino, 
 			
 		</p>
 	</header>
@@ -109,91 +125,86 @@ $(document).ready( function () {
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="ssh">SSH</h1>
+		<h1 id="section">概要</h1>
 
-<h2 id="ssh-1">SSHとは</h2>
+<h2 id="section-1">中継型電力計</h2>
+<p>先日の記事で<a href="/posts/2016-03-23-relay-sensor/">ESP-WROOM-02による中継型電力計</a>を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。</p>
 
-<p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。</p>
+<h2 id="section-2">何の電力をつぶやくのか</h2>
 
-<h2 id="section">ホスト側設定</h2>
+<p>僕の家には<a href="/posts/2014-09-14-solar-system/">自作の100W級ソーラーシステム</a>があります。このソーラーシステムの発電量を定期的にツイートすることにしました。</p>
 
-<p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
+<p><img src="solar.jpg" alt="Solar" class="img-medium" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$sudo apt-get install openssh-server
-</code></pre>
-</div>
+<h1 id="section-3">見た目</h1>
 
-<p>を実行すると外部からアクセスできるようになる。</p>
+<p>左側の宙に浮いた基板が今回の電力つぶやきbotです。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/ssh/sshd_config
-</code></pre>
-</div>
+<p><img src="power-tweeter1.jpg" alt="Power-Tweeter" class="img-medium" /></p>
 
-<p>　ここで各種設定をする。</p>
+<p>拡大</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Port 22
-</code></pre>
-</div>
+<p><img src="power-tweeter2.jpg" alt="Power-Tweeter" class="img-medium" /></p>
 
-<h2 id="section-1">鍵の生成</h2>
+<h1 id="section-4">実際のつぶやき</h1>
 
-<p>　鍵はクライアント側で生成することが多い。</p>
+<h2 id="section-5">朝8時</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ssh-keygen -t ecdsa -C "comment"
-</code></pre>
-</div>
+<p><img src="tweet-8h.png" alt="tweet-8h" /></p>
 
-<p>を実行するとファイル名とパスワード作成を求められるが空欄でもENTERを押せば良い。すると、カレントディレクトリに「id_ecdsa」「id_ecdsa.pub」の２つのファイルが生成される。この内、「id_ecdsa.pub」を適当な手段でsshで繋ぎたい相手（ホスト側）に渡す。これは公開鍵なので、誰かに見られても大丈夫である。むしろ、どこからでもアクセスできる場所においておくのが便利である。逆に「id_ecdsa」は、秘密鍵なので、厳重に保管する。
-　公開鍵をホスト側のPCに移動したら、鍵リストに追加する。ホームディレクトリに.sshディレクトリがなければ作る。</p>
+<h2 id="section-6">正午12時</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
-</code></pre>
-</div>
+<p><img src="tweet-12h.png" alt="tweet-12h" /></p>
 
-<p>　ここに「authorized_keys」というファイルがあれば、以下のように追加する。</p>
+<h2 id="section-7">夕方16時</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cat id_ecdsa.pub &gt;&gt; authorized_keys
-</code></pre>
-</div>
+<p><img src="tweet-16h.png" alt="tweet-16h" /></p>
 
-<p>なければ、新規作成してから、鍵を追加する。</p>
+<h2 id="section-8">夜20時時</h2>
 
-<h2 id="ssh-2">SSHの接続</h2>
+<p>1日のまとめをつぶやく。</p>
 
-<p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
+<p><img src="tweet-20h.png" alt="tweet-20h" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ssh your_username@your_domain.com
-</code></pre>
-</div>
+<h1 id="section-9">ソフトウェア</h1>
 
-<p>　公開鍵認証がうまく設定できていれば、これで接続ができる。失敗していると、パスワードを求められて、パスワード認証となってしまう。(sshd_confでパスワード認証が許可されている場合)
-　公開鍵認証を使わなくても、パスワード認証でも接続することができる。しかしこれはあまり使われない（使わないほうが良い）。</p>
+<p>Githubに公開してあります。興味のある方はご覧ください。</p>
 
-<h2 id="sshconfig">.ssh/config</h2>
+<p>URL: <a href="https://github.com/kerikun11/Power-Tweeter">kerikun11/Power-Tweeter</a></p>
 
-<p>　sshにつなぐときに毎回アドレスを入力するのは面倒なので、よく使うものはconfigに登録しておくと良い。</p>
+<h1 id="section-10">大問題発生！！</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$vim ~/.ssh/config
+<h2 id="section-11">気づいたら止まっている</h2>
 
-Host local_raspi
-	HostName	192.168.11.2 ←ラズパイのIP
-	IdentityFile	~/.ssh/id_ecdsa
-	User		kerikun11
-	Port		22
+<p>作る過程で大きな問題に遭遇しました。</p>
 
-Host global_raspi
-	HostName	kerikeri.top ←ドメイン
-	IdentityFile	~/.ssh/id_ecdsa
-	User		kerikun11
-	Port		22
-</code></pre>
-</div>
+<p>取り付けた時には正常に動いているのに、気づくと止まっているのです。</p>
 
-<p>　接続の仕方は、以下の通り。とても簡単。</p>
+<p>この中継型電力計は、電力を計測する対象から電気をもらいながら電力を計測します。電源いらずでとても便利でした。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ssh global_raspi
-</code></pre>
-</div>
+<p>しかし今回は計測対象がソーラーなので、夜間や曇ったっ時には電気がなくなって動かなくなってしまうのです！</p>
+
+<h2 id="section-12">中継型電力計を用いるはずが…</h2>
+
+<p>計測対象に挟むだけで計測できる中継型電力計を用いて作ったはずが、外付けの電源が必要になってしまいました。これはスマートではありません。</p>
+
+<h2 id="section-13">ということで…</h2>
+
+<p>今は外付けの電源を用意して計測をしています。しかし、今後改良して電気二重層コンデンサなどで昼間に電気をためて夜間使用できるようにしたいと思っています。</p>
+
+<p>そのために、省電力の工夫をしていきたいです。WiFiって結構電流を消費するので大変です…</p>
+
+<h1 id="section-14">まとめ</h1>
+
+<h2 id="section-15">まあ、使える。</h2>
+
+<p>手軽につけえて便利！と思いきや、意外な問題にぶち当たってしまいました。</p>
+
+<p>まぁ、外付け電源で使えていますのでとりあえずはよしとしましょう。</p>
+
+<h2 id="esp8266">ESP8266はすごい！</h2>
+
+<p>電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。</p>
 
 
 	</div>
