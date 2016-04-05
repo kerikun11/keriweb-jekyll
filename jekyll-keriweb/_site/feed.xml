@@ -5,9 +5,98 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Apr 2016 18:11:00 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Apr 2016 18:11:00 +0900</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2016 12:04:50 +0900</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2016 12:04:50 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>変なキーボード</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;つくったもの&lt;/h1&gt;
+
+&lt;p&gt;ASCIIキーボードとスクロール表示器を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure.png&quot; alt=&quot;figure&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;変なキーボード&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;キーボードの表面には２つのロータリースイッチがついています。それらを回すことで文字を選び、送信ボタンを押して送信します。&lt;/li&gt;
+  &lt;li&gt;もし間違った文字を送信してしまったら、送信ボタンを長押しすることで１文字ずつ削除することができます。&lt;/li&gt;
+  &lt;li&gt;文章ができたら、送信ボタンをさらに長押しすることで、Enterになり、文を始めからスクロールします。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;ascii&quot;&gt;ASCIIコード表&lt;/h1&gt;
+
+&lt;p&gt;この表のとおりにロータリースイッチを回せば、好きな文字を表示させることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;table.png&quot; alt=&quot;ASCIIコード表&quot; /&gt;
+ただし、SP=スペース、Del=全消去&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;メモリー機能&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;使い方&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;スクロール表示器の裏のボタンを押すとそのボタンに記憶されている文が表示されます。&lt;/li&gt;
+  &lt;li&gt;ボタンが４つあるので、４文まで記憶することができます。&lt;/li&gt;
+  &lt;li&gt;文がスクロールしている状態で、裏のボタンを長押しすることで、その文を記憶します。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;デフォルトで記憶している文字列&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;“This is an LED bulletin board.”&lt;/li&gt;
+  &lt;li&gt;“4 sentences can be memorized.”&lt;/li&gt;
+  &lt;li&gt;“When a button is pressed, the sentence which memorized by the button is shown.”&lt;/li&gt;
+  &lt;li&gt;“When a button is pressed for a long time, a sentence is memorized.”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;スクロールディスプレイの動画&lt;/h1&gt;
+
+&lt;p&gt;動画サイズ：7MB&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;movie.mp4&quot;&gt;&lt;img src=&quot;display.png&quot; alt=&quot;スクロール表示器&quot; class=&quot;img-medium&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;ソースファイル&lt;/h1&gt;
+
+&lt;p&gt;両方ともPIC18F26K22用のプログラムです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;scroll-display.c&quot;&gt;scroll-display.c&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;ascii-generator.c&quot;&gt;ascii-generator.c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;※文字化けするようでしたら、右クリックで保存してから開いてください。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;とても入力に時間がかかって何の役にも立ちませんが、ユニークでおもしろいものができました。プログラムはかなり複雑です。頑張りました。。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 05 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F26K22</category>
+        
+        <category>キーボード</category>
+        
+        <category>LED</category>
+        
+        <category>電光掲示板</category>
+        
+        <category>ドットマトリクスLED</category>
+        
+        <category>スクロール</category>
+        
+        <category>C言語</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>電力つぶやきbot</title>
@@ -44,7 +133,7 @@
 
 &lt;h2 id=&quot;section-6&quot;&gt;正午12時&lt;/h2&gt;
 
-&lt;p&gt;【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)8時0分0秒&lt;/p&gt;
+&lt;p&gt;【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)12時0分0秒&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;tweet-12h.png&quot; alt=&quot;tweet-12h&quot; /&gt;&lt;/p&gt;
 
@@ -102,7 +191,7 @@
 
 &lt;h2 id=&quot;esp8266&quot;&gt;ESP8266はすごい！&lt;/h2&gt;
 
-&lt;p&gt;今回の工作では流行りのWiFiモジュールESP-WROOM-0(ESP8266)を使用しました。値段はたったの550円!WiFiだけでなくマイコンとしての性能もかなり高く、便利なモジュールです。&lt;/p&gt;
+&lt;p&gt;今回の工作では流行りのWiFiモジュールESP-WROOM-0(ESP8266)を使用しました。値段はたったの550円！WiFiだけでなくマイコンとしての性能もかなり高く、便利なモジュールです。&lt;/p&gt;
 
 &lt;p&gt;電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。&lt;/p&gt;
 
@@ -2145,96 +2234,6 @@ window Cygwin /cygwin/ : Global
         
         
         <category>memo</category>
-        
-      </item>
-    
-      <item>
-        <title>ESP8266で赤外線学習リモコン</title>
-        <description>&lt;h1 id=&quot;esp8266&quot;&gt;ESP8266とは&lt;/h1&gt;
-
-&lt;h2 id=&quot;wifi&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h2&gt;
-
-&lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;とにかく安い！&lt;/h2&gt;
-
-&lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;開発の簡単さも流行りの理由&lt;/h2&gt;
-
-&lt;p&gt;このマイコンのすごいところは、&lt;strong&gt;Arduino IDE&lt;/strong&gt;で開発ができることです。とても簡単に開発ができます。関数もArduinoで使われているものと同じ名前です。Arduinoと同じように書き込みボタンを押せば書き込みができます。&lt;/p&gt;
-
-&lt;p&gt;さらに、Arduinoをよく使う人は知っている通り、Arduino IDEに付属したサンプルプログラムがとても充実しています。それを書き込むだけでそれなりのことができます。&lt;/p&gt;
-
-&lt;p&gt;それを少しずついじっているといつの間にかオリジナルのプログラムが完成しているという感じです。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;スペックが十分すぎる…&lt;/h2&gt;
-
-&lt;p&gt;しかも、このESP8266マイコンはスペックがかなり高く、WiFiモジュールとしてだけでなく格安マイコンとしても十分使うことができるほどです。メモリが十分にあるので、自由なプログラムを書くことができます。&lt;/p&gt;
-
-&lt;p&gt;マイコンは、&lt;strong&gt;32bit&lt;/strong&gt;マイコンです。&lt;br /&gt;
-動作周波数は、&lt;strong&gt;160MHz&lt;/strong&gt;まで対応しています。&lt;br /&gt;
-外付けのSPIFlashがついていて、プログラムメモリが&lt;strong&gt;１MB&lt;/strong&gt;ほどあります。&lt;br /&gt;
-RAMも大量にあって、&lt;strong&gt;81kB&lt;/strong&gt;もあります。&lt;/p&gt;
-
-&lt;p&gt;参考までにPICやAVRマイコンなどはROMが32kBくらい、RAMは4kBほどです。&lt;/p&gt;
-
-&lt;p&gt;今回はこのWiFiモジュールで遊びます。&lt;/p&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;赤外線学習リモコン&lt;/h1&gt;
-
-&lt;p&gt;赤外線学習リモコンとは自作の赤外線リモコンです。一番最初に本物のリモコンの信号を記憶して、2回目からはその記憶した赤外線を発します。こうしてリモコンを複製することができるのです。&lt;/p&gt;
-
-&lt;p&gt;今回は&lt;strong&gt;WiFi経由&lt;/strong&gt;でスマホからコントロールできる赤外線学習リモコンを作りました。&lt;/p&gt;
-
-&lt;h1 id=&quot;section-4&quot;&gt;作ったもの&lt;/h1&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;本体&lt;/h2&gt;
-
-&lt;p&gt;今回は試作なのでブレッドボードで作りました。&lt;br /&gt;
-右に４つの赤外線LEDがついています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;body.jpg&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;wifi-1&quot;&gt;WiFiの設定&lt;/h2&gt;
-
-&lt;p&gt;電源を入れるとまずWiFiのアクセスポイントになって、「ESP8266-Remocon」というWiFi電波を発します。スマホなどでそれにつないで、「http://esp8266.local」に接続すると下の画面が表示されます。&lt;/p&gt;
-
-&lt;p&gt;ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;page_wifi.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;スマホでの操作画面&lt;/h2&gt;
-
-&lt;p&gt;うまく接続できると、下の画面が出てきて、リモコンが使えるようになります。&lt;/p&gt;
-
-&lt;p&gt;リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;page_button.png&quot; alt=&quot;ESP8266-Remocon&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;作り方&lt;/h1&gt;
-
-&lt;p&gt;Githubに公開しているのでそちらをご覧下さい。&lt;br /&gt;
-&lt;a href=&quot;https://github.com/kerikun11/IR-station&quot;&gt;Github - IR-station&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-8&quot;&gt;まとめ&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;IoT(Internet of Things)&lt;/strong&gt;という言葉があります。&lt;br /&gt;
-&lt;strong&gt;人と人が&lt;/strong&gt;インターネットにつなぐだけでなく&lt;strong&gt;ものとものが&lt;/strong&gt;互いにインターネットでつながり、相互に作用し合うということです。&lt;br /&gt;
-ESP8266 WiFiモジュールはIoTに最適です。より多くのものがインターネットによりつながるといいですね！&lt;/p&gt;
-
-&lt;p&gt;このWiFiモジュールを使ってとりあえず実用的なものができました。&lt;br /&gt;
-ESP8266はとにかくすごいマイコンです！みなさんもぜひ使ってみてください！&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 30 Dec 2015 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
-        
-        
-        <category>blog</category>
         
       </item>
     
