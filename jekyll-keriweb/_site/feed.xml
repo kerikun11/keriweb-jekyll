@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KERI&#39;s Lab</title>
+    <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
+    <link>http://kerikeri.top/</link>
+    <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 12 Apr 2016 17:13:28 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Apr 2016 17:13:28 +0900</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>写真から位置情報タグを削除する</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;ツール&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;exiftool&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;linux&quot;&gt;インストール方法(Linux)&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install exiftool
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;windows&quot;&gt;インストール方法(Windows)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.sno.phy.queensu.ca/~phil/exiftool/&quot;&gt;ここ&lt;/a&gt;からzipファイルをダウンロードする。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;使い方&lt;/h1&gt;
+
+&lt;h2 id=&quot;geotag&quot;&gt;geotagを削除する&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;geotag=&lt;/code&gt;で何も書かなければ、位置情報はなくなる。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -geotag= filename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;ついでに回転した写真の修正方法も&lt;/h2&gt;
+
+&lt;p&gt;エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -n -Orientation=1 filename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
+        
+        <category>exiftool</category>
+        
+        <category>geo</category>
+        
+        <category>photo</category>
+        
+        <category>位置情報</category>
+        
+        <category>タグ</category>
+        
+        
+        <category>memo</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～ロボット編～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;倒立振子&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Inverted Pendulum (1).jpg&quot; alt=&quot;Inverted Pendulum&quot; /&gt;
+&lt;img src=&quot;Inverted Pendulum (2).jpg&quot; alt=&quot;Inverted Pendulum&quot; /&gt;
+&lt;img src=&quot;Inverted Pendulum (3).jpg&quot; alt=&quot;Inverted Pendulum&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;ライントレーサー&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Line Tracer (1).jpg&quot; alt=&quot;Line Tracer&quot; /&gt;
+&lt;img src=&quot;Line Tracer (2).jpg&quot; alt=&quot;Line Tracer&quot; /&gt;
+&lt;img src=&quot;Line Tracer (3).jpg&quot; alt=&quot;Line Tracer&quot; /&gt;
+&lt;img src=&quot;Line Tracer (4).jpg&quot; alt=&quot;Line Tracer&quot; /&gt;
+&lt;img src=&quot;Line Tracer (5).jpg&quot; alt=&quot;Line Tracer&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-robot/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-robot/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～充電・電力編～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;電流計&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Current Meter (1).jpg&quot; alt=&quot;電流計&quot; /&gt;
+&lt;img src=&quot;Current Meter (2).jpg&quot; alt=&quot;電流計&quot; /&gt;
+&lt;img src=&quot;Current Meter (3).jpg&quot; alt=&quot;電流計&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;初代充電ステーション&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;eneloop Charge Station (1).jpg&quot; alt=&quot;eneloop Charge Station&quot; /&gt;
+&lt;img src=&quot;eneloop Charge Station (2).jpg&quot; alt=&quot;eneloop Charge Station&quot; /&gt;
+&lt;img src=&quot;eneloop Charge Station (3).jpg&quot; alt=&quot;eneloop Charge Station&quot; /&gt;
+&lt;img src=&quot;eneloop Charge Station (4).jpg&quot; alt=&quot;eneloop Charge Station&quot; /&gt;
+&lt;img src=&quot;eneloop Charge Station (5).jpg&quot; alt=&quot;eneloop Charge Station&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;鉛蓄電池式充電ステーション&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Pb Charge Station (1).jpg&quot; alt=&quot;Pb Charge Station&quot; /&gt;
+&lt;img src=&quot;Pb Charge Station (2).jpg&quot; alt=&quot;Pb Charge Station&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;ポータブルソーラーチャージャー&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Portable Solar Charger (1).png&quot; alt=&quot;Portable Solar Charger&quot; /&gt;
+&lt;img src=&quot;Portable Solar Charger (2).png&quot; alt=&quot;Portable Solar Charger&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;dcpwm&quot;&gt;DCジャック中継型PWM調光器&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;PWM Controller (1).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
+&lt;img src=&quot;PWM Controller (2).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
+&lt;img src=&quot;PWM Controller (3).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-power/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～その他～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Head Light (1).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (2).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (3).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (4).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (5).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (6).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (7).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
+&lt;img src=&quot;Head Light (8).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;サッカーの選手交代ボード&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Player Changing Board (1).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;
+&lt;img src=&quot;Player Changing Board (2).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;
+&lt;img src=&quot;Player Changing Board (3).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;ちょっとオシャレなスタンド&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Stand (1).jpg&quot; alt=&quot;スタンド&quot; /&gt;
+&lt;img src=&quot;Stand (2).jpg&quot; alt=&quot;スタンド&quot; /&gt;
+&lt;img src=&quot;Stand (3).jpg&quot; alt=&quot;スタンド&quot; /&gt;
+&lt;img src=&quot;Stand (4).jpg&quot; alt=&quot;スタンド&quot; /&gt;
+&lt;img src=&quot;Stand (5).jpg&quot; alt=&quot;スタンド&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;アップダウンカウンタ&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Up Down Counter (1).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
+&lt;img src=&quot;Up Down Counter (2).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
+&lt;img src=&quot;Up Down Counter (3).bmp&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～LEDイルミネーション～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;光るバッジ（中学生のころ）&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;花火&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Badge (1).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (2).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (3).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (4).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;ハート&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Badge (5).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (6).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cd&quot;&gt;CDコマ&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;CD (1).jpg&quot; alt=&quot;CDコマ&quot; /&gt;
+&lt;img src=&quot;CD (2).jpg&quot; alt=&quot;CDコマ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;led&quot;&gt;ドットマトリクスLED関連&lt;/h1&gt;
+
+&lt;h2 id=&quot;x16&quot;&gt;8x16&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (1).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (2).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (3).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (4).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (1).bmp&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;x16-1&quot;&gt;16x16&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (5).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;ブレッドボード&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (6).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (7).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (2).bmp&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;段ボール&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (8).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (9).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;大きなプリント基板&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (10).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;led-1&quot;&gt;LED花火&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Fireworks (1).jpg&quot; alt=&quot;LED花火1&quot; /&gt;
+&lt;img src=&quot;Fireworks (2).jpg&quot; alt=&quot;LED花火2&quot; /&gt;
+&lt;img src=&quot;Fireworks (3).jpg&quot; alt=&quot;LED花火3&quot; /&gt;
+&lt;img src=&quot;Fireworks (3).png&quot; alt=&quot;LED花火4&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;led-2&quot;&gt;テープLEDコントローラ&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Tape LED (1).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (2).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (3).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (4).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (5).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (6).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (7).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (8).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;押しボタン式歩行者用信号機&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;Traffic Light (1).jpg&quot; alt=&quot;信号機&quot; /&gt;
+&lt;img src=&quot;Traffic Light (2).jpg&quot; alt=&quot;信号機&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～in FRISK 編～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;in-frisk&quot;&gt;電子錠 in FRISK&lt;/h1&gt;
+
+&lt;p&gt;マイコンを使わずにトランジスタだけを使って簡単な錠を作ってみました。黒いFRISKの表面にある５個のボタンのうち，事前に指定したボタンだけを押すと、白いFRISKの表面に文字が浮かび上がります。しかしすべてを同時に押しても文字を見ることはできません。
+　こうしてカギとなるボタンを知っている人のみが開けることのできる錠となるのです。&lt;/p&gt;
+
+&lt;p&gt;※初期設定は１，３，５番目のボタンになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Electric Lock (1).jpg&quot; alt=&quot;電子錠&quot; /&gt;
+&lt;img src=&quot;Electric Lock (2).jpg&quot; alt=&quot;電子錠&quot; /&gt;
+&lt;img src=&quot;Electric Lock (3).jpg&quot; alt=&quot;電子錠&quot; /&gt;
+&lt;img src=&quot;Electric Lock (4).jpg&quot; alt=&quot;電子錠&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;in-frisk-1&quot;&gt;電子サイコロ in FRISK&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;FRISK dice (1).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
+&lt;img src=&quot;FRISK dice (2).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
+&lt;img src=&quot;FRISK dice (3).bmp&quot; alt=&quot;電子サイコロ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;in-frisk-2&quot;&gt;パワーアンプ in FRISK&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;FRISK amp.jpg&quot; alt=&quot;パワーアンプ&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～オーディオ編～</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;秋月のヘッドホンアンプの中身を交換&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;AE-Portable Amp (1).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (2).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (3).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (4).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (5).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (6).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (7).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (8).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (9).jpg&quot; alt=&quot;AE-Amp&quot; /&gt;
+&lt;img src=&quot;AE-Portable Amp (10).png&quot; alt=&quot;AE-Amp&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;パワーアンプ&lt;/h1&gt;
+
+&lt;h2 id=&quot;njm2073&quot;&gt;NJM2073パワーアンプ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Audio Amp.jpg&quot; alt=&quot;NJM2073 Amp&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ta7222&quot;&gt;TA7222パワーアンプ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Power Amp in Tapper (1).jpg&quot; alt=&quot;TA7222 Amp&quot; /&gt;
+&lt;img src=&quot;Power Amp in Tapper (2).jpg&quot; alt=&quot;TA7222 Amp&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;apple&quot;&gt;Appleリモコンの拡張&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;iDevice Remote Controller.jpg&quot; alt=&quot;iDevice Remote Controller&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;ポータブルアンプ&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;スケルトン&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Portable Amplifer 1 (1).jpg&quot; alt=&quot;スケルトン&quot; /&gt;
+&lt;img src=&quot;Portable Amplifer 1 (2).jpg&quot; alt=&quot;スケルトン&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;スケルトン（小型）&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Portable Amplifer 2 (1).jpg&quot; alt=&quot;スケルトン&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;金属ケース&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Portable Amplifer Metal 1 (1).jpg&quot; alt=&quot;金属ケースアンプ&quot; /&gt;
+&lt;img src=&quot;Portable Amplifer Metal 1 (2).jpg&quot; alt=&quot;金属ケースアンプ&quot; /&gt;
+&lt;img src=&quot;Portable Amplifer Metal 1 (3).jpg&quot; alt=&quot;金属ケースアンプ&quot; /&gt;
+&lt;img src=&quot;Portable Amplifer Metal 1 (4).jpg&quot; alt=&quot;金属ケースアンプ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;金属ケース(薄型)&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Portable Amplifer Metal 2 (1).jpg&quot; alt=&quot;金属ケースアンプ&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;スピーカ&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;木製スピーカ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Speaker.jpg&quot; alt=&quot;Speaker&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-10&quot;&gt;木製スピーカ2&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Speaker2.jpg&quot; alt=&quot;Speaker&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-audio/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-audio/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>変なキーボード</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;つくったもの&lt;/h1&gt;
+
+&lt;p&gt;ASCIIキーボードとスクロール表示器を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure.png&quot; alt=&quot;figure&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;変なキーボード&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;キーボードの表面には２つのロータリースイッチがついています。それらを回すことで文字を選び、送信ボタンを押して送信します。&lt;/li&gt;
+  &lt;li&gt;もし間違った文字を送信してしまったら、送信ボタンを長押しすることで１文字ずつ削除することができます。&lt;/li&gt;
+  &lt;li&gt;文章ができたら、送信ボタンをさらに長押しすることで、Enterになり、文を始めからスクロールします。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;ascii&quot;&gt;ASCIIコード表&lt;/h1&gt;
+
+&lt;p&gt;この表のとおりにロータリースイッチを回せば、好きな文字を表示させることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;table.png&quot; alt=&quot;ASCIIコード表&quot; /&gt;
+ただし、SP=スペース、Del=全消去&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;メモリー機能&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;使い方&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;スクロール表示器の裏のボタンを押すとそのボタンに記憶されている文が表示されます。&lt;/li&gt;
+  &lt;li&gt;ボタンが４つあるので、４文まで記憶することができます。&lt;/li&gt;
+  &lt;li&gt;文がスクロールしている状態で、裏のボタンを長押しすることで、その文を記憶します。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;デフォルトで記憶している文字列&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;“This is an LED bulletin board.”&lt;/li&gt;
+  &lt;li&gt;“4 sentences can be memorized.”&lt;/li&gt;
+  &lt;li&gt;“When a button is pressed, the sentence which memorized by the button is shown.”&lt;/li&gt;
+  &lt;li&gt;“When a button is pressed for a long time, a sentence is memorized.”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;スクロールディスプレイの動画&lt;/h1&gt;
+
+&lt;p&gt;動画サイズ：7MB&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;movie.mp4&quot;&gt;&lt;img src=&quot;display.png&quot; alt=&quot;スクロール表示器&quot; class=&quot;img-medium&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;ソースファイル&lt;/h1&gt;
+
+&lt;p&gt;両方ともPIC18F26K22用のプログラムです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;scroll-display.c&quot;&gt;scroll-display.c&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;ascii-generator.c&quot;&gt;ascii-generator.c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;※文字化けするようでしたら、右クリックで保存してから開いてください。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;とても入力に時間がかかって何の役にも立ちませんが、ユニークでおもしろいものができました。プログラムはかなり複雑です。頑張りました。。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 05 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F26K22</category>
+        
+        <category>キーボード</category>
+        
+        <category>LED</category>
+        
+        <category>電光掲示板</category>
+        
+        <category>ドットマトリクスLED</category>
+        
+        <category>スクロール</category>
+        
+        <category>C言語</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>電力つぶやきbot</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;中継型電力計&lt;/h2&gt;
+&lt;p&gt;先日の記事で&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;何の電力をつぶやくのか&lt;/h2&gt;
+
+&lt;p&gt;僕の家には&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;solar.jpg&quot; alt=&quot;Solar&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;見た目&lt;/h1&gt;
+
+&lt;p&gt;左側の宙に浮いた基板が今回の電力つぶやきbotです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;power-tweeter1.jpg&quot; alt=&quot;Power-Tweeter&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;拡大&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;power-tweeter2.jpg&quot; alt=&quot;Power-Tweeter&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;実際のつぶやき&lt;/h1&gt;
+
+&lt;p&gt;1日に4回つぶやくようにしました。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;朝8時&lt;/h2&gt;
+
+&lt;p&gt;【自動】けりの100W級ソーラーシステムは、現在38.4[W]発電中です。本日は、33.38[Wh]発電しました。現在時刻: 2016年3月31日(木)8時0分0秒&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-8h.png&quot; alt=&quot;tweet-8h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;正午12時&lt;/h2&gt;
+
+&lt;p&gt;【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)12時0分0秒&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-12h.png&quot; alt=&quot;tweet-12h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;夕方16時&lt;/h2&gt;
+
+&lt;p&gt;【自動】けりの100W級ソーラーシステムは、現在8.79[W]発電中です。本日は、301.88[Wh]発電しました。現在時刻: 2016年3月31日(木)16時0分0秒&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-16h.png&quot; alt=&quot;tweet-16h&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;夜20時&lt;/h2&gt;
+
+&lt;p&gt;1日のまとめをつぶやく。&lt;/p&gt;
+
+&lt;p&gt;【自動】けりの100W級ソーラーシステムは、本日 310.30[Wh]発電しました。昨日に比べて 50.16%増えました。日付: 2016年3月31日(木)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;tweet-20h.png&quot; alt=&quot;tweet-20h&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-9&quot;&gt;ソフトウェア&lt;/h1&gt;
+
+&lt;p&gt;Githubに公開してあります。興味のある方はご覧ください。&lt;/p&gt;
+
+&lt;p&gt;URL: &lt;a href=&quot;https://github.com/kerikun11/Power-Tweeter&quot;&gt;kerikun11/Power-Tweeter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-10&quot;&gt;大問題発生！！&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-11&quot;&gt;気づいたら止まっている&lt;/h2&gt;
+
+&lt;p&gt;作る過程で大きな問題に遭遇しました。&lt;/p&gt;
+
+&lt;p&gt;取り付けた時には正常に動いているのに、気づくと止まっているのです。&lt;/p&gt;
+
+&lt;p&gt;この中継型電力計は、電力を計測する対象から電気をもらいながら電力を計測します。電源いらずでとても便利でした。&lt;/p&gt;
+
+&lt;p&gt;しかし今回は計測対象がソーラーなので、夜間や曇った時には電気がなくなって動かなくなってしまうのです！&lt;/p&gt;
+
+&lt;h2 id=&quot;section-12&quot;&gt;中継型電力計を用いるはずが…&lt;/h2&gt;
+
+&lt;p&gt;計測対象に挟むだけで計測できる中継型電力計を用いて作ったはずが、外付けの電源が必要になってしまいました。これではスマートじゃありません。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-13&quot;&gt;ということで…&lt;/h2&gt;
+
+&lt;p&gt;今は、仕方なく外付けの電源を用意して計測をしています。&lt;/p&gt;
+
+&lt;p&gt;しかし、今後改良して電気二重層コンデンサなどで昼間に電気をためて夜間使用できるようにしたいと思っています。&lt;/p&gt;
+
+&lt;p&gt;そのために、省電力の工夫をしなけばなりません。WiFiって結構電流を消費するので大変です…&lt;/p&gt;
+
+&lt;h1 id=&quot;section-14&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-15&quot;&gt;まあ、使える。&lt;/h2&gt;
+
+&lt;p&gt;手軽に使えて便利！と思いきや、意外な問題にぶち当たってしまいました。&lt;/p&gt;
+
+&lt;p&gt;まぁ、外付け電源で使えていますのでとりあえずはよしとしましょう。&lt;/p&gt;
+
+&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266はすごい！&lt;/h2&gt;
+
+&lt;p&gt;今回の工作では流行りのWiFiモジュールESP-WROOM-0(ESP8266)を使用しました。値段はたったの550円！WiFiだけでなくマイコンとしての性能もかなり高く、便利なモジュールです。&lt;/p&gt;
+
+&lt;p&gt;電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>Twitter</category>
+        
+        <category>電子工作</category>
+        
+        <category>bot</category>
+        
+        <category>電力計測</category>
+        
+        <category>C++</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>ESP-WROOM-02による中継型電力計</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;h2 id=&quot;esp-wroom-02&quot;&gt;話題のESP-WROOM-02&lt;/h2&gt;
+
+&lt;p&gt;ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュール。&lt;/p&gt;
+
+&lt;p&gt;今回はこれを使って中継型電力計を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;中継型とは&lt;/h2&gt;
+
+&lt;p&gt;電源端子としてよく使われてるDCジャックに中継するだけで、そこから電力をもらいつつ電力を計測します。&lt;/p&gt;
+
+&lt;h2 id=&quot;wifi&quot;&gt;WiFi経由でサーバーへ&lt;/h2&gt;
+
+&lt;p&gt;測定した電力データはWiFiを使って任意のサーバーに送ることができます。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;ギャラリー&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;pm1.jpg&quot; alt=&quot;電力計&quot; /&gt;
+&lt;img src=&quot;pm2.jpg&quot; alt=&quot;電力計&quot; /&gt;
+&lt;img src=&quot;pm3.jpg&quot; alt=&quot;電力計&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;電力の計測方法&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;電圧の計測&lt;/h2&gt;
+
+&lt;p&gt;電圧の測定には、ESP8266内蔵のADCを使います。精度はあまり期待できませんが十分使えます。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;電流の計測&lt;/h2&gt;
+
+&lt;p&gt;電流の計測には、精密抵抗とオペアンプ、シリアルADCを使用します。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;精密抵抗&lt;/h3&gt;
+
+&lt;p&gt;内部抵抗を小さくするため、10mΩの精密抵抗を使います。精度は1%です。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-01886/&quot;&gt;&lt;img src=&quot;10mR.jpg&quot; alt=&quot;精密抵抗&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lt6106&quot;&gt;ハイサイド電流計測用オペアンプ LT6106&lt;/h3&gt;
+
+&lt;p&gt;電流を計る対象の＋側で電流を計ることができるので、GNDを共通にすることができます。精度もかなり高いオペアンプです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-07300/&quot;&gt;&lt;img src=&quot;LT6106.jpg&quot; alt=&quot;LT6106&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ad-mcp3425&quot;&gt;超高精度ADコンバータ MCP3425&lt;/h3&gt;
+
+&lt;p&gt;16bitの分解能があります。さらに内蔵の基準電圧2.048Vは精度0.05%です！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-07638/&quot;&gt;&lt;img src=&quot;MCP3425.jpg&quot; alt=&quot;MCP3425&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;回路図&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;sketch.png&quot;&gt;&lt;img src=&quot;sketch.png&quot; alt=&quot;回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;ソースファイル&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;ESP8266WiFi.h&amp;gt;
+#include &amp;lt;Wire.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MCP3245_ADDRESS 0b1101000
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssid&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;your_ssid&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;your_password&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// server detail
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;192.168.11.13&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4567&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deviceName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Killifish-Light&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;WiFiClient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ESP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wdtFeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;115200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, I&#39;m ESP8266.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// We start by connecting to a WiFi network
+&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Connecting to &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;WiFi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WiFi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WL_CONNECTED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WiFi connected&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IP address: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WiFi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;localIP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;beginTransmission&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MCP3245_ADDRESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b00011010&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endTransmission&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;connecting to &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;connection failed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Ready&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ESP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wdtFeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev_ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;millis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev_ms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prev_ms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestFrom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MCP3245_ADDRESS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;ESP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wdtFeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Wire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;higher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;currentValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2048&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32768&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;analogRead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;voltageValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;104.7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4.7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MCP3245: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; A&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Config-ADC: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HEX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ESP8266: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;voltageValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; V&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;connecting to &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;connection failed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;GET /new?deviceName=&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;deviceName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;amp;currentValue=&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;amp;voltageValue=&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;voltageValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; HTTP/1.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readStringUntil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;&#39;\r&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;section-9&quot;&gt;サーバーでの表示&lt;/h1&gt;
+
+&lt;p&gt;このサーバーについては&lt;a href=&quot;/posts/2016-03-12-sinatra/&quot;&gt;この記事&lt;/a&gt;で紹介しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;index.png&quot; alt=&quot;表示&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-10&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;最近はサーバーのことばかりやっていたので、久々にクライアントを作りました。&lt;/p&gt;
+
+&lt;p&gt;ESP8266はなんでもできる素晴らしいマイコンだと思います！どんどん使っていきましょう。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 23 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-23-relay-sensor/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-23-relay-sensor/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>電流計</category>
+        
+        <category>電圧計</category>
+        
+        <category>電子工作</category>
+        
+        <category>Wi-Fi</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>
