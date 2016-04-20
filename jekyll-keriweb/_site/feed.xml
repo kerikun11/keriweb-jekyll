@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Apr 2016 01:11:16 +0900</pubDate>
-    <lastBuildDate>Thu, 21 Apr 2016 01:11:16 +0900</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2016 01:32:01 +0900</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2016 01:32:01 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -116,7 +116,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 &lt;h2 id=&quot;section-4&quot;&gt;今日の発電量&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 </description>
