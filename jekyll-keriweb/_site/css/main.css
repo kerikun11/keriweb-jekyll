@@ -581,3 +581,9 @@ body {
     max-width: 22%;
     min-width: 8em;
     margin: 2% 1%; }
+
+.graph {
+  margin-left: calc(30px * 2); }
+  @media screen and (max-width: 800px) {
+    .graph {
+      margin-left: 5px; } }

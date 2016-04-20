@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Production - KERI's Lab</title>
-  <meta name="description" content="KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。">
+  <title>ラズパイでシリアルモニタを使うには - KERI's Lab</title>
+  <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kerikeri.top/production/">
+  <link rel="canonical" href="http://kerikeri.top/posts/2016-04-20-raspi-serial/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/home/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
@@ -78,109 +78,150 @@ $(document).ready( function () {
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="posts">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-	<h1 class="page-heading">Posts</h1>
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">ラズパイでシリアルモニタを使うには</h1>
+		<p class="post-meta">
+			<time datetime="2016-04-20T00:00:00+09:00" itemprop="datePublished">2016年04月20日</time>
+			<span>
+			<br />
+			Category: <a href="/memo/">memo</a></span>
+			<br />
+			Tag: 
+			
+			Raspberry Pi, 
+			
+			Serial, 
+			
+			Terminal, 
+			
+			ラズパイ, 
+			
+			シリアル, 
+			
+			電子工作, 
+			
+			Arduino, 
+			
+			ターミナル, 
+			
+		</p>
+	</header>
 
-	<ul class="post-list">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<li>
-    <span class="post-meta">2016年03月11日</span>
-    <span class="post-meta"> Category: production</span>
-    <h2>
-	<a class="post-link" href="/posts/2016-03-11-ir-station-reference/">IR Station</a>
-    </h2>
-	<p></p>
-</li>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<li>
-    <span class="post-meta">2015年10月09日</span>
-    <span class="post-meta"> Category: production</span>
-    <h2>
-	<a class="post-link" href="/posts/2015-10-09-charge-station-6/">Charge Station</a>
-    </h2>
-	<p></p>
-</li>
+	<br />
 
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h1 id="section">概要</h1>
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</ul>
+<p>ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。</p>
 
+<h1 id="section-1">インストールするもの</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install cu
+</code></pre>
 </div>
+
+<h1 id="section-2">使い方</h1>
+
+<h2 id="section-3">接続されているか確認する</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lsusb
+</code></pre>
+</div>
+
+<h2 id="section-4">デバイス名を調べる</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls /dev/tty*
+</code></pre>
+</div>
+
+<p>ここでUSBシリアルは<code class="highlighter-rouge">/dev/ttyUSB0</code>や<code class="highlighter-rouge">/dev/ttyUSB1</code>で、ラズパイのシリアルは<code class="highlighter-rouge">/dev/ttyAMA0</code>などになります。</p>
+
+<h2 id="section-5">一般ユーザが扱えるようにする</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo chmod 666 /dev/ttyUSB*
+or
+$ sudo chmod 666 /dev/ttyAMA0
+</code></pre>
+</div>
+
+<h2 id="section-6">シリアルモニタを開く</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
+</code></pre>
+</div>
+
+<p>たとえば、</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s 115200 -l /dev/ttyUSB0
+</code></pre>
+</div>
+
+<h2 id="section-7">終わらせ方</h2>
+
+<p>素早く以下のように打つと終了する。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~.
+</code></pre>
+</div>
+
+
+	</div>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<br />
+
+	<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
 
 
       </div>
