@@ -1,0 +1,57 @@
+---
+layout: post
+title: vimの設定
+category: memo
+---
+<h1>vim の設定</h1>
+
+<h2>.vimrc</h2>
+<pre>
+syntax enable
+set number
+set autoindent
+set smartindent
+set backspace=start,eol,indent
+set mouse=a
+set tabstop=4
+set shiftwidth=4
+"set expandtab
+set encoding=utf-8
+set cursorline
+set nocompatible
+
+filetype plugin indent off
+
+if has('vim_starting')
+		set runtimepath+=~/.vim/bundle/neobundle.vim
+		call neobundle#begin(expand('~/.vim/bundle'))
+endif
+
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'anyakichi/vim-surround'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'taichouchou2/vim-javascript'
+
+if has('vim_starting')
+		call neobundle#end()
+endif
+
+filetype plugin indent on
+</pre>
+
+<h2>pluginの設定</h2>
+<article>
+	<p>　NeoBundleをダウンロードする。</p>
+	<pre>
+$ mkdir -p ~.vim/bundle
+$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</pre>
+	<p>　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
+	<pre>:NeoBundleInstall</pre>
+	<p>または</p>
+	<pre>:NeoBundleUpdate</pre>
+	<p>を実行する。</p>
+</article>
+
+
