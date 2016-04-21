@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Apr 2016 01:32:01 +0900</pubDate>
-    <lastBuildDate>Thu, 21 Apr 2016 01:32:01 +0900</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2016 09:56:22 +0900</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2016 09:56:22 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -93,31 +93,43 @@ $ sudo chmod 666 /dev/ttyAMA0
     
       <item>
         <title>ソーラー発電量モニター</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;リアルタイム発電量モニター&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;電圧&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&quot;https://thingspeak.com/&quot;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
 
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;p&gt;データの送信には、自作の&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;中継型電力計&lt;/a&gt;を使用しています。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;電流&lt;/h2&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;リアルタイム発電量モニター&lt;/h1&gt;
 
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;p&gt;ThingSpeakで発行したフレームをHTMLに埋め込む形式なので、自動で更新されます。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;電力&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;電圧&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Voltage&amp;amp;type=line&amp;amp;yaxis=Voltage+%5BV%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;今日の発電量&lt;/h2&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;電流&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;type=line&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Current&amp;amp;type=line&amp;amp;yaxis=Current+%5BA%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;電力&lt;/h2&gt;
+
+&lt;div class=&quot;graph&quot;&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Power&amp;amp;type=line&amp;amp;yaxis=Power+%5BW%5D&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;今日の発電量&lt;/h2&gt;
+
+&lt;div class=&quot;graph&quot;&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Time+Integration+of+Solar+Power+a+Day&amp;amp;type=line&amp;amp;yaxis=Integration+%5BWh%5D&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;こんなに簡単にグラフ化できるサービスがあるなんてすごいですね！MATLAB解析機能もあるみたいなので使ってみたいです。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
@@ -134,8 +146,14 @@ $ sudo chmod 666 /dev/ttyAMA0
         
         <category>Arduino</category>
         
+        <category>Solar Power</category>
         
-        <category>memo</category>
+        <category>ソーラー</category>
+        
+        <category>太陽光発電</category>
+        
+        
+        <category>blog</category>
         
       </item>
     
