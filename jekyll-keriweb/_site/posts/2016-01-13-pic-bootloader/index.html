@@ -156,7 +156,7 @@ $(document).ready( function () {
 
 <h2 id="hex">HEXファイル</h2>
 
-<p>以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた<code>MPLAB IPE.exe</code>を使います。</p>
+<p>以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた<code class="highlighter-rouge">MPLAB IPE.exe</code>を使います。</p>
 
 <p>以下のHEXファイルはMicrochip公式ライブラリ(MLA)のソースをPIC18F27J53用に編集して作りました。コンパイルにはXC8のPRO版が必要なため、ソースではなくHEXファイルを配布します。(XC8には60日間無料のPRO体験版があります)</p>
 
@@ -193,12 +193,12 @@ $(document).ready( function () {
 <h2 id="rom">ROMの範囲とオフセットを指定</h2>
 
 <ol>
-  <li>プロジェクトを右クリックして、<code>Properties</code>を開きます。</li>
-  <li>左側の<code>XC8 linker</code>をクリックする。</li>
-  <li><code>Option categories:</code>で<code>Memory model</code>を開く。</li>
-  <li><code>ROM ranges</code>を<code>default,-0-FFF,-1006-1007,-1016-1017</code>に指定する。（下図参照）</li>
-  <li><code>Option categories:</code>で<code>Additional options</code>を開く。</li>
-  <li><code>Codeoffset</code>を<code>0x1000</code>に指定する。(下図参照)</li>
+  <li>プロジェクトを右クリックして、<code class="highlighter-rouge">Properties</code>を開きます。</li>
+  <li>左側の<code class="highlighter-rouge">XC8 linker</code>をクリックする。</li>
+  <li><code class="highlighter-rouge">Option categories:</code>で<code class="highlighter-rouge">Memory model</code>を開く。</li>
+  <li><code class="highlighter-rouge">ROM ranges</code>を<code class="highlighter-rouge">default,-0-FFF,-1006-1007,-1016-1017</code>に指定する。（下図参照）</li>
+  <li><code class="highlighter-rouge">Option categories:</code>で<code class="highlighter-rouge">Additional options</code>を開く。</li>
+  <li><code class="highlighter-rouge">Codeoffset</code>を<code class="highlighter-rouge">0x1000</code>に指定する。(下図参照)</li>
   <li>以上。</li>
 </ol>
 
@@ -211,8 +211,9 @@ $(document).ready( function () {
 
 <p>ユーザープログラムからソフトウェアでブートモードへ移るには、以下のコードを書きます。</p>
 
-<pre><code>asm("goto   0x001C");
+<div class="highlighter-rouge"><pre class="highlight"><code>asm("goto   0x001C");
 </code></pre>
+</div>
 
 <p>※ブートロードモードから、ユーザープログラムに移るにはMCLRなどのリセットが必要です。</p>
 
@@ -226,7 +227,7 @@ $(document).ready( function () {
   <li><a href="http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html">ここ</a>からMicrochip Libraris for Applicationsをダウンロードし、インストールする。</li>
   <li>インストール場所/mla_v2014_07_22/ apps/usb/device/bootloaders/ utilities/bin/win/ HIDBootloader.exeを起動する。</li>
   <li>ブートロードモ：ｗードのPICをUSBで接続する。</li>
-  <li>上手く接続できると、右下に<code>connected</code>と表示されるので、ユーザープログラムのHEXファイルをロードして書き込めばOK。</li>
+  <li>上手く接続できると、右下に<code class="highlighter-rouge">connected</code>と表示されるので、ユーザープログラムのHEXファイルをロードして書き込めばOK。</li>
 </ol>
 
 <p>上手くいかないときは、ドライバをインストールすればうまくいくかもしれない。ドライバも先ほどインストールしたMLAの中のutilities/usb_drivers/に入っている。</p>

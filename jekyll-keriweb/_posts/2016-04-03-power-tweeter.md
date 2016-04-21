@@ -3,6 +3,7 @@ layout:		post
 title:		電力つぶやきbot
 category:	blog
 tags:		[ESP-WROOM-02, ESP8266, Twitter, 電子工作, bot, 電力計測, C++, Arduino]
+pickup:		true
 ---
 
 # 概要

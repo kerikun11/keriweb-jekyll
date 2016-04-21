@@ -129,8 +129,9 @@ HDD：Western Digital 2TB 3.5 inch<br />
 
 <h1 id="samba">Sambaをインストール</h1>
 
-<pre><code>$ sudo apt-get install samba
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install samba
 </code></pre>
+</div>
 
 <h1 id="hdd">HDDを設定する</h1>
 
@@ -141,7 +142,7 @@ HDD：Western Digital 2TB 3.5 inch<br />
 
 <p>HDDをラズパイに繋ぐ</p>
 
-<pre><code>$ lsblk
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda 		  8:0    0  1.8T  0 disk 
 └─sda1		  8:1    0  1.8T  0 part 
@@ -152,44 +153,50 @@ mmcblk0		179:0    0 58.2G  0 disk
 ├─mmcblk0p5	179:5    0   60M  0 part /boot
 └─mmcblk0p6	179:6    0 57.1G  0 part /
 </code></pre>
+</div>
 
-<p>HDDが<code>/dev/sda</code>につながれていることがわかる。<br />
+<p>HDDが<code class="highlighter-rouge">/dev/sda</code>につながれていることがわかる。<br />
 今までのパーティションを消して、新たに作る。</p>
 
-<pre><code>$ sudo fdisk /dev/sda
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo fdisk /dev/sda
 Command (m for help): d
 Command (m for help): n
 Enter を 連打
 Command (m for help): w
 </code></pre>
+</div>
 
 <p>HDDをフォーマット</p>
 
-<pre><code>$ sudo mkfs.ext4 /dev/sda1
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo mkfs.ext4 /dev/sda1
 </code></pre>
+</div>
 
 <p>フォーマットが完了したらマウント<br />
 毎回同じ所にマウントされるように設定する。</p>
 
-<pre><code>$ sudo mkdir /media/hdd-2tb
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo mkdir /media/hdd-2tb
 $ sudo blkid /dev/sda1
 /dev/sda1: UUID="21600e41-2f5a-4954-8575-5e89f0e11560" TYPE="ext4" PARTUUID="983fd59f-2b2b-41a4-b409-acac2fa62f5c" 
 </code></pre>
+</div>
 
 <p>ここで表示されるUUIDをコピーしておく。</p>
 
-<pre><code>$ sudo vim /etc/fstab
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/fstab
 </code></pre>
+</div>
 
 <p>ここの最下部に以下を追記(UUIDはさっきコピーしたもの)</p>
 
-<pre><code>UUID=*************	/media/hdd-2tb	ext4	defaults	0	0
+<div class="highlighter-rouge"><pre class="highlight"><code>UUID=*************	/media/hdd-2tb	ext4	defaults	0	0
 </code></pre>
+</div>
 
 <p>ラズパイを再起動<br />
 これでしっかりマウントされているはず。</p>
 
-<pre><code>$ lsblk
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lsblk
 NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda 		  8:0    0  1.8T  0 disk 
 └─sda1		  8:1    0  1.8T  0 part /hdd-2tb
@@ -200,44 +207,50 @@ mmcblk0		179:0    0 58.2G  0 disk
 ├─mmcblk0p5	179:5    0   60M  0 part /boot
 └─mmcblk0p6	179:6    0 57.1G  0 part /
 </code></pre>
+</div>
 
 <p>共有フォルダの作成と所有権の変更</p>
 
-<pre><code>$ cd /media/hdd-2tb
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd /media/hdd-2tb
 $ sudo mkdir share
 $ sudo chown *myuser* share
 $ sudo chgrp *myuser* share
 </code></pre>
+</div>
 
 <h1 id="samba-1">Sambaの設定</h1>
 
-<pre><code>$ sudo vim /etc/samba/smb.conf
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/samba/smb.conf
 </code></pre>
+</div>
 
 <p>ここにの最下部に以下を追記</p>
 
-<pre><code>[share]
+<div class="highlighter-rouge"><pre class="highlight"><code>[share]
    path = /media/hdd-2tb
    read only = no
    browsable = yes
    guest ok = yes
    force user = kerikun11
 </code></pre>
+</div>
 
 <p>ファイアウォールを設定している場合はSamba用にポートを開放</p>
 
-<pre><code>$ sudo ufw allow 137/udp
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw allow 137/udp
 $ sudo ufw allow 138/udp
 $ sudo ufw allow 139/tcp
 $ sudo ufw allow 445/tcp
 
 $ sudo service ufw restart
 </code></pre>
+</div>
 
 <p>Sambaを起動</p>
 
-<pre><code>$ sudo service samba-ad-bc start
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo service samba-ad-bc start
 </code></pre>
+</div>
 
 <p>これでつながるはず。</p>
 

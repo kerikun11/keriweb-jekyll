@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>linkを作る「ln」コマンド - KERI's Lab</title>
-  <meta name="description" content="ハードリンクとシンボリックリンク">
+  <title>KiCadで自動配線 - KERI's Lab</title>
+  <meta name="description" content="概要">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kerikeri.top/posts/2015-10-28-link/">
+  <link rel="canonical" href="http://kerikeri.top/posts/2016-04-22-freerouting/">
   <link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
   <link rel="shortcut icon" href="/home/icon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon">
@@ -81,14 +81,24 @@ $(document).ready( function () {
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title" itemprop="name headline">linkを作る「ln」コマンド</h1>
+		<h1 class="post-title" itemprop="name headline">KiCadで自動配線</h1>
 		<p class="post-meta">
-			<time datetime="2015-10-28T00:00:00+09:00" itemprop="datePublished">2015年10月28日</time>
+			<time datetime="2016-04-22T00:00:00+09:00" itemprop="datePublished">2016年04月22日</time>
 			<span>
 			<br />
 			Category: <a href="/memo/">memo</a></span>
 			<br />
 			Tag: 
+			
+			KiCad, 
+			
+			配線, 
+			
+			回路, 
+			
+			電子工作, 
+			
+			基板, 
 			
 		</p>
 	</header>
@@ -109,33 +119,83 @@ $(document).ready( function () {
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="section">ハードリンクとシンボリックリンク</h1>
+		<h1 id="section">概要</h1>
 
-<p>ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。
-シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。</p>
+<h2 id="section-1">自動配線ツールを使おう</h2>
 
-<h1 id="section-1">コマンド形式</h1>
+<p>KiCadが流行ってきて、使う人が増えてきている。</p>
 
-<p>以下のようなコマンドを実行する。</p>
+<p>しかし、自動配線ツールを使っている人は少ない。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ln -fids &lt;ターゲット&gt; &lt;リンク&gt;
-</code></pre>
-</div>
+<p>それでははもったいない！！</p>
+
+<p>今回は自動配線ツールの使い方を説明する。</p>
+
+<h1 id="section-2">自動配線と手動配線の使い分け</h1>
+
+<h2 id="section-3">自動配線だとなんか心配？</h2>
+
+<p>これを読んでいる方の中には、<strong>「自動配線なんて使い物にならない。自分でやるのが一番」</strong>と思っている人もいるだろう。</p>
+
+<p>しかし、それは違う。自動配線と手動配線を<strong>上手く使い分ける</strong>ことで、最高の作品が出来上がるのだ。</p>
+
+<h2 id="section-4">どう使い分けるのか</h2>
+
+<p>電源周りやアナログ回路、高周波通信回路などはあらかじめ手動配線で行っておく。</p>
+
+<p>あとは余ったデジタル配線を自動配線ツールに任せる。</p>
+
+<p>これなら電気的特性を考慮しつつ、効率的に作業をすることができる。</p>
+
+<h1 id="section-5">配線のコスト(重み)という考え方</h1>
+
+<h2 id="section-6">片面基板でも大丈夫</h2>
+
+<p>片面基板(切削基板など)を使うとき、自動配線ツールは一般に使いにくい。なぜならば、片面限定配線にすると、「配線不可能」になり、両面配線にすると切削基板では作成できないからだ。</p>
+
+<p>しかし、僕の使っている自動配線ツールには、「コスト」という考え方がある。</p>
+
+<h2 id="section-7">配線にコストをつける</h2>
+
+<p>表面配線のコストを100にして、裏面配線のコストを1にすれば、自然とコストを下げるために裏面配線が優先され、切削基板にぴったりの基板が出来上がるのだ。</p>
+
+<p>また、ビアにもコストがつけられて、できるだけビアを減らすということもできる。</p>
+
+<p>とても柔軟なのだ。</p>
+
+<h1 id="section-8">自動配線ツール使用の流れ</h1>
+
+<ol>
+  <li>KiCadで回路図を書いて部品の割り当てを行う。(いつも通り)</li>
+  <li>部品の配置を行う。(いつも通り)</li>
+  <li>重要な配線を手動で行う。(いつも通り)</li>
+  <li>KiCadから自動配線用にファイルを出力する。</li>
+  <li>自動配線ツールでそのファイルを読み込み、自動配線を行う。</li>
+  <li>配線結果をKiCadに取り込み完成！</li>
+</ol>
+
+<h1 id="section-9">自動配線ツールのインストール</h1>
+
+<h2 id="section-10">必要なもの</h2>
 
 <ul>
-  <li>-f	指定したリンク先にもともとリンクやファイルがあっても、警告なしに上書きする</li>
-  <li>-i	指定したリンク先にもともとリンクやファイルがあるときに、問合わせる</li>
-  <li>-d	ディレクトリのリンクを作成</li>
-  <li>-s	シンボリックリンクを作成（デフォルトはハードリンク）</li>
+  <li>自動配線ツール：Freerouting.exe</li>
+  <li>NetBeans 8.1</li>
+  <li>Jave Development Kit 8 (JDK8)</li>
 </ul>
 
-<h1 id="section-2">例</h1>
+<p>以下からダウンロードできます。<br />
+<a href="https://github.com/freerouting/freerouting/raw/master/binaries/FreeRouting.exe">Freerouting</a><br />
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Netbeans with JDK8</a></p>
 
-<p>Gitのdotfilesなどで管理している.vimrcなどを所定の場所に配置するコマンド</p>
+<h2 id="section-11">インストール</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ln -sf ~/dotfiles/.vimrc ~/.vimrc
-</code></pre>
-</div>
+<ol>
+  <li>NetBeans with JDK8をインストールします。</li>
+  <li>Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。</li>
+</ol>
+
+<h1 id="section-12">使い方</h1>
 
 
 	</div>

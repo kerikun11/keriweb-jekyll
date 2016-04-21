@@ -3,6 +3,8 @@ layout:		post
 title:		ソーラー発電量モニター
 category:	blog
 tag:		[ThingSpeak,IoT,ESP8266,ESP-WROOM-02,Arduino,Solar Power,ソーラー,太陽光発電]
+pickup:		true
+image:		img.jpg
 ---
 
 # 概要

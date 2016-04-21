@@ -131,46 +131,53 @@ $(document).ready( function () {
 
 <h1 id="section-1">インストールするもの</h1>
 
-<pre><code>$ sudo apt-get install cu
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install cu
 </code></pre>
+</div>
 
 <h1 id="section-2">使い方</h1>
 
 <h2 id="section-3">接続されているか確認する</h2>
 
-<pre><code>$ lsusb
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lsusb
 </code></pre>
+</div>
 
 <h2 id="section-4">デバイス名を調べる</h2>
 
-<pre><code>$ ls /dev/tty*
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls /dev/tty*
 </code></pre>
+</div>
 
-<p>ここでUSBシリアルは<code>/dev/ttyUSB0</code>や<code>/dev/ttyUSB1</code>で、ラズパイのシリアルは<code>/dev/ttyAMA0</code>などになります。</p>
+<p>ここでUSBシリアルは<code class="highlighter-rouge">/dev/ttyUSB0</code>や<code class="highlighter-rouge">/dev/ttyUSB1</code>で、ラズパイのシリアルは<code class="highlighter-rouge">/dev/ttyAMA0</code>などになります。</p>
 
 <h2 id="section-5">一般ユーザが扱えるようにする</h2>
 
-<pre><code>$ sudo chmod 666 /dev/ttyUSB*
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo chmod 666 /dev/ttyUSB*
 or
 $ sudo chmod 666 /dev/ttyAMA0
 </code></pre>
+</div>
 
 <h2 id="section-6">シリアルモニタを開く</h2>
 
-<pre><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
 </code></pre>
+</div>
 
 <p>たとえば、</p>
 
-<pre><code>$ cu -s 115200 -l /dev/ttyUSB0
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s 115200 -l /dev/ttyUSB0
 </code></pre>
+</div>
 
 <h2 id="section-7">終わらせ方</h2>
 
 <p>素早く以下のように打つと終了する。</p>
 
-<pre><code>~.
+<div class="highlighter-rouge"><pre class="highlight"><code>~.
 </code></pre>
+</div>
 
 
 	</div>

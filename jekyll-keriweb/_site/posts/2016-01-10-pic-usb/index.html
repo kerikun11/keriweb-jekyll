@@ -304,32 +304,35 @@ $(document).ready( function () {
 <h3 id="usb-1">USB機能の有効化</h3>
 
 <ol>
-  <li>main関数で、<code>USB_CDC_ini();</code>を呼び出します。</li>
-  <li>mainループで、<code>USB_CDC_task();</code>を呼び出します。</li>
-  <li>割り込み関数内で、<code>USB_CDC_ISR();</code>を呼び出します。</li>
+  <li>main関数で、<code class="highlighter-rouge">USB_CDC_ini();</code>を呼び出します。</li>
+  <li>mainループで、<code class="highlighter-rouge">USB_CDC_task();</code>を呼び出します。</li>
+  <li>割り込み関数内で、<code class="highlighter-rouge">USB_CDC_ISR();</code>を呼び出します。</li>
 </ol>
 
 <h3 id="section-7">データの送信</h3>
 
-<p>送りたいデータを<code>usb_tx</code>というリングバッファにプットすると自動で送信されます。</p>
+<p>送りたいデータを<code class="highlighter-rouge">usb_tx</code>というリングバッファにプットすると自動で送信されます。</p>
 
-<pre><code>ringbuf_put(&amp;usb_tx, data);
+<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put(&amp;usb_tx, data);
 </code></pre>
+</div>
 
 <p>または</p>
 
-<pre><code>ringbuf_put_str(&amp;usb_tx, "Hello World!\n");
+<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put_str(&amp;usb_tx, "Hello World!\n");
 </code></pre>
+</div>
 
 <h3 id="section-8">データの受信</h3>
 
-<p>受信データは<code>usb_rx</code>というリングバッファに入っているのでポップします。<br />
-受信データの個数は<code>ringbuf_num(&amp;usb_rx)</code>関数で確認できます。</p>
+<p>受信データは<code class="highlighter-rouge">usb_rx</code>というリングバッファに入っているのでポップします。<br />
+受信データの個数は<code class="highlighter-rouge">ringbuf_num(&amp;usb_rx)</code>関数で確認できます。</p>
 
-<pre><code>if(ringbuf_num(&amp;usb_rx)){
+<div class="highlighter-rouge"><pre class="highlight"><code>if(ringbuf_num(&amp;usb_rx)){
     recieved_data = ringbuf_pop(&amp;usb_rx);
 }
 </code></pre>
+</div>
 
 <h1 id="section-9">注意</h1>
 
