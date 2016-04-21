@@ -115,18 +115,18 @@ $(document).ready( function () {
 
 <h2 id="capsctrl">CapsキーをCtrlキーにする</h2>
 
-<p>WindowのPCは<code class="highlighter-rouge">Ctrl</code>キーの位置が小指から遠く押しづらい！<br />
-ということで、<code class="highlighter-rouge">Caps</code>の位置に<code class="highlighter-rouge">Ctrl</code>キーを置く。<br />
-ちなみに、もともと<code class="highlighter-rouge">Ctrl</code>があったところにも<code class="highlighter-rouge">Caps</code>を置くこともできる。</p>
+<p>WindowのPCは<code>Ctrl</code>キーの位置が小指から遠く押しづらい！<br />
+ということで、<code>Caps</code>の位置に<code>Ctrl</code>キーを置く。<br />
+ちなみに、もともと<code>Ctrl</code>があったところにも<code>Caps</code>を置くこともできる。</p>
 
 <h2 id="section-1">半角/全角を切り替えではなく、決めうちにする</h2>
 
-<p>日本語を入力したくて<code class="highlighter-rouge">半角/全角</code>キーを押したら、英語で入力されてイラッとすることがある。<br />
-そこで、普段使わない<code class="highlighter-rouge">変換</code>キーを日本語切り替えに、<code class="highlighter-rouge">無変換</code>キーを英語切り替えにする。</p>
+<p>日本語を入力したくて<code>半角/全角</code>キーを押したら、英語で入力されてイラッとすることがある。<br />
+そこで、普段使わない<code>変換</code>キーを日本語切り替えに、<code>無変換</code>キーを英語切り替えにする。</p>
 
 <h2 id="vim">Vimユーザー必見！</h2>
 
-<p>Vimで日本語を入力をしたとき、保存などをしようと<code class="highlighter-rouge">:w</code>と打つと、それが全角で入力されて困ることがある。<br />
+<p>Vimで日本語を入力をしたとき、保存などをしようと<code>:w</code>と打つと、それが全角で入力されて困ることがある。<br />
 そこで、インサートモードからノーマルモードに入ると自動的に日本語をオフにして英語入力にする</p>
 
 <h2 id="section-2">今回用いた方法</h2>
@@ -134,9 +134,9 @@ $(document).ready( function () {
 <p>キー割り当てを変えるには以下のような方法がある。</p>
 
 <ol>
-  <li>Windowsの<code class="highlighter-rouge">レジストリ</code>を書き換える。（玄人向け）</li>
-  <li><code class="highlighter-rouge">Ctrl2Cap.exe</code>というアプリを使う。（機能が少ない）</li>
-  <li><code class="highlighter-rouge">yamy.exe</code>というアプリを使う。(便利)</li>
+  <li>Windowsの<code>レジストリ</code>を書き換える。（玄人向け）</li>
+  <li><code>Ctrl2Cap.exe</code>というアプリを使う。（機能が少ない）</li>
+  <li><code>yamy.exe</code>というアプリを使う。(便利)</li>
 </ol>
 
 <p>今回はyamyという便利なアプリを使う。</p>
@@ -161,13 +161,13 @@ $(document).ready( function () {
 <p>Windows10の場合を説明する。下に設定中の画像が貼り付けてあるので参照のこと。</p>
 
 <ol>
-  <li>スタートメニューで<code class="highlighter-rouge">タスクスケジューラ</code>を起動する(検索するとよい)。</li>
-  <li>右のほうの<code class="highlighter-rouge">タスクを作成</code>をクリック。</li>
-  <li><code class="highlighter-rouge">全般タグ</code>では、 1. 名前を<code class="highlighter-rouge">yamy</code>とする。 2. <code class="highlighter-rouge">最上位の特権で実行する</code>にチェックする。</li>
-  <li><code class="highlighter-rouge">トリガータブ</code>では、新規→ 1. タスクの開始：<code class="highlighter-rouge">ログオン時</code>にする。 2. 設定：<code class="highlighter-rouge">特定のユーザー</code>で自分だけにする。</li>
-  <li><code class="highlighter-rouge">操作タブ</code>では、新規→ 1. 操作：<code class="highlighter-rouge">プログラムの開始</code> 2. プログラム/スクリプト：<code class="highlighter-rouge">参照</code>からyamy.exeのパスを設定する。</li>
-  <li><code class="highlighter-rouge">条件タブ</code>では、<code class="highlighter-rouge">コンピュータをAC電源で使用している場合のみ...</code>のチェックを外す。</li>
-  <li><code class="highlighter-rouge">設定タブ</code>では、<code class="highlighter-rouge">タスクを要求時に実行する</code>と<code class="highlighter-rouge">要求時に実行中のタスクが終了しない場合、タスクを強制的に停止する</code><strong>のみ</strong>にチェック。他は<strong>外す</strong>。</li>
+  <li>スタートメニューで<code>タスクスケジューラ</code>を起動する(検索するとよい)。</li>
+  <li>右のほうの<code>タスクを作成</code>をクリック。</li>
+  <li><code>全般タグ</code>では、 1. 名前を<code>yamy</code>とする。 2. <code>最上位の特権で実行する</code>にチェックする。</li>
+  <li><code>トリガータブ</code>では、新規→ 1. タスクの開始：<code>ログオン時</code>にする。 2. 設定：<code>特定のユーザー</code>で自分だけにする。</li>
+  <li><code>操作タブ</code>では、新規→ 1. 操作：<code>プログラムの開始</code> 2. プログラム/スクリプト：<code>参照</code>からyamy.exeのパスを設定する。</li>
+  <li><code>条件タブ</code>では、<code>コンピュータをAC電源で使用している場合のみ...</code>のチェックを外す。</li>
+  <li><code>設定タブ</code>では、<code>タスクを要求時に実行する</code>と<code>要求時に実行中のタスクが終了しない場合、タスクを強制的に停止する</code><strong>のみ</strong>にチェック。他は<strong>外す</strong>。</li>
   <li>OKを押して終了。</li>
 </ol>
 
@@ -187,13 +187,13 @@ $(document).ready( function () {
 
 <h2 id="section-6">オリジナルの設定ファイルを作成</h2>
 
-<p>yamy.exeのあるフォルダ内に<code class="highlighter-rouge">mysettings.mayu</code>など適当なテキストファイルを作成する。</p>
+<p>yamy.exeのあるフォルダ内に<code>mysettings.mayu</code>など適当なテキストファイルを作成する。</p>
 
 <h2 id="section-7">設定を書く</h2>
 
 <p>さっき作ったmysettings.mayuの中に以下を書く。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>include "109.mayu"
+<pre><code>include "109.mayu"
 keymap Global
 
 # My Settings
@@ -229,19 +229,16 @@ window Cygwin /cygwin/ : Global
 
   key IL-*IC-C-LeftSquareBracket = Esc $ToggleIME Esc
 </code></pre>
-</div>
 
-<p>次に、同じフォルダ内にある<code class="highlighter-rouge">yamy.ini</code>テキストエディタで開いて、下のほうの</p>
+<p>次に、同じフォルダ内にある<code>yamy.ini</code>テキストエディタで開いて、下のほうの</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>escapeNLSKeys=0
+<pre><code>escapeNLSKeys=0
 </code></pre>
-</div>
 
 <p>を</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>escapeNLSKeys=1
+<pre><code>escapeNLSKeys=1
 </code></pre>
-</div>
 
 <p>とする。</p>
 
@@ -250,7 +247,7 @@ window Cygwin /cygwin/ : Global
 <ol>
   <li>タスクバーのアイコンを右クリックして設定を開く。</li>
   <li>追加ボタンを押す。</li>
-  <li>名前は適当なものを。ファイルは<code class="highlighter-rouge">mysettings.mayu</code>。シンボルには<code class="highlighter-rouge">-DUSE109</code>と書く。</li>
+  <li>名前は適当なものを。ファイルは<code>mysettings.mayu</code>。シンボルには<code>-DUSE109</code>と書く。</li>
   <li>OKを押して画面を閉じる。</li>
 </ol>
 
@@ -263,7 +260,7 @@ window Cygwin /cygwin/ : Global
 
 <p>あとは、自分でmysettingsにいろいろ書けば好きな割り当てができる。さらに、タスクバーのアイコンを右クリックして「調査」を開くと、実際にキーボードを押したときそのボタンが何に割り当てられているか教えてくれるので便利！</p>
 
-<p>キーの名前は、同じディレクトリ内の<code class="highlighter-rouge">109.mayu</code>というファイルの中に書いてあるので、そこで確認できる。</p>
+<p>キーの名前は、同じディレクトリ内の<code>109.mayu</code>というファイルの中に書いてあるので、そこで確認できる。</p>
 
 <h1 id="section-10">参考サイト</h1>
 

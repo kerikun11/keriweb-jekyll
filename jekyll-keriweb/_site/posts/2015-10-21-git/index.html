@@ -116,10 +116,9 @@ $(document).ready( function () {
 <h2 id="clone">clone</h2>
 <p>　Git上にあるファイルをローカルにクローンする。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/your_username/your_repository.git
+<pre><code>$ git clone https://github.com/your_username/your_repository.git
 $ git clone git@github.com:your_username/your_password/your_repository.git
 </code></pre>
-</div>
 
 <p>　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。</p>
 
@@ -127,39 +126,34 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 <p>　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。
 　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git add filename
+<pre><code>$ git add filename
 </code></pre>
-</div>
 
 <h2 id="commit">commit</h2>
 <p>ファイルを追加または変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。ローカルリポジトリでの変更が記録される。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git commit filename -m 'message'
+<pre><code>$ git commit filename -m 'message'
 </code></pre>
-</div>
 
 <h2 id="push">push</h2>
 <p>　commitしたら、cloneしているディレクトリに入って、</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git push -u origin master
+<pre><code>$ git push -u origin master
 </code></pre>
-</div>
 
 <p>を実行すると、Git上のファイルが更新される。</p>
 
 <h2 id="pull">pull</h2>
 <p>　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git pull
+<pre><code>$ git pull
 </code></pre>
-</div>
 
 <h2 id="diff">diff</h2>
 <p>変更の差分を表示する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git diff filename
+<pre><code>$ git diff filename
 </code></pre>
-</div>
 
 <h1 id="ssh">SSHの設定</h1>
 <p>Githubに繋ぐには、httpsとsshの２通りある。httpsの場合、UserIDとPasswordを入力する必要があるため、セキュリティに不安がある。そこでSSHを使って接続してみる。この場合、SSH鍵のPasswordのみで通信できる。SSH鍵にパスワードをかけなければ、passwordなしで、公開鍵認証の安全な通信ができる。</p>
@@ -169,50 +163,44 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 <h3 id="section-2">鍵の作成</h3>
 <p>ホームディレクトリに.sshディレクトリがない場合</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
+<pre><code>$ mkdir ~/.ssh
 </code></pre>
-</div>
 
 <p>共通</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd ~/.ssh
+<pre><code>$ cd ~/.ssh
 $ ssh-keygen -t ecdsa -C "for github"
 </code></pre>
-</div>
 
 <p>この時ファイル名とパスワードを求められるが、ファイル名は空欄で良い。パスワードは任意。なくても大丈夫。</p>
 
 <p>次に以下のファイルを開く。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim config
+<pre><code>$ sudo vim config
 </code></pre>
-</div>
 
 <p>ここで、以下を記述または追記</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Host github
+<pre><code>Host github
 	User			git
 	HostName		github.com
 	Port			22
 	IdentityFile	~/.ssh/id_ecdsa
 </code></pre>
-</div>
 
 <h3 id="section-3">鍵の登録</h3>
 
-<p>次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの<code class="highlighter-rouge">~/.ssh/id_ecdsa.pub</code>の内容を貼り付ける。</p>
+<p>次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの<code>~/.ssh/id_ecdsa.pub</code>の内容を貼り付ける。</p>
 
 <h3 id="clone-1">新たにcloneするときは</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://your_usermame/your_repository.git
+<pre><code>$ git clone https://your_usermame/your_repository.git
 </code></pre>
-</div>
 
 <p>の代わりに</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone github:your_username/your_repository.git
+<pre><code>$ git clone github:your_username/your_repository.git
 </code></pre>
-</div>
 
 <p>でcloneすればよい。</p>
 
@@ -220,9 +208,8 @@ $ ssh-keygen -t ecdsa -C "for github"
 
 <p>すでにcloneしているリポジトリや、新たなリポジトリでさっき設定したSSHを使うには、リポジトリの設定を変更すればよい。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote set-url origin github:your_username/your_repository.git
+<pre><code>$ git remote set-url origin github:your_username/your_repository.git
 </code></pre>
-</div>
 
 <h1 id="git">Gitを使う手順</h1>
 
@@ -230,17 +217,15 @@ $ ssh-keygen -t ecdsa -C "for github"
 
 <p>自分の情報を登録する</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global user.name "Your Name"
+<pre><code>$ git config --global user.name "Your Name"
 $ git config --global user.email "your_email@smaple.com"
 $ git config --global core.editor vim (or emacs)
 </code></pre>
-</div>
 
 <p>設定の確認</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --list
+<pre><code>$ git config --list
 </code></pre>
-</div>
 
 <h2 id="clone-2">他人のリポジトリをclone</h2>
 
@@ -248,9 +233,8 @@ $ git config --global core.editor vim (or emacs)
   <li>cloneしたいリポジトリに入って、</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone github:username/repository.git
+<pre><code>$ git clone github:username/repository.git
 </code></pre>
-</div>
 
 <h2 id="section-5">自分のレポジトリを使う</h2>
 
@@ -260,42 +244,37 @@ $ git config --global core.editor vim (or emacs)
   <li>cloneしたいリポジトリに入って、</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone github:my_username/my_repository.git
+<pre><code>$ git clone github:my_username/my_repository.git
 </code></pre>
-</div>
 
 <ol>
   <li>ファイルを編集する</li>
   <li>変更を追加</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git add .
+<pre><code>$ git add .
 </code></pre>
-</div>
 
 <ol>
   <li>変更をコミット</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git commit -m "any comment"
+<pre><code>$ git commit -m "any comment"
 </code></pre>
-</div>
 
 <ol>
   <li>変更をプッシュ</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git push -u origin master
+<pre><code>$ git push -u origin master
 </code></pre>
-</div>
 
 <h3 id="section-6">新たにリポジトリを作る</h3>
 
 <p>1.新しくリポジトリにするディレクトリ内に入って、</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git init 
+<pre><code>$ git init 
 </code></pre>
-</div>
 
 
 	</div>

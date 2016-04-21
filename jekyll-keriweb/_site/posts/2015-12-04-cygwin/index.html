@@ -119,8 +119,8 @@ $(document).ready( function () {
   <li><a href="https://www.cygwin.com/">Cygwin.com</a>からCygwinのインストーラをダウンロードする。32bitマシン用と64bitマシン用があるので適当なほうを選ぶ。</li>
   <li>DLしたインストーラを起動する。</li>
   <li>デフォルトの設定で次へを押す。</li>
-  <li>URLを選択するところでは<code class="highlighter-rouge">~~~.jp</code>など、日本のURLを選ぶとダウンロードが早く終わる。</li>
-  <li>インストールするファイルを選ぶところでは、一番上で<code class="highlighter-rouge">wget</code>と検索して、<code class="highlighter-rouge">Web</code>の中の<code class="highlighter-rouge">wget: Utility to ~</code>の回転矢印アイコンをクリックして次へを押し、インストールする。他のソフトは後で<code class="highlighter-rouge">apt-cyg</code>でインストールするので、今はこれだけでいい。</li>
+  <li>URLを選択するところでは<code>~~~.jp</code>など、日本のURLを選ぶとダウンロードが早く終わる。</li>
+  <li>インストールするファイルを選ぶところでは、一番上で<code>wget</code>と検索して、<code>Web</code>の中の<code>wget: Utility to ~</code>の回転矢印アイコンをクリックして次へを押し、インストールする。他のソフトは後で<code>apt-cyg</code>でインストールするので、今はこれだけでいい。</li>
   <li>インストールしたらcygwinを開く。</li>
 </ol>
 
@@ -157,11 +157,10 @@ $(document).ready( function () {
 
 <p>Cygwinを起動したら、以下のコマンドを実行する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
+<pre><code>$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
 $ chmod 755 apt-cyg
 $ mv apt-cyg /usr/local/bin/
 </code></pre>
-</div>
 
 <p>インストール画面
 <img src="12.png" alt="インストール画面12" title="インストール画面12" /></p>
@@ -170,7 +169,7 @@ $ mv apt-cyg /usr/local/bin/
 
 <p>あとは、欲しいソフトをインストールする</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ apt-cyg install vim
+<pre><code>$ apt-cyg install vim
 $ apt-cyg install make
 $ apt-cyg install gcc-core
 $ apt-cyg install gcc-g++
@@ -178,7 +177,6 @@ $ apt-cyg install zsh
 $ apt-cyg install tmux
 $ apt-cyg install git
 </code></pre>
-</div>
 
 <p>などなど</p>
 
@@ -191,9 +189,9 @@ $ apt-cyg install git
 <ol>
   <li>Cygwinのウィンドウの左上のCygwinアイコンを右クリックする。</li>
   <li>optionを開く</li>
-  <li><code class="highlighter-rouge">Keys</code>の中の一番下の<code class="highlighter-rouge">Ctrl+Shift+letter shortcuts</code>にチェックを入れる。</li>
-  <li>ついでに<code class="highlighter-rouge">Looks</code>のなかの<code class="highlighter-rouge">Cursor</code>を<code class="highlighter-rouge">Block</code>にするとよい。</li>
-  <li>さらに<code class="highlighter-rouge">Looks</code>のなかの<code class="highlighter-rouge">Transparency</code>を<code class="highlighter-rouge">Medium</code>か<code class="highlighter-rouge">High</code>にするとブラウザなどを下に置いたときに透かして見れるので便利。</li>
+  <li><code>Keys</code>の中の一番下の<code>Ctrl+Shift+letter shortcuts</code>にチェックを入れる。</li>
+  <li>ついでに<code>Looks</code>のなかの<code>Cursor</code>を<code>Block</code>にするとよい。</li>
+  <li>さらに<code>Looks</code>のなかの<code>Transparency</code>を<code>Medium</code>か<code>High</code>にするとブラウザなどを下に置いたときに透かして見れるので便利。</li>
   <li>saveで終了。</li>
 </ol>
 
@@ -206,27 +204,24 @@ $ apt-cyg install git
 
 <h2 id="zsh">デフォルトのシェルをzshにする</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ apt-cyg install zsh
+<pre><code>$ apt-cyg install zsh
 $ ls /etc/passwd
 </code></pre>
-</div>
 
-<p>ここで<code class="highlighter-rouge">/etc/passwd</code>が存在しないときは以下のコマンドを打ち作る。</p>
+<p>ここで<code>/etc/passwd</code>が存在しないときは以下のコマンドを打ち作る。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkpasswd &gt; /etc/passwd
+<pre><code>$ mkpasswd &gt; /etc/passwd
 </code></pre>
-</div>
 
 <p>作ったら開く</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ vim /etc/passwd
+<pre><code>$ vim /etc/passwd
 </code></pre>
-</div>
 
-<p>一番下のほうの自分のユーザー名のところで、<code class="highlighter-rouge">/bin/bash</code>を<code class="highlighter-rouge">/bin/zsh</code>に変更する。<br />
+<p>一番下のほうの自分のユーザー名のところで、<code>/bin/bash</code>を<code>/bin/zsh</code>に変更する。<br />
 あとはCygwinを再起動すればデフォルトがzshellになっている。</p>
 
-<p>ついでに僕の<code class="highlighter-rouge">.zshrc</code>を書いておく。</p>
+<p>ついでに僕の<code>.zshrc</code>を書いておく。</p>
 
 <p><a href="https://github.com/kerikun11/dotfiles/blob/master/.zshrc">.zshrc</a></p>
 

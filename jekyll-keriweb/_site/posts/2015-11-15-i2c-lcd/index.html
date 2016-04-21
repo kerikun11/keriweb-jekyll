@@ -141,7 +141,7 @@ $(document).ready( function () {
 （MPLAB.Xプロジェクトファイルなので、そのままMPLABXで読み込めます。)</p>
 
 <p>以下はプログラムの要点だけ抜粋<br />
-mainループに<code class="highlighter-rouge">ST7032_task();</code>があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数内には<code class="highlighter-rouge">ST7032_ISR();</code>があり、送信完了割り込みなどで任意のフラグを上げる。<code class="highlighter-rouge">ST7032_task();</code>ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。</p>
+mainループに<code>ST7032_task();</code>があり、中のswitch文で状態遷移をしていく。何もアクションがなければすぐに関数から抜ける。割り込み関数内には<code>ST7032_ISR();</code>があり、送信完了割り込みなどで任意のフラグを上げる。<code>ST7032_task();</code>ではフラグがあがるのを監視しているが、while文での監視ではなく、何もなければすぐ関数からbreakして、なにかフラグが上がっていた時だけ、その瞬間にできる仕事をだけをしてまた関数から抜ける。</p>
 
 <p>使い方<br />
 main.c</p>

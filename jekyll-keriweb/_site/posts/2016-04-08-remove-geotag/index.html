@@ -131,9 +131,8 @@ $(document).ready( function () {
 
 <h2 id="linux">インストール方法(Linux)</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install exiftool
+<pre><code>$ sudo apt-get install exiftool
 </code></pre>
-</div>
 
 <h2 id="windows">インストール方法(Windows)</h2>
 
@@ -143,19 +142,17 @@ $(document).ready( function () {
 
 <h2 id="geotag">geotagを削除する</h2>
 
-<p><code class="highlighter-rouge">geotag=</code>で何も書かなければ、位置情報はなくなる。</p>
+<p><code>geotag=</code>で何も書かなければ、位置情報はなくなる。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ exiftool -overwrite_original -geotag= filename
+<pre><code>$ exiftool -overwrite_original -geotag= filename
 </code></pre>
-</div>
 
 <h2 id="section-3">ついでに回転した写真の修正方法も</h2>
 
 <p>エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ exiftool -overwrite_original -n -Orientation=1 filename
+<pre><code>$ exiftool -overwrite_original -n -Orientation=1 filename
 </code></pre>
-</div>
 
 
 	</div>

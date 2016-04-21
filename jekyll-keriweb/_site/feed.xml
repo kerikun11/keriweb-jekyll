@@ -5,9 +5,9 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Apr 2016 09:56:22 +0900</pubDate>
-    <lastBuildDate>Thu, 21 Apr 2016 09:56:22 +0900</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Thu, 21 Apr 2016 11:13:10 +0900</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2016 11:13:10 +0900</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>ラズパイでシリアルモニタを使うには</title>
@@ -17,53 +17,46 @@
 
 &lt;h1 id=&quot;section-1&quot;&gt;インストールするもの&lt;/h1&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install cu
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install cu
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h1 id=&quot;section-2&quot;&gt;使い方&lt;/h1&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;接続されているか確認する&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ lsusb
+&lt;pre&gt;&lt;code&gt;$ lsusb
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;デバイス名を調べる&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls /dev/tty*
+&lt;pre&gt;&lt;code&gt;$ ls /dev/tty*
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
-&lt;p&gt;ここでUSBシリアルは&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyUSB0&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyUSB1&lt;/code&gt;で、ラズパイのシリアルは&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyAMA0&lt;/code&gt;などになります。&lt;/p&gt;
+&lt;p&gt;ここでUSBシリアルは&lt;code&gt;/dev/ttyUSB0&lt;/code&gt;や&lt;code&gt;/dev/ttyUSB1&lt;/code&gt;で、ラズパイのシリアルは&lt;code&gt;/dev/ttyAMA0&lt;/code&gt;などになります。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;一般ユーザが扱えるようにする&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo chmod 666 /dev/ttyUSB*
+&lt;pre&gt;&lt;code&gt;$ sudo chmod 666 /dev/ttyUSB*
 or
 $ sudo chmod 666 /dev/ttyAMA0
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;section-6&quot;&gt;シリアルモニタを開く&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cu -s &amp;lt;ボーレート&amp;gt; -l &amp;lt;デバイス名&amp;gt;
+&lt;pre&gt;&lt;code&gt;$ cu -s &amp;lt;ボーレート&amp;gt; -l &amp;lt;デバイス名&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;たとえば、&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cu -s 115200 -l /dev/ttyUSB0
+&lt;pre&gt;&lt;code&gt;$ cu -s 115200 -l /dev/ttyUSB0
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;終わらせ方&lt;/h2&gt;
 
 &lt;p&gt;素早く以下のように打つと終了する。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~.
+&lt;pre&gt;&lt;code&gt;~.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
@@ -171,9 +164,8 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;h2 id=&quot;linux&quot;&gt;インストール方法(Linux)&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install exiftool
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install exiftool
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;windows&quot;&gt;インストール方法(Windows)&lt;/h2&gt;
 
@@ -183,19 +175,17 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;h2 id=&quot;geotag&quot;&gt;geotagを削除する&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;geotag=&lt;/code&gt;で何も書かなければ、位置情報はなくなる。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;geotag=&lt;/code&gt;で何も書かなければ、位置情報はなくなる。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -geotag= filename
+&lt;pre&gt;&lt;code&gt;$ exiftool -overwrite_original -geotag= filename
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;ついでに回転した写真の修正方法も&lt;/h2&gt;
 
 &lt;p&gt;エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -n -Orientation=1 filename
+&lt;pre&gt;&lt;code&gt;$ exiftool -overwrite_original -n -Orientation=1 filename
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
