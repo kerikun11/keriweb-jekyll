@@ -5,13 +5,15 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 07:00:25 +0900</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 07:00:25 +0900</lastBuildDate>
+    <pubDate>Fri, 22 Apr 2016 09:28:52 +0900</pubDate>
+    <lastBuildDate>Fri, 22 Apr 2016 09:28:52 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>KiCadで自動配線</title>
         <description>&lt;h1 id=&quot;section&quot;&gt;概要&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;kicad.jpg&quot; alt=&quot;KiCad&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;自動配線ツールを使おう&lt;/h2&gt;
 
@@ -83,11 +85,83 @@
 &lt;h2 id=&quot;section-11&quot;&gt;インストール&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;NetBeans with JDK8をインストールします。&lt;/li&gt;
+  &lt;li&gt;ダウンロードしたNetBeans with JDK8をインストールします。&lt;/li&gt;
   &lt;li&gt;Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;section-12&quot;&gt;使い方&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-13&quot;&gt;まずは部品を配置する&lt;/h2&gt;
+
+&lt;p&gt;いつも通りにできるだけ配線が楽になるように部品を配置していきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;parts.png&quot; alt=&quot;基板作成画面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-14&quot;&gt;重要な配線を先に行う&lt;/h2&gt;
+
+&lt;p&gt;電源回り、アナログ回路、高周波通信回路など、必要があれば手動で配線しておきます。&lt;/p&gt;
+
+&lt;p&gt;もちろん、全部自動配線に任せてもOK&lt;/p&gt;
+
+&lt;h2 id=&quot;dsn&quot;&gt;配線情報をdsnファイルに書き出す&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;黄色のアイコンの&lt;code class=&quot;highlighter-rouge&quot;&gt;外部ルータ「Freerouter」とのファイル交換&lt;/code&gt;をクリックする。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;現在のボードを”Specctra DSN”ファイルへエクスポート&lt;/code&gt;を押してdsnファイルを作成する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;pcb.png&quot; alt=&quot;基板作成画面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;exp.png&quot; alt=&quot;エクスポート&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-15&quot;&gt;自動配線ツールの起動&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ダウンロードした&lt;code class=&quot;highlighter-rouge&quot;&gt;Freerouting.exe&lt;/code&gt;を起動する。&lt;/li&gt;
+  &lt;li&gt;先ほどエクスポートしたdsnファイルを読み込む。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;freerouting.png&quot; alt=&quot;Freerouting&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-16&quot;&gt;自動配線のパラメータの設定&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;画面上の&lt;code class=&quot;highlighter-rouge&quot;&gt;Parameter&lt;/code&gt;タブから&lt;code class=&quot;highlighter-rouge&quot;&gt;Autoroute&lt;/code&gt;を選択する。&lt;/li&gt;
+  &lt;li&gt;出てきた画面で&lt;code class=&quot;highlighter-rouge&quot;&gt;Detail Parameter&lt;/code&gt;をクリックする。&lt;/li&gt;
+  &lt;li&gt;さらに出てきた画面でコストの設定をすることができる。&lt;/li&gt;
+  &lt;li&gt;特に、切削基板の場合は、表面(F.Cu)のコストを高く設定する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;menu.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;
+&lt;img src=&quot;layer.png&quot; alt=&quot;Freerouting&quot; /&gt;
+&lt;img src=&quot;param.png&quot; alt=&quot;Freerouting&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-17&quot;&gt;自動配線開始&lt;/h2&gt;
+
+&lt;p&gt;画面上部の&lt;code class=&quot;highlighter-rouge&quot;&gt;Autoroute&lt;/code&gt;ボタンで自動配線を開始すると動き始めます。&lt;/p&gt;
+
+&lt;p&gt;パソコンのスペックや配線の複雑さによってはかなり時間がかかります。僕の場合長いときは4時間くらいかかりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;board.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ses&quot;&gt;配線結果をsesファイルに書き出し&lt;/h2&gt;
+
+&lt;p&gt;配線が終わると画面下のステータスバーに&lt;code class=&quot;highlighter-rouge&quot;&gt;Routing Complete&lt;/code&gt;と出ます。&lt;/p&gt;
+
+&lt;p&gt;そうなったら、メニューバーの&lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt;→&lt;code class=&quot;highlighter-rouge&quot;&gt;Export Specctra Session FIle&lt;/code&gt;をクリックしてsesファイルを作成します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;save.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;kicad&quot;&gt;配線結果をKiCadへ取り込む&lt;/h2&gt;
+
+&lt;p&gt;KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;import.png&quot; alt=&quot;Freerouting&quot; /&gt;
+&lt;img src=&quot;Complete.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-18&quot;&gt;まとめ&lt;/h1&gt;
+
+&lt;p&gt;自動配線ツールを上手に使って効率よく作業を進めましょう！&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 22 Apr 2016 00:00:00 +0900</pubDate>
@@ -206,25 +280,25 @@ $ sudo chmod 666 /dev/ttyAMA0
 &lt;h2 id=&quot;section-2&quot;&gt;電圧&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Voltage&amp;amp;type=line&amp;amp;yaxis=Voltage+%5BV%5D&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Voltage&amp;amp;type=column&amp;amp;yaxis=Voltage+%5BV%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;電流&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Current&amp;amp;type=line&amp;amp;yaxis=Current+%5BA%5D&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Current&amp;amp;type=column&amp;amp;yaxis=Current+%5BA%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;電力&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Solar+Power&amp;amp;type=line&amp;amp;yaxis=Power+%5BW%5D&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Power&amp;amp;type=column&amp;amp;yaxis=Power+%5BW%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;今日の発電量&lt;/h2&gt;
 
 &lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;dynamic=true&amp;amp;results=60&amp;amp;title=Time+Integration+of+Solar+Power+a+Day&amp;amp;type=line&amp;amp;yaxis=Integration+%5BWh%5D&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Time+Integration+of+Solar+Power+a+Day&amp;amp;type=column&amp;amp;yaxis=Integration+%5BWh%5D&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h1 id=&quot;section-6&quot;&gt;まとめ&lt;/h1&gt;

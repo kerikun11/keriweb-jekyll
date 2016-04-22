@@ -7,6 +7,8 @@ tag:		[KiCad,配線,回路,電子工作,基板]
 
 # 概要
 
+![KiCad](kicad.jpg)
+
 ## 自動配線ツールを使おう
 
 KiCadが流行ってきて、使う人が増えてきている。
@@ -72,9 +74,74 @@ KiCadが流行ってきて、使う人が増えてきている。
 
 ## インストール
 
-  1. NetBeans with JDK8をインストールします。
+  1. ダウンロードしたNetBeans with JDK8をインストールします。
   1. Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。
 
 # 使い方
 
+## まずは部品を配置する
+
+いつも通りにできるだけ配線が楽になるように部品を配置していきます。
+
+![基板作成画面](parts.png){: .img-medium}
+
+## 重要な配線を先に行う
+
+電源回り、アナログ回路、高周波通信回路など、必要があれば手動で配線しておきます。
+
+もちろん、全部自動配線に任せてもOK
+
+## 配線情報をdsnファイルに書き出す
+
+  1. 黄色のアイコンの`外部ルータ「Freerouter」とのファイル交換`をクリックする。
+  1. `現在のボードを”Specctra DSN”ファイルへエクスポート`を押してdsnファイルを作成する。
+
+![基板作成画面](pcb.png){: .img-medium}
+
+![エクスポート](exp.png)
+
+## 自動配線ツールの起動
+
+  1. ダウンロードした`Freerouting.exe`を起動する。
+  1. 先ほどエクスポートしたdsnファイルを読み込む。
+
+![Freerouting](freerouting.png)
+
+## 自動配線のパラメータの設定
+
+  1. 画面上の`Parameter`タブから`Autoroute`を選択する。
+  1. 出てきた画面で`Detail Parameter`をクリックする。
+  1. さらに出てきた画面でコストの設定をすることができる。
+  1. 特に、切削基板の場合は、表面(F.Cu)のコストを高く設定する。
+
+![Freerouting](menu.png){: .img-medium}
+![Freerouting](layer.png)
+![Freerouting](param.png)
+
+## 自動配線開始
+
+画面上部の`Autoroute`ボタンで自動配線を開始すると動き始めます。
+
+パソコンのスペックや配線の複雑さによってはかなり時間がかかります。僕の場合長いときは4時間くらいかかりました。
+
+![Freerouting](board.png){: .img-medium}
+
+## 配線結果をsesファイルに書き出し
+
+配線が終わると画面下のステータスバーに`Routing Complete`と出ます。
+
+そうなったら、メニューバーの`File`→`Export Specctra Session FIle`をクリックしてsesファイルを作成します。
+
+![Freerouting](save.png){: .img-medium}
+
+## 配線結果をKiCadへ取り込む
+
+KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。
+
+![Freerouting](import.png)
+![Freerouting](Complete.png){: .img-medium}
+
+# まとめ
+
+自動配線ツールを上手に使って効率よく作業を進めましょう！
 

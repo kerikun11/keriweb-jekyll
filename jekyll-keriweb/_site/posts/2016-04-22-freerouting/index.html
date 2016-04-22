@@ -121,6 +121,8 @@ $(document).ready( function () {
 	<div class="post-content" itemprop="articleBody">
 		<h1 id="section">概要</h1>
 
+<p><img src="kicad.jpg" alt="KiCad" /></p>
+
 <h2 id="section-1">自動配線ツールを使おう</h2>
 
 <p>KiCadが流行ってきて、使う人が増えてきている。</p>
@@ -191,11 +193,83 @@ $(document).ready( function () {
 <h2 id="section-11">インストール</h2>
 
 <ol>
-  <li>NetBeans with JDK8をインストールします。</li>
+  <li>ダウンロードしたNetBeans with JDK8をインストールします。</li>
   <li>Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。</li>
 </ol>
 
 <h1 id="section-12">使い方</h1>
+
+<h2 id="section-13">まずは部品を配置する</h2>
+
+<p>いつも通りにできるだけ配線が楽になるように部品を配置していきます。</p>
+
+<p><img src="parts.png" alt="基板作成画面" class="img-medium" /></p>
+
+<h2 id="section-14">重要な配線を先に行う</h2>
+
+<p>電源回り、アナログ回路、高周波通信回路など、必要があれば手動で配線しておきます。</p>
+
+<p>もちろん、全部自動配線に任せてもOK</p>
+
+<h2 id="dsn">配線情報をdsnファイルに書き出す</h2>
+
+<ol>
+  <li>黄色のアイコンの<code class="highlighter-rouge">外部ルータ「Freerouter」とのファイル交換</code>をクリックする。</li>
+  <li><code class="highlighter-rouge">現在のボードを”Specctra DSN”ファイルへエクスポート</code>を押してdsnファイルを作成する。</li>
+</ol>
+
+<p><img src="pcb.png" alt="基板作成画面" class="img-medium" /></p>
+
+<p><img src="exp.png" alt="エクスポート" /></p>
+
+<h2 id="section-15">自動配線ツールの起動</h2>
+
+<ol>
+  <li>ダウンロードした<code class="highlighter-rouge">Freerouting.exe</code>を起動する。</li>
+  <li>先ほどエクスポートしたdsnファイルを読み込む。</li>
+</ol>
+
+<p><img src="freerouting.png" alt="Freerouting" /></p>
+
+<h2 id="section-16">自動配線のパラメータの設定</h2>
+
+<ol>
+  <li>画面上の<code class="highlighter-rouge">Parameter</code>タブから<code class="highlighter-rouge">Autoroute</code>を選択する。</li>
+  <li>出てきた画面で<code class="highlighter-rouge">Detail Parameter</code>をクリックする。</li>
+  <li>さらに出てきた画面でコストの設定をすることができる。</li>
+  <li>特に、切削基板の場合は、表面(F.Cu)のコストを高く設定する。</li>
+</ol>
+
+<p><img src="menu.png" alt="Freerouting" class="img-medium" />
+<img src="layer.png" alt="Freerouting" />
+<img src="param.png" alt="Freerouting" /></p>
+
+<h2 id="section-17">自動配線開始</h2>
+
+<p>画面上部の<code class="highlighter-rouge">Autoroute</code>ボタンで自動配線を開始すると動き始めます。</p>
+
+<p>パソコンのスペックや配線の複雑さによってはかなり時間がかかります。僕の場合長いときは4時間くらいかかりました。</p>
+
+<p><img src="board.png" alt="Freerouting" class="img-medium" /></p>
+
+<h2 id="ses">配線結果をsesファイルに書き出し</h2>
+
+<p>配線が終わると画面下のステータスバーに<code class="highlighter-rouge">Routing Complete</code>と出ます。</p>
+
+<p>そうなったら、メニューバーの<code class="highlighter-rouge">File</code>→<code class="highlighter-rouge">Export Specctra Session FIle</code>をクリックしてsesファイルを作成します。</p>
+
+<p><img src="save.png" alt="Freerouting" class="img-medium" /></p>
+
+<h2 id="kicad">配線結果をKiCadへ取り込む</h2>
+
+<p>KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。</p>
+
+<p><img src="import.png" alt="Freerouting" />
+<img src="Complete.png" alt="Freerouting" class="img-medium" /></p>
+
+<h1 id="section-18">まとめ</h1>
+
+<p>自動配線ツールを上手に使って効率よく作業を進めましょう！</p>
 
 
 	</div>
