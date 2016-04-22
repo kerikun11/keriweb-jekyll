@@ -139,7 +139,7 @@ KiCadが流行ってきて、使う人が増えてきている。
 KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。
 
 ![Freerouting](import.png)
-![Freerouting](Complete.png){: .img-medium}
+![Freerouting](complete.png){: .img-medium}
 
 # まとめ
 

@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 09:28:52 +0900</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 09:28:52 +0900</lastBuildDate>
+    <pubDate>Fri, 22 Apr 2016 09:33:38 +0900</pubDate>
+    <lastBuildDate>Fri, 22 Apr 2016 09:33:38 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -157,7 +157,7 @@
 &lt;p&gt;KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;import.png&quot; alt=&quot;Freerouting&quot; /&gt;
-&lt;img src=&quot;Complete.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;complete.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-18&quot;&gt;まとめ&lt;/h1&gt;
 
