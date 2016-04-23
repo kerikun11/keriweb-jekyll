@@ -289,7 +289,7 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 24px; }
+  font-size: 28px; }
 
 .tag-list li {
   font-size: 14px;
@@ -587,3 +587,37 @@ body {
   @media screen and (max-width: 800px) {
     .graph {
       margin-left: 5px; } }
+
+ul.post-list {
+  margin-bottom: 15px; }
+  ul.post-list > li {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted #CCC; }
+    ul.post-list > li img {
+      float: left;
+      width: 120px;
+      height: 120px; }
+      @media screen and (max-width: 800px) {
+        ul.post-list > li img {
+          width: 90px;
+          height: 90px; } }
+    ul.post-list > li div.post-list-char {
+      padding-left: 140px; }
+      @media screen and (max-width: 800px) {
+        ul.post-list > li div.post-list-char {
+          padding-left: 100px; } }
+      ul.post-list > li div.post-list-char > span {
+        display: block; }
+      ul.post-list > li div.post-list-char > h2 {
+        font-size: 28px; }
+        @media screen and (max-width: 800px) {
+          ul.post-list > li div.post-list-char > h2 {
+            font-size: 18px; } }
+  ul.post-list > li:last-child {
+    border: none; }
+
+@media screen and (max-width: 800px) {
+  .post-title {
+    font-size: 28px; } }

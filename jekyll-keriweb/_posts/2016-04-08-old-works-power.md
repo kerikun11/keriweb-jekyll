@@ -3,6 +3,7 @@ layout:		post
 title:		昔作った電子工作たち～充電・電力編～
 category:	blog
 tag:		[電子工作, 自作]
+icon:		icon.png
 ---
 
 # 概要

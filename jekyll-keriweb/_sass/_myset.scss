@@ -66,3 +66,48 @@ body {
 		margin-left:5px;
 	}
 }
+ul.post-list{
+	margin-bottom:15px;
+
+	>li {
+		overflow:hidden;
+		margin-bottom:10px;
+		padding-bottom:10px;
+		border-bottom:2px dotted #CCC;
+
+		img {
+			float:left;
+			width:120px;
+			height:120px;
+			@include media-query($on-laptop) {
+				width:90px;
+				height:90px;
+			}
+		}
+		div.post-list-char {
+			padding-left:140px;
+
+			@include media-query($on-laptop) {
+				padding-left:100px;
+			}
+
+			>span {
+				display:block;
+			}
+			>h2 {
+				font-size:28px;
+				@include media-query($on-laptop) {
+					font-size:18px;
+				}
+			}
+		}
+	}
+	>li:last-child {
+		border:none;
+	}
+}
+.post-title {
+	@include media-query($on-laptop) {
+		font-size:28px;
+	}
+}
