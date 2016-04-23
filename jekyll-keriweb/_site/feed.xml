@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 09:33:38 +0900</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 09:33:38 +0900</lastBuildDate>
+    <pubDate>Sat, 23 Apr 2016 10:42:00 +0900</pubDate>
+    <lastBuildDate>Sat, 23 Apr 2016 10:42:00 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -39,7 +39,7 @@
 
 &lt;p&gt;あとは余ったデジタル配線を自動配線ツールに任せる。&lt;/p&gt;
 
-&lt;p&gt;これなら電気的特性を考慮しつつ、効率的に作業をすることができる。&lt;/p&gt;
+&lt;p&gt;これなら電気的特性を考慮しつつ、&lt;strong&gt;効率的&lt;/strong&gt;に作業をすることができる。&lt;/p&gt;
 
 &lt;h1 id=&quot;section-5&quot;&gt;配線のコスト(重み)という考え方&lt;/h1&gt;
 
@@ -47,7 +47,7 @@
 
 &lt;p&gt;片面基板(切削基板など)を使うとき、自動配線ツールは一般に使いにくい。なぜならば、片面限定配線にすると、「配線不可能」になり、両面配線にすると切削基板では作成できないからだ。&lt;/p&gt;
 
-&lt;p&gt;しかし、僕の使っている自動配線ツールには、「コスト」という考え方がある。&lt;/p&gt;
+&lt;p&gt;しかし、僕の使っている自動配線ツールには、&lt;strong&gt;「コスト」&lt;/strong&gt;という考え方がある。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;配線にコストをつける&lt;/h2&gt;
 
@@ -55,7 +55,7 @@
 
 &lt;p&gt;また、ビアにもコストがつけられて、できるだけビアを減らすということもできる。&lt;/p&gt;
 
-&lt;p&gt;とても柔軟なのだ。&lt;/p&gt;
+&lt;p&gt;とても&lt;strong&gt;柔軟&lt;/strong&gt;なのだ。&lt;/p&gt;
 
 &lt;h1 id=&quot;section-8&quot;&gt;自動配線ツール使用の流れ&lt;/h1&gt;
 
@@ -93,7 +93,7 @@
 
 &lt;h2 id=&quot;section-13&quot;&gt;まずは部品を配置する&lt;/h2&gt;
 
-&lt;p&gt;いつも通りにできるだけ配線が楽になるように部品を配置していきます。&lt;/p&gt;
+&lt;p&gt;KiCadでいつも通りにできるだけ配線が楽になるように部品を配置していきます。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;parts.png&quot; alt=&quot;基板作成画面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
@@ -161,7 +161,8 @@
 
 &lt;h1 id=&quot;section-18&quot;&gt;まとめ&lt;/h1&gt;
 
-&lt;p&gt;自動配線ツールを上手に使って効率よく作業を進めましょう！&lt;/p&gt;
+&lt;p&gt;手順が多いですが、慣れてしまうとこれなしでは生きていけなくなります。&lt;br /&gt;
+自動配線ツールを上手に使って効率よく作業を進めましょう！&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 22 Apr 2016 00:00:00 +0900</pubDate>
