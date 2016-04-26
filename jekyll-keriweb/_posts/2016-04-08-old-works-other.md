@@ -39,6 +39,6 @@ icon:		icon.jpg
 
 ![アップダウンカウンタ](Up Down Counter (1).jpg)
 ![アップダウンカウンタ](Up Down Counter (2).jpg)
-![アップダウンカウンタ](Up Down Counter (3).bmp)
+![アップダウンカウンタ](Up Down Counter (3).png)
 
 

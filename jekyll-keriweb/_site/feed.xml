@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Apr 2016 15:20:04 +0900</pubDate>
-    <lastBuildDate>Tue, 26 Apr 2016 15:20:04 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Apr 2016 18:11:13 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Apr 2016 18:11:13 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -511,7 +511,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;p&gt;&lt;img src=&quot;Up Down Counter (1).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
 &lt;img src=&quot;Up Down Counter (2).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
-&lt;img src=&quot;Up Down Counter (3).bmp&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;Up Down Counter (3).png&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
@@ -560,7 +560,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 &lt;img src=&quot;Dot Matrix Display (2).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
 &lt;img src=&quot;Dot Matrix Display (3).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
 &lt;img src=&quot;Dot Matrix Display (4).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
-&lt;img src=&quot;Dot Matrix Display sketch (1).bmp&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (1).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;x16-1&quot;&gt;16x16&lt;/h2&gt;
 
@@ -570,7 +570,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;p&gt;&lt;img src=&quot;Dot Matrix Display (6).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
 &lt;img src=&quot;Dot Matrix Display (7).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
-&lt;img src=&quot;Dot Matrix Display sketch (2).bmp&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (2).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;段ボール&lt;/h2&gt;
 
@@ -640,7 +640,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;p&gt;&lt;img src=&quot;FRISK dice (1).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
 &lt;img src=&quot;FRISK dice (2).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
-&lt;img src=&quot;FRISK dice (3).bmp&quot; alt=&quot;電子サイコロ&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;FRISK dice (3).png&quot; alt=&quot;電子サイコロ&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;in-frisk-2&quot;&gt;パワーアンプ in FRISK&lt;/h1&gt;
 

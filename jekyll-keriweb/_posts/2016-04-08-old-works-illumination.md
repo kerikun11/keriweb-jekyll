@@ -37,7 +37,7 @@ icon:		icon.jpg
 ![ドットマトリクスLED](Dot Matrix Display (2).jpg)
 ![ドットマトリクスLED](Dot Matrix Display (3).jpg)
 ![ドットマトリクスLED](Dot Matrix Display (4).jpg)
-![ドットマトリクスLED](Dot Matrix Display sketch (1).bmp)
+![ドットマトリクスLED](Dot Matrix Display sketch (1).png)
 
 ## 16x16
 
@@ -47,7 +47,7 @@ icon:		icon.jpg
 
 ![ドットマトリクスLED](Dot Matrix Display (6).jpg)
 ![ドットマトリクスLED](Dot Matrix Display (7).png)
-![ドットマトリクスLED](Dot Matrix Display sketch (2).bmp)
+![ドットマトリクスLED](Dot Matrix Display sketch (2).png)
 
 ## 段ボール
 

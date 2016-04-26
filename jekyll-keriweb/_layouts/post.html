@@ -12,10 +12,7 @@ layout: default
 			<br />
 			Category: <a href="/{{ page.category }}/">{{ page.category }}</a></span>
 			<br />
-			Tag: 
-			{% for tag in page.tags %}
-			{{ tag }}, 
-			{% endfor %}
+			Tag: {{ page.tags | array_to_sentence_string }}
 		</p>
 	</header>
 

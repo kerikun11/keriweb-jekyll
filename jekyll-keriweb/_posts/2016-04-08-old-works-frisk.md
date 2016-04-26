@@ -26,7 +26,7 @@ icon:		icon.jpg
 
 ![電子サイコロ](FRISK dice (1).jpg)
 ![電子サイコロ](FRISK dice (2).jpg)
-![電子サイコロ](FRISK dice (3).bmp)
+![電子サイコロ](FRISK dice (3).png)
 
 # パワーアンプ in FRISK
 
