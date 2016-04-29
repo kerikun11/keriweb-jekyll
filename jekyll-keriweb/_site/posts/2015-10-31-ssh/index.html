@@ -196,6 +196,15 @@ Host global_raspi
 </code></pre>
 </div>
 
+<h1 id="section-2">ローカルのポートをリモートのポートにつなげる</h1>
+
+<p>IP制限されているホストやLAN内の機器に外からつなぐ方法</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh -L 8000:target_hostname:80 ssh_hostname
+</code></pre>
+</div>
+
+<p>これを実行した状態で<code class="highlighter-rouge">localhost:8000</code>につなぐと、ssh_hostnameから<code class="highlighter-rouge">target_hostname:80</code>につないだのと同じになる。</p>
 
 	</div>
 
