@@ -568,10 +568,18 @@ body {
   width: 450px; }
 
 .highlight {
-  margin-left: calc(30px * 2); }
+  margin-left: calc(30px * 2) !important;
+  width: auto !important; }
   @media screen and (max-width: 800px) {
     .highlight {
-      margin-left: 15px; } }
+      margin-left: 5px !important; } }
+
+.syntaxhighlighter {
+  margin-left: calc(30px * 2) !important;
+  width: auto !important; }
+  @media screen and (max-width: 800px) {
+    .syntaxhighlighter {
+      margin-left: 5px !important; } }
 
 .home-gallery {
   text-align: center; }
@@ -586,7 +594,7 @@ body {
   margin-left: calc(30px * 2); }
   @media screen and (max-width: 800px) {
     .graph {
-      margin-left: 5px; } }
+      margin-left: 15px; } }
 
 ul.post-list {
   margin-bottom: 15px; }
