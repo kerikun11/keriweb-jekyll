@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 May 2016 01:04:56 +0900</pubDate>
-    <lastBuildDate>Mon, 02 May 2016 01:04:56 +0900</lastBuildDate>
+    <pubDate>Mon, 02 May 2016 01:14:45 +0900</pubDate>
+    <lastBuildDate>Mon, 02 May 2016 01:14:45 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -458,9 +458,9 @@ $ sudo chmod 666 /dev/ttyAMA0
 
 &lt;h2 id=&quot;dcpwm&quot;&gt;DCジャック中継型PWM調光器&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;PWM Controller (1).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
-&lt;img src=&quot;PWM Controller (2).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
-&lt;img src=&quot;PWM Controller (3).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;PWM controller (1).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
+&lt;img src=&quot;PWM controller (2).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;
+&lt;img src=&quot;PWM controller (3).jpg&quot; alt=&quot;PWM Controller&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>

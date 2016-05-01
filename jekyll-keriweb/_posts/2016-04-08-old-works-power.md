@@ -36,7 +36,7 @@ icon:		icon.png
 
 ## DCジャック中継型PWM調光器
 
-![PWM Controller](PWM Controller (1).jpg)
-![PWM Controller](PWM Controller (2).jpg)
-![PWM Controller](PWM Controller (3).jpg)
+![PWM Controller](PWM controller (1).jpg)
+![PWM Controller](PWM controller (2).jpg)
+![PWM Controller](PWM controller (3).jpg)
 
