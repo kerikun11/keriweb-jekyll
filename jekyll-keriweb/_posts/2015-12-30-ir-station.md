@@ -2,6 +2,7 @@
 layout:	post
 title:	ESP8266で赤外線学習リモコン
 category: blog
+icon:		icon.jpg
 ---
 
 #ESP8266とは
@@ -71,7 +72,7 @@ RAMも大量にあって、**81kB**もあります。
 ![ESP8266-Remocon](page_button.png)
 
 
-# 作り方
+## 作り方
 
 Githubに公開しているのでそちらをご覧下さい。  
 [Github - IR-station](https://github.com/kerikun11/IR-station)

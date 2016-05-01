@@ -111,11 +111,11 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="section">概要</h1>
+		<h2 id="section">概要</h2>
 
 <p><img src="kicad.jpg" alt="KiCad" /></p>
 
-<h2 id="section-1">自動配線ツールを使おう</h2>
+<h3 id="section-1">自動配線ツールを使おう</h3>
 
 <p>KiCadが流行ってきて、使う人が増えてきている。</p>
 
@@ -125,15 +125,15 @@
 
 <p>今回は自動配線ツールの使い方を説明する。</p>
 
-<h1 id="section-2">自動配線と手動配線の使い分け</h1>
+<h2 id="section-2">自動配線と手動配線の使い分け</h2>
 
-<h2 id="section-3">自動配線だとなんか心配？</h2>
+<h3 id="section-3">自動配線だとなんか心配？</h3>
 
 <p>これを読んでいる方の中には、<strong>「自動配線なんて使い物にならない。自分でやるのが一番」</strong>と思っている人もいるだろう。</p>
 
 <p>しかし、それは違う。自動配線と手動配線を<strong>上手く使い分ける</strong>ことで、最高の作品が出来上がるのだ。</p>
 
-<h2 id="section-4">どう使い分けるのか</h2>
+<h3 id="section-4">どう使い分けるのか</h3>
 
 <p>電源周りやアナログ回路、高周波通信回路などはあらかじめ手動配線で行っておく。</p>
 
@@ -141,15 +141,15 @@
 
 <p>これなら電気的特性を考慮しつつ、<strong>効率的</strong>に作業をすることができる。</p>
 
-<h1 id="section-5">配線のコスト(重み)という考え方</h1>
+<h2 id="section-5">配線のコスト(重み)という考え方</h2>
 
-<h2 id="section-6">片面基板でも大丈夫</h2>
+<h3 id="section-6">片面基板でも大丈夫</h3>
 
 <p>片面基板(切削基板など)を使うとき、自動配線ツールは一般に使いにくい。なぜならば、片面限定配線にすると、「配線不可能」になり、両面配線にすると切削基板では作成できないからだ。</p>
 
 <p>しかし、僕の使っている自動配線ツールには、<strong>「コスト」</strong>という考え方がある。</p>
 
-<h2 id="section-7">配線にコストをつける</h2>
+<h3 id="section-7">配線にコストをつける</h3>
 
 <p>表面配線のコストを100にして、裏面配線のコストを1にすれば、自然とコストを下げるために裏面配線が優先され、切削基板にぴったりの基板が出来上がるのだ。</p>
 
@@ -157,7 +157,7 @@
 
 <p>とても<strong>柔軟</strong>なのだ。</p>
 
-<h1 id="section-8">自動配線ツール使用の流れ</h1>
+<h2 id="section-8">自動配線ツール使用の流れ</h2>
 
 <ol>
   <li>KiCadで回路図を書いて部品の割り当てを行う。(いつも通り)</li>
@@ -168,9 +168,9 @@
   <li>配線結果をKiCadに取り込み完成！</li>
 </ol>
 
-<h1 id="section-9">自動配線ツールのインストール</h1>
+<h2 id="section-9">自動配線ツールのインストール</h2>
 
-<h2 id="section-10">必要なもの</h2>
+<h3 id="section-10">必要なもの</h3>
 
 <ul>
   <li>自動配線ツール：Freerouting.exe</li>
@@ -182,28 +182,28 @@
 <a href="https://github.com/freerouting/freerouting/raw/master/binaries/FreeRouting.exe">Freerouting</a><br />
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Netbeans with JDK8</a></p>
 
-<h2 id="section-11">インストール</h2>
+<h3 id="section-11">インストール</h3>
 
 <ol>
   <li>ダウンロードしたNetBeans with JDK8をインストールします。</li>
   <li>Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。</li>
 </ol>
 
-<h1 id="section-12">使い方</h1>
+<h2 id="section-12">使い方</h2>
 
-<h2 id="section-13">まずは部品を配置する</h2>
+<h3 id="section-13">まずは部品を配置する</h3>
 
 <p>KiCadでいつも通りにできるだけ配線が楽になるように部品を配置していきます。</p>
 
 <p><img src="parts.png" alt="基板作成画面" class="img-medium" /></p>
 
-<h2 id="section-14">重要な配線を先に行う</h2>
+<h3 id="section-14">重要な配線を先に行う</h3>
 
 <p>電源回り、アナログ回路、高周波通信回路など、必要があれば手動で配線しておきます。</p>
 
 <p>もちろん、全部自動配線に任せてもOK</p>
 
-<h2 id="dsn">配線情報をdsnファイルに書き出す</h2>
+<h3 id="dsn">配線情報をdsnファイルに書き出す</h3>
 
 <ol>
   <li>黄色のアイコンの<code class="highlighter-rouge">外部ルータ「Freerouter」とのファイル交換</code>をクリックする。</li>
@@ -214,7 +214,7 @@
 
 <p><img src="exp.png" alt="エクスポート" /></p>
 
-<h2 id="section-15">自動配線ツールの起動</h2>
+<h3 id="section-15">自動配線ツールの起動</h3>
 
 <ol>
   <li>ダウンロードした<code class="highlighter-rouge">Freerouting.exe</code>を起動する。</li>
@@ -223,7 +223,7 @@
 
 <p><img src="freerouting.png" alt="Freerouting" /></p>
 
-<h2 id="section-16">自動配線のパラメータの設定</h2>
+<h3 id="section-16">自動配線のパラメータの設定</h3>
 
 <ol>
   <li>画面上の<code class="highlighter-rouge">Parameter</code>タブから<code class="highlighter-rouge">Autoroute</code>を選択する。</li>
@@ -236,7 +236,7 @@
 <img src="layer.png" alt="Freerouting" />
 <img src="param.png" alt="Freerouting" /></p>
 
-<h2 id="section-17">自動配線開始</h2>
+<h3 id="section-17">自動配線開始</h3>
 
 <p>画面上部の<code class="highlighter-rouge">Autoroute</code>ボタンで自動配線を開始すると動き始めます。</p>
 
@@ -244,7 +244,7 @@
 
 <p><img src="board.png" alt="Freerouting" class="img-medium" /></p>
 
-<h2 id="ses">配線結果をsesファイルに書き出し</h2>
+<h3 id="ses">配線結果をsesファイルに書き出し</h3>
 
 <p>配線が終わると画面下のステータスバーに<code class="highlighter-rouge">Routing Complete</code>と出ます。</p>
 
@@ -252,14 +252,14 @@
 
 <p><img src="save.png" alt="Freerouting" class="img-medium" /></p>
 
-<h2 id="kicad">配線結果をKiCadへ取り込む</h2>
+<h3 id="kicad">配線結果をKiCadへ取り込む</h3>
 
 <p>KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。</p>
 
 <p><img src="import.png" alt="Freerouting" />
 <img src="complete.png" alt="Freerouting" class="img-medium" /></p>
 
-<h1 id="section-18">まとめ</h1>
+<h2 id="section-18">まとめ</h2>
 
 <p>手順が多いですが、慣れてしまうとこれなしでは生きていけなくなります。<br />
 自動配線ツールを上手に使って効率よく作業を進めましょう！</p>

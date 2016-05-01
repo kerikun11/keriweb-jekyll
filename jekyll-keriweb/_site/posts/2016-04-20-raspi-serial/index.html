@@ -111,25 +111,25 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="section">概要</h1>
+		<h2 id="section">概要</h2>
 
 <p>ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。</p>
 
-<h1 id="section-1">インストールするもの</h1>
+<h2 id="section-1">インストールするもの</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install cu
 </code></pre>
 </div>
 
-<h1 id="section-2">使い方</h1>
+<h2 id="section-2">使い方</h2>
 
-<h2 id="section-3">接続されているか確認する</h2>
+<h3 id="section-3">接続されているか確認する</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ lsusb
 </code></pre>
 </div>
 
-<h2 id="section-4">デバイス名を調べる</h2>
+<h3 id="section-4">デバイス名を調べる</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ ls /dev/tty*
 </code></pre>
@@ -137,7 +137,7 @@
 
 <p>ここでUSBシリアルは<code class="highlighter-rouge">/dev/ttyUSB0</code>や<code class="highlighter-rouge">/dev/ttyUSB1</code>で、ラズパイのシリアルは<code class="highlighter-rouge">/dev/ttyAMA0</code>などになります。</p>
 
-<h2 id="section-5">一般ユーザが扱えるようにする</h2>
+<h3 id="section-5">一般ユーザが扱えるようにする</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo chmod 666 /dev/ttyUSB*
 or
@@ -145,7 +145,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 </code></pre>
 </div>
 
-<h2 id="section-6">シリアルモニタを開く</h2>
+<h3 id="section-6">シリアルモニタを開く</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
 </code></pre>
@@ -157,7 +157,7 @@ $ sudo chmod 666 /dev/ttyAMA0
 </code></pre>
 </div>
 
-<h2 id="section-7">終わらせ方</h2>
+<h3 id="section-7">終わらせ方</h3>
 
 <p>素早く以下のように打つと終了する。</p>
 

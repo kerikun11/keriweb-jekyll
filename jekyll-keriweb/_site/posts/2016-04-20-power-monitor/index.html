@@ -111,41 +111,41 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="section">概要</h1>
+		<h2 id="section">概要</h2>
 
 <p><a href="/posts/2014-09-14-solar-system/">100W級ソーラーシステム</a>の発電量を<a href="https://thingspeak.com/">ThingSpeak.com</a>というサイトに送ってグラフ化しました。</p>
 
 <p>データの送信には、自作の<a href="/posts/2016-03-23-relay-sensor/">中継型電力計</a>を使用しています。</p>
 
-<h1 id="section-1">リアルタイム発電量モニター</h1>
+<h2 id="section-1">リアルタイム発電量モニター</h2>
 
 <p>ThingSpeakで発行したフレームをHTMLに埋め込む形式なので、自動で更新されます。</p>
 
-<h2 id="section-2">電圧</h2>
+<h3 id="section-2">電圧</h3>
 
 <div class="graph">
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;color=%23d62020&amp;days=3&amp;dynamic=true&amp;min=0&amp;title=Solar+Voltage&amp;type=column&amp;yaxis=Voltage+%5BV%5D"></iframe>
 </div>
 
-<h2 id="section-3">電流</h2>
+<h3 id="section-3">電流</h3>
 
 <div class="graph">
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;color=%23d62020&amp;days=3&amp;dynamic=true&amp;min=0&amp;title=Solar+Current&amp;type=column&amp;yaxis=Current+%5BA%5D"></iframe>
 </div>
 
-<h2 id="section-4">電力</h2>
+<h3 id="section-4">電力</h3>
 
 <div class="graph">
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;color=%23d62020&amp;days=3&amp;dynamic=true&amp;min=0&amp;title=Solar+Power&amp;type=column&amp;yaxis=Power+%5BW%5D"></iframe>
 </div>
 
-<h2 id="section-5">今日の発電量</h2>
+<h3 id="section-5">今日の発電量</h3>
 
 <div class="graph">
 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;color=%23d62020&amp;days=3&amp;dynamic=true&amp;min=0&amp;title=Time+Integration+of+Solar+Power+a+Day&amp;type=column&amp;yaxis=Integration+%5BWh%5D"></iframe>
 </div>
 
-<h1 id="section-6">まとめ</h1>
+<h2 id="section-6">まとめ</h2>
 
 <p>こんなに簡単にグラフ化できるサービスがあるなんてすごいですね！MATLAB解析機能もあるみたいなので使ってみたいです。</p>
 

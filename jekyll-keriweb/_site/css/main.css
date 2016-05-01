@@ -317,32 +317,32 @@ pre {
 
 .post-content {
   margin-bottom: 30px; }
-  .post-content h1 {
+  .post-content h2 {
     font-size: 32px;
     border-left: 7px solid #115599;
     border-bottom: 1px solid #115599;
     padding: .4em .8em; }
     @media screen and (max-width: 800px) {
-      .post-content h1 {
+      .post-content h2 {
         font-size: 28px; } }
-  .post-content h2 {
+  .post-content h3 {
     font-size: 26px;
     border-left: 5px solid #995511;
     border-bottom: 1px solid #995511;
     margin-left: calc(30px * 1);
     padding: .2em .5em; }
     @media screen and (max-width: 800px) {
-      .post-content h2 {
+      .post-content h3 {
         margin-left: 5px;
         font-size: 22px; } }
-  .post-content h3 {
+  .post-content h4 {
     font-size: 20px;
     border-left: 5px solid #559911;
     border-bottom: 1px solid #559911;
     margin-left: calc(30px * 2);
     padding: .1em .4em; }
     @media screen and (max-width: 800px) {
-      .post-content h3 {
+      .post-content h4 {
         font-size: 18px;
         margin-left: 10px; } }
   .post-content p {
@@ -567,19 +567,11 @@ body {
 .img-medium {
   width: 450px; }
 
-.highlight {
-  margin-left: calc(30px * 2) !important;
-  width: auto !important; }
+.highlight, pre {
+  margin-left: calc(30px * 2); }
   @media screen and (max-width: 800px) {
-    .highlight {
-      margin-left: 5px !important; } }
-
-.syntaxhighlighter {
-  margin-left: calc(30px * 2) !important;
-  width: auto !important; }
-  @media screen and (max-width: 800px) {
-    .syntaxhighlighter {
-      margin-left: 5px !important; } }
+    .highlight, pre {
+      margin-left: 5px; } }
 
 .home-gallery {
   text-align: center; }

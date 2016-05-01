@@ -113,9 +113,9 @@
 	<div class="post-content" itemprop="articleBody">
 		<p>ここではGithubを使ったGitの使い方を説明する。</p>
 
-<h1 id="section">主なコマンド</h1>
+<h2 id="section">主なコマンド</h2>
 
-<h2 id="clone">clone</h2>
+<h3 id="clone">clone</h3>
 <p>　Git上にあるファイルをローカルにクローンする。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/your_username/your_repository.git
@@ -125,7 +125,7 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 
 <p>　cloneを置きたいディレクトリで上のコマンドを実行すると、新たにリポジトリ名のディレクトリが生成される。</p>
 
-<h2 id="add">add</h2>
+<h3 id="add">add</h3>
 <p>　新規作成したファイルをGitにあげるにはcloneしているディレクトリに入って、以下のコマンドを実行する。
 　設定ファイルやソースファイルなどはGitにおいて管理するよ良い。その際、設定ファイルのあった場所にはcloneしたディレクトリへのショートカットを置いておく。設定ファイルにはユーザー名とパスワードが記述されているものが多いので、それらをアップロードしないように細心の注意を払うこと。Gitは履歴が残るので、たとえファイルを削除しても簡単には消えてくれない。</p>
 
@@ -133,14 +133,14 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 </code></pre>
 </div>
 
-<h2 id="commit">commit</h2>
+<h3 id="commit">commit</h3>
 <p>ファイルを追加または変更したら、以下のコマンドによりファイルの変更を確定する。commitすると、変更履歴が更新される。ローカルリポジトリでの変更が記録される。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git commit filename -m 'message'
 </code></pre>
 </div>
 
-<h2 id="push">push</h2>
+<h3 id="push">push</h3>
 <p>　commitしたら、cloneしているディレクトリに入って、</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git push -u origin master
@@ -149,26 +149,26 @@ $ git clone git@github.com:your_username/your_password/your_repository.git
 
 <p>を実行すると、Git上のファイルが更新される。</p>
 
-<h2 id="pull">pull</h2>
+<h3 id="pull">pull</h3>
 <p>　ほかの場所で更新した内容をこのPCにも反映させるには、cloneしているディレクトリに入って、以下のコマンドを実行する。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git pull
 </code></pre>
 </div>
 
-<h2 id="diff">diff</h2>
+<h3 id="diff">diff</h3>
 <p>変更の差分を表示する。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git diff filename
 </code></pre>
 </div>
 
-<h1 id="ssh">SSHの設定</h1>
+<h2 id="ssh">SSHの設定</h2>
 <p>Githubに繋ぐには、httpsとsshの２通りある。httpsの場合、UserIDとPasswordを入力する必要があるため、セキュリティに不安がある。そこでSSHを使って接続してみる。この場合、SSH鍵のPasswordのみで通信できる。SSH鍵にパスワードをかけなければ、passwordなしで、公開鍵認証の安全な通信ができる。</p>
 
-<h2 id="section-1">設定の手順</h2>
+<h3 id="section-1">設定の手順</h3>
 
-<h3 id="section-2">鍵の作成</h3>
+<h4 id="section-2">鍵の作成</h4>
 <p>ホームディレクトリに.sshディレクトリがない場合</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
@@ -200,11 +200,11 @@ $ ssh-keygen -t ecdsa -C "for github"
 </code></pre>
 </div>
 
-<h3 id="section-3">鍵の登録</h3>
+<h4 id="section-3">鍵の登録</h4>
 
 <p>次に、ブラウザからGithubにログインして、画面右上のアイコン→Settings→SSH keys→Add SSH keyってところで先ほどの<code class="highlighter-rouge">~/.ssh/id_ecdsa.pub</code>の内容を貼り付ける。</p>
 
-<h3 id="clone-1">新たにcloneするときは</h3>
+<h4 id="clone-1">新たにcloneするときは</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://your_usermame/your_repository.git
 </code></pre>
@@ -218,7 +218,7 @@ $ ssh-keygen -t ecdsa -C "for github"
 
 <p>でcloneすればよい。</p>
 
-<h3 id="cloneinit">すでにcloneしているまたは、新しくinitしたときは</h3>
+<h4 id="cloneinit">すでにcloneしているまたは、新しくinitしたときは</h4>
 
 <p>すでにcloneしているリポジトリや、新たなリポジトリでさっき設定したSSHを使うには、リポジトリの設定を変更すればよい。</p>
 
@@ -226,9 +226,9 @@ $ ssh-keygen -t ecdsa -C "for github"
 </code></pre>
 </div>
 
-<h1 id="git">Gitを使う手順</h1>
+<h2 id="git">Gitを使う手順</h2>
 
-<h2 id="section-4">初期設定</h2>
+<h3 id="section-4">初期設定</h3>
 
 <p>自分の情報を登録する</p>
 
@@ -244,7 +244,7 @@ $ git config --global core.editor vim (or emacs)
 </code></pre>
 </div>
 
-<h2 id="clone-2">他人のリポジトリをclone</h2>
+<h3 id="clone-2">他人のリポジトリをclone</h3>
 
 <ol>
   <li>cloneしたいリポジトリに入って、</li>
@@ -254,9 +254,9 @@ $ git config --global core.editor vim (or emacs)
 </code></pre>
 </div>
 
-<h2 id="section-5">自分のレポジトリを使う</h2>
+<h3 id="section-5">自分のレポジトリを使う</h3>
 
-<h3 id="clone-3">もともとあるリポジトリをclone</h3>
+<h4 id="clone-3">もともとあるリポジトリをclone</h4>
 
 <ol>
   <li>cloneしたいリポジトリに入って、</li>
@@ -291,7 +291,7 @@ $ git config --global core.editor vim (or emacs)
 </code></pre>
 </div>
 
-<h3 id="section-6">新たにリポジトリを作る</h3>
+<h4 id="section-6">新たにリポジトリを作る</h4>
 
 <p>1.新しくリポジトリにするディレクトリ内に入って、</p>
 

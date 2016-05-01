@@ -21,4 +21,6 @@ markdown: kramdown
 encording: UTF-8
 
 # Plugin Settings
+gems:
+        - jekyll-asciidoc
 

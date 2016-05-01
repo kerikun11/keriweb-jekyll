@@ -41,20 +41,11 @@ body {
 .img-medium {
 	width:450px;
 }
-.highlight {
-	margin-left:calc(#{$spacing-unit} * 2) !important;
-	width:auto !important;
+.highlight,pre{
+	margin-left:calc(#{$spacing-unit} * 2);
 
 	@include media-query($on-laptop) {
-		margin-left:5px !important;
-	}
-}
-.syntaxhighlighter {
-	margin-left:calc(#{$spacing-unit} * 2) !important;
-	width:auto !important;
-
-	@include media-query($on-laptop) {
-		margin-left:5px !important;
+		margin-left:5px;
 	}
 }
 .home-gallery{

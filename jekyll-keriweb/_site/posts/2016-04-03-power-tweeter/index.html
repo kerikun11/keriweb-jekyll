@@ -111,18 +111,18 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1 id="section">概要</h1>
+		<h2 id="section">概要</h2>
 
-<h2 id="section-1">中継型電力計</h2>
+<h3 id="section-1">中継型電力計</h3>
 <p>先日の記事で<a href="/posts/2016-03-23-relay-sensor/">ESP-WROOM-02による中継型電力計</a>を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。</p>
 
-<h2 id="section-2">何の電力をつぶやくのか</h2>
+<h3 id="section-2">何の電力をつぶやくのか</h3>
 
 <p>僕の家には<a href="/posts/2014-09-14-solar-system/">自作の100W級ソーラーシステム</a>があります。このソーラーシステムの発電量を定期的にツイートすることにしました。</p>
 
 <p><img src="solar.jpg" alt="Solar" class="img-medium" /></p>
 
-<h1 id="section-3">見た目</h1>
+<h2 id="section-3">見た目</h2>
 
 <p>左側の宙に浮いた基板が今回の電力つぶやきbotです。</p>
 
@@ -132,29 +132,29 @@
 
 <p><img src="power-tweeter2.jpg" alt="Power-Tweeter" class="img-medium" /></p>
 
-<h1 id="section-4">実際のつぶやき</h1>
+<h2 id="section-4">実際のつぶやき</h2>
 
 <p>1日に4回つぶやくようにしました。</p>
 
-<h2 id="section-5">朝8時</h2>
+<h3 id="section-5">朝8時</h3>
 
 <p>【自動】けりの100W級ソーラーシステムは、現在38.4[W]発電中です。本日は、33.38[Wh]発電しました。現在時刻: 2016年3月31日(木)8時0分0秒</p>
 
 <p><img src="tweet-8h.png" alt="tweet-8h" /></p>
 
-<h2 id="section-6">正午12時</h2>
+<h3 id="section-6">正午12時</h3>
 
 <p>【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)12時0分0秒</p>
 
 <p><img src="tweet-12h.png" alt="tweet-12h" /></p>
 
-<h2 id="section-7">夕方16時</h2>
+<h3 id="section-7">夕方16時</h3>
 
 <p>【自動】けりの100W級ソーラーシステムは、現在8.79[W]発電中です。本日は、301.88[Wh]発電しました。現在時刻: 2016年3月31日(木)16時0分0秒</p>
 
 <p><img src="tweet-16h.png" alt="tweet-16h" /></p>
 
-<h2 id="section-8">夜20時</h2>
+<h3 id="section-8">夜20時</h3>
 
 <p>1日のまとめをつぶやく。</p>
 
@@ -162,15 +162,15 @@
 
 <p><img src="tweet-20h.png" alt="tweet-20h" /></p>
 
-<h1 id="section-9">ソフトウェア</h1>
+<h2 id="section-9">ソフトウェア</h2>
 
 <p>Githubに公開してあります。興味のある方はご覧ください。</p>
 
 <p>URL: <a href="https://github.com/kerikun11/Power-Tweeter">kerikun11/Power-Tweeter</a></p>
 
-<h1 id="section-10">大問題発生！！</h1>
+<h2 id="section-10">大問題発生！！</h2>
 
-<h2 id="section-11">気づいたら止まっている</h2>
+<h3 id="section-11">気づいたら止まっている</h3>
 
 <p>作る過程で大きな問題に遭遇しました。</p>
 
@@ -180,11 +180,11 @@
 
 <p>しかし今回は計測対象がソーラーなので、夜間や曇った時には電気がなくなって動かなくなってしまうのです！</p>
 
-<h2 id="section-12">中継型電力計を用いるはずが…</h2>
+<h3 id="section-12">中継型電力計を用いるはずが…</h3>
 
 <p>計測対象に挟むだけで計測できる中継型電力計を用いて作ったはずが、外付けの電源が必要になってしまいました。これではスマートじゃありません。</p>
 
-<h2 id="section-13">ということで…</h2>
+<h3 id="section-13">ということで…</h3>
 
 <p>今は、仕方なく外付けの電源を用意して計測をしています。</p>
 
@@ -192,15 +192,15 @@
 
 <p>そのために、省電力の工夫をしなけばなりません。WiFiって結構電流を消費するので大変です…</p>
 
-<h1 id="section-14">まとめ</h1>
+<h2 id="section-14">まとめ</h2>
 
-<h2 id="section-15">まあ、使える。</h2>
+<h3 id="section-15">まあ、使える。</h3>
 
 <p>手軽に使えて便利！と思いきや、意外な問題にぶち当たってしまいました。</p>
 
 <p>まぁ、外付け電源で使えていますのでとりあえずはよしとしましょう。</p>
 
-<h2 id="esp8266">ESP8266はすごい！</h2>
+<h3 id="esp8266">ESP8266はすごい！</h3>
 
 <p>今回の工作では流行りのWiFiモジュールESP-WROOM-0(ESP8266)を使用しました。値段はたったの550円！WiFiだけでなくマイコンとしての性能もかなり高く、便利なモジュールです。</p>
 

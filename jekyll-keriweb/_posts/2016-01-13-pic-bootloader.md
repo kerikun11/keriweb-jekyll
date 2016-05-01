@@ -6,24 +6,24 @@ tags:		[PIC, PIC18F27J53, USB, ブートローダ, 電子工作, C言語, Microc
 icon:		icon.jpg
 ---
 
-# 概要
+## 概要
 
-## PIC18F27J53を使おう
+### PIC18F27J53を使おう
 
 以前 [PIC18F27J53のすすめ]({% post_url 2016-01-08-pic18f27j53 %}) という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。
 
-## ブートローダとは
+### ブートローダとは
 
 ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。
 
 ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。
 
-## ユーザープログラム
+### ユーザープログラム
 
 ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。
 
 
-# 回路
+## 回路
 
 後述のI/Oピンによるブートロードモードへの移行をオンにする場合はRB0(21 pin)をプルアップしておいてください。そこをLOWにするとブートロードモードに入るので、SWなどをつけてもいいでしょう。
 
@@ -34,9 +34,9 @@ icon:		icon.jpg
 回路図  
 [![PIC18F27J53の回路図](sketch.png)](sketch.png)
 
-# ブートローダプログラム
+## ブートローダプログラム
 
-## HEXファイル
+### HEXファイル
 
 以下のHEXファイルをPICに書き込むだけで動作します。HEXファイルをPICに書き込むには、MPLAB X IDEと一緒についてきた`MPLAB IPE.exe`を使います。
 
@@ -47,9 +47,9 @@ icon:		icon.jpg
 ソフトウェアでブートロードモードへ切り替えHEX(I/Oピンを減らしたくない人向け)  
 [HID\_Bootloader\_PIC18F27J53(software-enter).hex](HID_Bootloader_PIC18F27J53(software-enter).hex)  
 
-# ユーザープログラムの書き方
+## ユーザープログラムの書き方
 
-## Configration Bitsは不要
+### Configration Bitsは不要
 
 Configration Bitsはハードウェアにかなり寄り添ったプログラムなため、ブートローダで書き換えることができません。上のHEXファイルでは、以下のConfigration Bitsがあらかじめ書き込まれています。
 
@@ -74,7 +74,7 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
 #pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
 {% endhighlight %}
 
-## ROMの範囲とオフセットを指定
+### ROMの範囲とオフセットを指定
 
   1. プロジェクトを右クリックして、`Properties`を開きます。
   1. 左側の`XC8 linker`をクリックする。
@@ -87,9 +87,9 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
 ![ROM rages](Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png)
 ![Codeoffset](Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png)
 
-# ブートロードモードへ移行するには
+## ブートロードモードへ移行するには
 
-## ソフトウェアでブートロードモードへ移行
+### ソフトウェアでブートロードモードへ移行
 
 ユーザープログラムからソフトウェアでブートモードへ移るには、以下のコードを書きます。
 
@@ -97,12 +97,12 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
 
 ※ブートロードモードから、ユーザープログラムに移るにはMCLRなどのリセットが必要です。
 
-## I/Oピンでブートロードモードへ移行
+### I/Oピンでブートロードモードへ移行
 
 PICに電源を投入またはPICをリセットしたときに、RB0端子がHIGHならばユーザープログラム、LOWならばブートローダプログラムが起動します。
 
 
-# ユーザープログラムを書き込み
+## ユーザープログラムを書き込み
 
   1. [ここ](http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html)からMicrochip Libraris for Applicationsをダウンロードし、インストールする。
   1. インストール場所/mla\_v2014\_07\_22/ apps/usb/device/bootloaders/ utilities/bin/win/ HIDBootloader.exeを起動する。
@@ -113,7 +113,7 @@ PICに電源を投入またはPICをリセットしたときに、RB0端子がHI
 
 ![HIDbootloader.exe](util1.png)
 
-# まとめ
+## まとめ
 
 USBブートローダを使えば、PICkitなどの周辺機器はほとんど必要なくなります。PICだけでPICの開発ができるようになるのです！
 

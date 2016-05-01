@@ -3,17 +3,18 @@ layout:	post
 title:	IR Station
 category:	production
 tags:		[IR, Remote Control, ESP8266, ESP-WROOM-02, Server, LED]
+icon:		icon.jpg
 ---
 
 
-# IR station 
+## IR station 
 
 Infrared Remote Controller with ESP8266 WiFi-module  
 You can control your home appliances with your smartphone or laptop.
 
-# Hardware 
+## Hardware 
 
-## Main parts
+### Main parts
 
   * ESP-WROOM-02 (ESP8266 WiFi Module)
   * IR Receiver
@@ -21,9 +22,9 @@ You can control your home appliances with your smartphone or laptop.
   * Indicator LED
 
 
-# How to Use  
+## How to Use  
 
-## Setup the Device
+### Setup the Device
 
   1. Supply power to the device.
   1. Connect your cellphone or laptop to Wi-Fi SSID "ESP8266-Remocon".
@@ -37,7 +38,7 @@ You can control your home appliances with your smartphone or laptop.
   1. Access http://DEVICE_NAME.local in a browser.
   1. If something appears, setup is complete.
 
-## Store Signals
+### Store Signals
 
   1. Access http://DEVICE_NAME.local in a browser. DEVICE_NAME is the device name you entered previous form.
   1. Look at the form of the bottom of the screen.
@@ -46,15 +47,15 @@ You can control your home appliances with your smartphone or laptop.
   1. Click Recode button. An LED indicator will light.
   1. Press the button on the remote controller toward the device to store the signal.
 
-## Remote Control
+### Remote Control
 
   1. Access http://DEVICE_NAME.local in a browser.
   1. Click a button which assigned a signal you want to send.
 
 
-# How to Make
+## How to Make
 
-## Steps
+### Steps
 
   1. Gather the components.
   1. Assemble the components according to the circuit diagram.
@@ -68,9 +69,9 @@ You can control your home appliances with your smartphone or laptop.
   1. The uploading takes about 30 seconds.
   1. Process termination.
 
-## Components
+### Components
 
-### Device Components
+#### Device Components
 
 |Components|Details|Quantity|
 |:-------------|:-------|:--------|
@@ -85,29 +86,29 @@ You can control your home appliances with your smartphone or laptop.
 | Bypass Capacitor | 0.1uF | 2~3 |
 | Power Stabilization Capacitor | 470uF~1000uF | 1 |
 
-### Optional Device Components
+#### Optional Device Components
 
 |Components|Details|Quantity|
 |:-------------|:-------|:--------|
 | Reset Switch | tact switch | 1 |
 | Program Upload Switch | tact switch | 1 |
 
-### Requires
+#### Requires
 
 | Requires |Details|Quantity|
 |:------|:-------|:--------|
 | Serial-to-USB conversion Module | such as FT232  | 1 |
 | Power Supplyer | over 3.3V | 1 |
 
-## Circuit Diagram
+### Circuit Diagram
 
 ![sketch](sketch.png)
 
-## Sample
+### Sample
 
 ![sample](brb.jpg)
 
-## Arduino Board Settings
+### Arduino Board Settings
 
 | item | select |
 | :---- | :---------------------- |
@@ -120,6 +121,6 @@ You can control your home appliances with your smartphone or laptop.
 | Reset Method | ck |
 | Upload Speed | 115200 |
 
-# Latest Information and Source File
+## Latest Information and Source File
 
 URL:[https://github.com/kerikun11/IR-station.git](https://github.com/kerikun11/IR-station.git)
