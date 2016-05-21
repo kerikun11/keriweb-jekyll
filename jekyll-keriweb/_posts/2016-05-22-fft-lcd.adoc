@@ -24,7 +24,7 @@ image:spectrum.jpg["スペクトルグラフ",link]
 ※動画サイズは，2.22MBです
 
 ++++
-<video src="fft-lcd.mp4" width="100%" controls loop></vide>
+<video src="fft-lcd.mp4" width="100%" controls loop preload="metadata"></vide>
 ++++
 
 == 使用部品
