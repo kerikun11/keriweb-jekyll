@@ -5,9 +5,115 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 May 2016 00:43:01 +0900</pubDate>
-    <lastBuildDate>Fri, 20 May 2016 00:43:01 +0900</lastBuildDate>
+    <pubDate>Sun, 22 May 2016 02:00:48 +0900</pubDate>
+    <lastBuildDate>Sun, 22 May 2016 02:00:48 +0900</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>高速フーリエ変換でスペクトル表示</title>
+        <description>&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nucleoボードとグラフィック液晶を使って，音声解析機を作りました．マイクに入ってきた音を高速フーリエ変換して，周波数スペクトルを表示します． +&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph img-medium&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;fft-lcd.jpg&quot; alt=&quot;FFTしてLCDで表示&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;スペクトルグラフ&quot;&gt;スペクトルグラフ&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;横軸は周波数です．&lt;br&gt;
+縦軸はdBで，データの最大値を0dBとした相対値で表示しています．&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph img-medium&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;spectrum.jpg&quot; alt=&quot;スペクトルグラフ&quot; width=&quot;link&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;動画&quot;&gt;動画&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;実際に口笛を吹いてみました．動画の音声をオンにして聞いてみてください．&lt;br&gt;
+※動画サイズは，2.22MBです&lt;/p&gt;
+&lt;/div&gt;
+&lt;video src=&quot;fft-lcd.mp4&quot; width=&quot;100%&quot; controls loop&gt;&lt;/vide&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;使用部品&quot;&gt;使用部品&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;nucleo-stm32f401re&quot;&gt;Nucleo STM32F401RE&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;かなりスペックの高いマイコンボードです．&lt;br&gt;
+秋月で1,500円です．&lt;br&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-07723/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gM-07723/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;シャープモノクロtft液晶&quot;&gt;シャープモノクロTFT液晶&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;400x240ピクセルの高精細液晶ディスプレイです．&lt;br&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-04944/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gP-04944/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;マイクアンプキット&quot;&gt;マイクアンプキット&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;今回は手を抜いて，秋月のお手軽キットを使用しました．&lt;br&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-05757/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gK-05757/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;ソースファイル&quot;&gt;ソースファイル&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;FFT_Sampling_zip_nucleo_f401re.zip&quot; class=&quot;bare&quot;&gt;FFT_Sampling_zip_nucleo_f401re.zip&lt;/a&gt;&lt;br&gt;
+一応載せておきますが，他人に見せるつもりで書いてなかったのでかなりひどいです．mbedで読み込めば実行できます． +&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;FFTのプログラムはmbedにあったライブラリを使わせていただきました．&lt;br&gt;
+LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;mbedを使ったら意外と簡単にできてしまいました．いい時代になったものですね～&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Sun, 22 May 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-05-22-fft-lcd/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-22-fft-lcd/</guid>
+        
+        <category>FFT</category>
+        
+        <category>高速フーリエ変換</category>
+        
+        <category>電子工作</category>
+        
+        <category>Nucleo</category>
+        
+        <category>音声解析</category>
+        
+        <category>グラフィック液晶</category>
+        
+        <category>シリアル通信</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>回路講習会2015</title>
@@ -708,48 +814,6 @@ $ sudo chmod 666 /dev/ttyAMA0
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
-        
-        <category>電子工作</category>
-        
-        <category>自作</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>昔作った電子工作たち～in FRISK 編～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
-
-&lt;h2 id=&quot;in-frisk&quot;&gt;電子錠 in FRISK&lt;/h2&gt;
-
-&lt;p&gt;マイコンを使わずにトランジスタだけを使って簡単な錠を作ってみました。黒いFRISKの表面にある５個のボタンのうち，事前に指定したボタンだけを押すと、白いFRISKの表面に文字が浮かび上がります。しかしすべてを同時に押しても文字を見ることはできません。
-　こうしてカギとなるボタンを知っている人のみが開けることのできる錠となるのです。&lt;/p&gt;
-
-&lt;p&gt;※初期設定は１，３，５番目のボタンになっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;Electric Lock (1).jpg&quot; alt=&quot;電子錠&quot; /&gt;
-&lt;img src=&quot;Electric Lock (2).jpg&quot; alt=&quot;電子錠&quot; /&gt;
-&lt;img src=&quot;Electric Lock (3).jpg&quot; alt=&quot;電子錠&quot; /&gt;
-&lt;img src=&quot;Electric Lock (4).jpg&quot; alt=&quot;電子錠&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;in-frisk-1&quot;&gt;電子サイコロ in FRISK&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;FRISK dice (1).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
-&lt;img src=&quot;FRISK dice (2).jpg&quot; alt=&quot;電子サイコロ&quot; /&gt;
-&lt;img src=&quot;FRISK dice (3).png&quot; alt=&quot;電子サイコロ&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;in-frisk-2&quot;&gt;パワーアンプ in FRISK&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;FRISK amp.jpg&quot; alt=&quot;パワーアンプ&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
         
         <category>電子工作</category>
         
