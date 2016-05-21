@@ -44,7 +44,7 @@ ASCIIキーボードとスクロール表示器を作りました。
 
 動画サイズ：7MB
 
-[![スクロール表示器](display.png){: .img-medium}](movie.mp4)
+<video src="movie.mp4" preload="metadata" controls width="100%"></video>
 
 ## ソースファイル
 

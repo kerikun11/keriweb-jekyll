@@ -36,10 +36,10 @@ body {
 	border-radius:10px;
 }
 .img-small {
-	width:150px;
+	max-width:150px;
 }
 .img-medium {
-	width:450px;
+	max-width:450px;
 }
 .highlight,pre{
 	margin-left:calc(#{$spacing-unit} * 2);

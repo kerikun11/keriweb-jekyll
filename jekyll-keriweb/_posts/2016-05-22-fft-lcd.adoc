@@ -7,7 +7,7 @@ icon:		icon.jpg
 ---
 
 == 概要
-Nucleoボードとグラフィック液晶を使って，音声解析機を作りました．マイクに入ってきた音を高速フーリエ変換して，周波数スペクトルを表示します． +
+Nucleoボードとグラフィック液晶を使って，音声解析機を作りました．マイクに入ってきた音を高速フーリエ変換して，周波数スペクトルを表示します．
 
 [.img-medium]
 image:fft-lcd.jpg["FFTしてLCDで表示"]
@@ -24,7 +24,7 @@ image:spectrum.jpg["スペクトルグラフ",link]
 ※動画サイズは，2.22MBです
 
 ++++
-<video src="fft-lcd.mp4" width="100%" controls loop preload="metadata"></vide>
+<video src="fft-lcd.mp4" width="100%" controls loop preload="metadata"></video>
 ++++
 
 == 使用部品
