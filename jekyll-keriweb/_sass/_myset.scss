@@ -36,10 +36,18 @@ body {
 	border-radius:10px;
 }
 .img-small {
-	max-width:150px;
+	width:150px;
+
+	@include media-query($on-laptop) {
+		max-width:100%;
+	}
 }
 .img-medium {
-	max-width:450px;
+	width:450px;
+
+	@include media-query($on-laptop) {
+		max-width:100%;
+	}
 }
 .highlight,pre{
 	margin-left:calc(#{$spacing-unit} * 2);
