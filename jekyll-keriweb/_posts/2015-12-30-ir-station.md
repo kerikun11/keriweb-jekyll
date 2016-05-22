@@ -1,7 +1,7 @@
 ---
-layout:	post
-title:	ESP8266で赤外線学習リモコン
-category: blog
+layout:		post
+title:		ESP8266で赤外線学習リモコン
+category:	works
 icon:		icon.jpg
 ---
 

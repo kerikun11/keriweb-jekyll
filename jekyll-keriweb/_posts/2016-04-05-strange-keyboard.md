@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		変なキーボード
-category:	blog
+category:	works
 tag:		[PIC, PIC18F26K22, キーボード, LED, 電光掲示板, ドットマトリクスLED, スクロール, C言語]
 icon:		icon.jpg
 ---

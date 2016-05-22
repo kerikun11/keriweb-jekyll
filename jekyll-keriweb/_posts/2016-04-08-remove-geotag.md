@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		写真から位置情報タグを削除する
-category:	memo
+category:	memos
 tag:		[exiftool, geo, photo, 位置情報, タグ]
 ---
 

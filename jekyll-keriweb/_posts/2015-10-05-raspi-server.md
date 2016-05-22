@@ -1,8 +1,7 @@
 ---
-## _post/2015-10-05-raspi-server.html
-layout: post
-title: Raspberry Pi 2 Type Bでサーバー作り
-category: memo
+layout:		post
+title:		Raspberry Pi 2 Type Bでサーバー作り
+category:	explanations
 icon:		icon.jpg
 ---
 

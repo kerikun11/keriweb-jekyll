@@ -1,8 +1,8 @@
 ---
-layout: post
-title: Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)
-category: memo
-icon:	icon.jpg
+layout:		post
+title:		Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)
+category:	explanations
+icon:		icon.jpg
 ---
 ## UEFIとは  
 　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。

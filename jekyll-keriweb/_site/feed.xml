@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 May 2016 15:55:42 +0900</pubDate>
-    <lastBuildDate>Sun, 22 May 2016 15:55:42 +0900</lastBuildDate>
+    <pubDate>Sun, 22 May 2016 17:32:16 +0900</pubDate>
+    <lastBuildDate>Sun, 22 May 2016 17:32:16 +0900</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -111,42 +111,7 @@ LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
         <category>シリアル通信</category>
         
         
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>シンタックスハイライト</title>
-        <description>&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;ブログのコードを見やすく&quot;&gt;ブログのコードを見やすく&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.netyasun.com/syntaxhighlighter/&quot;&gt;ここ&lt;/a&gt;からSyntaxHighlighterをダウンロードして，パスを通す．&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class=&quot;brush: c;&quot;&gt;
-#include&lt;stdio.h&gt;
-int main(void){
-	printf(&quot;Hello World\n&quot;);
-
-	return 0;
-}
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-        <pubDate>Sun, 22 May 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-05-22-adoc-syntaxhighlighter/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-22-adoc-syntaxhighlighter/</guid>
-        
-        <category>Programming</category>
-        
-        <category>code</category>
-        
-        <category>html</category>
-        
-        <category>css</category>
-        
-        
-        <category>memo</category>
+        <category>works</category>
         
       </item>
     
@@ -246,7 +211,7 @@ int main(void){
         <category>トランジスタ</category>
         
         
-        <category>blog</category>
+        <category>explanations</category>
         
       </item>
     
@@ -421,7 +386,7 @@ int main(void){
         <category>基板</category>
         
         
-        <category>memo</category>
+        <category>explanations</category>
         
       </item>
     
@@ -503,7 +468,7 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>ターミナル</category>
         
         
-        <category>memo</category>
+        <category>memos</category>
         
       </item>
     
@@ -569,7 +534,7 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>太陽光発電</category>
         
         
-        <category>blog</category>
+        <category>works</category>
         
       </item>
     
@@ -629,7 +594,7 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>タグ</category>
         
         
-        <category>memo</category>
+        <category>memos</category>
         
       </item>
     
@@ -663,7 +628,7 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>自作</category>
         
         
-        <category>blog</category>
+        <category>works</category>
         
       </item>
     
@@ -713,7 +678,7 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>自作</category>
         
         
-        <category>blog</category>
+        <category>works</category>
         
       </item>
     
@@ -764,7 +729,98 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>自作</category>
         
         
-        <category>blog</category>
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～LEDイルミネーション～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;光るバッジ（中学生のころ）&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;花火&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Badge (1).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (2).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (3).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (4).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;ハート&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Badge (5).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;
+&lt;img src=&quot;Badge (6).jpg&quot; alt=&quot;光るバッジ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cd&quot;&gt;CDコマ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;CD (1).jpg&quot; alt=&quot;CDコマ&quot; /&gt;
+&lt;img src=&quot;CD (2).jpg&quot; alt=&quot;CDコマ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;led&quot;&gt;ドットマトリクスLED関連&lt;/h2&gt;
+
+&lt;h3 id=&quot;x16&quot;&gt;8x16&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (1).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (2).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (3).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (4).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (1).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;x16-1&quot;&gt;16x16&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (5).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;ブレッドボード&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (6).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (7).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display sketch (2).png&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;段ボール&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (8).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;
+&lt;img src=&quot;Dot Matrix Display (9).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;大きなプリント基板&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;Dot Matrix Display (10).jpg&quot; alt=&quot;ドットマトリクスLED&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;led-1&quot;&gt;LED花火&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Fireworks (1).jpg&quot; alt=&quot;LED花火1&quot; /&gt;
+&lt;img src=&quot;Fireworks (2).jpg&quot; alt=&quot;LED花火2&quot; /&gt;
+&lt;img src=&quot;Fireworks (3).jpg&quot; alt=&quot;LED花火3&quot; /&gt;
+&lt;img src=&quot;Fireworks (3).png&quot; alt=&quot;LED花火4&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;led-2&quot;&gt;テープLEDコントローラ&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Tape LED (1).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (2).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (3).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (4).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (5).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (6).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (7).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;
+&lt;img src=&quot;Tape LED (8).jpg&quot; alt=&quot;テープLEDコントローラ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;押しボタン式歩行者用信号機&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;Traffic Light (1).jpg&quot; alt=&quot;信号機&quot; /&gt;
+&lt;img src=&quot;Traffic Light (2).jpg&quot; alt=&quot;信号機&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
         
       </item>
     

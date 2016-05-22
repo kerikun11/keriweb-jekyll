@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		KiCadで自動配線
-category:	memo
+category:	explanations
 tag:		[KiCad,配線,回路,電子工作,基板]
 icon:		icon.png
 ---

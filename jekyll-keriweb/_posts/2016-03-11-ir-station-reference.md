@@ -1,7 +1,7 @@
 ---
-layout:	post
-title:	IR Station
-category:	production
+layout:		post
+title:		IR Station
+category:	works
 tags:		[IR, Remote Control, ESP8266, ESP-WROOM-02, Server, LED]
 icon:		icon.jpg
 ---

@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		高速フーリエ変換でスペクトル表示
-category:	blog
+category:	works
 tag:		[FFT,高速フーリエ変換,電子工作,Nucleo,音声解析,グラフィック液晶,シリアル通信]
 icon:		icon.jpg
 ---

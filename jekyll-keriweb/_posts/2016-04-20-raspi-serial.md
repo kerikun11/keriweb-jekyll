@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		ラズパイでシリアルモニタを使うには
-category:	memo
+category:	memos
 tag:		[Raspberry Pi,Serial,Terminal,ラズパイ,シリアル,電子工作,Arduino,ターミナル]
 ---
 
