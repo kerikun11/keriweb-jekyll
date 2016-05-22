@@ -573,10 +573,10 @@ body {
     .img-medium {
       max-width: 100%; } }
 
-.highlight, pre {
+.highlight {
   margin-left: calc(30px * 2); }
   @media screen and (max-width: 800px) {
-    .highlight, pre {
+    .highlight {
       margin-left: 5px; } }
 
 .home-gallery {

@@ -13,14 +13,43 @@
 	<link rel="canonical" href="http://kerikeri.top/posts/2015-10-07-vim/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/home/icon.ico">
-	<link rel="apple-touch-icon" href="/apple-touch-icon">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script language="JavaScript">
 		$(document).ready( function () {
-				$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
-				})
+			$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+		})
 	</script>
+
+	<!--
+syntaxhighlighter
+-->
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+<script type="text/javascript" src="/scripts/shCore.js"></script>
+<script type="text/javascript" src="/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript" src="/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="/scripts/shBrushDelphi.js"></script>
+<script type="text/javascript" src="/scripts/shBrushDiff.js"></script>
+<script type="text/javascript" src="/scripts/shBrushGroovy.js"></script>
+<script type="text/javascript" src="/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="/scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="/scripts/shBrushRuby.js"></script>
+<script type="text/javascript" src="/scripts/shBrushScala.js"></script>
+<script type="text/javascript" src="/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="/scripts/shBrushVb.js"></script>
+<script type="text/javascript" src="/scripts/shBrushXml.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.config.clipboardSwf = '/scripts/clipboard.swf';
+	SyntaxHighlighter.all();
+</script>
 
 
 </head>
@@ -111,11 +140,11 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h1>vim の設定</h1>
+		<h2 id="vim-">vim の設定</h2>
 
-<h2>.vimrc</h2>
-<pre>
-syntax enable
+<h3 id="vimrc">.vimrc</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>syntax enable
 set number
 set autoindent
 set smartindent
@@ -147,21 +176,31 @@ if has('vim_starting')
 endif
 
 filetype plugin indent on
-</pre>
+</code></pre>
+</div>
 
-<h2>pluginの設定</h2>
-<article>
-	<p>　NeoBundleをダウンロードする。</p>
-	<pre>
-$ mkdir -p ~.vim/bundle
-$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</pre>
-	<p>　プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
-	<pre>:NeoBundleInstall</pre>
-	<p>または</p>
-	<pre>:NeoBundleUpdate</pre>
-	<p>を実行する。</p>
-</article>
+<h3 id="plugin">pluginの設定</h3>
 
+<p>NeoBundleをダウンロードする。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir -p ~.vim/bundle
+$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+</code></pre>
+</div>
+
+<p>プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>:NeoBundleInstall
+</code></pre>
+</div>
+
+<p>または</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>:NeoBundleUpdate
+</code></pre>
+</div>
+
+<p>を実行する。</p>
 
 
 	</div>

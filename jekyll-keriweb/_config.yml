@@ -20,6 +20,8 @@ permalink: /posts/:year-:month-:day-:title/
 markdown: kramdown
 encording: UTF-8
 
+highlighter: rouge
+
 # Plugin Settings
 gems:
         - jekyll-asciidoc

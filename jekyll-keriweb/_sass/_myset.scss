@@ -49,7 +49,7 @@ body {
 		max-width:100%;
 	}
 }
-.highlight,pre{
+.highlight{
 	margin-left:calc(#{$spacing-unit} * 2);
 
 	@include media-query($on-laptop) {
