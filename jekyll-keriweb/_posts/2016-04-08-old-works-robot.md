@@ -1,9 +1,9 @@
 ---
-layout:		post
-title:		昔作った電子工作たち～ロボット編～
-category:	works
-tag:		[電子工作, 自作]
-icon:		icon.png
+layout: "post"
+title: "昔作った電子工作たち～ロボット編～"
+category: "works"
+tag: ["電子工作", "自作"]
+icon: "icon.png"
 ---
 
 ## 概要

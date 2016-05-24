@@ -1,9 +1,9 @@
 ---
-layout:		post
-title:		PICでブートローダ
-category:	explanations
-tags:		[PIC, PIC18F27J53, USB, ブートローダ, 電子工作, C言語, Microchip Library for Application, MLA]
-icon:		icon.jpg
+layout: "post"
+title: "PICでブートローダ"
+category: "explanations"
+tag: ["PIC", "PIC18F27J53", "USB", "ブートローダ", "電子工作", "C言語", "Microchip Library for Application", "MLA"]
+icon: "icon.jpg"
 ---
 
 ## 概要

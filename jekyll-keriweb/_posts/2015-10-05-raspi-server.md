@@ -1,8 +1,8 @@
 ---
-layout:		post
-title:		Raspberry Pi 2 Type Bでサーバー作り
-category:	explanations
-icon:		icon.jpg
+layout: "post"
+title: "Raspberry Pi 2 Type Bでサーバー作り"
+category: "explanations"
+icon: "icon.jpg"
 ---
 
 ## ラズパイの用意

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>ファイアウォールの設定 - KERI's Lab</title>
-	<meta name="description" content="$ sudo apt-get install ufw">
+	<meta name="description" content="ファイアウォールの設定">
 
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-17-firewall/">
@@ -20,37 +20,6 @@
 			$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 		})
 	</script>
-
-	<!--
-syntaxhighlighter
--->
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
-<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
-<script type="text/javascript" src="/scripts/shCore.js"></script>
-<script type="text/javascript" src="/scripts/shBrushBash.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCpp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCSharp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCss.js"></script>
-<script type="text/javascript" src="/scripts/shBrushDelphi.js"></script>
-<script type="text/javascript" src="/scripts/shBrushDiff.js"></script>
-<script type="text/javascript" src="/scripts/shBrushGroovy.js"></script>
-<script type="text/javascript" src="/scripts/shBrushJava.js"></script>
-<script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPhp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPlain.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPython.js"></script>
-<script type="text/javascript" src="/scripts/shBrushRuby.js"></script>
-<script type="text/javascript" src="/scripts/shBrushScala.js"></script>
-<script type="text/javascript" src="/scripts/shBrushSql.js"></script>
-<script type="text/javascript" src="/scripts/shBrushVb.js"></script>
-<script type="text/javascript" src="/scripts/shBrushXml.js"></script>
-<script type="text/javascript">
-	SyntaxHighlighter.config.clipboardSwf = '/scripts/clipboard.swf';
-	SyntaxHighlighter.all();
-</script>
-
 
 </head>
 
@@ -144,35 +113,36 @@ syntaxhighlighter
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install ufw
+		<h2 id="section">ファイアウォールの設定</h2>
 
-$ sudo ufw status
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo apt-get install ufw
+
+<span class="gp">$ </span>sudo ufw status
 Status: inactive
 
-$ sudo ufw enable
-Command may disrupt existing ssh connections. Proceed with operation (y|n)? 
+<span class="gp">$ </span>sudo ufw <span class="nb">enable
+</span>Command may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>? 
 y
 
-$ sudo ufw disenable
-$ sudo ufw reset
-Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation (y|n)?
+<span class="gp">$ </span>sudo ufw disenable
+<span class="gp">$ </span>sudo ufw reset
+Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?
 y
 
-$ sudo ufw disenable
-$ sudo ufw default deny
-$ sudo ufw allow 80
-$ sudo ufw allow 22
-$ sudo ufw enable
+<span class="gp">$ </span>sudo ufw disenable
+<span class="gp">$ </span>sudo ufw default deny
+<span class="gp">$ </span>sudo ufw allow 80
+<span class="gp">$ </span>sudo ufw allow 22
+<span class="gp">$ </span>sudo ufw <span class="nb">enable</span>
 
-$ sudo ufw status
+<span class="gp">$ </span>sudo ufw status
 Status: active
- 
+
  To                         Action      From
  --                         ------      ----
- 22		                    ALLOW       Anywhere
- 80                         ALLOW       Anywhere
-</code></pre>
-</div>
+ 22                         ALLOW       Anywhere
+ 80                         ALLOW       Anywhere</code></pre></figure>
+
 
 	</div>
 

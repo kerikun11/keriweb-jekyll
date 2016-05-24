@@ -1,10 +1,10 @@
 ---
 ## 2016-03-23-relay-sensor.md
-layout:		post
-title:		ESP-WROOM-02による中継型電力計
-category:	works
-tags:		[ESP-WROOM-02, ESP8266, 電流計,電圧計, 電子工作, Wi-Fi, Arduino]
-icon:		icon.jpg
+layout: "post"
+title: "ESP-WROOM-02による中継型電力計"
+category: "works"
+tag: ["ESP-WROOM-02", "ESP8266", "電流計", "電圧計", "電子工作", "Wi-Fi", "Arduino"]
+icon: "icon.jpg"
 ---
 
 ## 概要

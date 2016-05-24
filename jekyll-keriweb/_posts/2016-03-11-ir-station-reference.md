@@ -1,9 +1,9 @@
 ---
-layout:		post
-title:		IR Station
-category:	works
-tags:		[IR, Remote Control, ESP8266, ESP-WROOM-02, Server, LED]
-icon:		icon.jpg
+layout: "post"
+title: "IR Station"
+category: "works"
+tag: ["IR", "Remote Control", "ESP8266", "ESP-WROOM-02", "Server", "LED"]
+icon: "icon.jpg"
 ---
 
 

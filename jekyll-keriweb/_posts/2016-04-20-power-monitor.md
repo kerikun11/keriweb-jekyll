@@ -1,9 +1,9 @@
 ---
-layout:		post
-title:		ソーラー発電量モニター
-category:	works
-tag:		[ThingSpeak,IoT,ESP8266,ESP-WROOM-02,Arduino,Solar Power,ソーラー,太陽光発電]
-icon:		img.jpg
+layout: "post"
+title: "ソーラー発電量モニター"
+category: "works"
+tag: ["ThingSpeak", "IoT", "ESP8266", "ESP-WROOM-02", "Arduino", "Solar Power", "ソーラー", "太陽光発電"]
+icon: "img.jpg"
 ---
 
 ## 概要

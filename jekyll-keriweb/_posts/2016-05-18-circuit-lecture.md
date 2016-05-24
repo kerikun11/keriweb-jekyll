@@ -1,9 +1,9 @@
 ---
-layout:		post
-title:		回路講習会2015
-category:	explanations
-tag:		[回路,電子工作,講習会,ロボット技術研究会,初心者,自作,入門,Arduino,PIC,トランジスタ]
-icon:		icon.png
+layout: "post"
+title: "回路講習会2015"
+category: "explanations"
+tag: ["回路", "電子工作", "講習会", "ロボット技術研究会", "初心者", "自作", "入門", "Arduino", "PIC", "トランジスタ"]
+icon: "icon.png"
 ---
 
 

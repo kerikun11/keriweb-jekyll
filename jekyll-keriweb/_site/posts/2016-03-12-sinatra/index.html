@@ -21,37 +21,6 @@
 		})
 	</script>
 
-	<!--
-syntaxhighlighter
--->
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
-<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
-<script type="text/javascript" src="/scripts/shCore.js"></script>
-<script type="text/javascript" src="/scripts/shBrushBash.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCpp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCSharp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushCss.js"></script>
-<script type="text/javascript" src="/scripts/shBrushDelphi.js"></script>
-<script type="text/javascript" src="/scripts/shBrushDiff.js"></script>
-<script type="text/javascript" src="/scripts/shBrushGroovy.js"></script>
-<script type="text/javascript" src="/scripts/shBrushJava.js"></script>
-<script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPhp.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPlain.js"></script>
-<script type="text/javascript" src="/scripts/shBrushPython.js"></script>
-<script type="text/javascript" src="/scripts/shBrushRuby.js"></script>
-<script type="text/javascript" src="/scripts/shBrushScala.js"></script>
-<script type="text/javascript" src="/scripts/shBrushSql.js"></script>
-<script type="text/javascript" src="/scripts/shBrushVb.js"></script>
-<script type="text/javascript" src="/scripts/shBrushXml.js"></script>
-<script type="text/javascript">
-	SyntaxHighlighter.config.clipboardSwf = '/scripts/clipboard.swf';
-	SyntaxHighlighter.all();
-</script>
-
-
 </head>
 
 
@@ -187,69 +156,69 @@ syntaxhighlighter
 
 <p>Sinatraを動かしているメインファイルです。</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">require 'sinatra'
-require 'sinatra/reloader'
-require 'active_record'
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'sinatra'</span>
+<span class="nb">require</span> <span class="s1">'sinatra/reloader'</span>
+<span class="nb">require</span> <span class="s1">'active_record'</span>
 
-ActiveRecord::Base.establish_connection(
-	"adapter" =&gt; "sqlite3",
-	"database" =&gt; "./PowerStation.db"
-)
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection</span><span class="p">(</span>
+	<span class="s2">"adapter"</span> <span class="o">=&gt;</span> <span class="s2">"sqlite3"</span><span class="p">,</span>
+	<span class="s2">"database"</span> <span class="o">=&gt;</span> <span class="s2">"./PowerStation.db"</span>
+<span class="p">)</span>
 
-class Samples <span class="nt">&lt; ActiveRecord::Base</span>
-<span class="na">end</span>
+<span class="k">class</span> <span class="nc">Samples</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+<span class="k">end</span>
 
-<span class="na">helpers</span> <span class="na">do</span>
-	<span class="na">include</span> <span class="na">Rack::Utils</span>
-	<span class="na">alias_method</span> <span class="na">:esc</span><span class="err">,</span><span class="na">:escape_html</span>
-<span class="na">end</span>
+<span class="n">helpers</span> <span class="k">do</span>
+	<span class="kp">include</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Utils</span>
+	<span class="kp">alias_method</span> <span class="ss">:esc</span><span class="p">,</span><span class="ss">:escape_html</span>
+<span class="k">end</span>
 
-<span class="na">get</span> <span class="err">'/'</span> <span class="na">do</span>
-	<span class="err">@</span><span class="na">title =</span><span class="err"> </span><span class="s">"Power Station"</span>
-	<span class="err">@</span><span class="na">samples =</span><span class="err"> </span><span class="s">Samples.order("id</span> <span class="na">desc</span><span class="err">").</span><span class="na">all</span>
-	<span class="err">@</span><span class="na">intCurrent =</span><span class="err"> </span><span class="s">0</span>
-	<span class="err">@</span><span class="na">intPower =</span><span class="err"> </span><span class="s">0</span>
-	<span class="na">Samples</span><span class="err">.</span><span class="na">all</span><span class="err">.</span><span class="na">each</span> <span class="na">do</span> <span class="err">|</span><span class="na">sample</span><span class="err">|</span>
-		<span class="na">c=</span><span class="s">sample.currentValue.to_f</span>
-		<span class="na">v=</span><span class="s">sample.voltageValue.to_f</span>
-		<span class="err">@</span><span class="na">intCurrent</span> <span class="err">+=</span> <span class="na">c</span> <span class="err">*</span> <span class="na">12</span> <span class="err">/</span> <span class="na">60</span> <span class="err">/</span> <span class="na">60</span>
-		<span class="err">@</span><span class="na">intPower</span> <span class="err">+=</span> <span class="na">c</span> <span class="err">*</span> <span class="na">v</span> <span class="err">*</span> <span class="na">12</span> <span class="err">/</span> <span class="na">60</span> <span class="err">/</span> <span class="na">60</span>
-	<span class="na">end</span>
-	<span class="na">erb</span> <span class="na">:index</span>
-<span class="na">end</span>
+<span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+	<span class="vi">@title</span> <span class="o">=</span> <span class="s2">"Power Station"</span>
+	<span class="vi">@samples</span> <span class="o">=</span> <span class="no">Samples</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="s2">"id desc"</span><span class="p">).</span><span class="nf">all</span>
+	<span class="vi">@intCurrent</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="vi">@intPower</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="no">Samples</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">sample</span><span class="o">|</span>
+		<span class="n">c</span><span class="o">=</span><span class="n">sample</span><span class="p">.</span><span class="nf">currentValue</span><span class="p">.</span><span class="nf">to_f</span>
+		<span class="n">v</span><span class="o">=</span><span class="n">sample</span><span class="p">.</span><span class="nf">voltageValue</span><span class="p">.</span><span class="nf">to_f</span>
+		<span class="vi">@intCurrent</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span>
+		<span class="vi">@intPower</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span>
+	<span class="k">end</span>
+	<span class="n">erb</span> <span class="ss">:index</span>
+<span class="k">end</span>
 
-<span class="na">post</span> <span class="err">"/</span><span class="na">new</span><span class="err">"</span> <span class="na">do</span>
-	<span class="na">Samples</span><span class="err">.</span><span class="na">create</span><span class="err">(</span>
-		<span class="err">{</span>
-			<span class="na">:deviceName =</span><span class="err">&gt; </span><span class="s">params[:deviceName],</span>
-			<span class="na">:currentValue =</span><span class="err">&gt; </span><span class="s">params[:currentValue],</span>
-			<span class="na">:voltageValue =</span><span class="err">&gt; </span><span class="s">params[:voltageValue]</span>
-		<span class="err">}</span>
-	<span class="err">)</span>
-	<span class="na">redirect</span> <span class="err">'/'</span>
-	<span class="na">erb</span> <span class="na">:index</span>
-<span class="na">end</span>
+<span class="n">post</span> <span class="s2">"/new"</span> <span class="k">do</span>
+	<span class="no">Samples</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+		<span class="p">{</span>
+			<span class="ss">:deviceName</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="p">[</span><span class="ss">:deviceName</span><span class="p">],</span>
+			<span class="ss">:currentValue</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="p">[</span><span class="ss">:currentValue</span><span class="p">],</span>
+			<span class="ss">:voltageValue</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="p">[</span><span class="ss">:voltageValue</span><span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">)</span>
+	<span class="n">redirect</span> <span class="s1">'/'</span>
+	<span class="n">erb</span> <span class="ss">:index</span>
+<span class="k">end</span>
 
-<span class="na">post</span> <span class="err">'/</span><span class="na">deleteAll</span><span class="err">'</span> <span class="na">do</span>
-	<span class="na">Samples</span><span class="err">.</span><span class="na">destroy_all</span>
-<span class="na">end</span>
+<span class="n">post</span> <span class="s1">'/deleteAll'</span> <span class="k">do</span>
+	<span class="no">Samples</span><span class="p">.</span><span class="nf">destroy_all</span>
+<span class="k">end</span>
 
-<span class="na">post</span> <span class="err">'/</span><span class="na">delete</span><span class="err">'</span> <span class="na">do</span>
-	<span class="na">Samples</span><span class="err">.</span><span class="na">find</span><span class="err">(</span><span class="na">params</span><span class="err">[</span><span class="na">:id</span><span class="err">]).</span><span class="na">destroy</span>
-<span class="na">end</span></code></pre></figure>
+<span class="n">post</span> <span class="s1">'/delete'</span> <span class="k">do</span>
+	<span class="no">Samples</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]).</span><span class="nf">destroy</span>
+<span class="k">end</span></code></pre></figure>
 
 <h3 id="viewslayouterb">views/layout.erb</h3>
 
 <p>サイト内共通のHTMLヘッダーやフッターはここに書きます。</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<figure class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ja"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;head&gt;</span>
 		<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">/&gt;</span>
-		<span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @title %&gt;<span class="nt">&lt;/title&gt;</span>
+		<span class="nt">&lt;title&gt;</span><span class="cp">&lt;%=</span> <span class="vi">@title</span> <span class="cp">%&gt;</span><span class="nt">&lt;/title&gt;</span>
 	<span class="nt">&lt;/head&gt;</span>
 	<span class="nt">&lt;body&gt;</span>
-		<span class="nt">&lt;div&gt;</span><span class="err">&lt;</span>%= yield %&gt;<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div&gt;</span><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span><span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
@@ -257,21 +226,21 @@ class Samples <span class="nt">&lt; ActiveRecord::Base</span>
 
 <p>実際にブラウザに表示される部分を書きます。</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span>Power Station<span class="nt">&lt;/h1&gt;</span>
+<figure class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="nt">&lt;h1&gt;</span>Power Station<span class="nt">&lt;/h1&gt;</span>
 
 <span class="nt">&lt;h2&gt;</span>Report<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;p&gt;</span>Average : <span class="err">&lt;</span>%= if @samples.length != 0 then @samples.average(:voltageValue).round(3) end %&gt; [V], <span class="err">&lt;</span>%= if @samples.length != 0 then @samples.average(:currentValue).round(3) end %&gt; [A], <span class="err">&lt;</span>%= if @samples.length != 0 then (@samples.average(:currentValue) * @samples.average(:voltageValue)).round(3) end %&gt; [W]<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Integrating : <span class="err">&lt;</span>%= @intCurrent.round(3) %&gt; [Ah]<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Electrical Energy : <span class="err">&lt;</span>%= @intPower.round(3) %&gt; [Wh]<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Average : <span class="cp">&lt;%=</span> <span class="k">if</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">length</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">then</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">average</span><span class="p">(</span><span class="ss">:voltageValue</span><span class="p">).</span><span class="nf">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">end</span> <span class="cp">%&gt;</span> [V], <span class="cp">&lt;%=</span> <span class="k">if</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">length</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">then</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">average</span><span class="p">(</span><span class="ss">:currentValue</span><span class="p">).</span><span class="nf">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">end</span> <span class="cp">%&gt;</span> [A], <span class="cp">&lt;%=</span> <span class="k">if</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">length</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">then</span> <span class="p">(</span><span class="vi">@samples</span><span class="p">.</span><span class="nf">average</span><span class="p">(</span><span class="ss">:currentValue</span><span class="p">)</span> <span class="o">*</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">average</span><span class="p">(</span><span class="ss">:voltageValue</span><span class="p">)).</span><span class="nf">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">end</span> <span class="cp">%&gt;</span> [W]<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Integrating : <span class="cp">&lt;%=</span> <span class="vi">@intCurrent</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="cp">%&gt;</span> [Ah]<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Electrical Energy : <span class="cp">&lt;%=</span> <span class="vi">@intPower</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="cp">%&gt;</span> [Wh]<span class="nt">&lt;/p&gt;</span>
 
 <span class="nt">&lt;h2&gt;</span>Data<span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;ul</span> <span class="na">style=</span><span class="s">"height:30em;overflow:scroll;"</span><span class="nt">&gt;</span>
-	<span class="err">&lt;</span>% @samples.each do |sample| %&gt;
-		<span class="nt">&lt;li</span> <span class="na">data-id=</span><span class="s">"&lt;%= sample.id %&gt;"</span><span class="nt">&gt;</span>
+	<span class="cp">&lt;%</span> <span class="vi">@samples</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">sample</span><span class="o">|</span> <span class="cp">%&gt;</span>
+		<span class="nt">&lt;li</span> <span class="na">data-id=</span><span class="s">"</span><span class="cp">&lt;%=</span> <span class="n">sample</span><span class="p">.</span><span class="nf">id</span> <span class="cp">%&gt;</span><span class="s">"</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"deleteCmd"</span> <span class="na">style=</span><span class="s">"cursor:pointer;color:blue;}"</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/button&gt;</span>
-			<span class="err">&lt;</span>%= sample.created_at %&gt; (<span class="err">&lt;</span>%= sample.deviceName %&gt;) : <span class="err">&lt;</span>%= esc sample.voltageValue %&gt; [V], <span class="err">&lt;</span>%= esc sample.currentValue %&gt; [A]
+			<span class="cp">&lt;%=</span> <span class="n">sample</span><span class="p">.</span><span class="nf">created_at</span> <span class="cp">%&gt;</span> (<span class="cp">&lt;%=</span> <span class="n">sample</span><span class="p">.</span><span class="nf">deviceName</span> <span class="cp">%&gt;</span>) : <span class="cp">&lt;%=</span> <span class="n">esc</span> <span class="n">sample</span><span class="p">.</span><span class="nf">voltageValue</span> <span class="cp">%&gt;</span> [V], <span class="cp">&lt;%=</span> <span class="n">esc</span> <span class="n">sample</span><span class="p">.</span><span class="nf">currentValue</span> <span class="cp">%&gt;</span> [A]
 		<span class="nt">&lt;/li&gt;</span>
-	<span class="err">&lt;</span>% end %&gt;
+	<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 
 <span class="nt">&lt;h2&gt;</span>Add new<span class="nt">&lt;/h2&gt;</span>
@@ -303,7 +272,7 @@ class Samples <span class="nt">&lt; ActiveRecord::Base</span>
 			<span class="p">});</span>
 		<span class="p">}</span>
 	<span class="p">})</span>
-	<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <h2 id="section-5">参考サイト</h2>
 
