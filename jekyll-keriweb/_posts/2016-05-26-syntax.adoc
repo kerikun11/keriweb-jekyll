@@ -2,6 +2,7 @@
 layout: "post"
 title: "Jekyll & Asciidocでシンタックスハイライト"
 category: "memos"
+tag: ["Jekyll","Asciidoc","Blog","Source Code","SyntaxHighlighting"]
 icon: "icon.png"
 ---
 
@@ -11,7 +12,7 @@ https://github.com/jwarby/jekyll-pygments-themes[]から適当なテーマを持
 
 [source,c]
 ----
-your-jekyll-site/_sass/_syntax-highlighting.sass
+<your-jekyll-site>/_sass/_syntax-highlighting.sass
 ----
 
 色が変な場合は以下のようにpreタグとcodeタグに適当な色を設定すると直る．
