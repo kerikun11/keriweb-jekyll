@@ -753,13 +753,13 @@ body {
   border-radius: 10px; }
 
 .img-small {
-  width: 150px; }
+  width: 250px; }
   @media screen and (max-width: 800px) {
     .img-small {
       max-width: 100%; } }
 
 .img-medium {
-  width: 450px; }
+  width: 500px; }
   @media screen and (max-width: 800px) {
     .img-medium {
       max-width: 100%; } }
