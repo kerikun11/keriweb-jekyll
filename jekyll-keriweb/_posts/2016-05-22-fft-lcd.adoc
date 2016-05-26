@@ -46,7 +46,7 @@ link:http://akizukidenshi.com/catalog/g/gK-05757/[]
 
 link:FFT_Sampling_zip_nucleo_f401re.zip[]
 一応載せておきますが，他人に見せるつもりで書いてなかったのでかなりひどいです．mbedで読み込めば実行できます． +
-
+ +
 FFTのプログラムはmbedにあったライブラリを使わせていただきました． +
 LCDの表示プログラムは自分で頑張って作りました！
 

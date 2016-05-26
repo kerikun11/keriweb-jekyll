@@ -276,6 +276,7 @@
 
 	p {
 		margin-left:calc(#{$spacing-unit} * 2);
+		font-family:serif;
 
 		@include media-query($on-laptop) {
 			margin-left:15px;

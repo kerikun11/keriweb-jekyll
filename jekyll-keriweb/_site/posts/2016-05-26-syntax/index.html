@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>高速フーリエ変換でスペクトル表示 - KERI's Lab</title>
-	<meta name="description" content="概要Nucleoボードとグラフィック液晶を使って，音声解析機を作りました．マイクに入ってきた音を高速フーリエ変換して，周波数スペクトルを表示します．">
+	<title>Jekyll & Asciidocでシンタックスハイライト - KERI's Lab</title>
+	<meta name="description" content="Jekyllのシンタックスハイライトテーマを変更するJekyllのデフォルトのテーマはダサいので変更する．https://github.com/jwarby/jekyll-pygments-themesから適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-05-22-fft-lcd/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-05-26-syntax/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/home/icon.ico">
 
@@ -86,14 +86,14 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title" itemprop="name headline">高速フーリエ変換でスペクトル表示</h1>
+		<h1 class="post-title" itemprop="name headline">Jekyll & Asciidocでシンタックスハイライト</h1>
 		<p class="post-meta">
-			<time datetime="2016-05-22T00:00:00+09:00" itemprop="datePublished">2016年05月22日</time>
+			<time datetime="2016-05-26T00:00:00+09:00" itemprop="datePublished">2016年05月26日</time>
 			<span>
 			<br />
-			Category: <a href="/works/">works</a></span>
+			Category: <a href="/memos/">memos</a></span>
 			<br />
-			Tag: FFT, 高速フーリエ変換, 電子工作, Nucleo, 音声解析, グラフィック液晶, and シリアル通信
+			Tag: 
 		</p>
 	</header>
 
@@ -114,82 +114,62 @@
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
 		<div class="sect1">
-<h2 id="概要">概要</h2>
+<h2 id="jekyllのシンタックスハイライトテーマを変更する">Jekyllのシンタックスハイライトテーマを変更する</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nucleoボードとグラフィック液晶を使って，音声解析機を作りました．マイクに入ってきた音を高速フーリエ変換して，周波数スペクトルを表示します．</p>
+<p>Jekyllのデフォルトのテーマはダサいので変更する．<br>
+<a href="https://github.com/jwarby/jekyll-pygments-themes" class="bare">https://github.com/jwarby/jekyll-pygments-themes</a>から適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)</p>
 </div>
-<div class="paragraph img-medium">
-<p><span class="image"><img src="fft-lcd.jpg" alt="FFTしてLCDで表示"></span></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c" data-lang="c">your-jekyll-site/_sass/_syntax-highlighting.sass</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>色が変な場合は以下のようにpreタグとcodeタグに適当な色を設定すると直る．</p>
+</div>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">pre</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span><span class="m">#DDD</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.highlight</span> <span class="nt">code</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span><span class="m">#DDD</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
 </div>
 </div>
 <div class="sect1">
-<h2 id="スペクトルグラフ">スペクトルグラフ</h2>
+<h2 id="asciidocでの書き方">Asciidocでの書き方</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>横軸は周波数です．<br>
-縦軸はdBで，データの最大値を0dBとした相対値で表示しています．</p>
-</div>
-<div class="paragraph img-medium">
-<p><span class="image"><img src="spectrum.jpg" alt="スペクトルグラフ" width="link"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="動画">動画</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>実際に口笛を吹いてみました．動画の音声をオンにして聞いてみてください．<br>
-※動画サイズは，2.22MBです</p>
-</div>
-<video src="fft-lcd.mp4" width="100%" controls loop preload="metadata"></video>
-</div>
-</div>
-<div class="sect1">
-<h2 id="使用部品">使用部品</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="nucleo-stm32f401re">Nucleo STM32F401RE</h3>
-<div class="paragraph">
-<p>かなりスペックの高いマイコンボードです．<br>
-秋月で1,500円です．<br>
-<a href="http://akizukidenshi.com/catalog/g/gM-07723/" class="bare">http://akizukidenshi.com/catalog/g/gM-07723/</a></p>
-</div>
+<p>JekyllはAsciidocに対応しているが，Asciidocのソースコードの書き方ではハイライトされない．それの解決策を紹介する．</p>
 </div>
 <div class="sect2">
-<h3 id="シャープモノクロtft液晶">シャープモノクロTFT液晶</h3>
+<h3 id="やり方">やり方</h3>
 <div class="paragraph">
-<p>400x240ピクセルの高精細液晶ディスプレイです．<br>
-<a href="http://akizukidenshi.com/catalog/g/gP-04944/" class="bare">http://akizukidenshi.com/catalog/g/gP-04944/</a></p>
+<p>Jekyll &amp; Asciidocでシンタックスハイライトをつけるには，</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c" data-lang="c">++++
+{% highlight c %}
+#include &lt;stdio.h&gt;
+int main(void){
+
+	return 0;
+}
+{% endhighlight %}
+++++</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>という風に記述すればよい．</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="マイクアンプキット">マイクアンプキット</h3>
+<h3 id="表示例">表示例</h3>
 <div class="paragraph">
-<p>今回は手を抜いて，秋月のお手軽キットを使用しました．<br>
-<a href="http://akizukidenshi.com/catalog/g/gK-05757/" class="bare">http://akizukidenshi.com/catalog/g/gK-05757/</a></p>
+<p>上記の例は以下のように表示される．</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ソースファイル">ソースファイル</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="FFT_Sampling_zip_nucleo_f401re.zip" class="bare">FFT_Sampling_zip_nucleo_f401re.zip</a><br>
-一応載せておきますが，他人に見せるつもりで書いてなかったのでかなりひどいです．mbedで読み込めば実行できます．<br>
-<br>
-FFTのプログラムはmbedにあったライブラリを使わせていただきました．<br>
-LCDの表示プログラムは自分で頑張って作りました！</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="まとめ">まとめ</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>mbedを使ったら意外と簡単にできてしまいました．いい時代になったものですね～</p>
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 </div>
 </div>
 </div>

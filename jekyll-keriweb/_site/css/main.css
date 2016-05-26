@@ -102,7 +102,7 @@ code {
 pre {
   padding: 8px 12px;
   overflow-x: auto;
-  line-height: 1.0; }
+  line-height: 1.2; }
   pre > code {
     border: 0;
     padding-right: 0;
@@ -345,7 +345,8 @@ pre {
         font-size: 18px;
         margin-left: 10px; } }
   .post-content p {
-    margin-left: calc(30px * 2); }
+    margin-left: calc(30px * 2);
+    font-family: serif; }
     @media screen and (max-width: 800px) {
       .post-content p {
         margin-left: 15px; } }
@@ -461,7 +462,8 @@ pre {
 */
 pre {
   background-color: #272822;
-  color: #DDD; }
+  color: #DDD;
+  font-family: sans-serif; }
 
 .highlight code {
   background-color: #272822;
@@ -718,7 +720,8 @@ pre {
 /* Generic.Inserted & Diff Inserted */
 body {
   background-image: url("/home/bgi2.png");
-  background-repeat: repeat; }
+  background-repeat: repeat;
+  font-family: sans-serif; }
 
 .page-content .wrapper {
   background-color: rgba(255, 255, 255, 0.5);
