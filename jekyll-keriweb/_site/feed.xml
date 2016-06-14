@@ -5,9 +5,138 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jun 2016 17:15:21 +0900</pubDate>
-    <lastBuildDate>Thu, 02 Jun 2016 17:15:21 +0900</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 14:26:34 +0900</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 14:26:34 +0900</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>おすすめ PDF Viewer</title>
+        <description>&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;世の中にはたくさんのPDF Viewerがあり一長一短である．AdobeのPDF Readerが有名であるが，もっと使いやすいものを見つけたのでそれを紹介する．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;求める機能&quot;&gt;求める機能&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;軽いこと&quot;&gt;軽いこと&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Adobeは重い．ハイパーリンクのあるPDFを開くとタイムラグが発生し，止まる．もっとサクサク動くものがいい．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;同じpdfを何個も開けること&quot;&gt;同じPDFを何個も開けること&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PDF内で参照したい時など，同じPDFをいくつも開けると便利．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;pdfが変更されたら自動で再描画されること&quot;&gt;PDFが変更されたら自動で再描画されること&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;TexなどでPDFを生成しながら作業をするとき，PDFが自動で更新されないといちいち開きなおさなければならない．これは面倒である．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;sumatrapdf&quot;&gt;SumatraPDF&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;ダウンロード&quot;&gt;ダウンロード&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sumatrapdfreader.org/download-free-pdf-viewer-ja.html&quot;&gt;ここ&lt;/a&gt;からダウンロード．インストール不要のポータブルzip版もあるのでかなり便利！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;求める機能は網羅&quot;&gt;求める機能は網羅&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;上記で求めた機能は網羅しているだけでなく，他にも便利な機能がいっぱい！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;キーボードショートカット&quot;&gt;キーボードショートカット&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;スクロールやページ送りなどがキーボードを押すだけでできる．&lt;br&gt;
+&lt;a href=&quot;http://www.sumatrapdfreader.org/manual-ja.html&quot;&gt;ここ&lt;/a&gt;にショートカット一覧が書いてある．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;おまけ&quot;&gt;おまけ&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;僕の使っている便利なPDFエディタの紹介をします．&lt;br&gt;
+とてもわかりやすく，使いやすいです．&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;cube-pdf&quot;&gt;Cube PDF&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cube-soft.jp/cubepdf/&quot;&gt;ここ&lt;/a&gt;からダウンロード．&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;機能&quot;&gt;機能&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ページの入れ替え&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ページの抜き出し&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ページの削除&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ページの回転&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PDF情報の閲覧，編集&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PDFにセキュリティを追加&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;など&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PDFはよく使うので，これらでより便利に使いましょう！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Tue, 14 Jun 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-06-14-pdf/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-14-pdf/</guid>
+        
+        <category>PC</category>
+        
+        <category>Windows</category>
+        
+        <category>pdf</category>
+        
+        <category>tex</category>
+        
+        <category>viewer</category>
+        
+        <category>editor</category>
+        
+        
+        <category>explanation</category>
+        
+      </item>
     
       <item>
         <title>Jekyll &amp; Asciidocでシンタックスハイライト</title>
@@ -761,57 +890,6 @@ $ sudo chmod 666 /dev/ttyAMA0
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-power/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
-        
-        <category>電子工作</category>
-        
-        <category>自作</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>昔作った電子工作たち～その他～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;Head Light (1).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (2).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (3).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (4).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (5).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (6).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (7).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;
-&lt;img src=&quot;Head Light (8).jpg&quot; alt=&quot;ヘッドライト&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;サッカーの選手交代ボード&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;Player Changing Board (1).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;
-&lt;img src=&quot;Player Changing Board (2).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;
-&lt;img src=&quot;Player Changing Board (3).jpg&quot; alt=&quot;選手交代ボード&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;ちょっとオシャレなスタンド&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;Stand (1).jpg&quot; alt=&quot;スタンド&quot; /&gt;
-&lt;img src=&quot;Stand (2).jpg&quot; alt=&quot;スタンド&quot; /&gt;
-&lt;img src=&quot;Stand (3).jpg&quot; alt=&quot;スタンド&quot; /&gt;
-&lt;img src=&quot;Stand (4).jpg&quot; alt=&quot;スタンド&quot; /&gt;
-&lt;img src=&quot;Stand (5).jpg&quot; alt=&quot;スタンド&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;アップダウンカウンタ&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;Up Down Counter (1).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
-&lt;img src=&quot;Up Down Counter (2).jpg&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;
-&lt;img src=&quot;Up Down Counter (3).png&quot; alt=&quot;アップダウンカウンタ&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
         
         <category>電子工作</category>
         

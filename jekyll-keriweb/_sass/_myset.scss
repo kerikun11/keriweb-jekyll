@@ -2,6 +2,7 @@ body {
 	background-image:url('/home/bgi2.png');
 	background-repeat:repeat;
 	//font-family:'VL Pゴシック','VL PGothic',sans-serif;
+	//font-family:sans-serif;
 	font-family:sans-serif;
 }
 .page-content {
@@ -119,4 +120,10 @@ ul.post-list{
 	@include media-query($on-laptop) {
 		font-size:28px;
 	}
+}
+.olist p{
+	margin-left:0;
+}
+.ulist p{
+	margin-left:0;
 }

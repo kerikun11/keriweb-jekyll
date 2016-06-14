@@ -345,8 +345,7 @@ pre {
         font-size: 18px;
         margin-left: 10px; } }
   .post-content p {
-    margin-left: calc(30px * 2);
-    font-family: serif; }
+    margin-left: calc(30px * 2); }
     @media screen and (max-width: 800px) {
       .post-content p {
         margin-left: 15px; } }
@@ -818,3 +817,9 @@ ul.post-list {
 @media screen and (max-width: 800px) {
   .post-title {
     font-size: 28px; } }
+
+.olist p {
+  margin-left: 0; }
+
+.ulist p {
+  margin-left: 0; }
