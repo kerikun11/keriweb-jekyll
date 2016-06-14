@@ -3,6 +3,7 @@ layout: "post"
 title: "おすすめ PDF Viewer"
 category: "explanation"
 tag: ["PC","Windows","pdf","tex","viewer","editor"]
+icon: "icon.jpg"
 ---
 
 == 概要
@@ -19,6 +20,10 @@ PDF内で参照したい時など，同じPDFをいくつも開けると便利�
 TexなどでPDFを生成しながら作業をするとき，PDFが自動で更新されないといちいち開きなおさなければならない．これは面倒である．
 
 == SumatraPDF
+
+[.img-small]
+image:icon.jpg[SumatraPDF]
+
 === ダウンロード
 link:http://www.sumatrapdfreader.org/download-free-pdf-viewer-ja.html[ここ]からダウンロード．インストール不要のポータブルzip版もあるのでかなり便利！
 
@@ -34,6 +39,8 @@ link:http://www.sumatrapdfreader.org/manual-ja.html[ここ]にショートカッ
 とてもわかりやすく，使いやすいです．
 
 === Cube PDF
+[.img-medium]
+image:cubepdf.png[Cube PDF]
 link:http://www.cube-soft.jp/cubepdf/[ここ]からダウンロード．
 
 === 機能
