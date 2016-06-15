@@ -6,26 +6,28 @@ tag: ["iPhone","iPhone 6 Plus","Apple","分解","修理"]
 icon: "icon.jpg"
 ---
 
-== 割れた iPhone 6 Plus
+== 概要
+=== 割れた iPhone 6 Plus
 他のことに夢中になっているときに机から落として割ってしまいました．ショックです...
 [.img-medium]
-image:iphone (1).jpg[割れたiPhone]
+image:broken-iphone.jpg[割れたiPhone]
 
-[.img-medium]
-image:iphone (2).jpg[割れたiPhone]
+=== 自力で液晶パネルを交換する
+割れた液晶を使用して手を怪我したり，Appleに高いお金を支払って修理するのは嫌なので，ここは技術者として自力で交換してみたいと思います．
 
 == Amazonで必要なものを注文
 === フロントパネル
 iPhone 6 Plusなので1枚\12,880でした．iPhone5sやiPhone6ならもっと安いです．
 純正品ではありませんが，とてもきれいです．
 [.img-medium]
-image:iphone (3).jpg[箱]
+image:box.jpg[箱]
+
+届いた液晶には保護フィルムが貼ってありました．
+[.img-medium]
+image:new-lcd1.jpg[届いた液晶パネル]
 
 [.img-medium]
-image:iphone (4).jpg[届いた液晶パネル]
-
-[.img-medium]
-image:iphone (5).jpg[裏側]
+image:new-lcd2.jpg[裏側]
 
 === 道具
 これもAmazonで300円ほどで購入できます．今回，液晶パネルに道具がついてきました．※ピンセットは自前です．
@@ -37,70 +39,72 @@ image:tools.jpg[道具]
 iPhoneの下側にある星形ネジを外し，吸盤で画面を引っ張りながら分解していきます．
 
 [.img-medium]
-image:iphone (6).jpg[吸盤で引っ張る]
+image:repair1.jpg[吸盤で引っ張る]
 
 ちょっと隙間ができたら工具を差し込む．
 [.img-medium]
-image:iphone (7).jpg[工具を差し込む]
+image:repair2.jpg[工具を差し込む]
 
 配線が切れないように慎重に開ける．
 [.img-medium]
-image:iphone (8).jpg[ゆっくり開く]
+image:repair3.jpg[ゆっくり開く]
 開きました．
 [.img-medium]
-image:iphone (9).jpg[開いた]
+image:repair4.jpg[開いた]
 
 === コネクタを外す
 接続はすべてコネクタになっているので外すのは簡単です．
 [.img-medium]
-image:iphone (10).jpg[コネクタ]
+image:connector.jpg[コネクタ]
 
 === 液晶が外れました
 [.img-medium]
-image:iphone (11).jpg[背面]
+image:back.jpg[背面]
 
 大きな電池が載ってます．
 [.img-medium]
-image:iphone (12).jpg[内部]
+image:inside.jpg[内部]
 
 画面，割れてます．
 [.img-medium]
-image:iphone (13).jpg[割れた画面]
+image:broken-lcd.jpg[割れた画面]
 
 === 液晶パネルから種々の部品を外す
 [.img-medium]
-image:iphone (14).jpg[背面の金属板を外す]
+image:back-metal.jpg[背面の金属板を外す]
 
 ネジがわからなくならないようにちゃんと書いておきましょう．
 [.img-medium]
-image:iphone (15).jpg[ネジの配置図]
+image:map.jpg[ネジの配置図]
 
 インカメなどを外します．
 [.img-medium]
-image:iphone (16).jpg[インカメ]
+image:inside-camera.jpg[インカメ]
 
 ホームボタンです．
 [.img-medium]
-image:iphone (17).jpg[ホームボタン]
+image:home-button.jpg[ホームボタン]
 
 === 新しい液晶パネルに外した部品を移植
 [.img-medium]
-image:iphone (18).jpg[部品を移植]
+image:back2.jpg[部品を移植]
 
 [.img-medium]
-image:iphone (19).jpg[新しい液晶]
+image:new-lcd3.jpg[新しい液晶]
 
 === 新しい液晶をiPhone本体に取り付ける
+あとは取り外したときと逆の手順で取り付けるだけです．
 [.img-medium]
-image:iphone (20).jpg[取り付け完了]
+image:complete.jpg[取り付け完了]
 
+作業時間は15分ほどでした．
 [.img-medium]
-image:iphone (21).jpg[比較]
+image:compare.jpg[比較]
 
 == 完成！
 完全復活しました！
-13,000円ほどかかり，決して安くないですがAppleの修理よりは安いでしょう．
-iPhoneは落とさないようにしましょう．
+13,000円ほどかかり，決して安くないですがAppleの修理よりは安いと思います．
+一番大切なことはiPhoneは落とさないことです．以後気を付けましょう．
 [.img-medium]
-image:iphone (22).jpg[できあがり]
+image:lock-screen.jpg[できあがり]
 
