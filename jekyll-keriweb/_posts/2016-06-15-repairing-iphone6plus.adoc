@@ -37,70 +37,70 @@ image:tools.jpg[道具]
 iPhoneの下側にある星形ネジを外し，吸盤で画面を引っ張りながら分解していきます．
 
 [.img-medium]
-image:iphone (6).jpg[]
+image:iphone (6).jpg[吸盤で引っ張る]
 
 ちょっと隙間ができたら工具を差し込む．
 [.img-medium]
-image:iphone (7).jpg[]
+image:iphone (7).jpg[工具を差し込む]
 
 配線が切れないように慎重に開ける．
 [.img-medium]
-image:iphone (8).jpg[]
+image:iphone (8).jpg[ゆっくり開く]
 開きました．
 [.img-medium]
-image:iphone (9).jpg[]
+image:iphone (9).jpg[開いた]
 
 === コネクタを外す
 接続はすべてコネクタになっているので外すのは簡単です．
 [.img-medium]
-image:iphone (10).jpg[]
+image:iphone (10).jpg[コネクタ]
 
 === 液晶が外れました
 [.img-medium]
-image:iphone (11).jpg[]
+image:iphone (11).jpg[背面]
 
 大きな電池が載ってます．
 [.img-medium]
-image:iphone (12).jpg[]
+image:iphone (12).jpg[内部]
 
 画面，割れてます．
 [.img-medium]
-image:iphone (13).jpg[]
+image:iphone (13).jpg[割れた画面]
 
 === 液晶パネルから種々の部品を外す
 [.img-medium]
-image:iphone (14).jpg[]
+image:iphone (14).jpg[背面の金属板を外す]
 
 ネジがわからなくならないようにちゃんと書いておきましょう．
 [.img-medium]
-image:iphone (15).jpg[]
+image:iphone (15).jpg[ネジの配置図]
 
 インカメなどを外します．
 [.img-medium]
-image:iphone (16).jpg[]
+image:iphone (16).jpg[インカメ]
 
 ホームボタンです．
 [.img-medium]
-image:iphone (17).jpg[]
+image:iphone (17).jpg[ホームボタン]
 
 === 新しい液晶パネルに外した部品を移植
 [.img-medium]
-image:iphone (18).jpg[]
+image:iphone (18).jpg[部品を移植]
 
 [.img-medium]
-image:iphone (19).jpg[]
+image:iphone (19).jpg[新しい液晶]
 
 === 新しい液晶をiPhone本体に取り付ける
 [.img-medium]
-image:iphone (20).jpg[]
+image:iphone (20).jpg[取り付け完了]
 
 [.img-medium]
-image:iphone (21).jpg[]
+image:iphone (21).jpg[比較]
 
 == 完成！
 完全復活しました！
 13,000円ほどかかり，決して安くないですがAppleの修理よりは安いでしょう．
 iPhoneは落とさないようにしましょう．
 [.img-medium]
-image:iphone (22).jpg[]
+image:iphone (22).jpg[できあがり]
 
