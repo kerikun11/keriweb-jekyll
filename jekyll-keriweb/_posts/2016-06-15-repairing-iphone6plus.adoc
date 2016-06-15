@@ -9,23 +9,23 @@ icon: "icon.jpg"
 == 割れた iPhone 6 Plus
 他のことに夢中になっているときに机から落として割ってしまいました．ショックです...
 [.img-medium]
-image:iPhone (1).jpg[割れたiPhone]
+image:iphone (1).jpg[割れたiPhone]
 
 [.img-medium]
-image:iPhone (2).jpg[割れたiPhone]
+image:iphone (2).jpg[割れたiPhone]
 
 == Amazonで必要なものを注文
 === フロントパネル
 iPhone 6 Plusなので1枚\12,880でした．iPhone5sやiPhone6ならもっと安いです．
 純正品ではありませんが，とてもきれいです．
 [.img-medium]
-image:iPhone (3).jpg[箱]
+image:iphone (3).jpg[箱]
 
 [.img-medium]
-image:iPhone (4).jpg[届いた液晶パネル]
+image:iphone (4).jpg[届いた液晶パネル]
 
 [.img-medium]
-image:iPhone (5).jpg[裏側]
+image:iphone (5).jpg[裏側]
 
 === 道具
 これもAmazonで300円ほどで購入できます．今回，液晶パネルに道具がついてきました．※ピンセットは自前です．
@@ -37,70 +37,70 @@ image:tools.jpg[道具]
 iPhoneの下側にある星形ネジを外し，吸盤で画面を引っ張りながら分解していきます．
 
 [.img-medium]
-image:iPhone (6).jpg[]
+image:iphone (6).jpg[]
 
 ちょっと隙間ができたら工具を差し込む．
 [.img-medium]
-image:iPhone (7).jpg[]
+image:iphone (7).jpg[]
 
 配線が切れないように慎重に開ける．
 [.img-medium]
-image:iPhone (8).jpg[]
+image:iphone (8).jpg[]
 開きました．
 [.img-medium]
-image:iPhone (9).jpg[]
+image:iphone (9).jpg[]
 
 === コネクタを外す
 接続はすべてコネクタになっているので外すのは簡単です．
 [.img-medium]
-image:iPhone (10).jpg[]
+image:iphone (10).jpg[]
 
 === 液晶が外れました
 [.img-medium]
-image:iPhone (11).jpg[]
+image:iphone (11).jpg[]
 
 大きな電池が載ってます．
 [.img-medium]
-image:iPhone (12).jpg[]
+image:iphone (12).jpg[]
 
 画面，割れてます．
 [.img-medium]
-image:iPhone (13).jpg[]
+image:iphone (13).jpg[]
 
 === 液晶パネルから種々の部品を外す
 [.img-medium]
-image:iPhone (14).jpg[]
+image:iphone (14).jpg[]
 
 ネジがわからなくならないようにちゃんと書いておきましょう．
 [.img-medium]
-image:iPhone (15).jpg[]
+image:iphone (15).jpg[]
 
 インカメなどを外します．
 [.img-medium]
-image:iPhone (16).jpg[]
+image:iphone (16).jpg[]
 
 ホームボタンです．
 [.img-medium]
-image:iPhone (17).jpg[]
+image:iphone (17).jpg[]
 
 === 新しい液晶パネルに外した部品を移植
 [.img-medium]
-image:iPhone (18).jpg[]
+image:iphone (18).jpg[]
 
 [.img-medium]
-image:iPhone (19).jpg[]
+image:iphone (19).jpg[]
 
 === 新しい液晶をiPhone本体に取り付ける
 [.img-medium]
-image:iPhone (20).jpg[]
+image:iphone (20).jpg[]
 
 [.img-medium]
-image:iPhone (21).jpg[]
+image:iphone (21).jpg[]
 
 == 完成！
 完全復活しました！
 13,000円ほどかかり，決して安くないですがAppleの修理よりは安いでしょう．
 iPhoneは落とさないようにしましょう．
 [.img-medium]
-image:iPhone (22).jpg[]
+image:iphone (22).jpg[]
 
