@@ -47,7 +47,7 @@ ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現
 
 赤外線学習リモコン「IR-Station」についての他の記事:
 
-  * [2015年13月30日 ESP8266で赤外線学習リモコン]({% post_url 2015-12-30-ir-station %})
+  * [2015年12月30日 ESP8266で赤外線学習リモコン]({% post_url 2015-12-30-ir-station %})
   * [2016年03月11日 IR-Station Reference]({% post_url 2016-03-11-ir-station-reference %})
   * [2016年07月06日 赤外線学習リモコンの基板が届きました]({% post_url 2016-07-06-ir-station-board %})
 
