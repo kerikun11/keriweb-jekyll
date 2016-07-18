@@ -17,6 +17,7 @@ icon: "icon.png"
 僕の家には[自作の100W級ソーラーシステム]({% post_url 2014-09-14-solar-system %})があります。このソーラーシステムの発電量を定期的にツイートすることにしました。
 
 ![Solar](solar.jpg){: .img-medium}
+<!--more-->
 
 ## 見た目
 

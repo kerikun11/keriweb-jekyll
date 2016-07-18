@@ -27,6 +27,7 @@ icon: "icon.png"
 [ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)](http://akizukidenshi.com/catalog/g/gM-09607/)
 
 ![ESP-WROOM-02](esp-wroom-02.jpg){: .img-small}
+<!--more-->
 
 ## ギャラリー
 

@@ -18,6 +18,7 @@ You can control your home appliances with your smartphone or laptop.
   * IR LED
   * Indicator LED
 
+<!--more-->
 
 ## How to Use
 

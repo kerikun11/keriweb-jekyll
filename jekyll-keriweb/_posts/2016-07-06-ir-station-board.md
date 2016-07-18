@@ -11,6 +11,7 @@ icon: "icon.jpg"
 ### 思ったより早かった
 
 基板加工サービス[Elecrow](http://www.elecrow.com/)に発注した基板が届きました！発送方法は一番安い`Registered Airmail`だったのですが，なんと発注から10日で届きました！
+<!--more-->
 
 ### 発注内容
 

@@ -11,6 +11,7 @@ icon: "img.jpg"
 [100W級ソーラーシステム]({% post_url 2014-09-14-solar-system %})の発電量を[ThingSpeak.com](https://thingspeak.com/)というサイトに送ってグラフ化しました。
 
 データの送信には、自作の[中継型電力計]({% post_url 2016-03-23-relay-sensor %})を使用しています。
+<!--more-->
 
 ## リアルタイム発電量モニター
 

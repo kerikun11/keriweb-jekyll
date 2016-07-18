@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jul 2016 12:12:31 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Jul 2016 12:12:31 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Jul 2016 22:07:10 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Jul 2016 22:07:10 +0900</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -16,57 +16,6 @@
 &lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
 
 &lt;p&gt;今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;祝・完成&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;/posts/2016-07-06-ir-station-board/&quot;&gt;発注したプリント基板が基板が届き&lt;/a&gt;，とうとう赤外線学習リモコンが完成しました．&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;本体&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;body.jpg&quot; alt=&quot;本体&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;取り付け簡単！&lt;/h3&gt;
-
-&lt;p&gt;壁に取り付けた様子です．電源は，&lt;code class=&quot;highlighter-rouge&quot;&gt;USB-micro-B&lt;/code&gt;コネクタから供給します．
-&lt;img src=&quot;attach.jpg&quot; alt=&quot;取り付け&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;操作画面&lt;/h3&gt;
-
-&lt;p&gt;複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
-&lt;img src=&quot;display.png&quot; alt=&quot;操作画面&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;本体内部&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-6&quot;&gt;ふたを開けると&lt;/h3&gt;
-
-&lt;p&gt;ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
-&lt;img src=&quot;inside.jpg&quot; alt=&quot;ふたを開けたところ&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-7&quot;&gt;基板&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;top.jpg&quot; alt=&quot;基板の表&quot; /&gt;
-&lt;img src=&quot;back.jpg&quot; alt=&quot;基板の裏&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-8&quot;&gt;作り方&lt;/h2&gt;
-
-&lt;p&gt;すべてのデータをGithubで公開しています．&lt;br /&gt;
-作り方は&lt;a href=&quot;https://github.com/kerikun11/IR-station&quot;&gt;ここ&lt;/a&gt;を参考にしてください．&lt;/p&gt;
-
-&lt;h2 id=&quot;section-9&quot;&gt;最後に&lt;/h2&gt;
-
-&lt;p&gt;長い間研究をしてきた赤外線学習リモコンがやっと形になりました．とても嬉しいです．&lt;/p&gt;
-
-&lt;p&gt;この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)&lt;/p&gt;
-
-&lt;h4 id=&quot;section-10&quot;&gt;リンク&lt;/h4&gt;
-
-&lt;p&gt;赤外線学習リモコン「IR-Station」についての他の記事:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/posts/2015-12-30-ir-station/&quot;&gt;2015年12月30日 ESP8266で赤外線学習リモコン&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/posts/2016-03-11-ir-station-reference/&quot;&gt;2016年03月11日 IR-Station Reference&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/posts/2016-07-06-ir-station-board/&quot;&gt;2016年07月06日 赤外線学習リモコンの基板が届きました&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 </description>
         <pubDate>Mon, 18 Jul 2016 00:00:00 +0900</pubDate>
@@ -99,39 +48,13 @@
       </item>
     
       <item>
-        <title>メダカか増えました！</title>
+        <title>メダカが増えました！</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;卵がいっぱい！！ 7/5&lt;/h2&gt;
 &lt;p&gt;暖かくなってきたこの時期，ペットのメダカにたくさんの卵ができました．すでに卵の中から目が透けていて今にも孵化しそうです！&lt;/p&gt;
 
 &lt;p&gt;毎日水替えをしないとカビが生えてしまうので，目が離せません！&lt;/p&gt;
 
 &lt;p&gt;ちなみに，カビ防止のために，卵の段階では水道水の方がいいらしいです．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;spawns.jpg&quot; alt=&quot;卵&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;孵化しました！ 7/13&lt;/h2&gt;
-
-&lt;p&gt;約1週間後，無事孵化しました．数は30匹程度でしょうか．このうち何匹生き残ることやら…&lt;/p&gt;
-
-&lt;p&gt;毎日水替えをするのは大変です．孵化した後は，水道水はNGで，1日ほど放置してカルキを抜いた水を与えます．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;fish (1).jpg&quot; alt=&quot;稚魚&quot; /&gt;
-&lt;img src=&quot;fish (2).jpg&quot; alt=&quot;稚魚&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;追記 少し大きくなりました 7/18&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;fish (3).jpg&quot; alt=&quot;稚魚&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;水槽が狭くなる…&lt;/h2&gt;
-
-&lt;p&gt;すでに親の水槽には15匹ほどの親メダカがいるので，稚魚たちが大きくなっても入るスペースがない…&lt;/p&gt;
-
-&lt;p&gt;もう少し大きめの水槽を買う計画を立てねば！&lt;/p&gt;
-
-&lt;p&gt;電子工作の日々だけど，メダカがいるだけでなんか心が休まりますね～&lt;br /&gt;
-次はもっと大きくなった稚魚をお見せします．では，また！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;parents.jpg&quot; alt=&quot;親メダカ&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 13 Jul 2016 00:00:00 +0900</pubDate>
@@ -161,140 +84,6 @@
 
 &lt;p&gt;基板加工サービス&lt;a href=&quot;http://www.elecrow.com/&quot;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code class=&quot;highlighter-rouge&quot;&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;発注内容&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;項目&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;詳細&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;金額&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;10pcs&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2 layer PCB&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;$9.90&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Layer&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;PCB Thickness&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0.6mm&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Copper Weight&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;1oz 35um&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;PCB Size&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;5cm Max * 5cm Max&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;PCB Color&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;White&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Suface Finish&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Hasl (lead free)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;PCB Stencil&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;NO Stencil&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Lead time&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Shipped in 4 to 7 days&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Panelizing&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Single PCB with milling&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;File&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;51049. IR-Station-01.zip&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Registered Airmail&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Weight: 110 g. 7 - 25 Days&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;$4.59&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Total&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;$14.49(￥1546)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;基板発注過程&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;日付&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;経過日数&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;出来事&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Webで基板発注&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CADデータのチェック&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;加工開始&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/29&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;発送&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;2016/07/05&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;10&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;到着&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;写真&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;recv.jpg&quot; alt=&quot;到着&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;届いた基板&lt;/h2&gt;
-
-&lt;p&gt;今回は，一般的な基板の中で一番薄い，0.6mm厚基板にしました．小型のケースに収めるためです．
-&lt;img src=&quot;pack.jpg&quot; alt=&quot;パックされている&quot; /&gt;
-&lt;img src=&quot;board.jpg&quot; alt=&quot;基板&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;wktk&quot;&gt;wktk&lt;/h2&gt;
-
-&lt;p&gt;基板が届くのを今か今かと待っていたので，届いて興奮しちゃいました．&lt;br /&gt;
-さあ，準備は整いました．あとは作るだけです！&lt;/p&gt;
-
-&lt;p&gt;追記2016/07/18: 完成の記事を書きました．→&lt;a href=&quot;/posts/2016-07-18-ir-station/&quot;&gt;赤外線学習リモコン完成&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Jul 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-07-06-ir-station-board/</link>
@@ -344,157 +133,9 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;割れた液晶を使用して手を怪我したり，Appleに高いお金を支払って修理するのは嫌なので，ここは技術者として自力で交換してみたいと思います．&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;amazonで必要なものを注文&quot;&gt;Amazonで必要なものを注文&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;フロントパネル&quot;&gt;フロントパネル&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;iPhone 6 Plusなので1枚\12,880でした．iPhone5sやiPhone6ならもっと安いです．&lt;br&gt;
-純正品ではありませんが，とてもきれいです．&lt;/p&gt;
+&lt;p&gt;+&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;box.jpg&quot; alt=&quot;箱&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;届いた液晶には保護フィルムが貼ってありました．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;new-lcd1.jpg&quot; alt=&quot;届いた液晶パネル&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;new-lcd2.jpg&quot; alt=&quot;裏側&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;道具&quot;&gt;道具&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;これもAmazonで300円ほどで購入できます．今回，液晶パネルに道具がついてきました．※ピンセットは自前です．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;tools.jpg&quot; alt=&quot;道具&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;分解過程&quot;&gt;分解過程&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;分解開始&quot;&gt;分解開始&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;iPhoneの下側にある星形ネジを外し，吸盤で画面を引っ張りながら分解していきます．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;repair1.jpg&quot; alt=&quot;吸盤で引っ張る&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;ちょっと隙間ができたら工具を差し込む．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;repair2.jpg&quot; alt=&quot;工具を差し込む&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;配線が切れないように慎重に開ける．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;repair3.jpg&quot; alt=&quot;ゆっくり開く&quot;&gt;&lt;/span&gt;&lt;br&gt;
-開きました．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;repair4.jpg&quot; alt=&quot;開いた&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;コネクタを外す&quot;&gt;コネクタを外す&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;接続はすべてコネクタになっているので外すのは簡単です．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;connector.jpg&quot; alt=&quot;コネクタ&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;液晶が外れました&quot;&gt;液晶が外れました&lt;/h3&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;back.jpg&quot; alt=&quot;背面&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;大きな電池が載ってます．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;inside.jpg&quot; alt=&quot;内部&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;画面，割れてます．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;broken-lcd.jpg&quot; alt=&quot;割れた画面&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;液晶パネルから種々の部品を外す&quot;&gt;液晶パネルから種々の部品を外す&lt;/h3&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;back-metal.jpg&quot; alt=&quot;背面の金属板を外す&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;ネジがわからなくならないようにちゃんと書いておきましょう．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;map.jpg&quot; alt=&quot;ネジの配置図&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;インカメなどを外します．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;inside-camera.jpg&quot; alt=&quot;インカメ&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;ホームボタンです．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;home-button.jpg&quot; alt=&quot;ホームボタン&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;新しい液晶パネルに外した部品を移植&quot;&gt;新しい液晶パネルに外した部品を移植&lt;/h3&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;back2.jpg&quot; alt=&quot;部品を移植&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;new-lcd3.jpg&quot; alt=&quot;新しい液晶&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;新しい液晶をiphone本体に取り付ける&quot;&gt;新しい液晶をiPhone本体に取り付ける&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;あとは取り外したときと逆の手順で取り付けるだけです．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;complete.jpg&quot; alt=&quot;取り付け完了&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;作業時間は15分ほどでした．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;compare.jpg&quot; alt=&quot;比較&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;完成&quot;&gt;完成！&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;完全復活しました！&lt;br&gt;
-13,000円ほどかかり，決して安くないですがAppleの修理よりは安いと思います．&lt;br&gt;
-一番大切なことはiPhoneは落とさないことです．以後気を付けましょう．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;lock-screen.jpg&quot; alt=&quot;できあがり&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -525,107 +166,8 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;世の中にはたくさんのPDF Viewerがあり一長一短である．AdobeのPDF Readerが有名であるが，もっと使いやすいものを見つけたのでそれを紹介する．&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;求める機能&quot;&gt;求める機能&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;軽いこと&quot;&gt;軽いこと&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Adobeは重い．ハイパーリンクのあるPDFを開くとタイムラグが発生し，止まる．もっとサクサク動くものがいい．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;同じpdfを何個も開けること&quot;&gt;同じPDFを何個も開けること&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;PDF内で参照したい時など，同じPDFをいくつも開けると便利．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;pdfが変更されたら自動で再描画されること&quot;&gt;PDFが変更されたら自動で再描画されること&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;TexなどでPDFを生成しながら作業をするとき，PDFが自動で更新されないといちいち開きなおさなければならない．これは面倒である．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;sumatrapdf&quot;&gt;SumatraPDF&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph img-small&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;icon.jpg&quot; alt=&quot;SumatraPDF&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;ダウンロード&quot;&gt;ダウンロード&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.sumatrapdfreader.org/download-free-pdf-viewer-ja.html&quot;&gt;ここ&lt;/a&gt;からダウンロード．インストール不要のポータブルzip版もあるのでかなり便利！&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;求める機能は網羅&quot;&gt;求める機能は網羅&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;上記で求めた機能は網羅しているだけでなく，他にも便利な機能がいっぱい！&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;キーボードショートカット&quot;&gt;キーボードショートカット&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;スクロールやページ送りなどがキーボードを押すだけでできる．&lt;br&gt;
-&lt;a href=&quot;http://www.sumatrapdfreader.org/manual-ja.html&quot;&gt;ここ&lt;/a&gt;にショートカット一覧が書いてある．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;おまけ&quot;&gt;おまけ&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;僕の使っている便利なPDFエディタの紹介をします．&lt;br&gt;
-とてもわかりやすく，使いやすいです．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;cube-pdf&quot;&gt;Cube PDF&lt;/h3&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;cubepdf.png&quot; alt=&quot;Cube PDF&quot;&gt;&lt;/span&gt;&lt;br&gt;
-&lt;a href=&quot;http://www.cube-soft.jp/cubepdf/&quot;&gt;ここ&lt;/a&gt;からダウンロード．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;機能&quot;&gt;機能&lt;/h3&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ページの入れ替え&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ページの抜き出し&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ページの削除&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ページの回転&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PDF情報の閲覧，編集&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PDFにセキュリティを追加&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;など&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;PDFはよく使うので，これらでより便利に使いましょう！&lt;/p&gt;
+&lt;p&gt;+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -659,56 +201,8 @@
 &lt;p&gt;Jekyllのデフォルトのテーマはダサいので変更する．&lt;br&gt;
 &lt;a href=&quot;https://github.com/jwarby/jekyll-pygments-themes&quot; class=&quot;bare&quot;&gt;https://github.com/jwarby/jekyll-pygments-themes&lt;/a&gt;から適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&amp;lt;your-jekyll-site&amp;gt;/_sass/_syntax-highlighting.sass&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;色が変な場合は以下のようにpreタグとcodeタグに適当な色を設定すると直る．&lt;/p&gt;
-&lt;/div&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#DDD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#DDD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;asciidocでの書き方&quot;&gt;Asciidocでの書き方&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;JekyllはAsciidocに対応しているが，Asciidocのソースコードの書き方ではハイライトされない．それの解決策を紹介する．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;やり方&quot;&gt;やり方&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Jekyll &amp;amp; Asciidocでシンタックスハイライトをつけるには，&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;++++
-{% highlight c %}
-#include &amp;lt;stdio.h&amp;gt;
-int main(int argc, char *argv[]){
-	printf(&quot;Hello World\n&quot;);
-	return 0;
-}
-{% endhighlight %}
-++++&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;という風に記述すればよい．&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;表示例&quot;&gt;表示例&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;上記の例は以下のように表示される．&lt;/p&gt;
-&lt;/div&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]){&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -742,83 +236,8 @@ int main(int argc, char *argv[]){
 &lt;div class=&quot;paragraph img-medium&quot;&gt;
 &lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;fft-lcd.jpg&quot; alt=&quot;FFTしてLCDで表示&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;スペクトルグラフ&quot;&gt;スペクトルグラフ&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;横軸は周波数です．&lt;br&gt;
-縦軸はdBで，データの最大値を0dBとした相対値で表示しています．&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-medium&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;spectrum.jpg&quot; alt=&quot;スペクトルグラフ&quot; width=&quot;link&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;動画&quot;&gt;動画&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;実際に口笛を吹いてみました．動画の音声をオンにして聞いてみてください．&lt;br&gt;
-※動画サイズは，2.22MBです&lt;/p&gt;
-&lt;/div&gt;
-&lt;video src=&quot;fft-lcd.mp4&quot; width=&quot;100%&quot; controls loop preload=&quot;metadata&quot;&gt;&lt;/video&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;使用部品&quot;&gt;使用部品&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;nucleo-stm32f401re&quot;&gt;Nucleo STM32F401RE&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;かなりスペックの高いマイコンボードです．&lt;br&gt;
-秋月で1,500円です．&lt;br&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-07723/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gM-07723/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-small&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;nucleo.jpg&quot; alt=&quot;Nucleo STM32F401RE&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;シャープモノクロtft液晶&quot;&gt;シャープモノクロTFT液晶&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;400x240ピクセルの高精細液晶ディスプレイです．&lt;br&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-04944/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gP-04944/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-small&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;lcd.jpg&quot; alt=&quot;TFT-LCD&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;マイクアンプキット&quot;&gt;マイクアンプキット&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;今回は手を抜いて，秋月のお手軽キットを使用しました．&lt;br&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-05757/&quot; class=&quot;bare&quot;&gt;http://akizukidenshi.com/catalog/g/gK-05757/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph img-small&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;mic.jpg&quot; alt=&quot;AE-MICAMP&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;ソースファイル&quot;&gt;ソースファイル&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;FFT_Sampling_zip_nucleo_f401re.zip&quot; class=&quot;bare&quot;&gt;FFT_Sampling_zip_nucleo_f401re.zip&lt;/a&gt;&lt;br&gt;
-一応載せておきますが，他人に見せるつもりで書いてなかったのでかなりひどいです．mbedで読み込めば実行できます．&lt;br&gt;
-&lt;br&gt;
-FFTのプログラムはmbedにあったライブラリを使わせていただきました．&lt;br&gt;
-LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;mbedを使ったら意外と簡単にできてしまいました．いい時代になったものですね～&lt;/p&gt;
+&lt;p&gt;+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -852,68 +271,6 @@ LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
 &lt;p&gt;東京工業大学ロボット技術研究会の平成27年度回路講習会の資料です．&lt;br /&gt;
 講習会は90分の講義を4回行いました．&lt;br /&gt;
 気持ちを込めて作りました．スライド数は200枚を超えています．どうぞご覧ください．&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;回路講習会の資料&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;CL1.pdf&quot;&gt;回路講習会第1回&lt;/a&gt;(5.18MB)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;CL2.pdf&quot;&gt;回路講習会第2回&lt;/a&gt;(4.57MB)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;CL3.pdf&quot;&gt;回路講習会第3回&lt;/a&gt;(3.74MB)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;CL4.pdf&quot;&gt;回路講習会第4回&lt;/a&gt;(5.53MB)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;内容&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;第1回&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;講義の概要&lt;/li&gt;
-  &lt;li&gt;電子工作を始めるには&lt;/li&gt;
-  &lt;li&gt;電子回路とは&lt;/li&gt;
-  &lt;li&gt;回路図の書き方&lt;/li&gt;
-  &lt;li&gt;電子部品の基礎知識&lt;/li&gt;
-  &lt;li&gt;宿題&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;第2回&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;宿題の解説&lt;/li&gt;
-  &lt;li&gt;はんだ付け&lt;/li&gt;
-  &lt;li&gt;テスター&lt;/li&gt;
-  &lt;li&gt;マイコン&lt;/li&gt;
-  &lt;li&gt;電源回路&lt;/li&gt;
-  &lt;li&gt;宿題&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;第3回&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;宿題の解説&lt;/li&gt;
-  &lt;li&gt;デジタル回路入門&lt;/li&gt;
-  &lt;li&gt;論理回路&lt;/li&gt;
-  &lt;li&gt;モーター&lt;/li&gt;
-  &lt;li&gt;PWM制御&lt;/li&gt;
-  &lt;li&gt;Hブリッジ回路&lt;/li&gt;
-  &lt;li&gt;モータードライバ&lt;/li&gt;
-  &lt;li&gt;シリアル通信&lt;/li&gt;
-  &lt;li&gt;宿題&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-6&quot;&gt;第4回&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;宿題の解説&lt;/li&gt;
-  &lt;li&gt;ADC&lt;/li&gt;
-  &lt;li&gt;角度検出&lt;/li&gt;
-  &lt;li&gt;回転数検出&lt;/li&gt;
-  &lt;li&gt;障害物，ライン検出&lt;/li&gt;
-  &lt;li&gt;フィルタ回路&lt;/li&gt;
-  &lt;li&gt;オペアンプ&lt;/li&gt;
-  &lt;li&gt;電流検出&lt;/li&gt;
-  &lt;li&gt;ライントレース&lt;/li&gt;
-  &lt;li&gt;終わりに&lt;/li&gt;
-&lt;/ul&gt;
 
 </description>
         <pubDate>Wed, 18 May 2016 00:00:00 +0900</pubDate>
@@ -961,145 +318,6 @@ LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
 
 &lt;p&gt;今回は自動配線ツールの使い方を説明する。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;自動配線と手動配線の使い分け&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;自動配線だとなんか心配？&lt;/h3&gt;
-
-&lt;p&gt;これを読んでいる方の中には、&lt;strong&gt;「自動配線なんて使い物にならない。自分でやるのが一番」&lt;/strong&gt;と思っている人もいるだろう。&lt;/p&gt;
-
-&lt;p&gt;しかし、それは違う。自動配線と手動配線を&lt;strong&gt;上手く使い分ける&lt;/strong&gt;ことで、最高の作品が出来上がるのだ。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;どう使い分けるのか&lt;/h3&gt;
-
-&lt;p&gt;電源周りやアナログ回路、高周波通信回路などはあらかじめ手動配線で行っておく。&lt;/p&gt;
-
-&lt;p&gt;あとは余ったデジタル配線を自動配線ツールに任せる。&lt;/p&gt;
-
-&lt;p&gt;これなら電気的特性を考慮しつつ、&lt;strong&gt;効率的&lt;/strong&gt;に作業をすることができる。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;配線のコスト(重み)という考え方&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-6&quot;&gt;片面基板でも大丈夫&lt;/h3&gt;
-
-&lt;p&gt;片面基板(切削基板など)を使うとき、自動配線ツールは一般に使いにくい。なぜならば、片面限定配線にすると、「配線不可能」になり、両面配線にすると切削基板では作成できないからだ。&lt;/p&gt;
-
-&lt;p&gt;しかし、僕の使っている自動配線ツールには、&lt;strong&gt;「コスト」&lt;/strong&gt;という考え方がある。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-7&quot;&gt;配線にコストをつける&lt;/h3&gt;
-
-&lt;p&gt;表面配線のコストを100にして、裏面配線のコストを1にすれば、自然とコストを下げるために裏面配線が優先され、切削基板にぴったりの基板が出来上がるのだ。&lt;/p&gt;
-
-&lt;p&gt;また、ビアにもコストがつけられて、できるだけビアを減らすということもできる。&lt;/p&gt;
-
-&lt;p&gt;とても&lt;strong&gt;柔軟&lt;/strong&gt;なのだ。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-8&quot;&gt;自動配線ツール使用の流れ&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;KiCadで回路図を書いて部品の割り当てを行う。(いつも通り)&lt;/li&gt;
-  &lt;li&gt;部品の配置を行う。(いつも通り)&lt;/li&gt;
-  &lt;li&gt;重要な配線を手動で行う。(いつも通り)&lt;/li&gt;
-  &lt;li&gt;KiCadから自動配線用にファイルを出力する。&lt;/li&gt;
-  &lt;li&gt;自動配線ツールでそのファイルを読み込み、自動配線を行う。&lt;/li&gt;
-  &lt;li&gt;配線結果をKiCadに取り込み完成！&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-9&quot;&gt;自動配線ツールのインストール&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-10&quot;&gt;必要なもの&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;自動配線ツール：Freerouting.exe&lt;/li&gt;
-  &lt;li&gt;NetBeans 8.1&lt;/li&gt;
-  &lt;li&gt;Jave Development Kit 8 (JDK8)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以下からダウンロードできます。&lt;br /&gt;
-&lt;a href=&quot;https://github.com/freerouting/freerouting/raw/master/binaries/FreeRouting.exe&quot;&gt;Freerouting&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;Netbeans with JDK8&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-11&quot;&gt;インストール&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ダウンロードしたNetBeans with JDK8をインストールします。&lt;/li&gt;
-  &lt;li&gt;Freerouting.exeはインストールする必要はありません。使うときに起動するだけです。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-12&quot;&gt;使い方&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-13&quot;&gt;まずは部品を配置する&lt;/h3&gt;
-
-&lt;p&gt;KiCadでいつも通りにできるだけ配線が楽になるように部品を配置していきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;parts.png&quot; alt=&quot;基板作成画面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-14&quot;&gt;重要な配線を先に行う&lt;/h3&gt;
-
-&lt;p&gt;電源回り、アナログ回路、高周波通信回路など、必要があれば手動で配線しておきます。&lt;/p&gt;
-
-&lt;p&gt;もちろん、全部自動配線に任せてもOK&lt;/p&gt;
-
-&lt;h3 id=&quot;dsn&quot;&gt;配線情報をdsnファイルに書き出す&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;黄色のアイコンの&lt;code class=&quot;highlighter-rouge&quot;&gt;外部ルータ「Freerouter」とのファイル交換&lt;/code&gt;をクリックする。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;現在のボードを”Specctra DSN”ファイルへエクスポート&lt;/code&gt;を押してdsnファイルを作成する。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;pcb.png&quot; alt=&quot;基板作成画面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;exp.png&quot; alt=&quot;エクスポート&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-15&quot;&gt;自動配線ツールの起動&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ダウンロードした&lt;code class=&quot;highlighter-rouge&quot;&gt;Freerouting.exe&lt;/code&gt;を起動する。&lt;/li&gt;
-  &lt;li&gt;先ほどエクスポートしたdsnファイルを読み込む。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;freerouting.png&quot; alt=&quot;Freerouting&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-16&quot;&gt;自動配線のパラメータの設定&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;画面上の&lt;code class=&quot;highlighter-rouge&quot;&gt;Parameter&lt;/code&gt;タブから&lt;code class=&quot;highlighter-rouge&quot;&gt;Autoroute&lt;/code&gt;を選択する。&lt;/li&gt;
-  &lt;li&gt;出てきた画面で&lt;code class=&quot;highlighter-rouge&quot;&gt;Detail Parameter&lt;/code&gt;をクリックする。&lt;/li&gt;
-  &lt;li&gt;さらに出てきた画面でコストの設定をすることができる。&lt;/li&gt;
-  &lt;li&gt;特に、切削基板の場合は、表面(F.Cu)のコストを高く設定する。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;menu.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;
-&lt;img src=&quot;layer.png&quot; alt=&quot;Freerouting&quot; /&gt;
-&lt;img src=&quot;param.png&quot; alt=&quot;Freerouting&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-17&quot;&gt;自動配線開始&lt;/h3&gt;
-
-&lt;p&gt;画面上部の&lt;code class=&quot;highlighter-rouge&quot;&gt;Autoroute&lt;/code&gt;ボタンで自動配線を開始すると動き始めます。&lt;/p&gt;
-
-&lt;p&gt;パソコンのスペックや配線の複雑さによってはかなり時間がかかります。僕の場合長いときは4時間くらいかかりました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;board.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ses&quot;&gt;配線結果をsesファイルに書き出し&lt;/h3&gt;
-
-&lt;p&gt;配線が終わると画面下のステータスバーに&lt;code class=&quot;highlighter-rouge&quot;&gt;Routing Complete&lt;/code&gt;と出ます。&lt;/p&gt;
-
-&lt;p&gt;そうなったら、メニューバーの&lt;code class=&quot;highlighter-rouge&quot;&gt;File&lt;/code&gt;→&lt;code class=&quot;highlighter-rouge&quot;&gt;Export Specctra Session FIle&lt;/code&gt;をクリックしてsesファイルを作成します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;save.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;kicad&quot;&gt;配線結果をKiCadへ取り込む&lt;/h3&gt;
-
-&lt;p&gt;KiCadに戻り、dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成です。読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;import.png&quot; alt=&quot;Freerouting&quot; /&gt;
-&lt;img src=&quot;complete.png&quot; alt=&quot;Freerouting&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-18&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;手順が多いですが、慣れてしまうとこれなしでは生きていけなくなります。&lt;br /&gt;
-自動配線ツールを上手に使って効率よく作業を進めましょう！&lt;/p&gt;
-
 </description>
         <pubDate>Fri, 22 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-22-freerouting/</link>
@@ -1126,56 +344,6 @@ LCDの表示プログラムは自分で頑張って作りました！&lt;/p&gt;
 
 &lt;p&gt;ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;インストールするもの&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install cu
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;使い方&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;接続されているか確認する&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ lsusb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;デバイス名を調べる&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls /dev/tty*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;ここでUSBシリアルは&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyUSB0&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyUSB1&lt;/code&gt;で、ラズパイのシリアルは&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/ttyAMA0&lt;/code&gt;などになります。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;一般ユーザが扱えるようにする&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo chmod 666 /dev/ttyUSB*
-or
-$ sudo chmod 666 /dev/ttyAMA0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-6&quot;&gt;シリアルモニタを開く&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cu -s &amp;lt;ボーレート&amp;gt; -l &amp;lt;デバイス名&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;たとえば、&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cu -s 115200 -l /dev/ttyUSB0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-7&quot;&gt;終わらせ方&lt;/h3&gt;
-
-&lt;p&gt;素早く以下のように打つと終了する。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-20-raspi-serial/</link>
@@ -1199,6 +367,958 @@ $ sudo chmod 666 /dev/ttyAMA0
         
         
         <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>ソーラー発電量モニター</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&quot;https://thingspeak.com/&quot;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
+
+&lt;p&gt;データの送信には、自作の&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;中継型電力計&lt;/a&gt;を使用しています。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-20-power-monitor/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-power-monitor/</guid>
+        
+        <category>ThingSpeak</category>
+        
+        <category>IoT</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>Arduino</category>
+        
+        <category>Solar Power</category>
+        
+        <category>ソーラー</category>
+        
+        <category>太陽光発電</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>写真から位置情報タグを削除する</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
+        
+        <category>exiftool</category>
+        
+        <category>geo</category>
+        
+        <category>photo</category>
+        
+        <category>位置情報</category>
+        
+        <category>タグ</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～ロボット編～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-robot/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-robot/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～充電・電力編～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-power/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～その他～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h2&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～LEDイルミネーション～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～in FRISK 編～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>昔作った電子工作たち～オーディオ編～</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-08-old-works-audio/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-audio/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>変なキーボード</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;つくったもの&lt;/h2&gt;
+
+&lt;p&gt;ASCIIキーボードとスクロール表示器を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure.png&quot; alt=&quot;figure&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;変なキーボード&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;キーボードの表面には２つのロータリースイッチがついています。それらを回すことで文字を選び、送信ボタンを押して送信します。&lt;/li&gt;
+  &lt;li&gt;もし間違った文字を送信してしまったら、送信ボタンを長押しすることで１文字ずつ削除することができます。&lt;/li&gt;
+  &lt;li&gt;文章ができたら、送信ボタンをさらに長押しすることで、Enterになり、文を始めからスクロールします。&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Tue, 05 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F26K22</category>
+        
+        <category>キーボード</category>
+        
+        <category>LED</category>
+        
+        <category>電光掲示板</category>
+        
+        <category>ドットマトリクスLED</category>
+        
+        <category>スクロール</category>
+        
+        <category>C言語</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>電力つぶやきbot</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;中継型電力計&lt;/h3&gt;
+&lt;p&gt;先日の記事で&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;何の電力をつぶやくのか&lt;/h3&gt;
+
+&lt;p&gt;僕の家には&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;solar.jpg&quot; alt=&quot;Solar&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 03 Apr 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>Twitter</category>
+        
+        <category>電子工作</category>
+        
+        <category>bot</category>
+        
+        <category>電力計測</category>
+        
+        <category>C++</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>ESP-WROOM-02による中継型電力計</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;esp-wroom-02&quot;&gt;話題のESP-WROOM-02&lt;/h3&gt;
+
+&lt;p&gt;ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュール。&lt;/p&gt;
+
+&lt;p&gt;今回はこれを使って中継型電力計を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;中継型とは&lt;/h3&gt;
+
+&lt;p&gt;電源端子としてよく使われてるDCジャックに中継するだけで、そこから電力をもらいつつ電力を計測します。&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi&quot;&gt;WiFi経由でサーバーへ&lt;/h3&gt;
+
+&lt;p&gt;測定した電力データはWiFiを使って任意のサーバーに送ることができます。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 23 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-23-relay-sensor/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-23-relay-sensor/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>電流計</category>
+        
+        <category>電圧計</category>
+        
+        <category>電子工作</category>
+        
+        <category>Wi-Fi</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>メダカの照明 Ver.2</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;メダカの水槽の照明&lt;/h3&gt;
+
+&lt;p&gt;以前、PICで作った&lt;a href=&quot;/posts/2015-06-04-killifish-light/&quot;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;fish.jpg&quot; alt=&quot;めだか&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi&quot;&gt;格安WiFiモジュール&lt;/h3&gt;
+
+&lt;p&gt;今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。&lt;/p&gt;
+
+&lt;p&gt;このWiFiモジュールを使った赤外線学習リモコンの記事も書きましたので合わせてご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2015-12-30-ir-station/&quot;&gt;赤外線学習リモコン（日本語による紹介記事）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2016-03-11-ir-station-reference/&quot;&gt;赤外線学習リモコン（英語によるリファレンス）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>ESP8266</category>
+        
+        <category>サーバー</category>
+        
+        <category>電子工作</category>
+        
+        <category>めだか</category>
+        
+        <category>LED</category>
+        
+        <category>制御</category>
+        
+        <category>時計</category>
+        
+        <category>Arduino</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>Sinatraでアプリケーションを作る</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;格安WiFiモジュールESP-WROOM-02を使って電流を計測してそれを受信し表示するアプリケーションを作りました。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 12 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-12-sinatra/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-12-sinatra/</guid>
+        
+        <category>Sinatra</category>
+        
+        <category>ruby</category>
+        
+        <category>サーバー</category>
+        
+        <category>アプリケーション</category>
+        
+        <category>HTTP</category>
+        
+        <category>HTML</category>
+        
+        <category>CSS</category>
+        
+        <category>Active Record</category>
+        
+        <category>SQLite3</category>
+        
+        <category>JQuiry</category>
+        
+        <category>ドットインストール</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>IR Station</title>
+        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR Station&lt;/h2&gt;
+
+&lt;p&gt;Infrared Remote Controller with ESP8266 WiFi-module&lt;br /&gt;
+You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
+
+&lt;h2 id=&quot;main-parts&quot;&gt;Main parts&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ESP-WROOM-02 (ESP8266 WiFi Module)&lt;/li&gt;
+  &lt;li&gt;IR Receiver&lt;/li&gt;
+  &lt;li&gt;IR LED&lt;/li&gt;
+  &lt;li&gt;Indicator LED&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 11 Mar 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
+        
+        <category>IR</category>
+        
+        <category>Remote Control</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>Server</category>
+        
+        <category>LED</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>PICでブートローダ</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
+
+&lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;ブートローダとは&lt;/h3&gt;
+
+&lt;p&gt;ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。&lt;/p&gt;
+
+&lt;p&gt;ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;ユーザープログラム&lt;/h3&gt;
+
+&lt;p&gt;ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 13 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>USB</category>
+        
+        <category>ブートローダ</category>
+        
+        <category>電子工作</category>
+        
+        <category>C言語</category>
+        
+        <category>Microchip Library for Application</category>
+        
+        <category>MLA</category>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>PICでUSB通信</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBの使い方について書きたいと思います。&lt;/p&gt;
+
+&lt;p&gt;今回紹介する方法では、USBをUARTの代わりに使えるようにするものです。PICをPCにつなぐとCOMポートが現れます。&lt;/p&gt;
+
+&lt;p&gt;これならUSBシリアル変換モジュールを使う必要はなくります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 10 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-10-pic-usb/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-10-pic-usb/</guid>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>電子工作</category>
+        
+        <category>USB</category>
+        
+        <category>FT232</category>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>PIC18F27J53のすすめ</title>
+        <description>&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;秋月で売っていること&lt;/h3&gt;
+
+&lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
+
+&lt;p&gt;もちろん、秋月なので値段が安い！！&lt;br /&gt;
+&lt;strong&gt;1個270円&lt;/strong&gt;です(2016年1月現在)。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;view.jpg&quot; alt=&quot;PIC18F27J53&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 08 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>電子工作</category>
+        
+        <category>USB</category>
+        
+        <category>マイコン</category>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>yamyでキーボードをカスタマイズ</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>ESP8266で赤外線学習リモコン</title>
+        <description>&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266とは&lt;/h2&gt;
+
+&lt;h3 id=&quot;wifi&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
+
+&lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;とにかく安い！&lt;/h3&gt;
+
+&lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>Cygwinの使い方</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 04 Dec 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>Raspberry Pi で NAS 作り</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;NASがほしい！&lt;br /&gt;
+じゃあ作ろう。&lt;/p&gt;
+
+&lt;p&gt;スペック&lt;br /&gt;
+サーバ：Raspberrypi 2 Type B&lt;br /&gt;
+HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
+転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 23 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-23-samba/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-23-samba/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>ラズパイ</category>
+        
+        <category>サーバー</category>
+        
+        <category>Samba</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>ファイアウォールの設定</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;ファイアウォールの設定&lt;/h2&gt;
+
+</description>
+        <pubDate>Tue, 17 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>delayやwhileを使わないI2C液晶表示プログラム</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。&lt;/p&gt;
+
+&lt;p&gt;秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。&lt;br /&gt;
+&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-06795/&quot;&gt;秋月のI2C液晶(AQM0802)&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&quot;AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 15 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-i2c-lcd/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>CPUの創り方</title>
+        <description>&lt;h2 id=&quot;cpu2003-&quot;&gt;書籍「CPUの創り方」（2003年）渡波郁 著&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;book.jpg&quot; alt=&quot;CPUの創り方&quot; title=&quot;CPUの創り方&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　この本は電子工作の入門書です。しかし入門書と言っても内容は壮大で、CPUを設計して自作しようというものです。電子工作初心者だけでなく、ある程度電子工作をしてきた人にも読みごたえのある一冊になっています。&lt;/p&gt;
+
+&lt;h2 id=&quot;td4&quot;&gt;作ったもの : TD4&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;board_top.jpg&quot; alt=&quot;TD4&quot; title=&quot;TD4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;　この本の中で設計しているCPUを実際に作りました。TD4とは&lt;strong&gt;T&lt;/strong&gt;ada &lt;strong&gt;D&lt;/strong&gt;ousa-suru-dakei-no &lt;strong&gt;4&lt;/strong&gt;-bit CPU という意味です。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 04 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>CPU</category>
+        
+        <category>入門</category>
+        
+        <category>論理回路</category>
+        
+        <category>書籍</category>
+        
+        <category>はんだ付け</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</title>
+        <description>&lt;h2 id=&quot;uefi&quot;&gt;UEFIとは&lt;/h2&gt;
+&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</guid>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>SSHの使い方</title>
+        <description>&lt;h2 id=&quot;ssh&quot;&gt;SSH&lt;/h2&gt;
+
+&lt;h3 id=&quot;ssh-1&quot;&gt;SSHとは&lt;/h3&gt;
+
+&lt;p&gt;　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 31 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>linkを作る「ln」コマンド</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;ハードリンクとシンボリックリンク&lt;/h2&gt;
+
+&lt;p&gt;ハードリンクは、別名の同じファイルといえる。ターゲットとリンクの区別がなく、すべてのファイルに実体があり（ディスク容量を消費）、削除するにはすべてのファイルを削除する必要がある。
+シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 28 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-28-link/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>Gitの使い方</title>
+        <description>&lt;p&gt;ここではGithubを使ったGitの使い方を説明する。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;主なコマンド&lt;/h2&gt;
+
+</description>
+        <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-21-git/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>Charge Station</title>
+        <description>&lt;figure class=&quot;home-gallery&quot;&gt;
+	&lt;img src=&quot;top.jpg&quot;&gt;
+	&lt;img src=&quot;charge.jpg&quot;&gt;
+	&lt;img src=&quot;board_top.jpg&quot;&gt;
+	&lt;img src=&quot;board_bottom.jpg&quot;&gt;
+&lt;/figure&gt;
+&lt;section class=&quot;item&quot;&gt;
+	&lt;article&gt;
+		&lt;h1&gt;概要&lt;/h1&gt;
+		&lt;p&gt;　ChargeStationとは自作の携帯電話充電器です。僕が命名しました。充電が終わると自動で給電を止めるので、電気の節約になります。&lt;/p&gt;
+	&lt;/article&gt;
+
+
+</description>
+        <pubDate>Fri, 09 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>vimの設定</title>
+        <description>&lt;h2 id=&quot;vim-&quot;&gt;vim の設定&lt;/h2&gt;
+
+</description>
+        <pubDate>Wed, 07 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-07-vim/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-07-vim/</guid>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>Raspberry Pi 2 Type Bでサーバー作り</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;ラズパイの用意&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ラズパイ用のOS「NOOBS」を&lt;a href=&quot;http://raspberrypi.org/downloads/&quot;&gt;raspberrypi.org&lt;/a&gt;からDLして解凍する。&lt;/li&gt;
+  &lt;li&gt;microSDカードをFAT32でフォーマットする。&lt;/li&gt;
+  &lt;li&gt;解凍したファイルをSDカードにコピーする。&lt;/li&gt;
+  &lt;li&gt;ラズパイにSDカード、キーボード、LANケーブル（またはWiFiドングル）をつないで電源を入れる。&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 05 Oct 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-10-05-raspi-server/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-05-raspi-server/</guid>
+        
+        
+        <category>explanations</category>
+        
+      </item>
+    
+      <item>
+        <title>シンガポールでロボコンしてきました</title>
+        <description>みなさんこんにちは！&lt;br /&gt;
+椋けり(@Ryokeri14)です。&lt;br /&gt;
+夏休みになりました。ロ技研のみなさんは進捗めまぐるしいことでしょう。&lt;br /&gt;
+&lt;br /&gt;
+今回の話題は僕が参加してきたIDCロボコンについてです。&lt;br /&gt;
+
+
+</description>
+        <pubDate>Wed, 12 Aug 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
+        
+        
+        <category>blogs</category>
+        
+      </item>
+    
+      <item>
+        <title>メダカの照明の自作</title>
+        <description>こんにちは。&lt;br /&gt;
+けり(@Ryokeri14)です。&lt;br /&gt;
+みなさん、進捗いかがですか？&lt;br /&gt;
+僕は、ぼちぼちです。&lt;br /&gt;
+&lt;br /&gt;
+今回紹介するのは、&lt;br /&gt;
+&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: x-large;&quot;&gt;メダカの水槽の照明&lt;/span&gt;です。&lt;br /&gt;
+&lt;br /&gt;
+高校時代の親友の刺激を受け、&lt;br /&gt;
+5月ごろからメダカを飼い始めました。&lt;br /&gt;
+
+
+</description>
+        <pubDate>Thu, 04 Jun 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
+        
+        <category>めだか</category>
+        
+        <category>電子工作</category>
+        
+        <category>LED</category>
+        
+        <category>PIC</category>
+        
+        <category>PIC18F27J53</category>
+        
+        <category>パワーLED</category>
+        
+        <category>制御</category>
+        
+        <category>シリアル</category>
+        
+        <category>ターミナル</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>ChargeStationの紹介</title>
+        <description>みなさん、こんにちは。&lt;br /&gt;
+14の けり &lt;a href=&quot;https://twitter.com/Ryokeri14&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt; です。&lt;br /&gt;
+春休みになりました。&lt;br /&gt;
+みなさん、進捗どうですか？&lt;br /&gt;
+&lt;br /&gt;
+今日ご紹介するのは&lt;br /&gt;
+&lt;b&gt;&lt;span  style=&quot;font-size: large;&quot;&gt;Charge Station&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;
+です。&lt;br /&gt;
+&lt;br /&gt;
+これだけだと何かわからないので簡単に説明すると、&lt;br /&gt;
+自動制御の充電器です。携帯などを充電します。&lt;br /&gt;
+
+
+</description>
+        <pubDate>Mon, 16 Feb 2015 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</guid>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
+        <title>100W級ソーラーシステムの自作</title>
+        <description>どーも。椋けり（twitter:&lt;a href=&quot;https://twitter.com/Ryokeri14/&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt;）です。id研です。&lt;br /&gt;
+そう、秋月バイトの彼です。 &lt;br /&gt;
+&lt;br /&gt;
+夏休みにもかかわらず、バイトを入れすぎて&lt;br /&gt;
+全然遊んでないじゃないか！&lt;br /&gt;
+&lt;br /&gt;
+じゃあ電子工作をしよう！&lt;br /&gt;
+&lt;br /&gt;
+秋月電子で稼いだお金は秋月電子で使おう。そう、還元。&lt;br /&gt;
+
+
+</description>
+        <pubDate>Sun, 14 Sep 2014 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2014-09-14-solar-system/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2014-09-14-solar-system/</guid>
+        
+        <category>ソーラー</category>
+        
+        <category>PIC</category>
+        
+        <category>電子工作</category>
+        
+        <category>太陽光電池</category>
+        
+        <category>秋月電子</category>
+        
+        <category>工作</category>
+        
+        <category>自作</category>
+        
+        <category>マイコン</category>
+        
+        <category>充電器</category>
+        
+        <category>節電</category>
+        
+        
+        <category>works</category>
         
       </item>
     

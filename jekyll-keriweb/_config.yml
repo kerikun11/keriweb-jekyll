@@ -15,6 +15,7 @@ url: "http://kerikeri.top"
 twitter_username: Ryokeri14
 github_username: kerikun11
 permalink: /posts/:year-:month-:day-:title/
+excerpt_separator: <!--more-->
 
 # Build Settings
 markdown: kramdown

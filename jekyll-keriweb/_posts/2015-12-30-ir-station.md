@@ -16,6 +16,7 @@ ESP8266とはWiFi制御用マイコンです。もともと中国で流行って
 その価格はなんと、たったの**550円**です！！  
 [ESP-WROOM-02](http://akizukidenshi.com/catalog/g/gM-09607/)←秋月電子などで売っています。  
 [![ESP8266](esp8266.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
+<!--more-->
 
 ### 開発の簡単さも流行りの理由
 
