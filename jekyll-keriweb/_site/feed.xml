@@ -5,13 +5,92 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jul 2016 11:26:18 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jul 2016 11:26:18 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Jul 2016 11:06:59 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Jul 2016 11:06:59 +0900</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
+        <title>赤外線学習リモコン完成</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;祝・完成&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/posts/2016-07-06-ir-station-board/&quot;&gt;発注したプリント基板が基板が届き&lt;/a&gt;，とうとう赤外線学習リモコンが完成しました．&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;本体&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;body.jpg&quot; alt=&quot;本体&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;壁に取り付けました．&lt;/h3&gt;
+
+&lt;p&gt;電源は，&lt;code class=&quot;highlighter-rouge&quot;&gt;USB-micro-B&lt;/code&gt;コネクタから供給します．
+&lt;img src=&quot;attach.jpg&quot; alt=&quot;取り付け&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;操作画面&lt;/h3&gt;
+
+&lt;p&gt;複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
+&lt;img src=&quot;display.png&quot; alt=&quot;操作画面&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;本体内部&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;ふたを開けると&lt;/h3&gt;
+
+&lt;p&gt;ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
+&lt;img src=&quot;inside.jpg&quot; alt=&quot;ふたを開けたところ&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;基板&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;top.jpg&quot; alt=&quot;基板の表&quot; /&gt;
+&lt;img src=&quot;back.jpg&quot; alt=&quot;基板の裏&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;作り方&lt;/h2&gt;
+
+&lt;p&gt;すべてのデータをGithubで公開しています．&lt;br /&gt;
+作り方は&lt;a href=&quot;https://github.com/kerikun11/IR-station&quot;&gt;ここ&lt;/a&gt;を参考にしてください．&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;最後に&lt;/h2&gt;
+
+&lt;p&gt;この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)&lt;/p&gt;
+
+&lt;p&gt;赤外線学習リモコン「IR-Station」についての他の記事:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2015-12-30-ir-station/&quot;&gt;2015年13月30日 ESP8266で赤外線学習リモコン&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2016-03-11-ir-station-reference/&quot;&gt;2016年03月11日 IR-Station Reference&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2016-07-06-ir-station-board/&quot;&gt;2016年07月06日 赤外線学習リモコンの基板が届きました&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 18 Jul 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-07-18-ir-station/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-18-ir-station/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>赤外線学習リモコン</category>
+        
+        <category>WiFi</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>Arduino</category>
+        
+        <category>IR-Station</category>
+        
+        <category>基板</category>
+        
+        <category>KiCad</category>
+        
+        <category>自動配線</category>
+        
+        
+        <category>works</category>
+        
+      </item>
+    
+      <item>
         <title>メダカか増えました！</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;卵がいっぱい！！&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;section&quot;&gt;卵がいっぱい！！ 7/5&lt;/h2&gt;
 &lt;p&gt;暖かくなってきたこの時期，ペットのメダカにたくさんの卵ができました．すでに卵の中から目が透けていて今にも孵化しそうです！&lt;/p&gt;
 
 &lt;p&gt;毎日水替えをしないとカビが生えてしまうので，目が離せません！&lt;/p&gt;
@@ -20,7 +99,7 @@
 
 &lt;p&gt;&lt;img src=&quot;spawns.jpg&quot; alt=&quot;卵&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;孵化しました！&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;孵化しました！ 7/13&lt;/h2&gt;
 
 &lt;p&gt;約1週間後，無事孵化しました．数は30匹程度でしょうか．このうち何匹生き残ることやら…&lt;/p&gt;
 
@@ -29,7 +108,11 @@
 &lt;p&gt;&lt;img src=&quot;fish (1).jpg&quot; alt=&quot;稚魚&quot; /&gt;
 &lt;img src=&quot;fish (2).jpg&quot; alt=&quot;稚魚&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;水槽が狭くなる…&lt;/h2&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;追記 少し大きくなりました 7/18&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;fish (3).jpg&quot; alt=&quot;稚魚&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;水槽が狭くなる…&lt;/h2&gt;
 
 &lt;p&gt;すでに親の水槽には15匹ほどの親メダカがいるので，稚魚たちが大きくなっても入るスペースがない…&lt;/p&gt;
 
@@ -57,6 +140,176 @@
         
         
         <category>blogs</category>
+        
+      </item>
+    
+      <item>
+        <title>赤外線学習リモコンの基板が届きました！</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;基板が届きました&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;思ったより早かった&lt;/h3&gt;
+
+&lt;p&gt;基板加工サービス&lt;a href=&quot;http://www.elecrow.com/&quot;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code class=&quot;highlighter-rouge&quot;&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;発注内容&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;項目&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;詳細&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;金額&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10pcs&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2 layer PCB&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$9.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Layer&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PCB Thickness&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0.6mm&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Copper Weight&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1oz 35um&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PCB Size&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;5cm Max * 5cm Max&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PCB Color&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;White&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Suface Finish&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Hasl (lead free)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PCB Stencil&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;NO Stencil&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Lead time&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Shipped in 4 to 7 days&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Panelizing&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Single PCB with milling&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;File&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;51049. IR-Station-01.zip&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Registered Airmail&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Weight: 110 g. 7 - 25 Days&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$4.59&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Total&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$14.49(￥1546)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;基板発注過程&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;日付&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;経過日数&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;出来事&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Webで基板発注&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CADデータのチェック&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/25&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;加工開始&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2016/06/29&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;発送&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2016/07/05&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;到着&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;写真&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;recv.jpg&quot; alt=&quot;到着&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;届いた基板&lt;/h2&gt;
+
+&lt;p&gt;今回は，一般的な基板の中で一番薄い，0.6mm厚基板にしました．小型のケースに収めるためです．
+&lt;img src=&quot;pack.jpg&quot; alt=&quot;パックされている&quot; /&gt;
+&lt;img src=&quot;board.jpg&quot; alt=&quot;基板&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wktk&quot;&gt;wktk&lt;/h2&gt;
+
+&lt;p&gt;さあ，準備は整いました．あとは作るだけです．&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jul 2016 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2016-07-06-ir-station-board/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-06-ir-station-board/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>赤外線学習リモコン</category>
+        
+        <category>WiFi</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>Arduino</category>
+        
+        <category>IR-Station</category>
+        
+        <category>基板</category>
+        
+        <category>KiCad</category>
+        
+        <category>自動配線</category>
+        
+        
+        <category>works</category>
         
       </item>
     
@@ -931,132 +1184,6 @@ $ sudo chmod 666 /dev/ttyAMA0
         <category>Arduino</category>
         
         <category>ターミナル</category>
-        
-        
-        <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>ソーラー発電量モニター</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&quot;https://thingspeak.com/&quot;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
-
-&lt;p&gt;データの送信には、自作の&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;中継型電力計&lt;/a&gt;を使用しています。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;リアルタイム発電量モニター&lt;/h2&gt;
-
-&lt;p&gt;ThingSpeakで発行したフレームをHTMLに埋め込む形式なので、自動で更新されます。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;電圧&lt;/h3&gt;
-
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/1?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Voltage&amp;amp;type=column&amp;amp;yaxis=Voltage+%5BV%5D&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;電流&lt;/h3&gt;
-
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/2?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Current&amp;amp;type=column&amp;amp;yaxis=Current+%5BA%5D&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;電力&lt;/h3&gt;
-
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/3?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Solar+Power&amp;amp;type=column&amp;amp;yaxis=Power+%5BW%5D&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;今日の発電量&lt;/h3&gt;
-
-&lt;div class=&quot;graph&quot;&gt;
-&lt;iframe width=&quot;450&quot; height=&quot;260&quot; style=&quot;border: 1px solid #cccccc;&quot; src=&quot;https://thingspeak.com/channels/110012/charts/4?bgcolor=%23ffffff&amp;amp;color=%23d62020&amp;amp;days=3&amp;amp;dynamic=true&amp;amp;min=0&amp;amp;title=Time+Integration+of+Solar+Power+a+Day&amp;amp;type=column&amp;amp;yaxis=Integration+%5BWh%5D&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;こんなに簡単にグラフ化できるサービスがあるなんてすごいですね！MATLAB解析機能もあるみたいなので使ってみたいです。&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-20-power-monitor/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-power-monitor/</guid>
-        
-        <category>ThingSpeak</category>
-        
-        <category>IoT</category>
-        
-        <category>ESP8266</category>
-        
-        <category>ESP-WROOM-02</category>
-        
-        <category>Arduino</category>
-        
-        <category>Solar Power</category>
-        
-        <category>ソーラー</category>
-        
-        <category>太陽光発電</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>写真から位置情報タグを削除する</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;ツール&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;exiftool&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;linux&quot;&gt;インストール方法(Linux)&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install exiftool
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;windows&quot;&gt;インストール方法(Windows)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.sno.phy.queensu.ca/~phil/exiftool/&quot;&gt;ここ&lt;/a&gt;からzipファイルをダウンロードする。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;使い方&lt;/h2&gt;
-
-&lt;h3 id=&quot;geotag&quot;&gt;geotagを削除する&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;geotag=&lt;/code&gt;で何も書かなければ、位置情報はなくなる。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -geotag= filename
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;ついでに回転した写真の修正方法も&lt;/h3&gt;
-
-&lt;p&gt;エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ exiftool -overwrite_original -n -Orientation=1 filename
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
-        
-        <category>exiftool</category>
-        
-        <category>geo</category>
-        
-        <category>photo</category>
-        
-        <category>位置情報</category>
-        
-        <category>タグ</category>
         
         
         <category>memos</category>
