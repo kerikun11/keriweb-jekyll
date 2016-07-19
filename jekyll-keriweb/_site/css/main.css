@@ -784,6 +784,89 @@ body {
     .graph {
       margin-left: 15px; } }
 
+.post-guide {
+  border-top: 2px dotted #AAA;
+  border-bottom: 2px dotted #AAA;
+  padding-top: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  overflow: hidden; }
+  .post-guide > div {
+    display: block;
+    overflow: hidden;
+    width: 45%; }
+    @media screen and (max-width: 800px) {
+      .post-guide > div {
+        width: 100%; } }
+    .post-guide > div > p {
+      margin-bottom: 5px; }
+  .post-guide img {
+    float: left;
+    width: 60px;
+    height: 60px; }
+  .post-guide div.post-list-char > span {
+    display: block; }
+  .post-guide div.post-list-char > h2 {
+    font-size: 24px;
+    border: none;
+    margin-bottom: 5px; }
+    @media screen and (max-width: 800px) {
+      .post-guide div.post-list-char > h2 {
+        font-size: 18px; } }
+
+.post-guide-previous {
+  float: left; }
+  .post-guide-previous img {
+    float: left;
+    padding-left: 15px; }
+    @media screen and (max-width: 800px) {
+      .post-guide-previous img {
+        padding-left: 5px; } }
+  .post-guide-previous div.post-list-char {
+    padding-left: 90px; }
+    @media screen and (max-width: 800px) {
+      .post-guide-previous div.post-list-char {
+        padding-left: 100px; } }
+
+.post-guide-next {
+  float: right;
+  text-align: right; }
+  .post-guide-next img {
+    float: right;
+    padding-right: 15px; }
+    @media screen and (max-width: 800px) {
+      .post-guide-next img {
+        padding-right: 5px; } }
+  .post-guide-next div.post-list-char {
+    padding-right: 90px; }
+    @media screen and (max-width: 800px) {
+      .post-guide-next div.post-list-char {
+        padding-right: 100px; } }
+
+.post-header {
+  overflow: hidden; }
+  .post-header img {
+    float: left;
+    width: 120px;
+    height: 120px; }
+    @media screen and (max-width: 800px) {
+      .post-header img {
+        width: 90px;
+        height: 90px; } }
+  .post-header div.post-head-char {
+    padding-left: 140px; }
+    @media screen and (max-width: 800px) {
+      .post-header div.post-head-char {
+        padding-left: 100px; } }
+    .post-header div.post-head-char > span {
+      display: block; }
+    .post-header div.post-head-char > h2 {
+      font-size: 28px; }
+      @media screen and (max-width: 800px) {
+        .post-header div.post-head-char > h2 {
+          font-size: 18px; } }
+
 ul.post-list {
   margin-bottom: 15px; }
   ul.post-list > li {

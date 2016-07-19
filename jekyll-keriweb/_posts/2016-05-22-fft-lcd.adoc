@@ -12,9 +12,9 @@ Nucleoボードとグラフィック液晶を使って，音声解析機を作�
 [.img-medium]
 image:fft-lcd.jpg["FFTしてLCDで表示"]
 
-+++
+++++
 <!--more-->
-+++
+++++
 
 
 == スペクトルグラフ

@@ -4,7 +4,6 @@ title: "CPUの創り方"
 category: "works"
 tag: ["電子工作", "CPU", "入門", "論理回路", "書籍", "はんだ付け"]
 icon: "icon.jpg"
-pickup: true
 ---
 
 ## 書籍「CPUの創り方」（2003年）渡波郁 著  

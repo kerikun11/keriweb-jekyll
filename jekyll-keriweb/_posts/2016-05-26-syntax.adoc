@@ -10,9 +10,9 @@ icon: "icon.png"
 Jekyllのデフォルトのテーマはダサいので変更する． +
 https://github.com/jwarby/jekyll-pygments-themes[]から適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)
 
-+++
+++++
 <!--more-->
-+++
+++++
 
 
 [source,c]

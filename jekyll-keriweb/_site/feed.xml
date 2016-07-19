@@ -5,12 +5,12 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jul 2016 22:07:10 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Jul 2016 22:07:10 +0900</lastBuildDate>
+    <pubDate>Tue, 19 Jul 2016 02:28:11 +0000</pubDate>
+    <lastBuildDate>Tue, 19 Jul 2016 02:28:11 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
-        <title>赤外線学習リモコン完成</title>
+        <title>赤外線学習リモコン</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
@@ -18,7 +18,7 @@
 &lt;p&gt;今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 18 Jul 2016 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-07-18-ir-station/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-18-ir-station/</guid>
         
@@ -57,7 +57,7 @@
 &lt;p&gt;ちなみに，カビ防止のために，卵の段階では水道水の方がいいらしいです．&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 13 Jul 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-07-13-new-fish/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-13-new-fish/</guid>
         
@@ -85,7 +85,7 @@
 &lt;p&gt;基板加工サービス&lt;a href=&quot;http://www.elecrow.com/&quot;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code class=&quot;highlighter-rouge&quot;&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 06 Jul 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 06 Jul 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-07-06-ir-station-board/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-06-ir-station-board/</guid>
         
@@ -133,13 +133,11 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;割れた液晶を使用して手を怪我したり，Appleに高いお金を支払って修理するのは嫌なので，ここは技術者として自力で交換してみたいと思います．&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+&lt;/p&gt;
-&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</guid>
         
@@ -166,12 +164,10 @@
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;世の中にはたくさんのPDF Viewerがあり一長一短である．AdobeのPDF Readerが有名であるが，もっと使いやすいものを見つけたのでそれを紹介する．&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+&lt;/p&gt;
-&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-06-14-pdf/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-14-pdf/</guid>
         
@@ -201,12 +197,10 @@
 &lt;p&gt;Jekyllのデフォルトのテーマはダサいので変更する．&lt;br&gt;
 &lt;a href=&quot;https://github.com/jwarby/jekyll-pygments-themes&quot; class=&quot;bare&quot;&gt;https://github.com/jwarby/jekyll-pygments-themes&lt;/a&gt;から適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+&lt;/p&gt;
-&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        <pubDate>Thu, 26 May 2016 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-05-26-syntax/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-26-syntax/</guid>
         
@@ -236,12 +230,10 @@
 &lt;div class=&quot;paragraph img-medium&quot;&gt;
 &lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;fft-lcd.jpg&quot; alt=&quot;FFTしてLCDで表示&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;+&lt;/p&gt;
-&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        <pubDate>Sun, 22 May 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-05-22-fft-lcd/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-22-fft-lcd/</guid>
         
@@ -273,7 +265,7 @@
 気持ちを込めて作りました．スライド数は200枚を超えています．どうぞご覧ください．&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 18 May 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-05-18-circuit-lecture/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-18-circuit-lecture/</guid>
         
@@ -319,7 +311,7 @@
 &lt;p&gt;今回は自動配線ツールの使い方を説明する。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 22 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-22-freerouting/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-22-freerouting/</guid>
         
@@ -345,7 +337,7 @@
 &lt;p&gt;ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-20-raspi-serial/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-raspi-serial/</guid>
         
@@ -379,7 +371,7 @@
 &lt;p&gt;データの送信には、自作の&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;中継型電力計&lt;/a&gt;を使用しています。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 20 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-20-power-monitor/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-power-monitor/</guid>
         
@@ -411,7 +403,7 @@
 &lt;p&gt;写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
         
@@ -437,7 +429,7 @@
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-robot/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-robot/</guid>
         
@@ -457,7 +449,7 @@
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-power/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
         
@@ -479,7 +471,7 @@
 &lt;h2 id=&quot;section-1&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h2&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
         
@@ -499,7 +491,7 @@
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
         
@@ -519,7 +511,7 @@
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
         
@@ -539,7 +531,7 @@
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-audio/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-audio/</guid>
         
@@ -569,7 +561,7 @@
 &lt;/ol&gt;
 
 </description>
-        <pubDate>Tue, 05 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
         
@@ -608,7 +600,7 @@
 &lt;p&gt;&lt;img src=&quot;solar.jpg&quot; alt=&quot;Solar&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 03 Apr 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
         
@@ -654,7 +646,7 @@
 &lt;p&gt;測定した電力データはWiFiを使って任意のサーバーに送ることができます。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 23 Mar 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-03-23-relay-sensor/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-23-relay-sensor/</guid>
         
@@ -703,7 +695,7 @@
 &lt;p&gt;&lt;img src=&quot;esp-wroom-02.jpg&quot; alt=&quot;ESP-WROOM-02&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 14 Mar 2016 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
         
@@ -737,7 +729,7 @@
 &lt;p&gt;格安WiFiモジュールESP-WROOM-02を使って電流を計測してそれを受信し表示するアプリケーションを作りました。&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 12 Mar 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sat, 12 Mar 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-03-12-sinatra/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-12-sinatra/</guid>
         
@@ -785,7 +777,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Fri, 11 Mar 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
         
@@ -825,7 +817,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;p&gt;ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 13 Jan 2016 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
         
@@ -863,7 +855,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 10 Jan 2016 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-01-10-pic-usb/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-10-pic-usb/</guid>
         
@@ -896,7 +888,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;view.jpg&quot; alt=&quot;PIC18F27J53&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 08 Jan 2016 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 08 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
         
@@ -920,7 +912,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 07 Jan 2016 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
         
@@ -944,7 +936,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 30 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
         
@@ -960,7 +952,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 &lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 04 Dec 2015 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
         
@@ -982,7 +974,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 23 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-23-samba/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-23-samba/</guid>
         
@@ -1004,7 +996,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <description>&lt;h2 id=&quot;section&quot;&gt;ファイアウォールの設定&lt;/h2&gt;
 
 </description>
-        <pubDate>Tue, 17 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
         
@@ -1024,7 +1016,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;img src=&quot;AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 15 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-i2c-lcd/</guid>
         
@@ -1046,7 +1038,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;p&gt;　この本の中で設計しているCPUを実際に作りました。TD4とは&lt;strong&gt;T&lt;/strong&gt;ada &lt;strong&gt;D&lt;/strong&gt;ousa-suru-dakei-no &lt;strong&gt;4&lt;/strong&gt;-bit CPU という意味です。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 04 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 04 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
         
@@ -1073,7 +1065,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 03 Nov 2015 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</guid>
         
@@ -1091,7 +1083,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;p&gt;　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 31 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
         
@@ -1108,7 +1100,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 シンボリックリンクは、いわゆるショートカットと同じで、パス情報のみを保持している。したがって、実体を削除するとシンボリックリンはエラーになる。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 28 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 28 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-28-link/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
         
@@ -1124,7 +1116,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;h2 id=&quot;section&quot;&gt;主なコマンド&lt;/h2&gt;
 
 </description>
-        <pubDate>Wed, 21 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-21-git/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
         
@@ -1149,7 +1141,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 
 </description>
-        <pubDate>Fri, 09 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
         
@@ -1163,7 +1155,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <description>&lt;h2 id=&quot;vim-&quot;&gt;vim の設定&lt;/h2&gt;
 
 </description>
-        <pubDate>Wed, 07 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 07 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-07-vim/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-07-vim/</guid>
         
@@ -1184,7 +1176,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 &lt;/ol&gt;
 
 </description>
-        <pubDate>Mon, 05 Oct 2015 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-05-raspi-server/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-05-raspi-server/</guid>
         
@@ -1203,7 +1195,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 
 </description>
-        <pubDate>Wed, 12 Aug 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
         
@@ -1227,7 +1219,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 
 </description>
-        <pubDate>Thu, 04 Jun 2015 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
         
@@ -1270,7 +1262,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 
 </description>
-        <pubDate>Mon, 16 Feb 2015 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</guid>
         
@@ -1282,18 +1274,15 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
       <item>
         <title>100W級ソーラーシステムの自作</title>
         <description>どーも。椋けり（twitter:&lt;a href=&quot;https://twitter.com/Ryokeri14/&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt;）です。id研です。&lt;br /&gt;
-そう、秋月バイトの彼です。 &lt;br /&gt;
 &lt;br /&gt;
 夏休みにもかかわらず、バイトを入れすぎて&lt;br /&gt;
 全然遊んでないじゃないか！&lt;br /&gt;
 &lt;br /&gt;
 じゃあ電子工作をしよう！&lt;br /&gt;
-&lt;br /&gt;
-秋月電子で稼いだお金は秋月電子で使おう。そう、還元。&lt;br /&gt;
 
 
 </description>
-        <pubDate>Sun, 14 Sep 2014 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2014-09-14-solar-system/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2014-09-14-solar-system/</guid>
         
