@@ -12,7 +12,9 @@ SSHは通常ターミナル上で使うが，接続をlocalhostの適当なポ�
 LANの外からLAN内のルータの設定やNASなどを使えるようになるのだ．
 
 <!--more-->
+
 ## 使い方
+
 
 	$ ssh -L 8080:192.168.11.1:80 user_name@server_hostname
 
