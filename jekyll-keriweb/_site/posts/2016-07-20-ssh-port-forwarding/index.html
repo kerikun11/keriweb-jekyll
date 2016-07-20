@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>赤外線学習リモコン - KERI's Lab</title>
-	<meta name="description" content="概要赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．">
+	<title>SSHのPort Forwarding - KERI's Lab</title>
+	<meta name="description" content="Port ForwardingとはSSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．LANの外からLAN内のルータの設定やNASなどを使えるようになるのだ．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-18-ir-station/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -86,15 +86,15 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2016-07-18-ir-station/icon.jpg" title="赤外線学習リモコン" alt="赤外線学習リモコン">
+		<img src="/home/icon.png" title="SSHのPort Forwarding" alt="SSHのPort Forwarding">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">赤外線学習リモコン</h1>
+			<h1 class="post-title" itemprop="name headline">SSHのPort Forwarding</h1>
 			<p class="post-meta">
-				<time datetime="2016-07-18T00:00:00+00:00" itemprop="datePublished">2016年07月18日</time>
+				<time datetime="2016-07-20T00:00:00+00:00" itemprop="datePublished">2016年07月20日</time>
 				<span>
-					Category: <a href="/works/">works</a></span>
+					Category: <a href="/memos/">memos</a></span>
 				<br />
-				Tag: 電子工作, 赤外線学習リモコン, WiFi, ESP8266, ESP-WROOM-02, Arduino, IR-Station, 基板, KiCad, and 自動配線
+				Tag: SSH and サーバー
 			</p>
 		</div>
 	</header>
@@ -115,64 +115,20 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="port-forwarding">Port Forwardingとは</h2>
 
-<p>赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．</p>
+<p>SSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．</p>
 
-<p>今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．</p>
+<p>LANの外からLAN内のルータの設定やNASなどを使えるようになるのだ．</p>
 
 <!--more-->
+<p>## 使い方</p>
 
-<h2 id="section-1">祝・完成</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh -L 8080:192.168.11.1:80 user_name@server_hostname
+</code></pre>
+</div>
 
-<p><a href="/posts/2016-07-06-ir-station-board/">発注したプリント基板が基板が届き</a>，とうとう赤外線学習リモコンが完成しました．</p>
-
-<h3 id="section-2">本体</h3>
-
-<p><img src="body.jpg" alt="本体" /></p>
-
-<h3 id="section-3">取り付け簡単！</h3>
-
-<p>壁に取り付けた様子です．電源は，<code class="highlighter-rouge">USB-micro-B</code>コネクタから供給します．
-<img src="attach.jpg" alt="取り付け" /></p>
-
-<h3 id="section-4">操作画面</h3>
-
-<p>複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
-<img src="display.png" alt="操作画面" /></p>
-
-<h2 id="section-5">本体内部</h2>
-
-<h3 id="section-6">ふたを開けると</h3>
-
-<p>ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
-<img src="inside.jpg" alt="ふたを開けたところ" /></p>
-
-<h3 id="section-7">基板</h3>
-
-<p><img src="top.jpg" alt="基板の表" />
-<img src="back.jpg" alt="基板の裏" /></p>
-
-<h2 id="section-8">作り方</h2>
-
-<p>すべてのデータをGithubで公開しています．<br />
-作り方は<a href="https://github.com/kerikun11/IR-station">ここ</a>を参考にしてください．</p>
-
-<h2 id="section-9">最後に</h2>
-
-<p>長い間研究をしてきた赤外線学習リモコンがやっと形になりました．とても嬉しいです．</p>
-
-<p>この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)</p>
-
-<h4 id="section-10">リンク</h4>
-
-<p>赤外線学習リモコン「IR-Station」についての他の記事:</p>
-
-<ul>
-  <li><a href="/posts/2015-12-30-ir-station/">2015年12月30日 ESP8266で赤外線学習リモコン</a></li>
-  <li><a href="/posts/2016-03-11-ir-station-reference/">2016年03月11日 IR-Station Reference</a></li>
-  <li><a href="/posts/2016-07-06-ir-station-board/">2016年07月06日 赤外線学習リモコンの基板が届きました</a></li>
-</ul>
+<p>ブラウザでlocalhost:8080にアクセスすると，LAN内の192.168.11.1:80にアクセスしたのと同じことになる．</p>
 
 
 	</div>
@@ -192,27 +148,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2016-07-20-ssh-port-forwarding/">
-				<img src="/home/icon.png" title="SSHのPort Forwarding" alt="SSHのPort Forwarding">
-				<div class="post-list-char">
-					<span class="post-meta">2016年07月20日 Category: memos</span>
-					<h2 class="post-title">
-						SSHのPort Forwarding
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2016-07-13-new-fish/">
-				<img src="/posts/2016-07-13-new-fish/icon.jpg" title="メダカが増えました！" alt="メダカが増えました！">
+			<a class="post-link" href="/posts/2016-07-18-ir-station/">
+				<img src="/posts/2016-07-18-ir-station/icon.jpg" title="赤外線学習リモコン" alt="赤外線学習リモコン">
 				<div class="post-list-char">
-					<span class="post-meta">2016年07月13日 Category: blogs</span>
+					<span class="post-meta">2016年07月18日 Category: works</span>
 					<h2 class="post-title">
-						メダカが増えました！
+						赤外線学習リモコン
 					</h2>
 				</div>
 			</a>
