@@ -270,11 +270,11 @@ pre {
   margin: 7.5px 0; }
 
 .page-heading {
-  font-size: 20px;
+  font-size: 24px;
   clear: left; }
 
 .post-list {
-  margin-left: 1em;
+  margin-left: 15px;
   list-style: none;
   margin-bottom: 30px; }
   .post-list > li {
@@ -868,7 +868,8 @@ body {
           font-size: 18px; } }
 
 ul.post-list {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-left: 15px; }
   ul.post-list > li {
     overflow: hidden;
     margin-bottom: 10px;
@@ -896,6 +897,9 @@ ul.post-list {
             font-size: 18px; } }
   ul.post-list > li:last-child {
     border: none; }
+  @media screen and (max-width: 800px) {
+    ul.post-list {
+      margin-left: 5px; } }
 
 @media screen and (max-width: 800px) {
   .post-title {
@@ -906,3 +910,10 @@ ul.post-list {
 
 .ulist p {
   margin-left: 0; }
+
+.tag-list {
+  margin-left: 15px;
+  margin-bottom: 15px; }
+  @media screen and (max-width: 800px) {
+    .tag-list {
+      margin-left: 5px; } }

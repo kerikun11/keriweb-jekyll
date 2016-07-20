@@ -3,7 +3,7 @@
 layout: "post"
 title: "メダカの照明 Ver.2"
 category: "works"
-tag: ["ESP-WROOM-02", "ESP8266", "サーバー", "電子工作", "めだか", "LED", "制御", "時計", "Arduino"]
+tags: ["ESP-WROOM-02", "ESP8266", "WiFi", "サーバー", "電子工作", "めだか", "LED", "制御", "時計", "Arduino"]
 icon: "icon.png"
 ---
 

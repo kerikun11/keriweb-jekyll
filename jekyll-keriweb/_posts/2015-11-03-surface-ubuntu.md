@@ -2,6 +2,12 @@
 layout: "post"
 title: "Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)"
 category: "explanations"
+tags:
+  - "Surface"
+  - "Windows"
+  - "Ubuntu"
+  - "Linux"
+  - "UEFI"
 icon: "icon.jpg"
 ---
 ## UEFIとは  

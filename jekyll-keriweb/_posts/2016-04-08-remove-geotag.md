@@ -2,7 +2,7 @@
 layout: "post"
 title: "写真から位置情報タグを削除する"
 category: "memos"
-tag: ["exiftool", "geo", "photo", "位置情報", "タグ"]
+tags: ["exiftool", "geotag", "写真", "位置情報", "タグ"]
 ---
 
 ## 概要

@@ -2,7 +2,7 @@
 layout: "post"
 title: "IR Station"
 category: "works"
-tag: ["IR", "Remote Control", "ESP8266", "ESP-WROOM-02", "Server", "LED"]
+tags: ["IR-Station","IR", "Remote Control", "ESP8266", "ESP-WROOM-02", "Server", "LED", "WiFi"]
 icon: "icon.jpg"
 ---
 

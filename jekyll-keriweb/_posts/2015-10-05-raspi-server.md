@@ -2,6 +2,10 @@
 layout: "post"
 title: "Raspberry Pi 2 Type Bでサーバー作り"
 category: "explanations"
+tags:
+  - "Raspberry Pi"
+  - "サーバー"
+  - "ラズパイ"
 icon: "icon.jpg"
 ---
 

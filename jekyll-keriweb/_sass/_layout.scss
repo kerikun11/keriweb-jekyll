@@ -178,12 +178,12 @@
 }
 
 .page-heading {
-	font-size: 20px;
+	font-size: 24px;
 	clear:left;
 }
 
 .post-list {
-	margin-left: 1em;
+	margin-left: $spacing-unit/2;
 	list-style: none;
 	margin-bottom:$spacing-unit;
 

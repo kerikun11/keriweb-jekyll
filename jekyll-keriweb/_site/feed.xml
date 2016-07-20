@@ -5,8 +5,8 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Jul 2016 04:04:18 +0000</pubDate>
-    <lastBuildDate>Wed, 20 Jul 2016 04:04:18 +0000</lastBuildDate>
+    <pubDate>Wed, 20 Jul 2016 13:40:48 +0000</pubDate>
+    <lastBuildDate>Wed, 20 Jul 2016 13:40:48 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -62,7 +62,7 @@
         
         <category>KiCad</category>
         
-        <category>自動配線</category>
+        <category>IoT</category>
         
         
         <category>works</category>
@@ -129,8 +129,6 @@
         
         <category>KiCad</category>
         
-        <category>自動配線</category>
-        
         
         <category>works</category>
         
@@ -164,8 +162,6 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</guid>
         
         <category>iPhone</category>
-        
-        <category>iPhone 6 Plus</category>
         
         <category>Apple</category>
         
@@ -339,7 +335,7 @@
         
         <category>KiCad</category>
         
-        <category>配線</category>
+        <category>自動配線</category>
         
         <category>回路</category>
         
@@ -364,10 +360,6 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-raspi-serial/</guid>
         
         <category>Raspberry Pi</category>
-        
-        <category>Serial</category>
-        
-        <category>Terminal</category>
         
         <category>ラズパイ</category>
         
@@ -431,9 +423,9 @@
         
         <category>exiftool</category>
         
-        <category>geo</category>
+        <category>geotag</category>
         
-        <category>photo</category>
+        <category>写真</category>
         
         <category>位置情報</category>
         
@@ -587,6 +579,8 @@
         <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
         
+        <category>電子工作</category>
+        
         <category>PIC</category>
         
         <category>PIC18F26K22</category>
@@ -625,6 +619,8 @@
         <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
+        
+        <category>ソーラー</category>
         
         <category>ESP-WROOM-02</category>
         
@@ -725,6 +721,8 @@
         
         <category>ESP8266</category>
         
+        <category>WiFi</category>
+        
         <category>サーバー</category>
         
         <category>電子工作</category>
@@ -803,6 +801,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
         
+        <category>IR-Station</category>
+        
         <category>IR</category>
         
         <category>Remote Control</category>
@@ -814,6 +814,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <category>Server</category>
         
         <category>LED</category>
+        
+        <category>WiFi</category>
         
         
         <category>works</category>
@@ -914,6 +916,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
         
+        <category>PIC</category>
+        
         <category>PIC18F27J53</category>
         
         <category>電子工作</category>
@@ -937,6 +941,16 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
+        
+        <category>Windows</category>
+        
+        <category>キーボード</category>
+        
+        <category>yamy</category>
+        
+        <category>Ctrl</category>
+        
+        <category>カスタマイズ</category>
         
         
         <category>explanations</category>
@@ -962,6 +976,18 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
         
+        <category>IR-Station</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>電子工作</category>
+        
+        <category>Arduino</category>
+        
+        <category>WiFi</category>
+        
         
         <category>works</category>
         
@@ -977,6 +1003,12 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
+        
+        <category>ターミナル</category>
+        
+        <category>Cygwin</category>
+        
+        <category>インストール</category>
         
         
         <category>explanations</category>
@@ -1000,9 +1032,9 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-11-23-samba/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-23-samba/</guid>
         
-        <category>電子工作</category>
-        
         <category>ラズパイ</category>
+        
+        <category>NAS</category>
         
         <category>サーバー</category>
         
@@ -1021,6 +1053,14 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
+        
+        <category>ターミナル</category>
+        
+        <category>ファイアウォール</category>
+        
+        <category>サーバー</category>
+        
+        <category>ラズパイ</category>
         
         
         <category>memos</category>
@@ -1091,6 +1131,16 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</guid>
         
+        <category>Surface</category>
+        
+        <category>Windows</category>
+        
+        <category>Ubuntu</category>
+        
+        <category>Linux</category>
+        
+        <category>UEFI</category>
+        
         
         <category>explanations</category>
         
@@ -1109,6 +1159,10 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
         
+        <category>SSH</category>
+        
+        <category>サーバー</category>
+        
         
         <category>memos</category>
         
@@ -1126,6 +1180,10 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-10-28-link/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-28-link/</guid>
         
+        <category>ターミナル</category>
+        
+        <category>link</category>
+        
         
         <category>memos</category>
         
@@ -1141,6 +1199,10 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-21-git/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
+        
+        <category>Git</category>
+        
+        <category>ターミナル</category>
         
         
         <category>memos</category>
@@ -1167,6 +1229,12 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
         
+        <category>Charge Station</category>
+        
+        <category>電子工作</category>
+        
+        <category>充電器</category>
+        
         
         <category>works</category>
         
@@ -1180,6 +1248,10 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <pubDate>Wed, 07 Oct 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-10-07-vim/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-07-vim/</guid>
+        
+        <category>vim</category>
+        
+        <category>ターミナル</category>
         
         
         <category>memos</category>
@@ -1202,6 +1274,12 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-10-05-raspi-server/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-05-raspi-server/</guid>
         
+        <category>Raspberry Pi</category>
+        
+        <category>サーバー</category>
+        
+        <category>ラズパイ</category>
+        
         
         <category>explanations</category>
         
@@ -1220,6 +1298,14 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
         <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
+        
+        <category>ロボコン</category>
+        
+        <category>シンガポール</category>
+        
+        <category>IDC</category>
+        
+        <category>創造設計第一</category>
         
         
         <category>blogs</category>
@@ -1288,6 +1374,16 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <link>http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</guid>
         
+        <category>Charge Station</category>
+        
+        <category>電子工作</category>
+        
+        <category>自作</category>
+        
+        <category>PIC</category>
+        
+        <category>充電器</category>
+        
         
         <category>works</category>
         
@@ -1310,15 +1406,11 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         
         <category>ソーラー</category>
         
-        <category>PIC</category>
-        
         <category>電子工作</category>
         
         <category>太陽光電池</category>
         
         <category>秋月電子</category>
-        
-        <category>工作</category>
         
         <category>自作</category>
         

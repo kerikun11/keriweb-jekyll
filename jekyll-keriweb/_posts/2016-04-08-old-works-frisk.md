@@ -2,7 +2,7 @@
 layout: "post"
 title: "昔作った電子工作たち～in FRISK 編～"
 category: "works"
-tag: ["電子工作", "自作"]
+tags: ["電子工作", "自作"]
 icon: "icon.jpg"
 ---
 

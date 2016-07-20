@@ -2,7 +2,7 @@
 layout: post
 title: "SSHのPort Forwarding"
 category: "memos"
-tag: ["SSH", "サーバー"]
+tags: ["SSH", "サーバー"]
 ---
 
 ## Port Forwardingとは

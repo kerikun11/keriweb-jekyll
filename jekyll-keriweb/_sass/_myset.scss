@@ -196,6 +196,7 @@ body {
 
 ul.post-list{
 	margin-bottom:15px;
+	margin-left:15px;
 
 	>li {
 		overflow:hidden;
@@ -233,6 +234,9 @@ ul.post-list{
 	>li:last-child {
 		border:none;
 	}
+	@include media-query($on-laptop) {
+		margin-left:5px;
+	}
 }
 .post-title {
 	@include media-query($on-laptop) {
@@ -245,3 +249,12 @@ ul.post-list{
 .ulist p{
 	margin-left:0;
 }
+.tag-list{
+	margin-left:15px;
+	margin-bottom:15px;
+
+	@include media-query($on-laptop) {
+		margin-left:5px;
+	}
+}
+

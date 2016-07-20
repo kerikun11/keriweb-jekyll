@@ -13,7 +13,11 @@ layout: default
 				{% endif %}<span>
 					Category: <a href="/{{ page.category }}/">{{ page.category }}</a></span>
 				<br />
-				Tag: {{ page.tags | array_to_sentence_string }}
+				Tag: 
+				{% for tag in page.tags %}
+				<a href="/tags/#tag-index-{{ tag }}">{{ tag }}</a>
+				{% if forloop.last == false %}, {% endif %}
+				{% endfor %}
 			</p>
 		</div>
 	</header>

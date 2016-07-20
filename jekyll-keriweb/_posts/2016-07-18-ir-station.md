@@ -2,7 +2,7 @@
 layout: post
 title: "赤外線学習リモコン"
 category: works
-tag: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad","自動配線"]
+tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad","IoT"]
 icon: "icon.jpg"
 pickup: true
 ---

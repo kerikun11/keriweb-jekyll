@@ -2,7 +2,7 @@
 layout: "post"
 title: "CPUの創り方"
 category: "works"
-tag: ["電子工作", "CPU", "入門", "論理回路", "書籍", "はんだ付け"]
+tags: ["電子工作", "CPU", "入門", "論理回路", "書籍", "はんだ付け"]
 icon: "icon.jpg"
 ---
 
