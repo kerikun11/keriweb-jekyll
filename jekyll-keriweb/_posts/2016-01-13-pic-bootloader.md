@@ -107,10 +107,10 @@ PICに電源を投入またはPICをリセットしたときに、RB0端子がHI
 
   1. [ここ](http://www.microchip.com/pagehandler/en-us/devtools/mla/home.html)からMicrochip Libraris for Applicationsをダウンロードし、インストールする。
   1. インストール場所/mla\_v2014\_07\_22/ apps/usb/device/bootloaders/ utilities/bin/win/ HIDBootloader.exeを起動する。
-  1. ブートロードモ：ｗードのPICをUSBで接続する。
+  1. ブートロードモードのPICをUSBで接続する。
   1. 上手く接続できると、右下に`connected`と表示されるので、ユーザープログラムのHEXファイルをロードして書き込めばOK。
 
-上手くいかないときは、ドライバをインストールすればうまくいくかもしれない。ドライバも先ほどインストールしたMLAの中のutilities/usb\_drivers/に入っている。
+上手くいかないときは、ドライバをインストールすればうまくいくかもしれません。ドライバも先ほどインストールしたMLAの中のutilities/usb\_drivers/に入っています。
 
 ![HIDbootloader.exe](util1.png)
 
