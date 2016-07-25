@@ -5,9 +5,140 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Jul 2016 15:27:40 +0000</pubDate>
-    <lastBuildDate>Sun, 24 Jul 2016 15:27:40 +0000</lastBuildDate>
+    <pubDate>Mon, 25 Jul 2016 11:40:19 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Jul 2016 11:40:19 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>IR-Stationの使い方</title>
+        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Stationとは&lt;/h2&gt;
+
+&lt;p&gt;自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;本体の写真&lt;/h3&gt;
+
+&lt;p&gt;上面の4つの点が赤外線LEDです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;body.jpg&quot; alt=&quot;本体&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;壁に取り付けた時の様子&lt;/h3&gt;
+
+&lt;p&gt;とてもコンパクトです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;on-the-wall.jpg&quot; alt=&quot;壁に取り付けた様子&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2つの動作モード&lt;/h2&gt;
+
+&lt;h3 id=&quot;wifi&quot;&gt;WiFiステーションモード&lt;/h3&gt;
+
+&lt;p&gt;IR-Stationを家のルーターなどに接続して，スマホやPCからはルーター経由でIR-Stationに接続するモードです．&lt;/p&gt;
+
+&lt;p&gt;普通はこちらのモードを使います．&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi-1&quot;&gt;WiFiアクセスポイントモード&lt;/h3&gt;
+
+&lt;p&gt;IR-StationがWiFiのアクセスポイントになり，スマホやPCがIR-StationのWiFiに接続して使用するモードです．&lt;/p&gt;
+
+&lt;p&gt;このモードの場合，ルーターが不要なのでお手軽ですが，IR-StationのWiFiはインターネットに接続されていないので，スマホもインターネットにはつなぐことができないので注意が必要です．&lt;/p&gt;
+
+&lt;h2 id=&quot;ir-station-1&quot;&gt;IR-Stationのセットアップ&lt;/h2&gt;
+
+&lt;h3 id=&quot;ir-station-2&quot;&gt;IR-Stationに電源を供給&lt;/h3&gt;
+
+&lt;p&gt;電源はUSB-Micro-Bケーブルを使って，適当なUSB電源から供給します．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;01-power-supply.jpg&quot; alt=&quot;電源を供給&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ir-station-3&quot;&gt;IR-Stationが出現&lt;/h3&gt;
+
+&lt;p&gt;電源を供給すると，&lt;code class=&quot;highlighter-rouge&quot;&gt;IR-Station&lt;/code&gt;という名前のWiFiが出現します．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;02-find-ssid.png&quot; alt=&quot;SSIDを検出&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;自動でウィンドウが現れる&lt;/h3&gt;
+&lt;p&gt;AppleのデバイスやWindowsの場合，自動でログイン画面が現れます．&lt;/p&gt;
+
+&lt;p&gt;自動で画面が現れない場合や，その他のデバイスを使っている場合は，適当なブラウザで&lt;a href=&quot;http://192.168.4.1&quot;&gt;http://192.168.4.1&lt;/a&gt;を開いてください．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;03-connect-ssid.png&quot; alt=&quot;IR-Stationに接続&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wifi-2&quot;&gt;付近のWiFiを検出&lt;/h3&gt;
+
+&lt;p&gt;ログイン画面が現れて，しばらくすると，IR-Stationのセットアップ画面が表示されます．&lt;/p&gt;
+
+&lt;h4 id=&quot;ir-station-4&quot;&gt;IR-Stationをステーションモードで使う場合&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WiFi Setup Mode&lt;/code&gt;内に必要事項を記入し，&lt;code class=&quot;highlighter-rouge&quot;&gt;Confirm&lt;/code&gt;ボタンを押します．&lt;/p&gt;
+
+&lt;h4 id=&quot;ir-station-5&quot;&gt;IR-Stationをアクセスポイントモードで使う場合&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Access Point Mode&lt;/code&gt;内に必要事項を記入し，&lt;code class=&quot;highlighter-rouge&quot;&gt;Access Point Mode&lt;/code&gt;ボタンを押します．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;04-get-wifi-list.png&quot; alt=&quot;WiFiのリストを取得&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;接続成功画面→スクリーンショット&lt;/h3&gt;
+
+&lt;p&gt;入力したWiFi情報が正しく，接続に成功した場合，以下のような画面になります．この画面に表示されるURLを控えておかないといけないので，この画面を&lt;strong&gt;スクリーンショット&lt;/strong&gt;することをお勧めします．&lt;/p&gt;
+
+&lt;p&gt;失敗した場合は前の画面に戻るので，もう一度正しく入力してください．(時々，入力したWiFi情報が正しくても接続に失敗することがあるので，その場合はもう一度試してください．)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;06-successful.png&quot; alt=&quot;成功&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssid&quot;&gt;上手くいくとSSIDが消える&lt;/h3&gt;
+
+&lt;p&gt;設定が完了するとIR-StationのWiFiが消えてなくなります．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;07-disappear.png&quot; alt=&quot;SSIDが消える&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ir-station-6&quot;&gt;IR-Stationを使う&lt;/h2&gt;
+
+&lt;h3 id=&quot;ip&quot;&gt;IPアドレスでアクセス(すべての機器で使えます)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;08-ip-address.png&quot; alt=&quot;IPアドレスでアクセス(すべての機器)&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mdns&quot;&gt;mDNSホスト名でアクセス（対応機器のみ）&lt;/h3&gt;
+
+&lt;p&gt;mDNS対応機器には，Appleデバイス，iTunesのインストールされたWindows PCなどがあります．これらのデバイスからは，IPアドレスだけでなく，わかりやすい名前のURLでアクセスすることができます．表示される画面は同じです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;09-mdns-hostname.png&quot; alt=&quot;mDNSホスト名でアクセス(Bonjour対応機器)&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;赤外線信号を登録する&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;画面の下の方の&lt;code class=&quot;highlighter-rouge&quot;&gt;Recode a Signal&lt;/code&gt;というボタンを押すと，メニューが現れます．&lt;/li&gt;
+  &lt;li&gt;登録したいチャンネルを選び，ボタンの名前を入力します．&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Recode&lt;/code&gt;ボタンを押すと，IR-StationのLEDの色が変わります．&lt;/li&gt;
+  &lt;li&gt;その状態でIR-Stationにリモコンを向けて，登録したいリモコンのボタンを押してください．&lt;/li&gt;
+  &lt;li&gt;登録に成功すると，IR-Stationの画面上のボタンの名前が更新されます．&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ir-station-7&quot;&gt;赤外線信号を送る（IR-Stationをリモコンとして使う）&lt;/h3&gt;
+
+&lt;p&gt;画面上のボタンを押すだけです．そのボタンに割り当てられた赤外線信号がIR-Stationから送られます．送信中は画面のボタンがピンクに変わります．ピンク色が元の白色に戻ったら送信完了です．&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;IR-Stationは，僕ひとりでかなりの時間をかけて開発してきたものです．やっと実用できるレベルまで来ました．これからもバージョンアップを重ねて，より便利にしていきたいです．&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/</guid>
+        
+        <category>IR-Station</category>
+        
+        <category>ESP8266</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        <category>赤外線学習リモコン</category>
+        
+        <category>電子工作</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>SSHのPort Forwarding</title>
@@ -32,7 +163,7 @@
       </item>
     
       <item>
-        <title>赤外線学習リモコン</title>
+        <title>赤外線学習リモコン完成</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;

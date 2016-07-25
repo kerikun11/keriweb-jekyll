@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>赤外線学習リモコン完成 - KERI's Lab</title>
-	<meta name="description" content="概要赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．">
+	<title>IR-Stationの使い方 - KERI's Lab</title>
+	<meta name="description" content="IR-Stationとは自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．本体の写真上面の4つの点が赤外線LEDです．壁に取り付けた時の様子とてもコンパクトです．2つの動作モードWiFiステーションモードIR-Stationを家のル...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-18-ir-station/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -88,23 +88,17 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2016-07-18-ir-station/icon.jpg" title="赤外線学習リモコン完成" alt="赤外線学習リモコン完成">
+		<img src="/posts/2016-07-25-how-to-use-ir-station/icon.png" title="IR-Stationの使い方" alt="IR-Stationの使い方">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">赤外線学習リモコン完成</h1>
+			<h1 class="post-title" itemprop="name headline">IR-Stationの使い方</h1>
 			<p class="post-meta">
-				<time datetime="2016-07-18T00:00:00+00:00" itemprop="datePublished">2016年07月18日</time>
+				<time datetime="2016-07-25T00:00:00+00:00" itemprop="datePublished">2016年07月25日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
 				Tag: 
 				
-				<a href="/tags/#tag-index-電子工作">電子工作</a>
-				, 
-				
-				<a href="/tags/#tag-index-赤外線学習リモコン">赤外線学習リモコン</a>
-				, 
-				
-				<a href="/tags/#tag-index-WiFi">WiFi</a>
+				<a href="/tags/#tag-index-IR-Station">IR-Station</a>
 				, 
 				
 				<a href="/tags/#tag-index-ESP8266">ESP8266</a>
@@ -113,19 +107,10 @@
 				<a href="/tags/#tag-index-ESP-WROOM-02">ESP-WROOM-02</a>
 				, 
 				
-				<a href="/tags/#tag-index-Arduino">Arduino</a>
+				<a href="/tags/#tag-index-赤外線学習リモコン">赤外線学習リモコン</a>
 				, 
 				
-				<a href="/tags/#tag-index-IR-Station">IR-Station</a>
-				, 
-				
-				<a href="/tags/#tag-index-基板">基板</a>
-				, 
-				
-				<a href="/tags/#tag-index-KiCad">KiCad</a>
-				, 
-				
-				<a href="/tags/#tag-index-IoT">IoT</a>
+				<a href="/tags/#tag-index-電子工作">電子工作</a>
 				
 				
 			</p>
@@ -148,66 +133,114 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="ir-station">IR-Stationとは</h2>
 
-<p>赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．</p>
+<p>自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．</p>
 
-<p>今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．</p>
+<h3 id="section">本体の写真</h3>
 
-<!--more-->
+<p>上面の4つの点が赤外線LEDです．</p>
 
-<h2 id="section-1">祝・完成</h2>
+<p><img src="body.jpg" alt="本体" class="img-medium" /></p>
 
-<p><a href="/posts/2016-07-06-ir-station-board/">発注したプリント基板が基板が届き</a>，とうとう赤外線学習リモコンが完成しました．</p>
+<h3 id="section-1">壁に取り付けた時の様子</h3>
 
-<h3 id="section-2">本体</h3>
+<p>とてもコンパクトです．</p>
 
-<p><img src="body.jpg" alt="本体" /></p>
+<p><img src="on-the-wall.jpg" alt="壁に取り付けた様子" class="img-medium" /></p>
 
-<h3 id="section-3">取り付け簡単！</h3>
+<h2 id="section-2">2つの動作モード</h2>
 
-<p>壁に取り付けた様子です．電源は，<code class="highlighter-rouge">USB-micro-B</code>コネクタから供給します．
-<img src="attach.jpg" alt="取り付け" /></p>
+<h3 id="wifi">WiFiステーションモード</h3>
 
-<h3 id="section-4">操作画面</h3>
+<p>IR-Stationを家のルーターなどに接続して，スマホやPCからはルーター経由でIR-Stationに接続するモードです．</p>
 
-<p>複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
-<img src="display.png" alt="操作画面" /></p>
+<p>普通はこちらのモードを使います．</p>
 
-<h2 id="section-5">本体内部</h2>
+<h3 id="wifi-1">WiFiアクセスポイントモード</h3>
 
-<h3 id="section-6">ふたを開けると</h3>
+<p>IR-StationがWiFiのアクセスポイントになり，スマホやPCがIR-StationのWiFiに接続して使用するモードです．</p>
 
-<p>ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
-<img src="inside.jpg" alt="ふたを開けたところ" /></p>
+<p>このモードの場合，ルーターが不要なのでお手軽ですが，IR-StationのWiFiはインターネットに接続されていないので，スマホもインターネットにはつなぐことができないので注意が必要です．</p>
 
-<h3 id="section-7">基板</h3>
+<h2 id="ir-station-1">IR-Stationのセットアップ</h2>
 
-<p><img src="top.jpg" alt="基板の表" />
-<img src="back.jpg" alt="基板の裏" /></p>
+<h3 id="ir-station-2">IR-Stationに電源を供給</h3>
 
-<h2 id="section-8">作り方</h2>
+<p>電源はUSB-Micro-Bケーブルを使って，適当なUSB電源から供給します．</p>
 
-<p>すべてのデータをGithubで公開しています．<br />
-作り方は<a href="https://github.com/kerikun11/IR-station">ここ</a>を参考にしてください．</p>
+<p><img src="01-power-supply.jpg" alt="電源を供給" class="img-medium" /></p>
 
-<h2 id="section-9">最後に</h2>
+<h3 id="ir-station-3">IR-Stationが出現</h3>
 
-<p>長い間研究をしてきた赤外線学習リモコンがやっと形になりました．とても嬉しいです．</p>
+<p>電源を供給すると，<code class="highlighter-rouge">IR-Station</code>という名前のWiFiが出現します．</p>
 
-<p>この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)</p>
+<p><img src="02-find-ssid.png" alt="SSIDを検出" class="img-medium" /></p>
 
-<p>追記2016年7月25日: IR-Stationの使い方の記事を書きました．<a href="/posts/2016-07-25-how-to-use-ir-station/">IR-Stationの使い方</a></p>
+<h3 id="section-3">自動でウィンドウが現れる</h3>
+<p>AppleのデバイスやWindowsの場合，自動でログイン画面が現れます．</p>
 
-<h4 id="section-10">リンク</h4>
+<p>自動で画面が現れない場合や，その他のデバイスを使っている場合は，適当なブラウザで<a href="http://192.168.4.1">http://192.168.4.1</a>を開いてください．</p>
 
-<p>赤外線学習リモコン「IR-Station」についての他の記事:</p>
+<p><img src="03-connect-ssid.png" alt="IR-Stationに接続" class="img-medium" /></p>
 
-<ul>
-  <li><a href="/posts/2015-12-30-ir-station/">2015年12月30日 ESP8266で赤外線学習リモコン</a></li>
-  <li><a href="/posts/2016-03-11-ir-station-reference/">2016年03月11日 IR-Station Reference</a></li>
-  <li><a href="/posts/2016-07-06-ir-station-board/">2016年07月06日 赤外線学習リモコンの基板が届きました</a></li>
-</ul>
+<h3 id="wifi-2">付近のWiFiを検出</h3>
+
+<p>ログイン画面が現れて，しばらくすると，IR-Stationのセットアップ画面が表示されます．</p>
+
+<h4 id="ir-station-4">IR-Stationをステーションモードで使う場合</h4>
+
+<p><code class="highlighter-rouge">WiFi Setup Mode</code>内に必要事項を記入し，<code class="highlighter-rouge">Confirm</code>ボタンを押します．</p>
+
+<h4 id="ir-station-5">IR-Stationをアクセスポイントモードで使う場合</h4>
+
+<p><code class="highlighter-rouge">Access Point Mode</code>内に必要事項を記入し，<code class="highlighter-rouge">Access Point Mode</code>ボタンを押します．</p>
+
+<p><img src="04-get-wifi-list.png" alt="WiFiのリストを取得" class="img-medium" /></p>
+
+<h3 id="section-4">接続成功画面→スクリーンショット</h3>
+
+<p>入力したWiFi情報が正しく，接続に成功した場合，以下のような画面になります．この画面に表示されるURLを控えておかないといけないので，この画面を<strong>スクリーンショット</strong>することをお勧めします．</p>
+
+<p>失敗した場合は前の画面に戻るので，もう一度正しく入力してください．(時々，入力したWiFi情報が正しくても接続に失敗することがあるので，その場合はもう一度試してください．)</p>
+
+<p><img src="06-successful.png" alt="成功" class="img-medium" /></p>
+
+<h3 id="ssid">上手くいくとSSIDが消える</h3>
+
+<p>設定が完了するとIR-StationのWiFiが消えてなくなります．</p>
+
+<p><img src="07-disappear.png" alt="SSIDが消える" class="img-medium" /></p>
+
+<h2 id="ir-station-6">IR-Stationを使う</h2>
+
+<h3 id="ip">IPアドレスでアクセス(すべての機器で使えます)</h3>
+
+<p><img src="08-ip-address.png" alt="IPアドレスでアクセス(すべての機器)" class="img-medium" /></p>
+
+<h3 id="mdns">mDNSホスト名でアクセス（対応機器のみ）</h3>
+
+<p>mDNS対応機器には，Appleデバイス，iTunesのインストールされたWindows PCなどがあります．これらのデバイスからは，IPアドレスだけでなく，わかりやすい名前のURLでアクセスすることができます．表示される画面は同じです．</p>
+
+<p><img src="09-mdns-hostname.png" alt="mDNSホスト名でアクセス(Bonjour対応機器)" class="img-medium" /></p>
+
+<h3 id="section-5">赤外線信号を登録する</h3>
+
+<ol>
+  <li>画面の下の方の<code class="highlighter-rouge">Recode a Signal</code>というボタンを押すと，メニューが現れます．</li>
+  <li>登録したいチャンネルを選び，ボタンの名前を入力します．</li>
+  <li><code class="highlighter-rouge">Recode</code>ボタンを押すと，IR-StationのLEDの色が変わります．</li>
+  <li>その状態でIR-Stationにリモコンを向けて，登録したいリモコンのボタンを押してください．</li>
+  <li>登録に成功すると，IR-Stationの画面上のボタンの名前が更新されます．</li>
+</ol>
+
+<h3 id="ir-station-7">赤外線信号を送る（IR-Stationをリモコンとして使う）</h3>
+
+<p>画面上のボタンを押すだけです．そのボタンに割り当てられた赤外線信号がIR-Stationから送られます．送信中は画面のボタンがピンクに変わります．ピンク色が元の白色に戻ったら送信完了です．</p>
+
+<h2 id="section-6">まとめ</h2>
+
+<p>IR-Stationは，僕ひとりでかなりの時間をかけて開発してきたものです．やっと実用できるレベルまで来ました．これからもバージョンアップを重ねて，より便利にしていきたいです．</p>
 
 
 	</div>
@@ -227,27 +260,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
 			<a class="post-link" href="/posts/2016-07-20-ssh-port-forwarding/">
 				<img src="/home/icon.png" title="SSHのPort Forwarding" alt="SSHのPort Forwarding">
 				<div class="post-list-char">
 					<span class="post-meta">2016年07月20日 Category: memos</span>
 					<h2 class="post-title">
 						SSHのPort Forwarding
-					</h2>
-				</div>
-			</a>
-			
-		</div>
-		<div class="post-guide-previous">
-			
-			<p>前の記事</p>
-			<a class="post-link" href="/posts/2016-07-13-new-fish/">
-				<img src="/posts/2016-07-13-new-fish/icon.jpg" title="メダカが増えました！" alt="メダカが増えました！">
-				<div class="post-list-char">
-					<span class="post-meta">2016年07月13日 Category: blogs</span>
-					<h2 class="post-title">
-						メダカが増えました！
 					</h2>
 				</div>
 			</a>

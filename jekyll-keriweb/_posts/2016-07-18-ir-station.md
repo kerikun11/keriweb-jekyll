@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "赤外線学習リモコン"
+title: "赤外線学習リモコン完成"
 category: works
 tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad","IoT"]
 icon: "icon.jpg"
@@ -55,6 +55,8 @@ ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現
 長い間研究をしてきた赤外線学習リモコンがやっと形になりました．とても嬉しいです．
 
 この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)
+
+追記2016年7月25日: IR-Stationの使い方の記事を書きました．[IR-Stationの使い方]({% post_url 2016-07-25-how-to-use-ir-station %})
 
 #### リンク
 
