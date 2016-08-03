@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>ファイアウォールの設定 - KERI's Lab</title>
-	<meta name="description" content="ファイアウォールの設定">
+	<title>KERI's Lab</title>
+	<meta name="description" content="KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-17-firewall/">
+	<link rel="canonical" href="http://kerikeri.top/posters/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -87,157 +87,71 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="posts">
 
 	<header class="post-header">
-		<img src="/home/icon.png" title="ファイアウォールの設定" alt="ファイアウォールの設定">
-		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">ファイアウォールの設定</h1>
-			<p class="post-meta">
-				<time datetime="2015-11-17T00:00:00+00:00" itemprop="datePublished">2015年11月17日</time>
-				<span>
-					Category: <a href="/memos/">memos</a></span>
-				<br />
-				Tag: 
-				
-				<a href="/tags/#tag-index-ターミナル">ターミナル</a>
-				, 
-				
-				<a href="/tags/#tag-index-ファイアウォール">ファイアウォール</a>
-				, 
-				
-				<a href="/tags/#tag-index-サーバー">サーバー</a>
-				, 
-				
-				<a href="/tags/#tag-index-ラズパイ">ラズパイ</a>
-				
-				
-			</p>
-		</div>
+		<h1 class="post-title">ポスター</h1>
 	</header>
+	<ul class="post-list">
+		
+		<li>
+	<a class="post-link" href="/posters/ir-station/">
+		<img src="/posters/ir-station/icon.png" title="IR-Station" alt="IR-Station">
+		<div class="post-list-char">
+			<h2>
+				IR-Station
+			</h2>
+			<span class="post-meta" style="max-height:4em;">WiFi接続の赤外線学習リモコン
 
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 1st-ad -->
-<ins class="adsbygoogle"
-	style="display:block"
-	data-ad-client="ca-pub-1668524068659644"
-	data-ad-slot="7974159815"
-	data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-	<br />
-
-	<span class="post-meta"></span>
-	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">ファイアウォールの設定</h2>
-
-<!--more-->
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo apt-get install ufw
-
-<span class="gp">$ </span>sudo ufw status
-Status: inactive
-
-<span class="gp">$ </span>sudo ufw <span class="nb">enable
-</span>Command may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>? 
-y
-
-<span class="gp">$ </span>sudo ufw disenable
-<span class="gp">$ </span>sudo ufw reset
-Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?
-y
-
-<span class="gp">$ </span>sudo ufw disenable
-<span class="gp">$ </span>sudo ufw default deny
-<span class="gp">$ </span>sudo ufw allow 80
-<span class="gp">$ </span>sudo ufw allow 22
-<span class="gp">$ </span>sudo ufw <span class="nb">enable</span>
-
-<span class="gp">$ </span>sudo ufw status
-Status: active
-
- To                         Action      From
- --                         ------      ----
- 22                         ALLOW       Anywhere
- 80                         ALLOW       Anywhere</code></pre></figure>
+	本体
+	
 
 
-	</div>
-
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 1st-ad -->
-<ins class="adsbygoogle"
-	style="display:block"
-	data-ad-client="ca-pub-1668524068659644"
-	data-ad-slot="7974159815"
-	data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+	壁に取り付けた時の様子
+	
 
 
-	<div class="post-guide">
-		<div class="post-guide-next">
-			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2015-11-23-samba/">
-				<img src="/home/icon.png" title="Raspberry Pi で NAS 作り" alt="Raspberry Pi で NAS 作り">
-				<div class="post-list-char">
-					<span class="post-meta">2015年11月23日 Category: memos</span>
-					<h2 class="post-title">
-						Raspberry Pi で NAS 作り
-					</h2>
-				</div>
-			</a>
-			
+	赤外線学習リモコンとは
+	　赤外線学習リモコンとは，家電製品などのリモコンの赤外線信号を記憶して，代わりに家電製品をコントロールする機器です．「IR-Station」という名前は，私が命名しました．
+
+操作方法
+
+	操作画面
+	
+
+
+	スマホのブラウザを使用
+	　リモコンの操作は普通のブラウザから行うので，どんなスマホやPCでも使用することができます．
+	始めに赤外線を登録
+	　まず始めに，画面下方の「Recode a new Signal」ボタンから赤外線信号を登録します．これから登録するボタンの名前を入力し，IR-Stationに向けて家電製品のリモコンを押します．
+	家電製品をコントロール
+	　一度赤外線信号を記憶してしまえば，あとは，ブラウザでボタンを押すだけです．
+
+今後の課題
+
+IP直打ちではなく，ホスト名でアクセス
+　今はmDNSという技術を使って名前アクセスしているのですが，これはAppleデバイスのみしか対応していないので，何らかの方法で，名前アクセスを実現したいです．
+
+
+家の外からコントロール
+　今の段階では，LAN内のみからしかコントロールできませんが，今後，LANの外からもコントロールできるようにしたいです．
+
+
+
+	作者: けり　Twitter: @Ryokeri14　HP: http://kerikeri.top
+
+</span>
+			<!--
+			<p></p>
+			-->
 		</div>
-		<div class="post-guide-previous">
-			
-			<p>前の記事</p>
-			<a class="post-link" href="/posts/2015-11-15-i2c-lcd/">
-				<img src="/posts/2015-11-15-i2c-lcd/icon.png" title="delayやwhileを使わないI2C液晶表示プログラム" alt="delayやwhileを使わないI2C液晶表示プログラム">
-				<div class="post-list-char">
-					<span class="post-meta">2015年11月15日 Category: memos</span>
-					<h2 class="post-title">
-						delayやwhileを使わないI2C液晶表示プログラム
-					</h2>
-				</div>
-			</a>
-			
-		</div>
-	</div>
+	</a>
+</li>
 
-	<br />
+		
+	</ul>
 
-	<div id="disqus_thread"></div>
-<script>
-/**
- *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
- *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
- */
-/*
-   var disqus_config = function () {
-   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-   };
- */
-(function() {  // DON'T EDIT BELOW THIS LINE
- var d = document, s = d.createElement('script');
-
- s.src = '//kerikeri.disqus.com/embed.js';
-
- s.setAttribute('data-timestamp', +new Date());
- (d.head || d.body).appendChild(s);
- })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-</article>
+</div>
 
 
       </div>

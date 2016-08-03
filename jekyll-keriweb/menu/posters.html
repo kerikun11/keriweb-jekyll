@@ -1,0 +1,19 @@
+---
+layout:		default
+#title:		ポスター
+permalink:	/posters/
+---
+
+<div class="posts">
+
+	<header class="post-header">
+		<h1 class="post-title">ポスター</h1>
+	</header>
+	<ul class="post-list">
+		{% for poster in site.posters %}
+		{% include poster-list.html %}
+		{% endfor %}
+	</ul>
+
+</div>
+
