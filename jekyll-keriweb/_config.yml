@@ -17,6 +17,10 @@ github_username: kerikun11
 permalink: /posts/:year-:month-:day-:title/
 excerpt_separator: <!--more-->
 timezone: Japan/Tokyo
+collections:
+  posters:
+    output: true
+    permalink: /posters/:path/
 
 # Build Settings
 markdown: kramdown
