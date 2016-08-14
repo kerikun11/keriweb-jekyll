@@ -93,7 +93,7 @@
 	<a href="/tags/#tag-index-ソーラー" style="font-size:17px">ソーラー</a>
 	, 
 	
-	<a href="/tags/#tag-index-電子工作" style="font-size:41px">電子工作</a>
+	<a href="/tags/#tag-index-電子工作" style="font-size:42px">電子工作</a>
 	, 
 	
 	<a href="/tags/#tag-index-太陽光電池" style="font-size:15px">太陽光電池</a>
@@ -219,13 +219,13 @@
 	<a href="/tags/#tag-index-インストール" style="font-size:15px">インストール</a>
 	, 
 	
-	<a href="/tags/#tag-index-IR-Station" style="font-size:20px">IR-Station</a>
+	<a href="/tags/#tag-index-IR-Station" style="font-size:21px">IR-Station</a>
 	, 
 	
-	<a href="/tags/#tag-index-ESP8266" style="font-size:23px">ESP8266</a>
+	<a href="/tags/#tag-index-ESP8266" style="font-size:24px">ESP8266</a>
 	, 
 	
-	<a href="/tags/#tag-index-ESP-WROOM-02" style="font-size:23px">ESP-WROOM-02</a>
+	<a href="/tags/#tag-index-ESP-WROOM-02" style="font-size:24px">ESP-WROOM-02</a>
 	, 
 	
 	<a href="/tags/#tag-index-Arduino" style="font-size:23px">Arduino</a>
@@ -285,10 +285,10 @@
 	<a href="/tags/#tag-index-HTTP" style="font-size:15px">HTTP</a>
 	, 
 	
-	<a href="/tags/#tag-index-HTML" style="font-size:15px">HTML</a>
+	<a href="/tags/#tag-index-HTML" style="font-size:16px">HTML</a>
 	, 
 	
-	<a href="/tags/#tag-index-CSS" style="font-size:15px">CSS</a>
+	<a href="/tags/#tag-index-CSS" style="font-size:16px">CSS</a>
 	, 
 	
 	<a href="/tags/#tag-index-Active Record" style="font-size:15px">Active Record</a>
@@ -450,7 +450,7 @@
 	<a href="/tags/#tag-index-修理" style="font-size:15px">修理</a>
 	, 
 	
-	<a href="/tags/#tag-index-赤外線学習リモコン" style="font-size:17px">赤外線学習リモコン</a>
+	<a href="/tags/#tag-index-赤外線学習リモコン" style="font-size:18px">赤外線学習リモコン</a>
 	, 
 	
 	<a href="/tags/#tag-index-卵" style="font-size:15px">卵</a>
@@ -469,6 +469,9 @@
 	, 
 	
 	<a href="/tags/#tag-index-MFT2016" style="font-size:15px">MFT2016</a>
+	, 
+	
+	<a href="/tags/#tag-index-JavaScript" style="font-size:15px">JavaScript</a>
 	
 	
 </div>
@@ -563,9 +566,110 @@
 
 
 
-<h1 class="page-heading" id="tag-index-電子工作">電子工作 (27) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-電子工作">電子工作 (28) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-08-05-maker-faire-tokyo-2016/">
@@ -4244,9 +4348,110 @@ Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベ�
 
 
 
-<h1 class="page-heading" id="tag-index-IR-Station">IR-Station (6) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-IR-Station">IR-Station (7) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-08-05-maker-faire-tokyo-2016/">
@@ -4661,9 +4866,110 @@ ESP-WROOM-02←秋月電子などで売っています。
 
 
 
-<h1 class="page-heading" id="tag-index-ESP8266">ESP8266 (9) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-ESP8266">ESP8266 (10) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-07-25-how-to-use-ir-station/">
@@ -5185,9 +5491,110 @@ ESP-WROOM-02←秋月電子などで売っています。
 
 
 
-<h1 class="page-heading" id="tag-index-ESP-WROOM-02">ESP-WROOM-02 (9) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-ESP-WROOM-02">ESP-WROOM-02 (10) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-07-25-how-to-use-ir-station/">
@@ -7873,9 +8280,110 @@ Sample
 
 
 
-<h1 class="page-heading" id="tag-index-HTML">HTML (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-HTML">HTML (2) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-03-12-sinatra/">
@@ -7903,9 +8411,110 @@ Sample
 
 
 
-<h1 class="page-heading" id="tag-index-CSS">CSS (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-CSS">CSS (2) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-03-12-sinatra/">
@@ -10003,9 +10612,110 @@ https://github.com/jwarby/jekyll-pygments-themesから適当なテーマを持�
 
 
 
-<h1 class="page-heading" id="tag-index-赤外線学習リモコン">赤外線学習リモコン (3) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-赤外線学習リモコン">赤外線学習リモコン (4) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2016-07-25-how-to-use-ir-station/">
@@ -10260,6 +10970,115 @@ https://github.com/jwarby/jekyll-pygments-themesから適当なテーマを持�
 
 こんにちは．けりです．
 8月6日(土)，8月7日(日)にお台場の国際展示場で開催される，ものつくりの展示イベントのMaker Faire Tokyo 2016に出展することになりました！
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
+	
+</ul>
+
+
+
+<h1 class="page-heading" id="tag-index-JavaScript">JavaScript (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+
+<ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2016-08-14-download-upload/">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-list-char">
+			<span class="post-meta">2016年08月14日 Category: works</span>
+			<h2>
+				IR-Stationの赤外線ダウンロード機能
+			</h2>
+			<span class="post-meta" style="max-height:4em;">IR-Stationとは
+
+自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．
+
+詳しくは，IR-Stationについての記事一覧をご覧ください．
+
+IR-Stationの新機能
+
+夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．
+
+IR-Stationの操作画面
+画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
+
+
+
+設定画面
+画面下方の設定画面では，以下のことができます．
+
+
+  赤外線信号を新規登録(Recode a new Signal)
+  既存の赤外線信号の名前を変更(Rename a Signal)
+  赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)
+  既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)
+  既存の赤外線信号を削除(Clear a Signal)
+  すべての赤外線信号を削除(Clear All Signals)
+  WiFiを変更(初期化)(Change WiFi)
+
+
+
+
+赤外線データファイルのダウンロード機能
+
+赤外線信号を選んでSubmitボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
+
+
+
+赤外線データファイルのアップロード機能
+
+信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，Submitボタンを押すと，赤外線が登録されます．
+
+
+
+赤外線データファイルはJSONファイル
+
+赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．
+
+JSONフォーマット
+
+赤外線データは，単位がマイクロ秒の生データです．
+
+0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間
+
+です．
+
+{
+	"data":["赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"],
+	"name":"名前"
+}
+
+
+
+JSONファイルの例
+
+これに従った形式なら，自分で作ったファイルでもアップロード可能です．
+
+{
+	"data":[
+		3300,1786,363,1305,390,473,364,476,317,548,289,577,288,501,364,474,390,475,290,550,289,1403,290,551,314,1377,290,552,313,502,362,1379,289,1378,289,1378,314,1377,389,1304,364,476,312,552,290,553,312,474,391,1305,362,501,364,474,361,504,289,553,312,477,363,500,364,476,287,578,289,1377,314,551,290,502,363,476,388,474,391,451,313,551,313,553,288,500,363,1304,385,1362,310,475,389,475,364,477,313,552,288,1380,317,50215,3305,3489,314
+	],
+	"name":"TV Power"
+}
+
+
+
+注意
+
+JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，Githab/kerikun11/IR-Stationにあるのでそちらをご覧下さい．
+
+まとめ
+
+IR-Stationは，日々進化しています．今後のアップデートにもご期待を！
 
 </span>
 			<!--

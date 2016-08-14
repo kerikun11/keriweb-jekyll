@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="ja">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>IR-Stationの赤外線ダウンロード機能 - KERI's Lab</title>
+	<meta name="description" content="IR-Stationとは自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．詳しくは，IR-Stationについての記事一覧をご覧ください．IR-Stationの新機能夏休みになり，IR-Stationを本格的に開発しています．今回は...">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-08-14-download-upload/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script language="JavaScript">
+		$(document).ready( function () {
+			$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+		})
+	</script>
+
+</head>
+
+
+  <body>
+
+    <!-- includes/header.html -->
+
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">KERI's Lab</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/blogs/">ブログ</a>
+          
+        
+          
+          <a class="page-link" href="/explanations/">解説文</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/memos/">備忘録</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/works/">作品</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+	<header class="post-header">
+		<img src="/posts/2016-08-14-download-upload/icon.png" title="IR-Stationの赤外線ダウンロード機能" alt="IR-Stationの赤外線ダウンロード機能">
+		<div class="post-head-char">
+			<h1 class="post-title" itemprop="name headline">IR-Stationの赤外線ダウンロード機能</h1>
+			<p class="post-meta">
+				<time datetime="2016-08-14T00:00:00+00:00" itemprop="datePublished">2016年08月14日</time>
+				<span>
+					Category: <a href="/works/">works</a></span>
+				<br />
+				Tag: 
+				
+				<a href="/tags/#tag-index-IR-Station">IR-Station</a>
+				, 
+				
+				<a href="/tags/#tag-index-電子工作">電子工作</a>
+				, 
+				
+				<a href="/tags/#tag-index-HTML">HTML</a>
+				, 
+				
+				<a href="/tags/#tag-index-CSS">CSS</a>
+				, 
+				
+				<a href="/tags/#tag-index-JavaScript">JavaScript</a>
+				, 
+				
+				<a href="/tags/#tag-index-ESP-WROOM-02">ESP-WROOM-02</a>
+				, 
+				
+				<a href="/tags/#tag-index-ESP8266">ESP8266</a>
+				, 
+				
+				<a href="/tags/#tag-index-赤外線学習リモコン">赤外線学習リモコン</a>
+				
+				
+			</p>
+		</div>
+	</header>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<br />
+
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="ir-station">IR-Stationとは</h2>
+
+<p>自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．</p>
+
+<p>詳しくは，<a href="/tags/#tag-index-IR-Station">IR-Stationについての記事一覧</a>をご覧ください．</p>
+
+<h2 id="ir-station-1">IR-Stationの新機能</h2>
+
+<p>夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．</p>
+
+<h3 id="ir-station-2">IR-Stationの操作画面</h3>
+<p>画面下方の設定やInfoの配置が少し変わり，見やすくなりました．</p>
+
+<p><img src="display.png" alt="画面" /></p>
+
+<h3 id="section">設定画面</h3>
+<p>画面下方の設定画面では，以下のことができます．</p>
+
+<ol>
+  <li>赤外線信号を新規登録(Recode a new Signal)</li>
+  <li>既存の赤外線信号の名前を変更(Rename a Signal)</li>
+  <li>赤外線信号ファイルをアップロードして新規登録(Upload a new Signal)</li>
+  <li>既存の赤外線信号ファイルを端末にダウンロード(Download a Signal)</li>
+  <li>既存の赤外線信号を削除(Clear a Signal)</li>
+  <li>すべての赤外線信号を削除(Clear All Signals)</li>
+  <li>WiFiを変更(初期化)(Change WiFi)</li>
+</ol>
+
+<p><img src="action.png" alt="設定" /></p>
+
+<h3 id="section-1">赤外線データファイルのダウンロード機能</h3>
+
+<p>赤外線信号を選んで<code class="highlighter-rouge">Submit</code>ボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．</p>
+
+<p><img src="download.png" alt="ダウンロード画面" /></p>
+
+<h3 id="section-2">赤外線データファイルのアップロード機能</h3>
+
+<p>信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，<code class="highlighter-rouge">Submit</code>ボタンを押すと，赤外線が登録されます．</p>
+
+<p><img src="upload.png" alt="アップロード画面" /></p>
+
+<h2 id="json">赤外線データファイルはJSONファイル</h2>
+
+<p>赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．</p>
+
+<h3 id="json-1">JSONフォーマット</h3>
+
+<p>赤外線データは，単位がマイクロ秒の生データです．</p>
+
+<p>0,2,4,6,…番目の数値が，38kHzの赤外線が存在する(High状態の)マイクロ秒時間<br />
+1,3,5,7,…番目の数値が，赤外線が存在しない(Low状態の)マイクロ秒時間</p>
+
+<p>です．</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nt">"data"</span><span class="p">:[</span><span class="s2">"赤外線のHigh,Lowをマイクロ秒で表したuint16_tのリスト"</span><span class="p">],</span><span class="w">
+	</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"名前"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="json-2">JSONファイルの例</h3>
+
+<p>これに従った形式なら，自分で作ったファイルでもアップロード可能です．</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nt">"data"</span><span class="p">:[</span><span class="w">
+		</span><span class="mi">3300</span><span class="p">,</span><span class="mi">1786</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">1305</span><span class="p">,</span><span class="mi">390</span><span class="p">,</span><span class="mi">473</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">317</span><span class="p">,</span><span class="mi">548</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">577</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">501</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">390</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">550</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1403</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">502</span><span class="p">,</span><span class="mi">362</span><span class="p">,</span><span class="mi">1379</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1378</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1378</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">389</span><span class="p">,</span><span class="mi">1304</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">391</span><span class="p">,</span><span class="mi">1305</span><span class="p">,</span><span class="mi">362</span><span class="p">,</span><span class="mi">501</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">361</span><span class="p">,</span><span class="mi">504</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">477</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">287</span><span class="p">,</span><span class="mi">578</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">502</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">388</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">391</span><span class="p">,</span><span class="mi">451</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">1304</span><span class="p">,</span><span class="mi">385</span><span class="p">,</span><span class="mi">1362</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">389</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">477</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">1380</span><span class="p">,</span><span class="mi">317</span><span class="p">,</span><span class="mi">50215</span><span class="p">,</span><span class="mi">3305</span><span class="p">,</span><span class="mi">3489</span><span class="p">,</span><span class="mi">314</span><span class="w">
+	</span><span class="p">],</span><span class="w">
+	</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"TV Power"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="section-3">注意</h3>
+
+<p>JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，<a href="http://github.com/kerikun11/IR-station.git">Githab/kerikun11/IR-Station</a>にあるのでそちらをご覧下さい．</p>
+
+<h2 id="section-4">まとめ</h2>
+
+<p>IR-Stationは，日々進化しています．今後のアップデートにもご期待を！</p>
+
+
+	</div>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<div class="post-guide">
+		<div class="post-guide-next">
+			
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
+			<a class="post-link" href="/posts/2016-08-05-maker-faire-tokyo-2016/">
+				<img src="/posts/2016-08-05-maker-faire-tokyo-2016/logo.jpg" title="Maker Faire Tokyo 2016 に出展します！" alt="Maker Faire Tokyo 2016 に出展します！">
+				<div class="post-list-char">
+					<span class="post-meta">2016年08月05日 Category: blogs</span>
+					<h2 class="post-title">
+						Maker Faire Tokyo 2016 に出展します！
+					</h2>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+
+	<br />
+
+	<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+
+		<a href="/"><h2 class="footer-heading">KERI's Lab</h2></a>
+
+		<div class="footer-col-wrapper">
+			<div class="footer-col footer-col-1">
+				<ul class="contact-list">
+					<li>Contact KERI</li>
+					<li>Mail : <a href="mailto:kerikun11+web@gmail.com">kerikun11+web@gmail.com</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-2">
+				<ul class="social-media-list">
+					
+					<li>
+						<a href="https://github.com/kerikun11" target="_blank"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">kerikun11</span></a>
+
+					</li>
+					
+
+					
+					<li>
+						<a href="https://twitter.com/Ryokeri14" target="_blank"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">Ryokeri14</span></a>
+
+					</li>
+					
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-3">
+				<p>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</p>
+			</div>
+
+			<div class="footer-copyright">
+				<p>Copyright© 2014-2016 KERI's Lab All Rights Reserved.</p>
+			</div>
+		</div>
+
+	</div>
+
+</footer>
+
+
+  </body>
+
+</html>
