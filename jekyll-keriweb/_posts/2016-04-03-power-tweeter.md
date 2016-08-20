@@ -60,12 +60,6 @@ icon: "icon.png"
 
 ![tweet-20h](tweet-20h.png)
 
-## ソフトウェア
-
-Githubに公開してあります。興味のある方はご覧ください。
-
-URL: [kerikun11/Power-Tweeter](https://github.com/kerikun11/Power-Tweeter)
-
 ## 大問題発生！！
 
 ### 気づいたら止まっている
