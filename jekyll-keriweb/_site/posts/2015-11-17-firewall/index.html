@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>ファイアウォールの設定 - KERI's Lab</title>
-	<meta name="description" content="ファイアウォールの設定">
+	<meta name="description" content="概要ufwiptablesという有名なファイアウォールソフトウェアがあるが初心者には使いにくいので，今回は初心者でも使いやすいufwというソフトを使う．">
 
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-17-firewall/">
@@ -132,37 +132,71 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">ファイアウォールの設定</h2>
+		<h2 id="section">概要</h2>
+
+<h3 id="ufw">ufw</h3>
+
+<p>iptablesという有名なファイアウォールソフトウェアがあるが初心者には使いにくいので，今回は初心者でも使いやすいufwというソフトを使う．</p>
 
 <!--more-->
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo apt-get install ufw
+<h2 id="section-1">ファイアウォールの設定</h2>
 
-<span class="gp">$ </span>sudo ufw status
+<h3 id="section-2">インストール&amp;初期設定</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install ufw
+
+$ sudo ufw status
 Status: inactive
+</code></pre>
+</div>
 
-<span class="gp">$ </span>sudo ufw <span class="nb">enable
-</span>Command may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>? 
-y
+<h3 id="ipv6off">IPv6サポートをOFF</h3>
 
-<span class="gp">$ </span>sudo ufw disenable
-<span class="gp">$ </span>sudo ufw reset
+<div class="language-diff highlighter-rouge"><pre class="highlight"><code>/etc/default/ufw
+
+<span class="gd">-IPV6=yes
+</span><span class="gi">+IPV6=no
+</span></code></pre>
+</div>
+
+<h3 id="section-3">必要があれば初期化</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw reset
 Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?
 y
+</code></pre>
+</div>
 
-<span class="gp">$ </span>sudo ufw disenable
-<span class="gp">$ </span>sudo ufw default deny
-<span class="gp">$ </span>sudo ufw allow 80
-<span class="gp">$ </span>sudo ufw allow 22
-<span class="gp">$ </span>sudo ufw <span class="nb">enable</span>
+<h3 id="section-4">基本ポリシーを設定</h3>
 
-<span class="gp">$ </span>sudo ufw status
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw default deny
+</code></pre>
+</div>
+
+<h3 id="section-5">使用するサービスのポートを開く</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw allow 80
+Rules updated
+$ sudo ufw allow 22
+Rules updated
+</code></pre>
+</div>
+
+<h3 id="ufw-1">ufwの有効化</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw enable
+sudo uFirewall is active and enabled on system startup
+
+$ sudo ufw status
 Status: active
 
  To                         Action      From
  --                         ------      ----
  22                         ALLOW       Anywhere
- 80                         ALLOW       Anywhere</code></pre></figure>
+ 80                         ALLOW       Anywhere
+</code></pre>
+</div>
 
 
 	</div>
