@@ -5,9 +5,53 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Aug 2016 12:38:45 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Aug 2016 12:38:45 +0000</lastBuildDate>
+    <pubDate>Sun, 28 Aug 2016 16:43:34 +0000</pubDate>
+    <lastBuildDate>Sun, 28 Aug 2016 16:43:34 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>ブログを更新するスクリプト</title>
+        <description>&lt;h2 id=&quot;github&quot;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
+
+&lt;p&gt;自分用のメモ&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
+        
+        <category>シェルスクリプト</category>
+        
+        <category>ラズパイ</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>ラズパイセットアップのコマンド群</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;はじめに&lt;/h2&gt;
+
+&lt;p&gt;これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ssh pi@192.168.11.13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-08-28-raspi-setup/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-28-raspi-setup/</guid>
+        
+        <category>Raspberry Pi</category>
+        
+        <category>ラズパイ</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>ブログのサーバーが新しくなりました！</title>
@@ -1725,77 +1769,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <category>シリアル</category>
         
         <category>ターミナル</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>ChargeStationの紹介</title>
-        <description>みなさん、こんにちは。&lt;br /&gt;
-14の けり &lt;a href=&quot;https://twitter.com/Ryokeri14&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt; です。&lt;br /&gt;
-春休みになりました。&lt;br /&gt;
-みなさん、進捗どうですか？&lt;br /&gt;
-&lt;br /&gt;
-今日ご紹介するのは&lt;br /&gt;
-&lt;b&gt;&lt;span  style=&quot;font-size: large;&quot;&gt;Charge Station&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;
-です。&lt;br /&gt;
-&lt;br /&gt;
-これだけだと何かわからないので簡単に説明すると、&lt;br /&gt;
-自動制御の充電器です。携帯などを充電します。&lt;br /&gt;
-
-
-</description>
-        <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</guid>
-        
-        <category>Charge Station</category>
-        
-        <category>電子工作</category>
-        
-        <category>自作</category>
-        
-        <category>PIC</category>
-        
-        <category>充電器</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>100W級ソーラーシステムの自作</title>
-        <description>どーも。椋けり（twitter:&lt;a href=&quot;https://twitter.com/Ryokeri14/&quot; target=&quot;_blank&quot;&gt;@Ryokeri14&lt;/a&gt;）です。id研です。&lt;br /&gt;
-&lt;br /&gt;
-夏休みにもかかわらず、バイトを入れすぎて&lt;br /&gt;
-全然遊んでないじゃないか！&lt;br /&gt;
-&lt;br /&gt;
-じゃあ電子工作をしよう！&lt;br /&gt;
-
-
-</description>
-        <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2014-09-14-solar-system/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2014-09-14-solar-system/</guid>
-        
-        <category>ソーラー</category>
-        
-        <category>電子工作</category>
-        
-        <category>太陽光電池</category>
-        
-        <category>秋月電子</category>
-        
-        <category>自作</category>
-        
-        <category>マイコン</category>
-        
-        <category>充電器</category>
-        
-        <category>節電</category>
         
         
         <category>works</category>
