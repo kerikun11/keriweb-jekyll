@@ -5,9 +5,47 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Aug 2016 16:43:34 +0000</pubDate>
-    <lastBuildDate>Sun, 28 Aug 2016 16:43:34 +0000</lastBuildDate>
+    <pubDate>Wed, 31 Aug 2016 10:04:06 +0000</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2016 10:04:06 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>VolumioでiTunesのプレイリストを使う</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&quot;volumio&quot;&gt;Volumio&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Volumio&lt;/strong&gt;というミュージックサーバーソフトウェアがある．&lt;/p&gt;
+
+&lt;p&gt;ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;プレイリスト問題&lt;/h3&gt;
+
+&lt;p&gt;しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;めんどくさい！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ということで，今回は，iTunesのプレイリストをvolumioのプレイリストに変換するスクリプトを紹介する．&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-31-volumio-playlist/</guid>
+        
+        <category>ラズパイ</category>
+        
+        <category>ミュージックサーバー</category>
+        
+        <category>Volumio</category>
+        
+        <category>iTunes</category>
+        
+        <category>プレイリスト</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>ブログを更新するスクリプト</title>
@@ -1730,48 +1768,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         
         
         <category>blogs</category>
-        
-      </item>
-    
-      <item>
-        <title>メダカの照明の自作</title>
-        <description>こんにちは。&lt;br /&gt;
-けり(@Ryokeri14)です。&lt;br /&gt;
-みなさん、進捗いかがですか？&lt;br /&gt;
-僕は、ぼちぼちです。&lt;br /&gt;
-&lt;br /&gt;
-今回紹介するのは、&lt;br /&gt;
-&lt;span  style=&quot;color: rgb(0, 0, 255); font-size: x-large;&quot;&gt;メダカの水槽の照明&lt;/span&gt;です。&lt;br /&gt;
-&lt;br /&gt;
-高校時代の親友の刺激を受け、&lt;br /&gt;
-5月ごろからメダカを飼い始めました。&lt;br /&gt;
-
-
-</description>
-        <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
-        
-        <category>めだか</category>
-        
-        <category>電子工作</category>
-        
-        <category>LED</category>
-        
-        <category>PIC</category>
-        
-        <category>PIC18F27J53</category>
-        
-        <category>パワーLED</category>
-        
-        <category>制御</category>
-        
-        <category>シリアル</category>
-        
-        <category>ターミナル</category>
-        
-        
-        <category>works</category>
         
       </item>
     

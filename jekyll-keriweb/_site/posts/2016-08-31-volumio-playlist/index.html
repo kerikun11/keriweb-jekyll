@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="ja">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>VolumioでiTunesのプレイリストを使う - KERI's Lab</title>
+	<meta name="description" content="概要VolumioVolumioというミュージックサーバーソフトウェアがある．ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．プレイリスト問題しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリス...">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-08-31-volumio-playlist/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script language="JavaScript">
+		$(document).ready( function () {
+			$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+		})
+	</script>
+
+</head>
+
+
+  <body>
+
+    <!-- includes/header.html -->
+
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">KERI's Lab</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/blogs/">ブログ</a>
+          
+        
+          
+          <a class="page-link" href="/explanations/">解説文</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/memos/">備忘録</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/works/">作品</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+	<header class="post-header">
+		<img src="/posts/2016-08-31-volumio-playlist/icon.png" title="VolumioでiTunesのプレイリストを使う" alt="VolumioでiTunesのプレイリストを使う">
+		<div class="post-head-char">
+			<h1 class="post-title" itemprop="name headline">VolumioでiTunesのプレイリストを使う</h1>
+			<p class="post-meta">
+				<time datetime="2016-08-31T00:00:00+00:00" itemprop="datePublished">2016年08月31日</time>
+				<span>
+					Category: <a href="/memos/">memos</a></span>
+				<br />
+				Tag: 
+				
+				<a href="/tags/#tag-index-ラズパイ">ラズパイ</a>
+				, 
+				
+				<a href="/tags/#tag-index-ミュージックサーバー">ミュージックサーバー</a>
+				, 
+				
+				<a href="/tags/#tag-index-Volumio">Volumio</a>
+				, 
+				
+				<a href="/tags/#tag-index-iTunes">iTunes</a>
+				, 
+				
+				<a href="/tags/#tag-index-プレイリスト">プレイリスト</a>
+				
+				
+			</p>
+		</div>
+	</header>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<br />
+
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="section">概要</h2>
+
+<h3 id="volumio">Volumio</h3>
+
+<p><strong>Volumio</strong>というミュージックサーバーソフトウェアがある．</p>
+
+<p>ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．</p>
+
+<h3 id="section-1">プレイリスト問題</h3>
+
+<p>しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．</p>
+
+<p><strong>めんどくさい！</strong></p>
+
+<p>ということで，今回は，iTunesのプレイリストをvolumioのプレイリストに変換するスクリプトを紹介する．</p>
+
+<!--more-->
+
+<h2 id="itunes">iTunesでのプレイリスト出力方法</h2>
+
+<ol>
+  <li>iTunes上のプレイリストを表示した状態にする</li>
+  <li><code class="highlighter-rouge">メニュー</code>→<code class="highlighter-rouge">ファイル</code>→<code class="highlighter-rouge">ライブラリ</code>→<code class="highlighter-rouge">プレイリストのエクスポート</code>を選ぶ</li>
+  <li>出力ファイル形式を<code class="highlighter-rouge">.m3u</code>にして保存する</li>
+</ol>
+
+<p><img src="output.png" alt="プレイリストを出力" class="img-medium" /></p>
+
+<h2 id="section-2">プレイリストのフォーマット</h2>
+
+<h3 id="m3u">一般的なM3U形式</h3>
+
+<p>例えば</p>
+
+<ol>
+  <li>花束/back number</li>
+  <li>高嶺の花子さん/back number</li>
+  <li>サイレン/back number</li>
+</ol>
+
+<p>のプレイリストならば，以下のように1行目にファイル形式，2行目以降は2行ずつ曲の詳細が書かれており，1行目はアーティストと曲名で，2行目はパスになっている．</p>
+
+<h4 id="playlistm3u">Playlist.m3u</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#EXTM3U
+#EXTINF:287,花束　 - back number
+C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\スーパースター\03 花束.m4a
+#EXTINF:294,高嶺の花子さん - back number
+C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\ラブストーリー\06 高嶺の花子さん.m4a
+#EXTINF:203,サイレン - back number
+C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 サイレン.m4a
+</code></pre>
+</div>
+
+<h3 id="volumiojson">Volumioの独自JSON形式</h3>
+
+<p>JSONであることは確かであるが，内容は独自であると思われる．</p>
+
+<p>基本的には見たままだが，<code class="highlighter-rouge">arbumart</code>だけはちょっとわかりにくい．細かいことはrubyコードを見てほしいが，URLエンコードが施されている．</p>
+
+<h4 id="playlistjson">Playlist.json</h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/スーパースター/03 花束.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花束　"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"スーパースター"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%2F03%20%E8%8A%B1%E6%9D%9F.m4a"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/ラブストーリー/06 高嶺の花子さん.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"高嶺の花子さん"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ラブストーリー"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%2F06%20%E9%AB%98%E5%B6%BA%E3%81%AE%E8%8A%B1%E5%AD%90%E3%81%95%E3%82%93.m4a"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/シャンデリア/02 サイレン.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"サイレン"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"シャンデリア"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2%2F02%20%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3.m4a"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
+
+<h2 id="section-3">変換スクリプト</h2>
+
+<h3 id="ruby">rubyで書いてみた</h3>
+
+<p>rubyの練習のためにrubyで書いてみた．</p>
+
+<h4 id="m3u2volumiorb">m3u2volumio.rb</h4>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s1">'json'</span>
+<span class="nb">require</span> <span class="s1">'erb'</span>
+<span class="kp">include</span> <span class="no">ERB</span><span class="o">::</span><span class="no">Util</span>
+
+<span class="no">MOUNT_PATH</span> <span class="o">=</span> <span class="s1">'INTERNAL'</span> <span class="c1"># 曲が保存してあるパス</span>
+<span class="c1">#MOUNT_PATH = 'NAS/Music' # 曲が保存してあるパス</span>
+
+<span class="no">ARGV</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">file_name</span><span class="o">|</span> <span class="c1"># コマンドライン引数を受け取る</span>
+	<span class="n">json_name</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">file_name</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^(.+)\..{1,4}$/</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">.json"</span> <span class="c1"># 拡張子をjsonに変更した文字列</span>
+	<span class="nb">puts</span> <span class="s2">"Creating </span><span class="si">#{</span><span class="n">json_name</span><span class="si">}</span><span class="s2">"</span>
+	<span class="n">output</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 曲目が入る空の配列</span>
+	<span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+		<span class="n">file</span><span class="p">.</span><span class="nf">gets</span>	<span class="c1"># 1行目は無視</span>
+		<span class="k">while</span> <span class="n">line1</span> <span class="o">=</span> <span class="n">file</span><span class="p">.</span><span class="nf">gets</span> <span class="k">do</span> <span class="c1"># 1行目</span>
+			<span class="n">line2</span> <span class="o">=</span> <span class="n">file</span><span class="p">.</span><span class="nf">gets</span> <span class="c1"># 2行目</span>
+			<span class="n">line1</span><span class="p">.</span><span class="nf">chomp!</span> <span class="c1"># 改行を除去</span>
+			<span class="n">line2</span><span class="p">.</span><span class="nf">chomp!</span> <span class="c1"># 改行を除去</span>
+			<span class="n">title</span> <span class="o">=</span> <span class="n">line1</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^[^,]+,(.+) - (.+)/</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 曲名を抽出</span>
+			<span class="n">artist</span> <span class="o">=</span> <span class="n">line1</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^[^,]+,(.+) - (.+)/</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># アーティスト名を抽出</span>
+			<span class="n">parts</span> <span class="o">=</span> <span class="n">line2</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">)</span> <span class="c1"># パスは'\'で区切られているので，'\'で分割</span>
+			<span class="n">album</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># アーティスト名を抽出</span>
+			<span class="n">path</span> <span class="o">=</span> <span class="s2">"mnt/</span><span class="si">#{</span><span class="no">MOUNT_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span> <span class="c1"># 曲が保存してあるパス</span>
+			<span class="n">song</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># 曲の詳細が入る空のオブジェクト（ハッシュ）</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"service"</span><span class="p">]</span><span class="o">=</span><span class="s2">"mpd"</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"uri"</span><span class="p">]</span><span class="o">=</span><span class="n">path</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span><span class="o">=</span><span class="n">title</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"artist"</span><span class="p">]</span><span class="o">=</span><span class="n">artist</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"album"</span><span class="p">]</span><span class="o">=</span><span class="n">album</span>
+			<span class="n">song</span><span class="p">[</span><span class="s2">"albumart"</span><span class="p">]</span><span class="o">=</span><span class="s2">"/albumart?web=</span><span class="si">#{</span><span class="n">url_encode</span><span class="p">(</span><span class="n">artist</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">url_encode</span><span class="p">(</span><span class="n">album</span><span class="p">)</span><span class="si">}</span><span class="s2">/large&amp;path=%2F</span><span class="si">#{</span><span class="n">url_encode</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+			<span class="n">output</span><span class="p">.</span><span class="nf">push</span> <span class="n">song</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+	<span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">json_name</span><span class="p">,</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">json</span><span class="o">|</span>
+		<span class="n">json</span><span class="p">.</span><span class="nf">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span> <span class="n">output</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<h2 id="section-4">使い方</h2>
+
+<h3 id="section-5">前提条件</h3>
+
+<ul>
+  <li>曲の保存場所は，<code class="highlighter-rouge">INTERNAL</code>ストレージ</li>
+  <li>曲のディレクトリ構成は，iTunesそのままで，<code class="highlighter-rouge">INTERNAL/アーティスト名/アルバム名/曲名</code></li>
+</ul>
+
+<h3 id="section-6">プレイリストの作成</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls
+m3u2volumio.rb  playlist.m3u
+
+<span class="gp">$ </span>./m3u2volumio.rb playlist.m3u
+Creating playlist.json
+
+<span class="gp">$ </span>ls
+m3u2volumio.rb  playlist.m3u  playlist.json
+</code></pre>
+</div>
+
+<h3 id="section-7">プレイリストの送信</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>scp playlist.json volumio@volumio.local:/data/playlist/playlist.json
+</code></pre>
+</div>
+
+<h3 id="nas">外付けストレージやNASを使う場合</h3>
+
+<p>rubyコード中の<code class="highlighter-rouge">MOUNT_PATH</code>に適当なパスを設定すればよい．</p>
+
+<h2 id="section-8">注意</h2>
+
+<p>上手くやれば上手くいくが，操作にミスがあるとVolumioが落ちるので注意が必要である．ただ，すぐに再起動するし，落ちるのはVolumioのアプリケーションだけで，ラズパイ自体は落ちない．</p>
+
+<h2 id="section-9">まとめ</h2>
+
+<p>今後のアップデートで使えなくなるかもしれないけど，なんとか使えた．volumioは便利だから，もっと便利に使おう！</p>
+
+
+	</div>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<div class="post-guide">
+		<div class="post-guide-next">
+			
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
+			<a class="post-link" href="/posts/2016-08-28-update-blog-script/">
+				<img src="/home/icon.png" title="ブログを更新するスクリプト" alt="ブログを更新するスクリプト">
+				<div class="post-list-char">
+					<span class="post-meta">2016年08月28日 Category: memos</span>
+					<h2 class="post-title">
+						ブログを更新するスクリプト
+					</h2>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+
+	<br />
+
+	<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+
+		<a href="/"><h2 class="footer-heading">KERI's Lab</h2></a>
+
+		<div class="footer-col-wrapper">
+			<div class="footer-col footer-col-1">
+				<ul class="contact-list">
+					<li>Contact KERI</li>
+					<li>Mail : <a href="mailto:kerikun11+web@gmail.com">kerikun11+web@gmail.com</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-2">
+				<ul class="social-media-list">
+					
+					<li>
+						<a href="https://github.com/kerikun11" target="_blank"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">kerikun11</span></a>
+
+					</li>
+					
+
+					
+					<li>
+						<a href="https://twitter.com/Ryokeri14" target="_blank"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">Ryokeri14</span></a>
+
+					</li>
+					
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-3">
+				<p>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</p>
+			</div>
+
+			<div class="footer-copyright">
+				<p>Copyright© 2014-2016 KERI's Lab All Rights Reserved.</p>
+			</div>
+		</div>
+
+	</div>
+
+</footer>
+
+
+  </body>
+
+</html>
