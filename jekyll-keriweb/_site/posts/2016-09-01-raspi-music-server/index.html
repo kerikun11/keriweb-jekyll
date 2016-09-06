@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>赤外線学習リモコン完成 - KERI's Lab</title>
-	<meta name="description" content="概要赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．">
+	<title>ラズパイでミュージックサーバー - KERI's Lab</title>
+	<meta name="description" content="作ったものラズパイミュージックサーバースマートフォンでコントロールできるステレオコンポです．構成Raspberry Pi 3 Type Bhttp://akizukidenshi.com/catalog/g/gM-10414/Micro SDXC 64GBhttps://www.amazon.co.jp/dp/B...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-18-ir-station/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-09-01-raspi-music-server/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -90,44 +90,23 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2016-07-18-ir-station/icon.jpg" title="赤外線学習リモコン完成" alt="赤外線学習リモコン完成">
+		<img src="/posts/2016-09-01-raspi-music-server/icon.jpg" title="ラズパイでミュージックサーバー" alt="ラズパイでミュージックサーバー">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">赤外線学習リモコン完成</h1>
+			<h1 class="post-title" itemprop="name headline">ラズパイでミュージックサーバー</h1>
 			<p class="post-meta">
-				<time datetime="2016-07-18T00:00:00+00:00" itemprop="datePublished">2016年07月18日</time>
+				<time datetime="2016-09-01T00:00:00+00:00" itemprop="datePublished">2016年09月01日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
 				Tag: 
 				
-				<a href="/tags/#tag-index-電子工作">電子工作</a>
+				<a href="/tags/#tag-index-ラズパイ">ラズパイ</a>
 				, 
 				
-				<a href="/tags/#tag-index-赤外線学習リモコン">赤外線学習リモコン</a>
+				<a href="/tags/#tag-index-ミュージックサーバー">ミュージックサーバー</a>
 				, 
 				
-				<a href="/tags/#tag-index-WiFi">WiFi</a>
-				, 
-				
-				<a href="/tags/#tag-index-ESP8266">ESP8266</a>
-				, 
-				
-				<a href="/tags/#tag-index-ESP-WROOM-02">ESP-WROOM-02</a>
-				, 
-				
-				<a href="/tags/#tag-index-Arduino">Arduino</a>
-				, 
-				
-				<a href="/tags/#tag-index-IR-Station">IR-Station</a>
-				, 
-				
-				<a href="/tags/#tag-index-基板">基板</a>
-				, 
-				
-				<a href="/tags/#tag-index-KiCad">KiCad</a>
-				, 
-				
-				<a href="/tags/#tag-index-IoT">IoT</a>
+				<a href="/tags/#tag-index-Volumio">Volumio</a>
 				
 				
 			</p>
@@ -150,66 +129,104 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="section">作ったもの</h2>
 
-<p>赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．</p>
+<h3 id="section-1">ラズパイミュージックサーバー</h3>
 
-<p>今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．</p>
+<p>スマートフォンでコントロールできるステレオコンポです．</p>
 
-<!--more-->
+<p><img src="music-server.jpg" alt="ミュージックサーバー" class="img-medium" /></p>
 
-<h2 id="section-1">祝・完成</h2>
+<h2 id="section-2">構成</h2>
 
-<p><a href="/posts/2016-07-06-ir-station-board/">発注したプリント基板が基板が届き</a>，とうとう赤外線学習リモコンが完成しました．</p>
+<h3 id="raspberry-pi-3-type-b">Raspberry Pi 3 Type B</h3>
 
-<h3 id="section-2">本体</h3>
+<p><a href="http://akizukidenshi.com/catalog/g/gM-10414/">http://akizukidenshi.com/catalog/g/gM-10414/</a></p>
 
-<p><img src="body.jpg" alt="本体" /></p>
+<p><img src="raspi3.jpg" alt="ラズパイ3" class="img-small" /></p>
 
-<h3 id="section-3">取り付け簡単！</h3>
+<h3 id="micro-sdxc-64gb">Micro SDXC 64GB</h3>
+<p><a href="https://www.amazon.co.jp/dp/B010SERHJY">https://www.amazon.co.jp/dp/B010SERHJY</a></p>
 
-<p>壁に取り付けた様子です．電源は，<code class="highlighter-rouge">USB-micro-B</code>コネクタから供給します．
-<img src="attach.jpg" alt="取り付け" /></p>
+<p><img src="sd.jpg" alt="micro SD" class="img-small" /></p>
 
-<h3 id="section-4">操作画面</h3>
+<h3 id="akidac-u2704-revc">AKI.DAC-U2704 REV.C</h3>
 
-<p>複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
-<img src="display.png" alt="操作画面" /></p>
+<p><a href="http://akizukidenshi.com/catalog/g/gK-05369/">http://akizukidenshi.com/catalog/g/gK-05369/</a></p>
 
-<h2 id="section-5">本体内部</h2>
+<p><img src="dac.jpg" alt="DAC" class="img-small" /></p>
 
-<h3 id="section-6">ふたを開けると</h3>
+<h3 id="section-3">アキバのジャンク街で買ったウーハー付きアンプ</h3>
 
-<p>ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
-<img src="inside.jpg" alt="ふたを開けたところ" /></p>
+<p>5年前くらいにアキバのジャンク街で新品2,000円程で買ったウーハー付きアンプ．音がいいんだな．</p>
 
-<h3 id="section-7">基板</h3>
+<p><img src="amp.jpg" alt="アンプ" class="img-small" /></p>
 
-<p><img src="top.jpg" alt="基板の表" />
-<img src="back.jpg" alt="基板の裏" /></p>
+<h3 id="bose">家にあったBOSEのスピーカー</h3>
 
-<h2 id="section-8">作り方</h2>
+<p><img src="speaker.jpg" alt="スピーカー" class="img-small" /></p>
 
-<p>すべてのデータをGithubで公開しています．<br />
-作り方は<a href="https://github.com/kerikun11/IR-station">ここ</a>を参考にしてください．</p>
+<h3 id="aac">2.5A出力ACアダプタ</h3>
 
-<h2 id="section-9">最後に</h2>
+<p><a href="http://akizukidenshi.com/catalog/g/gM-10507/">http://akizukidenshi.com/catalog/g/gM-10507/</a></p>
 
-<p>長い間研究をしてきた赤外線学習リモコンがやっと形になりました．とても嬉しいです．</p>
+<p><img src="acadapter.jpg" alt="ACアダプタ" class="img-small" /></p>
 
-<p><del>この赤外線学習リモコンを使っていただけるテスターを募集しています．使ってみたい方は声をかけてください．(先着数名で打ち切ります)</del><br />
-追記 2016年9月6日 一定数集まったので終了しました．ありがとうございます．</p>
+<h3 id="usb">マイクロUSBケーブル</h3>
 
-<h4 id="section-10">リンク</h4>
+<p><a href="http://akizukidenshi.com/catalog/g/gC-09314/">http://akizukidenshi.com/catalog/g/gC-09314/</a></p>
 
-<p>赤外線学習リモコン「IR-Station」についての他の記事:</p>
+<p><img src="usb.jpg" alt="USB-micro-Bケーブル" class="img-small" /></p>
 
-<ul>
-  <li><a href="/posts/2015-12-30-ir-station/">2015年12月30日 ESP8266で赤外線学習リモコン</a></li>
-  <li><a href="/posts/2016-03-11-ir-station-reference/">2016年03月11日 IR-Station Reference</a></li>
-  <li><a href="/posts/2016-07-06-ir-station-board/">2016年07月06日 赤外線学習リモコンの基板が届きました</a></li>
-  <li><a href="/posts/2016-07-25-how-to-use-ir-station/">IR-Stationの使い方</a></li>
-</ul>
+<h3 id="usb-1">短いミニUSBケーブル</h3>
+
+<p>家に転がっていました．</p>
+
+<p><img src="miniusb.jpg" alt="USB-mini-Bケーブル" class="img-small" /></p>
+
+<h3 id="rca-">RCA-ステレオミニジャック変換ケーブル</h3>
+
+<p><img src="rca.jpg" alt="RCAケーブル" class="img-small" /></p>
+
+<h2 id="section-4">ソフトウェア</h2>
+
+<h3 id="volumio">Volumio</h3>
+
+<p>Volumioとはラズパイ用OSであるraspbeanをもとに作られたミュージックサーバーOSです．ダウンロードしたimgファイルをマイクロSDカードに焼くだけで即使うことができます．</p>
+
+<p><a href="https://volumio.org/">Volumio.org</a>よりダウンロードできます．</p>
+
+<h2 id="section-5">作り方</h2>
+
+<ol>
+  <li>SDカードにVolumioのOSを焼いて，ラズパイにセットする．</li>
+  <li>ラズパイにDACとスピーカーをつなぐ．</li>
+  <li>ラズパイにLANケーブルをさして，電源を投入する．</li>
+  <li>パソコンでネットワーク上のPCを検索し，Volumioを見つける．</li>
+  <li>見つけたVolumioドライブに曲をコピーする．</li>
+  <li>ブラウザで<a href="http://volumio.local/">http://volumio.local/</a>にアクセスする．</li>
+  <li>あとは使えばわかる．</li>
+</ol>
+
+<h2 id="section-6">操作画面</h2>
+
+<h3 id="section-7">ブラウザから操作</h3>
+
+<p>わかりやすいGUIで，直感的に操作できます．</p>
+
+<p><img src="browser.png" alt="ブラウザ" class="img-medium" /></p>
+
+<h3 id="mpd">MPDクライアントから操作</h3>
+
+<p>もちろん，MPDクライアントにも対応しています．</p>
+
+<p><img src="mpd.png" alt="MPDクライアント" class="img-medium" /></p>
+
+<h2 id="section-8">まとめ</h2>
+
+<p>スマホからコントロールできるミュージックサーバーがとても簡単にできちゃいました！Volumioはすごいです．</p>
+
+<p>次はDACやアンプを作りたいです．</p>
 
 
 	</div>
@@ -229,27 +246,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2016-07-20-ssh-port-forwarding/">
-				<img src="/home/icon.png" title="SSHのPort Forwarding" alt="SSHのPort Forwarding">
-				<div class="post-list-char">
-					<span class="post-meta">2016年07月20日 Category: memos</span>
-					<h2 class="post-title">
-						SSHのPort Forwarding
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2016-07-13-new-fish/">
-				<img src="/posts/2016-07-13-new-fish/icon.jpg" title="メダカが増えました！" alt="メダカが増えました！">
+			<a class="post-link" href="/posts/2016-08-31-volumio-playlist/">
+				<img src="/posts/2016-08-31-volumio-playlist/icon.png" title="VolumioでiTunesのプレイリストを使う" alt="VolumioでiTunesのプレイリストを使う">
 				<div class="post-list-char">
-					<span class="post-meta">2016年07月13日 Category: blogs</span>
+					<span class="post-meta">2016年08月31日 Category: memos</span>
 					<h2 class="post-title">
-						メダカが増えました！
+						VolumioでiTunesのプレイリストを使う
 					</h2>
 				</div>
 			</a>

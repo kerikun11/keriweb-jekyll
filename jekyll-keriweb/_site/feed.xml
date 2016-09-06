@@ -5,9 +5,126 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Sep 2016 11:45:42 +0000</pubDate>
-    <lastBuildDate>Thu, 01 Sep 2016 11:45:42 +0000</lastBuildDate>
+    <pubDate>Tue, 06 Sep 2016 12:54:23 +0000</pubDate>
+    <lastBuildDate>Tue, 06 Sep 2016 12:54:23 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>ラズパイでミュージックサーバー</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;作ったもの&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;ラズパイミュージックサーバー&lt;/h3&gt;
+
+&lt;p&gt;スマートフォンでコントロールできるステレオコンポです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;music-server.jpg&quot; alt=&quot;ミュージックサーバー&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;構成&lt;/h2&gt;
+
+&lt;h3 id=&quot;raspberry-pi-3-type-b&quot;&gt;Raspberry Pi 3 Type B&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-10414/&quot;&gt;http://akizukidenshi.com/catalog/g/gM-10414/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;raspi3.jpg&quot; alt=&quot;ラズパイ3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;micro-sdxc-64gb&quot;&gt;Micro SDXC 64GB&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/B010SERHJY&quot;&gt;https://www.amazon.co.jp/dp/B010SERHJY&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;sd.jpg&quot; alt=&quot;micro SD&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;akidac-u2704-revc&quot;&gt;AKI.DAC-U2704 REV.C&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-05369/&quot;&gt;http://akizukidenshi.com/catalog/g/gK-05369/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;dac.jpg&quot; alt=&quot;DAC&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;アキバのジャンク街で買ったウーハー付きアンプ&lt;/h3&gt;
+
+&lt;p&gt;5年前くらいにアキバのジャンク街で新品2,000円程で買ったウーハー付きアンプ．音がいいんだな．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;amp.jpg&quot; alt=&quot;アンプ&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bose&quot;&gt;家にあったBOSEのスピーカー&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;speaker.jpg&quot; alt=&quot;スピーカー&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;aac&quot;&gt;2.5A出力ACアダプタ&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-10507/&quot;&gt;http://akizukidenshi.com/catalog/g/gM-10507/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;acadapter.jpg&quot; alt=&quot;ACアダプタ&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;usb&quot;&gt;マイクロUSBケーブル&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gC-09314/&quot;&gt;http://akizukidenshi.com/catalog/g/gC-09314/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;usb.jpg&quot; alt=&quot;USB-micro-Bケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;usb-1&quot;&gt;短いミニUSBケーブル&lt;/h3&gt;
+
+&lt;p&gt;家に転がっていました．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;miniusb.jpg&quot; alt=&quot;USB-mini-Bケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;rca-&quot;&gt;RCA-ステレオミニジャック変換ケーブル&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;rca.jpg&quot; alt=&quot;RCAケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;ソフトウェア&lt;/h2&gt;
+
+&lt;h3 id=&quot;volumio&quot;&gt;Volumio&lt;/h3&gt;
+
+&lt;p&gt;Volumioとはラズパイ用OSであるraspbeanをもとに作られたミュージックサーバーOSです．ダウンロードしたimgファイルをマイクロSDカードに焼くだけで即使うことができます．&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://volumio.org/&quot;&gt;Volumio.org&lt;/a&gt;よりダウンロードできます．&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;作り方&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SDカードにVolumioのOSを焼いて，ラズパイにセットする．&lt;/li&gt;
+  &lt;li&gt;ラズパイにDACとスピーカーをつなぐ．&lt;/li&gt;
+  &lt;li&gt;ラズパイにLANケーブルをさして，電源を投入する．&lt;/li&gt;
+  &lt;li&gt;パソコンでネットワーク上のPCを検索し，Volumioを見つける．&lt;/li&gt;
+  &lt;li&gt;見つけたVolumioドライブに曲をコピーする．&lt;/li&gt;
+  &lt;li&gt;ブラウザで&lt;a href=&quot;http://volumio.local/&quot;&gt;http://volumio.local/&lt;/a&gt;にアクセスする．&lt;/li&gt;
+  &lt;li&gt;あとは使えばわかる．&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;操作画面&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;ブラウザから操作&lt;/h3&gt;
+
+&lt;p&gt;わかりやすいGUIで，直感的に操作できます．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;browser.png&quot; alt=&quot;ブラウザ&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mpd&quot;&gt;MPDクライアントから操作&lt;/h3&gt;
+
+&lt;p&gt;もちろん，MPDクライアントにも対応しています．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;mpd.png&quot; alt=&quot;MPDクライアント&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;スマホからコントロールできるミュージックサーバーがとても簡単にできちゃいました！Volumioはすごいです．&lt;/p&gt;
+
+&lt;p&gt;次はDACやアンプを作りたいです．&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-09-01-raspi-music-server/</guid>
+        
+        <category>ラズパイ</category>
+        
+        <category>ミュージックサーバー</category>
+        
+        <category>Volumio</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>VolumioでiTunesのプレイリストを使う</title>
@@ -1741,33 +1858,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         
         
         <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>シンガポールでロボコンしてきました</title>
-        <description>みなさんこんにちは！&lt;br /&gt;
-椋けり(@Ryokeri14)です。&lt;br /&gt;
-夏休みになりました。ロ技研のみなさんは進捗めまぐるしいことでしょう。&lt;br /&gt;
-&lt;br /&gt;
-今回の話題は僕が参加してきたIDCロボコンについてです。&lt;br /&gt;
-
-
-</description>
-        <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
-        
-        <category>ロボコン</category>
-        
-        <category>シンガポール</category>
-        
-        <category>IDC</category>
-        
-        <category>創造設計第一</category>
-        
-        
-        <category>blogs</category>
         
       </item>
     

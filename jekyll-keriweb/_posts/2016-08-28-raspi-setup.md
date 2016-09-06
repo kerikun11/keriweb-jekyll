@@ -5,6 +5,7 @@ category: "memos"
 tags:
   - "Raspberry Pi"
   - "ラズパイ"
+icon: "icon.png"
 ---
 
 ## はじめに

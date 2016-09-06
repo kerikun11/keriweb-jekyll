@@ -17,6 +17,7 @@ github_username: kerikun11
 permalink: /posts/:year-:month-:day-:title/
 excerpt_separator: <!--more-->
 timezone: Japan/Tokyo
+published: false
 collections:
   posters:
     output: true

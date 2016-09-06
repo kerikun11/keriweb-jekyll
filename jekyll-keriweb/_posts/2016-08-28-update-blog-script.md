@@ -5,6 +5,7 @@ category: "memos"
 tags:
   - "シェルスクリプト"
   - "ラズパイ"
+icon: "icon.png"
 ---
 
 ## github上にあるブログを同期するシェルスクリプト
