@@ -65,7 +65,7 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 
 JSONであることは確かであるが，内容は独自であると思われる．
 
-基本的には見たままだが，`arbumart`だけはちょっとわかりにくい．細かいことはrubyコードを見てほしいが，URLエンコードが施されている．
+基本的には見たままだが，`albumart`だけはちょっとわかりにくい．細かいことはrubyコードを見てほしいが，URLエンコードが施されている．
 
 #### Playlist.json
 
