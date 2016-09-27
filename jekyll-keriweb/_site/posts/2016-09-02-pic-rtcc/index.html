@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="ja">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>PICでリアルタイムクロック - KERI's Lab</title>
+	<meta name="description" content="概要PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．自作のRTCCライブラリ必要なソースファイル  My_RTCC.h  My_RTCC.c  My_button.h  My_butt...">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-09-02-pic-rtcc/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script language="JavaScript">
+		$(document).ready( function () {
+			$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+		})
+	</script>
+
+</head>
+
+
+  <body>
+
+    <!-- includes/header.html -->
+
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">KERI's Lab</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/blogs/">ブログ</a>
+          
+        
+          
+          <a class="page-link" href="/explanations/">解説文</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/memos/">備忘録</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/works/">作品</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+	<header class="post-header">
+		<img src="/home/icon.png" title="PICでリアルタイムクロック" alt="PICでリアルタイムクロック">
+		<div class="post-head-char">
+			<h1 class="post-title" itemprop="name headline">PICでリアルタイムクロック</h1>
+			<p class="post-meta">
+				<time datetime="2016-09-02T00:00:00+00:00" itemprop="datePublished">2016年09月02日</time>
+				<span>
+					Category: <a href="/memos/">memos</a></span>
+				<br />
+				Tag: 
+				
+				<a href="/tags/#tag-index-PIC">PIC</a>
+				, 
+				
+				<a href="/tags/#tag-index-PIC18F27J53">PIC18F27J53</a>
+				, 
+				
+				<a href="/tags/#tag-index-電子工作">電子工作</a>
+				, 
+				
+				<a href="/tags/#tag-index-C言語">C言語</a>
+				, 
+				
+				<a href="/tags/#tag-index-RTCC">RTCC</a>
+				
+				
+			</p>
+		</div>
+	</header>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<br />
+
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="section">概要</h2>
+
+<p>PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．</p>
+
+<h2 id="rtcc">自作のRTCCライブラリ</h2>
+
+<h3 id="section-1">必要なソースファイル</h3>
+
+<ul>
+  <li>My_RTCC.h</li>
+  <li>My_RTCC.c</li>
+  <li>My_button.h</li>
+  <li>My_button.c</li>
+  <li>main.c</li>
+</ul>
+
+<h3 id="section-2">概要</h3>
+
+<h4 id="section-3">変数</h4>
+
+<p>このプログラムでは、時刻情報を持つ変数が３つある。</p>
+
+<ol>
+  <li>PICのRTCCモジュールのレジスタ→カレンダー表記、16進法表記（※厳密には10進だが便宜上16進とする。）</li>
+  <li>time_t構造体内のepoch（uint32_t）→2000年1月1日0時00分からの総秒数</li>
+  <li>time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。</li>
+</ol>
+
+<p>以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。
+#### 使い方</p>
+
+<ol>
+  <li>TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）</li>
+  <li>CONFIGを設定する。RTCOSC = T1OSCREF</li>
+  <li>その次に、RTCC_init();を書く。（初期設定関数）</li>
+  <li>mainループ内に、RTCC_loop();を書くこと。（時間の同期関数）</li>
+  <li>任意で時計合わせをする。→時計合わせをしたら、RTCC_from_caltime()かRTCC_from_epoch()を呼んで変更を適用する。</li>
+  <li>時計合わせには、adjust_time_toggle()を呼んでから、adjust_time_cursor()で、好きな項を選択する</li>
+  <li>adjust_time_inc()とadjust_time_dec()で調整するとよい。</li>
+  <li>時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。</li>
+</ol>
+
+<h3 id="rtcc-1">RTCCライブラリ</h3>
+
+<h4 id="myrtcch">My_RTCC.h</h4>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
+ * File:   My_RTCC.h
+ * Author: Ryotaro Onuki
+ *
+ * Created on 2015/03/19, 0:02
+ * 
+ * PIC18F28J53用リアルタイムクロックプログラム
+ * ○概要
+ * このプログラムでは、時刻情報を持つ変数が３つある。
+ * 1.PICのRTCCモジュールのレジスタ→カレンダー表記、16進法表記（※厳密には10進だが便宜上16進とする。）
+ * 2.time_t構造体内のepoch（uint32_t）→2000年1月1日0時00分からの総秒数
+ * 3.time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。
+ * 以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。
+ * ○使い方
+ * 1.TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）
+ * 2.CONFIGを設定する。RTCOSC = T1OSCREF
+ * 3.その次に、RTCC_init();を書く。（初期設定関数）
+ * 4.mainループ内に、RTCC_loop();を書くこと。（時間の同期関数）
+ * 5.任意で時計合わせをする。→時計合わせをしたら、RTCC_from_caltime()かRTCC_from_epoch()を呼んで変更を適用する。
+ * 6.時計合わせには、adjust_time_toggle()を呼んでから、adjust_time_cursor()で、好きな項を選択する
+ * 7.adjust_time_inc()とadjust_time_dec()で調整するとよい。
+ * 8.時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。
+ */</span>
+
+<span class="cp">#ifndef MY_RTCC_H
+#define	MY_RTCC_H
+</span>
+<span class="cm">/** INCLUDES *******************************************************/</span>
+<span class="cp">#include &lt;xc.h&gt;
+#include &lt;stdint.h&gt;
+#include "My_button.h"
+</span>
+<span class="cm">/** VALUES *********************************************************/</span>
+<span class="cp">#define MINUTE ((epoch_t)60)
+#define HOUR ((epoch_t)60*60)
+#define DAY ((epoch_t)60*60*24)
+</span>
+<span class="cm">/** STRUCTURE ******************************************************/</span>
+<span class="c1">// epoch型を定義。2000年1月1日0時00分からの総秒数。
+</span>
+<span class="k">typedef</span> <span class="kt">uint32_t</span> <span class="n">epoch_t</span><span class="p">;</span>
+
+<span class="c1">// 時刻合わせ用のフラグの構造体を定義。
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="kt">uint8_t</span> <span class="n">flags</span><span class="p">;</span>
+
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="kt">uint8_t</span> <span class="n">ss</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">mm</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">hh</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">DD</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">MM</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">YY</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">flag</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span> <span class="n">edit_t</span><span class="p">;</span>
+
+<span class="c1">// RTCC関連すべてを詰めた構造体。実際に使用する。
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">epoch_t</span> <span class="n">epoch</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">mm</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">hh</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">EE</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">DD</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">MM</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">YY</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">colon</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">halfsec</span><span class="p">;</span>
+    <span class="n">edit_t</span> <span class="n">edit</span><span class="p">;</span>
+<span class="p">}</span> <span class="kt">time_t</span><span class="p">;</span>
+
+<span class="cm">/** VARIABLES ******************************************************/</span>
+<span class="c1">// 表示用の曜日charをconstで定義。
+</span><span class="k">extern</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">weekday_3char</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
+<span class="c1">// 現在時刻
+</span><span class="k">extern</span> <span class="kt">time_t</span> <span class="n">now</span><span class="p">;</span>
+<span class="c1">// 時間が変わった時だけフラグが経つ。表示器の時刻の更新はこのフラグの監視をして行えばよい。
+</span><span class="k">extern</span> <span class="kt">uint8_t</span> <span class="n">time_change_flag</span><span class="p">;</span>
+<span class="c1">// main_init()に書くこと。
+</span><span class="kt">void</span> <span class="n">RTCC_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="c1">// Call this in the main loop
+</span><span class="kt">void</span> <span class="n">RTCC_task</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="cm">/** USER FUNCTIONS *************************************************/</span>
+<span class="cm">/** Transform time User Functions **/</span>
+<span class="c1">// 時刻をRTCC基準でそろえる
+</span><span class="kt">void</span> <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 時刻をカレンダータイム基準でそろえる
+</span><span class="kt">void</span> <span class="n">RTCC_from_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 時刻をエポック基準でそろえる
+</span><span class="kt">void</span> <span class="n">RTCC_from_epoch</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// return month length
+</span><span class="kt">uint8_t</span> <span class="n">month_length</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">year</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">month</span><span class="p">);</span>
+
+<span class="cm">/** LCD display **/</span>
+<span class="c1">// 各項目表示用関数。ユーザーは使わない。
+</span><span class="k">static</span> <span class="kt">void</span> <span class="n">display_dec</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">dec</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">edit</span><span class="p">);</span>
+<span class="c1">// 0802サイズ液晶用、文字列作成関数
+</span><span class="kt">void</span> <span class="n">display_time_0802</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line0</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line1</span><span class="p">);</span>
+<span class="c1">// 1608サイズ液晶用、文字列作成関数
+</span><span class="kt">void</span> <span class="n">display_time_1602</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line0</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line1</span><span class="p">);</span>
+
+<span class="cm">/** adjust the time **/</span>
+<span class="c1">// 時刻編集モードを切り替える
+</span><span class="kt">void</span> <span class="n">RTCC_adjust_time_toggle</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 編集中の時刻針を切り替える
+</span><span class="kt">void</span> <span class="n">RTCC_adjust_time_cursor</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 編集中の時刻針を１つ増やす
+</span><span class="kt">void</span> <span class="n">RTCC_adjust_time_inc</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 編集中の時刻針を１つ減らす
+</span><span class="kt">void</span> <span class="n">RTCC_adjust_time_dec</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// 3つのボタンで時刻合わせ
+</span><span class="kt">void</span> <span class="n">RTCC_adjust_time_button</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">mode</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">cnt_inc</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">cnt_dec</span><span class="p">);</span>
+
+<span class="cm">/** FUNCTIONS ******************************************************/</span>
+<span class="cm">/** en/decode number **/</span>
+<span class="c1">// from decimal to hex
+</span><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">d_to_x</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">dec</span><span class="p">);</span>
+<span class="c1">// from hex to decimal
+</span><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">x_to_d</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">hex</span><span class="p">);</span>
+<span class="c1">// quotをdivで割って、余りを返す。よく使うので関数化した。
+</span><span class="k">static</span> <span class="n">epoch_t</span> <span class="n">get_quot_rem</span><span class="p">(</span><span class="n">epoch_t</span> <span class="o">*</span><span class="n">quot</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">div</span><span class="p">);</span>
+
+<span class="cm">/** Transform time **/</span>
+<span class="c1">// RTCCをカレンダタイムに変換、上書き。
+</span><span class="k">static</span> <span class="kt">void</span> <span class="n">RTCC_to_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// カレンダタイムをRTCCに変換、上書き。
+</span><span class="k">static</span> <span class="kt">void</span> <span class="n">caltime_to_RTCC</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// Epochをカレンダタイムに変換、上書き。
+</span><span class="k">static</span> <span class="kt">void</span> <span class="n">epoch_to_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// get epoch from caltime
+</span><span class="k">static</span> <span class="kt">void</span> <span class="n">caltime_to_epoch</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+
+<span class="cp">#endif	</span><span class="cm">/* MY_RTCC_H */</span><span class="cp">
+</span></code></pre>
+</div>
+
+<h4 id="myrtccc">My_RTCC.c</h4>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "My_RTCC.h"
+</span>
+<span class="cm">/** INCLUDES *******************************************************/</span>
+<span class="cp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="cm">/** VALUES *********************************************************/</span>
+
+
+<span class="cm">/** VARIABLES ******************************************************/</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">weekday_3char</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">"SUN"</span><span class="p">,</span> <span class="s">"MON"</span><span class="p">,</span> <span class="s">"TUE"</span><span class="p">,</span> <span class="s">"WED"</span><span class="p">,</span> <span class="s">"THU"</span><span class="p">,</span> <span class="s">"FRI"</span><span class="p">,</span> <span class="s">"SAT"</span><span class="p">};</span>
+<span class="kt">time_t</span> <span class="n">now</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">time_change_flag</span><span class="p">;</span>
+
+<span class="cm">/** USER FUNCTIONS *************************************************/</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCWREN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCWREN</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">EECON2</span> <span class="o">=</span> <span class="mh">0x55</span><span class="p">;</span>
+        <span class="n">EECON2</span> <span class="o">=</span> <span class="mh">0xAA</span><span class="p">;</span>
+        <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCWREN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCOE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PADCFG1bits</span><span class="p">.</span><span class="n">RTSECSEL0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">PADCFG1bits</span><span class="p">.</span><span class="n">RTSECSEL1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCCAL</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
+    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="n">DD</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">now</span><span class="p">.</span><span class="n">epoch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">RTCC_from_epoch</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_task</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">prev_halfsec</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCSYNC</span><span class="p">)</span><span class="k">return</span><span class="p">;</span>
+    <span class="n">now</span><span class="p">.</span><span class="n">halfsec</span> <span class="o">=</span> <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">HALFSEC</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">prev_halfsec</span> <span class="o">!=</span> <span class="n">now</span><span class="p">.</span><span class="n">halfsec</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">prev_halfsec</span> <span class="o">=</span> <span class="n">now</span><span class="p">.</span><span class="n">halfsec</span><span class="p">;</span>
+        <span class="n">now</span><span class="p">.</span><span class="n">colon</span> <span class="o">=</span> <span class="n">now</span><span class="p">.</span><span class="n">halfsec</span><span class="p">;</span>
+        <span class="n">time_change_flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/** Transform time User Functions **/</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_from_RTCC</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCC_to_caltime</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">caltime_to_epoch</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_from_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">caltime_to_epoch</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">epoch_to_caltime</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">caltime_to_RTCC</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_from_epoch</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">epoch_to_caltime</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">caltime_to_RTCC</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">uint8_t</span> <span class="nf">month_length</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">year</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">month</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">28</span> <span class="o">+</span> <span class="o">!</span><span class="p">(</span><span class="n">year</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">)</span><span class="o">-!</span><span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span><span class="o">+!</span><span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">31</span> <span class="o">-</span> <span class="p">(((</span><span class="o">-</span><span class="p">(</span><span class="n">month</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="n">month</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">13</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">);</span>
+
+    <span class="c1">//    switch (month) {
+</span>    <span class="c1">//        case 1:
+</span>    <span class="c1">//        case 3:
+</span>    <span class="c1">//        case 5:
+</span>    <span class="c1">//        case 7:
+</span>    <span class="c1">//        case 8:
+</span>    <span class="c1">//        case 10:
+</span>    <span class="c1">//        case 12:
+</span>    <span class="c1">//            return 31;
+</span>    <span class="c1">//        case 4:
+</span>    <span class="c1">//        case 6:
+</span>    <span class="c1">//        case 9:
+</span>    <span class="c1">//        case 11:
+</span>    <span class="c1">//            return 30;
+</span>    <span class="c1">//        case 2:
+</span>    <span class="c1">//            if (year % 400 == 0)return 29;
+</span>    <span class="c1">//            else if (year % 100 == 0)return 28;
+</span>    <span class="c1">//            else if (year % 4 == 0) return 29;
+</span>    <span class="c1">//            else return 28;
+</span><span class="p">}</span>
+
+<span class="cm">/** LCD display **/</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">display_dec</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">dec</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">edit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">"%02d"</span><span class="p">,</span> <span class="n">dec</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">edit</span> <span class="o">&amp;&amp;</span> <span class="n">now</span><span class="p">.</span><span class="n">halfsec</span><span class="p">)</span><span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="s">"  "</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">display_time_0802</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line0</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">"/"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">MM</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">"/"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">DD</span><span class="p">);</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">hh</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="n">colon</span><span class="p">)</span> <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">":"</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">mm</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">"-"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">display_time_1602</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line0</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">line1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">"/"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">MM</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">"/"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">DD</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">"("</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="n">weekday_3char</span><span class="p">[</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">EE</span><span class="p">]);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line0</span><span class="p">,</span> <span class="s">")"</span><span class="p">);</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">"        "</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">hh</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">colon</span><span class="p">)</span> <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">":"</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">" "</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">mm</span><span class="p">);</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="s">"-"</span><span class="p">);</span>
+    <span class="n">display_dec</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/** adjust the time **/</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_adjust_time_toggle</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_adjust_time_cursor</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x02</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">mm</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x04</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">hh</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x08</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">DD</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x10</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">MM</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x20</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_adjust_time_inc</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">mm</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">MINUTE</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">hh</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">HOUR</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">DD</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">MM</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">&gt;=</span> <span class="mi">3155760000</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="mi">3155760000</span><span class="p">;</span>
+    <span class="n">RTCC_from_epoch</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+    <span class="n">time_change_flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_adjust_time_dec</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">RTCC_from_RTCC</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">ss</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">mm</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">MINUTE</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">hh</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">HOUR</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">DD</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">DAY</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">MM</span><span class="p">)</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flag</span><span class="p">.</span><span class="n">YY</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">&gt;=</span> <span class="mi">3155760000</span><span class="p">)</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">+=</span> <span class="mi">3155760000</span><span class="p">;</span>
+    <span class="n">RTCC_from_epoch</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+    <span class="n">time_change_flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">RTCC_adjust_time_button</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">mode</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">cnt_inc</span><span class="p">,</span> <span class="n">button_t</span> <span class="o">*</span><span class="n">cnt_dec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mode</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mode</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">RTCC_adjust_time_toggle</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+        <span class="n">mode</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">cnt_inc</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">cnt_dec</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">edit</span><span class="p">.</span><span class="n">flags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mode</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">mode</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">RTCC_adjust_time_cursor</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cnt_inc</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cnt_inc</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">RTCC_adjust_time_inc</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cnt_dec</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cnt_dec</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">RTCC_adjust_time_dec</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/** FUNCTIONS ******************************************************/</span>
+
+<span class="cm">/** en/decode number **/</span>
+
+<span class="k">static</span> <span class="kt">uint8_t</span> <span class="nf">d_to_x</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">dec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// uint8_t quot = dec / 10;
+</span>    <span class="c1">// return quot * 16 + dec - quot * 10;
+</span>    <span class="k">return</span> <span class="n">dec</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">dec</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">uint8_t</span> <span class="nf">x_to_d</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">hex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mh">0x0F</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">hex</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mh">0x0F</span> <span class="o">&amp;</span> <span class="n">hex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">epoch_t</span> <span class="nf">get_quot_rem</span><span class="p">(</span><span class="n">epoch_t</span> <span class="o">*</span><span class="n">quot</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">div</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// num /= div;
+</span>    <span class="c1">// return rem;
+</span>    <span class="n">epoch_t</span> <span class="n">num</span> <span class="o">=</span> <span class="o">*</span><span class="n">quot</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">-</span> <span class="p">(</span><span class="o">*</span><span class="n">quot</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">div</span><span class="p">)</span> <span class="o">*</span> <span class="n">div</span><span class="p">;</span> <span class="c1">// returns rem
+</span><span class="p">}</span>
+
+<span class="cm">/** Transform time **/</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">RTCC_to_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCSYNC</span><span class="p">);</span>
+
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALL</span><span class="p">);</span> <span class="c1">// YY
+</span>    <span class="kt">uint8_t</span> <span class="n">dumy</span> <span class="o">=</span> <span class="n">RTCVALH</span><span class="p">;</span> <span class="c1">// Reserved
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALL</span><span class="p">);</span> <span class="c1">// DD
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALH</span><span class="p">);</span> <span class="c1">// MM
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALL</span><span class="p">);</span> <span class="c1">// hh
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">EE</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALH</span><span class="p">);</span> <span class="c1">// EE
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALL</span><span class="p">);</span> <span class="c1">// ss
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span> <span class="o">=</span> <span class="n">x_to_d</span><span class="p">(</span><span class="n">RTCVALH</span><span class="p">);</span> <span class="c1">// mm
+</span><span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">caltime_to_RTCC</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCSYNC</span><span class="p">);</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCVALL</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">);</span>
+    <span class="n">RTCVALH</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCVALL</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span><span class="p">);</span>
+    <span class="n">RTCVALH</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">);</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">RTCVALL</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span><span class="p">);</span>
+    <span class="n">RTCVALH</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">EE</span><span class="p">);</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCPTR1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">RTCVALL</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span><span class="p">);</span>
+    <span class="n">RTCVALH</span> <span class="o">=</span> <span class="n">d_to_x</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">epoch_to_caltime</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// to get epoch on terminal
+</span>    <span class="c1">// echo $(( (`date -d '2015/03/01' '+%s'` - `date -d '2000/01/01' '+%s'`) / 86400 ))
+</span>    <span class="k">static</span> <span class="kt">uint16_t</span> <span class="n">day_cache</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//2015.03.01
+</span>    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">month_cache</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">year_cache</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint16_t</span> <span class="n">day_since_epoch</span><span class="p">;</span>
+    <span class="kt">uint16_t</span> <span class="n">day</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// month is one-based.
+</span>    <span class="n">epoch_t</span> <span class="n">num</span><span class="p">;</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span><span class="p">;</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span> <span class="o">=</span> <span class="n">get_quot_rem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span> <span class="o">=</span> <span class="n">get_quot_rem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span> <span class="o">=</span> <span class="n">get_quot_rem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">day_since_epoch</span> <span class="o">=</span> <span class="n">day</span><span class="p">;</span>
+
+    <span class="n">num</span> <span class="o">+=</span> <span class="mi">6</span><span class="p">;</span> <span class="c1">// 2000.1.1 is Saturday(6).
+</span>    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">EE</span> <span class="o">=</span> <span class="n">get_quot_rem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+    <span class="c1">//    if (day == day_cache) {
+</span>    <span class="c1">//        year = year_cache;
+</span>    <span class="c1">//        month = month_cache;
+</span>    <span class="c1">//        day -= day_cache;
+</span>    <span class="c1">//    }
+</span>
+    <span class="c1">// day is zero - based here.
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">day</span> <span class="o">&gt;=</span> <span class="n">month_length</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">LATB2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">day</span> <span class="o">-</span> <span class="n">month_length</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// month is one-based.
+</span>            <span class="n">year</span><span class="o">++</span><span class="p">;</span>
+            <span class="c1">//3155760000 is 2000~2100?100?????
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">-=</span> <span class="mi">3155760000</span><span class="p">;</span>
+                <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">month</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">month_cache</span> <span class="o">=</span> <span class="n">month</span><span class="p">;</span>
+        <span class="n">year_cache</span> <span class="o">=</span> <span class="n">year</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">day_cache</span> <span class="o">=</span> <span class="n">day_since_epoch</span> <span class="o">-</span> <span class="n">day</span><span class="p">;</span>
+    <span class="n">day</span><span class="o">++</span><span class="p">;</span> <span class="c1">// day is one-based, not zero-based.
+</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span> <span class="o">=</span> <span class="n">year</span><span class="p">;</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span> <span class="o">=</span> <span class="n">month</span><span class="p">;</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span> <span class="o">=</span> <span class="n">day</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">caltime_to_epoch</span><span class="p">(</span><span class="kt">time_t</span> <span class="o">*</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">epoch_t</span> <span class="n">epoch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">year</span> <span class="o">&lt;</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">;</span> <span class="n">year</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">month</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">;</span> <span class="n">month</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">month</span> <span class="o">&lt;</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">MM</span><span class="p">;</span> <span class="n">month</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="n">month_length</span><span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">YY</span><span class="p">,</span> <span class="n">month</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">epoch</span> <span class="o">+=</span> <span class="n">DAY</span> <span class="o">*</span> <span class="p">(</span><span class="n">tm</span><span class="o">-&gt;</span><span class="n">DD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//day is one-based.
+</span>    <span class="n">epoch</span> <span class="o">+=</span> <span class="n">HOUR</span> <span class="o">*</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">hh</span><span class="p">;</span>
+    <span class="n">epoch</span> <span class="o">+=</span> <span class="n">MINUTE</span> <span class="o">*</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">;</span>
+    <span class="n">epoch</span> <span class="o">+=</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">ss</span><span class="p">;</span>
+
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">epoch</span> <span class="o">=</span> <span class="n">epoch</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-4">ボタンライブラリ</h3>
+
+<h4 id="mybuttonh">My_button.h</h4>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
+ * File:   My_button.h
+ * Author: kerikun11
+ *
+ * Created on 2015/02/26, 19:19
+ */</span>
+
+<span class="cp">#ifndef MY_BUTTON_H
+#define	MY_BUTTON_H
+</span>
+<span class="cp">#include &lt;stdint.h&gt;
+</span>
+<span class="c1">//*************************** button ***************************//
+//タイマー割り込み関数にbutton_timer_interrupt(&amp;button_t,!SW)を書いておくこと。
+// 48MHz, 16bit, prescaler=1:4
+</span>
+<span class="cp">#define PRESS_LEVEL 2
+#define LONG_HOLD_LEVEL1  16
+#define LONG_HOLD_LEVEL2  60
+#define LONG_HOLD_LEVEL3  150
+#define LONG_HOLD_LEVEL4  300
+#define LONG_HOLD_LEVEL5  500
+#define LONG_HOLD_LEVEL6  700
+#define LONG_HOLD_LEVEL7  900
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">button</span> <span class="p">{</span>
+    <span class="kt">uint16_t</span> <span class="n">cnt_sw</span><span class="p">;</span>
+
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="kt">uint16_t</span> <span class="n">flags</span><span class="p">;</span>
+
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="kt">uint8_t</span> <span class="n">press</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_2</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_3</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_4</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_5</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_6</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_hold_7</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">pressing</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_2</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_3</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_4</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_5</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_6</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kt">uint8_t</span> <span class="n">long_holding_7</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">flag</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span> <span class="n">button_t</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">button_timer_interrupt</span><span class="p">(</span><span class="n">button_t</span> <span class="o">*</span><span class="n">bt</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">sw_value</span><span class="p">);</span>
+
+<span class="cp">#endif	</span><span class="cm">/* MY_BUTTON_H */</span><span class="cp">
+</span></code></pre>
+</div>
+
+<h4 id="mybuttonh-1">My_button.h</h4>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "My_button.h"
+</span>
+<span class="kt">void</span> <span class="nf">button_timer_interrupt</span><span class="p">(</span><span class="n">button_t</span> <span class="o">*</span><span class="n">bt</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">sw_value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sw_value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL7</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_7</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL6</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_6</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL5</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_5</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL4</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL3</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL2</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">LONG_HOLD_LEVEL1</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_holding_1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">==</span> <span class="n">PRESS_LEVEL</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">pressing</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&lt;</span> <span class="n">LONG_HOLD_LEVEL7</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL7</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_7</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL6</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_6</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL5</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_5</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL4</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL3</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL2</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">LONG_HOLD_LEVEL1</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">long_hold_1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">&gt;=</span> <span class="n">PRESS_LEVEL</span><span class="p">)</span><span class="n">bt</span><span class="o">-&gt;</span><span class="n">flag</span><span class="p">.</span><span class="n">press</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">bt</span><span class="o">-&gt;</span><span class="n">cnt_sw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">bt</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">&amp;=</span> <span class="mh">0x00FF</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-5">使用例</h3>
+
+<p>UARTで毎秒時刻を送信します．</p>
+
+<h4 id="mainc">main.c</h4>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
+ * Project: RTCC-Sample.X
+ * File:    main.c
+ * Author:  Ryotaro Onuki
+ *
+ * Created on 2015/10/06, 14:23
+ */</span>
+
+<span class="cp">#include &lt;xc.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt;
+</span><span class="c1">// CONFIG1L
+</span><span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
+</span><span class="c1">// CONFIG1H
+</span><span class="cp">#pragma config CPUDIV = OSC1, CP0 = OFF
+</span><span class="c1">// CONFIG2L
+</span><span class="cp">#pragma config OSC = INTOSCPLL, SOSCSEL = HIGH, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
+</span><span class="c1">// CONFIG2H
+</span><span class="cp">#pragma config WDTPS = 1024
+</span><span class="c1">// CONFIG3L
+</span><span class="cp">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
+</span><span class="c1">// CONFIG3H
+</span><span class="cp">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
+</span><span class="c1">// CONFIG4L
+</span><span class="cp">#pragma config WPFP = PAGE_127, WPCFG = OFF
+</span><span class="c1">// CONFIG4H
+</span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
+</span>
+<span class="cp">#define _XTAL_FREQ 48000000
+</span>
+<span class="cp">#include "My_RTCC.h"
+#include "My_button.h"
+</span>
+<span class="c1">// I/O Mapping
+</span><span class="cp">#define MODE_BUTTON PORTBbits.RB0
+#define INC_BUTTON PORTBbits.RB1
+#define DEC_BUTTON PORTBbits.RB2
+</span>
+<span class="cp">#define LED0 LATAbits.LATA0
+</span>
+<span class="n">button_t</span> <span class="n">mode</span><span class="p">;</span>
+<span class="n">button_t</span> <span class="n">inc</span><span class="p">;</span>
+<span class="n">button_t</span> <span class="n">dec</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">interrupt</span> <span class="nf">ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span> <span class="o">&amp;&amp;</span> <span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">PIE2bits</span><span class="p">.</span><span class="n">TMR3IE</span> <span class="o">&amp;&amp;</span> <span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">LED0</span> <span class="o">=</span> <span class="o">!</span><span class="n">LED0</span><span class="p">;</span>
+        <span class="n">button_timer_interrupt</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mode</span><span class="p">,</span> <span class="o">!</span><span class="n">MODE_BUTTON</span><span class="p">);</span>
+        <span class="n">button_timer_interrupt</span><span class="p">(</span><span class="o">&amp;</span><span class="n">inc</span><span class="p">,</span> <span class="o">!</span><span class="n">INC_BUTTON</span><span class="p">);</span>
+        <span class="n">button_timer_interrupt</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dec</span><span class="p">,</span> <span class="o">!</span><span class="n">DEC_BUTTON</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">RCIF</span> <span class="o">&amp;&amp;</span> <span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">// 送信完了まで待つ。
+</span>        <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">RCREG1</span><span class="p">;</span> <span class="c1">// 受信データをそのまま送信
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">IRCF</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">OSCTUNEbits</span><span class="p">.</span><span class="n">PLLEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">SCS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00100000</span><span class="p">;</span> <span class="c1">// IO,IO,Vcap,IO,IO,IO,IO,IO
+</span>    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00110111</span><span class="p">;</span> <span class="c1">// IO,IO,SDA,SCL,IO,IO,IO,IO
+</span>    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10111010</span><span class="p">;</span> <span class="c1">// RX,TX,D+,D-,Vusb,IO,T1OSI,T1OSO
+</span>    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4,AN3,AN2,AN1,AN0
+</span>    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,x,AN12,AN11,AN10,AN9,AN8
+</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">RBPU</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Port:B Pull-up enable
+</span>    <span class="c1">// Timer 1 init
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">TMR1CS</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Clock = T1OSC
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1OSCEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Drive Crystal
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">T1CKPS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// No devide
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">nT1SYNC</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// No Sync
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">RD16</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Timer1 = 2 x 8bit timer
+</span>    <span class="n">T1CONbits</span><span class="p">.</span><span class="n">TMR1ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// module enable
+</span>    <span class="n">IPR1bits</span><span class="p">.</span><span class="n">TMR1IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// low priority
+</span>    <span class="n">PIR1bits</span><span class="p">.</span><span class="n">TMR1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// Timer 3 init
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3CS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Clock = Fosc/4
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3OSCEN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Not Drive Crystal
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">T3CKPS</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// clock/4
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">RD163</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Timer3=16bit timer
+</span>    <span class="n">T3CONbits</span><span class="p">.</span><span class="n">TMR3ON</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// module enable
+</span>    <span class="n">IPR2bits</span><span class="p">.</span><span class="n">TMR3IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// low priority
+</span>    <span class="n">PIR2bits</span><span class="p">.</span><span class="n">TMR3IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PIE2bits</span><span class="p">.</span><span class="n">TMR3IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// interrupt enable
+</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// RTCC init
+</span>    <span class="n">RTCC_init</span><span class="p">();</span>
+    <span class="c1">// UART init
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">TX9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:8-bit
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">TXEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//1:enable
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">SYNC</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:Asynchronous mode
+</span>    <span class="n">TXSTA1bits</span><span class="p">.</span><span class="n">BRGH</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 1:High Speed
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">SPEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:Serial Port enable
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">RX9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0:8-bit
+</span>    <span class="n">RCSTA1bits</span><span class="p">.</span><span class="n">CREN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1:continuous receive enable
+</span>    <span class="n">BAUDCON1bits</span><span class="p">.</span><span class="n">BRG16</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 1:use 16-bit SPBRG
+</span>    <span class="n">SPBRG1</span> <span class="o">=</span> <span class="n">_XTAL_FREQ</span> <span class="o">/</span> <span class="mi">64</span> <span class="o">/</span> <span class="mi">9600</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">SPBRGH1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">IPR1bits</span><span class="p">.</span><span class="n">RC1IP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//0:low priority
+</span>    <span class="n">PIE1bits</span><span class="p">.</span><span class="n">RCIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">delay</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">main_init</span><span class="p">();</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">RTCC_task</span><span class="p">();</span>
+        <span class="n">RTCC_adjust_time_button</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mode</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">inc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dec</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">time_change_flag</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">time_change_flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+            <span class="n">sprintf</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="s">"</span><span class="se">\t</span><span class="s">20%02d/%02d/%02d(%s)%02d:%02d-%02d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">YY</span><span class="p">,</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">MM</span><span class="p">,</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">DD</span><span class="p">,</span>
+                    <span class="n">weekday_3char</span><span class="p">[</span><span class="n">now</span><span class="p">.</span><span class="n">EE</span><span class="p">],</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">hh</span><span class="p">,</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">mm</span><span class="p">,</span>
+                    <span class="n">now</span><span class="p">.</span><span class="n">ss</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">PIR1bits</span><span class="p">.</span><span class="n">TXIF</span><span class="p">);</span> <span class="c1">//送信完了まで待つ
+</span>                <span class="n">TXREG1</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+	</div>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<div class="post-guide">
+		<div class="post-guide-next">
+			
+			<p>次の記事</p>
+			<a class="post-link" href="/posts/2016-09-12-low-power-clock/">
+				<img src="/posts/2016-09-12-low-power-clock/icon.jpg" title="PICで省エネ時計を作る" alt="PICで省エネ時計を作る">
+				<div class="post-list-char">
+					<span class="post-meta">2016年09月12日 Category: works</span>
+					<h2 class="post-title">
+						PICで省エネ時計を作る
+					</h2>
+				</div>
+			</a>
+			
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
+			<a class="post-link" href="/posts/2016-09-01-raspi-music-server/">
+				<img src="/posts/2016-09-01-raspi-music-server/icon.jpg" title="ラズパイでミュージックサーバー" alt="ラズパイでミュージックサーバー">
+				<div class="post-list-char">
+					<span class="post-meta">2016年09月01日 Category: works</span>
+					<h2 class="post-title">
+						ラズパイでミュージックサーバー
+					</h2>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+
+	<br />
+
+	<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+
+		<a href="/"><h2 class="footer-heading">KERI's Lab</h2></a>
+
+		<div class="footer-col-wrapper">
+			<div class="footer-col footer-col-1">
+				<ul class="contact-list">
+					<li>Contact KERI</li>
+					<li>Mail : <a href="mailto:kerikun11+web@gmail.com">kerikun11+web@gmail.com</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-2">
+				<ul class="social-media-list">
+					
+					<li>
+						<a href="https://github.com/kerikun11" target="_blank"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">kerikun11</span></a>
+
+					</li>
+					
+
+					
+					<li>
+						<a href="https://twitter.com/Ryokeri14" target="_blank"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">Ryokeri14</span></a>
+
+					</li>
+					
+				</ul>
+			</div>
+
+			<div class="footer-col footer-col-3">
+				<p>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</p>
+			</div>
+
+			<div class="footer-copyright">
+				<p>Copyright© 2014-2016 KERI's Lab All Rights Reserved.</p>
+			</div>
+		</div>
+
+	</div>
+
+</footer>
+
+
+  </body>
+
+</html>
