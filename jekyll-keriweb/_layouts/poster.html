@@ -24,6 +24,11 @@
 								{% if forloop.last == false %}, {% endif %}
 								{% endfor %}
 							</p>
+							{% if page.author %}
+							<p class="post-meta">
+								作者: {{ page.author }}
+							</p>
+							{% endif %}
 						</div>
 					</header>
 					<div class="post-content" itemprop="articleBody">

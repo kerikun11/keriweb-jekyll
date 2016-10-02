@@ -944,7 +944,8 @@ html.layout-poster {
   padding: 20px; }
 .layout-poster .post-meta {
   font-size: 18px;
-  color: #555; }
+  color: #555;
+  margin-bottom: 5px; }
 .layout-poster h2 {
   clear: both;
   font-size: 24px;

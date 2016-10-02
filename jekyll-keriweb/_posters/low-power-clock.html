@@ -1,0 +1,52 @@
+---
+layout: poster
+title: "省電力時計"
+icon: "icon.jpg"
+tags:
+- "電子工作"
+- "マイコン"
+- "PIC"
+- "省電力"
+- "時計"
+- "7セグメントLED"
+author: "大貫椋太郎 (id研)"
+---
+
+<h2>マイコンは「PIC18F27J53」を使用</h2>
+<div class="poster-img">
+	<span>ブレッドボードで実装</span><br/>
+	<img src="clock.jpg" title="本体" alt="本体" style="width:320px;"/>
+</div>
+<!--more-->
+<div class="poster-p" style="width:360px;">
+	<h3>ナノワットテクノロジ-</h3>
+	<p>　PIC18F27J53は省電力に特化しています．そんなPICを使って超低消費電力の時計を作りました．</p>
+</div>
+<div class="poster-p" style="width:360px;">
+	<h3>リアルタイムクロックモジュール</h3>
+	<p>　PIC18F27J53はリアルタイムクロックモジュールをハードウェアで内蔵しています．これは電力をほとんど消費しない時刻カウンタです．CPUの動作とは関係なく，スリープ中やリセット中でも動作し続けます．</p>
+</div>
+<div class="poster-p" style="width:360px;">
+	<h3>ディープスリープ機能</h3>
+	<p>　PIC18F27J53はディープスリープ機能を持っています．普通のスリープとは異なり，CPUの電源を完全に切るので，その間の消費電力はほぼゼロです．ただし，リアルタイムクロックはCPUと関係ないので動作を続けます．</p>
+</div>
+
+<h2>電流の変化</h2>
+<div class="poster-p" style="width:340px;">
+	<h3>ダイナミック点灯時</h3>
+	<p>　7セグメントLEDの点灯時は定期的に数mAの電流が流れています．平均は約1mA程度です．</p>
+</div>
+<div class="poster-p" style="width:340px;">
+	<h3>ディープスリープ時</h3>
+	<p>　7セグの消灯時はほとんど電流が正弦のように変化していました．平均は1.5μA程度です．</p>
+</div>
+<div class="poster-img">
+	<img src="with-7seg.png" title="7seg" alt="7seg" style="width:340px;"/>
+</div>
+<div class="poster-img">
+	<img src="deep-sleep.png" title="7seg" alt="7seg" style="width:340px;"/>
+</div>
+
+<div class="poster-footer">
+	<p>Twitter: @Ryokeri14　HP: http://kerikeri.top</p>
+</div>
