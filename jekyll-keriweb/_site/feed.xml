@@ -5,9 +5,33 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Oct 2016 05:01:15 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2016 05:01:15 +0000</lastBuildDate>
+    <pubDate>Sun, 16 Oct 2016 02:59:52 +0000</pubDate>
+    <lastBuildDate>Sun, 16 Oct 2016 02:59:52 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>IR-Station v1.5.0 アップデート</title>
+        <description>&lt;h2 id=&quot;ir-stationv150&quot;&gt;IR-Stationがv1.5.0にアップデート&lt;/h2&gt;
+
+&lt;p&gt;この度，IR-Stationのファームウェアがv1.5.0にアップデートされ，新機能が追加されました．&lt;/p&gt;
+
+&lt;p&gt;IR-Stationについては，&lt;a href=&quot;/tags/#tag-index-IR-Station&quot;&gt;IR-Stationについての記事一覧&lt;/a&gt;をご覧ください．&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-10-16-ir-station-v1.5.0/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-10-16-ir-station-v1.5.0/</guid>
+        
+        <category>IR-Station</category>
+        
+        <category>赤外線学習リモコン</category>
+        
+        <category>ESP-WROOM-02</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>PICで省エネ時計を作る</title>
@@ -2624,37 +2648,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         
         
         <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>Charge Station</title>
-        <description>&lt;figure class=&quot;home-gallery&quot;&gt;
-	&lt;img src=&quot;top.jpg&quot;&gt;
-	&lt;img src=&quot;charge.jpg&quot;&gt;
-	&lt;img src=&quot;board_top.jpg&quot;&gt;
-	&lt;img src=&quot;board_bottom.jpg&quot;&gt;
-&lt;/figure&gt;
-&lt;section class=&quot;item&quot;&gt;
-	&lt;article&gt;
-		&lt;h1&gt;概要&lt;/h1&gt;
-		&lt;p&gt;　ChargeStationとは自作の携帯電話充電器です。僕が命名しました。充電が終わると自動で給電を止めるので、電気の節約になります。&lt;/p&gt;
-	&lt;/article&gt;
-
-
-</description>
-        <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-09-charge-station-6/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-09-charge-station-6/</guid>
-        
-        <category>Charge Station</category>
-        
-        <category>電子工作</category>
-        
-        <category>充電器</category>
-        
-        
-        <category>works</category>
         
       </item>
     
