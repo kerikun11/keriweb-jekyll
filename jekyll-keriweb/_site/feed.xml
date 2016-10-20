@@ -5,9 +5,45 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Oct 2016 02:59:52 +0000</pubDate>
-    <lastBuildDate>Sun, 16 Oct 2016 02:59:52 +0000</lastBuildDate>
+    <pubDate>Thu, 20 Oct 2016 14:40:29 +0000</pubDate>
+    <lastBuildDate>Thu, 20 Oct 2016 14:40:29 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>IR-Stationのデモンストレーションサイト</title>
+        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Stationの操作を体験できます！&lt;/h2&gt;
+
+&lt;h3 id=&quot;ir-station-1&quot;&gt;IR-Stationとは&lt;/h3&gt;
+
+&lt;p&gt;IR-Stationとは，WiFi接続に対応した赤外線学習リモコンです．これがあればスマートフォンなどから家電製品をコントロールすることができます．&lt;/p&gt;
+
+&lt;p&gt;IR-Stationについては，&lt;a href=&quot;/tags/#tag-index-IR-Station&quot;&gt;IR-Stationについての記事一覧&lt;/a&gt;をご覧ください．&lt;/p&gt;
+
+&lt;h3 id=&quot;ir-station-2&quot;&gt;IR-Stationのデモンストレーション&lt;/h3&gt;
+
+&lt;p&gt;IR-Stationを持っていない方でもIR-Stationの操作を体験できるように，操作画面を再現したサイトを作りました．&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ir-station.kerikeri.top&quot;&gt;IR-Stationのデモンストレーションサイト&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 20 Oct 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-10-20-ir-station-demo/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-10-20-ir-station-demo/</guid>
+        
+        <category>IR-Station</category>
+        
+        <category>赤外線学習リモコン</category>
+        
+        <category>Sinatra</category>
+        
+        <category>JavaScript</category>
+        
+        <category>HTML</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>IR-Station v1.5.0 アップデート</title>
@@ -2625,26 +2661,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <category>ターミナル</category>
         
         <category>link</category>
-        
-        
-        <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>Gitの使い方</title>
-        <description>&lt;p&gt;ここではGithubを使ったGitの使い方を説明する。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;主なコマンド&lt;/h2&gt;
-
-</description>
-        <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-21-git/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-21-git/</guid>
-        
-        <category>Git</category>
-        
-        <category>ターミナル</category>
         
         
         <category>memos</category>
