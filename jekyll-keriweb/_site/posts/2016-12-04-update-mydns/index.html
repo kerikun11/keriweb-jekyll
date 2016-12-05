@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>KERI's Lab</title>
-	<meta name="description" content="KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。">
+	<title>CrontabでMyDNS.jpのIP通知 - KERI's Lab</title>
+	<meta name="description" content="概要家のIPアドレスは固定ではないのでDDNSで追いかける．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posters/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2016-12-04-update-mydns/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -87,71 +87,169 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="posts">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<h1 class="post-title">ポスター</h1>
-		<p>これらの文書は，展示会などで提示するために作ったポスターです．</p>
+		<img src="/home/icon.png" title="CrontabでMyDNS.jpのIP通知" alt="CrontabでMyDNS.jpのIP通知">
+		<div class="post-head-char">
+			<h1 class="post-title" itemprop="name headline">CrontabでMyDNS.jpのIP通知</h1>
+			<p class="post-meta">
+				<time datetime="2016-12-04T00:00:00+00:00" itemprop="datePublished">2016年12月04日</time>
+				<span>
+					Category: <a href="/memos/">memos</a></span>
+				<br />
+				Tag: 
+				
+				<a href="/tags/#tag-index-サーバー">サーバー</a>
+				, 
+				
+				<a href="/tags/#tag-index-MyDNS.jp">MyDNS.jp</a>
+				, 
+				
+				<a href="/tags/#tag-index-Crontab">Crontab</a>
+				, 
+				
+				<a href="/tags/#tag-index-DDNS">DDNS</a>
+				
+				
+			</p>
+		</div>
 	</header>
-	<ul class="post-list">
-		
-		<li>
-	<a class="post-link" href="/posters/ir-station/">
-		<img src="/posters/ir-station/icon.png" title="IR-Station" alt="IR-Station">
-		<div class="post-list-char">
-			<h2>
-				IR-Station
-			</h2>
-			<span class="post-meta" style="max-height:4em;">WiFi接続の赤外線学習リモコン
 
-	本体
-	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
-	壁に取り付けた時の様子
-	
+	<br />
 
+	<span class="post-meta"></span>
+	<div class="post-content" itemprop="articleBody">
+		<h2 id="section">概要</h2>
 
-	赤外線学習リモコンとは
-	　赤外線学習リモコンとは，家電製品などのリモコンの赤外線信号を記憶して，代わりに家電製品をコントロールする機器です．「IR-Station」という名称は，私が命名しました．
+<p>家のIPアドレスは固定ではないのでDDNSで追いかける．</p>
 
+<!--more-->
 
+<h2 id="section-1">通知スクリプト</h2>
 
-</span>
-			<!--
-			<p></p>
-			-->
-		</div>
-	</a>
-</li>
+<h3 id="mydnssh">mydns.sh</h3>
 
-		
-		<li>
-	<a class="post-link" href="/posters/low-power-clock/">
-		<img src="/posters/low-power-clock/icon.jpg" title="省電力時計" alt="省電力時計">
-		<div class="post-list-char">
-			<h2>
-				省電力時計
-			</h2>
-			<span class="post-meta" style="max-height:4em;">マイコンは「PIC18F27J53」を使用
+<p>たったこれだけ．</p>
 
-	ブレッドボードで実装
-	
-
-
-
-</span>
-			<!--
-			<p></p>
-			-->
-		</div>
-	</a>
-</li>
-
-		
-	</ul>
-
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="nb">echo</span> <span class="s2">"MyDNS IP UPDATE"</span>
+wget -O- <span class="s1">'http://mydns012345:XXXXXXXXXXX@www.mydns.jp/login.html'</span>
+<span class="nb">echo</span> <span class="s2">"end"</span>
+</code></pre>
 </div>
+
+<p>実行権限をつけるのをお忘れなく．</p>
+
+<h2 id="crontab">Crontabの設定</h2>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
+</code></pre>
+</div>
+
+<p>5分ごとに通知する．</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+#
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').#
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+#
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+#
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+
+*/5     *       *       *       *       ~/scripts/mydns.sh
+</code></pre>
+</div>
+
+	</div>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 1st-ad -->
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-client="ca-pub-1668524068659644"
+	data-ad-slot="7974159815"
+	data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+	<div class="post-guide">
+		<div class="post-guide-next">
+			
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
+			<a class="post-link" href="/posts/2016-12-04-ir-station-demo-apache2/">
+				<img src="/home/icon.png" title="Apache2でIR-Stationデモ" alt="Apache2でIR-Stationデモ">
+				<div class="post-list-char">
+					<span class="post-meta">2016年12月04日 Category: memos</span>
+					<h2 class="post-title">
+						Apache2でIR-Stationデモ
+					</h2>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+
+	<br />
+
+	<div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+/*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+ */
+(function() {  // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+
+ s.src = '//kerikeri.disqus.com/embed.js';
+
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
 
 
       </div>

@@ -20,10 +20,10 @@ icon: "icon.png"
 
 ~~~config
 Host github
-	HostName: github.com
-	User: git
-	Port: 22
-	IdentityFile: ~/.ssh/id_ecdsa
+	HostName github.com
+	User git
+	Port 22
+	IdentityFile ~/.ssh/id_ecdsa
 ~~~
 
 ## Apache2の設定
@@ -82,8 +82,8 @@ Host github
 	$ sudo service apache2 restart
 
 	$ sudo mkdir /var/keriweb
-	$ sudo chown kerikun11
-	$ sudo chgrp kerikun11
+	$ sudo chown kerikun11 /var/keriweb
+	$ sudo chgrp kerikun11 /var/keriweb
 
 ## スクリプト
 

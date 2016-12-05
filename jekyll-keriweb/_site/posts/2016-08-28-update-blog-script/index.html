@@ -137,10 +137,10 @@
 <h3 id="sshconfig">~/.ssh/config</h3>
 
 <div class="language-config highlighter-rouge"><pre class="highlight"><code><span class="n">Host</span> <span class="n">github</span>
-	<span class="n">HostName</span>: <span class="n">github</span>.<span class="n">com</span>
-	<span class="n">User</span>: <span class="n">git</span>
-	<span class="n">Port</span>: <span class="m">22</span>
-	<span class="n">IdentityFile</span>: ~/.<span class="n">ssh</span>/<span class="n">id_ecdsa</span>
+	<span class="n">HostName</span> <span class="n">github</span>.<span class="n">com</span>
+	<span class="n">User</span> <span class="n">git</span>
+	<span class="n">Port</span> <span class="m">22</span>
+	<span class="n">IdentityFile</span> ~/.<span class="n">ssh</span>/<span class="n">id_ecdsa</span>
 </code></pre>
 </div>
 
@@ -200,8 +200,8 @@ $ sudo a2dissite default-000
 $ sudo service apache2 restart
 
 $ sudo mkdir /var/keriweb
-$ sudo chown kerikun11
-$ sudo chgrp kerikun11
+$ sudo chown kerikun11 /var/keriweb
+$ sudo chgrp kerikun11 /var/keriweb
 </code></pre>
 </div>
 

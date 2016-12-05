@@ -5,9 +5,62 @@
     <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Nov 2016 14:11:50 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Nov 2016 14:11:50 +0000</lastBuildDate>
+    <pubDate>Mon, 05 Dec 2016 01:32:20 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Dec 2016 01:32:20 +0000</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>CrontabでMyDNS.jpのIP通知</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;家のIPアドレスは固定ではないのでDDNSで追いかける．&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-12-04-update-mydns/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-12-04-update-mydns/</guid>
+        
+        <category>サーバー</category>
+        
+        <category>MyDNS.jp</category>
+        
+        <category>Crontab</category>
+        
+        <category>DDNS</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
+    
+      <item>
+        <title>Apache2でIR-Stationデモ</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ラズパイ+Apache2+SinatraでIR-Stationのデモサイトを作る．&lt;/p&gt;
+
+&lt;p&gt;この記事は，デモサイトを作るときのメモ．&lt;br /&gt;
+デモサイト紹介記事は&lt;a href=&quot;/posts/2016-10-20-ir-station-demo/&quot;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2016-12-04-ir-station-demo-apache2/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2016-12-04-ir-station-demo-apache2/</guid>
+        
+        <category>サーバー</category>
+        
+        <category>ラズパイ</category>
+        
+        <category>Apache2</category>
+        
+        <category>IR-Station</category>
+        
+        <category>Sinatra</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>全日本マイクロマウス2016の結果報告</title>
@@ -2625,53 +2678,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         
         
         <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</title>
-        <description>&lt;h2 id=&quot;uefi&quot;&gt;UEFIとは&lt;/h2&gt;
-&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</guid>
-        
-        <category>Surface</category>
-        
-        <category>Windows</category>
-        
-        <category>Ubuntu</category>
-        
-        <category>Linux</category>
-        
-        <category>UEFI</category>
-        
-        
-        <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>SSHの使い方</title>
-        <description>&lt;h2 id=&quot;ssh&quot;&gt;SSH&lt;/h2&gt;
-
-&lt;h3 id=&quot;ssh-1&quot;&gt;SSHとは&lt;/h3&gt;
-
-&lt;p&gt;　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-10-31-ssh/</guid>
-        
-        <category>SSH</category>
-        
-        <category>サーバー</category>
-        
-        
-        <category>memos</category>
         
       </item>
     

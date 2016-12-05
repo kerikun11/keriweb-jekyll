@@ -29,7 +29,7 @@ icon: "icon.png"
   * Internationalisation Options
     * Change Locale
     * Change Timezone
-    * CHange Keyboard Layout
+    * Change Keyboard Layout
     * Change WiFi Country
   * Advanced Options
     * Change Hostname
