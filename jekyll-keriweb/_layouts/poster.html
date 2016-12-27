@@ -14,7 +14,7 @@
 				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 					<header class="post-header">
-						<img src="{% if page.icon != nil then %}{{ page.url | prepend: site.baseurl }}{{ page.icon }}{% else %}/home/icon.png{% endif %}" title="{{ page.title }}" alt="{{ page.title }}">
+						<img src="{% if page.icon != nil %}{{ page.url | prepend: site.baseurl }}{{ page.icon }}{% else %}/home/icon.png{% endif %}" title="{{ page.title }}" alt="{{ page.title }}">
 						<div class="post-head-char">
 							<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
 							<p class="post-meta">

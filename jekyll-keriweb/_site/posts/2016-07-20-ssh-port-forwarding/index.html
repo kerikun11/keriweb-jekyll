@@ -10,8 +10,8 @@
 	<meta name="description" content="Port ForwardingとはSSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．LANの外からLAN内のルータの設定やNASなどを使えるようになるのだ．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-07-20-ssh-port-forwarding/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -126,7 +126,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="port-forwarding">Port Forwardingとは</h2>
+		<h2 id="port-forwardingとは">Port Forwardingとは</h2>
 
 <p>SSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．</p>
 
@@ -134,7 +134,7 @@
 
 <!--more-->
 
-<h2 id="section">使い方</h2>
+<h2 id="使い方">使い方</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ ssh -L 8080:192.168.11.1:80 user_name@server_hostname
 </code></pre>

@@ -10,8 +10,8 @@
 	<meta name="description" content="概要秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプロ...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-15-i2c-lcd/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2015-11-15-i2c-lcd/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -120,7 +120,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <p>秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。</p>
 
@@ -129,7 +129,7 @@
 <img src="AQM0802.jpg" alt="AQM0802" title="I2C_LCD" />
 <!--more--></p>
 
-<h2 id="section-1">ロジック・アナライザで一目瞭然！</h2>
+<h2 id="ロジックアナライザで一目瞭然">ロジック・アナライザで一目瞭然！</h2>
 
 <p>実際にプログラムが動作している様子をロジック・アナライザで確かめた。<br />
 上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。</p>
@@ -142,7 +142,7 @@
 
 <p>※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。</p>
 
-<h2 id="section-2">プログラム</h2>
+<h2 id="プログラム">プログラム</h2>
 
 <p>僕は普段からPICを使っているので、PIC18F27J53用のプログラムを書いた。</p>
 

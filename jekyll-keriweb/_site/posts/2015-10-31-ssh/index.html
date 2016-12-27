@@ -10,8 +10,8 @@
 	<meta name="description" content="SSHSSHとは　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-10-31-ssh/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2015-10-31-ssh/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -128,12 +128,12 @@
 	<div class="post-content" itemprop="articleBody">
 		<h2 id="ssh">SSH</h2>
 
-<h3 id="ssh-1">SSHとは</h3>
+<h3 id="sshとは">SSHとは</h3>
 
 <p>　Secure Shell。暗号や認証の技術を利用して、安全にリモートコンピュータと通信するためのプロトコル。 パスワードなどの認証部分を含むすべてのネットワーク上の通信が暗号化される。
 <!--more--></p>
 
-<h3 id="section">ホスト側設定</h3>
+<h3 id="ホスト側設定">ホスト側設定</h3>
 
 <p>openssh-serverをインストールしておく必要がある。これをインストールする前に、パスワードなどがしっかり設定されているかなどを確認しておくこと。</p>
 
@@ -153,7 +153,7 @@
 </code></pre>
 </div>
 
-<h3 id="section-1">鍵の生成</h3>
+<h3 id="鍵の生成">鍵の生成</h3>
 
 <p>　鍵はクライアント側で生成することが多い。</p>
 
@@ -176,7 +176,7 @@
 
 <p>なければ、新規作成してから、鍵を追加する。</p>
 
-<h3 id="ssh-2">SSHの接続</h3>
+<h3 id="sshの接続">SSHの接続</h3>
 
 <p>　接続コマンドは以下の通り。ログインユーザー名と、ホストアドレスを書く。</p>
 
@@ -213,7 +213,7 @@ Host global_raspi
 </code></pre>
 </div>
 
-<h2 id="section-2">ローカルのポートをリモートのポートにつなげる</h2>
+<h2 id="ローカルのポートをリモートのポートにつなげる">ローカルのポートをリモートのポートにつなげる</h2>
 
 <p>IP制限されているホストやLAN内の機器に外からつなぐ方法</p>
 

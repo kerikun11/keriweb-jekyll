@@ -10,8 +10,8 @@
 	<meta name="description" content="はじめにこれらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．$ ssh pi@192.168.11.13">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-08-28-raspi-setup/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-08-28-raspi-setup/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -126,7 +126,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">はじめに</h2>
+		<h2 id="はじめに">はじめに</h2>
 
 <p>これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．</p>
 
@@ -136,7 +136,7 @@
 
 <!--more-->
 
-<h2 id="section-1">更新</h2>
+<h2 id="更新">更新</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get update
 $ sudo apt-get upgrade
@@ -164,21 +164,21 @@ $ sudo raspi-config
   </li>
 </ul>
 
-<h2 id="section-2">必要なパッケージのインストール</h2>
+<h2 id="必要なパッケージのインストール">必要なパッケージのインストール</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install -y vim tmux zsh git
 </code></pre>
 </div>
 
-<h2 id="section-3">ルートパスワードの変更</h2>
+<h2 id="ルートパスワードの変更">ルートパスワードの変更</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo passwd root
 </code></pre>
 </div>
 
-<h2 id="ip">IPアドレスの固定化</h2>
+<h2 id="ipアドレスの固定化">IPアドレスの固定化</h2>
 
-<h3 id="ip-1">静的IPの設定</h3>
+<h3 id="静的ipの設定">静的IPの設定</h3>
 
 <p>あらかじめルーターの管理画面で，192.168.11.2をDHCPの割り当て範囲から外しておく．</p>
 
@@ -216,22 +216,22 @@ $ sudo raspi-config
 </code></pre>
 </div>
 
-<h3 id="section-4">再起動</h3>
+<h3 id="再起動">再起動</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo reboot
 </code></pre>
 </div>
 
-<h2 id="section-5">使用ユーザーの作成</h2>
+<h2 id="使用ユーザーの作成">使用ユーザーの作成</h2>
 
-<h3 id="section-6">ユーザーを新規作成</h3>
+<h3 id="ユーザーを新規作成">ユーザーを新規作成</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo adduser hoge
 $ sudo gpasswd -a hoge sudo
 </code></pre>
 </div>
 
-<h3 id="section-7">ホームディレクトリがなければ作る</h3>
+<h3 id="ホームディレクトリがなければ作る">ホームディレクトリがなければ作る</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ls -l /home
 $ sudo mkdir /home/hoge
@@ -240,7 +240,7 @@ $ sudo chgrp hoge /home/hoge
 </code></pre>
 </div>
 
-<h3 id="section-8">デフォルトシェルの変更</h3>
+<h3 id="デフォルトシェルの変更">デフォルトシェルの変更</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/passwd
 </code></pre>
@@ -251,51 +251,51 @@ $ sudo chgrp hoge /home/hoge
 </span></code></pre>
 </div>
 
-<h3 id="section-9">ログイン</h3>
+<h3 id="ログイン">ログイン</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ su hoge
 </code></pre>
 </div>
 
-<h2 id="pi">ユーザーpiの削除</h2>
+<h2 id="ユーザーpiの削除">ユーザーpiの削除</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo userdel -r pi
 </code></pre>
 </div>
 
-<h2 id="section-10">公開鍵認証</h2>
+<h2 id="公開鍵認証">公開鍵認証</h2>
 
-<h3 id="section-11">クライアント上</h3>
+<h3 id="クライアント上">クライアント上</h3>
 
-<h4 id="section-12">必要があれば鍵の作成</h4>
+<h4 id="必要があれば鍵の作成">必要があれば鍵の作成</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ cd .ssh
 $ ssh-keygen -t ecdsa -C "foo"
 </code></pre>
 </div>
 
-<h4 id="section-13">公開鍵の送信</h4>
+<h4 id="公開鍵の送信">公開鍵の送信</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ scp ~/.ssh/id_ecdsa.pub hoge@192.168.11.2:
 </code></pre>
 </div>
 
-<h3 id="section-14">ホスト上</h3>
+<h3 id="ホスト上">ホスト上</h3>
 
-<h4 id="section-15">受け取った公開鍵の登録</h4>
+<h4 id="受け取った公開鍵の登録">受け取った公開鍵の登録</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
 $ cat ~/id_ecdsa.pub &gt;&gt; ~/.ssh/authorized_keys
 </code></pre>
 </div>
 
-<h3 id="section-16">接続方法</h3>
+<h3 id="接続方法">接続方法</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ ssh hoge@192.168.11.2 -p 22 -i ~/.ssh/id_ecdsa
 </code></pre>
 </div>
 
-<h2 id="ssh">SSHポートの変更，パスワード認証の禁止</h2>
+<h2 id="sshポートの変更パスワード認証の禁止">SSHポートの変更，パスワード認証の禁止</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/ssh/sshd_config
 </code></pre>

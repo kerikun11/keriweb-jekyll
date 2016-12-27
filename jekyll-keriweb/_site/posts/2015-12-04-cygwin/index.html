@@ -10,8 +10,8 @@
 	<meta name="description" content="概要Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-12-04-cygwin/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2015-12-04-cygwin/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -129,13 +129,13 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <p>Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。</p>
 
 <!--more-->
 
-<h2 id="cygwin">Cygwinのインストール手順</h2>
+<h2 id="cygwinのインストール手順">Cygwinのインストール手順</h2>
 
 <ol>
   <li><a href="https://www.cygwin.com/">Cygwin.com</a>からCygwinのインストーラをダウンロードする。32bitマシン用と64bitマシン用があるので適当なほうを選ぶ。</li>
@@ -159,13 +159,13 @@
 <img src="10.png" alt="インストール画面10" title="インストール画面10" /> 
 <img src="11.png" alt="インストール画面11" title="インストール画面11" /></p>
 
-<h2 id="apt-cyg">apt-cygを使う</h2>
+<h2 id="apt-cygを使う">apt-cygを使う</h2>
 
-<h3 id="apt-cyg-1">apt-cygとは</h3>
+<h3 id="apt-cygとは">apt-cygとは</h3>
 
 <p>apt-cygとは普通のシェルスクリプトで、新しくソフトウェアをインストールするときに使う。Macintoshのyumやlinuxのapt-getとほぼ同じ使い方ができる。</p>
 
-<h3 id="apt-cyg-2">apt-cygを使う理由</h3>
+<h3 id="apt-cygを使う理由">apt-cygを使う理由</h3>
 
 <p>cygwinでは、新たにソフトをインストールする際には、cygwinインストール時に使ったsetup.exeを使うのが一般的である。</p>
 
@@ -175,7 +175,7 @@
 
 <p>が、なんど１晩かかってもDLが終わらず、インストールが終わった後にサイズを確認したら<strong>60GB</strong>も容量を取られてしまった。もう絶対にやらない。</p>
 
-<h3 id="apt-cyg-3">apt-cygをインストール</h3>
+<h3 id="apt-cygをインストール">apt-cygをインストール</h3>
 
 <p>Cygwinを起動したら、以下のコマンドを実行する。</p>
 
@@ -204,9 +204,9 @@ $ apt-cyg install git
 
 <p>などなど</p>
 
-<h2 id="section-1">おまけ（各種設定）</h2>
+<h2 id="おまけ各種設定">おまけ（各種設定）</h2>
 
-<h3 id="windows">Windowsのコピペを使う</h3>
+<h3 id="windowsのコピペを使う">Windowsのコピペを使う</h3>
 
 <p>Cygwinのデフォルトの設定ではWindowsのCtrl+C,Ctrl+Vが使えない。これでは不便なので使えるようにする。</p>
 
@@ -226,7 +226,7 @@ $ apt-cyg install git
 <img src="14.png" alt="インストール画面14" title="インストール画面14" /> 
 <img src="15.png" alt="インストール画面15" title="インストール画面15" /></p>
 
-<h3 id="zsh">デフォルトのシェルをzshにする</h3>
+<h3 id="デフォルトのシェルをzshにする">デフォルトのシェルをzshにする</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ apt-cyg install zsh
 $ ls /etc/passwd

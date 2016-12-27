@@ -10,8 +10,8 @@
 	<meta name="description" content="IR-Stationとは自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．詳しくは，IR-Stationについての記事一覧をご覧ください．IR-Stationの新機能夏休みになり，IR-Stationを本格的に開発しています．今回は...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-08-14-download-upload/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-08-14-download-upload/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -144,24 +144,24 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="ir-station">IR-Stationとは</h2>
+		<h2 id="ir-stationとは">IR-Stationとは</h2>
 
 <p>自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．</p>
 
 <p>詳しくは，<a href="/tags/#tag-index-IR-Station">IR-Stationについての記事一覧</a>をご覧ください．</p>
 
-<h2 id="ir-station-1">IR-Stationの新機能</h2>
+<h2 id="ir-stationの新機能">IR-Stationの新機能</h2>
 
 <p>夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．</p>
 
 <!--more-->
 
-<h3 id="ir-station-2">IR-Stationの操作画面</h3>
+<h3 id="ir-stationの操作画面">IR-Stationの操作画面</h3>
 <p>画面下方の設定やInfoの配置が少し変わり，見やすくなりました．</p>
 
 <p><img src="display.png" alt="画面" /></p>
 
-<h3 id="section">設定画面</h3>
+<h3 id="設定画面">設定画面</h3>
 <p>画面下方の設定画面では，以下のことができます．</p>
 
 <ol>
@@ -176,23 +176,23 @@
 
 <p><img src="action.png" alt="設定" /></p>
 
-<h3 id="section-1">赤外線データファイルのダウンロード機能</h3>
+<h3 id="赤外線データファイルのダウンロード機能">赤外線データファイルのダウンロード機能</h3>
 
 <p>赤外線信号を選んで<code class="highlighter-rouge">Submit</code>ボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．</p>
 
 <p><img src="download.png" alt="ダウンロード画面" /></p>
 
-<h3 id="section-2">赤外線データファイルのアップロード機能</h3>
+<h3 id="赤外線データファイルのアップロード機能">赤外線データファイルのアップロード機能</h3>
 
 <p>信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，<code class="highlighter-rouge">Submit</code>ボタンを押すと，赤外線が登録されます．</p>
 
 <p><img src="upload.png" alt="アップロード画面" /></p>
 
-<h2 id="json">赤外線データファイルはJSONファイル</h2>
+<h2 id="赤外線データファイルはjsonファイル">赤外線データファイルはJSONファイル</h2>
 
 <p>赤外線データファイルはJSON形式に従っており，以下のフォーマットになっています．</p>
 
-<h3 id="json-1">JSONフォーマット</h3>
+<h3 id="jsonフォーマット">JSONフォーマット</h3>
 
 <p>赤外線データは，単位がマイクロ秒の生データです．</p>
 
@@ -207,7 +207,7 @@
 </code></pre>
 </div>
 
-<h3 id="json-2">JSONファイルの例</h3>
+<h3 id="jsonファイルの例">JSONファイルの例</h3>
 
 <p>これに従った形式なら，自分で作ったファイルでもアップロード可能です．</p>
 
@@ -217,11 +217,11 @@
 </code></pre>
 </div>
 
-<h3 id="section-3">注意</h3>
+<h3 id="注意">注意</h3>
 
 <p>JSONデータのフォーマットは，今後のアップデートで変更される可能性があります．最新情報は，<a href="http://github.com/kerikun11/IR-station.git">Githab/kerikun11/IR-Station</a>にあるのでそちらをご覧下さい．</p>
 
-<h2 id="section-4">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>IR-Stationは，日々進化しています．今後のアップデートにもご期待を！</p>
 

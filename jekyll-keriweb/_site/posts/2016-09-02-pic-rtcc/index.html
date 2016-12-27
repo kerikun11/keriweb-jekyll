@@ -10,8 +10,8 @@
 	<meta name="description" content="概要PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．自作のRTCCライブラリ必要なソースファイル  My_RTCC.h  My_RTCC.c  My_button.h  My_butt...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-09-02-pic-rtcc/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-09-02-pic-rtcc/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -135,13 +135,13 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <p>PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．</p>
 
-<h2 id="rtcc">自作のRTCCライブラリ</h2>
+<h2 id="自作のrtccライブラリ">自作のRTCCライブラリ</h2>
 
-<h3 id="section-1">必要なソースファイル</h3>
+<h3 id="必要なソースファイル">必要なソースファイル</h3>
 
 <ul>
   <li>My_RTCC.h</li>
@@ -151,9 +151,9 @@
   <li>main.c</li>
 </ul>
 
-<h3 id="section-2">概要</h3>
+<h3 id="概要-1">概要</h3>
 
-<h4 id="section-3">変数</h4>
+<h4 id="変数">変数</h4>
 
 <p>このプログラムでは、時刻情報を持つ変数が３つある。</p>
 
@@ -163,8 +163,8 @@
   <li>time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。</li>
 </ol>
 
-<p>以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。
-#### 使い方</p>
+<p>以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。</p>
+<h4 id="使い方">使い方</h4>
 
 <ol>
   <li>TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）</li>
@@ -177,9 +177,9 @@
   <li>時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。</li>
 </ol>
 
-<h3 id="rtcc-1">RTCCライブラリ</h3>
+<h3 id="rtccライブラリ">RTCCライブラリ</h3>
 
-<h4 id="myrtcch">My_RTCC.h</h4>
+<h4 id="my_rtcch">My_RTCC.h</h4>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
  * File:   My_RTCC.h
@@ -323,7 +323,7 @@
 </span></code></pre>
 </div>
 
-<h4 id="myrtccc">My_RTCC.c</h4>
+<h4 id="my_rtccc">My_RTCC.c</h4>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "My_RTCC.h"
 </span>
@@ -687,9 +687,9 @@
 </code></pre>
 </div>
 
-<h3 id="section-4">ボタンライブラリ</h3>
+<h3 id="ボタンライブラリ">ボタンライブラリ</h3>
 
-<h4 id="mybuttonh">My_button.h</h4>
+<h4 id="my_buttonh">My_button.h</h4>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
  * File:   My_button.h
@@ -749,7 +749,7 @@
 </span></code></pre>
 </div>
 
-<h4 id="mybuttonh-1">My_button.h</h4>
+<h4 id="my_buttonh-1">My_button.h</h4>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "My_button.h"
 </span>
@@ -780,7 +780,7 @@
 </code></pre>
 </div>
 
-<h3 id="section-5">使用例</h3>
+<h3 id="使用例">使用例</h3>
 
 <p>UARTで毎秒時刻を送信します．</p>
 

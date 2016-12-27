@@ -10,8 +10,8 @@
 	<meta name="description" content="概要NASがほしい！じゃあ作ろう。スペックサーバ：Raspberrypi 2 Type BHDD：Western Digital 2TB 3.5 inch転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-23-samba/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2015-11-23-samba/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -132,7 +132,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <p>NASがほしい！<br />
 じゃあ作ろう。</p>
@@ -143,18 +143,18 @@ HDD：Western Digital 2TB 3.5 inch<br />
 転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない…）
 <!--more--></p>
 
-<h2 id="samba">Sambaをインストール</h2>
+<h2 id="sambaをインストール">Sambaをインストール</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install samba
 </code></pre>
 </div>
 
-<h2 id="hdd">HDDを設定する</h2>
+<h2 id="hddを設定する">HDDを設定する</h2>
 
-<h3 id="hdd-1">HDDをラズパイに繋ぐ。</h3>
+<h3 id="hddをラズパイに繋ぐ">HDDをラズパイに繋ぐ。</h3>
 <p>ポータブルHDDだと電力が足りなくなるかもしれないので、3.5inchのHDDを使用した。</p>
 
-<h3 id="hdd-2">HDDをフォーマット＆マウント</h3>
+<h3 id="hddをフォーマットマウント">HDDをフォーマット＆マウント</h3>
 
 <p>HDDをラズパイに繋ぐ</p>
 
@@ -234,7 +234,7 @@ $ sudo chgrp *myuser* share
 </code></pre>
 </div>
 
-<h2 id="samba-1">Sambaの設定</h2>
+<h2 id="sambaの設定">Sambaの設定</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/samba/smb.conf
 </code></pre>
@@ -270,7 +270,7 @@ $ sudo service ufw restart
 
 <p>これでつながるはず。</p>
 
-<h2 id="windows">Windowsからアクセス</h2>
+<h2 id="windowsからアクセス">Windowsからアクセス</h2>
 
 <ol>
   <li>エクスプローラーの左側のナビゲーションウィンドウのネットワークを開く。</li>

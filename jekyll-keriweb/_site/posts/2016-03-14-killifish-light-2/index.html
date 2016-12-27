@@ -10,8 +10,8 @@
 	<meta name="description" content="概要メダカの水槽の照明以前、PICで作ったメダカの水槽の照明(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。格安WiFiモジュール今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-03-14-killifish-light-2/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-03-14-killifish-light-2/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -150,15 +150,15 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
-<h3 id="section-1">メダカの水槽の照明</h3>
+<h3 id="メダカの水槽の照明">メダカの水槽の照明</h3>
 
 <p>以前、PICで作った<a href="/posts/2015-06-04-killifish-light/">メダカの水槽の照明</a>(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。</p>
 
 <p><img src="fish.jpg" alt="めだか" /></p>
 
-<h3 id="wifi">格安WiFiモジュール</h3>
+<h3 id="格安wifiモジュール">格安WiFiモジュール</h3>
 
 <p>今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。</p>
 
@@ -174,9 +174,9 @@
 <p><img src="esp-wroom-02.jpg" alt="ESP-WROOM-02" class="img-small" />
 <!--more--></p>
 
-<h2 id="section-2">ギャラリー</h2>
+<h2 id="ギャラリー">ギャラリー</h2>
 
-<h3 id="section-3">全体</h3>
+<h3 id="全体">全体</h3>
 
 <p>LEDはなんと、</p>
 
@@ -191,7 +191,7 @@
 
 <p><img src="all.jpg" alt="全体" /></p>
 
-<h3 id="section-4">基板</h3>
+<h3 id="基板">基板</h3>
 
 <p>Dサイズのユニバーサル基板に実装しました。回路はとても簡単です。</p>
 
@@ -202,29 +202,29 @@
 
 <p><img src="light.jpg" alt="光っているところ" /></p>
 
-<h3 id="section-5">回路図</h3>
+<h3 id="回路図">回路図</h3>
 
 <p><a href="sketch.png"><img src="sketch.png" alt="回路図" /></a></p>
 
-<h3 id="section-6">スマホからの操作画面</h3>
+<h3 id="スマホからの操作画面">スマホからの操作画面</h3>
 
 <p>ボタンを押すことでLEDの明るさを11段階で変えることができます。</p>
 
 <p><img src="page.png" alt="操作画面" /></p>
 
-<h2 id="section-7">時間同期モード</h2>
+<h2 id="時間同期モード">時間同期モード</h2>
 
 <p>「Set Time Sync」から時間同期モードに設定すると、朝6時から徐々に明るくなり正午にMAXになり、午後6時までに消灯するようになっています。これでめだかは時間感覚が狂わず、健康に生きることができます！！</p>
 
 <p>時刻はNTPサーバーから取得しているので時計合わせも不要で正確です。</p>
 
-<h2 id="section-8">ソースファイル</h2>
+<h2 id="ソースファイル">ソースファイル</h2>
 
 <p>ソースファイルはGithubに公開していますので興味がある方はご覧ください。<a href="https://github.com/kerikun11/Light-for-Fish.git">→リンク</a></p>
 
 <p>ただし、他人に見せるつもりで書いたソースではないので説明は皆無です。</p>
 
-<h2 id="section-9">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>シリアルによるコントロールだった前のバージョンに比べてかなり進化しました！今後はJavaScriptなどを使ってさらに進化させていきたいですね！</p>
 

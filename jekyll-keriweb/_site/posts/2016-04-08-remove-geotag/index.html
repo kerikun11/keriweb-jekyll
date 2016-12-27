@@ -10,8 +10,8 @@
 	<meta name="description" content="概要写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-04-08-remove-geotag/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-04-08-remove-geotag/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -135,30 +135,30 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <p>写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。
 <!--more--></p>
 
-<h2 id="section-1">ツール</h2>
+<h2 id="ツール">ツール</h2>
 
 <ul>
   <li>exiftool</li>
 </ul>
 
-<h3 id="linux">インストール方法(Linux)</h3>
+<h3 id="インストール方法linux">インストール方法(Linux)</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install exiftool
 </code></pre>
 </div>
 
-<h3 id="windows">インストール方法(Windows)</h3>
+<h3 id="インストール方法windows">インストール方法(Windows)</h3>
 
 <p><a href="http://www.sno.phy.queensu.ca/~phil/exiftool/">ここ</a>からzipファイルをダウンロードする。</p>
 
-<h2 id="section-2">使い方</h2>
+<h2 id="使い方">使い方</h2>
 
-<h3 id="geotag">geotagを削除する</h3>
+<h3 id="geotagを削除する">geotagを削除する</h3>
 
 <p><code class="highlighter-rouge">geotag=</code>で何も書かなければ、位置情報はなくなる。</p>
 
@@ -166,7 +166,7 @@
 </code></pre>
 </div>
 
-<h3 id="section-3">ついでに回転した写真の修正方法も</h3>
+<h3 id="ついでに回転した写真の修正方法も">ついでに回転した写真の修正方法も</h3>
 
 <p>エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。</p>
 

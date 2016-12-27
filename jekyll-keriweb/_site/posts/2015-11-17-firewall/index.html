@@ -10,8 +10,8 @@
 	<meta name="description" content="概要ufwiptablesという有名なファイアウォールソフトウェアがあるが初心者には使いにくいので，今回は初心者でも使いやすいufwというソフトを使う．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2015-11-17-firewall/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2015-11-17-firewall/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -132,7 +132,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <h3 id="ufw">ufw</h3>
 
@@ -140,9 +140,9 @@
 
 <!--more-->
 
-<h2 id="section-1">ファイアウォールの設定</h2>
+<h2 id="ファイアウォールの設定">ファイアウォールの設定</h2>
 
-<h3 id="section-2">インストール&amp;初期設定</h3>
+<h3 id="インストール初期設定">インストール&amp;初期設定</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install ufw
 
@@ -151,7 +151,7 @@ Status: inactive
 </code></pre>
 </div>
 
-<h3 id="ipv6off">IPv6サポートをOFF</h3>
+<h3 id="ipv6サポートをoff">IPv6サポートをOFF</h3>
 
 <div class="language-diff highlighter-rouge"><pre class="highlight"><code>/etc/default/ufw
 
@@ -160,7 +160,7 @@ Status: inactive
 </span></code></pre>
 </div>
 
-<h3 id="section-3">必要があれば初期化</h3>
+<h3 id="必要があれば初期化">必要があれば初期化</h3>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw reset
 Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?
@@ -168,13 +168,13 @@ y
 </code></pre>
 </div>
 
-<h3 id="section-4">基本ポリシーを設定</h3>
+<h3 id="基本ポリシーを設定">基本ポリシーを設定</h3>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw default deny
 </code></pre>
 </div>
 
-<h3 id="section-5">使用するサービスのポートを開く</h3>
+<h3 id="使用するサービスのポートを開く">使用するサービスのポートを開く</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw allow 80
 Rules updated
@@ -183,7 +183,7 @@ Rules updated
 </code></pre>
 </div>
 
-<h3 id="ufw-1">ufwの有効化</h3>
+<h3 id="ufwの有効化">ufwの有効化</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw enable
 sudo uFirewall is active and enabled on system startup

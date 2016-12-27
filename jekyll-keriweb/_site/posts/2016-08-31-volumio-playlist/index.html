@@ -10,8 +10,8 @@
 	<meta name="description" content="概要VolumioVolumioというミュージックサーバーソフトウェアがある．ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．プレイリスト問題しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリス...">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-08-31-volumio-playlist/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-08-31-volumio-playlist/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -135,7 +135,7 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
 <h3 id="volumio">Volumio</h3>
 
@@ -143,7 +143,7 @@
 
 <p>ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．</p>
 
-<h3 id="section-1">プレイリスト問題</h3>
+<h3 id="プレイリスト問題">プレイリスト問題</h3>
 
 <p>しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．</p>
 
@@ -153,7 +153,7 @@
 
 <!--more-->
 
-<h2 id="itunes">iTunesでのプレイリスト出力方法</h2>
+<h2 id="itunesでのプレイリスト出力方法">iTunesでのプレイリスト出力方法</h2>
 
 <ol>
   <li>iTunes上のプレイリストを表示した状態にする</li>
@@ -163,9 +163,9 @@
 
 <p><img src="output.png" alt="プレイリストを出力" class="img-medium" /></p>
 
-<h2 id="section-2">プレイリストのフォーマット</h2>
+<h2 id="プレイリストのフォーマット">プレイリストのフォーマット</h2>
 
-<h3 id="m3u">一般的なM3U形式</h3>
+<h3 id="一般的なm3u形式">一般的なM3U形式</h3>
 
 <p>例えば</p>
 
@@ -189,7 +189,7 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 </code></pre>
 </div>
 
-<h3 id="volumiojson">Volumioの独自JSON形式</h3>
+<h3 id="volumioの独自json形式">Volumioの独自JSON形式</h3>
 
 <p>JSONであることは確かであるが，内容は独自であると思われる．</p>
 
@@ -226,9 +226,9 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 </span></code></pre>
 </div>
 
-<h2 id="section-3">変換スクリプト</h2>
+<h2 id="変換スクリプト">変換スクリプト</h2>
 
-<h3 id="ruby">rubyで書いてみた</h3>
+<h3 id="rubyで書いてみた">rubyで書いてみた</h3>
 
 <p>rubyの練習のためにrubyで書いてみた．</p>
 
@@ -275,9 +275,9 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 </code></pre>
 </div>
 
-<h2 id="section-4">使い方</h2>
+<h2 id="使い方">使い方</h2>
 
-<h3 id="section-5">前提条件</h3>
+<h3 id="前提条件">前提条件</h3>
 
 <ul>
   <li>WindowsのiTunesで作成されたプレイリストファイルである</li>
@@ -285,7 +285,7 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
   <li>曲のディレクトリ構成は，iTunesそのままで，<code class="highlighter-rouge">INTERNAL/アーティスト名/アルバム名/曲名</code></li>
 </ul>
 
-<h3 id="section-6">プレイリストの作成</h3>
+<h3 id="プレイリストの作成">プレイリストの作成</h3>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls
 m3u2volumio.rb  playlist.m3u
@@ -298,21 +298,21 @@ m3u2volumio.rb  playlist.m3u  playlist.json
 </code></pre>
 </div>
 
-<h3 id="section-7">プレイリストの送信</h3>
+<h3 id="プレイリストの送信">プレイリストの送信</h3>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>scp playlist.json volumio@volumio.local:/data/playlist/playlist.json
 </code></pre>
 </div>
 
-<h3 id="nas">外付けストレージやNASを使う場合</h3>
+<h3 id="外付けストレージやnasを使う場合">外付けストレージやNASを使う場合</h3>
 
 <p>rubyコード中の<code class="highlighter-rouge">MOUNT_PATH</code>に適当なパスを設定すればよい．</p>
 
-<h2 id="section-8">注意</h2>
+<h2 id="注意">注意</h2>
 
 <p>上手くやれば上手くいくが，操作にミスがあるとVolumioが落ちるので注意が必要である．ただ，すぐに再起動するし，落ちるのはVolumioのアプリケーションだけで，ラズパイ自体は落ちない．</p>
 
-<h2 id="section-9">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>今後のアップデートで使えなくなるかもしれないけど，なんとか使えた．volumioは便利だから，もっと便利に使おう！</p>
 

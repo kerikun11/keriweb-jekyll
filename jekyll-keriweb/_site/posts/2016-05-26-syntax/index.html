@@ -10,8 +10,8 @@
 	<meta name="description" content="Jekyllのシンタックスハイライトテーマを変更するJekyllのデフォルトのテーマはダサいので変更する．https://github.com/jwarby/jekyll-pygments-themesから適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-05-26-syntax/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-05-26-syntax/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -151,8 +151,10 @@
 <div class="paragraph">
 <p>色が変な場合は以下のようにpreタグとcodeタグに適当な色を設定すると直る．</p>
 </div>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">pre</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span><span class="m">#DDD</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.highlight</span> <span class="nt">code</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span><span class="m">#DDD</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+{% highlight css %}
+pre { color:#DDD; }
+.highlight code { color:#DDD; }
+{% endhighlight %}
 </div>
 </div>
 <div class="sect1">
@@ -169,13 +171,13 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-c" data-lang="c">++++
-{% highlight c %}
+{% raw %}{% highlight c %}{% endraw %}
 #include &lt;stdio.h&gt;
 int main(int argc, char *argv[]){
 	printf("Hello World\n");
 	return 0;
 }
-{% endhighlight %}
+{% raw %}{% endhighlight %}{% endraw %}
 ++++</code></pre>
 </div>
 </div>
@@ -188,11 +190,13 @@ int main(int argc, char *argv[]){
 <div class="paragraph">
 <p>上記の例は以下のように表示される．</p>
 </div>
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
-</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
-	<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+{% highlight c %}
+#include <stdio.h>
+int main(int argc, char *argv[]){
+	printf("Hello World\n");
+	return 0;
+}
+{% endhighlight %}
 </div>
 </div>
 </div>

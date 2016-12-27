@@ -10,8 +10,8 @@
 	<meta name="description" content="概要PICで時計久しぶりにPICの話題です．しばらくESP8266やARMマイコンなど，上級のマイコンを使っていましたが，またPICを使ってみたくなりました．他のマイコンには真似できないような超低消費電力の時計を作ってみました．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2016-09-12-low-power-clock/">
-	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
+	<link rel="canonical" href="http://localhost:4000/posts/2016-09-12-low-power-clock/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -135,9 +135,9 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">概要</h2>
+		<h2 id="概要">概要</h2>
 
-<h3 id="pic">PICで時計</h3>
+<h3 id="picで時計">PICで時計</h3>
 
 <p>久しぶりにPICの話題です．しばらくESP8266やARMマイコンなど，上級のマイコンを使っていましたが，またPICを使ってみたくなりました．</p>
 
@@ -145,11 +145,11 @@
 
 <!--more-->
 
-<h2 id="pic18f27j53">PIC18F27J53の機能</h2>
+<h2 id="pic18f27j53の機能">PIC18F27J53の機能</h2>
 
 <p>今回用いるPICマイコンは，以前このブログでも紹介した<a href="/posts/2016-01-08-pic18f27j53/">PIC18F27J53</a>です．</p>
 
-<h3 id="section-1">リアルタイムクロック内蔵</h3>
+<h3 id="リアルタイムクロック内蔵">リアルタイムクロック内蔵</h3>
 
 <p>32.768kHzの水晶発振子をつなぐだけで時計をカウントしてくれるのがリアルタイムクロックモジュールです．</p>
 
@@ -157,15 +157,15 @@
 
 <p>そんなリアルタイムクロックがハードウェアで内蔵されているのです．</p>
 
-<h3 id="section-2">ディープスリープ機能</h3>
+<h3 id="ディープスリープ機能">ディープスリープ機能</h3>
 
 <p>PIC18F27J53には，超低消費電力のディープスリープモードがあります．</p>
 
 <p>PICの電源を完全に切って，消費電力を極限まで抑えます．しかし，リアルタイムクロックは動作を続けます．</p>
 
-<h2 id="section-3">できたもの</h2>
+<h2 id="できたもの">できたもの</h2>
 
-<h3 id="section-4">写真</h3>
+<h3 id="写真">写真</h3>
 
 <p>今回は，とりあえずブレッドボードで作りました．</p>
 
@@ -173,49 +173,49 @@
 
 <p><img src="clock.jpg" alt="PICで時計" class="img-medium" /></p>
 
-<h3 id="section-5">表示をオンオフ</h3>
+<h3 id="表示をオンオフ">表示をオンオフ</h3>
 
 <p>写真の中の赤いタクトスイッチを押すと表示/非表示を切り替えることができます．</p>
 
 <p>非表示中は，ディープスリープモードになっており，電力をほとんど消費しません．</p>
 
-<h3 id="section-6">時計の精度</h3>
+<h3 id="時計の精度">時計の精度</h3>
 
 <p>この時計の精度は，水晶発振子に依存するので，いい水晶発振子を使えば，精度は高くなります．</p>
 
 <p>さらに，ソフトウェアで微調整をすることができます．</p>
 
-<h2 id="section-7">実際に電力を測ってみる</h2>
+<h2 id="実際に電力を測ってみる">実際に電力を測ってみる</h2>
 
 <p><a href="http://akizukidenshi.com/catalog/g/gM-07738/">Analog Discovery</a>でどのくらい電流を消費しているのかを調べてみます．</p>
 
-<h3 id="led">7セグLEDのダイナミック点灯の様子</h3>
+<h3 id="7セグledのダイナミック点灯の様子">7セグLEDのダイナミック点灯の様子</h3>
 
 <p>7セグLED表示中が2.5mA程で，スリープ中はほぼ0mAです．</p>
 
 <p><img src="with-7seg.png" alt="ダイナミック点灯" /></p>
 
-<h3 id="section-8">ディープスリープの様子</h3>
+<h3 id="ディープスリープの様子">ディープスリープの様子</h3>
 
 <p>平均1.5uA程であることがわかります．</p>
 
 <p><img src="deep-sleep.png" alt="deep sleep" /></p>
 
-<h2 id="section-9">バッテリーの持ち時間の概算</h2>
+<h2 id="バッテリーの持ち時間の概算">バッテリーの持ち時間の概算</h2>
 
 <p>CR2032(容量:220mAh3.0V)を用いて考えます．</p>
 
-<h3 id="led-1">常にLEDを表示した場合</h3>
+<h3 id="常にledを表示した場合">常にLEDを表示した場合</h3>
 
 <p>平均電流は，1mAなので，約220時間つまり，9日程度．</p>
 
 <p>この場合，ディープスリープを使えないので，あまり持たないですね…</p>
 
-<h3 id="section-10">表示をオフにした場合</h3>
+<h3 id="表示をオフにした場合">表示をオフにした場合</h3>
 
 <p>平均電流は，1.5uAなので，約146,000時間=6,100日間，つまり16年ほど持つ計算になります．すごいですね！！！</p>
 
-<h2 id="section-11">ソフトウェア</h2>
+<h2 id="ソフトウェア">ソフトウェア</h2>
 
 <p>最新のプログラムは<a href="https://github.com/kerikun11/Low-Power-Clock">こちら</a>にあります．</p>
 
@@ -402,7 +402,7 @@
 </code></pre>
 </div>
 
-<h3 id="segh">7seg.h</h3>
+<h3 id="7segh">7seg.h</h3>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
  * File:   7seg.h
@@ -431,7 +431,7 @@
 </span></code></pre>
 </div>
 
-<h3 id="segc">7seg.c</h3>
+<h3 id="7segc">7seg.c</h3>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "7seg.h"
 </span>
@@ -501,13 +501,13 @@
 </code></pre>
 </div>
 
-<h2 id="section-12">回路図</h2>
+<h2 id="回路図">回路図</h2>
 
 <p>7セグLEDは<a href="http://akizukidenshi.com/catalog/g/gI-09964/">こちら</a>を使いました．</p>
 
 <p><img src="circuit-diagram.png" alt="回路図" /></p>
 
-<h2 id="section-13">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>久々にPICを触りましたが，素直でいいやつですね～</p>
 

@@ -1,24 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>KERI&#39;s Lab</title>
-    <description>KERI&#39;s Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
-    <link>http://kerikeri.top/</link>
-    <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Dec 2016 01:32:20 +0000</pubDate>
-    <lastBuildDate>Mon, 05 Dec 2016 01:32:20 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <title>KERI's Lab</title>
+    <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 27 Dec 2016 14:31:41 +0000</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 14:31:41 +0000</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>KERISE v1の設計(回路編)</title>
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今年の全日本マイクロマウス大会2016に出場したKERISE v1．今回はその回路設計を紹介します．&lt;/p&gt;
+
+&lt;p&gt;全日本マイクロマウス大会2016の結果報告は&lt;a href=&quot;/posts/2016-11-21-micromouse2016/&quot;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;KERISEv1.jpg&quot; alt=&quot;KERISEv1&quot; class=&quot;img-small&quot; /&gt;&lt;br /&gt;
+KERISEv1&lt;/p&gt;
+
+&lt;h2 id=&quot;主な使用部品&quot;&gt;主な使用部品&lt;/h2&gt;
+
+&lt;p&gt;部品のほとんどは&lt;a href=&quot;http://www.digikey.jp/&quot;&gt;digikey&lt;/a&gt;で購入しました．&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;部品&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;型番&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;備考&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;マイコン&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;STM32F405RG&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;クロック168MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;赤外線LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;VSLY5850&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;直径5mm&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;フォトダイオード&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SFH213FA&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;直径5mm&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;モータードライバ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DRV8835&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;最大電流3A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;6軸センサ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;MPU6500&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3軸ジャイロ+3軸加速度&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;回路図&quot;&gt;回路図&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;sketch.pdf&quot;&gt;ここ&lt;/a&gt;からダウンロードできます．&lt;/p&gt;
+
+&lt;p&gt;KiCadの階層機能を使って書いてみました．とても便利です．&lt;/p&gt;
+
+&lt;h2 id=&quot;各部位の説明&quot;&gt;各部位の説明&lt;/h2&gt;
+
+&lt;h3 id=&quot;マイコン&quot;&gt;マイコン&lt;/h3&gt;
+
+&lt;p&gt;マイコンは，STM32F405RGT6を使いました．ARMのCortex-M4が入っており高スペックです．&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;STM32F405RGT6&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;周波数&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;168MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1024kB&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;メモリ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;192kB&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;12bit ADC&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3つ&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;電源回路&quot;&gt;電源回路&lt;/h3&gt;
+
+&lt;p&gt;バッテリーは，3.7vのリポを2つ直列につなぐので，7.4Vです．それをDCDCコンバータで5Vに落とし，さらにリニアレギュレータで3.3Vに落とします．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;power.png&quot; alt=&quot;電源回路&quot; /&gt;&lt;br /&gt;
+電源回路&lt;/p&gt;
+
+&lt;h3 id=&quot;モータードライバ&quot;&gt;モータードライバ&lt;/h3&gt;
+
+&lt;p&gt;モータードライバは，DRV8835を使用しました．1.5Aまで流せるHブリッジが2つ入っています．2つ並列に使えば3Aまで流すことができるらしいです．&lt;/p&gt;
+
+&lt;p&gt;パッケージは，12-WSONといい，0.5mmピッチで足が側面にわずかに出ているもので，はんだ付けが難しかったです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;drv8835.png&quot; alt=&quot;モータードライバ&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+モータードライバ&lt;/p&gt;
+
+&lt;h3 id=&quot;6軸センサ&quot;&gt;6軸センサ&lt;/h3&gt;
+
+&lt;p&gt;6軸センサにはMPU6500を使いました．といっても，そのうちジャイロ1軸と加速度1軸の計2軸しか使っていません．&lt;/p&gt;
+
+&lt;p&gt;SPIでデジタルデータを得ることができるので，とても使いやすいですが，はんだ付けはカオスです．&lt;/p&gt;
+
+&lt;p&gt;1kHzで値を得ることが出きます．&lt;/p&gt;
+
+&lt;h3 id=&quot;フォトリフレクタ&quot;&gt;フォトリフレクタ&lt;/h3&gt;
+
+&lt;p&gt;フォトリフレクタには，指向性の高い赤外線LEDと，応答の速いフォトダイオードを使用しました．&lt;/p&gt;
+
+&lt;p&gt;受光回路は，オペアンプでバンドパスフィルタを作り，高周波と低周波成分をカットしています．
+そのため，赤外線LEDは2kHzで点滅させることで，周辺光と区別しています．この回路は先輩から教えてもらいました．&lt;/p&gt;
+
+&lt;p&gt;さらに指向性を高めるためにフォトダイオードには熱収縮チューブをかぶせて横側を遮光しています．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;photo.png&quot; alt=&quot;受光回路&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+受光回路&lt;/p&gt;
+
+&lt;p&gt;LEDの発光回路は，定電流源ICを使い，モーターなどにより電源電圧が下がっても同じ明るさで光るようにしています．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;led.png&quot; alt=&quot;発光回路&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+発光回路&lt;/p&gt;
+
+&lt;h2 id=&quot;基板の設計&quot;&gt;基板の設計&lt;/h2&gt;
+
+&lt;p&gt;KiCadで設計します．いつも通り，&lt;a href=&quot;/posts/2016-04-22-freerouting/&quot;&gt;自動配線&lt;/a&gt;をフル活用です．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;pcb.png&quot; alt=&quot;pcb&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+基板設計&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;3d.png&quot; alt=&quot;3D&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+KiCadの3D表示&lt;/p&gt;
+
+&lt;h2 id=&quot;できた基板&quot;&gt;できた基板&lt;/h2&gt;
+
+&lt;p&gt;Elecrowに発注して約10日で基板が届きました！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;board.jpg&quot; alt=&quot;基板&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
+KERISEv1の基板&lt;/p&gt;
+
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;はんだ付けを練習しましょう．&lt;/p&gt;
+
+&lt;h2 id=&quot;参考文献&quot;&gt;参考文献&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.tokor.org/2015/08/16/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E9%80%B2%E6%8D%97%E5%A0%B1%E5%91%8A/&quot;&gt;マイクロマウス進捗報告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/posts/2016-12-27-kerisev1/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-12-27-kerisev1/</guid>
+        
+        <category>マイクロマウス</category>
+        
+        <category>全日本マイクロマウス大会</category>
+        
+        <category>電子工作</category>
+        
+        <category>STM32</category>
+        
+        <category>mbed</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>CrontabでMyDNS.jpのIP通知</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;家のIPアドレスは固定ではないのでDDNSで追いかける．&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-12-04-update-mydns/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-12-04-update-mydns/</guid>
+        <link>http://localhost:4000/posts/2016-12-04-update-mydns/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-12-04-update-mydns/</guid>
         
         <category>サーバー</category>
         
@@ -35,7 +214,7 @@
     
       <item>
         <title>Apache2でIR-Stationデモ</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;ラズパイ+Apache2+SinatraでIR-Stationのデモサイトを作る．&lt;/p&gt;
 
@@ -44,8 +223,8 @@
 
 </description>
         <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-12-04-ir-station-demo-apache2/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-12-04-ir-station-demo-apache2/</guid>
+        <link>http://localhost:4000/posts/2016-12-04-ir-station-demo-apache2/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-12-04-ir-station-demo-apache2/</guid>
         
         <category>サーバー</category>
         
@@ -64,15 +243,15 @@
     
       <item>
         <title>全日本マイクロマウス2016の結果報告</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;全日本マイクロマウス大会2016&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;全日本マイクロマウス大会2016&quot;&gt;全日本マイクロマウス大会2016&lt;/h2&gt;
 
 &lt;p&gt;今年春に先輩から誘われて8月ごろから設計を始めたマイクロマウス．&lt;br /&gt;
 11月に開催された全日本マイクロマウス大会2016に出場してきました！&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-11-21-micromouse2016/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-11-21-micromouse2016/</guid>
+        <link>http://localhost:4000/posts/2016-11-21-micromouse2016/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-11-21-micromouse2016/</guid>
         
         <category>マイクロマウス</category>
         
@@ -93,15 +272,15 @@
     
       <item>
         <title>IR-Stationのデモンストレーションサイト</title>
-        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Stationの操作を体験できます！&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ir-stationの操作を体験できます&quot;&gt;IR-Stationの操作を体験できます！&lt;/h2&gt;
 
-&lt;h3 id=&quot;ir-station-1&quot;&gt;IR-Stationとは&lt;/h3&gt;
+&lt;h3 id=&quot;ir-stationとは&quot;&gt;IR-Stationとは&lt;/h3&gt;
 
 &lt;p&gt;IR-Stationとは，WiFi接続に対応した赤外線学習リモコンです．これがあればスマートフォンなどから家電製品をコントロールすることができます．&lt;/p&gt;
 
 &lt;p&gt;IR-Stationについては，&lt;a href=&quot;/tags/#tag-index-IR-Station&quot;&gt;IR-Stationについての記事一覧&lt;/a&gt;をご覧ください．&lt;/p&gt;
 
-&lt;h3 id=&quot;ir-station-2&quot;&gt;IR-Stationのデモンストレーション&lt;/h3&gt;
+&lt;h3 id=&quot;ir-stationのデモンストレーション&quot;&gt;IR-Stationのデモンストレーション&lt;/h3&gt;
 
 &lt;p&gt;IR-Stationを持っていない方でもIR-Stationの操作を体験できるように，操作画面を再現したサイトを作りました．&lt;/p&gt;
 
@@ -109,8 +288,8 @@
 
 </description>
         <pubDate>Thu, 20 Oct 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-10-20-ir-station-demo/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-10-20-ir-station-demo/</guid>
+        <link>http://localhost:4000/posts/2016-10-20-ir-station-demo/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-10-20-ir-station-demo/</guid>
         
         <category>IR-Station</category>
         
@@ -129,7 +308,7 @@
     
       <item>
         <title>IR-Station v1.5.0 アップデート</title>
-        <description>&lt;h2 id=&quot;ir-stationv150&quot;&gt;IR-Stationがv1.5.0にアップデート&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ir-stationがv150にアップデート&quot;&gt;IR-Stationがv1.5.0にアップデート&lt;/h2&gt;
 
 &lt;p&gt;この度，IR-Stationのファームウェアがv1.5.0にアップデートされ，新機能が追加されました．&lt;/p&gt;
 
@@ -137,8 +316,8 @@
 
 </description>
         <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-10-16-ir-station-v1.5.0/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-10-16-ir-station-v1.5.0/</guid>
+        <link>http://localhost:4000/posts/2016-10-16-ir-station-v1.5.0/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-10-16-ir-station-v1.5.0/</guid>
         
         <category>IR-Station</category>
         
@@ -153,9 +332,9 @@
     
       <item>
         <title>PICで省エネ時計を作る</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&quot;pic&quot;&gt;PICで時計&lt;/h3&gt;
+&lt;h3 id=&quot;picで時計&quot;&gt;PICで時計&lt;/h3&gt;
 
 &lt;p&gt;久しぶりにPICの話題です．しばらくESP8266やARMマイコンなど，上級のマイコンを使っていましたが，またPICを使ってみたくなりました．&lt;/p&gt;
 
@@ -163,8 +342,8 @@
 
 </description>
         <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-09-12-low-power-clock/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-09-12-low-power-clock/</guid>
+        <link>http://localhost:4000/posts/2016-09-12-low-power-clock/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-09-12-low-power-clock/</guid>
         
         <category>電子工作</category>
         
@@ -183,13 +362,13 @@
     
       <item>
         <title>PICでリアルタイムクロック</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;PIC18F27J53は，リアルタイムクロック&amp;amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．&lt;/p&gt;
 
-&lt;h2 id=&quot;rtcc&quot;&gt;自作のRTCCライブラリ&lt;/h2&gt;
+&lt;h2 id=&quot;自作のrtccライブラリ&quot;&gt;自作のRTCCライブラリ&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;必要なソースファイル&lt;/h3&gt;
+&lt;h3 id=&quot;必要なソースファイル&quot;&gt;必要なソースファイル&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;My_RTCC.h&lt;/li&gt;
@@ -199,9 +378,9 @@
   &lt;li&gt;main.c&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;概要&lt;/h3&gt;
+&lt;h3 id=&quot;概要-1&quot;&gt;概要&lt;/h3&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;変数&lt;/h4&gt;
+&lt;h4 id=&quot;変数&quot;&gt;変数&lt;/h4&gt;
 
 &lt;p&gt;このプログラムでは、時刻情報を持つ変数が３つある。&lt;/p&gt;
 
@@ -211,8 +390,8 @@
   &lt;li&gt;time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。
-#### 使い方&lt;/p&gt;
+&lt;p&gt;以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。&lt;/p&gt;
+&lt;h4 id=&quot;使い方&quot;&gt;使い方&lt;/h4&gt;
 
 &lt;ol&gt;
   &lt;li&gt;TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）&lt;/li&gt;
@@ -225,9 +404,9 @@
   &lt;li&gt;時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;rtcc-1&quot;&gt;RTCCライブラリ&lt;/h3&gt;
+&lt;h3 id=&quot;rtccライブラリ&quot;&gt;RTCCライブラリ&lt;/h3&gt;
 
-&lt;h4 id=&quot;myrtcch&quot;&gt;My_RTCC.h&lt;/h4&gt;
+&lt;h4 id=&quot;my_rtcch&quot;&gt;My_RTCC.h&lt;/h4&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* 
  * File:   My_RTCC.h
@@ -371,7 +550,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;myrtccc&quot;&gt;My_RTCC.c&lt;/h4&gt;
+&lt;h4 id=&quot;my_rtccc&quot;&gt;My_RTCC.c&lt;/h4&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;My_RTCC.h&quot;
 &lt;/span&gt;
@@ -663,7 +842,7 @@
 
 &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;epoch_to_caltime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;time_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// to get epoch on terminal
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// echo $(( (`date -d &#39;2015/03/01&#39; &#39;+%s&#39;` - `date -d &#39;2000/01/01&#39; &#39;+%s&#39;`) / 86400 ))
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// echo $(( (`date -d '2015/03/01' '+%s'` - `date -d '2000/01/01' '+%s'`) / 86400 ))
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day_cache&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2015.03.01
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;month_cache&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year_cache&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -735,9 +914,9 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;ボタンライブラリ&lt;/h3&gt;
+&lt;h3 id=&quot;ボタンライブラリ&quot;&gt;ボタンライブラリ&lt;/h3&gt;
 
-&lt;h4 id=&quot;mybuttonh&quot;&gt;My_button.h&lt;/h4&gt;
+&lt;h4 id=&quot;my_buttonh&quot;&gt;My_button.h&lt;/h4&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* 
  * File:   My_button.h
@@ -797,7 +976,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;mybuttonh-1&quot;&gt;My_button.h&lt;/h4&gt;
+&lt;h4 id=&quot;my_buttonh-1&quot;&gt;My_button.h&lt;/h4&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;My_button.h&quot;
 &lt;/span&gt;
@@ -828,7 +1007,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;使用例&lt;/h3&gt;
+&lt;h3 id=&quot;使用例&quot;&gt;使用例&lt;/h3&gt;
 
 &lt;p&gt;UARTで毎秒時刻を送信します．&lt;/p&gt;
 
@@ -981,8 +1160,8 @@
 
 </description>
         <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-09-02-pic-rtcc/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-09-02-pic-rtcc/</guid>
+        <link>http://localhost:4000/posts/2016-09-02-pic-rtcc/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-09-02-pic-rtcc/</guid>
         
         <category>PIC</category>
         
@@ -1001,15 +1180,15 @@
     
       <item>
         <title>ラズパイでミュージックサーバー</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;作ったもの&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;作ったもの&quot;&gt;作ったもの&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;ラズパイミュージックサーバー&lt;/h3&gt;
+&lt;h3 id=&quot;ラズパイミュージックサーバー&quot;&gt;ラズパイミュージックサーバー&lt;/h3&gt;
 
 &lt;p&gt;スマートフォンでコントロールできるステレオコンポです．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;music-server.jpg&quot; alt=&quot;ミュージックサーバー&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;構成&lt;/h2&gt;
+&lt;h2 id=&quot;構成&quot;&gt;構成&lt;/h2&gt;
 
 &lt;h3 id=&quot;raspberry-pi-3-type-b&quot;&gt;Raspberry Pi 3 Type B&lt;/h3&gt;
 
@@ -1028,39 +1207,39 @@
 
 &lt;p&gt;&lt;img src=&quot;dac.jpg&quot; alt=&quot;DAC&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;アキバのジャンク街で買ったウーハー付きアンプ&lt;/h3&gt;
+&lt;h3 id=&quot;アキバのジャンク街で買ったウーハー付きアンプ&quot;&gt;アキバのジャンク街で買ったウーハー付きアンプ&lt;/h3&gt;
 
 &lt;p&gt;5年前くらいにアキバのジャンク街で新品2,000円程で買ったウーハー付きアンプ．音がいいんだな．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;amp.jpg&quot; alt=&quot;アンプ&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;bose&quot;&gt;家にあったBOSEのスピーカー&lt;/h3&gt;
+&lt;h3 id=&quot;家にあったboseのスピーカー&quot;&gt;家にあったBOSEのスピーカー&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;speaker.jpg&quot; alt=&quot;スピーカー&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;aac&quot;&gt;2.5A出力ACアダプタ&lt;/h3&gt;
+&lt;h3 id=&quot;25a出力acアダプタ&quot;&gt;2.5A出力ACアダプタ&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-10507/&quot;&gt;http://akizukidenshi.com/catalog/g/gM-10507/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;acadapter.jpg&quot; alt=&quot;ACアダプタ&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;usb&quot;&gt;マイクロUSBケーブル&lt;/h3&gt;
+&lt;h3 id=&quot;マイクロusbケーブル&quot;&gt;マイクロUSBケーブル&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gC-09314/&quot;&gt;http://akizukidenshi.com/catalog/g/gC-09314/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;usb.jpg&quot; alt=&quot;USB-micro-Bケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;usb-1&quot;&gt;短いミニUSBケーブル&lt;/h3&gt;
+&lt;h3 id=&quot;短いミニusbケーブル&quot;&gt;短いミニUSBケーブル&lt;/h3&gt;
 
 &lt;p&gt;家に転がっていました．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;miniusb.jpg&quot; alt=&quot;USB-mini-Bケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;rca-&quot;&gt;RCA-ステレオミニジャック変換ケーブル&lt;/h3&gt;
+&lt;h3 id=&quot;rca-ステレオミニジャック変換ケーブル&quot;&gt;RCA-ステレオミニジャック変換ケーブル&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;rca.jpg&quot; alt=&quot;RCAケーブル&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;ソフトウェア&lt;/h2&gt;
+&lt;h2 id=&quot;ソフトウェア&quot;&gt;ソフトウェア&lt;/h2&gt;
 
 &lt;h3 id=&quot;volumio&quot;&gt;Volumio&lt;/h3&gt;
 
@@ -1068,7 +1247,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://volumio.org/&quot;&gt;Volumio.org&lt;/a&gt;よりダウンロードできます．&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;作り方&lt;/h2&gt;
+&lt;h2 id=&quot;作り方&quot;&gt;作り方&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;SDカードにVolumioのOSを焼いて，ラズパイにセットする．&lt;/li&gt;
@@ -1080,21 +1259,21 @@
   &lt;li&gt;あとは使えばわかる．&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;section-6&quot;&gt;操作画面&lt;/h2&gt;
+&lt;h2 id=&quot;操作画面&quot;&gt;操作画面&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-7&quot;&gt;ブラウザから操作&lt;/h3&gt;
+&lt;h3 id=&quot;ブラウザから操作&quot;&gt;ブラウザから操作&lt;/h3&gt;
 
 &lt;p&gt;わかりやすいGUIで，直感的に操作できます．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;browser.png&quot; alt=&quot;ブラウザ&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;mpd&quot;&gt;MPDクライアントから操作&lt;/h3&gt;
+&lt;h3 id=&quot;mpdクライアントから操作&quot;&gt;MPDクライアントから操作&lt;/h3&gt;
 
 &lt;p&gt;もちろん，MPDクライアントにも対応しています．&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;mpd.png&quot; alt=&quot;MPDクライアント&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
 
 &lt;p&gt;スマホからコントロールできるミュージックサーバーがとても簡単にできちゃいました！Volumioはすごいです．&lt;/p&gt;
 
@@ -1102,8 +1281,8 @@
 
 </description>
         <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-09-01-raspi-music-server/</guid>
+        <link>http://localhost:4000/posts/2016-09-01-raspi-music-server/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-09-01-raspi-music-server/</guid>
         
         <category>ラズパイ</category>
         
@@ -1118,7 +1297,7 @@
     
       <item>
         <title>VolumioでiTunesのプレイリストを使う</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;h3 id=&quot;volumio&quot;&gt;Volumio&lt;/h3&gt;
 
@@ -1126,7 +1305,7 @@
 
 &lt;p&gt;ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;プレイリスト問題&lt;/h3&gt;
+&lt;h3 id=&quot;プレイリスト問題&quot;&gt;プレイリスト問題&lt;/h3&gt;
 
 &lt;p&gt;しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．&lt;/p&gt;
 
@@ -1136,8 +1315,8 @@
 
 </description>
         <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-31-volumio-playlist/</guid>
+        <link>http://localhost:4000/posts/2016-08-31-volumio-playlist/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-31-volumio-playlist/</guid>
         
         <category>ラズパイ</category>
         
@@ -1156,14 +1335,14 @@
     
       <item>
         <title>ブログを更新するスクリプト</title>
-        <description>&lt;h2 id=&quot;github&quot;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;github上にあるブログを同期するシェルスクリプト&quot;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
 
 &lt;p&gt;自分用のメモ&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
+        <link>http://localhost:4000/posts/2016-08-28-update-blog-script/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-28-update-blog-script/</guid>
         
         <category>シェルスクリプト</category>
         
@@ -1176,7 +1355,7 @@
     
       <item>
         <title>ラズパイセットアップのコマンド群</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;はじめに&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;はじめに&quot;&gt;はじめに&lt;/h2&gt;
 
 &lt;p&gt;これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．&lt;/p&gt;
 
@@ -1186,8 +1365,8 @@
 
 </description>
         <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-28-raspi-setup/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-28-raspi-setup/</guid>
+        <link>http://localhost:4000/posts/2016-08-28-raspi-setup/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-28-raspi-setup/</guid>
         
         <category>Raspberry Pi</category>
         
@@ -1200,13 +1379,13 @@
     
       <item>
         <title>ブログのサーバーが新しくなりました！</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;ラズパイ3を購入&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ラズパイ3を購入&quot;&gt;ラズパイ3を購入&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;ハイスペックなラズパイ3&lt;/h3&gt;
+&lt;h3 id=&quot;ハイスペックなラズパイ3&quot;&gt;ハイスペックなラズパイ3&lt;/h3&gt;
 
 &lt;p&gt;64bitのARM-CPUが搭載されたラズパイ3が話題になったのは記憶に新しいですが，ラズパイ3は，秋月では6,200円ですし，公式でも5,000円ほどします．&lt;/p&gt;
 
-&lt;h3 id=&quot;ok&quot;&gt;税込4,000円かつカード払いOK！&lt;/h3&gt;
+&lt;h3 id=&quot;税込4000円かつカード払いok&quot;&gt;税込4,000円かつカード払いOK！&lt;/h3&gt;
 
 &lt;p&gt;そんなラズパイ3が，Maker Faire Tokyo 2016 で税込4,000円かつカード払いOKで販売しているではありませんか！！&lt;/p&gt;
 
@@ -1214,8 +1393,8 @@
 
 </description>
         <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-21-raspi3/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-21-raspi3/</guid>
+        <link>http://localhost:4000/posts/2016-08-21-raspi3/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-21-raspi3/</guid>
         
         <category>Blog</category>
         
@@ -1230,20 +1409,20 @@
     
       <item>
         <title>IR-Stationの赤外線ダウンロード機能</title>
-        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Stationとは&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ir-stationとは&quot;&gt;IR-Stationとは&lt;/h2&gt;
 
 &lt;p&gt;自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．&lt;/p&gt;
 
 &lt;p&gt;詳しくは，&lt;a href=&quot;/tags/#tag-index-IR-Station&quot;&gt;IR-Stationについての記事一覧&lt;/a&gt;をご覧ください．&lt;/p&gt;
 
-&lt;h2 id=&quot;ir-station-1&quot;&gt;IR-Stationの新機能&lt;/h2&gt;
+&lt;h2 id=&quot;ir-stationの新機能&quot;&gt;IR-Stationの新機能&lt;/h2&gt;
 
 &lt;p&gt;夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-14-download-upload/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-14-download-upload/</guid>
+        <link>http://localhost:4000/posts/2016-08-14-download-upload/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-14-download-upload/</guid>
         
         <category>IR-Station</category>
         
@@ -1275,8 +1454,8 @@
 
 </description>
         <pubDate>Fri, 05 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-08-05-maker-faire-tokyo-2016/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-05-maker-faire-tokyo-2016/</guid>
+        <link>http://localhost:4000/posts/2016-08-05-maker-faire-tokyo-2016/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-08-05-maker-faire-tokyo-2016/</guid>
         
         <category>Maker Faire Tokyo</category>
         
@@ -1293,14 +1472,14 @@
     
       <item>
         <title>IR-Stationの使い方</title>
-        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Stationとは&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ir-stationとは&quot;&gt;IR-Stationとは&lt;/h2&gt;
 
 &lt;p&gt;自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/</guid>
+        <link>http://localhost:4000/posts/2016-07-25-how-to-use-ir-station/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-07-25-how-to-use-ir-station/</guid>
         
         <category>IR-Station</category>
         
@@ -1319,7 +1498,7 @@
     
       <item>
         <title>SSHのPort Forwarding</title>
-        <description>&lt;h2 id=&quot;port-forwarding&quot;&gt;Port Forwardingとは&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;port-forwardingとは&quot;&gt;Port Forwardingとは&lt;/h2&gt;
 
 &lt;p&gt;SSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．&lt;/p&gt;
 
@@ -1327,8 +1506,8 @@
 
 </description>
         <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</guid>
+        <link>http://localhost:4000/posts/2016-07-20-ssh-port-forwarding/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-07-20-ssh-port-forwarding/</guid>
         
         <category>SSH</category>
         
@@ -1341,7 +1520,7 @@
     
       <item>
         <title>赤外線学習リモコン完成</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
 
@@ -1349,8 +1528,8 @@
 
 </description>
         <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-07-18-ir-station/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-18-ir-station/</guid>
+        <link>http://localhost:4000/posts/2016-07-18-ir-station/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-07-18-ir-station/</guid>
         
         <category>電子工作</category>
         
@@ -1379,7 +1558,7 @@
     
       <item>
         <title>メダカが増えました！</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;卵がいっぱい！！ 7/5&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;卵がいっぱい-75&quot;&gt;卵がいっぱい！！ 7/5&lt;/h2&gt;
 &lt;p&gt;暖かくなってきたこの時期，ペットのメダカにたくさんの卵ができました．すでに卵の中から目が透けていて今にも孵化しそうです！&lt;/p&gt;
 
 &lt;p&gt;毎日水替えをしないとカビが生えてしまうので，目が離せません！&lt;/p&gt;
@@ -1388,8 +1567,8 @@
 
 </description>
         <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-07-13-new-fish/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-13-new-fish/</guid>
+        <link>http://localhost:4000/posts/2016-07-13-new-fish/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-07-13-new-fish/</guid>
         
         <category>めだか</category>
         
@@ -1402,16 +1581,16 @@
     
       <item>
         <title>赤外線学習リモコンの基板が届きました！</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;基板が届きました&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;基板が届きました&quot;&gt;基板が届きました&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;思ったより早かった&lt;/h3&gt;
+&lt;h3 id=&quot;思ったより早かった&quot;&gt;思ったより早かった&lt;/h3&gt;
 
 &lt;p&gt;基板加工サービス&lt;a href=&quot;http://www.elecrow.com/&quot;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code class=&quot;highlighter-rouge&quot;&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 06 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-07-06-ir-station-board/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-06-ir-station-board/</guid>
+        <link>http://localhost:4000/posts/2016-07-06-ir-station-board/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-07-06-ir-station-board/</guid>
         
         <category>電子工作</category>
         
@@ -1460,8 +1639,8 @@
 &lt;/div&gt;
 &lt;/div&gt;</description>
         <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</guid>
+        <link>http://localhost:4000/posts/2016-06-15-repairing-iphone6plus/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-06-15-repairing-iphone6plus/</guid>
         
         <category>iPhone</category>
         
@@ -1488,8 +1667,8 @@
 &lt;/div&gt;
 &lt;/div&gt;</description>
         <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-06-14-pdf/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-14-pdf/</guid>
+        <link>http://localhost:4000/posts/2016-06-14-pdf/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-06-14-pdf/</guid>
         
         <category>PC</category>
         
@@ -1521,8 +1700,8 @@
 &lt;/div&gt;
 &lt;/div&gt;</description>
         <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-05-26-syntax/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-26-syntax/</guid>
+        <link>http://localhost:4000/posts/2016-05-26-syntax/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-05-26-syntax/</guid>
         
         <category>Jekyll</category>
         
@@ -1554,8 +1733,8 @@
 &lt;/div&gt;
 &lt;/div&gt;</description>
         <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-05-22-fft-lcd/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-22-fft-lcd/</guid>
+        <link>http://localhost:4000/posts/2016-05-22-fft-lcd/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-05-22-fft-lcd/</guid>
         
         <category>FFT</category>
         
@@ -1578,7 +1757,7 @@
     
       <item>
         <title>回路講習会2015</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;回路講習会&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;回路講習会&quot;&gt;回路講習会&lt;/h2&gt;
 
 &lt;p&gt;東京工業大学ロボット技術研究会の平成27年度回路講習会の資料です．&lt;br /&gt;
 講習会は90分の講義を4回行いました．&lt;br /&gt;
@@ -1586,8 +1765,8 @@
 
 </description>
         <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-05-18-circuit-lecture/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-18-circuit-lecture/</guid>
+        <link>http://localhost:4000/posts/2016-05-18-circuit-lecture/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-05-18-circuit-lecture/</guid>
         
         <category>回路</category>
         
@@ -1616,11 +1795,11 @@
     
       <item>
         <title>KiCadで自動配線</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;kicad.jpg&quot; alt=&quot;KiCad&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;自動配線ツールを使おう&lt;/h3&gt;
+&lt;h3 id=&quot;自動配線ツールを使おう&quot;&gt;自動配線ツールを使おう&lt;/h3&gt;
 
 &lt;p&gt;KiCadが流行ってきて，使う人が増えてきている．&lt;/p&gt;
 
@@ -1632,8 +1811,8 @@
 
 </description>
         <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-22-freerouting/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-22-freerouting/</guid>
+        <link>http://localhost:4000/posts/2016-04-22-freerouting/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-22-freerouting/</guid>
         
         <category>KiCad</category>
         
@@ -1652,14 +1831,14 @@
     
       <item>
         <title>ラズパイでシリアルモニタを使うには</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-20-raspi-serial/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-raspi-serial/</guid>
+        <link>http://localhost:4000/posts/2016-04-20-raspi-serial/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-20-raspi-serial/</guid>
         
         <category>Raspberry Pi</category>
         
@@ -1680,7 +1859,7 @@
     
       <item>
         <title>ソーラー発電量モニター</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&quot;https://thingspeak.com/&quot;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
 
@@ -1688,8 +1867,8 @@
 
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-20-power-monitor/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-20-power-monitor/</guid>
+        <link>http://localhost:4000/posts/2016-04-20-power-monitor/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-20-power-monitor/</guid>
         
         <category>ThingSpeak</category>
         
@@ -1714,14 +1893,14 @@
     
       <item>
         <title>写真から位置情報タグを削除する</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;写真をブログやSNSにアップロードするときに位置情報のタグをつけたままだと自宅を特定される可能性があり、非常に危険である。今回はそれを削除する方法を紹介する。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-remove-geotag/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-remove-geotag/</guid>
         
         <category>exiftool</category>
         
@@ -1740,14 +1919,14 @@
     
       <item>
         <title>昔作った電子工作たち～ロボット編～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-robot/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-robot/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-robot/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-robot/</guid>
         
         <category>電子工作</category>
         
@@ -1760,14 +1939,14 @@
     
       <item>
         <title>昔作った電子工作たち～充電・電力編～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-power/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-power/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-power/</guid>
         
         <category>電子工作</category>
         
@@ -1780,16 +1959,16 @@
     
       <item>
         <title>昔作った電子工作たち～その他～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h2&gt;
+&lt;h2 id=&quot;ヘッドライトを分解して調光機能を追加&quot;&gt;ヘッドライトを分解して調光機能を追加&lt;/h2&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-other/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-other/</guid>
         
         <category>電子工作</category>
         
@@ -1802,14 +1981,14 @@
     
       <item>
         <title>昔作った電子工作たち～LEDイルミネーション～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-illumination/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-illumination/</guid>
         
         <category>電子工作</category>
         
@@ -1822,14 +2001,14 @@
     
       <item>
         <title>昔作った電子工作たち～in FRISK 編～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-frisk/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-frisk/</guid>
         
         <category>電子工作</category>
         
@@ -1842,14 +2021,14 @@
     
       <item>
         <title>昔作った電子工作たち～オーディオ編～</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-audio/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-audio/</guid>
+        <link>http://localhost:4000/posts/2016-04-08-old-works-audio/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-08-old-works-audio/</guid>
         
         <category>電子工作</category>
         
@@ -1862,13 +2041,13 @@
     
       <item>
         <title>変なキーボード</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;つくったもの&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;つくったもの&quot;&gt;つくったもの&lt;/h2&gt;
 
 &lt;p&gt;ASCIIキーボードとスクロール表示器を作りました。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;figure.png&quot; alt=&quot;figure&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;変なキーボード&lt;/h2&gt;
+&lt;h2 id=&quot;変なキーボード&quot;&gt;変なキーボード&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;キーボードの表面には２つのロータリースイッチがついています。それらを回すことで文字を選び、送信ボタンを押して送信します。&lt;/li&gt;
@@ -1878,8 +2057,8 @@
 
 </description>
         <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
+        <link>http://localhost:4000/posts/2016-04-05-strange-keyboard/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-05-strange-keyboard/</guid>
         
         <category>電子工作</category>
         
@@ -1906,12 +2085,12 @@
     
       <item>
         <title>電力つぶやきbot</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;中継型電力計&lt;/h3&gt;
+&lt;h3 id=&quot;中継型電力計&quot;&gt;中継型電力計&lt;/h3&gt;
 &lt;p&gt;先日の記事で&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;何の電力をつぶやくのか&lt;/h3&gt;
+&lt;h3 id=&quot;何の電力をつぶやくのか&quot;&gt;何の電力をつぶやくのか&lt;/h3&gt;
 
 &lt;p&gt;僕の家には&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
 
@@ -1919,8 +2098,8 @@
 
 </description>
         <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
+        <link>http://localhost:4000/posts/2016-04-03-power-tweeter/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-04-03-power-tweeter/</guid>
         
         <category>ソーラー</category>
         
@@ -1947,9 +2126,9 @@
     
       <item>
         <title>ESP-WROOM-02による中継型電力計</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&quot;esp-wroom-02&quot;&gt;話題のESP-WROOM-02&lt;/h3&gt;
+&lt;h3 id=&quot;話題のesp-wroom-02&quot;&gt;話題のESP-WROOM-02&lt;/h3&gt;
 
 &lt;p&gt;ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュール。&lt;/p&gt;
 
@@ -1957,18 +2136,18 @@
 
 &lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;中継型とは&lt;/h3&gt;
+&lt;h3 id=&quot;中継型とは&quot;&gt;中継型とは&lt;/h3&gt;
 
 &lt;p&gt;電源端子としてよく使われてるDCジャックに中継するだけで、そこから電力をもらいつつ電力を計測します。&lt;/p&gt;
 
-&lt;h3 id=&quot;wifi&quot;&gt;WiFi経由でサーバーへ&lt;/h3&gt;
+&lt;h3 id=&quot;wifi経由でサーバーへ&quot;&gt;WiFi経由でサーバーへ&lt;/h3&gt;
 
 &lt;p&gt;測定した電力データはWiFiを使って任意のサーバーに送ることができます。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-03-23-relay-sensor/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-23-relay-sensor/</guid>
+        <link>http://localhost:4000/posts/2016-03-23-relay-sensor/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-03-23-relay-sensor/</guid>
         
         <category>ESP-WROOM-02</category>
         
@@ -1991,15 +2170,15 @@
     
       <item>
         <title>メダカの照明 Ver.2</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;メダカの水槽の照明&lt;/h3&gt;
+&lt;h3 id=&quot;メダカの水槽の照明&quot;&gt;メダカの水槽の照明&lt;/h3&gt;
 
 &lt;p&gt;以前、PICで作った&lt;a href=&quot;/posts/2015-06-04-killifish-light/&quot;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;fish.jpg&quot; alt=&quot;めだか&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;wifi&quot;&gt;格安WiFiモジュール&lt;/h3&gt;
+&lt;h3 id=&quot;格安wifiモジュール&quot;&gt;格安WiFiモジュール&lt;/h3&gt;
 
 &lt;p&gt;今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。&lt;/p&gt;
 
@@ -2016,8 +2195,8 @@
 
 </description>
         <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
+        <link>http://localhost:4000/posts/2016-03-14-killifish-light-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-03-14-killifish-light-2/</guid>
         
         <category>ESP-WROOM-02</category>
         
@@ -2046,14 +2225,14 @@
     
       <item>
         <title>Sinatraでアプリケーションを作る</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;格安WiFiモジュールESP-WROOM-02を使って電流を計測してそれを受信し表示するアプリケーションを作りました。&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 12 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-03-12-sinatra/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-12-sinatra/</guid>
+        <link>http://localhost:4000/posts/2016-03-12-sinatra/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-03-12-sinatra/</guid>
         
         <category>Sinatra</category>
         
@@ -2354,8 +2533,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
+        <link>http://localhost:4000/posts/2016-03-11-ir-station-reference/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-03-11-ir-station-reference/</guid>
         
         <category>IR-Station</category>
         
@@ -2380,26 +2559,26 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>PICでブートローダ</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
+&lt;h3 id=&quot;pic18f27j53を使おう&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
 
 &lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;ブートローダとは&lt;/h3&gt;
+&lt;h3 id=&quot;ブートローダとは&quot;&gt;ブートローダとは&lt;/h3&gt;
 
 &lt;p&gt;ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。&lt;/p&gt;
 
 &lt;p&gt;ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;ユーザープログラム&lt;/h3&gt;
+&lt;h3 id=&quot;ユーザープログラム&quot;&gt;ユーザープログラム&lt;/h3&gt;
 
 &lt;p&gt;ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
+        <link>http://localhost:4000/posts/2016-01-13-pic-bootloader/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-01-13-pic-bootloader/</guid>
         
         <category>PIC</category>
         
@@ -2424,7 +2603,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>PICでUSB通信</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBの使い方について書きたいと思います。&lt;/p&gt;
 
@@ -2436,8 +2615,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-10-pic-usb/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-10-pic-usb/</guid>
+        <link>http://localhost:4000/posts/2016-01-10-pic-usb/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-01-10-pic-usb/</guid>
         
         <category>PIC</category>
         
@@ -2456,9 +2635,9 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>PIC18F27J53のすすめ</title>
-        <description>&lt;h2 id=&quot;pic18f27j53&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;pic18f27j53のいいところ&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;秋月で売っていること&lt;/h3&gt;
+&lt;h3 id=&quot;秋月で売っていること&quot;&gt;秋月で売っていること&lt;/h3&gt;
 
 &lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
 
@@ -2469,8 +2648,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 08 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
+        <link>http://localhost:4000/posts/2016-01-08-pic18f27j53/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-01-08-pic18f27j53/</guid>
         
         <category>PIC</category>
         
@@ -2489,14 +2668,14 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>yamyでキーボードをカスタマイズ</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
+        <link>http://localhost:4000/posts/2016-01-07-yamy/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2016-01-07-yamy/</guid>
         
         <category>Windows</category>
         
@@ -2515,13 +2694,13 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>ESP8266で赤外線学習リモコン</title>
-        <description>&lt;h2 id=&quot;esp8266&quot;&gt;ESP8266とは&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;esp8266とは&quot;&gt;ESP8266とは&lt;/h2&gt;
 
-&lt;h3 id=&quot;wifi&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
+&lt;h3 id=&quot;日本の技適を取得済みwifiモジュール&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
 
 &lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;とにかく安い！&lt;/h3&gt;
+&lt;h3 id=&quot;とにかく安い&quot;&gt;とにかく安い！&lt;/h3&gt;
 
 &lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
 &lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
@@ -2529,8 +2708,8 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
+        <link>http://localhost:4000/posts/2015-12-30-ir-station/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2015-12-30-ir-station/</guid>
         
         <category>IR-Station</category>
         
@@ -2551,14 +2730,14 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>Cygwinの使い方</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
+        <link>http://localhost:4000/posts/2015-12-04-cygwin/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2015-12-04-cygwin/</guid>
         
         <category>ターミナル</category>
         
@@ -2573,7 +2752,7 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
     
       <item>
         <title>Raspberry Pi で NAS 作り</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;NASがほしい！&lt;br /&gt;
 じゃあ作ろう。&lt;/p&gt;
@@ -2585,8 +2764,8 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 </description>
         <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-23-samba/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-23-samba/</guid>
+        <link>http://localhost:4000/posts/2015-11-23-samba/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2015-11-23-samba/</guid>
         
         <category>ラズパイ</category>
         
@@ -2603,7 +2782,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
     
       <item>
         <title>ファイアウォールの設定</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;h3 id=&quot;ufw&quot;&gt;ufw&lt;/h3&gt;
 
@@ -2611,8 +2790,8 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 </description>
         <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
+        <link>http://localhost:4000/posts/2015-11-17-firewall/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2015-11-17-firewall/</guid>
         
         <category>ターミナル</category>
         
@@ -2629,7 +2808,7 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
     
       <item>
         <title>delayやwhileを使わないI2C液晶表示プログラム</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;概要&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。&lt;/p&gt;
 
@@ -2639,45 +2818,11 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
 
 </description>
         <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-15-i2c-lcd/</guid>
+        <link>http://localhost:4000/posts/2015-11-15-i2c-lcd/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2015-11-15-i2c-lcd/</guid>
         
         
         <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>CPUの創り方</title>
-        <description>&lt;h2 id=&quot;cpu2003-&quot;&gt;書籍「CPUの創り方」（2003年）渡波郁 著&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;book.jpg&quot; alt=&quot;CPUの創り方&quot; title=&quot;CPUの創り方&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;　この本は電子工作の入門書です。しかし入門書と言っても内容は壮大で、CPUを設計して自作しようというものです。電子工作初心者だけでなく、ある程度電子工作をしてきた人にも読みごたえのある一冊になっています。&lt;/p&gt;
-
-&lt;h2 id=&quot;td4&quot;&gt;作ったもの : TD4&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;board_top.jpg&quot; alt=&quot;TD4&quot; title=&quot;TD4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;　この本の中で設計しているCPUを実際に作りました。TD4とは&lt;strong&gt;T&lt;/strong&gt;ada &lt;strong&gt;D&lt;/strong&gt;ousa-suru-dakei-no &lt;strong&gt;4&lt;/strong&gt;-bit CPU という意味です。&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 04 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-04-create-cpu/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-04-create-cpu/</guid>
-        
-        <category>電子工作</category>
-        
-        <category>CPU</category>
-        
-        <category>入門</category>
-        
-        <category>論理回路</category>
-        
-        <category>書籍</category>
-        
-        <category>はんだ付け</category>
-        
-        
-        <category>works</category>
         
       </item>
     
