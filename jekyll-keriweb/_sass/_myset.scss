@@ -423,3 +423,90 @@ html.layout-card{
 		margin:0;
 	}
 }
+
+/* Postcard Layout */
+html.layout-postcard{
+	width:100mm;
+	height:148mm;
+	margin:0;
+	padding:0;
+	background-color:white;
+}
+
+.layout-postcard{
+	body{
+		box-sizing: border-box;
+		width:100%;
+		height:100%;
+		margin:0;
+		padding:0;
+	}
+	div.page-content{
+		box-sizing: border-box;
+		width:100%;
+		height:100%;
+		padding:10px;
+		margin:0;
+	}
+	.wrapper{
+		box-sizing: border-box;
+		height:100%;
+		padding:10px;
+		//margin:0;
+	}
+	.post-meta {
+		font-size: 9px;
+		color: #555;
+		margin-bottom:3px;
+	}
+	h1{
+		font-size:20px;
+	}
+	h2{
+		clear:both;
+		font-size:12px;
+		padding:3px 5px;
+		margin:3px 0px;
+	}
+	h3{
+		font-size:10px;
+		padding:1px 5px;
+		margin:2px 0px;
+	}
+	.post-header{
+		margin-bottom:5px;
+		img{
+			width:60px;
+			height:60px;
+		}
+	}
+	.post-content p{
+		margin:0;
+	}
+	.postcard-img{
+		float:left;
+		margin-left:10px;
+		margin-bottom:5px;
+		text-align:center;
+	}
+	.postcard-p{
+		float:left;
+		margin-left:10px;
+		margin-bottom:5px;
+		padding-top:10px;
+		width:300px;
+		p{
+			padding-left:10px;
+		}
+	}
+	.postcard-footer{
+		clear:both;
+		text-align:center;
+		padding-top:20px;
+		color:#555;
+	}
+	p{
+		padding-left:10px;
+	}
+}
+

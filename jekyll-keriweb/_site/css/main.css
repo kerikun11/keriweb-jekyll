@@ -1049,3 +1049,70 @@ html.layout-card {
   padding-top: 15px; }
 .layout-card p {
   margin: 0; }
+
+/* Postcard Layout */
+html.layout-postcard {
+  width: 100mm;
+  height: 148mm;
+  margin: 0;
+  padding: 0;
+  background-color: white; }
+
+.layout-postcard body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+.layout-postcard div.page-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0; }
+.layout-postcard .wrapper {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px; }
+.layout-postcard .post-meta {
+  font-size: 9px;
+  color: #555;
+  margin-bottom: 3px; }
+.layout-postcard h1 {
+  font-size: 20px; }
+.layout-postcard h2 {
+  clear: both;
+  font-size: 12px;
+  padding: 3px 5px;
+  margin: 3px 0px; }
+.layout-postcard h3 {
+  font-size: 10px;
+  padding: 1px 5px;
+  margin: 2px 0px; }
+.layout-postcard .post-header {
+  margin-bottom: 5px; }
+  .layout-postcard .post-header img {
+    width: 60px;
+    height: 60px; }
+.layout-postcard .post-content p {
+  margin: 0; }
+.layout-postcard .postcard-img {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  text-align: center; }
+.layout-postcard .postcard-p {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  width: 300px; }
+  .layout-postcard .postcard-p p {
+    padding-left: 10px; }
+.layout-postcard .postcard-footer {
+  clear: both;
+  text-align: center;
+  padding-top: 20px;
+  color: #555; }
+.layout-postcard p {
+  padding-left: 10px; }

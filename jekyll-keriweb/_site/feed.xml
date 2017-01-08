@@ -5,9 +5,33 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 14:31:41 +0000</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 14:31:41 +0000</lastBuildDate>
+    <pubDate>Sun, 08 Jan 2017 15:50:22 +0000</pubDate>
+    <lastBuildDate>Sun, 08 Jan 2017 15:50:22 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>KERISE v2 ができました！</title>
+        <description>&lt;h2 id=&quot;マイクロマウスクラシックハーフ兼用マウス&quot;&gt;マイクロマウスクラシック&amp;amp;ハーフ兼用マウス&lt;/h2&gt;
+
+&lt;p&gt;昨年の大会ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;with-hand.jpg&quot; alt=&quot;KERISEv2&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/posts/2017-01-08-kerise-v2-1st/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/2017-01-08-kerise-v2-1st/</guid>
+        
+        <category>マイクロマウス</category>
+        
+        <category>KERISEv2</category>
+        
+        <category>ロボット</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>KERISE v1の設計(回路編)</title>
@@ -19,154 +43,6 @@
 
 &lt;p&gt;&lt;img src=&quot;KERISEv1.jpg&quot; alt=&quot;KERISEv1&quot; class=&quot;img-small&quot; /&gt;&lt;br /&gt;
 KERISEv1&lt;/p&gt;
-
-&lt;h2 id=&quot;主な使用部品&quot;&gt;主な使用部品&lt;/h2&gt;
-
-&lt;p&gt;部品のほとんどは&lt;a href=&quot;http://www.digikey.jp/&quot;&gt;digikey&lt;/a&gt;で購入しました．&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;部品&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;型番&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;備考&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;マイコン&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;STM32F405RG&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;クロック168MHz&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;赤外線LED&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;VSLY5850&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;直径5mm&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;フォトダイオード&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;SFH213FA&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;直径5mm&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;モータードライバ&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;DRV8835&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;最大電流3A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;6軸センサ&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;MPU6500&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;3軸ジャイロ+3軸加速度&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;回路図&quot;&gt;回路図&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;sketch.pdf&quot;&gt;ここ&lt;/a&gt;からダウンロードできます．&lt;/p&gt;
-
-&lt;p&gt;KiCadの階層機能を使って書いてみました．とても便利です．&lt;/p&gt;
-
-&lt;h2 id=&quot;各部位の説明&quot;&gt;各部位の説明&lt;/h2&gt;
-
-&lt;h3 id=&quot;マイコン&quot;&gt;マイコン&lt;/h3&gt;
-
-&lt;p&gt;マイコンは，STM32F405RGT6を使いました．ARMのCortex-M4が入っており高スペックです．&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;STM32F405RGT6&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;周波数&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;168MHz&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Flash&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;1024kB&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;メモリ&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;192kB&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;12bit ADC&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;3つ&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;電源回路&quot;&gt;電源回路&lt;/h3&gt;
-
-&lt;p&gt;バッテリーは，3.7vのリポを2つ直列につなぐので，7.4Vです．それをDCDCコンバータで5Vに落とし，さらにリニアレギュレータで3.3Vに落とします．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;power.png&quot; alt=&quot;電源回路&quot; /&gt;&lt;br /&gt;
-電源回路&lt;/p&gt;
-
-&lt;h3 id=&quot;モータードライバ&quot;&gt;モータードライバ&lt;/h3&gt;
-
-&lt;p&gt;モータードライバは，DRV8835を使用しました．1.5Aまで流せるHブリッジが2つ入っています．2つ並列に使えば3Aまで流すことができるらしいです．&lt;/p&gt;
-
-&lt;p&gt;パッケージは，12-WSONといい，0.5mmピッチで足が側面にわずかに出ているもので，はんだ付けが難しかったです．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;drv8835.png&quot; alt=&quot;モータードライバ&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-モータードライバ&lt;/p&gt;
-
-&lt;h3 id=&quot;6軸センサ&quot;&gt;6軸センサ&lt;/h3&gt;
-
-&lt;p&gt;6軸センサにはMPU6500を使いました．といっても，そのうちジャイロ1軸と加速度1軸の計2軸しか使っていません．&lt;/p&gt;
-
-&lt;p&gt;SPIでデジタルデータを得ることができるので，とても使いやすいですが，はんだ付けはカオスです．&lt;/p&gt;
-
-&lt;p&gt;1kHzで値を得ることが出きます．&lt;/p&gt;
-
-&lt;h3 id=&quot;フォトリフレクタ&quot;&gt;フォトリフレクタ&lt;/h3&gt;
-
-&lt;p&gt;フォトリフレクタには，指向性の高い赤外線LEDと，応答の速いフォトダイオードを使用しました．&lt;/p&gt;
-
-&lt;p&gt;受光回路は，オペアンプでバンドパスフィルタを作り，高周波と低周波成分をカットしています．
-そのため，赤外線LEDは2kHzで点滅させることで，周辺光と区別しています．この回路は先輩から教えてもらいました．&lt;/p&gt;
-
-&lt;p&gt;さらに指向性を高めるためにフォトダイオードには熱収縮チューブをかぶせて横側を遮光しています．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;photo.png&quot; alt=&quot;受光回路&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-受光回路&lt;/p&gt;
-
-&lt;p&gt;LEDの発光回路は，定電流源ICを使い，モーターなどにより電源電圧が下がっても同じ明るさで光るようにしています．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;led.png&quot; alt=&quot;発光回路&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-発光回路&lt;/p&gt;
-
-&lt;h2 id=&quot;基板の設計&quot;&gt;基板の設計&lt;/h2&gt;
-
-&lt;p&gt;KiCadで設計します．いつも通り，&lt;a href=&quot;/posts/2016-04-22-freerouting/&quot;&gt;自動配線&lt;/a&gt;をフル活用です．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;pcb.png&quot; alt=&quot;pcb&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-基板設計&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;3d.png&quot; alt=&quot;3D&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-KiCadの3D表示&lt;/p&gt;
-
-&lt;h2 id=&quot;できた基板&quot;&gt;できた基板&lt;/h2&gt;
-
-&lt;p&gt;Elecrowに発注して約10日で基板が届きました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;board.jpg&quot; alt=&quot;基板&quot; class=&quot;img-medium&quot; /&gt;&lt;br /&gt;
-KERISEv1の基板&lt;/p&gt;
-
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;はんだ付けを練習しましょう．&lt;/p&gt;
-
-&lt;h2 id=&quot;参考文献&quot;&gt;参考文献&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.tokor.org/2015/08/16/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E9%80%B2%E6%8D%97%E5%A0%B1%E5%91%8A/&quot;&gt;マイクロマウス進捗報告&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 </description>
         <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
@@ -2800,26 +2676,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <category>サーバー</category>
         
         <category>ラズパイ</category>
-        
-        
-        <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>delayやwhileを使わないI2C液晶表示プログラム</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;秋月やaitendoで売っているI2C液晶を使っている人は多い。しかし、ほとんどのサンプルプログラムは、I2Cの通信をwhile文などにより送信完了待ちしていて、その間に（割り込みを除く）他のプログラムが実行できない。そこで今回は、I2C液晶に表示させる内容を送信バッファに入れておけば自動で送信してくれるプログラムを書く。&lt;/p&gt;
-
-&lt;p&gt;秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-06795/&quot;&gt;秋月のI2C液晶(AQM0802)&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&quot;AQM0802.jpg&quot; alt=&quot;AQM0802&quot; title=&quot;I2C_LCD&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/posts/2015-11-15-i2c-lcd/</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/2015-11-15-i2c-lcd/</guid>
         
         
         <category>memos</category>

@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>KERISE v1の設計(回路編) - KERI's Lab</title>
-	<meta name="description" content="概要今年の全日本マイクロマウス大会2016に出場したKERISE v1．今回はその回路設計を紹介します．全日本マイクロマウス大会2016の結果報告はこちらKERISEv1">
+	<title>KERISE v2 ができました！ - KERI's Lab</title>
+	<meta name="description" content="マイクロマウスクラシック&amp;ハーフ兼用マウス昨年の大会ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://localhost:4000/posts/2016-12-27-kerisev1/">
+	<link rel="canonical" href="http://localhost:4000/posts/2017-01-08-kerise-v2-1st/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -90,11 +90,11 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2016-12-27-kerisev1/icon.png" title="KERISE v1の設計(回路編)" alt="KERISE v1の設計(回路編)">
+		<img src="/posts/2017-01-08-kerise-v2-1st/icon.jpg" title="KERISE v2 ができました！" alt="KERISE v2 ができました！">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">KERISE v1の設計(回路編)</h1>
+			<h1 class="post-title" itemprop="name headline">KERISE v2 ができました！</h1>
 			<p class="post-meta">
-				<time datetime="2016-12-27T00:00:00+00:00" itemprop="datePublished">2016年12月27日</time>
+				<time datetime="2017-01-08T00:00:00+00:00" itemprop="datePublished">2017年01月08日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
@@ -103,16 +103,10 @@
 				<a href="/tags/#tag-index-マイクロマウス">マイクロマウス</a>
 				, 
 				
-				<a href="/tags/#tag-index-全日本マイクロマウス大会">全日本マイクロマウス大会</a>
+				<a href="/tags/#tag-index-KERISEv2">KERISEv2</a>
 				, 
 				
-				<a href="/tags/#tag-index-電子工作">電子工作</a>
-				, 
-				
-				<a href="/tags/#tag-index-STM32">STM32</a>
-				, 
-				
-				<a href="/tags/#tag-index-mbed">mbed</a>
+				<a href="/tags/#tag-index-ロボット">ロボット</a>
 				
 				
 			</p>
@@ -135,165 +129,55 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="概要">概要</h2>
+		<h2 id="マイクロマウスクラシックハーフ兼用マウス">マイクロマウスクラシック&amp;ハーフ兼用マウス</h2>
 
-<p>今年の全日本マイクロマウス大会2016に出場したKERISE v1．今回はその回路設計を紹介します．</p>
+<p>昨年の大会ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．</p>
 
-<p>全日本マイクロマウス大会2016の結果報告は<a href="/posts/2016-11-21-micromouse2016/">こちら</a></p>
-
-<p><img src="KERISEv1.jpg" alt="KERISEv1" class="img-small" /><br />
-KERISEv1</p>
+<p><img src="with-hand.jpg" alt="KERISEv2" class="img-medium" /></p>
 
 <!--more-->
 
-<h2 id="主な使用部品">主な使用部品</h2>
+<h2 id="基板">基板</h2>
 
-<p>部品のほとんどは<a href="http://www.digikey.jp/">digikey</a>で購入しました．</p>
+<p>下についているのはリポの充電基板です．</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">部品</th>
-      <th style="text-align: left">型番</th>
-      <th style="text-align: left">備考</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">マイコン</td>
-      <td style="text-align: left">STM32F405RG</td>
-      <td style="text-align: left">クロック168MHz</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">赤外線LED</td>
-      <td style="text-align: left">VSLY5850</td>
-      <td style="text-align: left">直径5mm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">フォトダイオード</td>
-      <td style="text-align: left">SFH213FA</td>
-      <td style="text-align: left">直径5mm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">モータードライバ</td>
-      <td style="text-align: left">DRV8835</td>
-      <td style="text-align: left">最大電流3A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">6軸センサ</td>
-      <td style="text-align: left">MPU6500</td>
-      <td style="text-align: left">3軸ジャイロ+3軸加速度</td>
-    </tr>
-  </tbody>
-</table>
+<p><img src="board.jpg" alt="基板" class="img-medium" /></p>
 
-<h2 id="回路図">回路図</h2>
+<h2 id="部品の実装">部品の実装</h2>
 
-<p><a href="sketch.pdf">ここ</a>からダウンロードできます．</p>
+<p>ヒートガンを使うと割と簡単に半田付けができました．<br />
+※マイコンの左側がやすりで削られているのは気にしてはいけません．</p>
 
-<p>KiCadの階層機能を使って書いてみました．とても便利です．</p>
+<p><img src="in-process.jpg" alt="はんだ付け途中" class="img-small" /></p>
 
-<h2 id="各部位の説明">各部位の説明</h2>
+<h2 id="できあがり">できあがり！</h2>
 
-<h3 id="マイコン">マイコン</h3>
+<p><img src="side.jpg" alt="横" class="img-small" />
+<img src="front.jpg" alt="正面" class="img-small" />
+<img src="front-side.jpg" alt="斜め前" class="img-small" />
+<img src="back-side.jpg" alt="斜め後ろ" class="img-small" /></p>
 
-<p>マイコンは，STM32F405RGT6を使いました．ARMのCortex-M4が入っており高スペックです．</p>
+<h2 id="重さ">重さ</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">STM32F405RGT6</th>
-      <th style="text-align: left"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">周波数</td>
-      <td style="text-align: left">168MHz</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Flash</td>
-      <td style="text-align: left">1024kB</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">メモリ</td>
-      <td style="text-align: left">192kB</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">12bit ADC</td>
-      <td style="text-align: left">3つ</td>
-    </tr>
-  </tbody>
-</table>
+<p><img src="weight.jpg" alt="重さ" class="img-medium" /></p>
 
-<h3 id="電源回路">電源回路</h3>
+<p><img src="weight-motor.jpg" alt="モーターの重さ" class="img-small" /></p>
 
-<p>バッテリーは，3.7vのリポを2つ直列につなぐので，7.4Vです．それをDCDCコンバータで5Vに落とし，さらにリニアレギュレータで3.3Vに落とします．</p>
+<p><img src="weight-battery.jpg" alt="バッテリーの重さ" class="img-small" /></p>
 
-<p><img src="power.png" alt="電源回路" /><br />
-電源回路</p>
+<h2 id="kerise-v1-との比較">KERISE v1 との比較</h2>
 
-<h3 id="モータードライバ">モータードライバ</h3>
+<p>部品などはほぼ同じですが，ぎゅっと小さくなりました．</p>
 
-<p>モータードライバは，DRV8835を使用しました．1.5Aまで流せるHブリッジが2つ入っています．2つ並列に使えば3Aまで流すことができるらしいです．</p>
+<p><img src="comparison.jpg" alt="KERISEv1との比較" class="img-medium" /></p>
 
-<p>パッケージは，12-WSONといい，0.5mmピッチで足が側面にわずかに出ているもので，はんだ付けが難しかったです．</p>
+<h2 id="kerisev1と同じプログラムで動かしてみると">KERISEv1と同じプログラムで動かしてみると…</h2>
 
-<p><img src="drv8835.png" alt="モータードライバ" class="img-medium" /><br />
-モータードライバ</p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/WoN3yYOAlUc" frameborder="0" allowfullscreen=""></iframe></div>
 
-<h3 id="6軸センサ">6軸センサ</h3>
-
-<p>6軸センサにはMPU6500を使いました．といっても，そのうちジャイロ1軸と加速度1軸の計2軸しか使っていません．</p>
-
-<p>SPIでデジタルデータを得ることができるので，とても使いやすいですが，はんだ付けはカオスです．</p>
-
-<p>1kHzで値を得ることが出きます．</p>
-
-<h3 id="フォトリフレクタ">フォトリフレクタ</h3>
-
-<p>フォトリフレクタには，指向性の高い赤外線LEDと，応答の速いフォトダイオードを使用しました．</p>
-
-<p>受光回路は，オペアンプでバンドパスフィルタを作り，高周波と低周波成分をカットしています．
-そのため，赤外線LEDは2kHzで点滅させることで，周辺光と区別しています．この回路は先輩から教えてもらいました．</p>
-
-<p>さらに指向性を高めるためにフォトダイオードには熱収縮チューブをかぶせて横側を遮光しています．</p>
-
-<p><img src="photo.png" alt="受光回路" class="img-medium" /><br />
-受光回路</p>
-
-<p>LEDの発光回路は，定電流源ICを使い，モーターなどにより電源電圧が下がっても同じ明るさで光るようにしています．</p>
-
-<p><img src="led.png" alt="発光回路" class="img-medium" /><br />
-発光回路</p>
-
-<h2 id="基板の設計">基板の設計</h2>
-
-<p>KiCadで設計します．いつも通り，<a href="/posts/2016-04-22-freerouting/">自動配線</a>をフル活用です．</p>
-
-<p><img src="pcb.png" alt="pcb" class="img-medium" /><br />
-基板設計</p>
-
-<p><img src="3d.png" alt="3D" class="img-medium" /><br />
-KiCadの3D表示</p>
-
-<h2 id="できた基板">できた基板</h2>
-
-<p>Elecrowに発注して約10日で基板が届きました！</p>
-
-<p><img src="board.jpg" alt="基板" class="img-medium" /><br />
-KERISEv1の基板</p>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>はんだ付けを練習しましょう．</p>
-
-<h2 id="参考文献">参考文献</h2>
-
-<ul>
-  <li><a href="http://blog.tokor.org/2015/08/16/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E9%80%B2%E6%8D%97%E5%A0%B1%E5%91%8A/">マイクロマウス進捗報告</a></li>
-</ul>
-
+<p>なんか動いちゃいましたw<br />
+まあ，まずはしっかりPIDパラメータを定めるところから始めましょう．<br />
+ではまた！</p>
 
 	</div>
 
@@ -312,27 +196,16 @@ KERISEv1の基板</p>
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2017-01-08-kerise-v2-1st/">
-				<img src="/posts/2017-01-08-kerise-v2-1st/icon.jpg" title="KERISE v2 ができました！" alt="KERISE v2 ができました！">
-				<div class="post-list-char">
-					<span class="post-meta">2017年01月08日 Category: works</span>
-					<h2 class="post-title">
-						KERISE v2 ができました！
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2016-12-04-update-mydns/">
-				<img src="/home/icon.png" title="CrontabでMyDNS.jpのIP通知" alt="CrontabでMyDNS.jpのIP通知">
+			<a class="post-link" href="/posts/2016-12-27-kerisev1/">
+				<img src="/posts/2016-12-27-kerisev1/icon.png" title="KERISE v1の設計(回路編)" alt="KERISE v1の設計(回路編)">
 				<div class="post-list-char">
-					<span class="post-meta">2016年12月04日 Category: memos</span>
+					<span class="post-meta">2016年12月27日 Category: works</span>
 					<h2 class="post-title">
-						CrontabでMyDNS.jpのIP通知
+						KERISE v1の設計(回路編)
 					</h2>
 				</div>
 			</a>
