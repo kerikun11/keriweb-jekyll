@@ -17,6 +17,8 @@ icon: "icon.jpg"
 
 ![ミュージックサーバー](music-server.jpg){: .img-medium}
 
+<!--more-->
+
 ## 構成
 
 ### Raspberry Pi 3 Type B

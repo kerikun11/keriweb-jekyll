@@ -12,6 +12,8 @@ icon: "icon.jpg"
 Infrared Remote Controller with ESP8266 WiFi-module  
 You can control your home appliances with your smartphone or laptop.
 
+<!--more-->
+
 ## Main parts
 
   * ESP-WROOM-02 (ESP8266 WiFi Module)
