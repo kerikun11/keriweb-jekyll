@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>KERISE v2 ができました！ - KERI's Lab</title>
-	<meta name="description" content="マイクロマウスクラシック&amp;ハーフ兼用マウス昨年の大会ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．">
+	<title>ハーフ迷路を走ってみました！ - KERI's Lab</title>
+	<meta name="description" content="ハーフサイズの迷路を走ってみましたこんにちは，けりです．KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2017-01-08-kerise-v2-1st/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2017-01-12-1st-half/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -90,11 +90,11 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2017-01-08-kerise-v2-1st/icon.jpg" title="KERISE v2 ができました！" alt="KERISE v2 ができました！">
+		<img src="/posts/2017-01-12-1st-half/icon.png" title="ハーフ迷路を走ってみました！" alt="ハーフ迷路を走ってみました！">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">KERISE v2 ができました！</h1>
+			<h1 class="post-title" itemprop="name headline">ハーフ迷路を走ってみました！</h1>
 			<p class="post-meta">
-				<time datetime="2017-01-08T00:00:00+00:00" itemprop="datePublished">2017年01月08日</time>
+				<time datetime="2017-01-12T00:00:00+00:00" itemprop="datePublished">2017年01月12日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
@@ -106,7 +106,10 @@
 				<a href="/tags/#tag-index-KERISEv2">KERISEv2</a>
 				, 
 				
-				<a href="/tags/#tag-index-ロボット">ロボット</a>
+				<a href="/tags/#tag-index-迷路">迷路</a>
+				, 
+				
+				<a href="/tags/#tag-index-ハーフサイズ">ハーフサイズ</a>
 				
 				
 			</p>
@@ -129,58 +132,38 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="マイクロマウスクラシックハーフ兼用マウス">マイクロマウスクラシック&amp;ハーフ兼用マウス</h2>
+		<h2 id="ハーフサイズの迷路を走ってみました">ハーフサイズの迷路を走ってみました</h2>
 
-<p><a href="/posts/2016-11-21-micromouse2016/">昨年の大会</a>ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．</p>
-
-<p><img src="with-hand.jpg" alt="KERISEv2" class="img-medium" /></p>
+<p>こんにちは，けりです．<br />
+KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！</p>
 
 <!--more-->
 
-<h2 id="基板">基板</h2>
+<h2 id="ジグザグ">ジグザグ</h2>
 
-<p>下についているのはリポの充電基板です．</p>
+<p>今までクラシックサイズで特訓してきたジグザグです．<br />
+クラシッククラスのパラメータをすべて1/2にしたら走れちゃいました！</p>
 
-<p><img src="board.jpg" alt="基板" class="img-medium" /></p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/Wslj9-5CEQw" frameborder="0" allowfullscreen=""></iframe></div>
 
-<h2 id="部品の実装">部品の実装</h2>
+<h2 id="探索走行">探索走行</h2>
 
-<p>ヒートガンを使うと割と簡単に半田付けができました．<br />
-※マイコンの右側がやすりで削られているのは気にしてはいけません．</p>
+<p>壁センサのパラメータを少し調節したら探索もできました！(スタートの1マス右がゴールに設定されています)</p>
 
-<p><img src="in-process.jpg" alt="はんだ付け途中" class="img-small" /></p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/-Mm07y3O4ig" frameborder="0" allowfullscreen=""></iframe></div>
 
-<h2 id="できあがり">できあがり！</h2>
+<h2 id="探索走行--最速走行斜めあり">探索走行 &amp; 最速走行(斜めあり)</h2>
 
-<p><img src="side.jpg" alt="横" class="img-small" />
-<img src="front.jpg" alt="正面" class="img-small" />
-<img src="front-side.jpg" alt="斜め前" class="img-small" />
-<img src="back-side.jpg" alt="斜め後ろ" class="img-small" /></p>
+<p>今後はさらに速くしていきたいですね！</p>
 
-<h2 id="重さ">重さ</h2>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/Kp5JsxwAS_4" frameborder="0" allowfullscreen=""></iframe></div>
 
-<p>大きさの割に重たいので制御が難しそうです…</p>
+<h2 id="まとめ">まとめ</h2>
 
-<p><img src="weight.jpg" alt="重さ" class="img-medium" /></p>
+<p>ずっとやりたかったハーフサイズの迷路を走ることができました！とてもギリギリなので少しでもズレるとクラッシュします．精度を高めて高速化していきたいですね．</p>
 
-<p>モーターが半分以上の重さを占めています．<br />
-バッテリーは割と軽めですね．<br />
-<img src="weight-motor.jpg" alt="モーターの重さ" class="img-small" />
-<img src="weight-battery.jpg" alt="バッテリーの重さ" class="img-small" /></p>
-
-<h2 id="kerise-v1-との比較">KERISE v1 との比較</h2>
-
-<p>部品などはほぼ同じですが，ぎゅっと小さくなりました．</p>
-
-<p><img src="comparison.jpg" alt="KERISEv1との比較" class="img-medium" /></p>
-
-<h2 id="kerisev1と同じプログラムで動かしてみると">KERISEv1と同じプログラムで動かしてみると…</h2>
-
-<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/WoN3yYOAlUc" frameborder="0" allowfullscreen=""></iframe></div>
-
-<p>なんか動いちゃいましたw<br />
-まあ，まずはしっかりPIDパラメータを定めるところから始めましょう．<br />
-ではまた！</p>
+<p><img src="kerisev2.jpg" alt="KERISEv2" class="img-medium" /><br />
+KERISEv2</p>
 
 	</div>
 
@@ -199,27 +182,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2017-01-12-1st-half/">
-				<img src="/posts/2017-01-12-1st-half/icon.png" title="ハーフ迷路を走ってみました！" alt="ハーフ迷路を走ってみました！">
-				<div class="post-list-char">
-					<span class="post-meta">2017年01月12日 Category: works</span>
-					<h2 class="post-title">
-						ハーフ迷路を走ってみました！
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2016-12-27-kerisev1/">
-				<img src="/posts/2016-12-27-kerisev1/icon.png" title="KERISE v1の設計(回路編)" alt="KERISE v1の設計(回路編)">
+			<a class="post-link" href="/posts/2017-01-08-kerise-v2-1st/">
+				<img src="/posts/2017-01-08-kerise-v2-1st/icon.jpg" title="KERISE v2 ができました！" alt="KERISE v2 ができました！">
 				<div class="post-list-char">
-					<span class="post-meta">2016年12月27日 Category: works</span>
+					<span class="post-meta">2017年01月08日 Category: works</span>
 					<h2 class="post-title">
-						KERISE v1の設計(回路編)
+						KERISE v2 ができました！
 					</h2>
 				</div>
 			</a>

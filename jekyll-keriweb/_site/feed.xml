@@ -5,9 +5,34 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Jan 2017 06:32:00 +0000</pubDate>
-    <lastBuildDate>Mon, 09 Jan 2017 06:32:00 +0000</lastBuildDate>
+    <pubDate>Thu, 12 Jan 2017 14:15:54 +0000</pubDate>
+    <lastBuildDate>Thu, 12 Jan 2017 14:15:54 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ハーフ迷路を走ってみました！</title>
+        <description>&lt;h2 id=&quot;ハーフサイズの迷路を走ってみました&quot;&gt;ハーフサイズの迷路を走ってみました&lt;/h2&gt;
+
+&lt;p&gt;こんにちは，けりです．&lt;br /&gt;
+KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-01-12-1st-half/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-01-12-1st-half/</guid>
+        
+        <category>マイクロマウス</category>
+        
+        <category>KERISEv2</category>
+        
+        <category>迷路</category>
+        
+        <category>ハーフサイズ</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>KERISE v2 ができました！</title>
@@ -1504,32 +1529,6 @@ HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
         <category>サーバー</category>
         
         <category>Samba</category>
-        
-        
-        <category>memos</category>
-        
-      </item>
-    
-      <item>
-        <title>ファイアウォールの設定</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&quot;ufw&quot;&gt;ufw&lt;/h3&gt;
-
-&lt;p&gt;iptablesという有名なファイアウォールソフトウェアがあるが初心者には使いにくいので，今回は初心者でも使いやすいufwというソフトを使う．&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-11-17-firewall/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-11-17-firewall/</guid>
-        
-        <category>ターミナル</category>
-        
-        <category>ファイアウォール</category>
-        
-        <category>サーバー</category>
-        
-        <category>ラズパイ</category>
         
         
         <category>memos</category>
