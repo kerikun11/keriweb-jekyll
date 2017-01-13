@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>ハーフ迷路を走ってみました！ - KERI's Lab</title>
-	<meta name="description" content="ハーフサイズの迷路を走ってみましたこんにちは，けりです．KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！">
+	<title>ハーフサイズ迷路の自作 - KERI's Lab</title>
+	<meta name="description" content="概要昨年夏に始めたマイクロマウス．KERISEv2ができてついにハーフにデビューしました！しかし，自宅には迷路がないので試しに自分で作ってみることにしました．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2017-01-12-1st-half/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2017-01-13-half-maze/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -90,11 +90,11 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2017-01-12-1st-half/icon.png" title="ハーフ迷路を走ってみました！" alt="ハーフ迷路を走ってみました！">
+		<img src="/posts/2017-01-13-half-maze/icon.jpg" title="ハーフサイズ迷路の自作" alt="ハーフサイズ迷路の自作">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">ハーフ迷路を走ってみました！</h1>
+			<h1 class="post-title" itemprop="name headline">ハーフサイズ迷路の自作</h1>
 			<p class="post-meta">
-				<time datetime="2017-01-12T00:00:00+00:00" itemprop="datePublished">2017年01月12日</time>
+				<time datetime="2017-01-13T00:00:00+00:00" itemprop="datePublished">2017年01月13日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
@@ -103,13 +103,10 @@
 				<a href="/tags/#tag-index-マイクロマウス">マイクロマウス</a>
 				, 
 				
-				<a href="/tags/#tag-index-KERISEv2">KERISEv2</a>
+				<a href="/tags/#tag-index-ハーフサイズ">ハーフサイズ</a>
 				, 
 				
 				<a href="/tags/#tag-index-迷路">迷路</a>
-				, 
-				
-				<a href="/tags/#tag-index-ハーフサイズ">ハーフサイズ</a>
 				
 				
 			</p>
@@ -132,38 +129,91 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="ハーフサイズの迷路を走ってみました">ハーフサイズの迷路を走ってみました</h2>
+		<h2 id="概要">概要</h2>
 
-<p>こんにちは，けりです．<br />
-KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！</p>
+<p>昨年夏に始めたマイクロマウス．<br />
+<a href="/tags/#tag-index-KERISEv2">KERISEv2</a>ができてついにハーフにデビューしました！<br />
+しかし，自宅には迷路がないので試しに自分で作ってみることにしました．</p>
 
 <!--more-->
 
-<h2 id="ジグザグ">ジグザグ</h2>
+<h2 id="材料">材料</h2>
 
-<p>今までクラシックサイズで特訓してきたジグザグです．<br />
-クラシッククラスのパラメータをすべて1/2にしたら走れちゃいました！</p>
+<p>材料は，ホームセンターで売っているスチレンボードの「デコパネ」だけです．</p>
 
-<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/Wslj9-5CEQw" frameborder="0" allowfullscreen=""></iframe></div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">材料</th>
+      <th style="text-align: left">詳細</th>
+      <th style="text-align: left">価格</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">デコパネ(黒)</td>
+      <td style="text-align: left">A1ブラック 900mm x 600mm</td>
+      <td style="text-align: left">1,380円</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">デコパネ(白)</td>
+      <td style="text-align: left">A2紙貼ホワイト 450mmx600mm</td>
+      <td style="text-align: left">748円</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="探索走行">探索走行</h2>
+<p><img src="decopane-color.jpg" alt="デコパネ" class="img-small" /> <img src="decopane.jpg" alt="デコパネ" class="img-small" /></p>
 
-<p>壁センサのパラメータを少し調節したら探索もできました！(スタートの1マス右がゴールに設定されています)</p>
+<p>黒いデコパネを床にして，白いデコパネを壁にします．<br />
+偶然にも，黒いデコパネの表面がマイクロマウスの公式迷路の表面と質感が似ています．</p>
 
-<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/-Mm07y3O4ig" frameborder="0" allowfullscreen=""></iframe></div>
+<h2 id="作り方">作り方</h2>
 
-<h2 id="探索走行--最速走行斜めあり">探索走行 &amp; 最速走行(斜めあり)</h2>
+<h3 id="黒い板に90mmの格子線を引く">黒い板に90mmの格子線を引く</h3>
 
-<p>今後はさらに速くしていきたいですね！</p>
+<p>長めの定規を用意すると作業がスムーズです．</p>
 
-<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/Kp5JsxwAS_4" frameborder="0" allowfullscreen=""></iframe></div>
+<p><img src="board.jpg" alt="床板" class="img-medium" /></p>
+
+<h3 id="白い板に25mm-x-84mmの線を引く">白い板に25mm x 84mmの線を引く</h3>
+
+<p>基本は柱の分を考慮して84mmにしますが，今回の迷路には柱がないので90mmのものも両方作ることをおすすめします．</p>
+
+<p><img src="wall-board.jpg" alt="壁板" class="img-medium" /></p>
+
+<h3 id="カッターで切り口が垂直になるように切る">カッターで切り口が垂直になるように切る</h3>
+
+<p>切り口が垂直じゃないと自立しないので注意しましょう．慣れれば簡単です．というか，たくさん切るのですぐ慣れます．</p>
+
+<p><img src="wall-slice.jpg" alt="壁" class="img-medium" />
+<img src="wall-cut.jpg" alt="壁" class="img-medium" /></p>
+
+<h2 id="壁を立てたら完成">壁を立てたら完成！</h2>
+
+<p>できました！<br />
+使った工具は，なんとカッターナイフと定規だけです！作業時間も1時間半ほどでできちゃいました．</p>
+
+<p>スタート地点はマウスが背中をぶつけるので，電池をおもりとして置いて壁が動かないようにしています．</p>
+
+<p><img src="half-maze.jpg" alt="ハーフサイズ迷路" class="img-medium" /></p>
+
+<h2 id="作った迷路を試走">作った迷路を試走</h2>
+
+<p>超ギリギリです…</p>
+
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/GzYtAqqqN-g" frameborder="0" allowfullscreen=""></iframe></div>
 
 <h2 id="まとめ">まとめ</h2>
 
-<p>ずっとやりたかったハーフサイズの迷路を走ることができました！とてもギリギリなので少しでもズレるとクラッシュします．精度を高めて高速化していきたいですね．</p>
+<p>とても安く簡単にハーフ迷路を作ることができました．しばらくはこれを使って開発したいと思います．</p>
 
-<p><img src="kerisev2.jpg" alt="KERISEv2" class="img-medium" /><br />
-KERISEv2</p>
+<p>この迷路の壁は置いてあるだけなので，マウスが壁にぶつかると倒れます．<br />
+それどころか，マウスが暴走するとせっかく並べた迷路がぐちゃぐちゃに…<br />
+何らかの固定方法を考えたいところです．</p>
+
+<p>しかし，絶対に壁にぶつかってはいけないという<strong>大きなプレッシャー</strong>がマウスを後押しするかも…！？</p>
+
 
 	</div>
 
@@ -182,27 +232,16 @@ KERISEv2</p>
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2017-01-13-half-maze/">
-				<img src="/posts/2017-01-13-half-maze/icon.jpg" title="ハーフサイズ迷路の自作" alt="ハーフサイズ迷路の自作">
-				<div class="post-list-char">
-					<span class="post-meta">2017年01月13日 Category: works</span>
-					<h2 class="post-title">
-						ハーフサイズ迷路の自作
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2017-01-08-kerise-v2-1st/">
-				<img src="/posts/2017-01-08-kerise-v2-1st/icon.jpg" title="KERISE v2 ができました！" alt="KERISE v2 ができました！">
+			<a class="post-link" href="/posts/2017-01-12-1st-half/">
+				<img src="/posts/2017-01-12-1st-half/icon.png" title="ハーフ迷路を走ってみました！" alt="ハーフ迷路を走ってみました！">
 				<div class="post-list-char">
-					<span class="post-meta">2017年01月08日 Category: works</span>
+					<span class="post-meta">2017年01月12日 Category: works</span>
 					<h2 class="post-title">
-						KERISE v2 ができました！
+						ハーフ迷路を走ってみました！
 					</h2>
 				</div>
 			</a>
