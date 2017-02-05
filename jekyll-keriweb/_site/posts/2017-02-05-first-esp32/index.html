@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>ハーフサイズ迷路の自作 - KERI's Lab</title>
-	<meta name="description" content="概要昨年夏に始めたマイクロマウス．KERISEv2ができてついにハーフにデビューしました！しかし，自宅には迷路がないので試しに自分で作ってみることにしました．">
+	<title>ESP-WROOM-32のピッチ変換 - KERI's Lab</title>
+	<meta name="description" content="格安WiFi+BLEモジュール「ESP-WROOM-32」ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．秋月電子で買うことができます→リンク">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2017-01-13-half-maze/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2017-02-05-first-esp32/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -90,23 +90,26 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2017-01-13-half-maze/icon.jpg" title="ハーフサイズ迷路の自作" alt="ハーフサイズ迷路の自作">
+		<img src="/posts/2017-02-05-first-esp32/icon.jpg" title="ESP-WROOM-32のピッチ変換" alt="ESP-WROOM-32のピッチ変換">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">ハーフサイズ迷路の自作</h1>
+			<h1 class="post-title" itemprop="name headline">ESP-WROOM-32のピッチ変換</h1>
 			<p class="post-meta">
-				<time datetime="2017-01-13T00:00:00+00:00" itemprop="datePublished">2017年01月13日</time>
+				<time datetime="2017-02-05T00:00:00+00:00" itemprop="datePublished">2017年02月05日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
 				Tag: 
 				
-				<a href="/tags/#tag-index-マイクロマウス">マイクロマウス</a>
+				<a href="/tags/#tag-index-ESP32">ESP32</a>
 				, 
 				
-				<a href="/tags/#tag-index-ハーフサイズ">ハーフサイズ</a>
+				<a href="/tags/#tag-index-ESP-WROOM-32">ESP-WROOM-32</a>
 				, 
 				
-				<a href="/tags/#tag-index-迷路">迷路</a>
+				<a href="/tags/#tag-index-WiFi">WiFi</a>
+				, 
+				
+				<a href="/tags/#tag-index-Bluetooth">Bluetooth</a>
 				
 				
 			</p>
@@ -129,90 +132,174 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="概要">概要</h2>
+		<h2 id="格安wifibleモジュールesp-wroom-32">格安WiFi+BLEモジュール「ESP-WROOM-32」</h2>
 
-<p>昨年夏に始めたマイクロマウス．<br />
-<a href="/tags/#tag-index-KERISEv2">KERISEv2</a>ができてついにハーフにデビューしました！<br />
-しかし，自宅には迷路がないので試しに自分で作ってみることにしました．</p>
+<p>ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．</p>
+
+<p>秋月電子で買うことができます→<a href="http://akizukidenshi.com/catalog/g/gM-11647/">リンク</a></p>
+
+<p><img src="esp32.jpg" alt="ESP-WROOM-32" class="img-small" /></p>
 
 <!--more-->
 
-<h2 id="材料">材料</h2>
+<h2 id="esp-wroom-32のスペック">ESP-WROOM-32のスペック</h2>
 
-<p>材料は，ホームセンターで売っているスチレンボードの「デコパネ」だけです．</p>
+<h3 id="cpu">CPU</h3>
+
+<p>なんと動作周波数が240MHzで，しかもデュアルコア！！！！開いた口が塞がりません…</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">材料</th>
-      <th style="text-align: left">詳細</th>
-      <th style="text-align: left">価格</th>
+      <th style="text-align: left">CPU</th>
+      <th style="text-align: left">Tensilica LX6</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">デコパネ(黒)</td>
-      <td style="text-align: left">A1ブラック 900mm x 600mm</td>
-      <td style="text-align: left">1,650円</td>
+      <td style="text-align: left">コア数</td>
+      <td style="text-align: left">2</td>
     </tr>
     <tr>
-      <td style="text-align: left">デコパネ(白)</td>
-      <td style="text-align: left">A2紙貼ホワイト 450mmx600mm</td>
-      <td style="text-align: left">1,050円</td>
+      <td style="text-align: left">周波数</td>
+      <td style="text-align: left">最大240MHz</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SRAM</td>
+      <td style="text-align: left">520kB</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">外付けFlash</td>
+      <td style="text-align: left">16MB</td>
     </tr>
   </tbody>
 </table>
 
-<p><img src="decopane-color.jpg" alt="デコパネ" class="img-small" /> <img src="decopane.jpg" alt="デコパネ" class="img-small" /></p>
+<h3 id="無線">無線</h3>
 
-<p>黒いデコパネを床にして，白いデコパネを壁にします．<br />
-偶然にも，黒いデコパネの表面がマイクロマウスの公式迷路の表面と似た質感でした．</p>
+<p>ESP8266はWiFiだけでしたが，ESP32にはBluetoothが付きました．はい，ありがとうございます．</p>
 
-<h2 id="作り方">作り方</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">無線</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">WiFi</td>
+      <td style="text-align: left">2.4GHz</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bluetooth</td>
+      <td style="text-align: left">v4.2</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="黒い板に90mmの格子線を引く">黒い板に90mmの格子線を引く</h3>
+<h3 id="ペリフェラル">ペリフェラル</h3>
 
-<p>長めの定規を用意すると作業がスムーズです．</p>
+<p>十分すぎて使い切れません．ADCは2台同時に変換できそうですね．<br />
+PWMがすべてのGPIOについているのはソフトウェアPWMだからだそうです．</p>
 
-<p><img src="board.jpg" alt="床板" class="img-medium" /></p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">ペリフェラル</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">UART</td>
+      <td style="text-align: left">3台</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SPI</td>
+      <td style="text-align: left">3台</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">I2S</td>
+      <td style="text-align: left">2台</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ADC</td>
+      <td style="text-align: left">2台12ch</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DAC</td>
+      <td style="text-align: left">2台</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">I2C</td>
+      <td style="text-align: left">2台</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PWM</td>
+      <td style="text-align: left">GPIO全部それ</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SDIO</td>
+      <td style="text-align: left">50MHz</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="白い板に25mm-x-84mmの線を引く">白い板に25mm x 84mmの線を引く</h3>
+<h3 id="その他機能">その他機能</h3>
 
-<p>基本は柱の分を考慮して84mmにしますが，今回の迷路には柱がないので90mmのものも両方作ることをおすすめします．</p>
+<p>タッチセンサがあるので，UIとかも充実にできそうですね！</p>
 
-<p><img src="wall-board.jpg" alt="壁板" class="img-medium" /></p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">その他</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">静電容量タッチセンサ</td>
+      <td style="text-align: left">10ch</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ホールセンサ</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">30dBゲインアンプ</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ディープスリープ</td>
+      <td style="text-align: left">消費電流わずか2.5uA</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="カッターで切り口が垂直になるように切る">カッターで切り口が垂直になるように切る</h3>
+<p>詳細は<a href="https://espressif.com/en/products/hardware/esp32/overview">公式サイト</a>をご覧ください．</p>
 
-<p>切り口が垂直じゃないと自立しないので注意しましょう．慣れれば簡単です．というか，たくさん切るのですぐ慣れます．</p>
+<h2 id="ピッチ変換">ピッチ変換</h2>
 
-<p><img src="wall-slice.jpg" alt="壁" class="img-medium" />
-<img src="wall-cut.jpg" alt="壁" class="img-medium" /></p>
+<p>ESP-WROOM-32は1.27mmピッチの表面実装なので，そのままでは使えません．</p>
 
-<h2 id="壁を立てたら完成">壁を立てたら完成！</h2>
+<p>そこで，1列のピンソケットをずらして2列にして，ESP-WROOM-32を挟む形でピッチ変換をしました．基板も導線も使わない画期的な方法です！</p>
 
-<p>できました！<br />
-使った工具は，なんとカッターナイフと定規だけです！作業時間も1時間半ほどでできちゃいました．</p>
+<p><img src="adaptor1.jpg" alt="ピッチ変換" class="img-medium" />
+<img src="adaptor2.jpg" alt="ピッチ変換" class="img-medium" />
+<img src="adaptor3.jpg" alt="ピッチ変換" class="img-medium" /></p>
 
-<p>スタート地点はマウスが背中をぶつけるので，電池をおもりとして置いて壁が動かないようにしています．</p>
+<h2 id="ブレッドボードで使用">ブレッドボードで使用</h2>
 
-<p><img src="half-maze.jpg" alt="ハーフサイズ迷路" class="img-medium" /></p>
+<p>ピンソケットがついたので，あとはジャンパワイヤで配線できて，ブレッドボードで使えるようになりました．これは便利です～</p>
 
-<h2 id="作った迷路を試走">作った迷路を試走</h2>
+<p>裏側にピン名が書いてあるのもありがたいですね．</p>
 
-<p>超ギリギリです…</p>
-
-<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/GzYtAqqqN-g" frameborder="0" allowfullscreen=""></iframe></div>
+<p><img src="brb.jpg" alt="ブレッドボード" class="img-medium" /></p>
 
 <h2 id="まとめ">まとめ</h2>
 
-<p>とても安く簡単にハーフ迷路を作ることができました．しばらくはこれを使って開発したいと思います．</p>
-
-<p>この迷路の壁は置いてあるだけなので，マウスが壁にぶつかると倒れます．<br />
-それどころか，マウスが暴走するとせっかく並べた迷路がぐちゃぐちゃに…<br />
-何らかの固定方法を考えたいところです．</p>
-
-<p>しかし，絶対に壁にぶつかってはいけないという<strong>大きなプレッシャー</strong>がマウスを後押しするかも…！？</p>
+<p>今回の記事はここまでです．今後このモジュールを使っていろいろ作ってみたいと思います！お楽しみに！</p>
 
 
 	</div>
@@ -232,27 +319,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2017-02-05-first-esp32/">
-				<img src="/posts/2017-02-05-first-esp32/icon.jpg" title="ESP-WROOM-32のピッチ変換" alt="ESP-WROOM-32のピッチ変換">
-				<div class="post-list-char">
-					<span class="post-meta">2017年02月05日 Category: works</span>
-					<h2 class="post-title">
-						ESP-WROOM-32のピッチ変換
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2017-01-12-1st-half/">
-				<img src="/posts/2017-01-12-1st-half/icon.png" title="ハーフ迷路を走ってみました！" alt="ハーフ迷路を走ってみました！">
+			<a class="post-link" href="/posts/2017-01-13-half-maze/">
+				<img src="/posts/2017-01-13-half-maze/icon.jpg" title="ハーフサイズ迷路の自作" alt="ハーフサイズ迷路の自作">
 				<div class="post-list-char">
-					<span class="post-meta">2017年01月12日 Category: works</span>
+					<span class="post-meta">2017年01月13日 Category: works</span>
 					<h2 class="post-title">
-						ハーフ迷路を走ってみました！
+						ハーフサイズ迷路の自作
 					</h2>
 				</div>
 			</a>

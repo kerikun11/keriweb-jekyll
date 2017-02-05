@@ -64,7 +64,7 @@ icon: "icon.jpg"
 ![LED花火1](Fireworks (1).jpg)
 ![LED花火2](Fireworks (2).jpg)
 ![LED花火3](Fireworks (3).jpg)
-![LED花火4](Fireworks (3).png)
+![LED花火4](Fireworks (4).png)
 
 ## テープLEDコントローラ
 

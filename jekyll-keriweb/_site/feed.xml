@@ -5,9 +5,37 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Jan 2017 14:43:48 +0000</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2017 14:43:48 +0000</lastBuildDate>
+    <pubDate>Sun, 05 Feb 2017 12:52:30 +0000</pubDate>
+    <lastBuildDate>Sun, 05 Feb 2017 12:52:30 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ESP-WROOM-32のピッチ変換</title>
+        <description>&lt;h2 id=&quot;格安wifibleモジュールesp-wroom-32&quot;&gt;格安WiFi+BLEモジュール「ESP-WROOM-32」&lt;/h2&gt;
+
+&lt;p&gt;ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．&lt;/p&gt;
+
+&lt;p&gt;秋月電子で買うことができます→&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-11647/&quot;&gt;リンク&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;esp32.jpg&quot; alt=&quot;ESP-WROOM-32&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-02-05-first-esp32/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-02-05-first-esp32/</guid>
+        
+        <category>ESP32</category>
+        
+        <category>ESP-WROOM-32</category>
+        
+        <category>WiFi</category>
+        
+        <category>Bluetooth</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>ハーフサイズ迷路の自作</title>
@@ -1504,28 +1532,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         
         
         <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>Cygwinの使い方</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;Cygwinとは仮想UNIX環境をつくるソフトである。WindowsはUNIXベースの環境ではないので、コマンドライン操作がとてもやりづらい。Cygwinを使えば、C言語をはじめとしてrubyやpythonなど様々な開発をWindows上でできる。しかも、GUIでなくCUIなのでとても軽い。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-04-cygwin/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-04-cygwin/</guid>
-        
-        <category>ターミナル</category>
-        
-        <category>Cygwin</category>
-        
-        <category>インストール</category>
-        
-        
-        <category>explanations</category>
         
       </item>
     
