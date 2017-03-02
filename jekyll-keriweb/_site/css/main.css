@@ -367,7 +367,6 @@ pre {
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc; }
     .post-content table th {
-      width: 25%;
       padding: 4px;
       text-align: left;
       vertical-align: top;
@@ -761,6 +760,13 @@ body {
   width: 500px; }
   @media screen and (max-width: 800px) {
     .img-medium {
+      max-width: 100%; } }
+
+.img-full {
+  width: 100%;
+  margin: 0; }
+  @media screen and (max-width: 800px) {
+    .img-full {
       max-width: 100%; } }
 
 .highlight {

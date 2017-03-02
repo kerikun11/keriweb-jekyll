@@ -5,9 +5,39 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Feb 2017 13:51:31 +0000</pubDate>
-    <lastBuildDate>Sun, 05 Feb 2017 13:51:31 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Mar 2017 15:18:35 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Mar 2017 15:18:35 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ESP-WROOM-32のブレイクアウトボード</title>
+        <description>&lt;h2 id=&quot;esp-wroom-32とは&quot;&gt;ESP-WROOM-32とは&lt;/h2&gt;
+
+&lt;p&gt;ESP-WROOM-32とは，ESP32というハイスペックなマイコンが搭載されたWiFi&amp;amp;Bluetoothモジュールです．無線モジュールとしてだけでなく，メインマイコンとしても十分使用できます．&lt;/p&gt;
+
+&lt;p&gt;ESP-WROOM-32のすごいところはその価格です．ハイスペックなマイコンとWiFiとBluetoothがついているのに，2017年2月現在たったの700円なのです！！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-11647/&quot;&gt;秋月電子&lt;/a&gt;で購入できます．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;esp-wroom-32.jpg&quot; alt=&quot;ESP-WROOM-32&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-03-02-keriesp32/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-02-keriesp32/</guid>
+        
+        <category>ESP-WROOM-32</category>
+        
+        <category>ESP32</category>
+        
+        <category>FT232RL</category>
+        
+        <category>KiCad</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>ESP-WROOM-32のピッチ変換</title>
@@ -27,10 +57,6 @@
         <category>ESP32</category>
         
         <category>ESP-WROOM-32</category>
-        
-        <category>WiFi</category>
-        
-        <category>Bluetooth</category>
         
         
         <category>works</category>
@@ -1496,42 +1522,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         
         
         <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>ESP8266で赤外線学習リモコン</title>
-        <description>&lt;h2 id=&quot;esp8266とは&quot;&gt;ESP8266とは&lt;/h2&gt;
-
-&lt;h3 id=&quot;日本の技適を取得済みwifiモジュール&quot;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
-
-&lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
-
-&lt;h3 id=&quot;とにかく安い&quot;&gt;とにかく安い！&lt;/h3&gt;
-
-&lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
-&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-09607/&quot;&gt;&lt;img src=&quot;esp8266.jpg&quot; alt=&quot;ESP8266&quot; class=&quot;img-small&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2015-12-30-ir-station/</guid>
-        
-        <category>IR-Station</category>
-        
-        <category>ESP8266</category>
-        
-        <category>ESP-WROOM-02</category>
-        
-        <category>電子工作</category>
-        
-        <category>Arduino</category>
-        
-        <category>WiFi</category>
-        
-        
-        <category>works</category>
         
       </item>
     

@@ -51,6 +51,14 @@ body {
 		max-width:100%;
 	}
 }
+.img-full {
+	width:100%;
+	margin:0;
+
+	@include media-query($on-laptop) {
+		max-width:100%;
+	}
+}
 .highlight{
 	margin-left:calc(#{$spacing-unit} * 2);
 

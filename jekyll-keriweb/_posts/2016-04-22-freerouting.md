@@ -68,17 +68,18 @@ KiCadが流行ってきて，使う人が増えてきている．
 ### 必要なもの
 
   * 自動配線ツール：Freerouting.exe
-  * NetBeans 8.1
-  * Jave Development Kit 8 (JDK8)
+  * Java SE Runtime Environment 8 (JRE8)
 
 以下からダウンロードできる．  
 [Freerouting](https://github.com/freerouting/freerouting/raw/master/binaries/FreeRouting.exe)  
-[Netbeans with JDK8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  
+[JRE8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)  
 
 ### インストール
 
-  1. ダウンロードしたNetBeans with JDK8をインストールします．
-  1. Freerouting.exeはインストールする必要はありません．使うときに起動するだけです．
+  1. 自分のOSにあったJREをダウンロードする．
+  1. 案内に従ってJRE8をインストールする．
+
+Freerouting.exeはインストールする必要はありません．使うときに起動するだけです．
 
 ## 使い方
 
