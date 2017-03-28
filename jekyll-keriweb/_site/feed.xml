@@ -5,9 +5,42 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Mar 2017 09:49:22 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Mar 2017 09:49:22 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 06:02:23 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 06:02:23 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ESP32用UIライブラリ</title>
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ESP32も徐々に使い慣れてきました．今回の記事では，ちょっとした工作には欠かせないユーザーインターフェースのコードを紹介します．&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;スピーカーから音階を鳴らすブザークラス&lt;/li&gt;
+  &lt;li&gt;タクトスイッチなどのボタンを扱うボタンクラス&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今回のコードは，ESP32用に書かれています．ご注意ください．&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
+        
+        <category>UI</category>
+        
+        <category>ボタン</category>
+        
+        <category>ブザー</category>
+        
+        <category>Arduino</category>
+        
+        <category>ESP-WROOM-32</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>ESP-WROOM-32のブレイクアウトボード</title>
@@ -1493,32 +1526,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <category>USB</category>
         
         <category>マイコン</category>
-        
-        
-        <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>yamyでキーボードをカスタマイズ</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;Windowsのキーボードをカスタマイズして使いやすくする。&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-07-yamy/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-07-yamy/</guid>
-        
-        <category>Windows</category>
-        
-        <category>キーボード</category>
-        
-        <category>yamy</category>
-        
-        <category>Ctrl</category>
-        
-        <category>カスタマイズ</category>
         
         
         <category>explanations</category>
