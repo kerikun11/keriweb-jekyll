@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 11:26:15 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 11:26:15 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 15:18:57 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 15:18:57 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -50,7 +50,7 @@
 ※ロードに時間がかかるのでご注意ください．右下にフルスクリーンボタンがあるのでそれを押すと使いやすいです．&lt;/p&gt;
 
 &lt;div class=&quot;fusion&quot;&gt;
-&lt;iframe src=&quot;https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed&quot; width=&quot;640&quot; height=&quot;480&quot; allowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;360&quot; src=&quot;https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed&quot; allowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;fusion360のレンダリング&quot;&gt;Fusion360のレンダリング&lt;/h3&gt;
@@ -84,7 +84,7 @@
 機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．&lt;/p&gt;
 
 &lt;div class=&quot;video&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p1KPrC8PSVU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;90%&quot; height=&quot;360&quot; src=&quot;https://www.youtube.com/embed/p1KPrC8PSVU?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;

@@ -47,7 +47,7 @@ Fusion360はクラウド上にデータを保存できるので，HTMLに埋め�
 ※ロードに時間がかかるのでご注意ください．右下にフルスクリーンボタンがあるのでそれを押すと使いやすいです．
 
 <div class="fusion">
-<iframe src="https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe width="100%" height="360" src="https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 </div>
 
 
@@ -82,7 +82,7 @@ Fusion360にはレンダリングという機能があり，設計した立体�
 機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．
 
 <div class="video">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p1KPrC8PSVU" frameborder="0" allowfullscreen></iframe>
+<iframe width="90%" height="360" src="https://www.youtube.com/embed/p1KPrC8PSVU?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## まとめ
