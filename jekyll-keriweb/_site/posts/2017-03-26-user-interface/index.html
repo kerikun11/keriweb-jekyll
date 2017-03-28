@@ -78,6 +78,8 @@
           
         
           
+          <a class="page-link" href="/tags/">タグ</a>
+          
         
           
           <a class="page-link" href="/works/">作品</a>
@@ -215,11 +217,11 @@
 
 <p>圧電スピーカを鳴らすライブラリです．</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>void Buzzer::sound(note_t note, uint8_t octave, uint32_t time_ms);
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">Buzzer</span><span class="o">::</span><span class="n">sound</span><span class="p">(</span><span class="n">note_t</span> <span class="n">note</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">octave</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">time_ms</span><span class="p">);</span>
 </code></pre>
 </div>
 
-<p>この関数に音階，オクターブ，鳴らす時間を与えると自分で好きなメロディを作ることができます．その時はenum Musicに新しいエントリを追加してください．</p>
+<p>この関数に音階，オクターブ，鳴らす時間を与えると自分で好きなメロディを作ることができます．その時は<code class="highlighter-rouge">enum Music</code>に新しいエントリを追加して，下のswitch文の中に書いてください．</p>
 
 <h3 id="buzzerh">Buzzer.h</h3>
 
@@ -339,8 +341,11 @@
 
 <h2 id="ボタンクラス">ボタンクラス</h2>
 
-<p>ボタンが押されるとその押され方に従ってフラグを立てます．もちろん，チャタリングは回避されています．<br />
-フラグを確認したらクリアしましょう．</p>
+<p>ボタンが押されるとその押され方に従ってフラグを立てます．もちろん，チャタリングは回避されています．</p>
+
+<p>このボタンライブラリでは，ボタンのクリックと3段階の長押しを判定し，それらのフラグを立てます．ライブラリを使うときはそのフラグを監視することでボタンの押下を確認することができます．</p>
+
+<p>フラグを確認したらそのフラグはクリアしましょう．</p>
 
 <h3 id="buttonh">Button.h</h3>
 
@@ -441,13 +446,13 @@
 <span class="kt">void</span> <span class="n">loop</span><span class="p">(){</span>
 
   <span class="k">if</span><span class="p">(</span><span class="n">btn</span><span class="p">.</span><span class="n">pressed</span><span class="p">){</span>
-    <span class="n">btn</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">SELECT</span><span class="p">);</span>
+    <span class="n">btn</span><span class="p">.</span><span class="n">pressed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// フラグを確認したらクリアする
+</span>    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">SELECT</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="k">if</span><span class="p">(</span><span class="n">btn</span><span class="p">.</span><span class="n">long_pressed_1</span><span class="p">){</span>
-    <span class="n">btn</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">CANCEL</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">btn</span><span class="p">.</span><span class="n">long_pressed_1</span> <span class="o">||</span> <span class="n">btn</span><span class="p">.</span><span class="n">long_presssin_2</span><span class="p">){</span>
+    <span class="n">btn</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// まとめてクリア
+</span>    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">CANCEL</span><span class="p">);</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -481,6 +486,17 @@
 
 	<div class="post-guide">
 		<div class="post-guide-next">
+			
+			<p>次の記事</p>
+			<a class="post-link" href="/posts/2017-03-28-kerisev3-coming/">
+				<img src="/posts/2017-03-28-kerisev3-coming/icon.jpg" title="KERISE v3 ができました！" alt="KERISE v3 ができました！">
+				<div class="post-list-char">
+					<span class="post-meta">2017年03月28日 Category: works</span>
+					<h2 class="post-title">
+						KERISE v3 ができました！
+					</h2>
+				</div>
+			</a>
 			
 		</div>
 		<div class="post-guide-previous">

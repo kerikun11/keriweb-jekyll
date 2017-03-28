@@ -796,6 +796,12 @@ body {
     .video {
       margin-left: 15px; } }
 
+.fusion {
+  margin-left: calc(30px * 2); }
+  @media screen and (max-width: 800px) {
+    .fusion {
+      margin-left: 15px; } }
+
 .post-guide {
   border-top: 2px dotted #AAA;
   border-bottom: 2px dotted #AAA;

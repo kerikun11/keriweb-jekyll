@@ -77,9 +77,11 @@ class TaskBase {
 
 圧電スピーカを鳴らすライブラリです．
 
-	void Buzzer::sound(note_t note, uint8_t octave, uint32_t time_ms);
+~~~c
+void Buzzer::sound(note_t note, uint8_t octave, uint32_t time_ms);
+~~~
 
-この関数に音階，オクターブ，鳴らす時間を与えると自分で好きなメロディを作ることができます．その時はenum Musicに新しいエントリを追加してください．
+この関数に音階，オクターブ，鳴らす時間を与えると自分で好きなメロディを作ることができます．その時は`enum Music`に新しいエントリを追加して，下のswitch文の中に書いてください．
 
 ### Buzzer.h
 
@@ -200,8 +202,10 @@ void loop(){
 ## ボタンクラス
 
 ボタンが押されるとその押され方に従ってフラグを立てます．もちろん，チャタリングは回避されています．  
-フラグを確認したらクリアしましょう．
 
+このボタンライブラリでは，ボタンのクリックと3段階の長押しを判定し，それらのフラグを立てます．ライブラリを使うときはそのフラグを監視することでボタンの押下を確認することができます．
+
+フラグを確認したらそのフラグはクリアしましょう．
 
 ### Button.h
 
@@ -303,12 +307,12 @@ void setup(){
 void loop(){
 
   if(btn.pressed){
-    btn.flags = 0;
+    btn.pressed = 0; // フラグを確認したらクリアする
     bz.play(Buzzer::SELECT);
   }
 
-  if(btn.long_pressed_1){
-    btn.flags = 0;
+  if(btn.long_pressed_1 || btn.long_presssin_2){
+    btn.flags = 0; // まとめてクリア
     bz.play(Buzzer::CANCEL);
   }
 

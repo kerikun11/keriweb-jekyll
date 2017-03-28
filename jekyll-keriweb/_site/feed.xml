@@ -5,9 +5,106 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 06:02:23 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 06:02:23 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 10:55:53 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 10:55:53 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>KERISE v3 ができました！</title>
+        <description>&lt;h2 id=&quot;kerisev3&quot;&gt;KERISEv3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-front-side.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3台目のマウス&quot;&gt;3台目のマウス&lt;/h3&gt;
+
+&lt;p&gt;マイクロマウスを始めて8か月目になりました．けりです．&lt;br /&gt;
+作っては壊しを繰り返してはや3台目になります．なぜこんなに壊れるのでしょうか…&lt;/p&gt;
+
+&lt;h3 id=&quot;ハーフサイズ&quot;&gt;ハーフサイズ&lt;/h3&gt;
+
+&lt;p&gt;さて，今回のマウスは完全にハーフマウスです．とても小さいです．かわいいです．&lt;/p&gt;
+
+&lt;p&gt;ハーフサイズのいいところは部品1つ1つが小さくて安いことです．壊してしまっても金銭的にはあまり痛くありません．精神的には痛いですが…&lt;/p&gt;
+
+&lt;h3 id=&quot;初の吸引機構&quot;&gt;初の吸引機構&lt;/h3&gt;
+
+&lt;p&gt;マイクロマウスでは吸引をすると圧倒的速度を出すことができるようなので，初めて吸引に挑戦しました！自重は支えられませんが，ある程度の吸引力があります．&lt;/p&gt;
+
+&lt;h3 id=&quot;初の変則4輪&quot;&gt;初の変則4輪&lt;/h3&gt;
+
+&lt;p&gt;吸引の力をタイヤでしっかり支えるために変則4輪にも挑戦しました．制御が難しそうです…&lt;/p&gt;
+
+&lt;h3 id=&quot;新しいことだらけ&quot;&gt;新しいことだらけ&lt;/h3&gt;
+
+&lt;p&gt;今回のマウスは，今までの設計をすべて一から見直して完全に新しく作りました．さらに，マイコンもより小型の新しいものにしました．初めて触るマイコンです．新しいことだらけで大変ですが，頑張ります！&lt;/p&gt;
+
+&lt;h2 id=&quot;fusion360で設計&quot;&gt;Fusion360で設計&lt;/h2&gt;
+
+&lt;p&gt;Fusion360が流行っています．習得するにはまず使わないといけないので，今回のマウスはFusion360で設計してみました．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-fusion.png&quot; alt=&quot;KERISEv3-fusion&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;fusionの埋め込み表示&quot;&gt;Fusionの埋め込み表示&lt;/h3&gt;
+
+&lt;p&gt;Fusion360はクラウド上にデータを保存できるので，HTMLに埋め込んで表示できブログに貼り付けられます．&lt;br /&gt;
+※ロードに時間がかかるのでご注意ください．右下にフルスクリーンボタンがあるのでそれを押すと使いやすいです．&lt;/p&gt;
+
+&lt;div class=&quot;fusion&quot;&gt;
+&lt;iframe src=&quot;https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed&quot; width=&quot;640&quot; height=&quot;480&quot; allowfullscreen=&quot;true&quot; webkitallowfullscreen=&quot;true&quot; mozallowfullscreen=&quot;true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;fusion360のレンダリング&quot;&gt;Fusion360のレンダリング&lt;/h3&gt;
+
+&lt;p&gt;Fusion360にはレンダリングという機能があり，設計した立体の光の反射などを計算して実物みたいな画像を生成してくれます．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-rendering.png&quot; alt=&quot;KERISEv3-fusion&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;写真集&quot;&gt;写真集&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-front-side.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-no-battery.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-front.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-back.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-up.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-left.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-right.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;kerisev3-coin.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;重量&quot;&gt;重量&lt;/h2&gt;
+
+&lt;p&gt;16.48gでした．ハーフの中では重い方でしょうか…&lt;br /&gt;
+もう少し容量が小さくて軽いバッテリーを探しているので，見つかれば少し軽くなるかもです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-weight.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;走る様子&quot;&gt;走る様子&lt;/h2&gt;
+
+&lt;p&gt;前の機体のパラメータを少しいじって走らせてみました．壁は見ていません．&lt;br /&gt;
+機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p1KPrC8PSVU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;KERISEv2が壊れてしまって，動くマウスがない状態が続きとても悲しかったので，動くマウスができて本当によかったです．ハーフマウスについていろいろ教えてくれたTwitterの方々，ありがとうございました．&lt;br /&gt;
+まだまだやることは山積みですが．まずはPIDパラメータの選定からやっていこうと思います．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;kerisev3-hand.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-03-28-kerisev3-coming/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-28-kerisev3-coming/</guid>
+        
+        <category>KERISEv3</category>
+        
+        <category>マイクロマウス</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>ESP32用UIライブラリ</title>
@@ -1493,39 +1590,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <category>USB</category>
         
         <category>FT232</category>
-        
-        
-        <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>PIC18F27J53のすすめ</title>
-        <description>&lt;h2 id=&quot;pic18f27j53のいいところ&quot;&gt;PIC18F27J53のいいところ&lt;/h2&gt;
-
-&lt;h3 id=&quot;秋月で売っていること&quot;&gt;秋月で売っていること&lt;/h3&gt;
-
-&lt;p&gt;電子工作をするうえでこれはとても大事なこと。「秋月で売っているなら使ってみるか」ってなりますよね。&lt;/p&gt;
-
-&lt;p&gt;もちろん、秋月なので値段が安い！！&lt;br /&gt;
-&lt;strong&gt;1個270円&lt;/strong&gt;です(2016年1月現在)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;view.jpg&quot; alt=&quot;PIC18F27J53&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 08 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-08-pic18f27j53/</guid>
-        
-        <category>PIC</category>
-        
-        <category>PIC18F27J53</category>
-        
-        <category>電子工作</category>
-        
-        <category>USB</category>
-        
-        <category>マイコン</category>
         
         
         <category>explanations</category>
