@@ -81,9 +81,12 @@ Fusion360にはレンダリングという機能があり，設計した立体�
 前の機体のパラメータを少しいじって走らせてみました．壁は見ていません．  
 機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．
 
+<div class="video"><video src="kerisev3.mp4" width="100%" controls loop preload="metadata"></video></div>
+<!--
 <div class="video">
 <iframe width="90%" height="360" src="https://www.youtube.com/embed/p1KPrC8PSVU?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
+-->
 
 ## まとめ
 

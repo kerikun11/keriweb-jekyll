@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 15:18:57 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 15:18:57 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 15:33:03 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 15:33:03 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -83,9 +83,12 @@
 &lt;p&gt;前の機体のパラメータを少しいじって走らせてみました．壁は見ていません．&lt;br /&gt;
 機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．&lt;/p&gt;
 
+&lt;div class=&quot;video&quot;&gt;&lt;video src=&quot;kerisev3.mp4&quot; width=&quot;100%&quot; controls=&quot;&quot; loop=&quot;&quot; preload=&quot;metadata&quot;&gt;&lt;/video&gt;&lt;/div&gt;
+&lt;!--
 &lt;div class=&quot;video&quot;&gt;
-&lt;iframe width=&quot;90%&quot; height=&quot;360&quot; src=&quot;https://www.youtube.com/embed/p1KPrC8PSVU?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;90%&quot; height=&quot;360&quot; src=&quot;https://www.youtube.com/embed/p1KPrC8PSVU?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+--&gt;
 
 &lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
 
