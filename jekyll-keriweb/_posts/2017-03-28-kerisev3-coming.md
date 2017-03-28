@@ -74,6 +74,7 @@ Fusion360にはレンダリングという機能があり，設計した立体�
 もう少し容量が小さくて軽いバッテリーを探しているので，見つかれば少し軽くなるかもです．
 
 ![KERISEv3](kerisev3-weight.jpg){: .img-small}
+![KERISEv3](battery.jpg){: .img-small}
 
 ## 走る様子
 

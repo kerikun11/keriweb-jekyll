@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 10:55:53 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 10:55:53 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 11:26:15 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 11:26:15 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -75,7 +75,8 @@
 &lt;p&gt;16.48gでした．ハーフの中では重い方でしょうか…&lt;br /&gt;
 もう少し容量が小さくて軽いバッテリーを探しているので，見つかれば少し軽くなるかもです．&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;kerisev3-weight.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;kerisev3-weight.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;
+&lt;img src=&quot;battery.jpg&quot; alt=&quot;KERISEv3&quot; class=&quot;img-small&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;走る様子&quot;&gt;走る様子&lt;/h2&gt;
 
