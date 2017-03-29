@@ -5,9 +5,38 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 15:33:03 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 15:33:03 +0000</lastBuildDate>
+    <pubDate>Wed, 29 Mar 2017 13:02:47 +0000</pubDate>
+    <lastBuildDate>Wed, 29 Mar 2017 13:02:47 +0000</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>ESP-WROOM-32で秋月の売場表示</title>
+        <description>&lt;h2 id=&quot;まずはじめに&quot;&gt;まずはじめに&lt;/h2&gt;
+
+&lt;h3 id=&quot;秋月の通販サイトが進化&quot;&gt;秋月の通販サイトが進化&lt;/h3&gt;
+
+&lt;p&gt;少し前から，&lt;a href=&quot;http://akizukidenshi.com/&quot;&gt;秋月の通販サイト&lt;/a&gt;で店舗の在庫数と売場の場所が見れるようになりました．&lt;br /&gt;
+商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://kerikeri.top/posts/2017-03-29-aki-shelf/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-29-aki-shelf/</guid>
+        
+        <category>秋月</category>
+        
+        <category>ESP-WROOM-32</category>
+        
+        <category>ESP32</category>
+        
+        <category>電子工作</category>
+        
+        <category>WiFi</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>KERISE v3 ができました！</title>
@@ -1562,38 +1591,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         <category>Microchip Library for Application</category>
         
         <category>MLA</category>
-        
-        
-        <category>explanations</category>
-        
-      </item>
-    
-      <item>
-        <title>PICでUSB通信</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBの使い方について書きたいと思います。&lt;/p&gt;
-
-&lt;p&gt;今回紹介する方法では、USBをUARTの代わりに使えるようにするものです。PICをPCにつなぐとCOMポートが現れます。&lt;/p&gt;
-
-&lt;p&gt;これならUSBシリアル変換モジュールを使う必要はなくります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;FT232.jpg&quot; alt=&quot;AE-FT232&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-10-pic-usb/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-10-pic-usb/</guid>
-        
-        <category>PIC</category>
-        
-        <category>PIC18F27J53</category>
-        
-        <category>電子工作</category>
-        
-        <category>USB</category>
-        
-        <category>FT232</category>
         
         
         <category>explanations</category>

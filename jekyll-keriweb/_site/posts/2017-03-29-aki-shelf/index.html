@@ -8,15 +8,15 @@
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Ryokeri14" />
-	<meta name="twitter:title" content="KERISE v3 ができました！ - KERI's Lab" />
-	<meta name="twitter:description" content="KERISEv33台目のマウスマイクロマウスを始めて8か月目になりました．けりです．作っては壊しを繰り返してはや3台目になります．なぜこんなに壊れるのでしょうか…ハーフサイズさて，今回のマウスは完全にハーフマウスです．とても小さいです．かわいいです．ハーフサイズのいいところは部品1つ1つが小さくて安いことです．壊..." />
-	<meta name="twitter:image" content="http://kerikeri.top/posts/2017-03-28-kerisev3-coming/icon.jpg" />
+	<meta name="twitter:title" content="ESP-WROOM-32で秋月の売場表示 - KERI's Lab" />
+	<meta name="twitter:description" content="まずはじめに秋月の通販サイトが進化少し前から，秋月の通販サイトで店舗の在庫数と売場の場所が見れるようになりました．商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．" />
+	<meta name="twitter:image" content="http://kerikeri.top/posts/2017-03-29-aki-shelf/icon.jpg" />
 
-	<title>KERISE v3 ができました！ - KERI's Lab</title>
-	<meta name="description" content="KERISEv33台目のマウスマイクロマウスを始めて8か月目になりました．けりです．作っては壊しを繰り返してはや3台目になります．なぜこんなに壊れるのでしょうか…ハーフサイズさて，今回のマウスは完全にハーフマウスです．とても小さいです．かわいいです．ハーフサイズのいいところは部品1つ1つが小さくて安いことです．壊...">
+	<title>ESP-WROOM-32で秋月の売場表示 - KERI's Lab</title>
+	<meta name="description" content="まずはじめに秋月の通販サイトが進化少し前から，秋月の通販サイトで店舗の在庫数と売場の場所が見れるようになりました．商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2017-03-28-kerisev3-coming/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2017-03-29-aki-shelf/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -98,20 +98,29 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2017-03-28-kerisev3-coming/icon.jpg" title="KERISE v3 ができました！" alt="KERISE v3 ができました！">
+		<img src="/posts/2017-03-29-aki-shelf/icon.jpg" title="ESP-WROOM-32で秋月の売場表示" alt="ESP-WROOM-32で秋月の売場表示">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">KERISE v3 ができました！</h1>
+			<h1 class="post-title" itemprop="name headline">ESP-WROOM-32で秋月の売場表示</h1>
 			<p class="post-meta">
-				<time datetime="2017-03-28T00:00:00+00:00" itemprop="datePublished">2017年03月28日</time>
+				<time datetime="2017-03-29T00:00:00+00:00" itemprop="datePublished">2017年03月29日</time>
 				<span>
 					Category: <a href="/works/">works</a></span>
 				<br />
 				Tag: 
 				
-				<a href="/tags/#tag-index-KERISEv3">KERISEv3</a>
+				<a href="/tags/#tag-index-秋月">秋月</a>
 				, 
 				
-				<a href="/tags/#tag-index-マイクロマウス">マイクロマウス</a>
+				<a href="/tags/#tag-index-ESP-WROOM-32">ESP-WROOM-32</a>
+				, 
+				
+				<a href="/tags/#tag-index-ESP32">ESP32</a>
+				, 
+				
+				<a href="/tags/#tag-index-電子工作">電子工作</a>
+				, 
+				
+				<a href="/tags/#tag-index-WiFi">WiFi</a>
 				
 				
 			</p>
@@ -139,91 +148,99 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="kerisev3">KERISEv3</h2>
+		<h2 id="まずはじめに">まずはじめに</h2>
 
-<p><img src="kerisev3-front-side.jpg" alt="KERISEv3" class="img-small" /></p>
+<h3 id="秋月の通販サイトが進化">秋月の通販サイトが進化</h3>
 
-<h3 id="3台目のマウス">3台目のマウス</h3>
+<p>少し前から，<a href="http://akizukidenshi.com/">秋月の通販サイト</a>で店舗の在庫数と売場の場所が見れるようになりました．<br />
+商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．</p>
 
-<p>マイクロマウスを始めて8か月目になりました．けりです．<br />
-作っては壊しを繰り返してはや3台目になります．なぜこんなに壊れるのでしょうか…</p>
+<!--more-->
 
-<h3 id="ハーフサイズ">ハーフサイズ</h3>
+<p>商品ページ<br />
+<img src="aki-1.png" alt="商品ページ" class="img-medium" /></p>
 
-<p>さて，今回のマウスは完全にハーフマウスです．とても小さいです．かわいいです．</p>
+<p>ポップアップ<br />
+<img src="aki-2.png" alt="ポップアップ" /></p>
 
-<p>ハーフサイズのいいところは部品1つ1つが小さくて安いことです．壊してしまっても金銭的にはあまり痛くありません．精神的には痛いですが…</p>
+<h3 id="ハイスペックなwifiモジュールesp-wroom-32">ハイスペックなWiFiモジュールESP-WROOM-32</h3>
 
-<h3 id="初の吸引機構">初の吸引機構</h3>
+<p><img src="esp-wroom-32.jpg" alt="ESP-WROOM-32" class="img-small" /></p>
 
-<p>マイクロマウスでは吸引をすると圧倒的速度を出すことができるようなので，初めて吸引に挑戦しました！自重は支えられませんが，ある程度の吸引力があります．</p>
+<p>先日，<a href="http://akizukidenshi.com/catalog/g/gM-11647/">ESP-WROOM-32</a>というWiFiモジュールが発売されました．以前からあるESP-WROOM-02の進化版で，同じように使うことができます．しかし，スペックが圧倒的に高くなりました．</p>
 
-<h3 id="初の変則4輪">初の変則4輪</h3>
+<p>32bitマイコンで，240MHz動作，なんとデュアルコアです．電子工作の世界にもマルチコアがやってきました！！</p>
 
-<p>吸引の力をタイヤでしっかり支えるために変則4輪にも挑戦しました．制御が難しそうです…</p>
+<h2 id="作ったもの">作ったもの</h2>
 
-<h3 id="新しいことだらけ">新しいことだらけ</h3>
+<h3 id="動画通販コードから在庫数と棚番を表示">【動画】通販コードから在庫数と棚番を表示</h3>
 
-<p>今回のマウスは，今までの設計をすべて一から見直して完全に新しく作りました．さらに，マイコンもより小型の新しいものにしました．初めて触るマイコンです．新しいことだらけで大変ですが，頑張ります！</p>
+<p>今回はそのESP-WROOM-32を使って，便利なグッズを作りました．</p>
 
-<h2 id="fusion360で設計">Fusion360で設計</h2>
+<p>秋月の通販コードを入力すると，秋葉原店での在庫数と，売場番号が表示されます．</p>
 
-<p>Fusion360が流行っています．習得するにはまず使わないといけないので，今回のマウスはFusion360で設計してみました．</p>
+<div class="video"><video src="aki-shelf.mp4" width="100%" controls="" loop="" preload="metadata"></video></div>
 
-<p><img src="kerisev3-fusion.png" alt="KERISEv3-fusion" class="img-small" /></p>
+<h3 id="keriesp32を使用">KERIESP32を使用</h3>
 
-<h3 id="fusionの埋め込み表示">Fusionの埋め込み表示</h3>
+<p>以前紹介した<a href="/posts/2017-03-02-keriesp32/">KERIESP32基板</a>を使用して作りました．製作時間は3時間くらいです．</p>
 
-<p>Fusion360はクラウド上にデータを保存できるので，HTMLに埋め込んで表示できブログに貼り付けられます．<br />
-※ロードに時間がかかるのでご注意ください．右下にフルスクリーンボタンがあるのでそれを押すと使いやすいです．</p>
+<p><img src="aki-shelf-naname.jpg" alt="Aki-Shelf" class="img-small" />
+<img src="aki-shelf-side.jpg" alt="Aki-Shelf" class="img-small" />
+<img src="aki-shelf-disassembly.jpg" alt="Aki-Shelf" class="img-small" />
+<img src="aki-shelf-tenkey.jpg" alt="Aki-Shelf" class="img-small" /></p>
 
-<div class="fusion">
-<iframe width="100%" height="360" src="https://myhub.autodesk360.com/ue2805ff3/shares/public/SH7f1edQT22b515c761e3ce317261c9e9ee5?mode=embed" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+<h3 id="在庫と売場情報の取得方法">在庫と売場情報の取得方法</h3>
+
+<p>WiFi経由で秋月のサーバーに接続して，HTMLを入手し，それをパースして在庫数と売場を得ています．</p>
+
+<p>普通のHTTPなので，とても簡単です．TCP/IPでサーバーに接続して，</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>GET /catalog/goods/warehouseinfo.aspx?goods=M-11647 HTTP/1.1\r\n
+Host: akizukidenshi.com\r\n
+Connection: close\r\n
+\r\n
+</code></pre>
 </div>
 
-<h3 id="fusion360のレンダリング">Fusion360のレンダリング</h3>
+<p>と送信すると，HTMLが返って来ます．</p>
 
-<p>Fusion360にはレンダリングという機能があり，設計した立体の光の反射などを計算して実物みたいな画像を生成してくれます．</p>
+<h2 id="苦労したこと">苦労したこと</h2>
 
-<p><img src="kerisev3-rendering.png" alt="KERISEv3-fusion" class="img-medium" /></p>
+<h3 id="文字コードがshift_jis">文字コードがShift_JIS</h3>
 
-<h2 id="写真集">写真集</h2>
+<p>今時どこもUTF-8だろうと思いこんでHTMLをパースしていたところ，日本語の検索が全く引っかかりませんでした．</p>
 
-<p><img src="kerisev3-front-side.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-no-battery.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-front.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-back.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-up.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-left.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-right.jpg" alt="KERISEv3" class="img-small" />
-<img src="kerisev3-coin.jpg" alt="KERISEv3" class="img-small" /></p>
+<p>しばらく悩んでいて，文字をバイナリで表示してUTF-8ではないことに気づき，HTMLのヘッダーを見たら，charasetがまさかのShift_JISになっていました…</p>
 
-<h2 id="重量">重量</h2>
+<p>windowsじゃないんだから…もう…</p>
 
-<p>16.48gでした．ハーフの中では重い方でしょうか…<br />
-もう少し容量が小さくて軽いバッテリーを探しているので，見つかれば少し軽くなるかもです．</p>
+<h3 id="表記がバラバラ">表記がバラバラ</h3>
 
-<p><img src="kerisev3-weight.jpg" alt="KERISEv3" class="img-small" />
-<img src="battery.jpg" alt="KERISEv3" class="img-small" /></p>
+<p>今回は，キャラクタ液晶で作ったので日本語が表示できません．なので，売場を英数字で表す必要があります．</p>
 
-<h2 id="走る様子">走る様子</h2>
+<p>それなのに，「1F 01 売場」や「1F 売場 01」，「1F 13 売場キャビネット上段」など，表記がバラバラで，そこから棚番や段数だけを抽出するのはなかなか大変でした．データーベースに直接アクセスしたいですね…</p>
 
-<p>前の機体のパラメータを少しいじって走らせてみました．壁は見ていません．<br />
-機体は変わっても制御方法はあまり変わらないので，以前のコードを使いまわせそうです．</p>
+<h3 id="バックヤードにしかない商品もある">バックヤードにしかない商品もある</h3>
 
-<div class="video"><video src="kerisev3.mp4" width="100%" controls="" loop="" preload="metadata"></video></div>
-<!--
-<div class="video">
-<iframe width="90%" height="360" src="https://www.youtube.com/embed/p1KPrC8PSVU?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
--->
+<p>バックヤードにしかない商品は「お問い合わせください」という売場名になっていました．このままだと日本語で表示できないので，「backyard」としました．</p>
+
+<h3 id="存在しない通販コードを検索すると空白のhtmlが返ってくる">存在しない通販コードを検索すると，空白のHTMLが返ってくる</h3>
+
+<p>謎仕様です．「Not Found」としました．</p>
 
 <h2 id="まとめ">まとめ</h2>
 
-<p>KERISEv2が壊れてしまって，動くマウスがない状態が続きとても悲しかったので，動くマウスができて本当によかったです．ハーフマウスについていろいろ教えてくれたTwitterの方々，ありがとうございました．<br />
-まだまだやることは山積みですが．まずはPIDパラメータの選定からやっていこうと思います．</p>
+<p>ESP-WROOM-32で何か作れないか！と考えていたところ，これを思いつきました．</p>
 
-<p><img src="kerisev3-hand.jpg" alt="KERISEv3" class="img-medium" /></p>
+<p>これがあれば，通販コードをメモしておくだけでスムーズに買い物できますね！</p>
+
+<p>HTMLのパースがかなり雑なので，秋月のサーバーの仕様が変わるとすぐに使えなくなりそうですが，おもしろいものができました．</p>
+
+<h2 id="新歓展示に出します">新歓展示に出します</h2>
+
+<p>こちらの作品は，東工大ロボット技術研究会の2017年度新歓展示に出す予定です．使ってみたい方は是非お越しください！<br />
+詳しくは<a href="https://www.rogiken.org/shinkan/2016/">東京工業大学ロボット技術研究会新歓ページ</a>へ．</p>
 
 	</div>
 
@@ -248,27 +265,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
-			<a class="post-link" href="/posts/2017-03-29-aki-shelf/">
-				<img src="/posts/2017-03-29-aki-shelf/icon.jpg" title="ESP-WROOM-32で秋月の売場表示" alt="ESP-WROOM-32で秋月の売場表示">
-				<div class="post-list-char">
-					<span class="post-meta">2017年03月29日 Category: works</span>
-					<h2 class="post-title">
-						ESP-WROOM-32で秋月の売場表示
-					</h2>
-				</div>
-			</a>
-			
 		</div>
 		<div class="post-guide-previous">
 			
 			<p>前の記事</p>
-			<a class="post-link" href="/posts/2017-03-26-user-interface/">
-				<img src="/home/icon.png" title="ESP32用UIライブラリ" alt="ESP32用UIライブラリ">
+			<a class="post-link" href="/posts/2017-03-28-kerisev3-coming/">
+				<img src="/posts/2017-03-28-kerisev3-coming/icon.jpg" title="KERISE v3 ができました！" alt="KERISE v3 ができました！">
 				<div class="post-list-char">
-					<span class="post-meta">2017年03月26日 Category: memos</span>
+					<span class="post-meta">2017年03月28日 Category: works</span>
 					<h2 class="post-title">
-						ESP32用UIライブラリ
+						KERISE v3 ができました！
 					</h2>
 				</div>
 			</a>
