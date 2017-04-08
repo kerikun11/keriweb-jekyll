@@ -5,9 +5,37 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Apr 2017 16:22:40 +0900</pubDate>
-    <lastBuildDate>Fri, 07 Apr 2017 16:22:40 +0900</lastBuildDate>
+    <pubDate>Sat, 08 Apr 2017 22:25:40 +0900</pubDate>
+    <lastBuildDate>Sat, 08 Apr 2017 22:25:40 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>ESP32からメールを送る</title>
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ESP32にはHTTPSライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
+
+&lt;p&gt;Arduino上で動くコードです．esp32-arduino-coreは最新のものを使用してください．古いものだと，SSLまわりでエラーが発生します．&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 08 Apr 2017 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-04-08-esp32-mail/</guid>
+        
+        <category>ESP32</category>
+        
+        <category>ESP-WROOM-32</category>
+        
+        <category>E-mail</category>
+        
+        <category>SMTP</category>
+        
+        <category>WiFi</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>ESP-WROOM-32で秋月の売場表示</title>
@@ -1550,50 +1578,6 @@ You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
         
         
         <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>PICでブートローダ</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&quot;pic18f27j53を使おう&quot;&gt;PIC18F27J53を使おう&lt;/h3&gt;
-
-&lt;p&gt;以前 &lt;a href=&quot;/posts/2016-01-08-pic18f27j53/&quot;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
-
-&lt;h3 id=&quot;ブートローダとは&quot;&gt;ブートローダとは&lt;/h3&gt;
-
-&lt;p&gt;ブートローダとは自分自身にプログラムを書きこむプログラムです。これを使うとPICkitなどのライタを使わなくてもプログラムの書き込みをすることができるようになります。&lt;/p&gt;
-
-&lt;p&gt;ただし、初回に一度だけブートローダ用のプログラムをPICkitなどで書きこむ必要があります。&lt;/p&gt;
-
-&lt;h3 id=&quot;ユーザープログラム&quot;&gt;ユーザープログラム&lt;/h3&gt;
-
-&lt;p&gt;ユーザープログラムとは、ブートローダーにより書き込むプログラムです。あなたが作った、実際に動かすプログラムということです。&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 13 Jan 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
-        
-        <category>PIC</category>
-        
-        <category>PIC18F27J53</category>
-        
-        <category>USB</category>
-        
-        <category>ブートローダ</category>
-        
-        <category>電子工作</category>
-        
-        <category>C言語</category>
-        
-        <category>Microchip Library for Application</category>
-        
-        <category>MLA</category>
-        
-        
-        <category>explanations</category>
         
       </item>
     
