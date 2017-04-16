@@ -9,11 +9,11 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Ryokeri14" />
 	<meta name="twitter:title" content="IR Station - KERI's Lab" />
-	<meta name="twitter:description" content="IR StationInfrared Remote Controller with ESP8266 WiFi-moduleYou can control your home appliances with your smartphone or laptop." />
+	<meta name="twitter:description" content="IR-StationInfrared Remote Controller with ESP8266 WiFi-moduleYou can control your home appliances with your smartphone or laptop.The latest information is he..." />
 	<meta name="twitter:image" content="http://kerikeri.top/posts/2016-03-11-ir-station-reference/icon.jpg" />
 
 	<title>IR Station - KERI's Lab</title>
-	<meta name="description" content="IR StationInfrared Remote Controller with ESP8266 WiFi-moduleYou can control your home appliances with your smartphone or laptop.">
+	<meta name="description" content="IR-StationInfrared Remote Controller with ESP8266 WiFi-moduleYou can control your home appliances with your smartphone or laptop.The latest information is he...">
 
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://kerikeri.top/posts/2016-03-11-ir-station-reference/">
@@ -157,12 +157,12 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="ir-station">IR Station</h2>
+		<h2 id="ir-station">IR-Station</h2>
 
 <p>Infrared Remote Controller with ESP8266 WiFi-module<br />
 You can control your home appliances with your smartphone or laptop.</p>
 
-<!--more-->
+<p>The latest information is <a href="https://github.com/kerikun11/IR-station">here</a></p>
 
 <h2 id="main-parts">Main parts</h2>
 
@@ -173,6 +173,16 @@ You can control your home appliances with your smartphone or laptop.</p>
   <li>Indicator LED</li>
 </ul>
 
+<h2 id="looks">Looks</h2>
+
+<h3 id="the-devices-appearance">The Device’s Appearance</h3>
+
+<p><img src="images/body.jpg" alt="body" /></p>
+
+<h3 id="display-sample">Display Sample</h3>
+
+<p><img src="images/display.png" alt="display" /></p>
+
 <h2 id="how-to-use">How to Use</h2>
 
 <h3 id="setup-the-device">Setup the Device</h3>
@@ -182,35 +192,32 @@ You can control your home appliances with your smartphone or laptop.</p>
   <li>Connect your cellphone or laptop to Wi-Fi SSID “IR-Station”.</li>
   <li>Access http://192.168.4.1 in a browser</li>
   <li>Enter Wi-Fi SSID of your home and its password</li>
-  <li>Enter a device name you like. Because it will be a part of URL, you cannot use space or symbol character.</li>
-  <li>Click OK button.</li>
-  <li>If connection succeeded, Wi-Fi “IR-Station” will automatically disappear.</li>
+  <li>Enter a device name you like. We call it the hostname. Because it will be a part of URL, you cannot use space character.</li>
+  <li>If connection succeeded, IR-Station’s local IP address is displayed. Please make a note of it.</li>
   <li>Connect your cellphone or laptop to your home’s Wi-Fi.</li>
-  <li>Access http://DEVICE_NAME.local in a browser. (the smart phones or laptops with Bonjour)</li>
-  <li>Access http:/192.168.xx.xx (one example) in a browser. Please see the device log data to get the device IP address. (the smart phones or laptops with no Bonjour)</li>
+  <li>Access http:/xxx.xxx.xx.xx (IR-Station’s local IP address) in a browser. (for example http://192.168.11.3 )</li>
   <li>If something appears, setup is complete.</li>
 </ol>
 
 <h3 id="store-signals">Store Signals</h3>
 
 <ol>
-  <li>Access http://DEVICE_NAME.local in a browser. DEVICE_NAME is the device name you entered in the previous form.</li>
-  <li>Look at the form of the bottom of the screen.</li>
-  <li>Click “Recode a Signal” button.</li>
-  <li>Select a channel you want to assign a signal.</li>
-  <li>Enter a name of the signal. Don’t use Japanese character.</li>
-  <li>Click Recode button. An LED indicator will light.</li>
-  <li>Press the button on the remote controller toward the device to store the signal.</li>
+  <li>Access http:/192.168.xx.xx (one example) in a browser.   1. Look at the form of the bottom of the screen.</li>
+  <li>Select “record a new Signal” action.</li>
+  <li>Select a channel you want to assign a new signal.</li>
+  <li>Enter a name of the signal.</li>
+  <li>When you click the “Submit” button, the green LED of your IR-Station will light up.</li>
+  <li>Press a button on your remote controller toward your IR-Station to store a new signal.</li>
 </ol>
 
 <h3 id="remote-control">Remote Control</h3>
 
 <ol>
-  <li>Access http://DEVICE_NAME.local in a browser.</li>
+  <li>Access your IR-Station in a browser.</li>
   <li>Click a button which assigned a signal you want to send.</li>
 </ol>
 
-<h3 id="led-indicator">LED Indicator</h3>
+<h3 id="meanings-of-led-indicator">Meanings of LED Indicator</h3>
 
 <table>
   <thead>
@@ -226,7 +233,7 @@ You can control your home appliances with your smartphone or laptop.</p>
     </tr>
     <tr>
       <td style="text-align: left">Green</td>
-      <td style="text-align: left">Booting, Sending Signal or Receiving Signal</td>
+      <td style="text-align: left">Processing</td>
     </tr>
     <tr>
       <td style="text-align: left">Blue</td>
@@ -235,10 +242,6 @@ You can control your home appliances with your smartphone or laptop.</p>
   </tbody>
 </table>
 
-<h3 id="display-sample">Display Sample</h3>
-
-<p><img src="display.png" alt="display" /></p>
-
 <h2 id="how-to-make">How to Make</h2>
 
 <h3 id="required-library">Required Library</h3>
@@ -246,8 +249,8 @@ You can control your home appliances with your smartphone or laptop.</p>
 <p>Please Add the Libraries below to your Arduino IDE</p>
 
 <ul>
-  <li>Arduino TimeLib (https://github.com/PaulStoffregen/Time/blob/master/TimeLib.h)</li>
   <li>Arduino Json (https://github.com/bblanchon/ArduinoJson)</li>
+  <li>Arduino Time Library (https://github.com/PaulStoffregen/Time)</li>
 </ul>
 
 <h3 id="steps">Steps</h3>
@@ -315,6 +318,7 @@ You can control your home appliances with your smartphone or laptop.</p>
       <th style="text-align: left">Components</th>
       <th style="text-align: left">Details</th>
       <th style="text-align: left">Quantity</th>
+      <th style="text-align: left">Remarks</th>
     </tr>
   </thead>
   <tbody>
@@ -322,78 +326,102 @@ You can control your home appliances with your smartphone or laptop.</p>
       <td style="text-align: left">ESP8266 WiFi Module</td>
       <td style="text-align: left">ESP-WROOM-02</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td style="text-align: left">IR receiver</td>
-      <td style="text-align: left">PL-IRM0101-3 or equivalents</td>
+      <td style="text-align: left">OSRB38C9AA</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left">Power: 3.3V</td>
     </tr>
     <tr>
       <td style="text-align: left">IR LED</td>
-      <td style="text-align: left">anything good</td>
-      <td style="text-align: left">2 or 4</td>
+      <td style="text-align: left">OSI5FU3A11C</td>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">anything maybe OK</td>
     </tr>
     <tr>
-      <td style="text-align: left">Nch FET</td>
-      <td style="text-align: left">BS170 or equivalents</td>
+      <td style="text-align: left">Voltage Regulator</td>
+      <td style="text-align: left">NJU7223-33</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left">output: 3.3V 500mA</td>
     </tr>
     <tr>
-      <td style="text-align: left">IR LED Current Regulation Resistor</td>
+      <td style="text-align: left">Nch MOS-FET</td>
+      <td style="text-align: left">IRLML6344</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Resistor for IR LED</td>
       <td style="text-align: left">4.7 ohms, 1W</td>
-      <td style="text-align: left">1~2</td>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td style="text-align: left">Pull-up/down Resistor</td>
       <td style="text-align: left">10k ohms</td>
       <td style="text-align: left">5</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td style="text-align: left">Indicator LED</td>
-      <td style="text-align: left">RGB full-color LED</td>
+      <td style="text-align: left">OSTBABS4C2B</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: left">Voltage Regulator</td>
-      <td style="text-align: left">output: 3.3V 150mA or more</td>
+      <td style="text-align: left">Resistor for LED</td>
+      <td style="text-align: left">100~220 ohms</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Resistor for IR receiver</td>
+      <td style="text-align: left">220 ohms</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Capacitor for IR receiver</td>
+      <td style="text-align: left">4.7uF</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Power Stabilization Capacitor</td>
+      <td style="text-align: left">100uF</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
       <td style="text-align: left">Bypass Capacitor</td>
       <td style="text-align: left">0.1uF</td>
-      <td style="text-align: left">2~3</td>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"> </td>
     </tr>
     <tr>
-      <td style="text-align: left">Power Stabilization Capacitor</td>
-      <td style="text-align: left">470uF~1000uF</td>
+      <td style="text-align: left">User Button</td>
+      <td style="text-align: left">SKRPACE010</td>
       <td style="text-align: left">1</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Poly Switch</td>
+      <td style="text-align: left">MICROSMD035F-02</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">up to 350mA</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">USB Conncector</td>
+      <td style="text-align: left">USB-Micro-B</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">Power Only</td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="optional-device-components">Optional Device Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Components</th>
-      <th style="text-align: left">Details</th>
-      <th style="text-align: left">Quantity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Reset Switch</td>
-      <td style="text-align: left">tact switch</td>
-      <td style="text-align: left">1</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Program Upload Switch</td>
-      <td style="text-align: left">tact switch</td>
-      <td style="text-align: left">1</td>
-    </tr>
-  </tbody>
-</table>
+<p><img src="images/components.jpg" alt="Components" /></p>
 
 <h4 id="requires">Requires</h4>
 
@@ -411,22 +439,218 @@ You can control your home appliances with your smartphone or laptop.</p>
       <td style="text-align: left">such as FT232</td>
       <td style="text-align: left">1</td>
     </tr>
-    <tr>
-      <td style="text-align: left">Power Supplyer</td>
-      <td style="text-align: left">over 3.3V</td>
-      <td style="text-align: left">1</td>
-    </tr>
   </tbody>
 </table>
 
 <h3 id="circuit-diagram">Circuit Diagram</h3>
 
-<p><img src="sketch.png" alt="sketch" /></p>
+<p><img src="images/sketch.png" alt="sketch" /></p>
+
+<h3 id="breadboard-sample">Breadboard Sample</h3>
+
+<p><img src="images/sample.jpg" alt="sample" /></p>
+
+<h3 id="3d-shape">3D shape</h3>
+
+<p><img src="images/3d.png" alt="3D" /></p>
+
+<h3 id="pcb-pattern-sample">PCB pattern sample</h3>
+
+<p><img src="images/pcb.png" alt="PCB" /></p>
+
+<h2 id="ir-data-json-format">IR data JSON format</h2>
+
+<h3 id="format">Format</h3>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+	</span><span class="err">uint</span><span class="mi">16</span><span class="err">_t</span><span class="w"> </span><span class="err">microseconds_high</span><span class="p">,</span><span class="w"> </span><span class="err">uint</span><span class="mi">16</span><span class="err">_t</span><span class="w"> </span><span class="err">microseconds_low</span><span class="p">,</span><span class="w"> </span><span class="err">uint</span><span class="mi">16</span><span class="err">_t</span><span class="w"> </span><span class="err">microseconds_high</span><span class="p">,</span><span class="w"> </span><span class="err">uint</span><span class="mi">16</span><span class="err">_t</span><span class="w"> </span><span class="err">microseconds_low</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
 
 <h3 id="sample">Sample</h3>
 
-<p><img src="sample.jpg" alt="sample" /></p>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+	</span><span class="mi">3300</span><span class="p">,</span><span class="mi">1786</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">1305</span><span class="p">,</span><span class="mi">390</span><span class="p">,</span><span class="mi">473</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">317</span><span class="p">,</span><span class="mi">548</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">577</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">501</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">390</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">550</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1403</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">502</span><span class="p">,</span><span class="mi">362</span><span class="p">,</span><span class="mi">1379</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1378</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1378</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">389</span><span class="p">,</span><span class="mi">1304</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">391</span><span class="p">,</span><span class="mi">1305</span><span class="p">,</span><span class="mi">362</span><span class="p">,</span><span class="mi">501</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">361</span><span class="p">,</span><span class="mi">504</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">312</span><span class="p">,</span><span class="mi">477</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">287</span><span class="p">,</span><span class="mi">578</span><span class="p">,</span><span class="mi">289</span><span class="p">,</span><span class="mi">1377</span><span class="p">,</span><span class="mi">314</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">502</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">476</span><span class="p">,</span><span class="mi">388</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">391</span><span class="p">,</span><span class="mi">451</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">363</span><span class="p">,</span><span class="mi">1304</span><span class="p">,</span><span class="mi">385</span><span class="p">,</span><span class="mi">1362</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">389</span><span class="p">,</span><span class="mi">475</span><span class="p">,</span><span class="mi">364</span><span class="p">,</span><span class="mi">477</span><span class="p">,</span><span class="mi">313</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">288</span><span class="p">,</span><span class="mi">1380</span><span class="p">,</span><span class="mi">317</span><span class="p">,</span><span class="mi">50215</span><span class="p">,</span><span class="mi">3305</span><span class="p">,</span><span class="mi">3489</span><span class="p">,</span><span class="mi">314</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
 
+<h2 id="http-api-v150">HTTP API v1.5.0</h2>
+
+<h3 id="setup-form">Setup Form</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Path</th>
+      <th style="text-align: left">Method</th>
+      <th style="text-align: left">Parameter(s)</th>
+      <th style="text-align: left">Return</th>
+      <th style="text-align: left">Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">/</td>
+      <td style="text-align: left">GET</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">index.html</td>
+      <td style="text-align: left">setup form page</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/wifi/list</td>
+      <td style="text-align: left">GET</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">a list of (string)</td>
+      <td style="text-align: left">a list of existing WiFi SSID</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/wifi/confirm</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">IP Address or “false”</td>
+      <td style="text-align: left">confirm if WiFi connection is established and reboot the device</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/mode/station</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">ssid, password, stealth, hostname</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left">set the device as Station Mode</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/mode/accesspoint</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">hostname</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left">set the device as AP Mode</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/dbg</td>
+      <td style="text-align: left">GET</td>
+      <td style="text-align: left">ssid, password</td>
+      <td style="text-align: left">local_ip or “false”</td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="main-page">Main Page</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Path</th>
+      <th style="text-align: left">Method</th>
+      <th style="text-align: left">Parameter(s)</th>
+      <th style="text-align: left">Return</th>
+      <th style="text-align: left">Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">/</td>
+      <td style="text-align: left">GET</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">index.html</td>
+      <td style="text-align: left">main page of IR-Station</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/info</td>
+      <td style="text-align: left">GET</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">station.json</td>
+      <td style="text-align: left">a json includes the device information</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/send</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">id</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/record</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">row, column, name</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/rename</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">id, name</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/move</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">id, row, column</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/upload</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">irJson, row, column</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/clear</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">id</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/signals/clear-all</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/schedule/new</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">id, time</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/schedule/delete</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">schedule_id</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/wifi/disconnect</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">none</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">/wifi/change-ip</td>
+      <td style="text-align: left">POST</td>
+      <td style="text-align: left">local_ip, subnetmask, gateway</td>
+      <td style="text-align: left">message</td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="result-json">result json</h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nt">"code"</span><span class="p">:</span><span class="mi">0</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+	</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 	</div>
 

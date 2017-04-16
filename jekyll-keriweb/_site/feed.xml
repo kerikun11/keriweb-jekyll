@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Apr 2017 18:42:31 +0900</pubDate>
-    <lastBuildDate>Sun, 16 Apr 2017 18:42:31 +0900</lastBuildDate>
+    <pubDate>Sun, 16 Apr 2017 19:04:10 +0900</pubDate>
+    <lastBuildDate>Sun, 16 Apr 2017 19:04:10 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -1550,11 +1550,500 @@ KERISEv1&lt;/p&gt;
     
       <item>
         <title>IR Station</title>
-        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR Station&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ir-station&quot;&gt;IR-Station&lt;/h2&gt;
 
 &lt;p&gt;Infrared Remote Controller with ESP8266 WiFi-module&lt;br /&gt;
 You can control your home appliances with your smartphone or laptop.&lt;/p&gt;
 
+&lt;p&gt;The latest information is &lt;a href=&quot;https://github.com/kerikun11/IR-station&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;main-parts&quot;&gt;Main parts&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ESP-WROOM-02 (ESP8266 WiFi Module)&lt;/li&gt;
+  &lt;li&gt;IR Receiver&lt;/li&gt;
+  &lt;li&gt;IR LED&lt;/li&gt;
+  &lt;li&gt;Indicator LED&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;looks&quot;&gt;Looks&lt;/h2&gt;
+
+&lt;h3 id=&quot;the-devices-appearance&quot;&gt;The Device’s Appearance&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/body.jpg&quot; alt=&quot;body&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;display-sample&quot;&gt;Display Sample&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/display.png&quot; alt=&quot;display&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use&quot;&gt;How to Use&lt;/h2&gt;
+
+&lt;h3 id=&quot;setup-the-device&quot;&gt;Setup the Device&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Supply power to the device.&lt;/li&gt;
+  &lt;li&gt;Connect your cellphone or laptop to Wi-Fi SSID “IR-Station”.&lt;/li&gt;
+  &lt;li&gt;Access http://192.168.4.1 in a browser&lt;/li&gt;
+  &lt;li&gt;Enter Wi-Fi SSID of your home and its password&lt;/li&gt;
+  &lt;li&gt;Enter a device name you like. We call it the hostname. Because it will be a part of URL, you cannot use space character.&lt;/li&gt;
+  &lt;li&gt;If connection succeeded, IR-Station’s local IP address is displayed. Please make a note of it.&lt;/li&gt;
+  &lt;li&gt;Connect your cellphone or laptop to your home’s Wi-Fi.&lt;/li&gt;
+  &lt;li&gt;Access http:/xxx.xxx.xx.xx (IR-Station’s local IP address) in a browser. (for example http://192.168.11.3 )&lt;/li&gt;
+  &lt;li&gt;If something appears, setup is complete.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;store-signals&quot;&gt;Store Signals&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Access http:/192.168.xx.xx (one example) in a browser.   1. Look at the form of the bottom of the screen.&lt;/li&gt;
+  &lt;li&gt;Select “record a new Signal” action.&lt;/li&gt;
+  &lt;li&gt;Select a channel you want to assign a new signal.&lt;/li&gt;
+  &lt;li&gt;Enter a name of the signal.&lt;/li&gt;
+  &lt;li&gt;When you click the “Submit” button, the green LED of your IR-Station will light up.&lt;/li&gt;
+  &lt;li&gt;Press a button on your remote controller toward your IR-Station to store a new signal.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;remote-control&quot;&gt;Remote Control&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Access your IR-Station in a browser.&lt;/li&gt;
+  &lt;li&gt;Click a button which assigned a signal you want to send.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;meanings-of-led-indicator&quot;&gt;Meanings of LED Indicator&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Color&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Red&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Error&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Green&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Processing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Blue&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Listening&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;how-to-make&quot;&gt;How to Make&lt;/h2&gt;
+
+&lt;h3 id=&quot;required-library&quot;&gt;Required Library&lt;/h3&gt;
+
+&lt;p&gt;Please Add the Libraries below to your Arduino IDE&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Arduino Json (https://github.com/bblanchon/ArduinoJson)&lt;/li&gt;
+  &lt;li&gt;Arduino Time Library (https://github.com/PaulStoffregen/Time)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;steps&quot;&gt;Steps&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Gather the components.&lt;/li&gt;
+  &lt;li&gt;Assemble the components according to the circuit diagram.&lt;/li&gt;
+  &lt;li&gt;Connect the device and the PC with a serial-to-USB conversion module.&lt;/li&gt;
+  &lt;li&gt;Prepare Arduino IDE and serial-USB converter’s driver.&lt;/li&gt;
+  &lt;li&gt;Open the preferences of Arduino IDE and fill in this URL: http://arduino.esp8266.com/stable/package_esp8266com_index.json to “Additional Boards Manager URLs”.&lt;/li&gt;
+  &lt;li&gt;Add “Generic ESP8266 Module” in the Arduino IDE Board Manager.&lt;/li&gt;
+  &lt;li&gt;Add the required libraries to your Arduino IDE in the Arduino IDE Library Manager or zip files.&lt;/li&gt;
+  &lt;li&gt;Open IR-station firmware in the Arduino IDE.&lt;/li&gt;
+  &lt;li&gt;Select “Generic ESP8266 Module” and configure each item of board settings properly. See Arduino Board Settings below.&lt;/li&gt;
+  &lt;li&gt;Select correct serial COM port and upload program to the device. When upload program, GPIO0 and GPIO2 must be pulled-up, and GPIO15 must be pulled-down. It’s necessary to reset the devie immediately before upload. It’s a little difficult.&lt;/li&gt;
+  &lt;li&gt;The uploading takes about 30 seconds.&lt;/li&gt;
+  &lt;li&gt;Upload the SPIFFS data: menu -&amp;gt; tool -&amp;gt; ESP8266 Sketch Data Upload. (See https://github.com/esp8266/Arduino/blob/master/doc/filesystem.md)&lt;/li&gt;
+  &lt;li&gt;Process termination.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;arduino-board-settings&quot;&gt;Arduino Board Settings&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;item&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;select&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Board&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESPino (ESP-12 Module)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash Mode&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;QIO&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CPU Frequency&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;80MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Flash Size&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4M(3M SPIFFS)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Reset Method&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ck&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Upload Speed&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;115200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
+
+&lt;h4 id=&quot;device-components&quot;&gt;Device Components&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Components&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Details&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Quantity&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Remarks&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP8266 WiFi Module&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP-WROOM-02&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IR receiver&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;OSRB38C9AA&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Power: 3.3V&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IR LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;OSI5FU3A11C&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;anything maybe OK&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Voltage Regulator&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;NJU7223-33&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;output: 3.3V 500mA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Nch MOS-FET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IRLML6344&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Resistor for IR LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4.7 ohms, 1W&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Pull-up/down Resistor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10k ohms&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Indicator LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;OSTBABS4C2B&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Resistor for LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;100~220 ohms&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Resistor for IR receiver&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;220 ohms&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Capacitor for IR receiver&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4.7uF&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Power Stabilization Capacitor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;100uF&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Bypass Capacitor&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;0.1uF&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;User Button&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SKRPACE010&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Poly Switch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;MICROSMD035F-02&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;up to 350mA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;USB Conncector&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;USB-Micro-B&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Power Only&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/components.jpg&quot; alt=&quot;Components&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;requires&quot;&gt;Requires&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Requires&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Details&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Quantity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Serial-to-USB conversion Module&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;such as FT232&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;circuit-diagram&quot;&gt;Circuit Diagram&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/sketch.png&quot; alt=&quot;sketch&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;breadboard-sample&quot;&gt;Breadboard Sample&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/sample.jpg&quot; alt=&quot;sample&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3d-shape&quot;&gt;3D shape&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/3d.png&quot; alt=&quot;3D&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pcb-pattern-sample&quot;&gt;PCB pattern sample&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/pcb.png&quot; alt=&quot;PCB&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ir-data-json-format&quot;&gt;IR data JSON format&lt;/h2&gt;
+
+&lt;h3 id=&quot;format&quot;&gt;Format&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uint&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_t&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;microseconds_high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uint&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_t&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;microseconds_low&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uint&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_t&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;microseconds_high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uint&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;_t&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;microseconds_low&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sample&quot;&gt;Sample&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1786&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;363&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1305&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;390&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;473&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;476&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;317&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;548&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;577&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;288&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;474&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;390&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;475&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;290&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;550&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1403&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;290&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;551&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;314&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1377&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;290&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;552&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;313&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;502&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;362&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1379&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1378&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1378&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;314&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1377&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;389&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1304&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;476&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;312&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;552&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;290&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;553&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;312&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;474&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;391&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1305&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;362&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;501&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;474&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;361&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;504&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;553&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;312&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;477&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;363&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;476&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;287&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;578&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;289&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1377&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;314&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;551&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;290&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;502&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;363&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;476&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;388&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;474&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;391&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;451&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;313&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;551&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;313&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;553&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;288&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;363&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1304&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;385&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1362&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;310&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;475&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;389&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;475&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;364&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;477&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;313&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;552&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;288&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1380&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;317&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50215&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3305&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3489&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;314&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;http-api-v150&quot;&gt;HTTP API v1.5.0&lt;/h2&gt;
+
+&lt;h3 id=&quot;setup-form&quot;&gt;Setup Form&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Path&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Parameter(s)&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Return&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Remarks&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;index.html&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;setup form page&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/wifi/list&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;a list of (string)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;a list of existing WiFi SSID&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/wifi/confirm&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;IP Address or “false”&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;confirm if WiFi connection is established and reboot the device&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/mode/station&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ssid, password, stealth, hostname&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;set the device as Station Mode&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/mode/accesspoint&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;hostname&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;set the device as AP Mode&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/dbg&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ssid, password&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;local_ip or “false”&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;main-page&quot;&gt;Main Page&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Path&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Parameter(s)&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Return&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Remarks&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;index.html&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;main page of IR-Station&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/info&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GET&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;station.json&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;a json includes the device information&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/send&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;id&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/record&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;row, column, name&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/rename&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;id, name&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/move&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;id, row, column&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/upload&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;irJson, row, column&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/clear&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;id&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/signals/clear-all&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/schedule/new&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;id, time&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/schedule/delete&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;schedule_id&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/wifi/disconnect&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;none&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;/wifi/change-ip&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;POST&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;local_ip, subnetmask, gateway&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;message&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;result-json&quot;&gt;result json&lt;/h4&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 11 Mar 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
