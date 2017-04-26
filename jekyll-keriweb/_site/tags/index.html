@@ -14330,7 +14330,7 @@ KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷�
 
   time_t t = time(NULL);
   struct tm *t_st;
-  t_st = localtime(&amp;timer);
+  t_st = localtime(&amp;t);
   printf("月: %d\n",t_st-&gt;tm_mon+1);
   printf("日: %d\n",t_st-&gt;tm_mday);
   printf("時: %d\n",t_st-&gt;tm_hour);
@@ -14481,7 +14481,7 @@ ESP-WROOM-32のすごいところはその価格です．ハイスペックな�
 
   time_t t = time(NULL);
   struct tm *t_st;
-  t_st = localtime(&amp;timer);
+  t_st = localtime(&amp;t);
   printf("月: %d\n",t_st-&gt;tm_mon+1);
   printf("日: %d\n",t_st-&gt;tm_mday);
   printf("時: %d\n",t_st-&gt;tm_hour);
@@ -15012,7 +15012,7 @@ Arduino上で動くコードです．esp32-arduino-coreは最新のものを使�
 
   time_t t = time(NULL);
   struct tm *t_st;
-  t_st = localtime(&amp;timer);
+  t_st = localtime(&amp;t);
   printf("月: %d\n",t_st-&gt;tm_mon+1);
   printf("日: %d\n",t_st-&gt;tm_mday);
   printf("時: %d\n",t_st-&gt;tm_hour);

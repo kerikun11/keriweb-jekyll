@@ -152,7 +152,7 @@
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code>  <span class="kt">time_t</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
   <span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">t_st</span><span class="p">;</span>
-  <span class="n">t_st</span> <span class="o">=</span> <span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timer</span><span class="p">);</span>
+  <span class="n">t_st</span> <span class="o">=</span> <span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">"月: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">t_st</span><span class="o">-&gt;</span><span class="n">tm_mon</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">"日: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">t_st</span><span class="o">-&gt;</span><span class="n">tm_mday</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">"時: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">t_st</span><span class="o">-&gt;</span><span class="n">tm_hour</span><span class="p">);</span>
@@ -329,7 +329,19 @@
 
 <h2 id="シリアル出力の設定">シリアル出力の設定</h2>
 
-<p>ESP32にはログ出力用の巻子が用意してあります．今回のログ出力にはそれを使いました．</p>
+<p>ESP32にはログ出力用のライブラリが用意してあります．今回のログ出力にはそれを使いました．</p>
+
+<p>printfの代わりに以下を使います．</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "esp32-hal-log.h"
+</span>
+<span class="kt">void</span> <span class="n">log_v</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">// verbose
+</span><span class="kt">void</span> <span class="n">log_d</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">// debug
+</span><span class="kt">void</span> <span class="n">log_i</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">// info
+</span><span class="kt">void</span> <span class="n">log_w</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">// warning
+</span><span class="kt">void</span> <span class="n">log_e</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">// error
+</span></code></pre>
+</div>
 
 <p>そのログを出力するにはArduino IDEのボード設定から出力を有効にしてください．</p>
 
