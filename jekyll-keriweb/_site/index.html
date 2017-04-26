@@ -135,6 +135,8 @@
 			
 		
 			
+		
+			
 				<li>
 	<a class="post-link" href="/posts/2016-11-21-micromouse2016/">
 		<img src="/posts/2016-11-21-micromouse2016/icon.jpg" title="全日本マイクロマウス2016の結果報告" alt="全日本マイクロマウス2016の結果報告">
@@ -330,6 +332,46 @@
 	<h1 class="page-heading">Recent Posts</h1>
 
 	<ul class="post-list">
+		
+			<li>
+	<a class="post-link" href="/posts/2017-04-26-esp32-time/">
+		<img src="/home/icon.png" title="ESP32で時間取得" alt="ESP32で時間取得">
+		<div class="post-list-char">
+			<span class="post-meta">2017年04月26日 Category: memos</span>
+			<h2>
+				ESP32で時間取得
+			</h2>
+			<span class="post-meta" style="max-height:4em;">概要
+
+今回はESP32で現在時刻を取得するサンプルコードの紹介です．
+
+今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．
+
+具体的には，
+
+  time_t t = time(NULL);
+  struct tm *t_st;
+  t_st = localtime(&amp;timer);
+  printf("月: %d\n",t_st-&gt;tm_mon+1);
+  printf("日: %d\n",t_st-&gt;tm_mday);
+  printf("時: %d\n",t_st-&gt;tm_hour);
+  printf("分: %d\n",t_st-&gt;tm_min);
+  printf("秒: %d\n",t_st-&gt;tm_sec);
+  printf("Time: %s", ctime(&amp;t));
+
+
+
+のように時刻を扱えます．
+
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 		
 			<li>
 	<a class="post-link" href="/posts/2017-04-08-esp32-mail/">
@@ -3180,10 +3222,10 @@ Charge Station
 	<a href="/tags/#tag-index-ハーフサイズ" style="font-size:16px">ハーフサイズ</a>
 	, 
 	
-	<a href="/tags/#tag-index-ESP32" style="font-size:18px">ESP32</a>
+	<a href="/tags/#tag-index-ESP32" style="font-size:19px">ESP32</a>
 	, 
 	
-	<a href="/tags/#tag-index-ESP-WROOM-32" style="font-size:19px">ESP-WROOM-32</a>
+	<a href="/tags/#tag-index-ESP-WROOM-32" style="font-size:20px">ESP-WROOM-32</a>
 	, 
 	
 	<a href="/tags/#tag-index-FT232RL" style="font-size:15px">FT232RL</a>
@@ -3208,6 +3250,9 @@ Charge Station
 	, 
 	
 	<a href="/tags/#tag-index-SMTP" style="font-size:15px">SMTP</a>
+	, 
+	
+	<a href="/tags/#tag-index-NTP" style="font-size:15px">NTP</a>
 	
 	
 </div>
