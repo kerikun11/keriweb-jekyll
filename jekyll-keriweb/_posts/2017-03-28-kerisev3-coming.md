@@ -6,6 +6,7 @@ tags:
   - "KERISEv3"
   - "マイクロマウス"
 icon: "icon.jpg"
+pickup: true
 ---
 
 ## KERISEv3

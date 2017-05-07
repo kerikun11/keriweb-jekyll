@@ -309,7 +309,8 @@ pre {
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
-  border-bottom: 3px solid #115599; }
+  border-bottom: 3px solid #115599;
+  margin-top: 2px; }
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }
@@ -1097,7 +1098,7 @@ html.layout-postcard {
   clear: both;
   font-size: 12px;
   padding: 3px 5px;
-  margin: 3px 0px; }
+  margin-top: 3px; }
 .layout-postcard h3 {
   font-size: 10px;
   padding: 1px 5px;
