@@ -36,7 +36,7 @@ $ sudo passenger-install-apache2-module
 ## アプリケーションの用意
 
 ~~~sh
-$ git clone htttps://github.com/kerikun11/IR-station.git
+$ git clone https://github.com/kerikun11/IR-station.git
 $ sudo mkdir /var/ir-station
 $ sudo chown kerikun11 /var/ir-station
 $ sudo chgrp kerikun11 /var/ir-station
