@@ -494,7 +494,7 @@
 	<a href="/tags/#tag-index-7セグメントLED" style="font-size:15px">7セグメントLED</a>
 	, 
 	
-	<a href="/tags/#tag-index-マイクロマウス" style="font-size:20px">マイクロマウス</a>
+	<a href="/tags/#tag-index-マイクロマウス" style="font-size:21px">マイクロマウス</a>
 	, 
 	
 	<a href="/tags/#tag-index-迷路" style="font-size:17px">迷路</a>
@@ -573,6 +573,15 @@
 	, 
 	
 	<a href="/tags/#tag-index-FreeRTOS" style="font-size:15px">FreeRTOS</a>
+	, 
+	
+	<a href="/tags/#tag-index-Li-Po" style="font-size:15px">Li-Po</a>
+	, 
+	
+	<a href="/tags/#tag-index-Hyperion" style="font-size:15px">Hyperion</a>
+	, 
+	
+	<a href="/tags/#tag-index-U-Micro" style="font-size:15px">U-Micro</a>
 	
 	
 </div>
@@ -7471,158 +7480,6 @@ ESP32 Overview | Espressif Systems
 
 ESP32は上海の企業であるEspressif Systemsから発売されているWiFi&amp;Bluetoothモジュールです．同時にgccで開発できるマイコンでもあります．
 
-ESP-WROOM-32という700円ほどの無線モジュールの中に入っているマイコンがESP32です．
-
-デュアルコア
-
-実はこのマイコン，かなりスペックが高く，CPUがデュアルコアなんです！
-今回はその使い方を簡単に紹介します．
-
-RTOS (リアルタイムオペレーティングシステム)
-
-RTOSとは
-
-RTOS-Wikipedia
-
-さまざまな機能を持つアプリケーションを動かそうとするとき，OSを欠かすことはできません．その中でもリアルタイムOSはその名の通りリアルタイム性に優れており，ハードウェアのイベントに従って高速に処理をすることができます．
-
-簡単に言うと，関数を1つのタスクと考え，OSに関数ポインタを渡しておくと，疑似的に同時並行で関数を実行してくれます．
-
-FreeRTOS
-
-FreeRTOS公式ページ
-
-ESP32の中ではFreeRTOSというリアルタイムOSが動いています．
-FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．
-
-ESP32の使われているFreeRTOS
-
-デュアルコアのためかわかりませんが，ESP32に使われているFreeRTOSは，ESP32用にカスタマイズされているみたいです．ただ，使い方はほとんど同じです．
-
-デュアルコアの使い方
-
-使い方はとても簡単です．
-
-普段FreeRTOSでタスクを作成するときは
-
-BaseType_t xTaskCreate(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-);
-
-
-
-という関数を使いますが，代わりに
-
-BaseType_t xTaskCreatePinnedToCore(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-		const BaseType_t xCoreID           	//&lt; コア番号
-	);
-
-
-
-という関数を使い，引数の最後に使用するCPUのコア番号を指定します．
-
-つまり，どのCPUで実行するかというのはユーザーが選択する訳です．
-
-ESP32の場合，コアは2つなので，コア番号は0か1になります．
-
-サンプルコード
-
-Arduino core for ESP32環境でのサンプルコードです．
-
-※Arduino IDEのBoard設定でCore Debug Levelをinfoにしないとログは見えません．
-
-#include "esp32-hal-log.h"
-#include "freertos/task.h"
-
-void task0(void* arg) {
-  while (1) {
-    log_i("This is Core 0");
-    delay(1000);
-  }
-}
-
-void task1(void* arg) {
-  while (1) {
-    log_i("This is Core 1");
-    delay(1500);
-  }
-}
-
-void setup() {
-  log_i("Hello, this is ESP32:)");
-  xTaskCreatePinnedToCore(task0, "Task0", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(task1, "Task1", 4096, NULL, 1, NULL, 1);
-}
-
-void loop() {
-}
-
-
-
-ちなみに
-
-ちなみに，Arduino core for ESP32のmain.cppでは，
-
-#if CONFIG_FREERTOS_UNICORE
-#define ARDUINO_RUNNING_CORE 0
-#else
-#define ARDUINO_RUNNING_CORE 1
-#endif
-
-void loopTask(void *pvParameters)
-{
-    setup();
-    for(;;) {
-        micros(); //update overflow
-        loop();
-    }
-}
-
-extern "C" void app_main()
-{
-    initArduino();
-    xTaskCreatePinnedToCore(loopTask, "loopTask", 4096, NULL, 1, NULL, ARDUINO_RUNNING_CORE);
-}
-
-
-
-こう書かれているので，いつも使っているsetup()とloop()は優先度が1のタスクであることがわかります．
-
-さらに，CONFIG_FREERTOS_UNICOREはfalseなので，このタスクを実行するコアはCPU1であることがわかります．
-
-おそらくOSなどのシステムタスクはCPU0で行っていて，ユーザーアプリケーションタスクをCPU1で行うという位置づけなのでしょう．実際に各CPUには名前がついていて，Process CPUとApplication CPUとなっています．
-
-まとめ
-
-ついに電子工作の世界にデュアルコアがやって参りましたね！
-デュアルコアを使うためにはRTOSは必須だと思うのでしっかり勉強していきたいです．
-
-一度デュアルコア用のコードを書けるようになっておけば，将来クアッドコアやオタクコアのマイコンが登場してもすぐに適応することができます．
-
-実は，ESP32にはUltra Low Power Coprocessorという8MHzで動くCPUがもう一つ入っています．そちらもこれから使い方を勉強していきたいと思うので，収穫があったら紹介したいと思います．
-
-こんなにすごいマイコンですが，ESP-WROOM-32はたった700円です． 
-ESP32の性能を最大限に使っていきましょう！
-
-参考リンク
-
-
-  www.espressif.com Resources
-  Espressif IoT Development Framework
-  Arduino core for ESP32 WiFi chip
-
-
 </span>
 			<!--
 			<p></p>
@@ -14029,9 +13886,63 @@ PICで時計
 
 
 
-<h1 class="page-heading" id="tag-index-マイクロマウス">マイクロマウス (6) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+<h1 class="page-heading" id="tag-index-マイクロマウス">マイクロマウス (7) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
 <ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2017-07-02-u-micro-connector/">
+		<img src="/home/icon.png" title="U-Microコネクタの正体" alt="U-Microコネクタの正体">
+		<div class="post-list-char">
+			<span class="post-meta">2017年07月02日 Category: memos</span>
+			<h2>
+				U-Microコネクタの正体
+			</h2>
+			<span class="post-meta" style="max-height:4em;">U-Microコネクタとは
+
+マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．
+
+Hyperion G3 リチウムポリマーバッテリー
+
+
+見つけたもの
+
+digikey surfingをしていたら，下記のコネクタを見つけました．
+
+Amphenol FCIという会社の10114829-10102LF
+
+ボックスヘッダ(10114829-10102LF)
+
+表面実装のタイプも発見！
+
+リフローだけでやりたい人にはありがたいかも？
+
+ただ，ちょっとサイズが大きいように思えます．
+
+表面実装のボックスヘッダ(10114828-10102LF)
+
+コンタクトピンとハウジングもある
+
+予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！
+
+コンタクトピン(10114827-001LF)
+
+ハウジング(10114826-00002LF)
+
+まとめ
+
+この部品がリポのコネクタである確証はありませんが，よく似ていて，実際に使えたので紹介しました．
+
+もし，間違いがありましたら教えてください！
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
 	
 	<li>
 	<a class="post-link" href="/posts/2017-03-28-kerisev3-coming/">
@@ -14795,158 +14706,6 @@ ESP32とは
 ESP32 Overview | Espressif Systems
 
 ESP32は上海の企業であるEspressif Systemsから発売されているWiFi&amp;Bluetoothモジュールです．同時にgccで開発できるマイコンでもあります．
-
-ESP-WROOM-32という700円ほどの無線モジュールの中に入っているマイコンがESP32です．
-
-デュアルコア
-
-実はこのマイコン，かなりスペックが高く，CPUがデュアルコアなんです！
-今回はその使い方を簡単に紹介します．
-
-RTOS (リアルタイムオペレーティングシステム)
-
-RTOSとは
-
-RTOS-Wikipedia
-
-さまざまな機能を持つアプリケーションを動かそうとするとき，OSを欠かすことはできません．その中でもリアルタイムOSはその名の通りリアルタイム性に優れており，ハードウェアのイベントに従って高速に処理をすることができます．
-
-簡単に言うと，関数を1つのタスクと考え，OSに関数ポインタを渡しておくと，疑似的に同時並行で関数を実行してくれます．
-
-FreeRTOS
-
-FreeRTOS公式ページ
-
-ESP32の中ではFreeRTOSというリアルタイムOSが動いています．
-FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．
-
-ESP32の使われているFreeRTOS
-
-デュアルコアのためかわかりませんが，ESP32に使われているFreeRTOSは，ESP32用にカスタマイズされているみたいです．ただ，使い方はほとんど同じです．
-
-デュアルコアの使い方
-
-使い方はとても簡単です．
-
-普段FreeRTOSでタスクを作成するときは
-
-BaseType_t xTaskCreate(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-);
-
-
-
-という関数を使いますが，代わりに
-
-BaseType_t xTaskCreatePinnedToCore(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-		const BaseType_t xCoreID           	//&lt; コア番号
-	);
-
-
-
-という関数を使い，引数の最後に使用するCPUのコア番号を指定します．
-
-つまり，どのCPUで実行するかというのはユーザーが選択する訳です．
-
-ESP32の場合，コアは2つなので，コア番号は0か1になります．
-
-サンプルコード
-
-Arduino core for ESP32環境でのサンプルコードです．
-
-※Arduino IDEのBoard設定でCore Debug Levelをinfoにしないとログは見えません．
-
-#include "esp32-hal-log.h"
-#include "freertos/task.h"
-
-void task0(void* arg) {
-  while (1) {
-    log_i("This is Core 0");
-    delay(1000);
-  }
-}
-
-void task1(void* arg) {
-  while (1) {
-    log_i("This is Core 1");
-    delay(1500);
-  }
-}
-
-void setup() {
-  log_i("Hello, this is ESP32:)");
-  xTaskCreatePinnedToCore(task0, "Task0", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(task1, "Task1", 4096, NULL, 1, NULL, 1);
-}
-
-void loop() {
-}
-
-
-
-ちなみに
-
-ちなみに，Arduino core for ESP32のmain.cppでは，
-
-#if CONFIG_FREERTOS_UNICORE
-#define ARDUINO_RUNNING_CORE 0
-#else
-#define ARDUINO_RUNNING_CORE 1
-#endif
-
-void loopTask(void *pvParameters)
-{
-    setup();
-    for(;;) {
-        micros(); //update overflow
-        loop();
-    }
-}
-
-extern "C" void app_main()
-{
-    initArduino();
-    xTaskCreatePinnedToCore(loopTask, "loopTask", 4096, NULL, 1, NULL, ARDUINO_RUNNING_CORE);
-}
-
-
-
-こう書かれているので，いつも使っているsetup()とloop()は優先度が1のタスクであることがわかります．
-
-さらに，CONFIG_FREERTOS_UNICOREはfalseなので，このタスクを実行するコアはCPU1であることがわかります．
-
-おそらくOSなどのシステムタスクはCPU0で行っていて，ユーザーアプリケーションタスクをCPU1で行うという位置づけなのでしょう．実際に各CPUには名前がついていて，Process CPUとApplication CPUとなっています．
-
-まとめ
-
-ついに電子工作の世界にデュアルコアがやって参りましたね！
-デュアルコアを使うためにはRTOSは必須だと思うのでしっかり勉強していきたいです．
-
-一度デュアルコア用のコードを書けるようになっておけば，将来クアッドコアやオタクコアのマイコンが登場してもすぐに適応することができます．
-
-実は，ESP32にはUltra Low Power Coprocessorという8MHzで動くCPUがもう一つ入っています．そちらもこれから使い方を勉強していきたいと思うので，収穫があったら紹介したいと思います．
-
-こんなにすごいマイコンですが，ESP-WROOM-32はたった700円です． 
-ESP32の性能を最大限に使っていきましょう！
-
-参考リンク
-
-
-  www.espressif.com Resources
-  Espressif IoT Development Framework
-  Arduino core for ESP32 WiFi chip
-
 
 </span>
 			<!--
@@ -16174,158 +15933,192 @@ ESP32 Overview | Espressif Systems
 
 ESP32は上海の企業であるEspressif Systemsから発売されているWiFi&amp;Bluetoothモジュールです．同時にgccで開発できるマイコンでもあります．
 
-ESP-WROOM-32という700円ほどの無線モジュールの中に入っているマイコンがESP32です．
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
 
-デュアルコア
 
-実はこのマイコン，かなりスペックが高く，CPUがデュアルコアなんです！
-今回はその使い方を簡単に紹介します．
-
-RTOS (リアルタイムオペレーティングシステム)
-
-RTOSとは
-
-RTOS-Wikipedia
-
-さまざまな機能を持つアプリケーションを動かそうとするとき，OSを欠かすことはできません．その中でもリアルタイムOSはその名の通りリアルタイム性に優れており，ハードウェアのイベントに従って高速に処理をすることができます．
-
-簡単に言うと，関数を1つのタスクと考え，OSに関数ポインタを渡しておくと，疑似的に同時並行で関数を実行してくれます．
-
-FreeRTOS
-
-FreeRTOS公式ページ
-
-ESP32の中ではFreeRTOSというリアルタイムOSが動いています．
-FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．
-
-ESP32の使われているFreeRTOS
-
-デュアルコアのためかわかりませんが，ESP32に使われているFreeRTOSは，ESP32用にカスタマイズされているみたいです．ただ，使い方はほとんど同じです．
-
-デュアルコアの使い方
-
-使い方はとても簡単です．
-
-普段FreeRTOSでタスクを作成するときは
-
-BaseType_t xTaskCreate(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-);
+	
+</ul>
 
 
 
-という関数を使いますが，代わりに
+<h1 class="page-heading" id="tag-index-Li-Po">Li-Po (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
 
-BaseType_t xTaskCreatePinnedToCore(
-		TaskFunction_t pxTaskCode,         	//&lt; タスクの関数ポインタ
-		const char * const pcName,         	//&lt; タスク名
-		const uint16_t usStackDepth,       	//&lt; タスクのスタックサイズ
-		void * const pvParameters,         	//&lt; タスク関数に渡す引数
-		UBaseType_t uxPriority,            	//&lt; タスクの優先度
-		TaskHandle_t * const pxCreatedTask,	//&lt; タスクのハンドル
-		const BaseType_t xCoreID           	//&lt; コア番号
-	);
+<ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2017-07-02-u-micro-connector/">
+		<img src="/home/icon.png" title="U-Microコネクタの正体" alt="U-Microコネクタの正体">
+		<div class="post-list-char">
+			<span class="post-meta">2017年07月02日 Category: memos</span>
+			<h2>
+				U-Microコネクタの正体
+			</h2>
+			<span class="post-meta" style="max-height:4em;">U-Microコネクタとは
 
+マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．
 
-
-という関数を使い，引数の最後に使用するCPUのコア番号を指定します．
-
-つまり，どのCPUで実行するかというのはユーザーが選択する訳です．
-
-ESP32の場合，コアは2つなので，コア番号は0か1になります．
-
-サンプルコード
-
-Arduino core for ESP32環境でのサンプルコードです．
-
-※Arduino IDEのBoard設定でCore Debug Levelをinfoにしないとログは見えません．
-
-#include "esp32-hal-log.h"
-#include "freertos/task.h"
-
-void task0(void* arg) {
-  while (1) {
-    log_i("This is Core 0");
-    delay(1000);
-  }
-}
-
-void task1(void* arg) {
-  while (1) {
-    log_i("This is Core 1");
-    delay(1500);
-  }
-}
-
-void setup() {
-  log_i("Hello, this is ESP32:)");
-  xTaskCreatePinnedToCore(task0, "Task0", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(task1, "Task1", 4096, NULL, 1, NULL, 1);
-}
-
-void loop() {
-}
+Hyperion G3 リチウムポリマーバッテリー
 
 
+見つけたもの
 
-ちなみに
+digikey surfingをしていたら，下記のコネクタを見つけました．
 
-ちなみに，Arduino core for ESP32のmain.cppでは，
+Amphenol FCIという会社の10114829-10102LF
 
-#if CONFIG_FREERTOS_UNICORE
-#define ARDUINO_RUNNING_CORE 0
-#else
-#define ARDUINO_RUNNING_CORE 1
-#endif
+ボックスヘッダ(10114829-10102LF)
 
-void loopTask(void *pvParameters)
-{
-    setup();
-    for(;;) {
-        micros(); //update overflow
-        loop();
-    }
-}
+表面実装のタイプも発見！
 
-extern "C" void app_main()
-{
-    initArduino();
-    xTaskCreatePinnedToCore(loopTask, "loopTask", 4096, NULL, 1, NULL, ARDUINO_RUNNING_CORE);
-}
+リフローだけでやりたい人にはありがたいかも？
 
+ただ，ちょっとサイズが大きいように思えます．
 
+表面実装のボックスヘッダ(10114828-10102LF)
 
-こう書かれているので，いつも使っているsetup()とloop()は優先度が1のタスクであることがわかります．
+コンタクトピンとハウジングもある
 
-さらに，CONFIG_FREERTOS_UNICOREはfalseなので，このタスクを実行するコアはCPU1であることがわかります．
+予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！
 
-おそらくOSなどのシステムタスクはCPU0で行っていて，ユーザーアプリケーションタスクをCPU1で行うという位置づけなのでしょう．実際に各CPUには名前がついていて，Process CPUとApplication CPUとなっています．
+コンタクトピン(10114827-001LF)
+
+ハウジング(10114826-00002LF)
 
 まとめ
 
-ついに電子工作の世界にデュアルコアがやって参りましたね！
-デュアルコアを使うためにはRTOSは必須だと思うのでしっかり勉強していきたいです．
+この部品がリポのコネクタである確証はありませんが，よく似ていて，実際に使えたので紹介しました．
 
-一度デュアルコア用のコードを書けるようになっておけば，将来クアッドコアやオタクコアのマイコンが登場してもすぐに適応することができます．
-
-実は，ESP32にはUltra Low Power Coprocessorという8MHzで動くCPUがもう一つ入っています．そちらもこれから使い方を勉強していきたいと思うので，収穫があったら紹介したいと思います．
-
-こんなにすごいマイコンですが，ESP-WROOM-32はたった700円です． 
-ESP32の性能を最大限に使っていきましょう！
-
-参考リンク
-
-
-  www.espressif.com Resources
-  Espressif IoT Development Framework
-  Arduino core for ESP32 WiFi chip
+もし，間違いがありましたら教えてください！
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
 
 
+	
+</ul>
+
+
+
+<h1 class="page-heading" id="tag-index-Hyperion">Hyperion (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+
+<ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2017-07-02-u-micro-connector/">
+		<img src="/home/icon.png" title="U-Microコネクタの正体" alt="U-Microコネクタの正体">
+		<div class="post-list-char">
+			<span class="post-meta">2017年07月02日 Category: memos</span>
+			<h2>
+				U-Microコネクタの正体
+			</h2>
+			<span class="post-meta" style="max-height:4em;">U-Microコネクタとは
+
+マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．
+
+Hyperion G3 リチウムポリマーバッテリー
+
+
+見つけたもの
+
+digikey surfingをしていたら，下記のコネクタを見つけました．
+
+Amphenol FCIという会社の10114829-10102LF
+
+ボックスヘッダ(10114829-10102LF)
+
+表面実装のタイプも発見！
+
+リフローだけでやりたい人にはありがたいかも？
+
+ただ，ちょっとサイズが大きいように思えます．
+
+表面実装のボックスヘッダ(10114828-10102LF)
+
+コンタクトピンとハウジングもある
+
+予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！
+
+コンタクトピン(10114827-001LF)
+
+ハウジング(10114826-00002LF)
+
+まとめ
+
+この部品がリポのコネクタである確証はありませんが，よく似ていて，実際に使えたので紹介しました．
+
+もし，間違いがありましたら教えてください！
+</span>
+			<!--
+			<p></p>
+			-->
+		</div>
+	</a>
+</li>
+
+
+	
+</ul>
+
+
+
+<h1 class="page-heading" id="tag-index-U-Micro">U-Micro (1) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+
+<ul class="post-list">
+	
+	<li>
+	<a class="post-link" href="/posts/2017-07-02-u-micro-connector/">
+		<img src="/home/icon.png" title="U-Microコネクタの正体" alt="U-Microコネクタの正体">
+		<div class="post-list-char">
+			<span class="post-meta">2017年07月02日 Category: memos</span>
+			<h2>
+				U-Microコネクタの正体
+			</h2>
+			<span class="post-meta" style="max-height:4em;">U-Microコネクタとは
+
+マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．
+
+Hyperion G3 リチウムポリマーバッテリー
+
+
+見つけたもの
+
+digikey surfingをしていたら，下記のコネクタを見つけました．
+
+Amphenol FCIという会社の10114829-10102LF
+
+ボックスヘッダ(10114829-10102LF)
+
+表面実装のタイプも発見！
+
+リフローだけでやりたい人にはありがたいかも？
+
+ただ，ちょっとサイズが大きいように思えます．
+
+表面実装のボックスヘッダ(10114828-10102LF)
+
+コンタクトピンとハウジングもある
+
+予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！
+
+コンタクトピン(10114827-001LF)
+
+ハウジング(10114826-00002LF)
+
+まとめ
+
+この部品がリポのコネクタである確証はありませんが，よく似ていて，実際に使えたので紹介しました．
+
+もし，間違いがありましたら教えてください！
 </span>
 			<!--
 			<p></p>

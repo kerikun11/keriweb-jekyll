@@ -5,9 +5,65 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 Jul 2017 17:14:28 +0900</pubDate>
-    <lastBuildDate>Sun, 02 Jul 2017 17:14:28 +0900</lastBuildDate>
+    <pubDate>Sun, 02 Jul 2017 23:57:25 +0900</pubDate>
+    <lastBuildDate>Sun, 02 Jul 2017 23:57:25 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>U-Microコネクタの正体</title>
+        <description>&lt;h2 id=&quot;u-microコネクタとは&quot;&gt;U-Microコネクタとは&lt;/h2&gt;
+
+&lt;p&gt;マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．&lt;/p&gt;
+
+&lt;p&gt;Hyperion G3 リチウムポリマーバッテリー&lt;br /&gt;
+&lt;img src=&quot;li-po.png&quot; alt=&quot;リポ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;見つけたもの&quot;&gt;見つけたもの&lt;/h2&gt;
+
+&lt;p&gt;digikey surfingをしていたら，下記のコネクタを見つけました．&lt;/p&gt;
+
+&lt;h3 id=&quot;amphenol-fciという会社の10114829-10102lf&quot;&gt;Amphenol FCIという会社の10114829-10102LF&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digikey.jp/product-detail/ja/amphenol-fci/10114829-10102LF/609-4383-1-ND/2658914&quot;&gt;ボックスヘッダ(10114829-10102LF)&lt;br /&gt;&lt;img src=&quot;10114829-10102LF_sml.webp&quot; alt=&quot;ボックスヘッダ&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;表面実装のタイプも発見&quot;&gt;表面実装のタイプも発見！&lt;/h3&gt;
+
+&lt;p&gt;リフローだけでやりたい人にはありがたいかも？&lt;/p&gt;
+
+&lt;p&gt;ただ，ちょっとサイズが大きいように思えます．&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digikey.jp/product-detail/ja/amphenol-fci/10114828-10102LF/609-4387-1-ND/265891://www.digikey.jp/product-detail/ja/amphenol-fci/10114828-10102LF/609-4387-1-ND/2658916&quot;&gt;表面実装のボックスヘッダ(10114828-10102LF)&lt;br /&gt;&lt;img src=&quot;10114828-10102LF_sml.webp&quot; alt=&quot;表面実装のボックスヘッダ&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;コンタクトピンとハウジングもある&quot;&gt;コンタクトピンとハウジングもある&lt;/h3&gt;
+
+&lt;p&gt;予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digikey.jp/product-detail/ja/amphenol-fci/10114827-001LF/609-4395-1-ND/2658909&quot;&gt;コンタクトピン(10114827-001LF)&lt;br /&gt;&lt;img src=&quot;10114827-001LF_sml.webp&quot; alt=&quot;コンタクトピン&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digikey.jp/product-detail/ja/amphenol-fci/10114826-00002LF/609-4391-ND/2658910&quot;&gt;ハウジング(10114826-00002LF)&lt;br /&gt;&lt;img src=&quot;10114826-00002LF_sml.webp&quot; alt=&quot;ハウジング&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;この部品がリポのコネクタである確証はありませんが，よく似ていて，実際に使えたので紹介しました．&lt;/p&gt;
+
+&lt;p&gt;もし，間違いがありましたら教えてください！&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jul 2017 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2017-07-02-u-micro-connector/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-07-02-u-micro-connector/</guid>
+        
+        <category>Li-Po</category>
+        
+        <category>Hyperion</category>
+        
+        <category>U-Micro</category>
+        
+        <category>マイクロマウス</category>
+        
+        
+        <category>memos</category>
+        
+      </item>
     
       <item>
         <title>ESP32でデュアルコアを使おう！</title>
@@ -20,158 +76,6 @@
 &lt;p&gt;&lt;a href=&quot;https://www.espressif.com/en/products/hardware/esp32/overview&quot;&gt;ESP32 Overview | Espressif Systems&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;ESP32は上海の企業であるEspressif Systemsから発売されているWiFi&amp;amp;Bluetoothモジュールです．同時にgccで開発できるマイコンでもあります．&lt;/p&gt;
-
-&lt;p&gt;ESP-WROOM-32という700円ほどの無線モジュールの中に入っているマイコンがESP32です．&lt;/p&gt;
-
-&lt;h3 id=&quot;デュアルコア&quot;&gt;デュアルコア&lt;/h3&gt;
-
-&lt;p&gt;実はこのマイコン，かなりスペックが高く，CPUがデュアルコアなんです！&lt;br /&gt;
-今回はその使い方を簡単に紹介します．&lt;/p&gt;
-
-&lt;h2 id=&quot;rtos-リアルタイムオペレーティングシステム&quot;&gt;RTOS (リアルタイムオペレーティングシステム)&lt;/h2&gt;
-
-&lt;h3 id=&quot;rtosとは&quot;&gt;RTOSとは&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%AA%E3%83%9A%E3%83%AC%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0&quot;&gt;RTOS-Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;さまざまな機能を持つアプリケーションを動かそうとするとき，OSを欠かすことはできません．その中でもリアルタイムOSはその名の通りリアルタイム性に優れており，ハードウェアのイベントに従って高速に処理をすることができます．&lt;/p&gt;
-
-&lt;p&gt;簡単に言うと，関数を1つのタスクと考え，OSに関数ポインタを渡しておくと，疑似的に同時並行で関数を実行してくれます．&lt;/p&gt;
-
-&lt;h3 id=&quot;freertos&quot;&gt;FreeRTOS&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.freertos.org/&quot;&gt;&lt;img src=&quot;freertos.jpg&quot; alt=&quot;FreeRTOS&quot; class=&quot;img-small&quot; /&gt;&lt;br /&gt;FreeRTOS公式ページ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ESP32の中ではFreeRTOSというリアルタイムOSが動いています．&lt;br /&gt;
-FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．&lt;/p&gt;
-
-&lt;h3 id=&quot;esp32の使われているfreertos&quot;&gt;ESP32の使われているFreeRTOS&lt;/h3&gt;
-
-&lt;p&gt;デュアルコアのためかわかりませんが，ESP32に使われているFreeRTOSは，ESP32用にカスタマイズされているみたいです．ただ，使い方はほとんど同じです．&lt;/p&gt;
-
-&lt;h2 id=&quot;デュアルコアの使い方&quot;&gt;デュアルコアの使い方&lt;/h2&gt;
-
-&lt;p&gt;使い方はとても簡単です．&lt;/p&gt;
-
-&lt;p&gt;普段FreeRTOSでタスクを作成するときは&lt;/p&gt;
-
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;BaseType_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xTaskCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;TaskFunction_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pxTaskCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクの関数ポインタ
-&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pcName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスク名
-&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usStackDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクのスタックサイズ
-&lt;/span&gt;		&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pvParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスク関数に渡す引数
-&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;UBaseType_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uxPriority&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;            	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクの優先度
-&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;TaskHandle_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pxCreatedTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクのハンドル
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;という関数を使いますが，代わりに&lt;/p&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;BaseType_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xTaskCreatePinnedToCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;TaskFunction_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pxTaskCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクの関数ポインタ
-&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pcName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスク名
-&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint16_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usStackDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクのスタックサイズ
-&lt;/span&gt;		&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pvParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスク関数に渡す引数
-&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;UBaseType_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uxPriority&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;            	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクの優先度
-&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;TaskHandle_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pxCreatedTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; タスクのハンドル
-&lt;/span&gt;		&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseType_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xCoreID&lt;/span&gt;           	&lt;span class=&quot;c1&quot;&gt;//&amp;lt; コア番号
-&lt;/span&gt;	&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;という関数を使い，引数の最後に使用するCPUのコア番号を指定します．&lt;/p&gt;
-
-&lt;p&gt;つまり，どのCPUで実行するかというのはユーザーが選択する訳です．&lt;/p&gt;
-
-&lt;p&gt;ESP32の場合，コアは2つなので，コア番号は0か1になります．&lt;/p&gt;
-
-&lt;h2 id=&quot;サンプルコード&quot;&gt;サンプルコード&lt;/h2&gt;
-
-&lt;p&gt;Arduino core for ESP32環境でのサンプルコードです．&lt;/p&gt;
-
-&lt;p&gt;※Arduino IDEのBoard設定でCore Debug Levelをinfoにしないとログは見えません．&lt;/p&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;esp32-hal-log.h&quot;
-#include &quot;freertos/task.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;task0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;log_i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is Core 0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;task1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;log_i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is Core 1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log_i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, this is ESP32:)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;xTaskCreatePinnedToCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Task0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;xTaskCreatePinnedToCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Task1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;ちなみに&quot;&gt;ちなみに&lt;/h2&gt;
-
-&lt;p&gt;ちなみに，Arduino core for ESP32のmain.cppでは，&lt;/p&gt;
-
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#if CONFIG_FREERTOS_UNICORE
-#define ARDUINO_RUNNING_CORE 0
-#else
-#define ARDUINO_RUNNING_CORE 1
-#endif
-&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loopTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pvParameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(;;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;micros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//update overflow
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C&quot;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app_main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;initArduino&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;xTaskCreatePinnedToCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loopTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;loopTask&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ARDUINO_RUNNING_CORE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;こう書かれているので，いつも使っているsetup()とloop()は優先度が1のタスクであることがわかります．&lt;/p&gt;
-
-&lt;p&gt;さらに，CONFIG_FREERTOS_UNICOREはfalseなので，このタスクを実行するコアはCPU1であることがわかります．&lt;/p&gt;
-
-&lt;p&gt;おそらくOSなどのシステムタスクはCPU0で行っていて，ユーザーアプリケーションタスクをCPU1で行うという位置づけなのでしょう．実際に各CPUには名前がついていて，Process CPUとApplication CPUとなっています．&lt;/p&gt;
-
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;ついに電子工作の世界にデュアルコアがやって参りましたね！&lt;br /&gt;
-デュアルコアを使うためにはRTOSは必須だと思うのでしっかり勉強していきたいです．&lt;/p&gt;
-
-&lt;p&gt;一度デュアルコア用のコードを書けるようになっておけば，将来クアッドコアやオタクコアのマイコンが登場してもすぐに適応することができます．&lt;/p&gt;
-
-&lt;p&gt;実は，ESP32にはUltra Low Power Coprocessorという8MHzで動くCPUがもう一つ入っています．そちらもこれから使い方を勉強していきたいと思うので，収穫があったら紹介したいと思います．&lt;/p&gt;
-
-&lt;p&gt;こんなにすごいマイコンですが，ESP-WROOM-32はたった700円です． &lt;br /&gt;
-ESP32の性能を最大限に使っていきましょう！&lt;/p&gt;
-
-&lt;h2 id=&quot;参考リンク&quot;&gt;参考リンク&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.espressif.com/en/products/hardware/esp32/resources&quot;&gt;www.espressif.com Resources&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/espressif/esp-idf&quot;&gt;Espressif IoT Development Framework&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/espressif/arduino-esp32&quot;&gt;Arduino core for ESP32 WiFi chip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 </description>
         <pubDate>Sat, 24 Jun 2017 00:00:00 +0900</pubDate>
@@ -1810,47 +1714,6 @@ KERISEv1&lt;/p&gt;
         <category>スクロール</category>
         
         <category>C言語</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>電力つぶやきbot</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&quot;中継型電力計&quot;&gt;中継型電力計&lt;/h3&gt;
-&lt;p&gt;先日の記事で&lt;a href=&quot;/posts/2016-03-23-relay-sensor/&quot;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
-
-&lt;h3 id=&quot;何の電力をつぶやくのか&quot;&gt;何の電力をつぶやくのか&lt;/h3&gt;
-
-&lt;p&gt;僕の家には&lt;a href=&quot;/posts/2014-09-14-solar-system/&quot;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;solar.jpg&quot; alt=&quot;Solar&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 03 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
-        
-        <category>ソーラー</category>
-        
-        <category>ESP-WROOM-02</category>
-        
-        <category>ESP8266</category>
-        
-        <category>Twitter</category>
-        
-        <category>電子工作</category>
-        
-        <category>bot</category>
-        
-        <category>電力計測</category>
-        
-        <category>C++</category>
-        
-        <category>Arduino</category>
         
         
         <category>works</category>

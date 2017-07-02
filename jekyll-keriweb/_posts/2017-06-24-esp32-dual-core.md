@@ -18,7 +18,7 @@ icon: "icon.jpg"
 [ESP32 Overview \| Espressif Systems](https://www.espressif.com/en/products/hardware/esp32/overview)
 
 ESP32は上海の企業であるEspressif Systemsから発売されているWiFi&Bluetoothモジュールです．同時にgccで開発できるマイコンでもあります．
-
+<!--more-->
 ESP-WROOM-32という700円ほどの無線モジュールの中に入っているマイコンがESP32です．
 
 ### デュアルコア
