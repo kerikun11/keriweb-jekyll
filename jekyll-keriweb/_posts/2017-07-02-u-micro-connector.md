@@ -7,6 +7,7 @@ tags:
   - "Hyperion"
   - "U-Micro"
   - "マイクロマウス"
+icon: "icon.png"
 ---
 
 ## U-Microコネクタとは
