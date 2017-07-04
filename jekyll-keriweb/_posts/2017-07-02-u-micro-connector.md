@@ -17,6 +17,8 @@ icon: "icon.png"
 Hyperion G3 リチウムポリマーバッテリー  
 ![リポ](li-po.png)
 
+<!--more-->
+
 ## 見つけたもの
 
 digikey surfingをしていたら，下記のコネクタを見つけました．
