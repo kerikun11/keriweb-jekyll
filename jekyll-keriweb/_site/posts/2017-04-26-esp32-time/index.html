@@ -9,11 +9,11 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Ryokeri14" />
 	<meta name="twitter:title" content="ESP32で時間取得 - KERI's Lab" />
-	<meta name="twitter:description" content="概要今回はESP32で現在時刻を取得するサンプルコードの紹介です．今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．具体的には，  time_t t = time(NULL);  struct tm *t_st;  t_st = localtim..." />
+	<meta name="twitter:description" content="概要今回はESP32で現在時刻を取得するサンプルコードの紹介です．今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．" />
 	<meta name="twitter:image" content="http://kerikeri.top/home/icon.png" />
 
 	<title>ESP32で時間取得 - KERI's Lab</title>
-	<meta name="description" content="概要今回はESP32で現在時刻を取得するサンプルコードの紹介です．今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．具体的には，  time_t t = time(NULL);  struct tm *t_st;  t_st = localtim...">
+	<meta name="description" content="概要今回はESP32で現在時刻を取得するサンプルコードの紹介です．今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．">
 
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://kerikeri.top/posts/2017-04-26-esp32-time/">
@@ -148,6 +148,7 @@
 
 <p>今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．</p>
 
+<!--more-->
 <p>具体的には，</p>
 
 <div class="language-c highlighter-rouge"><pre class="highlight"><code>  <span class="kt">time_t</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>

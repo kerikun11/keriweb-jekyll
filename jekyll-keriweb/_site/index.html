@@ -465,22 +465,6 @@ ESP32で何か物を作るとき，電源を切っても保存しておきたい
 
 今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．
 
-具体的には，
-
-  time_t t = time(NULL);
-  struct tm *t_st;
-  t_st = localtime(&amp;t);
-  printf("月: %d\n",t_st-&gt;tm_mon+1);
-  printf("日: %d\n",t_st-&gt;tm_mday);
-  printf("時: %d\n",t_st-&gt;tm_hour);
-  printf("分: %d\n",t_st-&gt;tm_min);
-  printf("秒: %d\n",t_st-&gt;tm_sec);
-  printf("Time: %s", ctime(&amp;t));
-
-
-
-のように時刻を扱えます．
-
 </span>
 			<!--
 			<p></p>
