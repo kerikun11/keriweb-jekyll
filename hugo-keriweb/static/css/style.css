@@ -424,7 +424,7 @@ select {
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 }
 
 .menu__toggle {

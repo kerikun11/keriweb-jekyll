@@ -1,9 +1,11 @@
-+++
-title = "About KERI"
-date = "2017-07-04"
-menu = "main"
-weight = 1
-+++
+---
+date: "2017-07-04"
+title: "About KERI"
+menu:
+  main:
+    name: About
+weight: 1
+---
 
 Hugo is a static site engine written in Go.
 

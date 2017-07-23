@@ -22,7 +22,10 @@
 			{{- end }}
 		</header>
 		<div class="list__excerpt">
-			{{ .Summary }}
+	   		{{ .Summary }}
+			<!--
+			{{ .Description }}
+			-->
 		</div>
 		{{- if .Site.Params.readmore }}
 		{{- if .Truncated }}

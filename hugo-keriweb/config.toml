@@ -5,8 +5,10 @@ paginate = "10" # Number of posts per page
 # theme = "mainroad"
 disqusShortname = "kerikun11+disqus@gmail.com" # Enable comments by entering your Disqus shortname
 googleAnalytics = "kerikun11" # Enable Google Analytics by entering your tracking id
-isCJKLanguage = true
+hasCJKLanguage = true
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+#rssLimit = 30 #default: 15
+#rssuri = "feed.xml" # default: "index.xml"
 
 [Author]
 	name = "KERI"
@@ -23,10 +25,17 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     leftsidebar = false # Move sidebar to the left side if true
     authorbox = true
     post_navigation = true
-    postSections = ["post"] # the section pages to show on home page and the "Recent articles" widget
+#    postSections = ["post"] # the section pages to show on home page and the "Recent articles" widget
     dateformat = "2006-01-02" # change the format of dates
     pygmentscodefences = true
     pygmentsstyle = "default"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    archive = "archives"
+    spotlight = "spotlights"
+
 
 [Params.widgets]
     search = true # Enable "Search" widget
@@ -40,23 +49,9 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     social_twitter = "Ryokeri14"
 #    social_linkedin = ""
     social_github = "kerikun11"
-	social_email = "kerikun11+web@gmail.com"
-
-[[params.menu]]
-    before = true
-    label  = "Home"
-    link   = "/"
-
-[[params.menu]]
-    before = true
-    label  = "Tags"
-    link   = "tags/"
-
-[[params.menu]]
-    before = true
-    label  = "Categories"
-    link   = "categories/"
+    social_email = "kerikun11+web@gmail.com"
 
 [permalinks]
 #	post = "/posts/:year/:month/:day/"
+    post = "/posts/:filename/"
 

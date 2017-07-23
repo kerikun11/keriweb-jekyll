@@ -3,8 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://kerikeri.top/about/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/works/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/post/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/post/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kerikeri.top/post/code/</loc>
     <lastmod>2017-07-04T22:27:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/post/2017-06-24-esp32-dual-core/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/post/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/post/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/arduino/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -19,20 +60,80 @@
   </url>
   
   <url>
+    <loc>http://kerikeri.top/categories/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/esp32/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/freertos/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/go/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/categories/golang/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/golang/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/hugo/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://kerikeri.top/</loc>
-    <lastmod>2017-07-04T22:27:03+09:00</lastmod>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/post/</loc>
-    <lastmod>2017-07-04T22:27:03+09:00</lastmod>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/</loc>
-    <lastmod>2017-07-04T22:27:03+09:00</lastmod>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/templates/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/tags/themes/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
