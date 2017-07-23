@@ -8,15 +8,15 @@
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@Ryokeri14" />
-	<meta name="twitter:title" content="秋月の時計キットをNTP時計化 - KERI's Lab" />
-	<meta name="twitter:description" content="家の玄関で地味に役に立っていた時計かなり前に秋月電子で買った時計キット．数字が大きく，遠くからでもよく見えるので自宅の玄関で地味に役立っていました．しかし，水晶の精度がいまいちでよくズレるので，7セグの表示部だけを残してESP32によるNTP時計にアップデートしました．" />
-	<meta name="twitter:image" content="http://kerikeri.top/posts/2017-07-23-aki-clock/icon.jpg" />
+	<meta name="twitter:title" content="KERIESP32 Trapezoid - KERI's Lab" />
+	<meta name="twitter:description" content="ESP-WROOM-32のブレークアウトボードWiFiとBluetoothが載ったデュアルコアなマイコンESP32のピッチ変換基板を新たに作ったので紹介します．" />
+	<meta name="twitter:image" content="http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/icon.png" />
 
-	<title>秋月の時計キットをNTP時計化 - KERI's Lab</title>
-	<meta name="description" content="家の玄関で地味に役に立っていた時計かなり前に秋月電子で買った時計キット．数字が大きく，遠くからでもよく見えるので自宅の玄関で地味に役立っていました．しかし，水晶の精度がいまいちでよくズレるので，7セグの表示部だけを残してESP32によるNTP時計にアップデートしました．">
+	<title>KERIESP32 Trapezoid - KERI's Lab</title>
+	<meta name="description" content="ESP-WROOM-32のブレークアウトボードWiFiとBluetoothが載ったデュアルコアなマイコンESP32のピッチ変換基板を新たに作ったので紹介します．">
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://kerikeri.top/posts/2017-07-23-aki-clock/">
+	<link rel="canonical" href="http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/">
 	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://kerikeri.top/feed.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
 
@@ -98,9 +98,9 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="post-header">
-		<img src="/posts/2017-07-23-aki-clock/icon.jpg" title="秋月の時計キットをNTP時計化" alt="秋月の時計キットをNTP時計化">
+		<img src="/posts/2017-07-23-keriesp32-trapezoid/icon.png" title="KERIESP32 Trapezoid" alt="KERIESP32 Trapezoid">
 		<div class="post-head-char">
-			<h1 class="post-title" itemprop="name headline">秋月の時計キットをNTP時計化</h1>
+			<h1 class="post-title" itemprop="name headline">KERIESP32 Trapezoid</h1>
 			<p class="post-meta">
 				<time datetime="2017-07-23T00:00:00+09:00" itemprop="datePublished">2017年07月23日</time>
 				<span>
@@ -112,12 +112,6 @@
 				, 
 				
 				<a href="/tags/#tag-index-ESP32">ESP32</a>
-				, 
-				
-				<a href="/tags/#tag-index-NTP">NTP</a>
-				, 
-				
-				<a href="/tags/#tag-index-時計">時計</a>
 				
 				
 			</p>
@@ -145,28 +139,67 @@
 
 	<span class="post-meta"></span>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="家の玄関で地味に役に立っていた時計">家の玄関で地味に役に立っていた時計</h2>
+		<h2 id="esp-wroom-32のブレークアウトボード">ESP-WROOM-32のブレークアウトボード</h2>
 
-<p>かなり前に秋月電子で買った<a href="http://akizukidenshi.com/catalog/g/gK-04379/">時計キット</a>．<br />
-数字が大きく，遠くからでもよく見えるので自宅の玄関で地味に役立っていました．</p>
-
-<p>しかし，水晶の精度がいまいちでよくズレるので，7セグの表示部だけを残してESP32によるNTP時計にアップデートしました．</p>
+<p>WiFiとBluetoothが載ったデュアルコアなマイコン<strong>ESP32</strong>のピッチ変換基板を新たに作ったので紹介します．</p>
 
 <!--more-->
-<p><img src="aki-tokei-lighting.jpg" alt="AE-TOKEI-VER4" /></p>
 
-<h2 id="作った基板">作った基板</h2>
+<p><a href="http://akizukidenshi.com/catalog/g/gM-11647/">ESP-WROOM-32</a><br />
+<img src="esp-wroom-32.jpg" alt="ESP-WROOM-32" class="img-small" /></p>
 
-<p>今回は久々にユニバーサル基板で製作しました．最近はプリント基板ばかり使っていたので，部品の配置の吟味に苦労しました．ユニバーサル基板で作るときも基板CADで設計してから作った方がキレイにできそうです．</p>
+<h2 id="基板名-keriesp32-trapezoid">基板名: KERIESP32 Trapezoid</h2>
 
-<p>上が秋月のキットの基板，下が今回作ったESP32-NTP時計基板<br />
-<img src="board.jpg" alt="ESP32のNTP時計" /></p>
+<p>Trapezoidとは英語で台形のことです．見てのとおり，基板の形が由来です．</p>
 
-<h2 id="これからもよろしく">これからもよろしく</h2>
+<p><img src="keriesp32-trapezoid-top.png" alt="KERIESP32 Trapezoid" class="img-medium" />
+<img src="keriesp32-trapezoid-back.png" alt="KERIESP32 Trapezoid" class="img-medium" /></p>
 
-<p>1日に1回，NTPサーバーから時刻を取得するようにしたので，ほとんど時間がズレることはないでしょう．地味に役に立っていた玄関の時計，これからも安定動作でよろしくお願いします．</p>
+<h2 id="他社の基板との違い">他社の基板との違い</h2>
 
-<p><img src="esp-clock-lighting.jpg" alt="ESP32のNTP時計" /></p>
+<h3 id="1-ioピンが順に並んだsip基板">1. I/Oピンが順に並んだSIP基板</h3>
+
+<p>ESP-WROOM-32はI/Oピンが謎の順番に配置されており，はっきり言って使いにくいです．</p>
+
+<p>KERIESP32の基板は，I/Oピンが順番に並び変えてあります．<br />
+さらに基板上にI/O番号が書いてあるので，作業が捗ること間違いなし！</p>
+
+<p>SIP (Single Inline Package) ⇔ DIP (Dual Inline Package)</p>
+
+<h3 id="2-あえて乗せなかったシリアル変換ic">2. あえて乗せなかったシリアル変換IC</h3>
+
+<p>ESP32のブレークアウト基板のほとんどはUSB-UART変換ICが載っています．<br />
+しかし，今回のKERIESP32 Trapezoidには，シリアル変換ICは載せませんでした．</p>
+
+<p>この基板は，試作用だけでなくいろいろな作品中に組み込みたいと思ったからです．<br />
+バッテリーで動かそうとするとき，シリアル変換ICが載っているとそちら側に電流が流れてしまいます．</p>
+
+<h3 id="3-内蔵spi-flashのピンは封印">3. 内蔵SPI-Flashのピンは封印</h3>
+
+<p>IO6-IO11はモジュール内部にあるSPI-Flashメモリと接続されていて，一般には使えません．間違えて使ってしまうと，壊してしまう恐れもありますし，そもそも正常に動作しません．使わないピンが出ていても仕方がないので，カットしました．</p>
+
+<p>そのおかげでSIPの30pinに収めることができ，ブレッドボードにさすことができます．</p>
+
+<p><img src="brb.jpg" alt="brb.jpg" class="img-medium" /></p>
+
+<h3 id="4-裏側にはmicro-sdカードスロットがある">4. 裏側にはMicro-SDカードスロットがある</h3>
+
+<p>ESP32はSDIOを持っており，SDカードと高速に通信することができます．</p>
+
+<p>Micro SDカードを使わない場合はSDスロットをはんだ付けしなければ，SDカード用のI/Oピンは自由に使うことができます．</p>
+
+<p>裏側<br />
+<img src="back.jpg" alt="裏側" class="img-medium" /></p>
+
+<h2 id="回路図">回路図</h2>
+
+<p>とてもシンプルです．</p>
+
+<p><a href="sketch.png"><img src="sketch.png" alt="回路図" /></a></p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>ESP32の開発環境がかなり整ってきました．デュアルコアな電子工作を満喫しましょう！</p>
 
 
 	</div>
@@ -192,27 +225,16 @@
 	<div class="post-guide">
 		<div class="post-guide-next">
 			
-			<p>次の記事</p>
+		</div>
+		<div class="post-guide-previous">
+			
+			<p>前の記事</p>
 			<a class="post-link" href="/posts/2017-07-23-esp32-with-sd/">
 				<img src="/home/icon.png" title="ESP32とMicro SDカード" alt="ESP32とMicro SDカード">
 				<div class="post-list-char">
 					<span class="post-meta">2017年07月23日 Category: explanations</span>
 					<h2 class="post-title">
 						ESP32とMicro SDカード
-					</h2>
-				</div>
-			</a>
-			
-		</div>
-		<div class="post-guide-previous">
-			
-			<p>前の記事</p>
-			<a class="post-link" href="/posts/2017-07-02-u-micro-connector/">
-				<img src="/posts/2017-07-02-u-micro-connector/icon.png" title="U-Microコネクタの正体" alt="U-Microコネクタの正体">
-				<div class="post-list-char">
-					<span class="post-meta">2017年07月02日 Category: memos</span>
-					<h2 class="post-title">
-						U-Microコネクタの正体
 					</h2>
 				</div>
 			</a>
