@@ -5,9 +5,36 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 Jul 2017 16:13:21 +0900</pubDate>
-    <lastBuildDate>Sat, 15 Jul 2017 16:13:21 +0900</lastBuildDate>
+    <pubDate>Sun, 23 Jul 2017 16:39:27 +0900</pubDate>
+    <lastBuildDate>Sun, 23 Jul 2017 16:39:27 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>秋月の時計キットをNTP時計化</title>
+        <description>&lt;h2 id=&quot;家の玄関で地味に役に立っていた時計&quot;&gt;家の玄関で地味に役に立っていた時計&lt;/h2&gt;
+
+&lt;p&gt;かなり前に秋月電子で買った&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gK-04379/&quot;&gt;時計キット&lt;/a&gt;．&lt;br /&gt;
+数字が大きく，遠くからでもよく見えるので自宅の玄関で地味に役立っていました．&lt;/p&gt;
+
+&lt;p&gt;しかし，水晶の精度がいまいちでよくズレるので，7セグの表示部だけを残してESP32によるNTP時計にアップデートしました．&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 23 Jul 2017 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2017-07-23-aki-clock/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-07-23-aki-clock/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>ESP32</category>
+        
+        <category>NTP</category>
+        
+        <category>時計</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>U-Microコネクタの正体</title>
@@ -1383,50 +1410,6 @@ KERISEv1&lt;/p&gt;
         <category>電子工作</category>
         
         <category>自作</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>変なキーボード</title>
-        <description>&lt;h2 id=&quot;つくったもの&quot;&gt;つくったもの&lt;/h2&gt;
-
-&lt;p&gt;ASCIIキーボードとスクロール表示器を作りました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;figure.png&quot; alt=&quot;figure&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;変なキーボード&quot;&gt;変なキーボード&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;キーボードの表面には２つのロータリースイッチがついています。それらを回すことで文字を選び、送信ボタンを押して送信します。&lt;/li&gt;
-  &lt;li&gt;もし間違った文字を送信してしまったら、送信ボタンを長押しすることで１文字ずつ削除することができます。&lt;/li&gt;
-  &lt;li&gt;文章ができたら、送信ボタンをさらに長押しすることで、Enterになり、文を始めからスクロールします。&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Tue, 05 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-05-strange-keyboard/</guid>
-        
-        <category>電子工作</category>
-        
-        <category>PIC</category>
-        
-        <category>PIC18F26K22</category>
-        
-        <category>キーボード</category>
-        
-        <category>LED</category>
-        
-        <category>電光掲示板</category>
-        
-        <category>ドットマトリクスLED</category>
-        
-        <category>スクロール</category>
-        
-        <category>C言語</category>
         
         
         <category>works</category>

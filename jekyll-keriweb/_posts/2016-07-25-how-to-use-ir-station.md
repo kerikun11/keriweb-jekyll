@@ -29,6 +29,10 @@ icon: "icon.png"
 
 ![壁に取り付けた様子](on-the-wall.jpg){: .img-medium}
 
+## IR-Stationのバージョン
+
+この記事の内容は，IR-Stationの「**v1.4.0**」に対応しております．ご注意ください．
+
 ## 2つの動作モード
 
 ### WiFiステーションモード
@@ -53,7 +57,8 @@ IR-StationがWiFiのアクセスポイントになり，スマホやPCがIR-Stat
 
 ### IR-Stationが出現
 
-電源を供給すると，`IR-Station`という名前のWiFiが出現します．
+電源を供給すると，`IR-Station`という名前のWiFiが出現します．  
+セキュリティがかかっている場合はパスワード「IR-Station」を使ってください．
 
 ![SSIDを検出](02-find-ssid.png){: .img-medium}
 
