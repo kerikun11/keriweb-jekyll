@@ -5,9 +5,31 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Jul 2017 19:33:15 +0900</pubDate>
-    <lastBuildDate>Sun, 23 Jul 2017 19:33:15 +0900</lastBuildDate>
+    <pubDate>Sun, 30 Jul 2017 00:39:42 +0900</pubDate>
+    <lastBuildDate>Sun, 30 Jul 2017 00:39:42 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>ESP32とMicro SDカード</title>
+        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回は，ESP32で何か作るときはとりあえず一緒にMicro SDスロットも載せましょうという話です．&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 29 Jul 2017 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</guid>
+        
+        <category>電子工作</category>
+        
+        <category>ESP32</category>
+        
+        <category>Micro SD</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>KERIESP32 Trapezoid</title>
@@ -1386,26 +1408,6 @@ KERISEv1&lt;/p&gt;
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
-        
-        <category>電子工作</category>
-        
-        <category>自作</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>昔作った電子工作たち～in FRISK 編～</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-frisk/</guid>
         
         <category>電子工作</category>
         

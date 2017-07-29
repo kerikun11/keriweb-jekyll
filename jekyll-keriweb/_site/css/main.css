@@ -462,7 +462,7 @@ pre {
 pre {
   background-color: #272822;
   color: #DDD;
-  font-family: sans-serif; }
+  font-family: monospace; }
 
 .highlight code {
   background-color: #272822;
