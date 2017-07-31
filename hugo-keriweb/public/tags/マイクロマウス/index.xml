@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>マイクロマウス on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9/</link>
+    <description>Recent content in マイクロマウス on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>KERISE v1の設計(回路編)</title>
+      <link>http://kerikeri.top/post/1/01/01/kerise-v1%E3%81%AE%E8%A8%AD%E8%A8%88%E5%9B%9E%E8%B7%AF%E7%B7%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/kerise-v1%E3%81%AE%E8%A8%AD%E8%A8%88%E5%9B%9E%E8%B7%AF%E7%B7%A8/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今年の全日本マイクロマウス大会2016に出場したKERISE v1．今回はその回路設計を紹介します．&lt;/p&gt;
+
+&lt;p&gt;全日本マイクロマウス大会2016の結果報告は&lt;a href=&#34;{% post_url 2016-11-21-micromouse2016 %}&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;KERISEv1.jpg&#34; alt=&#34;KERISEv1&#34; /&gt;{: .img-small}&lt;br /&gt;
+KERISEv1&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>KERISE v2 ができました！</title>
+      <link>http://kerikeri.top/post/1/01/01/kerise-v2-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/kerise-v2-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;マイクロマウスクラシック-ハーフ兼用マウス&#34;&gt;マイクロマウスクラシック&amp;amp;ハーフ兼用マウス&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;{% post_url 2016-11-21-micromouse2016 %}&#34; target=&#34;_blank&#34;&gt;昨年の大会&lt;/a&gt;ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;with-hand.jpg&#34; alt=&#34;KERISEv2&#34; /&gt;{: .img-medium}&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>KERISE v3 ができました！</title>
+      <link>http://kerikeri.top/post/1/01/01/kerise-v3-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/kerise-v3-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;kerisev3&#34;&gt;KERISEv3&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;kerisev3-front-side.jpg&#34; alt=&#34;KERISEv3&#34; /&gt;{: .img-small}&lt;/p&gt;
+
+&lt;h3 id=&#34;3台目のマウス&#34;&gt;3台目のマウス&lt;/h3&gt;
+
+&lt;p&gt;マイクロマウスを始めて8か月目になりました．けりです．&lt;br /&gt;
+作っては壊しを繰り返してはや3台目になります．なぜこんなに壊れるのでしょうか&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>U-Microコネクタの正体</title>
+      <link>http://kerikeri.top/post/1/01/01/u-micro%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E6%AD%A3%E4%BD%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/u-micro%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E6%AD%A3%E4%BD%93/</guid>
+      <description>&lt;h2 id=&#34;u-microコネクタとは&#34;&gt;U-Microコネクタとは&lt;/h2&gt;
+
+&lt;p&gt;マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．&lt;/p&gt;
+
+&lt;p&gt;Hyperion G3 リチウムポリマーバッテリー&lt;br /&gt;
+&lt;img src=&#34;li-po.png&#34; alt=&#34;リポ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ハーフ迷路を走ってみました！</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E8%BF%B7%E8%B7%AF%E3%82%92%E8%B5%B0%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E8%BF%B7%E8%B7%AF%E3%82%92%E8%B5%B0%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;ハーフサイズの迷路を走ってみました&#34;&gt;ハーフサイズの迷路を走ってみました&lt;/h2&gt;
+
+&lt;p&gt;こんにちは，けりです．&lt;br /&gt;
+KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

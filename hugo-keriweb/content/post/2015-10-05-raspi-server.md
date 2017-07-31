@@ -1,12 +1,14 @@
 ---
-layout: "post"
+date: "2015-10-05"
 title: "Raspberry Pi 2 Type Bでサーバー作り"
-category: "explanations"
+slug: "raspi-server"
+categories:
+  - "explanations"
 tags:
   - "Raspberry Pi"
   - "サーバー"
   - "ラズパイ"
-icon: "icon.jpg"
+thumbnail: "/posts/2015-10-05-raspi-server/icon.jpg"
 ---
 
 ## ラズパイの用意

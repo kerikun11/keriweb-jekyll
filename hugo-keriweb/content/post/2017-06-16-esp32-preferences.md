@@ -1,12 +1,14 @@
 ---
-layout: post
+date: "2017-06-16"
 title: "ESP32の設定管理ライブラリの紹介"
-category: "explanations"
+slug: "esp32-preferences"
+categories:
+  - "explanations"
 tags:
   - "ESP32"
   - "Arduino"
   - "Preferences"
-icon: "icon.jpg"
+thumbnail: "/posts/2017-06-16-esp32-preferences/icon.jpg"
 ---
 
 ## 概要

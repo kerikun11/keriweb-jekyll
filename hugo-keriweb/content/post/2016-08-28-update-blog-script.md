@@ -1,11 +1,13 @@
 ---
-layout: post
+date: "2016-08-28"
 title: "ブログを更新するスクリプト"
-category: "memos"
+slug: "update-blog-script"
+categories:
+  - "memos"
 tags:
   - "シェルスクリプト"
   - "ラズパイ"
-icon: "icon.png"
+thumbnail: "/posts/2016-08-28-update-blog-script/icon.png"
 ---
 
 ## github上にあるブログを同期するシェルスクリプト

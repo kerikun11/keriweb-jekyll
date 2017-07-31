@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-05-26"
 title: "Jekyll & Asciidocでシンタックスハイライト"
-category: "memos"
+slug: "syntax"
+categories:
+  - "memos"
 tags: ["Jekyll","Asciidoc","Blog","Source Code","SyntaxHighlighting"]
-icon: "icon.png"
+thumbnail: "/posts/2016-05-26-syntax/icon.png"
 ---
 
 == Jekyllのシンタックスハイライトテーマを変更する
@@ -23,10 +25,10 @@ https://github.com/jwarby/jekyll-pygments-themes[]から適当なテーマを持
 色が変な場合は以下のようにpreタグとcodeタグに適当な色を設定すると直る．
 
 ++++
-{% highlight css %}
+~~~css
 pre { color:#DDD; }
 .highlight code { color:#DDD; }
-{% endhighlight %}
+~~~
 ++++
 
 == Asciidocでの書き方
@@ -40,13 +42,13 @@ Jekyll & Asciidocでシンタックスハイライトをつけるには，
 [source,c]
 ----
 ++++
-{% raw %}{% highlight c %}{% endraw %}
+{% raw %}~~~c %}{% endraw
 #include <stdio.h>
 int main(int argc, char *argv[]){
 	printf("Hello World\n");
 	return 0;
 }
-{% raw %}{% endhighlight %}{% endraw %}
+{% raw %}~~~{% endraw %}
 ++++
 ----
 という風に記述すればよい．
@@ -55,12 +57,12 @@ int main(int argc, char *argv[]){
 上記の例は以下のように表示される．
 
 ++++
-{% highlight c %}
+~~~c
 #include <stdio.h>
 int main(int argc, char *argv[]){
 	printf("Hello World\n");
 	return 0;
 }
-{% endhighlight %}
+~~~
 ++++
 

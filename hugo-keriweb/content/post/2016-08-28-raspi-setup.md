@@ -1,11 +1,13 @@
 ---
-layout: post
+date: "2016-08-28"
 title: "ラズパイセットアップのコマンド群"
-category: "memos"
+slug: "raspi-setup"
+categories:
+  - "memos"
 tags:
   - "Raspberry Pi"
   - "ラズパイ"
-icon: "icon.png"
+thumbnail: "/posts/2016-08-28-raspi-setup/icon.png"
 ---
 
 ## はじめに

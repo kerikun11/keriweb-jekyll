@@ -1,14 +1,16 @@
 ---
-layout: post
+date: "2016-08-31"
 title: "VolumioでiTunesのプレイリストを使う"
-category: "memos"
+slug: "volumio-playlist"
+categories:
+  - "memos"
 tags:
   - "ラズパイ"
   - "ミュージックサーバー"
   - "Volumio"
   - "iTunes"
   - "プレイリスト"
-icon: "icon.png"
+thumbnail: "/posts/2016-08-31-volumio-playlist/icon.png"
 ---
 
 ## 概要
@@ -35,7 +37,7 @@ icon: "icon.png"
   1. `メニュー`→`ファイル`→`ライブラリ`→`プレイリストのエクスポート`を選ぶ
   1. 出力ファイル形式を`.m3u`にして保存する
 
-![プレイリストを出力](output.png){: .img-medium}
+{{< postfig src="output.png" title="プレイリストを出力" width="360px" >}}
 
 ## プレイリストのフォーマット
 

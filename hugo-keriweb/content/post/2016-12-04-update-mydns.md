@@ -1,6 +1,7 @@
 ---
-layout: post
+date: "2016-12-04"
 title: "CrontabでMyDNS.jpのIP通知"
+slug: "update-mydns"
 category: memos
 tag:
  - "サーバー"

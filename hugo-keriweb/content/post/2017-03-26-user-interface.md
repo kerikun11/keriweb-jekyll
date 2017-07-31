@@ -1,7 +1,9 @@
 ---
-layout: post
+date: "2017-03-26"
 title: "ESP32用UIライブラリ"
-category: "memos"
+slug: "user-interface"
+categories:
+  - "memos"
 tags:
   - "UI"
   - "ボタン"

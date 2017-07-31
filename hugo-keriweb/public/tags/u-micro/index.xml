@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>U Micro on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/u-micro/</link>
+    <description>Recent content in U Micro on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/u-micro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>U-Microコネクタの正体</title>
+      <link>http://kerikeri.top/post/1/01/01/u-micro%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E6%AD%A3%E4%BD%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/u-micro%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E6%AD%A3%E4%BD%93/</guid>
+      <description>&lt;h2 id=&#34;u-microコネクタとは&#34;&gt;U-Microコネクタとは&lt;/h2&gt;
+
+&lt;p&gt;マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．&lt;/p&gt;
+
+&lt;p&gt;Hyperion G3 リチウムポリマーバッテリー&lt;br /&gt;
+&lt;img src=&#34;li-po.png&#34; alt=&#34;リポ&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

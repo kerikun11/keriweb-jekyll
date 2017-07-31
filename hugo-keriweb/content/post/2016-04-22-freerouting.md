@@ -1,14 +1,16 @@
 ---
-layout: "post"
+date: "2016-04-22"
 title: "KiCadで自動配線"
-category: "explanations"
+slug: "freerouting"
+categories:
+  - "explanations"
 tags: ["KiCad", "自動配線", "回路", "電子工作", "基板"]
-icon: "icon.png"
+thumbnail: "/posts/2016-04-22-freerouting/icon.png"
 ---
 
 ## 概要
 
-![KiCad](kicad.jpg)
+{{< postfig src="kicad.jpg" title="KiCad" width="360px" >}}
 
 ### 自動配線ツールを使おう
 
@@ -87,7 +89,7 @@ Freerouting.exeはインストールする必要はありません．使うと�
 
 KiCadでいつも通りにできるだけ配線が楽になるように部品を配置していく．
 
-![基板作成画面](parts.png){: .img-medium}
+{{< postfig src="parts.png" title="基板作成画面" width="360px" >}}
 
 ### 必要に応じてデザインルールを設定する
 
@@ -104,16 +106,16 @@ KiCadでいつも通りにできるだけ配線が楽になるように部品を
   1. 黄色のアイコンの`外部ルータ「Freerouter」とのファイル交換`をクリックする．
   1. `現在のボードを”Specctra DSN”ファイルへエクスポート`を押してdsnファイルを作成する．
 
-![基板作成画面](pcb.png){: .img-medium}
+{{< postfig src="pcb.png" title="基板作成画面" width="360px" >}}
 
-![エクスポート](exp.png)
+{{< postfig src="exp.png" title="エクスポート" width="360px" >}}
 
 ### 自動配線ツールの起動
 
   1. ダウンロードした`Freerouting.exe`を起動する．
   1. 先ほどエクスポートしたdsnファイルを読み込む．
 
-![Freerouting](freerouting.png)
+{{< postfig src="freerouting.png" title="Freerouting" width="360px" >}}
 
 ### 自動配線のパラメータの設定
 
@@ -122,9 +124,9 @@ KiCadでいつも通りにできるだけ配線が楽になるように部品を
   1. さらに出てきた画面でコストの設定をすることができる．
   1. 特に，切削基板の場合は，表面(F.Cu)のコストを高く設定する．
 
-![Freerouting](menu.png){: .img-medium}
-![Freerouting](layer.png)
-![Freerouting](param.png)
+{{< postfig src="menu.png" title="Freerouting" width="360px" >}}
+{{< postfig src="layer.png" title="Freerouting" width="360px" >}}
+{{< postfig src="param.png" title="Freerouting" width="360px" >}}
 
 ### 自動配線開始
 
@@ -132,7 +134,7 @@ KiCadでいつも通りにできるだけ配線が楽になるように部品を
 
 パソコンのスペックや配線の複雑さによってはかなり時間がかかることがある．僕の場合，長いときは4時間くらいかかった．
 
-![Freerouting](board.png){: .img-medium}
+{{< postfig src="board.png" title="Freerouting" width="360px" >}}
 
 ### 配線結果をsesファイルに書き出し
 
@@ -140,14 +142,14 @@ KiCadでいつも通りにできるだけ配線が楽になるように部品を
 
 そうなったら，メニューバーの`File`→`Export Specctra Session FIle`をクリックしてsesファイルを作成する．
 
-![Freerouting](save.png){: .img-medium}
+{{< postfig src="save.png" title="Freerouting" width="360px" >}}
 
 ### 配線結果をKiCadへ取り込む
 
 KiCadに戻り，dsnファイルを書き出した時と同じ画面で今度はsesファイルをインポートしたら完成．読み込むときに結線情報データを再構築しますか？と聞かれるのではいを押す．
 
-![Freerouting](import.png)
-![Freerouting](complete.png){: .img-medium}
+{{< postfig src="import.png" title="Freerouting" width="360px" >}}
+{{< postfig src="complete.png" title="Freerouting" width="360px" >}}
 
 ## トラブルシューティング
 

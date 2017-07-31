@@ -1,12 +1,14 @@
 ---
-layout: post
+date: "2016-09-01"
 title: "ラズパイでミュージックサーバー"
-category: "works"
+slug: "raspi-music-server"
+categories:
+  - "works"
 tags:
   - "ラズパイ"
   - "ミュージックサーバー"
   - "Volumio"
-icon: "icon.jpg"
+thumbnail: "/posts/2016-09-01-raspi-music-server/icon.jpg"
 ---
 
 ## 作ったもの
@@ -15,7 +17,7 @@ icon: "icon.jpg"
 
 スマートフォンでコントロールできるステレオコンポです．
 
-![ミュージックサーバー](music-server.jpg){: .img-medium}
+{{< postfig src="music-server.jpg" title="ミュージックサーバー" width="360px" >}}
 
 <!--more-->
 
@@ -25,50 +27,50 @@ icon: "icon.jpg"
 
 [http://akizukidenshi.com/catalog/g/gM-10414/](http://akizukidenshi.com/catalog/g/gM-10414/)
 
-![ラズパイ3](raspi3.jpg){: .img-small}
+{{< postfig src="raspi3.jpg" title="ラズパイ3" width="360px" >}}
 
 ### Micro SDXC 64GB
 [https://www.amazon.co.jp/dp/B010SERHJY](https://www.amazon.co.jp/dp/B010SERHJY)
 
-![micro SD](sd.jpg){: .img-small}
+{{< postfig src="sd.jpg" title="micro SD" width="360px" >}}
 
 ### AKI.DAC-U2704 REV.C
 
 [http://akizukidenshi.com/catalog/g/gK-05369/](http://akizukidenshi.com/catalog/g/gK-05369/)
 
-![DAC](dac.jpg){: .img-small}
+{{< postfig src="dac.jpg" title="DAC" width="360px" >}}
 
 ### アキバのジャンク街で買ったウーハー付きアンプ
 
 5年前くらいにアキバのジャンク街で新品2,000円程で買ったウーハー付きアンプ．音がいいんだな．
 
-![アンプ](amp.jpg){: .img-small}
+{{< postfig src="amp.jpg" title="アンプ" width="360px" >}}
 
 ### 家にあったBOSEのスピーカー
 
-![スピーカー](speaker.jpg){: .img-small}
+{{< postfig src="speaker.jpg" title="スピーカー" width="360px" >}}
 
 ### 2.5A出力ACアダプタ
 
 [http://akizukidenshi.com/catalog/g/gM-10507/](http://akizukidenshi.com/catalog/g/gM-10507/)
 
-![ACアダプタ](acadapter.jpg){: .img-small}
+{{< postfig src="acadapter.jpg" title="ACアダプタ" width="360px" >}}
 
 ### マイクロUSBケーブル
 
 [http://akizukidenshi.com/catalog/g/gC-09314/](http://akizukidenshi.com/catalog/g/gC-09314/)
 
-![USB-micro-Bケーブル](usb.jpg){: .img-small}
+{{< postfig src="usb.jpg" title="USB-micro-Bケーブル" width="360px" >}}
 
 ### 短いミニUSBケーブル
 
 家に転がっていました．
 
-![USB-mini-Bケーブル](miniusb.jpg){: .img-small}
+{{< postfig src="miniusb.jpg" title="USB-mini-Bケーブル" width="360px" >}}
 
 ### RCA-ステレオミニジャック変換ケーブル
 
-![RCAケーブル](rca.jpg){: .img-small}
+{{< postfig src="rca.jpg" title="RCAケーブル" width="360px" >}}
 
 ## ソフトウェア
 
@@ -94,13 +96,13 @@ Volumioとはラズパイ用OSであるraspbeanをもとに作られたミュー
 
 わかりやすいGUIで，直感的に操作できます．
 
-![ブラウザ](browser.png){: .img-medium}
+{{< postfig src="browser.png" title="ブラウザ" width="360px" >}}
 
 ### MPDクライアントから操作
 
 もちろん，MPDクライアントにも対応しています．
 
-![MPDクライアント](mpd.png){: .img-medium}
+{{< postfig src="mpd.png" title="MPDクライアント" width="360px" >}}
 
 ## まとめ
 

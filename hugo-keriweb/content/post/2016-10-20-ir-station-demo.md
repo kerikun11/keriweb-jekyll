@@ -1,14 +1,16 @@
 ---
-layout: post
+date: "2016-10-20"
 title: "IR-Stationのデモンストレーションサイト"
-category: "works"
+slug: "ir-station-demo"
+categories:
+  - "works"
 tag:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "Sinatra"
   - "JavaScript"
   - "HTML"
-icon: "icon.png"
+thumbnail: "/posts/2016-10-20-ir-station-demo/icon.png"
 ---
 
 ## IR-Stationの操作を体験できます！

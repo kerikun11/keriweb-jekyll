@@ -1,9 +1,10 @@
 ---
-layout: post
+date: "2016-07-06"
 title: "赤外線学習リモコンの基板が届きました！"
+slug: "ir-station-board"
 category: works
 tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-07-06-ir-station-board/icon.jpg"
 ---
 
 ## 基板が届きました
@@ -43,17 +44,17 @@ icon: "icon.jpg"
 
 ### 写真
 
-![到着](recv.jpg)
+{{< postfig src="recv.jpg" title="到着" width="360px" >}}
 
 ## 届いた基板
 
 今回は，一般的な基板の中で一番薄い，0.6mm厚基板にしました．小型のケースに収めるためです．
-![パックされている](pack.jpg)
-![基板](board.jpg)
+{{< postfig src="pack.jpg" title="パックされている" width="360px" >}}
+{{< postfig src="board.jpg" title="基板" width="360px" >}}
 
 ## wktk
 
 基板が届くのを今か今かと待っていたので，届いて興奮しちゃいました．  
 さあ，準備は整いました．あとは作るだけです！
 
-追記2016/07/18: 完成の記事を書きました．→[赤外線学習リモコン完成]({% post_url 2016-07-18-ir-station %})
+追記2016/07/18: 完成の記事を書きました．→[赤外線学習リモコン完成](/posts/2016-07-18-ir-station/)

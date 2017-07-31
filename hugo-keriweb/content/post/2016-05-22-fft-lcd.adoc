@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-05-22"
 title: "高速フーリエ変換でスペクトル表示"
-category: "works"
+slug: "fft-lcd"
+categories:
+  - "works"
 tags: ["FFT", "高速フーリエ変換", "電子工作", "Nucleo", "音声解析", "グラフィック液晶", "シリアル通信"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-05-22-fft-lcd/icon.jpg"
 ---
 
 == 概要

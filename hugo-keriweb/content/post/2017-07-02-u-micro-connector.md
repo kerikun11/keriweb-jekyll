@@ -1,13 +1,15 @@
 ---
-layout: post
+date: "2017-07-02"
 title: "U-Microコネクタの正体"
-category: "memos"
+slug: "u-micro-connector"
+categories:
+  - "memos"
 tags:
   - "Li-Po"
   - "Hyperion"
   - "U-Micro"
   - "マイクロマウス"
-icon: "icon.png"
+thumbnail: "/posts/2017-07-02-u-micro-connector/icon.png"
 ---
 
 ## U-Microコネクタとは
@@ -15,7 +17,7 @@ icon: "icon.png"
 マイクロマウスでよく使われるリチウムポリマー電池「Hyperion」シリーズですが，「U-Micro」という1.27mmピッチの謎のコネクタが付属しています．それの正体がなんとなくわかったので記事にしました．
 
 Hyperion G3 リチウムポリマーバッテリー  
-![リポ](li-po.png)
+{{< postfig src="li-po.png" title="リポ" width="360px" >}}
 
 <!--more-->
 

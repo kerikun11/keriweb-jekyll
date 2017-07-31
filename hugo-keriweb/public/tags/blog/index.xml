@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/blog/</link>
+    <description>Recent content in Blog on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jekyll &amp; Asciidocでシンタックスハイライト</title>
+      <link>http://kerikeri.top/post/1/01/01/jekyll--asciidoc%E3%81%A7%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/jekyll--asciidoc%E3%81%A7%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_jekyllのシンタックスハイライトテーマを変更する&#34;&gt;Jekyllのシンタックスハイライトテーマを変更する&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Jekyllのデフォルトのテーマはダサいので変更する．&lt;br&gt;
+&lt;a href=&#34;https://github.com/jwarby/jekyll-pygments-themes&#34; class=&#34;bare&#34;&gt;https://github.com/jwarby/jekyll-pygments-themes&lt;/a&gt;から適当なテーマを持ってきて，中身を以下のファイルと差し替える．(バックアップを取ろう)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&amp;lt;your-jekyll-site&amp;gt;/_sass/_syntax-highlighting.sass&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログのサーバーが新しくなりました！</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%8C%E6%96%B0%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%8C%E6%96%B0%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;ラズパイ3を購入&#34;&gt;ラズパイ3を購入&lt;/h2&gt;
+
+&lt;h3 id=&#34;ハイスペックなラズパイ3&#34;&gt;ハイスペックなラズパイ3&lt;/h3&gt;
+
+&lt;p&gt;64bitのARM-CPUが搭載されたラズパイ3が話題になったのは記憶に新しいですが，ラズパイ3は，秋月では6,200円ですし，公式でも5,000円ほどします．&lt;/p&gt;
+
+&lt;h3 id=&#34;税込4-000円かつカード払いok&#34;&gt;税込4,000円かつカード払いOK！&lt;/h3&gt;
+
+&lt;p&gt;そんなラズパイ3が，Maker Faire Tokyo 2016 で税込4,000円かつカード払いOKで販売しているではありませんか！！&lt;/p&gt;
+
+&lt;p&gt;これは安い！と思い，使う予定もないのに衝動買いしちゃいました&amp;hellip;(汗&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

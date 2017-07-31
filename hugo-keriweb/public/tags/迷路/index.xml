@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>迷路 on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/</link>
+    <description>Recent content in 迷路 on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ハーフ迷路を走ってみました！</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E8%BF%B7%E8%B7%AF%E3%82%92%E8%B5%B0%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E8%BF%B7%E8%B7%AF%E3%82%92%E8%B5%B0%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;ハーフサイズの迷路を走ってみました&#34;&gt;ハーフサイズの迷路を走ってみました&lt;/h2&gt;
+
+&lt;p&gt;こんにちは，けりです．&lt;br /&gt;
+KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

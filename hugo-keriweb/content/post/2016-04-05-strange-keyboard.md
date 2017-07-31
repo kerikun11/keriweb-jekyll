@@ -1,16 +1,18 @@
 ---
-layout: "post"
+date: "2016-04-05"
 title: "変なキーボード"
-category: "works"
+slug: "strange-keyboard"
+categories:
+  - "works"
 tags: ["電子工作","PIC", "PIC18F26K22", "キーボード", "LED", "電光掲示板", "ドットマトリクスLED", "スクロール", "C言語"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-04-05-strange-keyboard/icon.jpg"
 ---
 
 ## つくったもの
 
 ASCIIキーボードとスクロール表示器を作りました。
 
-![figure](figure.png)
+{{< postfig src="figure.png" title="figure" width="360px" >}}
 
 ## 変なキーボード
 
@@ -24,7 +26,7 @@ ASCIIキーボードとスクロール表示器を作りました。
 
 この表のとおりにロータリースイッチを回せば、好きな文字を表示させることができます。
 
-![ASCIIコード表](table.png)
+{{< postfig src="table.png" title="ASCIIコード表" width="360px" >}}
 ただし、SP=スペース、Del=全消去
 
 ## メモリー機能

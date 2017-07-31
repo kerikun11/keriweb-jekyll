@@ -1,0 +1,12 @@
+{{- if .Site.Params.widgets.categories }}
+{{- if isset .Site.Taxonomies "categories" }}
+{{- if and (gt .WordCount 400 ) (ne .Params.toc "false") }}
+<div class="widget-categories widget">
+	<h4 class="widget__title">Table of Contents</h4>
+	<div class="widget__content">
+    	{{ .Page.TableOfContents}}
+	</div>
+</div>
+{{- end }}
+{{- end }}
+{{- end }}

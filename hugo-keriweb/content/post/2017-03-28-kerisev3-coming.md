@@ -1,17 +1,19 @@
 ---
-layout: post
+date: "2017-03-28"
 title: "KERISE v3 ができました！"
-category: "works"
+slug: "kerisev3-coming"
+categories:
+  - "works"
 tags:
   - "KERISEv3"
   - "マイクロマウス"
-icon: "icon.jpg"
+thumbnail: "/posts/2017-03-28-kerisev3-coming/icon.jpg"
 pickup: true
 ---
 
 ## KERISEv3
 
-![KERISEv3](kerisev3-front-side.jpg){: .img-small}
+{{< postfig src="kerisev3-front-side.jpg" title="KERISEv3" width="360px" >}}
 
 ### 3台目のマウス
 
@@ -42,7 +44,7 @@ pickup: true
 
 Fusion360が流行っています．習得するにはまず使わないといけないので，今回のマウスはFusion360で設計してみました．
 
-![KERISEv3-fusion](kerisev3-fusion.png){: .img-small}
+{{< postfig src="kerisev3-fusion.png" title="KERISEv3-fusion" width="360px" >}}
 
 ### Fusionの埋め込み表示
 
@@ -58,26 +60,26 @@ Fusion360はクラウド上にデータを保存できるので，HTMLに埋め�
 
 Fusion360にはレンダリングという機能があり，設計した立体の光の反射などを計算して実物みたいな画像を生成してくれます．
 
-![KERISEv3-fusion](kerisev3-rendering.png){: .img-medium}
+{{< postfig src="kerisev3-rendering.png" title="KERISEv3-fusion" width="360px" >}}
 
 ## 写真集
 
-![KERISEv3](kerisev3-front-side.jpg){: .img-small}
-![KERISEv3](kerisev3-no-battery.jpg){: .img-small}
-![KERISEv3](kerisev3-front.jpg){: .img-small}
-![KERISEv3](kerisev3-back.jpg){: .img-small}
-![KERISEv3](kerisev3-up.jpg){: .img-small}
-![KERISEv3](kerisev3-left.jpg){: .img-small}
-![KERISEv3](kerisev3-right.jpg){: .img-small}
-![KERISEv3](kerisev3-coin.jpg){: .img-small}
+{{< postfig src="kerisev3-front-side.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-no-battery.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-front.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-back.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-up.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-left.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-right.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="kerisev3-coin.jpg" title="KERISEv3" width="360px" >}}
 
 ## 重量
 
 16.48gでした．ハーフの中では重い方でしょうか...  
 もう少し容量が小さくて軽いバッテリーを探しているので，見つかれば少し軽くなるかもです．
 
-![KERISEv3](kerisev3-weight.jpg){: .img-small}
-![KERISEv3](battery.jpg){: .img-small}
+{{< postfig src="kerisev3-weight.jpg" title="KERISEv3" width="360px" >}}
+{{< postfig src="battery.jpg" title="KERISEv3" width="360px" >}}
 
 ## 走る様子
 
@@ -96,4 +98,4 @@ Fusion360にはレンダリングという機能があり，設計した立体�
 KERISEv2が壊れてしまって，動くマウスがない状態が続きとても悲しかったので，動くマウスができて本当によかったです．ハーフマウスについていろいろ教えてくれたTwitterの方々，ありがとうございました．  
 まだまだやることは山積みですが．まずはPIDパラメータの選定からやっていこうと思います．
 
-![KERISEv3](kerisev3-hand.jpg){: .img-medium}
+{{< postfig src="kerisev3-hand.jpg" title="KERISEv3" width="360px" >}}

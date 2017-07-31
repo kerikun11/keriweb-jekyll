@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-06-14"
 title: "おすすめ PDF Viewer"
-category: "explanations"
+slug: "pdf"
+categories:
+  - "explanations"
 tags: ["PC","Windows","pdf","tex","viewer","editor"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-06-14-pdf/icon.jpg"
 ---
 
 == 概要

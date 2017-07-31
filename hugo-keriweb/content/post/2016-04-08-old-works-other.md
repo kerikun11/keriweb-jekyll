@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-04-08"
 title: "昔作った電子工作たち～その他～"
-category: "works"
+slug: "old-works-other"
+categories:
+  - "works"
 tags: ["電子工作", "自作"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-04-08-old-works-other/icon.jpg"
 ---
 
 ## 概要
@@ -13,33 +15,33 @@ icon: "icon.jpg"
 ## ヘッドライトを分解して調光機能を追加
 <!--more-->
 
-![ヘッドライト](Head Light (1).jpg)
-![ヘッドライト](Head Light (2).jpg)
-![ヘッドライト](Head Light (3).jpg)
-![ヘッドライト](Head Light (4).jpg)
-![ヘッドライト](Head Light (5).jpg)
-![ヘッドライト](Head Light (6).jpg)
-![ヘッドライト](Head Light (7).jpg)
-![ヘッドライト](Head Light (8).jpg)
+{{< postfig src="Head Light (1).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (2).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (3).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (4).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (5).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (6).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (7).jpg" title="ヘッドライト" width="360px" >}}
+{{< postfig src="Head Light (8).jpg" title="ヘッドライト" width="360px" >}}
 
 ## サッカーの選手交代ボード
 
-![選手交代ボード](Player Changing Board (1).jpg)
-![選手交代ボード](Player Changing Board (2).jpg)
-![選手交代ボード](Player Changing Board (3).jpg)
+{{< postfig src="Player Changing Board (1).jpg" title="選手交代ボード" width="360px" >}}
+{{< postfig src="Player Changing Board (2).jpg" title="選手交代ボード" width="360px" >}}
+{{< postfig src="Player Changing Board (3).jpg" title="選手交代ボード" width="360px" >}}
 
 ## ちょっとオシャレなスタンド
 
-![スタンド](Stand (1).jpg)
-![スタンド](Stand (2).jpg)
-![スタンド](Stand (3).jpg)
-![スタンド](Stand (4).jpg)
-![スタンド](Stand (5).jpg)
+{{< postfig src="Stand (1).jpg" title="スタンド" width="360px" >}}
+{{< postfig src="Stand (2).jpg" title="スタンド" width="360px" >}}
+{{< postfig src="Stand (3).jpg" title="スタンド" width="360px" >}}
+{{< postfig src="Stand (4).jpg" title="スタンド" width="360px" >}}
+{{< postfig src="Stand (5).jpg" title="スタンド" width="360px" >}}
 
 ## アップダウンカウンタ
 
-![アップダウンカウンタ](Up Down Counter (1).jpg)
-![アップダウンカウンタ](Up Down Counter (2).jpg)
-![アップダウンカウンタ](Up Down Counter (3).png)
+{{< postfig src="Up Down Counter (1).jpg" title="アップダウンカウンタ" width="360px" >}}
+{{< postfig src="Up Down Counter (2).jpg" title="アップダウンカウンタ" width="360px" >}}
+{{< postfig src="Up Down Counter (3).png" title="アップダウンカウンタ" width="360px" >}}
 
 

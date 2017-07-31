@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charge Station on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/charge-station/</link>
+    <description>Recent content in Charge Station on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/charge-station/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Charge Station</title>
+      <link>http://kerikeri.top/post/1/01/01/charge-station/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/charge-station/</guid>
+      <description>概要 ChargeStationとは自作の携帯電話充電器です。僕が命名しました。充電が終わると自動で給電を止めるので、電気の節約になります。 機</description>
+    </item>
+    
+    <item>
+      <title>ChargeStationの紹介</title>
+      <link>http://kerikeri.top/post/1/01/01/chargestation%E3%81%AE%E7%B4%B9%E4%BB%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/chargestation%E3%81%AE%E7%B4%B9%E4%BB%8B/</guid>
+      <description>みなさん、こんにちは。 14の けり @Ryokeri14 です。 春休みになりました。 みなさん、進捗どうですか？ 今日ご紹介するのは Charge Station です。 これだけだと何かわからない</description>
+    </item>
+    
+  </channel>
+</rss>

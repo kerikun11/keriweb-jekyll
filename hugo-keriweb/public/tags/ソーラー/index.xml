@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ソーラー on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC/</link>
+    <description>Recent content in ソーラー on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>100W級ソーラーシステムの自作</title>
+      <link>http://kerikeri.top/post/1/01/01/100w%E7%B4%9A%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%87%AA%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/100w%E7%B4%9A%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%87%AA%E4%BD%9C/</guid>
+      <description>どーも。椋けり（twitter:@Ryokeri14）です。id研です。 夏休みにもかかわらず、バイトを入れすぎて 全然遊んでないじゃないか！ じ</description>
+    </item>
+    
+    <item>
+      <title>ソーラー発電量モニター</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E7%99%BA%E9%9B%BB%E9%87%8F%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E7%99%BA%E9%9B%BB%E9%87%8F%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;{% post_url 2014-09-14-solar-system %}&#34; target=&#34;_blank&#34;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&#34;https://thingspeak.com/&#34; target=&#34;_blank&#34;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
+
+&lt;p&gt;データの送信には、自作の&lt;a href=&#34;{% post_url 2016-03-23-relay-sensor %}&#34; target=&#34;_blank&#34;&gt;中継型電力計&lt;/a&gt;を使用しています。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>電力つぶやきbot</title>
+      <link>http://kerikeri.top/post/1/01/01/%E9%9B%BB%E5%8A%9B%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8Dbot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E9%9B%BB%E5%8A%9B%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8Dbot/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&#34;中継型電力計&#34;&gt;中継型電力計&lt;/h3&gt;
+
+&lt;p&gt;先日の記事で&lt;a href=&#34;{% post_url 2016-03-23-relay-sensor %}&#34; target=&#34;_blank&#34;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
+
+&lt;h3 id=&#34;何の電力をつぶやくのか&#34;&gt;何の電力をつぶやくのか&lt;/h3&gt;
+
+&lt;p&gt;僕の家には&lt;a href=&#34;{% post_url 2014-09-14-solar-system %}&#34; target=&#34;_blank&#34;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;solar.jpg&#34; alt=&#34;Solar&#34; /&gt;{: .img-medium}
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wifi on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/wifi/</link>
+    <description>Recent content in Wifi on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ESP-WROOM-32からメールを送る</title>
+      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%8B%E3%82%89%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%8B%E3%82%89%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8B/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ESP32にはHTTPSクライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
+
+&lt;p&gt;Arduino上で動くコードです．esp32-arduino-coreは最新のものを使用してください．古いものだと，SSLまわりでエラーが発生します．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP-WROOM-32で秋月の売場表示</title>
+      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</guid>
+      <description>&lt;h2 id=&#34;まずはじめに&#34;&gt;まずはじめに&lt;/h2&gt;
+
+&lt;h3 id=&#34;秋月の通販サイトが進化&#34;&gt;秋月の通販サイトが進化&lt;/h3&gt;
+
+&lt;p&gt;少し前から，&lt;a href=&#34;http://akizukidenshi.com/&#34; target=&#34;_blank&#34;&gt;秋月の通販サイト&lt;/a&gt;で店舗の在庫数と売場の場所が見れるようになりました．&lt;br /&gt;
+商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP8266で赤外線学習リモコン</title>
+      <link>http://kerikeri.top/post/1/01/01/esp8266%E3%81%A7%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/esp8266%E3%81%A7%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</guid>
+      <description>&lt;h2 id=&#34;esp8266とは&#34;&gt;ESP8266とは&lt;/h2&gt;
+
+&lt;h3 id=&#34;日本の技適を取得済みwifiモジュール&#34;&gt;日本の技適を取得済みWiFiモジュール！！&lt;/h3&gt;
+
+&lt;p&gt;ESP8266とはWiFi制御用マイコンです。もともと中国で流行っていました。そのマイコンを内蔵したESP-WROOM-02というWiFiモジュールが日本の技適を取得したので、日本でも人気になりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;とにかく安い&#34;&gt;とにかく安い！&lt;/h3&gt;
+
+&lt;p&gt;その価格はなんと、たったの&lt;strong&gt;550円&lt;/strong&gt;です！！&lt;br /&gt;
+&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-09607/&#34; target=&#34;_blank&#34;&gt;ESP-WROOM-02&lt;/a&gt;←秋月電子などで売っています。&lt;br /&gt;
+&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-09607/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;esp8266.jpg&#34; alt=&#34;ESP8266&#34; /&gt;{: .img-small}&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IR Station</title>
+      <link>http://kerikeri.top/post/1/01/01/ir-station/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/ir-station/</guid>
+      <description>IR-Station Infrared Remote Controller with ESP8266 WiFi-module
+You can control your home appliances with your smartphone or laptop.
+The latest information is here
+Main parts  ESP-WROOM-02 (ESP8266 WiFi Module) IR Receiver IR LED Indicator LED  Looks The Device&amp;rsquo;s Appearance Display Sample How to Use Setup the Device  Supply power to the device. Connect your cellphone or laptop to Wi-Fi SSID &amp;ldquo;IR-Station&amp;rdquo;. Access http://192.168.4.1 in a browser Enter Wi-Fi SSID of your home and its password Enter a device name you like.</description>
+    </item>
+    
+    <item>
+      <title>メダカの照明 Ver.2</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E-ver.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E-ver.2/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&#34;メダカの水槽の照明&#34;&gt;メダカの水槽の照明&lt;/h3&gt;
+
+&lt;p&gt;以前、PICで作った&lt;a href=&#34;{% post_url 2015-06-04-killifish-light %}&#34; target=&#34;_blank&#34;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;fish.jpg&#34; alt=&#34;めだか&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;格安wifiモジュール&#34;&gt;格安WiFiモジュール&lt;/h3&gt;
+
+&lt;p&gt;今注目のWiFiモジュールであるESP-WROOM-02を使ってWiFiに対応しました。これにより、スマートフォンなどからブラウザ経由で操作できます。&lt;/p&gt;
+
+&lt;p&gt;このWiFiモジュールを使った赤外線学習リモコンの記事も書きましたので合わせてご覧ください。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;{% post_url 2015-12-30-ir-station %}&#34; target=&#34;_blank&#34;&gt;赤外線学習リモコン（日本語による紹介記事）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;{% post_url 2016-03-11-ir-station-reference %}&#34; target=&#34;_blank&#34;&gt;赤外線学習リモコン（英語によるリファレンス）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-09607/&#34; target=&#34;_blank&#34;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;esp-wroom-02.jpg&#34; alt=&#34;ESP-WROOM-02&#34; /&gt;{: .img-small}
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>赤外線学習リモコンの基板が届きました！</title>
+      <link>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%81%AE%E5%9F%BA%E6%9D%BF%E3%81%8C%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%81%AE%E5%9F%BA%E6%9D%BF%E3%81%8C%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;基板が届きました&#34;&gt;基板が届きました&lt;/h2&gt;
+
+&lt;h3 id=&#34;思ったより早かった&#34;&gt;思ったより早かった&lt;/h3&gt;
+
+&lt;p&gt;基板加工サービス&lt;a href=&#34;http://www.elecrow.com/&#34; target=&#34;_blank&#34;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>赤外線学習リモコン完成</title>
+      <link>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
+
+&lt;p&gt;今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

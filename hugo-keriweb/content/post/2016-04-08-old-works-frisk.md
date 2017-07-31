@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-04-08"
 title: "昔作った電子工作たち～in FRISK 編～"
-category: "works"
+slug: "old-works-frisk"
+categories:
+  - "works"
 tags: ["電子工作", "自作"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-04-08-old-works-frisk/icon.jpg"
 ---
 
 ## 概要
@@ -18,18 +20,18 @@ icon: "icon.jpg"
 
 ※初期設定は１，３，５番目のボタンになっています。
 
-![電子錠](Electric Lock (1).jpg)
-![電子錠](Electric Lock (2).jpg)
-![電子錠](Electric Lock (3).jpg)
-![電子錠](Electric Lock (4).jpg)
+{{< postfig src="Electric Lock (1).jpg" title="電子錠" width="360px" >}}
+{{< postfig src="Electric Lock (2).jpg" title="電子錠" width="360px" >}}
+{{< postfig src="Electric Lock (3).jpg" title="電子錠" width="360px" >}}
+{{< postfig src="Electric Lock (4).jpg" title="電子錠" width="360px" >}}
 
 ## 電子サイコロ in FRISK
 
-![電子サイコロ](FRISK dice (1).jpg)
-![電子サイコロ](FRISK dice (2).jpg)
-![電子サイコロ](FRISK dice (3).png)
+{{< postfig src="FRISK dice (1).jpg" title="電子サイコロ" width="360px" >}}
+{{< postfig src="FRISK dice (2).jpg" title="電子サイコロ" width="360px" >}}
+{{< postfig src="FRISK dice (3).png" title="電子サイコロ" width="360px" >}}
 
 ## パワーアンプ in FRISK
 
-![パワーアンプ](FRISK amp.jpg)
+{{< postfig src="FRISK amp.jpg" title="パワーアンプ" width="360px" >}}
 

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ラズパイ on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4/</link>
+    <description>Recent content in ラズパイ on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi 2 Type Bでサーバー作り</title>
+      <link>http://kerikeri.top/post/1/01/01/raspberry-pi-2-type-b%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%BD%9C%E3%82%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/raspberry-pi-2-type-b%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%BD%9C%E3%82%8A/</guid>
+      <description>&lt;h2 id=&#34;ラズパイの用意&#34;&gt;ラズパイの用意&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ラズパイ用のOS「NOOBS」を&lt;a href=&#34;http://raspberrypi.org/downloads/&#34; target=&#34;_blank&#34;&gt;raspberrypi.org&lt;/a&gt;からDLして解凍する。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;microSDカードをFAT32でフォーマットする。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;解凍したファイルをSDカードにコピーする。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;ラズパイにSDカード、キーボード、LANケーブル（またはWiFiドングル）をつないで電源を入れる。&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi で NAS 作り</title>
+      <link>http://kerikeri.top/post/1/01/01/raspberry-pi-%E3%81%A7-nas-%E4%BD%9C%E3%82%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/raspberry-pi-%E3%81%A7-nas-%E4%BD%9C%E3%82%8A/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;NASがほしい！&lt;br /&gt;
+じゃあ作ろう。&lt;/p&gt;
+
+&lt;p&gt;スペック&lt;br /&gt;
+サーバ：Raspberrypi 2 Type B&lt;br /&gt;
+HDD：Western Digital 2TB 3.5 inch&lt;br /&gt;
+転送速度：10MB/s（ラズパイのイーサーネットが100Baseなので仕方ない&amp;hellip;）
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VolumioでiTunesのプレイリストを使う</title>
+      <link>http://kerikeri.top/post/1/01/01/volumio%E3%81%A7itunes%E3%81%AE%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/volumio%E3%81%A7itunes%E3%81%AE%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&#34;volumio&#34;&gt;Volumio&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Volumio&lt;/strong&gt;というミュージックサーバーソフトウェアがある．&lt;/p&gt;
+
+&lt;p&gt;ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．&lt;/p&gt;
+
+&lt;h3 id=&#34;プレイリスト問題&#34;&gt;プレイリスト問題&lt;/h3&gt;
+
+&lt;p&gt;しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;めんどくさい！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ということで，今回は，iTunesのプレイリストをvolumioのプレイリストに変換するスクリプトを紹介する．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ファイアウォールの設定</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&#34;ufw&#34;&gt;ufw&lt;/h3&gt;
+
+&lt;p&gt;iptablesという有名なファイアウォールソフトウェアがあるが初心者には使いにくいので，今回は初心者でも使いやすいufwというソフトを使う．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログのサーバーが新しくなりました！</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%8C%E6%96%B0%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%8C%E6%96%B0%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h2 id=&#34;ラズパイ3を購入&#34;&gt;ラズパイ3を購入&lt;/h2&gt;
+
+&lt;h3 id=&#34;ハイスペックなラズパイ3&#34;&gt;ハイスペックなラズパイ3&lt;/h3&gt;
+
+&lt;p&gt;64bitのARM-CPUが搭載されたラズパイ3が話題になったのは記憶に新しいですが，ラズパイ3は，秋月では6,200円ですし，公式でも5,000円ほどします．&lt;/p&gt;
+
+&lt;h3 id=&#34;税込4-000円かつカード払いok&#34;&gt;税込4,000円かつカード払いOK！&lt;/h3&gt;
+
+&lt;p&gt;そんなラズパイ3が，Maker Faire Tokyo 2016 で税込4,000円かつカード払いOKで販売しているではありませんか！！&lt;/p&gt;
+
+&lt;p&gt;これは安い！と思い，使う予定もないのに衝動買いしちゃいました&amp;hellip;(汗&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログのサーバーをラズパイ3からPINE64 A&#43;に移行</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A43%E3%81%8B%E3%82%89pine64-a-%E3%81%AB%E7%A7%BB%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A43%E3%81%8B%E3%82%89pine64-a-%E3%81%AB%E7%A7%BB%E8%A1%8C/</guid>
+      <description>&lt;h2 id=&#34;新登場のpine64を購入&#34;&gt;新登場のPINE64を購入&lt;/h2&gt;
+
+&lt;p&gt;秋月電子の新商品で，「PINE64」というボードが登場しました．CPUのスペックはほぼラズパイ3と同等ですが，Ethernetが1000BASE-Tと高速なのです！！これは完全にサーバー向きですね！&lt;/p&gt;
+
+&lt;p&gt;さらに，ラズパイ3の価格が$35なのに対して，PINE64は$19です．半額近いです．&lt;/p&gt;
+
+&lt;p&gt;そのかわり，WiFiやBluetoothが技適の関係かわかりませんが今は載っていません．ただ，ブログなどのWebサーバー用途なら無線は使わないので特に問題ありません．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログを更新するスクリプト</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
+      <description>&lt;h2 id=&#34;github上にあるブログを同期するシェルスクリプト&#34;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
+
+&lt;p&gt;自分用のメモ&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ラズパイでシリアルモニタを使うには</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ラズパイでミュージックサーバー</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</guid>
+      <description>&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
+
+&lt;h3 id=&#34;ラズパイミュージックサーバー&#34;&gt;ラズパイミュージックサーバー&lt;/h3&gt;
+
+&lt;p&gt;スマートフォンでコントロールできるステレオコンポです．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;music-server.jpg&#34; alt=&#34;ミュージックサーバー&#34; /&gt;{: .img-medium}&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ラズパイセットアップのコマンド群</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%BE%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%BE%A4/</guid>
+      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+
+&lt;p&gt;これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh pi@192.168.11.13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

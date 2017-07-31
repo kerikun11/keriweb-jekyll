@@ -1,7 +1,7 @@
 ---
-date: {{ .Date }}
+date: "{{ .Date }}"
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
-description: ""
+slug: "{{ replace .TranslationBaseName "-" " " | title }}"
 categories:
   - ""
 tags:

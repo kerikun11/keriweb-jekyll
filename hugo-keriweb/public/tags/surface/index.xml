@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Surface on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/surface/</link>
+    <description>Recent content in Surface on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/surface/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)</title>
+      <link>http://kerikeri.top/post/1/01/01/surface-pro-3-%E3%81%AB-ubuntu15.10%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8Buefi%E7%92%B0%E5%A2%83%E3%81%AE%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%96%E3%83%BC%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/surface-pro-3-%E3%81%AB-ubuntu15.10%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8Buefi%E7%92%B0%E5%A2%83%E3%81%AE%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%96%E3%83%BC%E3%83%88/</guid>
+      <description>&lt;h2 id=&#34;uefiとは&#34;&gt;UEFIとは&lt;/h2&gt;
+
+&lt;p&gt;　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

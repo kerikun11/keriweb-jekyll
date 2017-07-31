@@ -1,16 +1,18 @@
 ---
-layout: "post"
+date: "2016-04-20"
 title: "ソーラー発電量モニター"
-category: "works"
+slug: "power-monitor"
+categories:
+  - "works"
 tags: ["ThingSpeak", "IoT", "ESP8266", "ESP-WROOM-02", "Arduino", "Solar Power", "ソーラー", "太陽光発電"]
-icon: "img.jpg"
+thumbnail: "/posts/2016-04-20-power-monitor/img.jpg"
 ---
 
 ## 概要
 
-[100W級ソーラーシステム]({% post_url 2014-09-14-solar-system %})の発電量を[ThingSpeak.com](https://thingspeak.com/)というサイトに送ってグラフ化しました。
+[100W級ソーラーシステム](/posts/2014-09-14-solar-system/)の発電量を[ThingSpeak.com](https://thingspeak.com/)というサイトに送ってグラフ化しました。
 
-データの送信には、自作の[中継型電力計]({% post_url 2016-03-23-relay-sensor %})を使用しています。
+データの送信には、自作の[中継型電力計](/posts/2016-03-23-relay-sensor/)を使用しています。
 <!--more-->
 
 ## リアルタイム発電量モニター

@@ -7,27 +7,23 @@ menu:
 weight: 1
 ---
 
-Hugo is a static site engine written in Go.
+## Profile
+管理人	：けり（大学生）  
+出身	：神奈川県  
+趣味	：電子工作  
 
+Twitter: [@Ryokeri14](http://twitter.com/Ryokeri14)  
+Github:  [kerikun11](http://github.com/kerikun11)
 
-It makes use of a variety of open source projects including:
+## あいさつ
+こんにちは．けりです．電子工作が大好きです．
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+しばらくの間，PICマイコンで遊んでいましたが，最近はESP32というWiFiモジュールに夢中です．また，Linuxやサーバーにづくりにも挑戦中です．
 
-Learn more and contribute on [GitHub](https://github.com/spf13).
+このホームページでは，電子工作やサーバー作りなどの情報を発信していこうと思います．どうぞよろしくお願い致します．
 
-## Setup
+## このサーバーについて
+このブログは「~~Raspberry Pi 2 Type B~~ **PINE64 1GB**」による自宅サーバーで動いています．アクセスが集中すると落ちるかもしれません．ご注意ください．
 
-Some fun facts about [Hugo](http://gohugo.io/):
+また，家のIPアドレスは動的IPなので，たまにサーバーにつながらなくなることがあります．
 
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
-
-Thanks for reading!

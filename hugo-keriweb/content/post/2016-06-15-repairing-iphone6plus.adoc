@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-06-15"
 title: "割れちゃったiPhoneの液晶を直したお話"
-category: "blogs"
+slug: "repairing-iphone6plus"
+categories:
+  - "blogs"
 tags: ["iPhone","Apple","分解","修理"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-06-15-repairing-iphone6plus/icon.jpg"
 ---
 
 == 概要

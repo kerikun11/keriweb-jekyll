@@ -1,19 +1,21 @@
 ---
-layout: post
+date: "2017-06-24"
 title: "ESP32でデュアルコアを使おう！"
-category: "explanations"
+slug: "esp32-dual-core"
+categories:
+  - "explanations"
 tags:
   - "ESP32"
   - "FreeRTOS"
   - "Arduino"
-icon: "icon.jpg"
+thumbnail: "/posts/2017-06-24-esp32-dual-core/icon.jpg"
 ---
 
 ## 概要
 
 ### ESP32とは
 
-![ESP32](esp32.jpg){: .img-small}
+{{< postfig src="esp32.jpg" title="ESP32" width="360px" >}}
 
 [ESP32 Overview \| Espressif Systems](https://www.espressif.com/en/products/hardware/esp32/overview)
 
@@ -38,7 +40,7 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
 
 ### FreeRTOS
 
-[![FreeRTOS](freertos.jpg){: .img-small}<br/>FreeRTOS公式ページ](http://www.freertos.org/)
+[![FreeRTOS](freertos.jpg)<br/>FreeRTOS公式ページ](http://www.freertos.org/)
 
 ESP32の中ではFreeRTOSというリアルタイムOSが動いています．  
 FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．

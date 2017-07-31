@@ -1,32 +1,34 @@
 ---
-layout: "post"
+date: "2016-04-03"
 title: "電力つぶやきbot"
-category: "works"
+slug: "power-tweeter"
+categories:
+  - "works"
 tags: ["ソーラー", "ESP-WROOM-02", "ESP8266", "Twitter", "電子工作", "bot", "電力計測", "C++", "Arduino"]
-icon: "icon.png"
+thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 ---
 
 ## 概要
 
 ### 中継型電力計
-先日の記事で[ESP-WROOM-02による中継型電力計]({% post_url 2016-03-23-relay-sensor %})を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。
+先日の記事で[ESP-WROOM-02による中継型電力計](/posts/2016-03-23-relay-sensor/)を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。
 
 ### 何の電力をつぶやくのか
 
-僕の家には[自作の100W級ソーラーシステム]({% post_url 2014-09-14-solar-system %})があります。このソーラーシステムの発電量を定期的にツイートすることにしました。
+僕の家には[自作の100W級ソーラーシステム](/posts/2014-09-14-solar-system/)があります。このソーラーシステムの発電量を定期的にツイートすることにしました。
 
-![Solar](solar.jpg){: .img-medium}
+{{< postfig src="solar.jpg" title="Solar" width="360px" >}}
 <!--more-->
 
 ## 見た目
 
 左側の宙に浮いた基板が今回の電力つぶやきbotです。
 
-![Power-Tweeter](power-tweeter1.jpg){: .img-medium}
+{{< postfig src="power-tweeter1.jpg" title="Power-Tweeter" width="360px" >}}
 
 拡大
 
-![Power-Tweeter](power-tweeter2.jpg){: .img-medium}
+{{< postfig src="power-tweeter2.jpg" title="Power-Tweeter" width="360px" >}}
 
 
 ## 実際のつぶやき
@@ -37,19 +39,19 @@ icon: "icon.png"
 
 【自動】けりの100W級ソーラーシステムは、現在38.4[W]発電中です。本日は、33.38[Wh]発電しました。現在時刻: 2016年3月31日(木)8時0分0秒
 
-![tweet-8h](tweet-8h.png)
+{{< postfig src="tweet-8h.png" title="tweet-8h" width="360px" >}}
 
 ### 正午12時
 
 【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)12時0分0秒
 
-![tweet-12h](tweet-12h.png)
+{{< postfig src="tweet-12h.png" title="tweet-12h" width="360px" >}}
 
 ### 夕方16時
 
 【自動】けりの100W級ソーラーシステムは、現在8.79[W]発電中です。本日は、301.88[Wh]発電しました。現在時刻: 2016年3月31日(木)16時0分0秒
 
-![tweet-16h](tweet-16h.png)
+{{< postfig src="tweet-16h.png" title="tweet-16h" width="360px" >}}
 
 ### 夜20時
 
@@ -57,7 +59,7 @@ icon: "icon.png"
 
 【自動】けりの100W級ソーラーシステムは、本日 310.30[Wh]発電しました。昨日に比べて 50.16%増えました。日付: 2016年3月31日(木)
 
-![tweet-20h](tweet-20h.png)
+{{< postfig src="tweet-20h.png" title="tweet-20h" width="360px" >}}
 
 ## 大問題発生！！
 
@@ -97,5 +99,5 @@ icon: "icon.png"
 
 電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。
 
-![ESP-WROOM-02](esp-wroom-02.jpg){: .img-small}
+{{< postfig src="esp-wroom-02.jpg" title="ESP-WROOM-02" width="360px" >}}
 

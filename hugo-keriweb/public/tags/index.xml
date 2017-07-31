@@ -9,96 +9,1349 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 24 Jun 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://kerikeri.top/tags/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://kerikeri.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7セグメントled</title>
+      <link>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Record</title>
+      <link>http://kerikeri.top/tags/active-record/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/active-record/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Arduino</title>
       <link>http://kerikeri.top/tags/arduino/</link>
-      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/arduino/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Asciidoc</title>
+      <link>http://kerikeri.top/tags/asciidoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/asciidoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://kerikeri.top/tags/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bot</title>
+      <link>http://kerikeri.top/tags/bot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://kerikeri.top/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charge Station</title>
+      <link>http://kerikeri.top/tags/charge-station/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/charge-station/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cpu</title>
+      <link>http://kerikeri.top/tags/cpu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/cpu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Css</title>
+      <link>http://kerikeri.top/tags/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ctrl</title>
+      <link>http://kerikeri.top/tags/ctrl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ctrl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cygwin</title>
+      <link>http://kerikeri.top/tags/cygwin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/cygwin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>C言語</title>
       <link>http://kerikeri.top/tags/c%E8%A8%80%E8%AA%9E/</link>
-      <pubDate>Tue, 04 Jul 2017 22:27:03 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/c%E8%A8%80%E8%AA%9E/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Development</title>
-      <link>http://kerikeri.top/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>E Mail</title>
+      <link>http://kerikeri.top/tags/e-mail/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/development/</guid>
+      <guid>http://kerikeri.top/tags/e-mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Esp Wroom 02</title>
+      <link>http://kerikeri.top/tags/esp-wroom-02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/esp-wroom-02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Esp Wroom 32</title>
+      <link>http://kerikeri.top/tags/esp-wroom-32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/esp-wroom-32/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Esp32</title>
       <link>http://kerikeri.top/tags/esp32/</link>
-      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/esp32/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Esp8266</title>
+      <link>http://kerikeri.top/tags/esp8266/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/esp8266/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exiftool</title>
+      <link>http://kerikeri.top/tags/exiftool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/exiftool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fft 高速フーリエ変換</title>
+      <link>http://kerikeri.top/tags/fft-%E9%AB%98%E9%80%9F%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/fft-%E9%AB%98%E9%80%9F%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Freertos</title>
       <link>http://kerikeri.top/tags/freertos/</link>
-      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/freertos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Go</title>
-      <link>http://kerikeri.top/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Ft232</title>
+      <link>http://kerikeri.top/tags/ft232/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/go/</guid>
+      <guid>http://kerikeri.top/tags/ft232/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>http://kerikeri.top/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Ft232rl</title>
+      <link>http://kerikeri.top/tags/ft232rl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/golang/</guid>
+      <guid>http://kerikeri.top/tags/ft232rl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>http://kerikeri.top/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Geotag</title>
+      <link>http://kerikeri.top/tags/geotag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/hugo/</guid>
+      <guid>http://kerikeri.top/tags/geotag/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Templates</title>
-      <link>http://kerikeri.top/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Git</title>
+      <link>http://kerikeri.top/tags/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/templates/</guid>
+      <guid>http://kerikeri.top/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Themes</title>
-      <link>http://kerikeri.top/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Html</title>
+      <link>http://kerikeri.top/tags/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/themes/</guid>
+      <guid>http://kerikeri.top/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>http://kerikeri.top/tags/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hyperion</title>
+      <link>http://kerikeri.top/tags/hyperion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/hyperion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Idc</title>
+      <link>http://kerikeri.top/tags/idc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/idc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iot</title>
+      <link>http://kerikeri.top/tags/iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iphone</title>
+      <link>http://kerikeri.top/tags/iphone/</link>
+      <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/iphone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ir</title>
+      <link>http://kerikeri.top/tags/ir/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ir Station</title>
+      <link>http://kerikeri.top/tags/ir-station/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ir-station/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Itunes</title>
+      <link>http://kerikeri.top/tags/itunes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/itunes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://kerikeri.top/tags/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>http://kerikeri.top/tags/jekyll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jquiry</title>
+      <link>http://kerikeri.top/tags/jquiry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/jquiry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kerisev2</title>
+      <link>http://kerikeri.top/tags/kerisev2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/kerisev2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kerisev3</title>
+      <link>http://kerikeri.top/tags/kerisev3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/kerisev3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kicad</title>
+      <link>http://kerikeri.top/tags/kicad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/kicad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Led</title>
+      <link>http://kerikeri.top/tags/led/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/led/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Li Po</title>
+      <link>http://kerikeri.top/tags/li-po/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/li-po/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Link</title>
+      <link>http://kerikeri.top/tags/link/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://kerikeri.top/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maker Faire Tokyo</title>
+      <link>http://kerikeri.top/tags/maker-faire-tokyo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/maker-faire-tokyo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mbed</title>
+      <link>http://kerikeri.top/tags/mbed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/mbed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mft2016</title>
+      <link>http://kerikeri.top/tags/mft2016/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/mft2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microchip Library For Application</title>
+      <link>http://kerikeri.top/tags/microchip-library-for-application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/microchip-library-for-application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mla</title>
+      <link>http://kerikeri.top/tags/mla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/mla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nas</title>
+      <link>http://kerikeri.top/tags/nas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ntp</title>
+      <link>http://kerikeri.top/tags/ntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ntp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nucleo</title>
+      <link>http://kerikeri.top/tags/nucleo/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/nucleo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pdf</title>
+      <link>http://kerikeri.top/tags/pdf/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pic</title>
+      <link>http://kerikeri.top/tags/pic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/pic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pic18f26k22</title>
+      <link>http://kerikeri.top/tags/pic18f26k22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/pic18f26k22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pic18f27j53</title>
+      <link>http://kerikeri.top/tags/pic18f27j53/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/pic18f27j53/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pine64 A&#43;</title>
+      <link>http://kerikeri.top/tags/pine64-a&#43;/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/pine64-a&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preferences</title>
+      <link>http://kerikeri.top/tags/preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/preferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>http://kerikeri.top/tags/raspberry-pi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberrypi</title>
+      <link>http://kerikeri.top/tags/raspberrypi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote Control</title>
+      <link>http://kerikeri.top/tags/remote-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/remote-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rtcc</title>
+      <link>http://kerikeri.top/tags/rtcc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/rtcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>http://kerikeri.top/tags/ruby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
+      <link>http://kerikeri.top/tags/samba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/samba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>http://kerikeri.top/tags/server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sinatra</title>
+      <link>http://kerikeri.top/tags/sinatra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/sinatra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smtp</title>
+      <link>http://kerikeri.top/tags/smtp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/smtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solar Power</title>
+      <link>http://kerikeri.top/tags/solar-power/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/solar-power/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Source Code</title>
+      <link>http://kerikeri.top/tags/source-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/source-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sqlite3</title>
+      <link>http://kerikeri.top/tags/sqlite3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/sqlite3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://kerikeri.top/tags/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stm32</title>
+      <link>http://kerikeri.top/tags/stm32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/stm32/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Surface</title>
+      <link>http://kerikeri.top/tags/surface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/surface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Syntaxhighlighting</title>
+      <link>http://kerikeri.top/tags/syntaxhighlighting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/syntaxhighlighting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thingspeak</title>
+      <link>http://kerikeri.top/tags/thingspeak/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/thingspeak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>http://kerikeri.top/tags/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>U Micro</title>
+      <link>http://kerikeri.top/tags/u-micro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/u-micro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>http://kerikeri.top/tags/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uefi</title>
+      <link>http://kerikeri.top/tags/uefi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/uefi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ui</title>
+      <link>http://kerikeri.top/tags/ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Usb</title>
+      <link>http://kerikeri.top/tags/usb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://kerikeri.top/tags/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Volumio</title>
+      <link>http://kerikeri.top/tags/volumio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/volumio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wi Fi</title>
+      <link>http://kerikeri.top/tags/wi-fi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/wi-fi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wifi</title>
+      <link>http://kerikeri.top/tags/wifi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/wifi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://kerikeri.top/tags/windows/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yamy</title>
+      <link>http://kerikeri.top/tags/yamy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/yamy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>はんだ付け</title>
+      <link>http://kerikeri.top/tags/%E3%81%AF%E3%82%93%E3%81%A0%E4%BB%98%E3%81%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%81%AF%E3%82%93%E3%81%A0%E4%BB%98%E3%81%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>めだか</title>
+      <link>http://kerikeri.top/tags/%E3%82%81%E3%81%A0%E3%81%8B/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%81%E3%81%A0%E3%81%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>アプリケーション</title>
+      <link>http://kerikeri.top/tags/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>インストール</title>
+      <link>http://kerikeri.top/tags/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>カスタマイズ</title>
+      <link>http://kerikeri.top/tags/%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>キーボード</title>
+      <link>http://kerikeri.top/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>グラフィック液晶</title>
+      <link>http://kerikeri.top/tags/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E6%B6%B2%E6%99%B6/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E6%B6%B2%E6%99%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>サーバー</title>
+      <link>http://kerikeri.top/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>シェルスクリプト</title>
+      <link>http://kerikeri.top/tags/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>シリアル</title>
+      <link>http://kerikeri.top/tags/%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>シンガポール</title>
+      <link>http://kerikeri.top/tags/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>スクロール</title>
+      <link>http://kerikeri.top/tags/%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ソーラー</title>
+      <link>http://kerikeri.top/tags/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>タグ</title>
+      <link>http://kerikeri.top/tags/%E3%82%BF%E3%82%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%BF%E3%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ターミナル</title>
+      <link>http://kerikeri.top/tags/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>トランジスタ</title>
+      <link>http://kerikeri.top/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ドットインストール</title>
+      <link>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ドットマトリクスled</title>
+      <link>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ハーフサイズ</title>
+      <link>http://kerikeri.top/tags/%E3%83%8F%E3%83%BC%E3%83%95%E3%82%B5%E3%82%A4%E3%82%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%8F%E3%83%BC%E3%83%95%E3%82%B5%E3%82%A4%E3%82%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>パワーled</title>
+      <link>http://kerikeri.top/tags/%E3%83%91%E3%83%AF%E3%83%BCled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%91%E3%83%AF%E3%83%BCled/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ファイアウォール</title>
+      <link>http://kerikeri.top/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ブザー</title>
+      <link>http://kerikeri.top/tags/%E3%83%96%E3%82%B6%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%96%E3%82%B6%E3%83%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ブログ</title>
+      <link>http://kerikeri.top/tags/%E3%83%96%E3%83%AD%E3%82%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%96%E3%83%AD%E3%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ブートローダ</title>
+      <link>http://kerikeri.top/tags/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>プレイリスト</title>
+      <link>http://kerikeri.top/tags/%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ペット</title>
+      <link>http://kerikeri.top/tags/%E3%83%9A%E3%83%83%E3%83%88/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%9A%E3%83%83%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ボタン</title>
+      <link>http://kerikeri.top/tags/%E3%83%9C%E3%82%BF%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%9C%E3%82%BF%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>マイクロマウス</title>
+      <link>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>マイコン</title>
+      <link>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%B3%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%B3%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ミュージックサーバー</title>
+      <link>http://kerikeri.top/tags/%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ラズパイ</title>
+      <link>http://kerikeri.top/tags/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ロボコン</title>
+      <link>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ロボット</title>
+      <link>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ロボット技術研究会</title>
+      <link>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E4%BC%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E4%BC%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>位置情報</title>
+      <link>http://kerikeri.top/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>修理</title>
+      <link>http://kerikeri.top/tags/%E4%BF%AE%E7%90%86/</link>
+      <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E4%BF%AE%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>充電器</title>
+      <link>http://kerikeri.top/tags/%E5%85%85%E9%9B%BB%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%85%85%E9%9B%BB%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>入門</title>
+      <link>http://kerikeri.top/tags/%E5%85%A5%E9%96%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%85%A5%E9%96%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>全日本マイクロマウス大会</title>
+      <link>http://kerikeri.top/tags/%E5%85%A8%E6%97%A5%E6%9C%AC%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E5%A4%A7%E4%BC%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%85%A8%E6%97%A5%E6%9C%AC%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E5%A4%A7%E4%BC%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>写真</title>
+      <link>http://kerikeri.top/tags/%E5%86%99%E7%9C%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%86%99%E7%9C%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>初心者</title>
+      <link>http://kerikeri.top/tags/%E5%88%9D%E5%BF%83%E8%80%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%88%9D%E5%BF%83%E8%80%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>制御</title>
+      <link>http://kerikeri.top/tags/%E5%88%B6%E5%BE%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%88%B6%E5%BE%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>創造設計第一</title>
+      <link>http://kerikeri.top/tags/%E5%89%B5%E9%80%A0%E8%A8%AD%E8%A8%88%E7%AC%AC%E4%B8%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%89%B5%E9%80%A0%E8%A8%AD%E8%A8%88%E7%AC%AC%E4%B8%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>回路</title>
+      <link>http://kerikeri.top/tags/%E5%9B%9E%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%9B%9E%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>基板</title>
+      <link>http://kerikeri.top/tags/%E5%9F%BA%E6%9D%BF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%9F%BA%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>太陽光発電</title>
+      <link>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>太陽光電池</title>
+      <link>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E9%9B%BB%E6%B1%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E9%9B%BB%E6%B1%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>時計</title>
+      <link>http://kerikeri.top/tags/%E6%99%82%E8%A8%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E6%99%82%E8%A8%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>書籍</title>
+      <link>http://kerikeri.top/tags/%E6%9B%B8%E7%B1%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E6%9B%B8%E7%B1%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>秋月</title>
+      <link>http://kerikeri.top/tags/%E7%A7%8B%E6%9C%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E7%A7%8B%E6%9C%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>節電</title>
+      <link>http://kerikeri.top/tags/%E7%AF%80%E9%9B%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E7%AF%80%E9%9B%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自作</title>
+      <link>http://kerikeri.top/tags/%E8%87%AA%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%87%AA%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自動配線</title>
+      <link>http://kerikeri.top/tags/%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>論理回路</title>
+      <link>http://kerikeri.top/tags/%E8%AB%96%E7%90%86%E5%9B%9E%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%AB%96%E7%90%86%E5%9B%9E%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>講習会</title>
+      <link>http://kerikeri.top/tags/%E8%AC%9B%E7%BF%92%E4%BC%9A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%AC%9B%E7%BF%92%E4%BC%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>赤外線学習リモコン</title>
+      <link>http://kerikeri.top/tags/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>迷路</title>
+      <link>http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電光掲示板</title>
+      <link>http://kerikeri.top/tags/%E9%9B%BB%E5%85%89%E6%8E%B2%E7%A4%BA%E6%9D%BF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E9%9B%BB%E5%85%89%E6%8E%B2%E7%A4%BA%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電力計測</title>
+      <link>http://kerikeri.top/tags/%E9%9B%BB%E5%8A%9B%E8%A8%88%E6%B8%AC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E9%9B%BB%E5%8A%9B%E8%A8%88%E6%B8%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電圧計</title>
+      <link>http://kerikeri.top/tags/%E9%9B%BB%E5%9C%A7%E8%A8%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E9%9B%BB%E5%9C%A7%E8%A8%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電子工作</title>
+      <link>http://kerikeri.top/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電流計</title>
+      <link>http://kerikeri.top/tags/%E9%9B%BB%E6%B5%81%E8%A8%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/%E9%9B%BB%E6%B5%81%E8%A8%88/</guid>
       <description></description>
     </item>
     

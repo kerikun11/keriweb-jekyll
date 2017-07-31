@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-04-08"
 title: "昔作った電子工作たち～ロボット編～"
-category: "works"
+slug: "old-works-robot"
+categories:
+  - "works"
 tags: ["電子工作", "自作"]
-icon: "icon.png"
+thumbnail: "/posts/2016-04-08-old-works-robot/icon.png"
 ---
 
 ## 概要
@@ -13,15 +15,15 @@ icon: "icon.png"
 
 ## 倒立振子
 
-![Inverted Pendulum](Inverted Pendulum (1).jpg)
-![Inverted Pendulum](Inverted Pendulum (2).jpg)
-![Inverted Pendulum](Inverted Pendulum (3).jpg)
+{{< postfig src="Inverted Pendulum (1).jpg" title="Inverted Pendulum" width="360px" >}}
+{{< postfig src="Inverted Pendulum (2).jpg" title="Inverted Pendulum" width="360px" >}}
+{{< postfig src="Inverted Pendulum (3).jpg" title="Inverted Pendulum" width="360px" >}}
 
 ## ライントレーサー
 
-![Line Tracer](Line Tracer (1).jpg)
-![Line Tracer](Line Tracer (2).jpg)
-![Line Tracer](Line Tracer (3).jpg)
-![Line Tracer](Line Tracer (4).jpg)
-![Line Tracer](Line Tracer (5).jpg)
+{{< postfig src="Line Tracer (1).jpg" title="Line Tracer" width="360px" >}}
+{{< postfig src="Line Tracer (2).jpg" title="Line Tracer" width="360px" >}}
+{{< postfig src="Line Tracer (3).jpg" title="Line Tracer" width="360px" >}}
+{{< postfig src="Line Tracer (4).jpg" title="Line Tracer" width="360px" >}}
+{{< postfig src="Line Tracer (5).jpg" title="Line Tracer" width="360px" >}}
 

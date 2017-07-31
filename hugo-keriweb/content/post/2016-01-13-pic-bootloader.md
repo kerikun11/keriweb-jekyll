@@ -1,16 +1,18 @@
 ---
-layout: "post"
+date: "2016-01-13"
 title: "PICでブートローダ"
-category: "explanations"
+slug: "pic-bootloader"
+categories:
+  - "explanations"
 tags: ["PIC", "PIC18F27J53", "USB", "ブートローダ", "電子工作", "C言語", "Microchip Library for Application", "MLA"]
-icon: "icon.jpg"
+thumbnail: "/posts/2016-01-13-pic-bootloader/icon.jpg"
 ---
 
 ## 概要
 
 ### PIC18F27J53を使おう
 
-以前 [PIC18F27J53のすすめ]({% post_url 2016-01-08-pic18f27j53 %}) という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。
+以前 [PIC18F27J53のすすめ](/posts/2016-01-08-pic18f27j53/) という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。
 
 ### ブートローダとは
 
@@ -56,7 +58,7 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
 
 なお、このConfigration Bitsを変更したい場合は、ブートローダプログラムを再コンパイルする必要があるので、XC8コンパイラのPROライセンスが必要です。
 
-{% highlight c %}
+~~~c
 // CONFIG1L
 #pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
 // CONFIG1H
@@ -73,7 +75,7 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
 #pragma config WPFP = PAGE_127, WPCFG = OFF
 // CONFIG4H
 #pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
-{% endhighlight %}
+~~~
 
 ### ROMの範囲とオフセットを指定
 
@@ -85,8 +87,8 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
   1. `Codeoffset`を`0x1000`に指定する。(下図参照)
   1. 以上。
 
-![ROM rages](Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png)
-![Codeoffset](Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png)
+{{< postfig src="Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png" title="ROM rages" width="360px" >}}
+{{< postfig src="Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png" title="Codeoffset" width="360px" >}}
 
 ## ブートロードモードへ移行するには
 
@@ -112,7 +114,7 @@ PICに電源を投入またはPICをリセットしたときに、RB0端子がHI
 
 上手くいかないときは、ドライバをインストールすればうまくいくかもしれません。ドライバも先ほどインストールしたMLAの中のutilities/usb\_drivers/に入っています。
 
-![HIDbootloader.exe](util1.png)
+{{< postfig src="util1.png" title="HIDbootloader.exe" width="360px" >}}
 
 ## まとめ
 

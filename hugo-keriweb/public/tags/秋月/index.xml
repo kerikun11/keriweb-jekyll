@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>秋月 on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/%E7%A7%8B%E6%9C%88/</link>
+    <description>Recent content in 秋月 on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/%E7%A7%8B%E6%9C%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ESP-WROOM-32で秋月の売場表示</title>
+      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</guid>
+      <description>&lt;h2 id=&#34;まずはじめに&#34;&gt;まずはじめに&lt;/h2&gt;
+
+&lt;h3 id=&#34;秋月の通販サイトが進化&#34;&gt;秋月の通販サイトが進化&lt;/h3&gt;
+
+&lt;p&gt;少し前から，&lt;a href=&#34;http://akizukidenshi.com/&#34; target=&#34;_blank&#34;&gt;秋月の通販サイト&lt;/a&gt;で店舗の在庫数と売場の場所が見れるようになりました．&lt;br /&gt;
+商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

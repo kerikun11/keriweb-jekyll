@@ -1,13 +1,15 @@
 ---
-layout: post
+date: "2016-08-05"
 title: "Maker Faire Tokyo 2016 に出展します！"
-category: "blogs"
+slug: "maker-faire-tokyo-2016"
+categories:
+  - "blogs"
 tags:
   - "Maker Faire Tokyo"
   - "MFT2016"
   - "IR-Station"
   - "電子工作"
-icon: "logo.jpg"
+thumbnail: "/posts/2016-08-05-maker-faire-tokyo-2016/logo.jpg"
 ---
 
 ## Maker Faire Tokyo 2016
@@ -30,11 +32,11 @@ icon: "logo.jpg"
 
 IR-Stationについては以前書いた記事をご覧ください．
 
-  * [ESP8266で赤外線学習リモコン]({% post_url 2015-12-30-ir-station %})
-  * [赤外線学習リモコン完成]({% post_url 2016-07-18-ir-station %})
-  * [IR-Stationの使い方]({% post_url 2016-07-25-how-to-use-ir-station %})
+  * [ESP8266で赤外線学習リモコン](/posts/2015-12-30-ir-station/)
+  * [赤外線学習リモコン完成](/posts/2016-07-18-ir-station/)
+  * [IR-Stationの使い方](/posts/2016-07-25-how-to-use-ir-station/)
 
-![本体](body.jpg){: .img-medium}
+{{< postfig src="body.jpg" title="本体" width="360px" >}}
 
 ## 是非会場に来てください！
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi 2 Type Bでサーバー作り</title>
+      <link>http://kerikeri.top/post/1/01/01/raspberry-pi-2-type-b%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%BD%9C%E3%82%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/raspberry-pi-2-type-b%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%BD%9C%E3%82%8A/</guid>
+      <description>&lt;h2 id=&#34;ラズパイの用意&#34;&gt;ラズパイの用意&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ラズパイ用のOS「NOOBS」を&lt;a href=&#34;http://raspberrypi.org/downloads/&#34; target=&#34;_blank&#34;&gt;raspberrypi.org&lt;/a&gt;からDLして解凍する。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;microSDカードをFAT32でフォーマットする。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;解凍したファイルをSDカードにコピーする。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;ラズパイにSDカード、キーボード、LANケーブル（またはWiFiドングル）をつないで電源を入れる。&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログのサーバーをラズパイ3からPINE64 A&#43;に移行</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A43%E3%81%8B%E3%82%89pine64-a-%E3%81%AB%E7%A7%BB%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A43%E3%81%8B%E3%82%89pine64-a-%E3%81%AB%E7%A7%BB%E8%A1%8C/</guid>
+      <description>&lt;h2 id=&#34;新登場のpine64を購入&#34;&gt;新登場のPINE64を購入&lt;/h2&gt;
+
+&lt;p&gt;秋月電子の新商品で，「PINE64」というボードが登場しました．CPUのスペックはほぼラズパイ3と同等ですが，Ethernetが1000BASE-Tと高速なのです！！これは完全にサーバー向きですね！&lt;/p&gt;
+
+&lt;p&gt;さらに，ラズパイ3の価格が$35なのに対して，PINE64は$19です．半額近いです．&lt;/p&gt;
+
+&lt;p&gt;そのかわり，WiFiやBluetoothが技適の関係かわかりませんが今は載っていません．ただ，ブログなどのWebサーバー用途なら無線は使わないので特に問題ありません．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ラズパイでシリアルモニタを使うには</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ラズパイのシリアルを使うときや、ラズパイにFT232などをつないだ時にターミナルをシリアルモニタにする。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ラズパイセットアップのコマンド群</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%BE%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%BE%A4/</guid>
+      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+
+&lt;p&gt;これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh pi@192.168.11.13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

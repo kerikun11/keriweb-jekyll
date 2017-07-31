@@ -1,7 +1,9 @@
 ---
-layout: post
+date: "2016-08-14"
 title: "IR-Stationの赤外線ダウンロード機能"
-category: "works"
+slug: "download-upload"
+categories:
+  - "works"
 tags:
   - "IR-Station"
   - "電子工作"
@@ -11,7 +13,7 @@ tags:
   - "ESP-WROOM-02"
   - "ESP8266"
   - "赤外線学習リモコン"
-icon: "icon.png"
+thumbnail: "/posts/2016-08-14-download-upload/icon.png"
 ---
 
 ## IR-Stationとは
@@ -29,7 +31,7 @@ icon: "icon.png"
 ### IR-Stationの操作画面
 画面下方の設定やInfoの配置が少し変わり，見やすくなりました．
 
-![画面](display.png)
+{{< postfig src="display.png" title="画面" width="360px" >}}
 
 ### 設定画面
 画面下方の設定画面では，以下のことができます．
@@ -42,19 +44,19 @@ icon: "icon.png"
   1. すべての赤外線信号を削除(Clear All Signals)
   1. WiFiを変更(初期化)(Change WiFi)
 
-![設定](action.png)
+{{< postfig src="action.png" title="設定" width="360px" >}}
 
 ### 赤外線データファイルのダウンロード機能
 
 赤外線信号を選んで`Submit`ボタンを押せばダウンロードできます．ダウンロードされるのはJSONファイルです．
 
-![ダウンロード画面](download.png)
+{{< postfig src="download.png" title="ダウンロード画面" width="360px" >}}
 
 ### 赤外線データファイルのアップロード機能
 
 信号を割り当てたいチャンネルを選び，上でダウンロードした赤外線データファイルを選択します．任意で名前を入力して，`Submit`ボタンを押すと，赤外線が登録されます．
 
-![アップロード画面](upload.png)
+{{< postfig src="upload.png" title="アップロード画面" width="360px" >}}
 
 ## 赤外線データファイルはJSONファイル
 

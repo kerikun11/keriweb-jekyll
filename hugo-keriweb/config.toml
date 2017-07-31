@@ -1,19 +1,19 @@
 baseurl = "http://kerikeri.top/"
 title = "KERI's Lab"
 languageCode = "ja-jp"
+defaultContentLanguage = "ja"
 paginate = "10" # Number of posts per page
-# theme = "mainroad"
 disqusShortname = "kerikun11+disqus@gmail.com" # Enable comments by entering your Disqus shortname
 googleAnalytics = "kerikun11" # Enable Google Analytics by entering your tracking id
 hasCJKLanguage = true
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
-#rssLimit = 30 #default: 15
+rssLimit = 30 #default: 15
 #rssuri = "feed.xml" # default: "index.xml"
 
 [Author]
 	name = "KERI"
-	bio = "都内の大学に通う大学4年生"
-	avatar = "img/avatar.png"
+	bio = "都内の大学に通う大学4年生．趣味は電子工作．最近はESP32に興味あり．マイクロマウスに挑戦中．"
+	avatar = "/img/avatar.png"
 	email = "kerikun11+web@gmail.com"
     location = "Earth"
 
@@ -21,7 +21,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     subtitle = "KERI's Lab へようこそ。ここでは趣味の電子工作や日々の活動を紹介しています。" # Subtitle of your site
     description = "KERI's Lab へようこそ。ここでは趣味の電子工作や日々の活動を紹介しています。" # Description of your site
     opengraph = true
-    readmore = true # Show "Read more" button in list if true
+#    readmore = true # Show "Read more" button in list if true
     leftsidebar = false # Move sidebar to the left side if true
     authorbox = true
     post_navigation = true
@@ -52,6 +52,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     social_email = "kerikun11+web@gmail.com"
 
 [permalinks]
-#	post = "/posts/:year/:month/:day/"
-    post = "/posts/:filename/"
+    post = "/posts/:year-:month-:day-:slug/"
+#    post = "/posts/:slug/"
+
+[blackfriday]
+#   plainIDAnchors = true
+    hrefTargetBlank = true
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iot on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/iot/</link>
+    <description>Recent content in Iot on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ソーラー発電量モニター</title>
+      <link>http://kerikeri.top/post/1/01/01/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E7%99%BA%E9%9B%BB%E9%87%8F%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E7%99%BA%E9%9B%BB%E9%87%8F%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;{% post_url 2014-09-14-solar-system %}&#34; target=&#34;_blank&#34;&gt;100W級ソーラーシステム&lt;/a&gt;の発電量を&lt;a href=&#34;https://thingspeak.com/&#34; target=&#34;_blank&#34;&gt;ThingSpeak.com&lt;/a&gt;というサイトに送ってグラフ化しました。&lt;/p&gt;
+
+&lt;p&gt;データの送信には、自作の&lt;a href=&#34;{% post_url 2016-03-23-relay-sensor %}&#34; target=&#34;_blank&#34;&gt;中継型電力計&lt;/a&gt;を使用しています。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>赤外線学習リモコン完成</title>
+      <link>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
+
+&lt;p&gt;今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

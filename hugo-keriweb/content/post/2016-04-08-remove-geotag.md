@@ -1,7 +1,9 @@
 ---
-layout: "post"
+date: "2016-04-08"
 title: "写真から位置情報タグを削除する"
-category: "memos"
+slug: "remove-geotag"
+categories:
+  - "memos"
 tags: ["exiftool", "geotag", "写真", "位置情報", "タグ"]
 ---
 

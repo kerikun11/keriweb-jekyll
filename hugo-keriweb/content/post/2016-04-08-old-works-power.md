@@ -1,9 +1,11 @@
 ---
-layout: "post"
+date: "2016-04-08"
 title: "昔作った電子工作たち～充電・電力編～"
-category: "works"
+slug: "old-works-power"
+categories:
+  - "works"
 tags: ["電子工作", "自作"]
-icon: "icon.png"
+thumbnail: "/posts/2016-04-08-old-works-power/icon.png"
 ---
 
 ## 概要
@@ -13,31 +15,31 @@ icon: "icon.png"
 
 ## 電流計
 
-![電流計](Current Meter (1).jpg)
-![電流計](Current Meter (2).jpg)
-![電流計](Current Meter (3).jpg)
+{{< postfig src="Current Meter (1).jpg" title="電流計" width="360px" >}}
+{{< postfig src="Current Meter (2).jpg" title="電流計" width="360px" >}}
+{{< postfig src="Current Meter (3).jpg" title="電流計" width="360px" >}}
 
 ## 初代充電ステーション
 
-![eneloop Charge Station](eneloop Charge Station (1).jpg)
-![eneloop Charge Station](eneloop Charge Station (2).jpg)
-![eneloop Charge Station](eneloop Charge Station (3).jpg)
-![eneloop Charge Station](eneloop Charge Station (4).jpg)
-![eneloop Charge Station](eneloop Charge Station (5).jpg)
+{{< postfig src="eneloop Charge Station (1).jpg" title="eneloop Charge Station" width="360px" >}}
+{{< postfig src="eneloop Charge Station (2).jpg" title="eneloop Charge Station" width="360px" >}}
+{{< postfig src="eneloop Charge Station (3).jpg" title="eneloop Charge Station" width="360px" >}}
+{{< postfig src="eneloop Charge Station (4).jpg" title="eneloop Charge Station" width="360px" >}}
+{{< postfig src="eneloop Charge Station (5).jpg" title="eneloop Charge Station" width="360px" >}}
 
 ## 鉛蓄電池式充電ステーション
 
-![Pb Charge Station](Pb Charge Station (1).jpg)
-![Pb Charge Station](Pb Charge Station (2).jpg)
+{{< postfig src="Pb Charge Station (1).jpg" title="Pb Charge Station" width="360px" >}}
+{{< postfig src="Pb Charge Station (2).jpg" title="Pb Charge Station" width="360px" >}}
 
 ## ポータブルソーラーチャージャー
 
-![Portable Solar Charger](Portable Solar Charger (1).png)
-![Portable Solar Charger](Portable Solar Charger (2).png)
+{{< postfig src="Portable Solar Charger (1).png" title="Portable Solar Charger" width="360px" >}}
+{{< postfig src="Portable Solar Charger (2).png" title="Portable Solar Charger" width="360px" >}}
 
 ## DCジャック中継型PWM調光器
 
-![PWM Controller](PWM controller (1).jpg)
-![PWM Controller](PWM controller (2).jpg)
-![PWM Controller](PWM controller (3).jpg)
+{{< postfig src="PWM controller (1).jpg" title="PWM Controller" width="360px" >}}
+{{< postfig src="PWM controller (2).jpg" title="PWM Controller" width="360px" >}}
+{{< postfig src="PWM controller (3).jpg" title="PWM Controller" width="360px" >}}
 

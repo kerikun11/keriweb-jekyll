@@ -1,7 +1,9 @@
 ---
-layout: "post"
+date: "2016-04-20"
 title: "ラズパイでシリアルモニタを使うには"
-category: "memos"
+slug: "raspi-serial"
+categories:
+  - "memos"
 tags: ["Raspberry Pi", "ラズパイ", "シリアル", "電子工作", "Arduino", "ターミナル"]
 ---
 

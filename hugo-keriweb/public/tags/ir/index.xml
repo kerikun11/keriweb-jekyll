@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ir on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/ir/</link>
+    <description>Recent content in Ir on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/ir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IR Station</title>
+      <link>http://kerikeri.top/post/1/01/01/ir-station/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/ir-station/</guid>
+      <description>IR-Station Infrared Remote Controller with ESP8266 WiFi-module
+You can control your home appliances with your smartphone or laptop.
+The latest information is here
+Main parts  ESP-WROOM-02 (ESP8266 WiFi Module) IR Receiver IR LED Indicator LED  Looks The Device&amp;rsquo;s Appearance Display Sample How to Use Setup the Device  Supply power to the device. Connect your cellphone or laptop to Wi-Fi SSID &amp;ldquo;IR-Station&amp;rdquo;. Access http://192.168.4.1 in a browser Enter Wi-Fi SSID of your home and its password Enter a device name you like.</description>
+    </item>
+    
+  </channel>
+</rss>

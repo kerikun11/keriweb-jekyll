@@ -1,6 +1,7 @@
 ---
-layout: post
+date: "2016-12-04"
 title: "Apache2でIR-Stationデモ"
+slug: "ir-station-demo-apache2"
 category: memos
 tag:
  - "サーバー"
@@ -16,7 +17,7 @@ tag:
 ラズパイ+Apache2+SinatraでIR-Stationのデモサイトを作る．
 
 この記事は，デモサイトを作るときのメモ．  
-デモサイト紹介記事は[こちら]({% post_url 2016-10-20-ir-station-demo %})
+デモサイト紹介記事は[こちら](/posts/2016-10-20-ir-station-demo/)
 
 <!--more-->
 

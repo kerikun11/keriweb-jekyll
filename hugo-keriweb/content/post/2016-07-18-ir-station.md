@@ -1,10 +1,11 @@
 ---
-layout: post
+date: "2016-07-18"
 title: "赤外線学習リモコン完成"
+slug: "ir-station"
 category: works
 tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad","IoT"]
 pickup: true
-icon: "icon.jpg"
+thumbnail: "/posts/2016-07-18-ir-station/icon.jpg"
 ---
 
 ## 概要
@@ -17,33 +18,33 @@ icon: "icon.jpg"
 
 ## 祝・完成
 
-[発注したプリント基板が基板が届き]({% post_url 2016-07-06-ir-station-board %})，とうとう赤外線学習リモコンが完成しました．
+[発注したプリント基板が基板が届き](/posts/2016-07-06-ir-station-board/)，とうとう赤外線学習リモコンが完成しました．
 
 ### 本体
 
-![本体](body.jpg)
+{{< postfig src="body.jpg" title="本体" width="360px" >}}
 
 ### 取り付け簡単！
 
 壁に取り付けた様子です．電源は，`USB-micro-B`コネクタから供給します．
-![取り付け](attach.jpg)
+{{< postfig src="attach.jpg" title="取り付け" width="360px" >}}
 
 ### 操作画面
 
 複数の機器のリモコンを1つにまとめて，スマホからコントロールすることができます．
-![操作画面](display.png)
+{{< postfig src="display.png" title="操作画面" width="360px" >}}
 
 ## 本体内部
 
 ### ふたを開けると
 
 ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現れます．
-![ふたを開けたところ](inside.jpg)
+{{< postfig src="inside.jpg" title="ふたを開けたところ" width="360px" >}}
 
 ### 基板
 
-![基板の表](top.jpg)
-![基板の裏](back.jpg)
+{{< postfig src="top.jpg" title="基板の表" width="360px" >}}
+{{< postfig src="back.jpg" title="基板の裏" width="360px" >}}
 
 ## 作り方
 
@@ -62,8 +63,8 @@ ESP8266マイコンを備えたWiFiモジュールである，ESP-WROOM-02が現
 
 赤外線学習リモコン「IR-Station」についての他の記事:
 
-  * [2015年12月30日 ESP8266で赤外線学習リモコン]({% post_url 2015-12-30-ir-station %})
-  * [2016年03月11日 IR-Station Reference]({% post_url 2016-03-11-ir-station-reference %})
-  * [2016年07月06日 赤外線学習リモコンの基板が届きました]({% post_url 2016-07-06-ir-station-board %})
-  * [IR-Stationの使い方]({% post_url 2016-07-25-how-to-use-ir-station %})
+  * [2015年12月30日 ESP8266で赤外線学習リモコン](/posts/2015-12-30-ir-station/)
+  * [2016年03月11日 IR-Station Reference](/posts/2016-03-11-ir-station-reference/)
+  * [2016年07月06日 赤外線学習リモコンの基板が届きました](/posts/2016-07-06-ir-station-board/)
+  * [IR-Stationの使い方](/posts/2016-07-25-how-to-use-ir-station/)
 

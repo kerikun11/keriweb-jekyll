@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wi Fi on KERI&#39;s Lab</title>
+    <link>http://kerikeri.top/tags/wi-fi/</link>
+    <description>Recent content in Wi Fi on KERI&#39;s Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
+    <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    
+	<atom:link href="http://kerikeri.top/tags/wi-fi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ESP-WROOM-02による中継型電力計</title>
+      <link>http://kerikeri.top/post/1/01/01/esp-wroom-02%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%AD%E7%B6%99%E5%9E%8B%E9%9B%BB%E5%8A%9B%E8%A8%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-02%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%AD%E7%B6%99%E5%9E%8B%E9%9B%BB%E5%8A%9B%E8%A8%88/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;h3 id=&#34;話題のesp-wroom-02&#34;&gt;話題のESP-WROOM-02&lt;/h3&gt;
+
+&lt;p&gt;ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュール。&lt;/p&gt;
+
+&lt;p&gt;今回はこれを使って中継型電力計を作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-09607/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;esp8266.jpg&#34; alt=&#34;ESP8266&#34; /&gt;{: .img-small}&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;中継型とは&#34;&gt;中継型とは&lt;/h3&gt;
+
+&lt;p&gt;電源端子としてよく使われてるDCジャックに中継するだけで、そこから電力をもらいつつ電力を計測します。&lt;/p&gt;
+
+&lt;h3 id=&#34;wifi経由でサーバーへ&#34;&gt;WiFi経由でサーバーへ&lt;/h3&gt;
+
+&lt;p&gt;測定した電力データはWiFiを使って任意のサーバーに送ることができます。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
