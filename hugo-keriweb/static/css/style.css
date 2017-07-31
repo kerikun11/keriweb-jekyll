@@ -723,7 +723,7 @@ select {
 	padding-bottom: 1.25rem;
 	margin-bottom: 20px;
 	margin-bottom: 1.25rem;
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 2px dotted #AAA;
 }
 
 .list__header {
