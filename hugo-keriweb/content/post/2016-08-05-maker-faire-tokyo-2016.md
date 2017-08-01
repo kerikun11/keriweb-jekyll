@@ -3,12 +3,11 @@ date: "2016-08-05"
 title: "Maker Faire Tokyo 2016 に出展します！"
 slug: "maker-faire-tokyo-2016"
 categories:
-  - "blogs"
+  - "イベント"
 tags:
   - "Maker Faire Tokyo"
   - "MFT2016"
   - "IR-Station"
-  - "電子工作"
 thumbnail: "/posts/2016-08-05-maker-faire-tokyo-2016/logo.jpg"
 ---
 
@@ -36,7 +35,7 @@ IR-Stationについては以前書いた記事をご覧ください．
   * [赤外線学習リモコン完成](/posts/2016-07-18-ir-station/)
   * [IR-Stationの使い方](/posts/2016-07-25-how-to-use-ir-station/)
 
-{{< postfig src="body.jpg" title="本体" width="360px" >}}
+{{< postfig src="body.jpg" title="本体" width="480px" >}}
 
 ## 是非会場に来てください！
 

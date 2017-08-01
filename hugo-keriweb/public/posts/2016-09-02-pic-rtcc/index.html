@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@Ryokeri14" />
+<meta name="twitter:title" content="PICでリアルタイムクロック - KERI&#39;s Lab" />
+<meta name="twitter::description" content="KERI&#39;s Lab へようこそ。ここでは趣味の電子工作や日々の活動を紹介しています。">
+
+<title>PICでリアルタイムクロック - KERI&#39;s Lab</title>
+<meta name="description" content="KERI&#39;s Lab へようこそ。ここでは趣味の電子工作や日々の活動を紹介しています。">
+<meta name="generator" content="Hugo 0.25.1" />
+<meta property="og:title" content="PICでリアルタイムクロック" />
+<meta property="og:description" content="概要
+
+PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://kerikeri.top/posts/2016-09-02-pic-rtcc/" />
+
+
+
+<meta property="article:published_time" content="2016-09-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-09-02T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'kerikun11', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="KERI&#39;s Lab" rel="home">
+						<h1 class="logo__title">KERI&#39;s Lab</h1>
+						<h2 class="logo__tagline">KERI&#39;s Lab へようこそ。ここでは趣味の電子工作や日々の活動を紹介しています。</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item "><a class="menu__link" href="/about/">About</a></li>
+		<li class="menu__item "><a class="menu__link" href="/works/">Works</a></li>
+	</ul>
+</nav>
+
+
+		</header>
+		<div class="wrapper clearfix">
+
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<div class="post__info">
+				<h1 class="post__title">PICでリアルタイムクロック</h1>
+				<p class="post__meta meta">
+				<span class="post__meta-time meta-time">
+					<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+					<time class="post__meta-date" datetime="2016-09-02T00:00:00">2016-09-02</time>
+				</span>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="/categories/%e5%82%99%e5%bf%98%e9%8c%b2" rel="category">備忘録</a></span>
+				<span class="post__meta-tags meta-tags">
+					<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+					<a class="meta-tag__link" href="/tags/pic" rel="tag">PIC</a>, <a class="meta-tag__link" href="/tags/pic18f27j53" rel="tag">PIC18F27J53</a>, <a class="meta-tag__link" href="/tags/rtcc" rel="tag">RTCC</a></span>
+				</p>
+			</div>
+		</header>
+		<div class="post__content clearfix">
+			<h2 id="概要">概要</h2>
+
+<p>PIC18F27J53は，リアルタイムクロック&amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．</p>
+
+<p></p>
+
+<h2 id="自作のrtccライブラリ">自作のRTCCライブラリ</h2>
+
+<h3 id="必要なソースファイル">必要なソースファイル</h3>
+
+<ul>
+<li>My_RTCC.h</li>
+<li>My_RTCC.c</li>
+<li>My_button.h</li>
+<li>My_button.c</li>
+<li>main.c</li>
+</ul>
+
+<h3 id="概要-1">概要</h3>
+
+<h4 id="変数">変数</h4>
+
+<p>このプログラムでは、時刻情報を持つ変数が３つある。</p>
+
+<ol>
+<li>PICのRTCCモジュールのレジスタ→カレンダー表記、16進法表記（※厳密には10進だが便宜上16進とする。）</li>
+<li>time_t構造体内のepoch（uint32_t）→2000年1月1日0時00分からの総秒数</li>
+<li>time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。</li>
+</ol>
+
+<p>以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。</p>
+
+<h4 id="使い方">使い方</h4>
+
+<ol>
+<li>TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）</li>
+<li>CONFIGを設定する。RTCOSC = T1OSCREF</li>
+<li>その次に、RTCC_init();を書く。（初期設定関数）</li>
+<li>mainループ内に、RTCC_loop();を書くこと。（時間の同期関数）</li>
+<li>任意で時計合わせをする。→時計合わせをしたら、RTCC_from_caltime()かRTCC_from_epoch()を呼んで変更を適用する。</li>
+<li>時計合わせには、adjust_time_toggle()を呼んでから、adjust_time_cursor()で、好きな項を選択する</li>
+<li>adjust_time_inc()とadjust_time_dec()で調整するとよい。</li>
+<li>時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。</li>
+</ol>
+
+<h3 id="rtccライブラリ">RTCCライブラリ</h3>
+
+<h4 id="my-rtcc-h">My_RTCC.h</h4>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">/* </span>
+<span style="color: #408080; font-style: italic"> * File:   My_RTCC.h</span>
+<span style="color: #408080; font-style: italic"> * Author: Ryotaro Onuki</span>
+<span style="color: #408080; font-style: italic"> *</span>
+<span style="color: #408080; font-style: italic"> * Created on 2015/03/19, 0:02</span>
+<span style="color: #408080; font-style: italic"> * </span>
+<span style="color: #408080; font-style: italic"> * PIC18F28J53用リアルタイムクロックプログラム</span>
+<span style="color: #408080; font-style: italic"> * ○概要</span>
+<span style="color: #408080; font-style: italic"> * このプログラムでは、時刻情報を持つ変数が３つある。</span>
+<span style="color: #408080; font-style: italic"> * 1.PICのRTCCモジュールのレジスタ→カレンダー表記、16進法表記（※厳密には10進だが便宜上16進とする。）</span>
+<span style="color: #408080; font-style: italic"> * 2.time_t構造体内のepoch（uint32_t）→2000年1月1日0時00分からの総秒数</span>
+<span style="color: #408080; font-style: italic"> * 3.time_t構造体内のYY,MM,DD,EE,hh,mm,ss→それぞれ、年、月、日、曜日、時、分、秒の10進法表記。</span>
+<span style="color: #408080; font-style: italic"> * 以上３つがある。時刻が変わってもRTCC_loop()関数がすべての値を常に一致させているので安心して使用できる。</span>
+<span style="color: #408080; font-style: italic"> * ○使い方</span>
+<span style="color: #408080; font-style: italic"> * 1.TIOSCのピンに32.768kHzのクリスタルをつなぐ。（12pのコンデンサも）</span>
+<span style="color: #408080; font-style: italic"> * 2.CONFIGを設定する。RTCOSC = T1OSCREF</span>
+<span style="color: #408080; font-style: italic"> * 3.その次に、RTCC_init();を書く。（初期設定関数）</span>
+<span style="color: #408080; font-style: italic"> * 4.mainループ内に、RTCC_loop();を書くこと。（時間の同期関数）</span>
+<span style="color: #408080; font-style: italic"> * 5.任意で時計合わせをする。→時計合わせをしたら、RTCC_from_caltime()かRTCC_from_epoch()を呼んで変更を適用する。</span>
+<span style="color: #408080; font-style: italic"> * 6.時計合わせには、adjust_time_toggle()を呼んでから、adjust_time_cursor()で、好きな項を選択する</span>
+<span style="color: #408080; font-style: italic"> * 7.adjust_time_inc()とadjust_time_dec()で調整するとよい。</span>
+<span style="color: #408080; font-style: italic"> * 8.時計合わせが終わったら、adjust_time_toggle()をもう一度呼ぶと時計合わせ終了。</span>
+<span style="color: #408080; font-style: italic"> */</span>
+
+<span style="color: #BC7A00">#ifndef MY_RTCC_H</span>
+<span style="color: #BC7A00">#define	MY_RTCC_H</span>
+
+<span style="color: #408080; font-style: italic">/** INCLUDES *******************************************************/</span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;xc.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdint.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&quot;My_button.h&quot;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #408080; font-style: italic">/** VALUES *********************************************************/</span>
+<span style="color: #BC7A00">#define MINUTE ((epoch_t)60)</span>
+<span style="color: #BC7A00">#define HOUR ((epoch_t)60*60)</span>
+<span style="color: #BC7A00">#define DAY ((epoch_t)60*60*24)</span>
+
+<span style="color: #408080; font-style: italic">/** STRUCTURE ******************************************************/</span>
+<span style="color: #408080; font-style: italic">// epoch型を定義。2000年1月1日0時00分からの総秒数。</span>
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #B00040">uint32_t</span> epoch_t;
+
+<span style="color: #408080; font-style: italic">// 時刻合わせ用のフラグの構造体を定義。</span>
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+
+    <span style="color: #008000; font-weight: bold">union</span> {
+        <span style="color: #B00040">uint8_t</span> flags;
+
+        <span style="color: #008000; font-weight: bold">struct</span> {
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">ss</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">mm</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">hh</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">DD</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">MM</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">YY</span> : <span style="color: #666666">1</span>;
+        } flag;
+    };
+} edit_t;
+
+<span style="color: #408080; font-style: italic">// RTCC関連すべてを詰めた構造体。実際に使用する。</span>
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> {
+    epoch_t epoch;
+    <span style="color: #B00040">uint8_t</span> ss;
+    <span style="color: #B00040">uint8_t</span> mm;
+    <span style="color: #B00040">uint8_t</span> hh;
+    <span style="color: #B00040">uint8_t</span> EE;
+    <span style="color: #B00040">uint8_t</span> DD;
+    <span style="color: #B00040">uint8_t</span> MM;
+    <span style="color: #B00040">uint8_t</span> YY;
+    <span style="color: #B00040">uint8_t</span> colon;
+    <span style="color: #B00040">uint8_t</span> halfsec;
+    edit_t edit;
+} <span style="color: #B00040">time_t</span>;
+
+<span style="color: #408080; font-style: italic">/** VARIABLES ******************************************************/</span>
+<span style="color: #408080; font-style: italic">// 表示用の曜日charをconstで定義。</span>
+<span style="color: #008000; font-weight: bold">extern</span> <span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> weekday_3char[<span style="color: #666666">7</span>][<span style="color: #666666">4</span>];
+<span style="color: #408080; font-style: italic">// 現在時刻</span>
+<span style="color: #008000; font-weight: bold">extern</span> <span style="color: #B00040">time_t</span> now;
+<span style="color: #408080; font-style: italic">// 時間が変わった時だけフラグが経つ。表示器の時刻の更新はこのフラグの監視をして行えばよい。</span>
+<span style="color: #008000; font-weight: bold">extern</span> <span style="color: #B00040">uint8_t</span> time_change_flag;
+<span style="color: #408080; font-style: italic">// main_init()に書くこと。</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_init</span>(<span style="color: #B00040">void</span>);
+<span style="color: #408080; font-style: italic">// Call this in the main loop</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_task</span>(<span style="color: #B00040">void</span>);
+
+<span style="color: #408080; font-style: italic">/** USER FUNCTIONS *************************************************/</span>
+<span style="color: #408080; font-style: italic">/** Transform time User Functions **/</span>
+<span style="color: #408080; font-style: italic">// 時刻をRTCC基準でそろえる</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_RTCC</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 時刻をカレンダータイム基準でそろえる</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 時刻をエポック基準でそろえる</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_epoch</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// return month length</span>
+<span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">month_length</span>(<span style="color: #B00040">uint8_t</span> year, <span style="color: #B00040">uint8_t</span> month);
+
+<span style="color: #408080; font-style: italic">/** LCD display **/</span>
+<span style="color: #408080; font-style: italic">// 各項目表示用関数。ユーザーは使わない。</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">display_dec</span>(<span style="color: #B00040">char</span> <span style="color: #666666">*</span>str, <span style="color: #B00040">uint8_t</span> dec, <span style="color: #B00040">uint8_t</span> edit);
+<span style="color: #408080; font-style: italic">// 0802サイズ液晶用、文字列作成関数</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">display_time_0802</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line0, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line1);
+<span style="color: #408080; font-style: italic">// 1608サイズ液晶用、文字列作成関数</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">display_time_1602</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line0, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line1);
+
+<span style="color: #408080; font-style: italic">/** adjust the time **/</span>
+<span style="color: #408080; font-style: italic">// 時刻編集モードを切り替える</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_toggle</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 編集中の時刻針を切り替える</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_cursor</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 編集中の時刻針を１つ増やす</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_inc</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 編集中の時刻針を１つ減らす</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_dec</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// 3つのボタンで時刻合わせ</span>
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_button</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, button_t <span style="color: #666666">*</span>mode, button_t <span style="color: #666666">*</span>cnt_inc, button_t <span style="color: #666666">*</span>cnt_dec);
+
+<span style="color: #408080; font-style: italic">/** FUNCTIONS ******************************************************/</span>
+<span style="color: #408080; font-style: italic">/** en/decode number **/</span>
+<span style="color: #408080; font-style: italic">// from decimal to hex</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">d_to_x</span>(<span style="color: #B00040">uint8_t</span> dec);
+<span style="color: #408080; font-style: italic">// from hex to decimal</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">x_to_d</span>(<span style="color: #B00040">uint8_t</span> hex);
+<span style="color: #408080; font-style: italic">// quotをdivで割って、余りを返す。よく使うので関数化した。</span>
+<span style="color: #008000; font-weight: bold">static</span> epoch_t <span style="color: #0000FF">get_quot_rem</span>(epoch_t <span style="color: #666666">*</span>quot, <span style="color: #B00040">uint8_t</span> div);
+
+<span style="color: #408080; font-style: italic">/** Transform time **/</span>
+<span style="color: #408080; font-style: italic">// RTCCをカレンダタイムに変換、上書き。</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_to_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// カレンダタイムをRTCCに変換、上書き。</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">caltime_to_RTCC</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// Epochをカレンダタイムに変換、上書き。</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">epoch_to_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+<span style="color: #408080; font-style: italic">// get epoch from caltime</span>
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">caltime_to_epoch</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm);
+
+<span style="color: #BC7A00">#endif	</span><span style="color: #408080; font-style: italic">/* MY_RTCC_H */</span><span style="color: #BC7A00"></span>
+</pre></div>
+
+<h4 id="my-rtcc-c">My_RTCC.c</h4>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&quot;My_RTCC.h&quot;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #408080; font-style: italic">/** INCLUDES *******************************************************/</span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdio.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;string.h&gt;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #408080; font-style: italic">/** VALUES *********************************************************/</span>
+
+
+<span style="color: #408080; font-style: italic">/** VARIABLES ******************************************************/</span>
+<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> weekday_3char[<span style="color: #666666">7</span>][<span style="color: #666666">4</span>] <span style="color: #666666">=</span> {<span style="color: #BA2121">&quot;SUN&quot;</span>, <span style="color: #BA2121">&quot;MON&quot;</span>, <span style="color: #BA2121">&quot;TUE&quot;</span>, <span style="color: #BA2121">&quot;WED&quot;</span>, <span style="color: #BA2121">&quot;THU&quot;</span>, <span style="color: #BA2121">&quot;FRI&quot;</span>, <span style="color: #BA2121">&quot;SAT&quot;</span>};
+<span style="color: #B00040">time_t</span> now;
+<span style="color: #B00040">uint8_t</span> time_change_flag;
+
+<span style="color: #408080; font-style: italic">/** USER FUNCTIONS *************************************************/</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_init</span>(<span style="color: #B00040">void</span>) {
+    RTCCFGbits.RTCWREN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">if</span> (RTCCFGbits.RTCWREN <span style="color: #666666">!=</span> <span style="color: #666666">1</span>) {
+        EECON2 <span style="color: #666666">=</span> <span style="color: #666666">0x55</span>;
+        EECON2 <span style="color: #666666">=</span> <span style="color: #666666">0xAA</span>;
+        RTCCFGbits.RTCWREN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    }
+    RTCCFGbits.RTCEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCCFGbits.RTCOE <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    PADCFG1bits.RTSECSEL0 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    PADCFG1bits.RTSECSEL1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCCAL <span style="color: #666666">=</span> <span style="color: #666666">0x00</span>;
+    T1CONbits.T1OSCEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+
+    RTCC_from_RTCC(<span style="color: #666666">&amp;</span>now);
+    <span style="color: #008000; font-weight: bold">if</span> (now.DD <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+        now.epoch <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        RTCC_from_epoch(<span style="color: #666666">&amp;</span>now);
+    }
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_task</span>(<span style="color: #B00040">void</span>) {
+    <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> prev_halfsec;
+    <span style="color: #008000; font-weight: bold">if</span> (RTCCFGbits.RTCSYNC)<span style="color: #008000; font-weight: bold">return</span>;
+    now.halfsec <span style="color: #666666">=</span> RTCCFGbits.HALFSEC;
+    <span style="color: #008000; font-weight: bold">if</span> (prev_halfsec <span style="color: #666666">!=</span> now.halfsec) {
+        prev_halfsec <span style="color: #666666">=</span> now.halfsec;
+        now.colon <span style="color: #666666">=</span> now.halfsec;
+        time_change_flag <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        RTCC_from_RTCC(<span style="color: #666666">&amp;</span>now);
+    }
+}
+
+<span style="color: #408080; font-style: italic">/** Transform time User Functions **/</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_RTCC</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    RTCC_to_caltime(tm);
+    caltime_to_epoch(tm);
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    caltime_to_epoch(tm);
+    epoch_to_caltime(tm);
+    caltime_to_RTCC(tm);
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_from_epoch</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    epoch_to_caltime(tm);
+    caltime_to_RTCC(tm);
+}
+
+<span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">month_length</span>(<span style="color: #B00040">uint8_t</span> year, <span style="color: #B00040">uint8_t</span> month) {
+    <span style="color: #008000; font-weight: bold">if</span> (month <span style="color: #666666">==</span> <span style="color: #666666">2</span>) <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">28</span> <span style="color: #666666">+</span> <span style="color: #666666">!</span>(year <span style="color: #666666">&amp;</span> <span style="color: #666666">3</span>)<span style="color: #666666">-!</span>(year <span style="color: #666666">%</span> <span style="color: #666666">100</span>)<span style="color: #666666">+!</span>(year <span style="color: #666666">%</span> <span style="color: #666666">400</span>);
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">31</span> <span style="color: #666666">-</span> (((<span style="color: #666666">-</span>(month <span style="color: #666666">&amp;</span> <span style="color: #666666">1</span>)<span style="color: #666666">^</span>month)<span style="color: #666666">&amp;13</span>) <span style="color: #666666">==</span> <span style="color: #666666">4</span>);
+
+    <span style="color: #408080; font-style: italic">//    switch (month) {</span>
+    <span style="color: #408080; font-style: italic">//        case 1:</span>
+    <span style="color: #408080; font-style: italic">//        case 3:</span>
+    <span style="color: #408080; font-style: italic">//        case 5:</span>
+    <span style="color: #408080; font-style: italic">//        case 7:</span>
+    <span style="color: #408080; font-style: italic">//        case 8:</span>
+    <span style="color: #408080; font-style: italic">//        case 10:</span>
+    <span style="color: #408080; font-style: italic">//        case 12:</span>
+    <span style="color: #408080; font-style: italic">//            return 31;</span>
+    <span style="color: #408080; font-style: italic">//        case 4:</span>
+    <span style="color: #408080; font-style: italic">//        case 6:</span>
+    <span style="color: #408080; font-style: italic">//        case 9:</span>
+    <span style="color: #408080; font-style: italic">//        case 11:</span>
+    <span style="color: #408080; font-style: italic">//            return 30;</span>
+    <span style="color: #408080; font-style: italic">//        case 2:</span>
+    <span style="color: #408080; font-style: italic">//            if (year % 400 == 0)return 29;</span>
+    <span style="color: #408080; font-style: italic">//            else if (year % 100 == 0)return 28;</span>
+    <span style="color: #408080; font-style: italic">//            else if (year % 4 == 0) return 29;</span>
+    <span style="color: #408080; font-style: italic">//            else return 28;</span>
+}
+
+<span style="color: #408080; font-style: italic">/** LCD display **/</span>
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">display_dec</span>(<span style="color: #B00040">char</span> <span style="color: #666666">*</span>str, <span style="color: #B00040">uint8_t</span> dec, <span style="color: #B00040">uint8_t</span> edit) {
+    <span style="color: #B00040">char</span> s[<span style="color: #666666">4</span>];
+    sprintf(s, <span style="color: #BA2121">&quot;%02d&quot;</span>, dec);
+    <span style="color: #008000; font-weight: bold">if</span> (edit <span style="color: #666666">&amp;&amp;</span> now.halfsec)strcat(str, <span style="color: #BA2121">&quot;  &quot;</span>);
+    <span style="color: #008000; font-weight: bold">else</span> strcat(str, s);
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">display_time_0802</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line0, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line1) {
+    RTCC_from_RTCC(<span style="color: #666666">&amp;</span>now);
+
+    strcpy(line0, <span style="color: #BA2121">&quot;&quot;</span>);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>YY, tm<span style="color: #666666">-&gt;</span>edit.flag.YY);
+    strcat(line0, <span style="color: #BA2121">&quot;/&quot;</span>);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>MM, tm<span style="color: #666666">-&gt;</span>edit.flag.MM);
+    strcat(line0, <span style="color: #BA2121">&quot;/&quot;</span>);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>DD, tm<span style="color: #666666">-&gt;</span>edit.flag.DD);
+
+    strcpy(line1, <span style="color: #BA2121">&quot;&quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>hh, tm<span style="color: #666666">-&gt;</span>edit.flag.hh);
+    <span style="color: #008000; font-weight: bold">if</span> (now.colon) strcat(line1, <span style="color: #BA2121">&quot;:&quot;</span>);
+    <span style="color: #008000; font-weight: bold">else</span> strcat(line1, <span style="color: #BA2121">&quot; &quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>mm, tm<span style="color: #666666">-&gt;</span>edit.flag.mm);
+    strcat(line1, <span style="color: #BA2121">&quot;-&quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>ss, tm<span style="color: #666666">-&gt;</span>edit.flag.ss);
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">display_time_1602</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line0, <span style="color: #B00040">char</span> <span style="color: #666666">*</span>line1) {
+    RTCC_from_RTCC(<span style="color: #666666">&amp;</span>now);
+
+    strcpy(line0, <span style="color: #BA2121">&quot;&quot;</span>);
+    display_dec(line0, <span style="color: #666666">20</span>, tm<span style="color: #666666">-&gt;</span>edit.flag.YY);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>YY, tm<span style="color: #666666">-&gt;</span>edit.flag.YY);
+    strcat(line0, <span style="color: #BA2121">&quot;/&quot;</span>);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>MM, tm<span style="color: #666666">-&gt;</span>edit.flag.MM);
+    strcat(line0, <span style="color: #BA2121">&quot;/&quot;</span>);
+    display_dec(line0, tm<span style="color: #666666">-&gt;</span>DD, tm<span style="color: #666666">-&gt;</span>edit.flag.DD);
+    strcat(line0, <span style="color: #BA2121">&quot;(&quot;</span>);
+    strcat(line0, weekday_3char[tm<span style="color: #666666">-&gt;</span>EE]);
+    strcat(line0, <span style="color: #BA2121">&quot;)&quot;</span>);
+
+    strcpy(line1, <span style="color: #BA2121">&quot;        &quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>hh, tm<span style="color: #666666">-&gt;</span>edit.flag.hh);
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>colon) strcat(line1, <span style="color: #BA2121">&quot;:&quot;</span>);
+    <span style="color: #008000; font-weight: bold">else</span> strcat(line1, <span style="color: #BA2121">&quot; &quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>mm, tm<span style="color: #666666">-&gt;</span>edit.flag.mm);
+    strcat(line1, <span style="color: #BA2121">&quot;-&quot;</span>);
+    display_dec(line1, tm<span style="color: #666666">-&gt;</span>ss, tm<span style="color: #666666">-&gt;</span>edit.flag.ss);
+}
+
+<span style="color: #408080; font-style: italic">/** adjust the time **/</span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_toggle</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flags) {
+        tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        tm<span style="color: #666666">-&gt;</span>edit.flag.ss <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    }
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_cursor</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.ss)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x02</span>;
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.mm)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x04</span>;
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.hh)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x08</span>;
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.DD)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x10</span>;
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.MM)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x20</span>;
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.YY)tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x01</span>;
+    <span style="color: #008000; font-weight: bold">else</span> tm<span style="color: #666666">-&gt;</span>edit.flags <span style="color: #666666">=</span> <span style="color: #666666">0x00</span>;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_inc</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    RTCC_from_RTCC(tm);
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.ss) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.mm) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> MINUTE;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.hh) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> HOUR;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.DD) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> DAY;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.MM) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY, tm<span style="color: #666666">-&gt;</span>MM);
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.YY) {
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> i <span style="color: #666666">=</span> tm<span style="color: #666666">-&gt;</span>MM; i <span style="color: #666666">&lt;=</span> <span style="color: #666666">12</span>; i<span style="color: #666666">++</span>) {
+            tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY, i);
+        }
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> i <span style="color: #666666">=</span> <span style="color: #666666">1</span>; i <span style="color: #666666">&lt;</span> tm<span style="color: #666666">-&gt;</span>MM; i<span style="color: #666666">++</span>) {
+            tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY <span style="color: #666666">+</span> <span style="color: #666666">1</span>, i);
+        }
+    }
+
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">&gt;=</span> <span style="color: #666666">3155760000</span>)tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> <span style="color: #666666">3155760000</span>;
+    RTCC_from_epoch(<span style="color: #666666">&amp;</span>now);
+    time_change_flag <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_dec</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    RTCC_from_RTCC(tm);
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.ss) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.mm) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> MINUTE;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.hh) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> HOUR;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.DD) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> DAY;
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.MM) tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY, tm<span style="color: #666666">-&gt;</span>MM);
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flag.YY) {
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> i <span style="color: #666666">=</span> tm<span style="color: #666666">-&gt;</span>MM; i <span style="color: #666666">&gt;=</span> <span style="color: #666666">1</span>; i<span style="color: #666666">--</span>) {
+            tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY, i);
+        }
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> i <span style="color: #666666">=</span> <span style="color: #666666">12</span>; i <span style="color: #666666">&gt;</span> tm<span style="color: #666666">-&gt;</span>MM; i<span style="color: #666666">--</span>) {
+            tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY <span style="color: #666666">-</span> <span style="color: #666666">1</span>, i);
+        }
+    }
+
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">&gt;=</span> <span style="color: #666666">3155760000</span>)tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">+=</span> <span style="color: #666666">3155760000</span>;
+    RTCC_from_epoch(<span style="color: #666666">&amp;</span>now);
+    time_change_flag <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_adjust_time_button</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm, button_t <span style="color: #666666">*</span>mode, button_t <span style="color: #666666">*</span>cnt_inc, button_t <span style="color: #666666">*</span>cnt_dec) {
+    <span style="color: #008000; font-weight: bold">if</span> (mode<span style="color: #666666">-&gt;</span>flag.long_holding_3) {
+        mode<span style="color: #666666">-&gt;</span>flag.long_holding_3 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        RTCC_adjust_time_toggle(tm);
+        mode<span style="color: #666666">-&gt;</span>flags <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        cnt_inc<span style="color: #666666">-&gt;</span>flags <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        cnt_dec<span style="color: #666666">-&gt;</span>flags <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    }
+    <span style="color: #008000; font-weight: bold">if</span> (tm<span style="color: #666666">-&gt;</span>edit.flags) {
+        <span style="color: #008000; font-weight: bold">if</span> (mode<span style="color: #666666">-&gt;</span>flag.press) {
+            mode<span style="color: #666666">-&gt;</span>flag.press <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+            RTCC_adjust_time_cursor(tm);
+        }
+        <span style="color: #008000; font-weight: bold">if</span> (cnt_inc<span style="color: #666666">-&gt;</span>flag.press) {
+            cnt_inc<span style="color: #666666">-&gt;</span>flag.press <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+            RTCC_adjust_time_inc(tm);
+        }
+        <span style="color: #008000; font-weight: bold">if</span> (cnt_dec<span style="color: #666666">-&gt;</span>flag.press) {
+            cnt_dec<span style="color: #666666">-&gt;</span>flag.press <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+            RTCC_adjust_time_dec(tm);
+        }
+    }
+}
+
+<span style="color: #408080; font-style: italic">/** FUNCTIONS ******************************************************/</span>
+
+<span style="color: #408080; font-style: italic">/** en/decode number **/</span>
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">d_to_x</span>(<span style="color: #B00040">uint8_t</span> dec) {
+    <span style="color: #408080; font-style: italic">// uint8_t quot = dec / 10;</span>
+    <span style="color: #408080; font-style: italic">// return quot * 16 + dec - quot * 10;</span>
+    <span style="color: #008000; font-weight: bold">return</span> dec <span style="color: #666666">/</span> <span style="color: #666666">10</span> <span style="color: #666666">*</span> <span style="color: #666666">6</span> <span style="color: #666666">+</span> dec;
+}
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> <span style="color: #0000FF">x_to_d</span>(<span style="color: #B00040">uint8_t</span> hex) {
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">10</span> <span style="color: #666666">*</span> (<span style="color: #666666">0x0F</span> <span style="color: #666666">&amp;</span> (hex <span style="color: #666666">&gt;&gt;</span> <span style="color: #666666">4</span>)) <span style="color: #666666">+</span> (<span style="color: #666666">0x0F</span> <span style="color: #666666">&amp;</span> hex);
+}
+
+<span style="color: #008000; font-weight: bold">static</span> epoch_t <span style="color: #0000FF">get_quot_rem</span>(epoch_t <span style="color: #666666">*</span>quot, <span style="color: #B00040">uint8_t</span> div) {
+    <span style="color: #408080; font-style: italic">// num /= div;</span>
+    <span style="color: #408080; font-style: italic">// return rem;</span>
+    epoch_t num <span style="color: #666666">=</span> <span style="color: #666666">*</span>quot;
+    <span style="color: #008000; font-weight: bold">return</span> num <span style="color: #666666">-</span> (<span style="color: #666666">*</span>quot <span style="color: #666666">=</span> num <span style="color: #666666">/</span> div) <span style="color: #666666">*</span> div; <span style="color: #408080; font-style: italic">// returns rem</span>
+}
+
+<span style="color: #408080; font-style: italic">/** Transform time **/</span>
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">RTCC_to_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    <span style="color: #008000; font-weight: bold">while</span> (RTCCFGbits.RTCSYNC);
+
+    RTCCFGbits.RTCPTR0 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCCFGbits.RTCPTR1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+
+    tm<span style="color: #666666">-&gt;</span>YY <span style="color: #666666">=</span> x_to_d(RTCVALL); <span style="color: #408080; font-style: italic">// YY</span>
+    <span style="color: #B00040">uint8_t</span> dumy <span style="color: #666666">=</span> RTCVALH; <span style="color: #408080; font-style: italic">// Reserved</span>
+    tm<span style="color: #666666">-&gt;</span>DD <span style="color: #666666">=</span> x_to_d(RTCVALL); <span style="color: #408080; font-style: italic">// DD</span>
+    tm<span style="color: #666666">-&gt;</span>MM <span style="color: #666666">=</span> x_to_d(RTCVALH); <span style="color: #408080; font-style: italic">// MM</span>
+    tm<span style="color: #666666">-&gt;</span>hh <span style="color: #666666">=</span> x_to_d(RTCVALL); <span style="color: #408080; font-style: italic">// hh</span>
+    tm<span style="color: #666666">-&gt;</span>EE <span style="color: #666666">=</span> x_to_d(RTCVALH); <span style="color: #408080; font-style: italic">// EE</span>
+    tm<span style="color: #666666">-&gt;</span>ss <span style="color: #666666">=</span> x_to_d(RTCVALL); <span style="color: #408080; font-style: italic">// ss</span>
+    tm<span style="color: #666666">-&gt;</span>mm <span style="color: #666666">=</span> x_to_d(RTCVALH); <span style="color: #408080; font-style: italic">// mm</span>
+}
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">caltime_to_RTCC</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    <span style="color: #008000; font-weight: bold">while</span> (RTCCFGbits.RTCSYNC);
+    RTCCFGbits.RTCPTR0 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCCFGbits.RTCPTR1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCVALL <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>YY);
+    RTCVALH <span style="color: #666666">=</span> <span style="color: #666666">0x00</span>;
+    RTCCFGbits.RTCPTR0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    RTCCFGbits.RTCPTR1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCVALL <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>DD);
+    RTCVALH <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>MM);
+    RTCCFGbits.RTCPTR0 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    RTCCFGbits.RTCPTR1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    RTCVALL <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>hh);
+    RTCVALH <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>EE);
+    RTCCFGbits.RTCPTR0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    RTCCFGbits.RTCPTR1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    RTCVALL <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>ss);
+    RTCVALH <span style="color: #666666">=</span> d_to_x(tm<span style="color: #666666">-&gt;</span>mm);
+}
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">epoch_to_caltime</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    <span style="color: #408080; font-style: italic">// to get epoch on terminal</span>
+    <span style="color: #408080; font-style: italic">// echo $(( (`date -d &#39;2015/03/01&#39; &#39;+%s&#39;` - `date -d &#39;2000/01/01&#39; &#39;+%s&#39;`) / 86400 ))</span>
+    <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint16_t</span> day_cache <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">//2015.03.01</span>
+    <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> month_cache <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">uint8_t</span> year_cache <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">uint16_t</span> day_since_epoch;
+    <span style="color: #B00040">uint16_t</span> day;
+    <span style="color: #B00040">uint8_t</span> year <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">uint8_t</span> month <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// month is one-based.</span>
+    epoch_t num;
+
+    num <span style="color: #666666">=</span> tm<span style="color: #666666">-&gt;</span>epoch;
+    tm<span style="color: #666666">-&gt;</span>ss <span style="color: #666666">=</span> get_quot_rem(<span style="color: #666666">&amp;</span>num, <span style="color: #666666">60</span>);
+    tm<span style="color: #666666">-&gt;</span>mm <span style="color: #666666">=</span> get_quot_rem(<span style="color: #666666">&amp;</span>num, <span style="color: #666666">60</span>);
+    tm<span style="color: #666666">-&gt;</span>hh <span style="color: #666666">=</span> get_quot_rem(<span style="color: #666666">&amp;</span>num, <span style="color: #666666">24</span>);
+    day <span style="color: #666666">=</span> num;
+    day_since_epoch <span style="color: #666666">=</span> day;
+
+    num <span style="color: #666666">+=</span> <span style="color: #666666">6</span>; <span style="color: #408080; font-style: italic">// 2000.1.1 is Saturday(6).</span>
+    tm<span style="color: #666666">-&gt;</span>EE <span style="color: #666666">=</span> get_quot_rem(<span style="color: #666666">&amp;</span>num, <span style="color: #666666">7</span>);
+
+    <span style="color: #408080; font-style: italic">//    if (day == day_cache) {</span>
+    <span style="color: #408080; font-style: italic">//        year = year_cache;</span>
+    <span style="color: #408080; font-style: italic">//        month = month_cache;</span>
+    <span style="color: #408080; font-style: italic">//        day -= day_cache;</span>
+    <span style="color: #408080; font-style: italic">//    }</span>
+
+    <span style="color: #408080; font-style: italic">// day is zero - based here.</span>
+    <span style="color: #008000; font-weight: bold">while</span> (day <span style="color: #666666">&gt;=</span> month_length(year, month)) {
+        LATB2 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        day <span style="color: #666666">=</span> day <span style="color: #666666">-</span> month_length(year, month);
+        <span style="color: #008000; font-weight: bold">if</span> (month <span style="color: #666666">==</span> <span style="color: #666666">12</span>) {
+            month <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// month is one-based.</span>
+            year<span style="color: #666666">++</span>;
+            <span style="color: #408080; font-style: italic">//3155760000 is 2000~2100?100?????</span>
+            <span style="color: #008000; font-weight: bold">if</span> (year <span style="color: #666666">&gt;=</span> <span style="color: #666666">100</span>) {
+                tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">-=</span> <span style="color: #666666">3155760000</span>;
+                year <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+            }
+        } <span style="color: #008000; font-weight: bold">else</span> {
+            month<span style="color: #666666">++</span>;
+        }
+        month_cache <span style="color: #666666">=</span> month;
+        year_cache <span style="color: #666666">=</span> year;
+    }
+    day_cache <span style="color: #666666">=</span> day_since_epoch <span style="color: #666666">-</span> day;
+    day<span style="color: #666666">++</span>; <span style="color: #408080; font-style: italic">// day is one-based, not zero-based.</span>
+
+    tm<span style="color: #666666">-&gt;</span>YY <span style="color: #666666">=</span> year;
+    tm<span style="color: #666666">-&gt;</span>MM <span style="color: #666666">=</span> month;
+    tm<span style="color: #666666">-&gt;</span>DD <span style="color: #666666">=</span> day;
+}
+
+<span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">caltime_to_epoch</span>(<span style="color: #B00040">time_t</span> <span style="color: #666666">*</span>tm) {
+    epoch_t epoch <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> year <span style="color: #666666">=</span> <span style="color: #666666">0</span>; year <span style="color: #666666">&lt;</span> tm<span style="color: #666666">-&gt;</span>YY; year<span style="color: #666666">++</span>) {
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> month <span style="color: #666666">=</span> <span style="color: #666666">1</span>; month <span style="color: #666666">&lt;=</span> <span style="color: #666666">12</span>; month<span style="color: #666666">++</span>) {
+            epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> month_length(year, month);
+        }
+    }
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> month <span style="color: #666666">=</span> <span style="color: #666666">1</span>; month <span style="color: #666666">&lt;</span> tm<span style="color: #666666">-&gt;</span>MM; month<span style="color: #666666">++</span>) {
+        epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> month_length(tm<span style="color: #666666">-&gt;</span>YY, month);
+    }
+    epoch <span style="color: #666666">+=</span> DAY <span style="color: #666666">*</span> (tm<span style="color: #666666">-&gt;</span>DD <span style="color: #666666">-</span> <span style="color: #666666">1</span>); <span style="color: #408080; font-style: italic">//day is one-based.</span>
+    epoch <span style="color: #666666">+=</span> HOUR <span style="color: #666666">*</span> tm<span style="color: #666666">-&gt;</span>hh;
+    epoch <span style="color: #666666">+=</span> MINUTE <span style="color: #666666">*</span> tm<span style="color: #666666">-&gt;</span>mm;
+    epoch <span style="color: #666666">+=</span> tm<span style="color: #666666">-&gt;</span>ss;
+
+    tm<span style="color: #666666">-&gt;</span>epoch <span style="color: #666666">=</span> epoch;
+}
+</pre></div>
+
+<h3 id="ボタンライブラリ">ボタンライブラリ</h3>
+
+<h4 id="my-button-h">My_button.h</h4>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">/* </span>
+<span style="color: #408080; font-style: italic"> * File:   My_button.h</span>
+<span style="color: #408080; font-style: italic"> * Author: kerikun11</span>
+<span style="color: #408080; font-style: italic"> *</span>
+<span style="color: #408080; font-style: italic"> * Created on 2015/02/26, 19:19</span>
+<span style="color: #408080; font-style: italic"> */</span>
+
+<span style="color: #BC7A00">#ifndef MY_BUTTON_H</span>
+<span style="color: #BC7A00">#define	MY_BUTTON_H</span>
+
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdint.h&gt;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #408080; font-style: italic">//*************************** button ***************************//</span>
+<span style="color: #408080; font-style: italic">//タイマー割り込み関数にbutton_timer_interrupt(&amp;button_t,!SW)を書いておくこと。</span>
+<span style="color: #408080; font-style: italic">// 48MHz, 16bit, prescaler=1:4</span>
+
+<span style="color: #BC7A00">#define PRESS_LEVEL 2</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL1  16</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL2  60</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL3  150</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL4  300</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL5  500</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL6  700</span>
+<span style="color: #BC7A00">#define LONG_HOLD_LEVEL7  900</span>
+
+<span style="color: #008000; font-weight: bold">typedef</span> <span style="color: #008000; font-weight: bold">struct</span> button {
+    <span style="color: #B00040">uint16_t</span> cnt_sw;
+
+    <span style="color: #008000; font-weight: bold">union</span> {
+        <span style="color: #B00040">uint16_t</span> flags;
+
+        <span style="color: #008000; font-weight: bold">struct</span> {
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">press</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_1</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_2</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_3</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_4</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_5</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_6</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_hold_7</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">pressing</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_1</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_2</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_3</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_4</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_5</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_6</span> : <span style="color: #666666">1</span>;
+            <span style="color: #B00040">uint8_t</span> <span style="color: #A0A000">long_holding_7</span> : <span style="color: #666666">1</span>;
+        } flag;
+    };
+} button_t;
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">button_timer_interrupt</span>(button_t <span style="color: #666666">*</span>bt, <span style="color: #B00040">uint8_t</span> sw_value);
+
+<span style="color: #BC7A00">#endif	</span><span style="color: #408080; font-style: italic">/* MY_BUTTON_H */</span><span style="color: #BC7A00"></span>
+</pre></div>
+
+<h4 id="my-button-h-1">My_button.h</h4>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&quot;My_button.h&quot;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">button_timer_interrupt</span>(button_t <span style="color: #666666">*</span>bt, <span style="color: #B00040">uint8_t</span> sw_value) {
+    <span style="color: #008000; font-weight: bold">if</span> (sw_value) {
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL7)bt<span style="color: #666666">-&gt;</span>flag.long_holding_7 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL6)bt<span style="color: #666666">-&gt;</span>flag.long_holding_6 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL5)bt<span style="color: #666666">-&gt;</span>flag.long_holding_5 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL4)bt<span style="color: #666666">-&gt;</span>flag.long_holding_4 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL3)bt<span style="color: #666666">-&gt;</span>flag.long_holding_3 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL2)bt<span style="color: #666666">-&gt;</span>flag.long_holding_2 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> LONG_HOLD_LEVEL1)bt<span style="color: #666666">-&gt;</span>flag.long_holding_1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">==</span> PRESS_LEVEL)bt<span style="color: #666666">-&gt;</span>flag.pressing <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&lt;</span> LONG_HOLD_LEVEL7 <span style="color: #666666">+</span> <span style="color: #666666">1</span>) bt<span style="color: #666666">-&gt;</span>cnt_sw<span style="color: #666666">++</span>;
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL7)bt<span style="color: #666666">-&gt;</span>flag.long_hold_7 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL6)bt<span style="color: #666666">-&gt;</span>flag.long_hold_6 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL5)bt<span style="color: #666666">-&gt;</span>flag.long_hold_5 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL4)bt<span style="color: #666666">-&gt;</span>flag.long_hold_4 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL3)bt<span style="color: #666666">-&gt;</span>flag.long_hold_3 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL2)bt<span style="color: #666666">-&gt;</span>flag.long_hold_2 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> LONG_HOLD_LEVEL1)bt<span style="color: #666666">-&gt;</span>flag.long_hold_1 <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">&gt;=</span> PRESS_LEVEL)bt<span style="color: #666666">-&gt;</span>flag.press <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        bt<span style="color: #666666">-&gt;</span>cnt_sw <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        bt<span style="color: #666666">-&gt;</span>flags <span style="color: #666666">&amp;=</span> <span style="color: #666666">0x00FF</span>;
+    }
+}
+</pre></div>
+
+<h3 id="使用例">使用例</h3>
+
+<p>UARTで毎秒時刻を送信します．</p>
+
+<h4 id="main-c">main.c</h4>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">/* </span>
+<span style="color: #408080; font-style: italic"> * Project: RTCC-Sample.X</span>
+<span style="color: #408080; font-style: italic"> * File:    main.c</span>
+<span style="color: #408080; font-style: italic"> * Author:  Ryotaro Onuki</span>
+<span style="color: #408080; font-style: italic"> *</span>
+<span style="color: #408080; font-style: italic"> * Created on 2015/10/06, 14:23</span>
+<span style="color: #408080; font-style: italic"> */</span>
+
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;xc.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdint.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdio.h&gt;</span><span style="color: #BC7A00"></span>
+<span style="color: #408080; font-style: italic">// CONFIG1L</span>
+<span style="color: #BC7A00">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF</span>
+<span style="color: #408080; font-style: italic">// CONFIG1H</span>
+<span style="color: #BC7A00">#pragma config CPUDIV = OSC1, CP0 = OFF</span>
+<span style="color: #408080; font-style: italic">// CONFIG2L</span>
+<span style="color: #BC7A00">#pragma config OSC = INTOSCPLL, SOSCSEL = HIGH, CLKOEC = OFF, FCMEN = OFF, IESO = OFF</span>
+<span style="color: #408080; font-style: italic">// CONFIG2H</span>
+<span style="color: #BC7A00">#pragma config WDTPS = 1024</span>
+<span style="color: #408080; font-style: italic">// CONFIG3L</span>
+<span style="color: #BC7A00">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2</span>
+<span style="color: #408080; font-style: italic">// CONFIG3H</span>
+<span style="color: #BC7A00">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7</span>
+<span style="color: #408080; font-style: italic">// CONFIG4L</span>
+<span style="color: #BC7A00">#pragma config WPFP = PAGE_127, WPCFG = OFF</span>
+<span style="color: #408080; font-style: italic">// CONFIG4H</span>
+<span style="color: #BC7A00">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8</span>
+
+<span style="color: #BC7A00">#define _XTAL_FREQ 48000000</span>
+
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&quot;My_RTCC.h&quot;</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&quot;My_button.h&quot;</span><span style="color: #BC7A00"></span>
+
+<span style="color: #408080; font-style: italic">// I/O Mapping</span>
+<span style="color: #BC7A00">#define MODE_BUTTON PORTBbits.RB0</span>
+<span style="color: #BC7A00">#define INC_BUTTON PORTBbits.RB1</span>
+<span style="color: #BC7A00">#define DEC_BUTTON PORTBbits.RB2</span>
+
+<span style="color: #BC7A00">#define LED0 LATAbits.LATA0</span>
+
+button_t mode;
+button_t inc;
+button_t dec;
+
+<span style="color: #B00040">void</span> interrupt <span style="color: #0000FF">ISR</span>(<span style="color: #B00040">void</span>) {
+    <span style="color: #008000; font-weight: bold">if</span> (PIE1bits.TMR1IE <span style="color: #666666">&amp;&amp;</span> PIR1bits.TMR1IF) {
+        PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    }
+    <span style="color: #008000; font-weight: bold">if</span> (PIE2bits.TMR3IE <span style="color: #666666">&amp;&amp;</span> PIR2bits.TMR3IF) {
+        PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        LED0 <span style="color: #666666">=</span> <span style="color: #666666">!</span>LED0;
+        button_timer_interrupt(<span style="color: #666666">&amp;</span>mode, <span style="color: #666666">!</span>MODE_BUTTON);
+        button_timer_interrupt(<span style="color: #666666">&amp;</span>inc, <span style="color: #666666">!</span>INC_BUTTON);
+        button_timer_interrupt(<span style="color: #666666">&amp;</span>dec, <span style="color: #666666">!</span>DEC_BUTTON);
+    }
+    <span style="color: #008000; font-weight: bold">if</span> (PIR1bits.RCIF <span style="color: #666666">&amp;&amp;</span> PIE1bits.RCIE) {
+        <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>PIR1bits.TXIF); <span style="color: #408080; font-style: italic">// 送信完了まで待つ。</span>
+        TXREG1 <span style="color: #666666">=</span> RCREG1; <span style="color: #408080; font-style: italic">// 受信データをそのまま送信</span>
+    }
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">main_init</span>(<span style="color: #B00040">void</span>) {
+    OSCCONbits.IRCF <span style="color: #666666">=</span> <span style="color: #666666">7</span>;
+    OSCTUNEbits.PLLEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    OSCCONbits.SCS <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    TRISA <span style="color: #666666">=</span> <span style="color: #666666">0</span>b00100000; <span style="color: #408080; font-style: italic">// IO,IO,Vcap,IO,IO,IO,IO,IO</span>
+    TRISB <span style="color: #666666">=</span> <span style="color: #666666">0</span>b00110111; <span style="color: #408080; font-style: italic">// IO,IO,SDA,SCL,IO,IO,IO,IO</span>
+    TRISC <span style="color: #666666">=</span> <span style="color: #666666">0</span>b10111010; <span style="color: #408080; font-style: italic">// RX,TX,D+,D-,Vusb,IO,T1OSI,T1OSO</span>
+    ANCON0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b11111111; <span style="color: #408080; font-style: italic">// x,x,x,AN4,AN3,AN2,AN1,AN0</span>
+    ANCON1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b11111111; <span style="color: #408080; font-style: italic">// x,x,x,x,AN12,AN11,AN10,AN9,AN8</span>
+    INTCON2bits.RBPU <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// Port:B Pull-up enable</span>
+    <span style="color: #408080; font-style: italic">// Timer 1 init</span>
+    T1CONbits.TMR1CS <span style="color: #666666">=</span> <span style="color: #666666">2</span>; <span style="color: #408080; font-style: italic">// Clock = T1OSC</span>
+    T1CONbits.T1OSCEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Drive Crystal</span>
+    T1CONbits.T1CKPS <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// No devide</span>
+    T1CONbits.nT1SYNC <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// No Sync</span>
+    T1CONbits.RD16 <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// Timer1 = 2 x 8bit timer</span>
+    T1CONbits.TMR1ON <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// module enable</span>
+    IPR1bits.TMR1IP <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// low priority</span>
+    PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    PIE1bits.TMR1IE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    INTCONbits.PEIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #408080; font-style: italic">// Timer 3 init</span>
+    T3CONbits.TMR3CS <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// Clock = Fosc/4</span>
+    T3CONbits.T3OSCEN <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// Not Drive Crystal</span>
+    T3CONbits.T3CKPS <span style="color: #666666">=</span> <span style="color: #666666">2</span>; <span style="color: #408080; font-style: italic">// clock/4</span>
+    T3CONbits.RD163 <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// Timer3=16bit timer</span>
+    T3CONbits.TMR3ON <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// module enable</span>
+    IPR2bits.TMR3IP <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// low priority</span>
+    PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    PIE2bits.TMR3IE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// interrupt enable</span>
+    INTCONbits.PEIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #408080; font-style: italic">// RTCC init</span>
+    RTCC_init();
+    <span style="color: #408080; font-style: italic">// UART init</span>
+    TXSTA1bits.TX9 <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 0:8-bit</span>
+    TXSTA1bits.TXEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">//1:enable</span>
+    TXSTA1bits.SYNC <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 0:Asynchronous mode</span>
+    TXSTA1bits.BRGH <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 1:High Speed</span>
+    RCSTA1bits.SPEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 1:Serial Port enable</span>
+    RCSTA1bits.RX9 <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 0:8-bit</span>
+    RCSTA1bits.CREN <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 1:continuous receive enable</span>
+    BAUDCON1bits.BRG16 <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 1:use 16-bit SPBRG</span>
+    SPBRG1 <span style="color: #666666">=</span> _XTAL_FREQ <span style="color: #666666">/</span> <span style="color: #666666">64</span> <span style="color: #666666">/</span> <span style="color: #666666">9600</span> <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
+    SPBRGH1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    IPR1bits.RC1IP <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">//0:low priority</span>
+    PIE1bits.RCIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    INTCONbits.PEIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">delay</span>(<span style="color: #B00040">uint16_t</span> t) {
+    <span style="color: #008000; font-weight: bold">while</span> (t<span style="color: #666666">--</span>)__delay_ms(<span style="color: #666666">1</span>);
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(<span style="color: #B00040">void</span>) {
+    main_init();
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+
+    <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>) {
+        RTCC_task();
+        RTCC_adjust_time_button(<span style="color: #666666">&amp;</span>now, <span style="color: #666666">&amp;</span>mode, <span style="color: #666666">&amp;</span>inc, <span style="color: #666666">&amp;</span>dec);
+
+        <span style="color: #008000; font-weight: bold">if</span> (time_change_flag) {
+            time_change_flag <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+            <span style="color: #B00040">char</span> str[<span style="color: #666666">30</span>];
+            sprintf(str, <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\t</span><span style="color: #BA2121">20%02d/%02d/%02d(%s)%02d:%02d-%02d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>,
+                    now.YY,
+                    now.MM,
+                    now.DD,
+                    weekday_3char[now.EE],
+                    now.hh,
+                    now.mm,
+                    now.ss);
+            <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">uint8_t</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; str[i]; i<span style="color: #666666">++</span>) {
+                <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>PIR1bits.TXIF); <span style="color: #408080; font-style: italic">//送信完了まで待つ</span>
+                TXREG1 <span style="color: #666666">=</span> str[i];
+            }
+        }
+    }
+
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
+}
+</pre></div>
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/pic/" rel="tag">PIC</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/pic18f27j53/" rel="tag">PIC18F27J53</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/rtcc/" rel="tag">RTCC</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/posts/2016-09-01-raspi-music-server/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">ラズパイでミュージックサーバー</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next col-1-2">
+		<a class="post-nav__link" href="/posts/2016-09-12-low-power-clock/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">PICで省エネ時計を作る</p></a>
+	</div>
+</nav>
+
+	
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kerikun11+disqus@gmail.com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="authorbox clearfix">
+	<a href="/about/" alt="about">
+	<figure class="authorbox__avatar">
+		<img alt="KERI avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About KERI</span>
+	</div>
+	<div class="authorbox__description">
+		制御工学を専攻する大学4年生．趣味は電子工作．最近はESP32に興味あり．マイクロマウスに挑戦中．
+	</div>
+	</a>
+</div>
+
+	
+<div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input class="widget-search__field" type="search" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://kerikeri.top/" />
+	</form>
+</div>
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Table of Contents</h4>
+	<div class="widget__content">
+    	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#自作のrtccライブラリ">自作のRTCCライブラリ</a>
+<ul>
+<li><a href="#必要なソースファイル">必要なソースファイル</a></li>
+<li><a href="#概要-1">概要</a>
+<ul>
+<li><a href="#変数">変数</a></li>
+<li><a href="#使い方">使い方</a></li>
+</ul></li>
+<li><a href="#rtccライブラリ">RTCCライブラリ</a>
+<ul>
+<li><a href="#my-rtcc-h">My_RTCC.h</a></li>
+<li><a href="#my-rtcc-c">My_RTCC.c</a></li>
+</ul></li>
+<li><a href="#ボタンライブラリ">ボタンライブラリ</a>
+<ul>
+<li><a href="#my-button-h">My_button.h</a></li>
+<li><a href="#my-button-h-1">My_button.h</a></li>
+</ul></li>
+<li><a href="#使用例">使用例</a>
+<ul>
+<li><a href="#main-c">main.c</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	</div>
+</div>
+
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-29-esp32-wifi-sd/">ESP32とMicro SDカード</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-23-keriesp32-trapezoid/">KERIESP32 Trapezoid</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-23-aki-clock/">秋月の時計キットをNTP時計化</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-02-u-micro-connector/">U-Microコネクタの正体</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-06-24-esp32-dual-core/">ESP32でデュアルコアを使おう！</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-06-16-esp32-preferences/">ESP32の設定管理ライブラリの紹介</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88">イベント</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e4%bd%9c%e5%93%81%e7%b4%b9%e4%bb%8b">作品紹介</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e5%82%99%e5%bf%98%e9%8c%b2">備忘録</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/%e7%b4%b9%e4%bb%8b%e8%a8%98%e4%ba%8b">紹介記事</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/Ryokeri14" target="_blank">
+				<svg class="widget-social__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/kerikun11" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:kerikun11&#43;web@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>Email</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/7%e3%82%bb%e3%82%b0%e3%83%a1%e3%83%b3%e3%83%88led" title="7セグメントled">7セグメントled (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/active-record" title="active-record">active-record (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/arduino" title="arduino">arduino (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/asciidoc" title="asciidoc">asciidoc (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/bot" title="bot">bot (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/charge-station" title="charge-station">charge-station (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/css" title="css">css (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ctrl" title="ctrl">ctrl (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/cygwin" title="cygwin">cygwin (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/e-mail" title="e-mail">e-mail (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (16)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (18)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/exiftool" title="exiftool">exiftool (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/fft" title="fft">fft (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/freertos" title="freertos">freertos (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ft232" title="ft232">ft232 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ft232rl" title="ft232rl">ft232rl (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/git" title="git">git (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/html" title="html">html (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hyperion" title="hyperion">hyperion (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/iphone" title="iphone">iphone (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ir-station" title="ir-station">ir-station (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/itunes" title="itunes">itunes (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/javascript" title="javascript">javascript (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jekyll" title="jekyll">jekyll (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/jquiry" title="jquiry">jquiry (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/kerisev2" title="kerisev2">kerisev2 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/kerisev3" title="kerisev3">kerisev3 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/kicad" title="kicad">kicad (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/li-po" title="li-po">li-po (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/link" title="link">link (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/linux" title="linux">linux (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/maker-faire-tokyo" title="maker-faire-tokyo">maker-faire-tokyo (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mbed" title="mbed">mbed (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/mft2016" title="mft2016">mft2016 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/micro-sd" title="micro-sd">micro-sd (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/nas" title="nas">nas (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ntp" title="ntp">ntp (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/nucleo" title="nucleo">nucleo (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pdf" title="pdf">pdf (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pic" title="pic">pic (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pic18f26k22" title="pic18f26k22">pic18f26k22 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pic18f27j53" title="pic18f27j53">pic18f27j53 (6)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/pine64-a&#43;" title="pine64-a&#43;">pine64-a&#43; (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/preferences" title="preferences">preferences (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/raspberry-pi" title="raspberry-pi">raspberry-pi (10)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/remote-control" title="remote-control">remote-control (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/rtcc" title="rtcc">rtcc (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ruby" title="ruby">ruby (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/samba" title="samba">samba (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/sinatra" title="sinatra">sinatra (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/smtp" title="smtp">smtp (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/sqlite3" title="sqlite3">sqlite3 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ssh" title="ssh">ssh (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/stm32" title="stm32">stm32 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/surface" title="surface">surface (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/thingspeak" title="thingspeak">thingspeak (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/twitter" title="twitter">twitter (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/u-micro" title="u-micro">u-micro (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/ubuntu" title="ubuntu">ubuntu (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/uefi" title="uefi">uefi (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/usb" title="usb">usb (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/vim" title="vim">vim (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/volumio" title="volumio">volumio (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/wi-fi" title="wi-fi">wi-fi (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/wifi" title="wifi">wifi (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/windows" title="windows">windows (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/yamy" title="yamy">yamy (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%81%e3%81%a0%e3%81%8b" title="めだか">めだか (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%9e%e3%82%a4%e3%82%ba" title="カスタマイズ">カスタマイズ (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89" title="キーボード">キーボード (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b0%e3%83%a9%e3%83%95%e3%82%a3%e3%83%83%e3%82%af%e6%b6%b2%e6%99%b6" title="グラフィック液晶">グラフィック液晶 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc" title="サーバー">サーバー (8)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%82%a7%e3%83%ab%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88" title="シェルスクリプト">シェルスクリプト (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%aa%e3%82%a2%e3%83%ab%e9%80%9a%e4%bf%a1" title="シリアル通信">シリアル通信 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%b7%e3%83%b3%e3%82%ac%e3%83%9d%e3%83%bc%e3%83%ab" title="シンガポール">シンガポール (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%bd%e3%83%bc%e3%83%a9%e3%83%bc" title="ソーラー">ソーラー (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%82%bf%e3%83%bc%e3%83%9f%e3%83%8a%e3%83%ab" title="ターミナル">ターミナル (6)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%89%e3%83%83%e3%83%88%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab" title="ドットインストール">ドットインストール (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%89%e3%83%83%e3%83%88%e3%83%9e%e3%83%88%e3%83%aa%e3%82%af%e3%82%b9led" title="ドットマトリクスled">ドットマトリクスled (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%95%e3%82%a1%e3%82%a4%e3%82%a2%e3%82%a6%e3%82%a9%e3%83%bc%e3%83%ab" title="ファイアウォール">ファイアウォール (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%96%e3%83%ad%e3%82%b0" title="ブログ">ブログ (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%96%e3%83%bc%e3%83%88%e3%83%ad%e3%83%bc%e3%83%80" title="ブートローダ">ブートローダ (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9a%e3%83%83%e3%83%88" title="ペット">ペット (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%a4%e3%82%af%e3%83%ad%e3%83%9e%e3%82%a6%e3%82%b9" title="マイクロマウス">マイクロマウス (5)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9e%e3%82%a4%e3%82%b3%e3%83%b3" title="マイコン">マイコン (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%83%83%e3%82%af%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc" title="ミュージックサーバー">ミュージックサーバー (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ad%e3%83%9c%e3%82%b3%e3%83%b3" title="ロボコン">ロボコン (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ad%e3%83%9c%e3%83%83%e3%83%88" title="ロボット">ロボット (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e3%83%ad%e3%83%9c%e3%83%83%e3%83%88%e6%8a%80%e8%a1%93%e7%a0%94%e7%a9%b6%e4%bc%9a" title="ロボット技術研究会">ロボット技術研究会 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%85%e9%9b%bb%e5%99%a8" title="充電器">充電器 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%85%a8%e6%97%a5%e6%9c%ac%e3%83%9e%e3%82%a4%e3%82%af%e3%83%ad%e3%83%9e%e3%82%a6%e3%82%b9%e5%a4%a7%e4%bc%9a" title="全日本マイクロマウス大会">全日本マイクロマウス大会 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%88%86%e8%a7%a3" title="分解">分解 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9b%9e%e8%b7%af%e8%ac%9b%e7%bf%92%e4%bc%9a" title="回路講習会">回路講習会 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%9f%ba%e6%9d%bf" title="基板">基板 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e5%a4%aa%e9%99%bd%e5%85%89%e9%9b%bb%e6%b1%a0" title="太陽光電池">太陽光電池 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e6%99%82%e8%a8%88" title="時計">時計 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e7%a7%8b%e6%9c%88" title="秋月">秋月 (2)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%87%aa%e4%bd%9c" title="自作">自作 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%87%aa%e5%8b%95%e9%85%8d%e7%b7%9a" title="自動配線">自動配線 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%b5%a4%e5%a4%96%e7%b7%9a%e5%ad%a6%e7%bf%92%e3%83%aa%e3%83%a2%e3%82%b3%e3%83%b3" title="赤外線学習リモコン">赤外線学習リモコン (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e8%bf%b7%e8%b7%af" title="迷路">迷路 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%bb%e5%85%89%e6%8e%b2%e7%a4%ba%e6%9d%bf" title="電光掲示板">電光掲示板 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9b%bb%e5%8a%9b" title="電力">電力 (3)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%9f%b3%e5%a3%b0%e8%a7%a3%e6%9e%90" title="音声解析">音声解析 (1)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/%e9%ab%98%e9%80%9f%e3%83%95%e3%83%bc%e3%83%aa%e3%82%a8%e5%a4%89%e6%8f%9b" title="高速フーリエ変換">高速フーリエ変換 (1)</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">Copyright &copy; 2017 KERI&#39;s Lab All Rights Reserved. </p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
+

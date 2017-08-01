@@ -3,7 +3,7 @@ date: "2016-10-20"
 title: "IR-Stationのデモンストレーションサイト"
 slug: "ir-station-demo"
 categories:
-  - "works"
+  - "作品紹介"
 tag:
   - "IR-Station"
   - "赤外線学習リモコン"

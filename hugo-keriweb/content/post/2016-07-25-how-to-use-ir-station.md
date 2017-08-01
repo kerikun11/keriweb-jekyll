@@ -3,13 +3,12 @@ date: "2016-07-25"
 title: "IR-Stationの使い方"
 slug: "how-to-use-ir-station"
 categories:
-  - "works"
+  - "作品紹介"
 tags:
-  - IR-Station
-  - ESP8266
-  - ESP-WROOM-02
-  - 赤外線学習リモコン
-  - 電子工作
+  - "IR-Station"
+  - "ESP8266"
+  - "ESP8266"
+  - "赤外線学習リモコン"
 thumbnail: "/posts/2016-07-25-how-to-use-ir-station/icon.png"
 ---
 
@@ -23,13 +22,13 @@ thumbnail: "/posts/2016-07-25-how-to-use-ir-station/icon.png"
 
 上面の4つの点が赤外線LEDです．
 
-{{< postfig src="body.jpg" title="本体" width="360px" >}}
+{{< postfig src="body.jpg" title="本体" width="480px" >}}
 
 ### 壁に取り付けた時の様子
 
 とてもコンパクトです．
 
-{{< postfig src="on-the-wall.jpg" title="壁に取り付けた様子" width="360px" >}}
+{{< postfig src="on-the-wall.jpg" title="壁に取り付けた様子" width="480px" >}}
 
 ## IR-Stationのバージョン
 
@@ -55,21 +54,21 @@ IR-StationがWiFiのアクセスポイントになり，スマホやPCがIR-Stat
 
 電源はUSB-Micro-Bケーブルを使って，適当なUSB電源から供給します．
 
-{{< postfig src="01-power-supply.jpg" title="電源を供給" width="360px" >}}
+{{< postfig src="01-power-supply.jpg" title="電源を供給" width="480px" >}}
 
 ### IR-Stationが出現
 
 電源を供給すると，`IR-Station`という名前のWiFiが出現します．  
 セキュリティがかかっている場合はパスワード「IR-Station」を使ってください．
 
-{{< postfig src="02-find-ssid.png" title="SSIDを検出" width="360px" >}}
+{{< postfig src="02-find-ssid.png" title="SSIDを検出" width="480px" >}}
 
 ### 自動でウィンドウが現れる
 AppleのデバイスやWindowsの場合，自動でログイン画面が現れます．
 
 自動で画面が現れない場合や，その他のデバイスを使っている場合は，適当なブラウザで[http://192.168.4.1](http://192.168.4.1)を開いてください．
 
-{{< postfig src="03-connect-ssid.png" title="IR-Stationに接続" width="360px" >}}
+{{< postfig src="03-connect-ssid.png" title="IR-Stationに接続" width="480px" >}}
 
 ### 付近のWiFiを検出
 
@@ -83,7 +82,7 @@ AppleのデバイスやWindowsの場合，自動でログイン画面が現れ�
 
 `Access Point Mode`内に必要事項を記入し，`Access Point Mode`ボタンを押します．
 
-{{< postfig src="04-get-wifi-list.png" title="WiFiのリストを取得" width="360px" >}}
+{{< postfig src="04-get-wifi-list.png" title="WiFiのリストを取得" width="480px" >}}
 
 ### 接続成功画面→スクリーンショット
 
@@ -91,25 +90,25 @@ AppleのデバイスやWindowsの場合，自動でログイン画面が現れ�
 
 失敗した場合は前の画面に戻るので，もう一度正しく入力してください．(時々，入力したWiFi情報が正しくても接続に失敗することがあるので，その場合はもう一度試してください．)
 
-{{< postfig src="06-successful.png" title="成功" width="360px" >}}
+{{< postfig src="06-successful.png" title="成功" width="480px" >}}
 
 ### 上手くいくとSSIDが消える
 
 設定が完了するとIR-StationのWiFiが消えてなくなります．
 
-{{< postfig src="07-disappear.png" title="SSIDが消える" width="360px" >}}
+{{< postfig src="07-disappear.png" title="SSIDが消える" width="480px" >}}
 
 ## IR-Stationを使う
 
 ### IPアドレスでアクセス(すべての機器で使えます)
 
-{{< postfig src="08-ip-address.png" title="IPアドレスでアクセス(すべての機器)" width="360px" >}}
+{{< postfig src="08-ip-address.png" title="IPアドレスでアクセス(すべての機器)" width="480px" >}}
 
 ### mDNSホスト名でアクセス（対応機器のみ）
 
 mDNS対応機器には，Appleデバイス，iTunesのインストールされたWindows PCなどがあります．これらのデバイスからは，IPアドレスだけでなく，わかりやすい名前のURLでアクセスすることができます．表示される画面は同じです．
 
-{{< postfig src="09-mdns-hostname.png" title="mDNSホスト名でアクセス(Bonjour対応機器)" width="360px" >}}
+{{< postfig src="09-mdns-hostname.png" title="mDNSホスト名でアクセス(Bonjour対応機器)" width="480px" >}}
 
 ### 赤外線信号を登録する
 

@@ -3,8 +3,12 @@ date: "2016-01-13"
 title: "PICでブートローダ"
 slug: "pic-bootloader"
 categories:
-  - "explanations"
-tags: ["PIC", "PIC18F27J53", "USB", "ブートローダ", "電子工作", "C言語", "Microchip Library for Application", "MLA"]
+  - "紹介記事"
+tags:
+  - "PIC"
+  - "PIC18F27J53"
+  - "USB"
+  - "ブートローダ"
 thumbnail: "/posts/2016-01-13-pic-bootloader/icon.jpg"
 ---
 
@@ -87,8 +91,8 @@ Configration Bitsはハードウェアにかなり寄り添ったプログラム
   1. `Codeoffset`を`0x1000`に指定する。(下図参照)
   1. 以上。
 
-{{< postfig src="Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png" title="ROM rages" width="360px" >}}
-{{< postfig src="Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png" title="Codeoffset" width="360px" >}}
+{{< postfig src="Required_Application_Project_ROM_Ranges_Linker_Settings_for_XC8.png" title="ROM rages" >}}
+{{< postfig src="Required_Application_Project_Codeoffset_Linker_Settings_for_XC8.png" title="Codeoffset" >}}
 
 ## ブートロードモードへ移行するには
 
@@ -114,7 +118,7 @@ PICに電源を投入またはPICをリセットしたときに、RB0端子がHI
 
 上手くいかないときは、ドライバをインストールすればうまくいくかもしれません。ドライバも先ほどインストールしたMLAの中のutilities/usb\_drivers/に入っています。
 
-{{< postfig src="util1.png" title="HIDbootloader.exe" width="360px" >}}
+{{< postfig src="util1.png" title="HIDbootloader.exe" >}}
 
 ## まとめ
 

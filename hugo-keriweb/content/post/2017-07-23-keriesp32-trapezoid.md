@@ -3,9 +3,8 @@ date: "2017-07-23"
 title: "KERIESP32 Trapezoid"
 slug: "keriesp32-trapezoid"
 categories:
-  - "works"
+  - "作品紹介"
 tags:
-  - "電子工作"
   - "ESP32"
 thumbnail: "/posts/2017-07-23-keriesp32-trapezoid/icon.png"
 ---
@@ -17,14 +16,14 @@ WiFiとBluetoothが載ったデュアルコアなマイコン**ESP32**のピッ�
 <!--more-->
 
 [ESP-WROOM-32](http://akizukidenshi.com/catalog/g/gM-11647/)  
-{{< postfig src="esp-wroom-32.jpg" title="ESP-WROOM-32" width="360px" >}}
+{{< postfig src="esp-wroom-32.jpg" title="ESP-WROOM-32" width="240px" >}}
 
 ## 基板名: KERIESP32 Trapezoid
 
 Trapezoidとは英語で台形のことです．見てのとおり，基板の形が由来です．
 
-{{< postfig src="keriesp32-trapezoid-top.png" title="KERIESP32 Trapezoid" width="360px" >}}
-{{< postfig src="keriesp32-trapezoid-back.png" title="KERIESP32 Trapezoid" width="360px" >}}
+{{< postfig src="keriesp32-trapezoid-top.png" title="KERIESP32 Trapezoid" width="480px" >}}
+{{< postfig src="keriesp32-trapezoid-back.png" title="KERIESP32 Trapezoid" width="480px" >}}
 
 ## 他社の基板との違い
 
@@ -51,7 +50,7 @@ IO6-IO11はモジュール内部にあるSPI-Flashメモリと接続されてい
 
 そのおかげでSIPの30pinに収めることができ，ブレッドボードにさすことができます．
 
-{{< postfig src="brb.jpg" title="brb.jpg" width="360px" >}}
+{{< postfig src="brb.jpg" title="brb.jpg" width="480px" >}}
 
 ### 4. 裏側にはMicro-SDカードスロットがある
 
@@ -60,7 +59,7 @@ ESP32はSDIOを持っており，SDカードと高速に通信することがで
 Micro SDカードを使わない場合はSDスロットをはんだ付けしなければ，SDカード用のI/Oピンは自由に使うことができます．
 
 裏側  
-{{< postfig src="back.jpg" title="裏側" width="360px" >}}
+{{< postfig src="back.jpg" title="裏側" width="480px" >}}
 
 ## 回路図
 

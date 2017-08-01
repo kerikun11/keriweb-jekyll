@@ -16,10 +16,10 @@
     
     <item>
       <title>メダカが増えました！</title>
-      <link>http://kerikeri.top/post/2016/07/13/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%8C%E5%A2%97%E3%81%88%E3%81%BE%E3%81%97%E3%81%9F/</link>
+      <link>http://kerikeri.top/posts/2016-07-13-new-fish/</link>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/2016/07/13/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%8C%E5%A2%97%E3%81%88%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <guid>http://kerikeri.top/posts/2016-07-13-new-fish/</guid>
       <description>&lt;h2 id=&#34;卵がいっぱい-7-5&#34;&gt;卵がいっぱい！！ &lt;sup&gt;7&lt;/sup&gt;&amp;frasl;&lt;sub&gt;5&lt;/sub&gt;&lt;/h2&gt;
 
 &lt;p&gt;暖かくなってきたこの時期，ペットのメダカにたくさんの卵ができました．すでに卵の中から目が透けていて今にも孵化しそうです！&lt;/p&gt;
@@ -32,17 +32,27 @@
     
     <item>
       <title>メダカの照明 Ver.2</title>
-      <link>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E-ver.2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E-ver.2/</guid>
+      <guid>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
 &lt;h3 id=&#34;メダカの水槽の照明&#34;&gt;メダカの水槽の照明&lt;/h3&gt;
 
-&lt;p&gt;以前、PICで作った&lt;a href=&#34;{% post_url 2015-06-04-killifish-light %}&#34; target=&#34;_blank&#34;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
+&lt;p&gt;以前、PICで作った&lt;a href=&#34;http://kerikeri.top/posts/2015-06-04-killifish-light/&#34;&gt;メダカの水槽の照明&lt;/a&gt;(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;fish.jpg&#34; alt=&#34;めだか&#34; /&gt;&lt;/p&gt;
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;めだか&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;fish.jpg&#34; alt=&#34;めだか&#34; /&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;h3 id=&#34;格安wifiモジュール&#34;&gt;格安WiFiモジュール&lt;/h3&gt;
 
@@ -51,22 +61,32 @@
 &lt;p&gt;このWiFiモジュールを使った赤外線学習リモコンの記事も書きましたので合わせてご覧ください。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;{% post_url 2015-12-30-ir-station %}&#34; target=&#34;_blank&#34;&gt;赤外線学習リモコン（日本語による紹介記事）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;{% post_url 2016-03-11-ir-station-reference %}&#34; target=&#34;_blank&#34;&gt;赤外線学習リモコン（英語によるリファレンス）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kerikeri.top/posts/2015-12-30-ir-station/&#34;&gt;赤外線学習リモコン（日本語による紹介記事）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kerikeri.top/posts/2016-03-11-ir-station-reference/&#34;&gt;赤外線学習リモコン（英語によるリファレンス）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-09607/&#34; target=&#34;_blank&#34;&gt;ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;esp-wroom-02.jpg&#34; alt=&#34;ESP-WROOM-02&#34; /&gt;{: .img-small}
+&lt;p&gt;&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;ESP-WROOM-02&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;esp-wroom-02.jpg&#34; alt=&#34;ESP-WROOM-02&#34; style=&#34;width: 240px;&#34;/&gt;
+	
+&lt;/figure&gt;
+
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メダカの照明の自作</title>
-      <link>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E%E3%81%AE%E8%87%AA%E4%BD%9C/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2015-06-04-killifish-light/</link>
+      <pubDate>Thu, 04 Jun 2015 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E%E3%81%AE%E8%87%AA%E4%BD%9C/</guid>
+      <guid>http://kerikeri.top/posts/2015-06-04-killifish-light/</guid>
       <description>こんにちは。 けり(@Ryokeri14)です。 みなさん、進捗いかがですか？ 僕は、ぼちぼちです。 今回紹介するのは、 メダカの水槽の照明です。 高校</description>
     </item>
     

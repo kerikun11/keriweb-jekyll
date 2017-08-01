@@ -12,7 +12,7 @@ rssLimit = 30 #default: 15
 
 [Author]
 	name = "KERI"
-	bio = "都内の大学に通う大学4年生．趣味は電子工作．最近はESP32に興味あり．マイクロマウスに挑戦中．"
+	bio = "制御工学を専攻する大学4年生．趣味は電子工作．最近はESP32に興味あり．マイクロマウスに挑戦中．"
 	avatar = "/img/avatar.png"
 	email = "kerikun11+web@gmail.com"
     location = "Earth"
@@ -35,7 +35,6 @@ rssLimit = 30 #default: 15
     tag = "tags"
     category = "categories"
     archive = "archives"
-    spotlight = "spotlights"
 
 
 [Params.widgets]

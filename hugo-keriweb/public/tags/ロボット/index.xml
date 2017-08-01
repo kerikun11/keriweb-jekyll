@@ -9,23 +9,43 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 08 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KERISE v2 ができました！</title>
-      <link>http://kerikeri.top/post/1/01/01/kerise-v2-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2017-01-08-kerise-v2-1st/</link>
+      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/kerise-v2-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <guid>http://kerikeri.top/posts/2017-01-08-kerise-v2-1st/</guid>
       <description>&lt;h2 id=&#34;マイクロマウスクラシック-ハーフ兼用マウス&#34;&gt;マイクロマウスクラシック&amp;amp;ハーフ兼用マウス&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;{% post_url 2016-11-21-micromouse2016 %}&#34; target=&#34;_blank&#34;&gt;昨年の大会&lt;/a&gt;ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://kerikeri.top/posts/2016-11-21-micromouse2016/&#34;&gt;昨年の大会&lt;/a&gt;ではクラシッククラスに出場しましたが，今度はハーフにも出場したい！ということで，試しにハーフ迷路も走れる大きさのマウスを作ってみました．&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;with-hand.jpg&#34; alt=&#34;KERISEv2&#34; /&gt;{: .img-medium}&lt;/p&gt;
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;KERISEv2&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;with-hand.jpg&#34; alt=&#34;KERISEv2&#34; style=&#34;width: 480px;&#34;/&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>シンガポールでロボコンしてきました</title>
+      <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
+      <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
+      <description>みなさんこんにちは！ 椋けり(@Ryokeri14)です。 夏休みになりました。ロ技研のみなさんは進捗めまぐるしいことでしょう。 今回の話題は僕が</description>
     </item>
     
   </channel>

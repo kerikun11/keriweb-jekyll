@@ -3,8 +3,10 @@ date: "2016-05-18"
 title: "回路講習会2015"
 slug: "circuit-lecture"
 categories:
-  - "explanations"
-tags: ["回路", "電子工作", "講習会", "ロボット技術研究会", "初心者", "自作", "入門", "Arduino", "PIC", "トランジスタ"]
+  - "紹介記事"
+tags:
+  - "回路講習会"
+  - "ロボット技術研究会"
 thumbnail: "/posts/2016-05-18-circuit-lecture/icon.png"
 ---
 

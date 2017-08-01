@@ -3,8 +3,14 @@ date: "2016-04-20"
 title: "ソーラー発電量モニター"
 slug: "power-monitor"
 categories:
-  - "works"
-tags: ["ThingSpeak", "IoT", "ESP8266", "ESP-WROOM-02", "Arduino", "Solar Power", "ソーラー", "太陽光発電"]
+  - "作品紹介"
+tags:
+  - "ThingSpeak"
+  - "ESP8266"
+  - "ESP8266"
+  - "Arduino"
+  - "ソーラー"
+  - "電力"
 thumbnail: "/posts/2016-04-20-power-monitor/img.jpg"
 ---
 

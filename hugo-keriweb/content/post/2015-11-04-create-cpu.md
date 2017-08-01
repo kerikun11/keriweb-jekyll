@@ -3,20 +3,20 @@ date: "2015-11-04"
 title: "CPUの創り方"
 slug: "create-cpu"
 categories:
-  - "works"
-tags: ["電子工作", "CPU", "入門", "論理回路", "書籍", "はんだ付け"]
+  - "作品紹介"
+tags:
 thumbnail: "/posts/2015-11-04-create-cpu/icon.jpg"
 ---
 
 ## 書籍「CPUの創り方」（2003年）渡波郁 著
 
-{{< postfig src="book.jpg "CPUの創り方"" title="CPUの創り方" width="360px" >}}
+{{< postfig src="book.jpg" title="CPUの創り方" >}}
 
 　この本は電子工作の入門書です。しかし入門書と言っても内容は壮大で、CPUを設計して自作しようというものです。電子工作初心者だけでなく、ある程度電子工作をしてきた人にも読みごたえのある一冊になっています。
 
 ## 作ったもの : TD4
 
-{{< postfig src="board_top.jpg "TD4"" title="TD4" width="360px" >}}
+{{< postfig src="board_top.jpg" title="TD4" >}}
 
 　この本の中で設計しているCPUを実際に作りました。TD4とは**T**ada **D**ousa-suru-dakei-no **4**-bit CPU という意味です。
 <!--more-->
@@ -60,14 +60,14 @@ thumbnail: "/posts/2015-11-04-create-cpu/icon.jpg"
 
 　プログラムメモリは8bitで1かたまりです。8bitのうち、左4bitがオペレーションコード、右4bitがデータになっています。
 
-{{< postfig src="asm.jpg "アセンブリコード表"" title="アセンブリコード表" width="360px" >}}
+{{< postfig src="asm.jpg" title="アセンブリコード表" >}}
 
 ### 動作周波数
 
 　本の中ではハンドクロック（ボタンを押すたびにクロックが進む）と1HzのRCクロックが用意されていました。これに加えて、可変抵抗による可変クロックをつけました。  
 　クロックの最速は、344Hzでした。オシロスコープでクロックを見てみるっと、波が少し汚いです。これはRC発振を標準ロジックICのシュミットトリガで行ってるためだと思われます。
 
-{{< postfig src="344Hz.jpg "オシロスコープ"" title="オシロスコープ" width="360px" >}}
+{{< postfig src="344Hz.jpg" title="オシロスコープ" >}}
 
 　そこで、クロックのソースをファンクション・ジェネレータに変えてみました。すると、約1MHzくらいまで動作しました。しかし、クロックが動くのが確認できても、プログラムを正常に実行しているのかは早すぎてわかりませんでした。
 
@@ -76,4 +76,4 @@ thumbnail: "/posts/2015-11-04-create-cpu/icon.jpg"
 　この本を読むと、CPUの構造が本当によくわかります。実在するCPUもこれの拡張にすぎません。 マイコンなどを使う時も内部の構造を知っていて使うのと知らずに使うのでは、生産性がかなり違うと思います。ブラックボックスと思い込んでしまうのはだめです。  
 　TD4を作るとハンダ付けの技術が上がります。本を読むだけでなく、実際に作ってみましょう。作り終わったら、**楽しい楽しいデバック作業**が待ってますよ(^^)
 
-{{< postfig src="board_back.jpg "TD4 裏面"" title="TD4 裏面" width="360px" >}}
+{{< postfig src="board_back.jpg" title="TD4 裏面" >}}

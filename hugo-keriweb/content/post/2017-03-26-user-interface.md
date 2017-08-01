@@ -3,13 +3,10 @@ date: "2017-03-26"
 title: "ESP32用UIライブラリ"
 slug: "user-interface"
 categories:
-  - "memos"
+  - "備忘録"
 tags:
-  - "UI"
-  - "ボタン"
-  - "ブザー"
+  - "ESP32"
   - "Arduino"
-  - "ESP-WROOM-32"
 ---
 
 ## 概要

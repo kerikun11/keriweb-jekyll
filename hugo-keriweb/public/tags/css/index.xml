@@ -9,16 +9,17 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 14 Aug 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IR-Stationの赤外線ダウンロード機能</title>
-      <link>http://kerikeri.top/post/1/01/01/ir-station%E3%81%AE%E8%B5%A4%E5%A4%96%E7%B7%9A%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E6%A9%9F%E8%83%BD/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-08-14-download-upload/</link>
+      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/ir-station%E3%81%AE%E8%B5%A4%E5%A4%96%E7%B7%9A%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E6%A9%9F%E8%83%BD/</guid>
+      <guid>http://kerikeri.top/posts/2016-08-14-download-upload/</guid>
       <description>&lt;h2 id=&#34;ir-stationとは&#34;&gt;IR-Stationとは&lt;/h2&gt;
 
 &lt;p&gt;自作のWiFi接続の赤外線学習リモコンです．IR-Stationを使えば，スマホやPCから家電製品をコントロールすることができます．&lt;/p&gt;
@@ -30,18 +31,6 @@
 &lt;p&gt;夏休みになり，IR-Stationを本格的に開発しています．今回は，いくつかの新機能を紹介します．&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Sinatraでアプリケーションを作る</title>
-      <link>http://kerikeri.top/post/1/01/01/sinatra%E3%81%A7%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E3%82%8B/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/sinatra%E3%81%A7%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E3%82%8B/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;格安WiFiモジュールESP-WROOM-02を使って電流を計測してそれを受信し表示するアプリケーションを作りました。
-&lt;/p&gt;</description>
     </item>
     
   </channel>

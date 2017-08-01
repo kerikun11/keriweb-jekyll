@@ -3,8 +3,9 @@ date: "2016-07-20"
 title: "SSHのPort Forwarding"
 slug: "ssh-port-forwarding"
 categories:
-  - "memos"
-tags: ["SSH", "サーバー"]
+  - "備忘録"
+tags:
+  - "SSH"
 ---
 
 ## Port Forwardingとは

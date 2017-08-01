@@ -13,41 +13,410 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/2016/07/13/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%8C%E5%A2%97%E3%81%88%E3%81%BE%E3%81%97%E3%81%9F/</loc>
+    <loc>http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-07-23-aki-clock/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-07-02-u-micro-connector/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-06-24-esp32-dual-core/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-06-16-esp32-preferences/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-05-07-new-pine64/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-04-26-esp32-time/</loc>
+    <lastmod>2017-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-04-08-esp32-mail/</loc>
+    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-03-29-aki-shelf/</loc>
+    <lastmod>2017-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-03-28-kerisev3-coming/</loc>
+    <lastmod>2017-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-03-26-user-interface/</loc>
+    <lastmod>2017-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-03-02-keriesp32/</loc>
+    <lastmod>2017-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-02-05-first-esp32/</loc>
+    <lastmod>2017-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-01-13-half-maze/</loc>
+    <lastmod>2017-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-01-12-1st-half/</loc>
+    <lastmod>2017-01-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2017-01-08-kerise-v2-1st/</loc>
+    <lastmod>2017-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-12-27-kerisev1/</loc>
+    <lastmod>2016-12-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-12-04-ir-station-demo-apache2/</loc>
+    <lastmod>2016-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-12-04-update-mydns/</loc>
+    <lastmod>2016-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-11-21-micromouse2016/</loc>
+    <lastmod>2016-11-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-10-20-ir-station-demo/</loc>
+    <lastmod>2016-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-10-16-ir-station-v1.5.0/</loc>
+    <lastmod>2016-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-09-12-low-power-clock/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-09-02-pic-rtcc/</loc>
+    <lastmod>2016-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-28-update-blog-script/</loc>
+    <lastmod>2016-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-28-raspi-setup/</loc>
+    <lastmod>2016-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-21-raspi3/</loc>
+    <lastmod>2016-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-14-download-upload/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-08-05-maker-faire-tokyo-2016/</loc>
+    <lastmod>2016-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-07-25-how-to-use-ir-station/</loc>
+    <lastmod>2016-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</loc>
+    <lastmod>2016-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-07-18-ir-station/</loc>
+    <lastmod>2016-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-07-13-new-fish/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/2016/06/15/repairing-iphone6plus/</loc>
+    <loc>http://kerikeri.top/posts/2016-07-06-ir-station-board/</loc>
+    <lastmod>2016-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-06-15-repairing-iphone6plus/</loc>
     <lastmod>2016-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/2016/06/14/%E3%81%8A%E3%81%99%E3%81%99%E3%82%81-pdf-viewer/</loc>
+    <loc>http://kerikeri.top/posts/2016-06-14-pdf/</loc>
     <lastmod>2016-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/2016/05/22/%E9%AB%98%E9%80%9F%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B%E3%81%A7%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%88%E3%83%AB%E8%A1%A8%E7%A4%BA/</loc>
+    <loc>http://kerikeri.top/posts/2016-05-26-syntax/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-05-22-fft-lcd/</loc>
     <lastmod>2016-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/100w%E7%B4%9A%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%87%AA%E4%BD%9C/</loc>
+    <loc>http://kerikeri.top/posts/2016-05-18-circuit-lecture/</loc>
+    <lastmod>2016-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-22-freerouting/</loc>
+    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-20-power-monitor/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-20-raspi-serial/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-remove-geotag/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-frisk/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-other/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-audio/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-robot/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-08-old-works-power/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-05-strange-keyboard/</loc>
+    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-04-03-power-tweeter/</loc>
+    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-03-23-relay-sensor/</loc>
+    <lastmod>2016-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-03-14-killifish-light-2/</loc>
+    <lastmod>2016-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-03-12-sinatra/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</loc>
+    <lastmod>2016-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-01-10-pic-usb/</loc>
+    <lastmod>2016-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-01-08-pic18f27j53/</loc>
+    <lastmod>2016-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2016-01-07-yamy/</loc>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-12-30-ir-station/</loc>
+    <lastmod>2015-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-12-04-cygwin/</loc>
+    <lastmod>2015-12-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-11-23-samba/</loc>
+    <lastmod>2015-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-11-17-firewall/</loc>
+    <lastmod>2015-11-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-11-15-i2c-lcd/</loc>
+    <lastmod>2015-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-11-04-create-cpu/</loc>
+    <lastmod>2015-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-11-03-surface-ubuntu/</loc>
+    <lastmod>2015-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-31-ssh/</loc>
+    <lastmod>2015-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-28-link/</loc>
+    <lastmod>2015-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-21-git/</loc>
+    <lastmod>2015-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-09-charge-station-6/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-07-vim/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-10-05-raspi-server/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-08-12-idc-robocon/</loc>
+    <lastmod>2015-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-06-04-killifish-light/</loc>
+    <lastmod>2015-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2015-02-16-charge-station-1-5/</loc>
+    <lastmod>2015-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kerikeri.top/posts/2014-09-14-solar-system/</loc>
+    <lastmod>2014-09-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/active-record/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/apache2%E3%81%A7ir-station%E3%83%87%E3%83%A2/</loc>
   </url>
   
   <url>
@@ -57,31 +426,20 @@
   
   <url>
     <loc>http://kerikeri.top/tags/arduino/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/asciidoc/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/blog/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/bot/</loc>
+    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/c&#43;&#43;/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/cpu%E3%81%AE%E5%89%B5%E3%82%8A%E6%96%B9/</loc>
   </url>
   
   <url>
@@ -91,197 +449,91 @@
   
   <url>
     <loc>http://kerikeri.top/tags/charge-station/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/charge-station/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/chargestation%E3%81%AE%E7%B4%B9%E4%BB%8B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/cpu/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/crontab%E3%81%A7mydns.jp%E3%81%AEip%E9%80%9A%E7%9F%A5/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/css/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ctrl/</loc>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/cygwin/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/cygwin%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/c%E8%A8%80%E8%AA%9E/</loc>
+    <lastmod>2015-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/e-mail/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp-wroom-02%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%AD%E7%B6%99%E5%9E%8B%E9%9B%BB%E5%8A%9B%E8%A8%88/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%8B%E3%82%89%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%94%E3%83%83%E3%83%81%E5%A4%89%E6%8F%9B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp32%E3%81%A7%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B3%E3%82%A2%E3%82%92%E4%BD%BF%E3%81%8A%E3%81%86/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp32%E3%81%A7%E6%99%82%E9%96%93%E5%8F%96%E5%BE%97/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp32%E3%81%AE%E8%A8%AD%E5%AE%9A%E7%AE%A1%E7%90%86%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E7%B4%B9%E4%BB%8B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp32%E7%94%A8ui%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/esp8266%E3%81%A7%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/esp-wroom-02/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/esp-wroom-32/</loc>
+    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/esp32/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/esp8266/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/exiftool/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/fft-%E9%AB%98%E9%80%9F%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B/</loc>
+    <loc>http://kerikeri.top/tags/fft/</loc>
     <lastmod>2016-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/freertos/</loc>
+    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ft232/</loc>
+    <lastmod>2016-01-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ft232rl/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/geotag/</loc>
+    <lastmod>2017-03-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/git/</loc>
+    <lastmod>2015-10-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/git%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/html/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/http/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/hyperion/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ir-station/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ir-station-v1.5.0-%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ir-station%E3%81%AE%E3%83%87%E3%83%A2%E3%83%B3%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%B5%E3%82%A4%E3%83%88/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ir-station%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ir-station%E3%81%AE%E8%B5%A4%E5%A4%96%E7%B7%9A%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E6%A9%9F%E8%83%BD/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/idc/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/iot/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -292,36 +544,32 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/ir/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/ir-station/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/itunes/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/javascript/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/jekyll/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/jekyll--asciidoc%E3%81%A7%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/jquiry/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -332,96 +580,74 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/keriesp32-trapezoid/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/kerise-v1%E3%81%AE%E8%A8%AD%E8%A8%88%E5%9B%9E%E8%B7%AF%E7%B7%A8/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/kerise-v2-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/kerise-v3-%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/kerisev2/</loc>
+    <lastmod>2017-01-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/kerisev3/</loc>
+    <lastmod>2017-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/kicad%E3%81%A7%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/kicad/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/led/</loc>
+    <lastmod>2017-03-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/li-po/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/link/</loc>
+    <lastmod>2015-10-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/linux/</loc>
+    <lastmod>2015-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/maker-faire-tokyo/</loc>
+    <lastmod>2016-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/maker-faire-tokyo-2016-%E3%81%AB%E5%87%BA%E5%B1%95%E3%81%97%E3%81%BE%E3%81%99/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/mbed/</loc>
+    <lastmod>2016-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/mft2016/</loc>
+    <lastmod>2016-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/microchip-library-for-application/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/mla/</loc>
+    <loc>http://kerikeri.top/tags/micro-sd/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/nas/</loc>
+    <lastmod>2015-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ntp/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -432,26 +658,6 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/pic18f27j53%E3%81%AE%E3%81%99%E3%81%99%E3%82%81/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/pic%E3%81%A7usb%E9%80%9A%E4%BF%A1/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/pic%E3%81%A7%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/pic%E3%81%A7%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%AF%E3%83%AD%E3%83%83%E3%82%AF/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/pic%E3%81%A7%E7%9C%81%E3%82%A8%E3%83%8D%E6%99%82%E8%A8%88%E3%82%92%E4%BD%9C%E3%82%8B/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/pdf/</loc>
     <lastmod>2016-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -459,242 +665,181 @@
   
   <url>
     <loc>http://kerikeri.top/tags/pic/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/pic18f26k22/</loc>
+    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/pic18f27j53/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/pine64-a&#43;/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/post/</loc>
-    <lastmod>2016-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/preferences/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/raspberry-pi/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/raspberry-pi-2-type-b%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%BD%9C%E3%82%8A/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/raspberry-pi-%E3%81%A7-nas-%E4%BD%9C%E3%82%8A/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/raspberrypi/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/remote-control/</loc>
+    <lastmod>2016-03-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/rtcc/</loc>
+    <lastmod>2016-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ruby/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ssh%E3%81%AEport-forwarding/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/ssh%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/samba/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/server/</loc>
+    <lastmod>2015-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/sinatra/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/sinatra%E3%81%A7%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E3%82%8B/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/smtp/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/solar-power/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/source-code/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/spotlights/</loc>
+    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/sqlite3/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/ssh/</loc>
+    <lastmod>2016-07-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/stm32/</loc>
+    <lastmod>2016-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/surface/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/surface-pro-3-%E3%81%AB-ubuntu15.10%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8Buefi%E7%92%B0%E5%A2%83%E3%81%AE%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%96%E3%83%BC%E3%83%88/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/syntaxhighlighting/</loc>
+    <lastmod>2015-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/</loc>
-    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/thingspeak/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/twitter/</loc>
+    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/u-micro/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/u-micro%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E6%AD%A3%E4%BD%93/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/ubuntu/</loc>
+    <lastmod>2015-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/uefi/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/ui/</loc>
+    <lastmod>2015-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/usb/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/vim/</loc>
+    <lastmod>2015-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/volumio/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/volumio%E3%81%A7itunes%E3%81%AE%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/</loc>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/wi-fi/</loc>
+    <lastmod>2016-03-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/wifi/</loc>
+    <lastmod>2017-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/windows/</loc>
-    <lastmod>2016-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/yamy/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/delay%E3%82%84while%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84i2c%E6%B6%B2%E6%99%B6%E8%A1%A8%E7%A4%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/link%E3%82%92%E4%BD%9C%E3%82%8Bln%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/vim%E3%81%AE%E8%A8%AD%E5%AE%9A/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/yamy%E3%81%A7%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%82%92%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%81%AF%E3%82%93%E3%81%A0%E4%BB%98%E3%81%91/</loc>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -705,22 +850,20 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</loc>
+    <loc>http://kerikeri.top/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA/</loc>
+    <lastmod>2016-01-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</loc>
+    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -732,123 +875,67 @@
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</loc>
+    <lastmod>2016-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB/</loc>
+    <loc>http://kerikeri.top/tags/%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%E3%81%A7%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB/</loc>
+    <lastmod>2015-08-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E7%99%BA%E9%9B%BB%E9%87%8F%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%82%BF%E3%82%B0/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF/</loc>
+    <lastmod>2015-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/</loc>
+    <lastmod>2016-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%89%E3%83%83%E3%83%88%E3%83%9E%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9led/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%8F%E3%83%BC%E3%83%95%E3%82%B5%E3%82%A4%E3%82%BA/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E3%82%B5%E3%82%A4%E3%82%BA%E8%BF%B7%E8%B7%AF%E3%81%AE%E8%87%AA%E4%BD%9C/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%8F%E3%83%BC%E3%83%95%E8%BF%B7%E8%B7%AF%E3%82%92%E8%B5%B0%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%91%E3%83%AF%E3%83%BCled/</loc>
+    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%96%E3%82%B6%E3%83%BC/</loc>
+    <lastmod>2015-11-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%96%E3%83%AD%E3%82%B0/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%8C%E6%96%B0%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A43%E3%81%8B%E3%82%89pine64-a-%E3%81%AB%E7%A7%BB%E8%A1%8C/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%97%E3%83%AC%E3%82%A4%E3%83%AA%E3%82%B9%E3%83%88/</loc>
+    <lastmod>2016-01-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -859,277 +946,152 @@
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E3%83%9C%E3%82%BF%E3%83%B3/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%9E%E3%82%A4%E3%82%B3%E3%83%B3/</loc>
+    <lastmod>2016-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E-ver.2/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%A1%E3%83%80%E3%82%AB%E3%81%AE%E7%85%A7%E6%98%8E%E3%81%AE%E8%87%AA%E4%BD%9C/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%A7%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%BE%A4/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88/</loc>
+    <lastmod>2017-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E4%BC%9A/</loc>
+    <lastmod>2016-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1/</loc>
+    <loc>http://kerikeri.top/categories/%E4%BD%9C%E5%93%81%E7%B4%B9%E4%BB%8B/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E4%BF%AE%E7%90%86/</loc>
-    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/categories/%E4%BF%AE%E7%90%86/</loc>
-    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+    <loc>http://kerikeri.top/categories/%E5%82%99%E5%BF%98%E9%8C%B2/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E5%85%85%E9%9B%BB%E5%99%A8/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%85%A5%E9%96%80/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E5%85%A8%E6%97%A5%E6%9C%AC%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B92016%E3%81%AE%E7%B5%90%E6%9E%9C%E5%A0%B1%E5%91%8A/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E5%85%A8%E6%97%A5%E6%9C%AC%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%83%9E%E3%82%A6%E3%82%B9%E5%A4%A7%E4%BC%9A/</loc>
+    <lastmod>2016-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E5%86%99%E7%9C%9F/</loc>
+    <loc>http://kerikeri.top/tags/%E5%88%86%E8%A7%A3/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E5%86%99%E7%9C%9F%E3%81%8B%E3%82%89%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1%E3%82%BF%E3%82%B0%E3%82%92%E5%89%8A%E9%99%A4%E3%81%99%E3%82%8B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%88%9D%E5%BF%83%E8%80%85/</loc>
+    <loc>http://kerikeri.top/tags/%E5%9B%9E%E8%B7%AF%E8%AC%9B%E7%BF%92%E4%BC%9A/</loc>
+    <lastmod>2016-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%88%B6%E5%BE%A1/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%89%B5%E9%80%A0%E8%A8%AD%E8%A8%88%E7%AC%AC%E4%B8%80/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%9B%9E%E8%B7%AF/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E5%9B%9E%E8%B7%AF%E8%AC%9B%E7%BF%92%E4%BC%9A2015/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E5%9F%BA%E6%9D%BF/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E5%A4%89%E3%81%AA%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E7%99%BA%E9%9B%BB/</loc>
+    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E5%A4%AA%E9%99%BD%E5%85%89%E9%9B%BB%E6%B1%A0/</loc>
+    <lastmod>2014-09-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1led%E3%82%A4%E3%83%AB%E3%83%9F%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1in-frisk-%E7%B7%A8/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1%E3%81%9D%E3%81%AE%E4%BB%96/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E7%B7%A8/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%B7%A8/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E6%98%94%E4%BD%9C%E3%81%A3%E3%81%9F%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%81%9F%E3%81%A1%E5%85%85%E9%9B%BB%E9%9B%BB%E5%8A%9B%E7%B7%A8/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E6%99%82%E8%A8%88/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E6%9B%B8%E7%B1%8D/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E7%A7%8B%E6%9C%88/</loc>
+    <lastmod>2017-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E7%A7%8B%E6%9C%88%E3%81%AE%E6%99%82%E8%A8%88%E3%82%AD%E3%83%83%E3%83%88%E3%82%92ntp%E6%99%82%E8%A8%88%E5%8C%96/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E7%AF%80%E9%9B%BB/</loc>
+    <loc>http://kerikeri.top/categories/%E7%B4%B9%E4%BB%8B%E8%A8%98%E4%BA%8B/</loc>
+    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E8%87%AA%E4%BD%9C/</loc>
+    <lastmod>2015-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E8%AB%96%E7%90%86%E5%9B%9E%E8%B7%AF/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E8%AC%9B%E7%BF%92%E4%BC%9A/</loc>
+    <lastmod>2016-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%81%AE%E5%9F%BA%E6%9D%BF%E3%81%8C%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</loc>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/categories/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83/</loc>
-    <lastmod>2016-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://kerikeri.top/tags/%E9%9B%BB%E5%85%89%E6%8E%B2%E7%A4%BA%E6%9D%BF/</loc>
+    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/post/1/01/01/%E9%9B%BB%E5%8A%9B%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8Dbot/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E9%9B%BB%E5%8A%9B%E8%A8%88%E6%B8%AC/</loc>
+    <loc>http://kerikeri.top/tags/%E9%9B%BB%E5%8A%9B/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E9%9B%BB%E5%9C%A7%E8%A8%88/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</loc>
+    <loc>http://kerikeri.top/tags/%E9%9F%B3%E5%A3%B0%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2016-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kerikeri.top/tags/%E9%9B%BB%E6%B5%81%E8%A8%88/</loc>
+    <loc>http://kerikeri.top/tags/%E9%AB%98%E9%80%9F%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B/</loc>
+    <lastmod>2016-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

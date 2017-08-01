@@ -3,7 +3,7 @@ date: "2015-11-03"
 title: "Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)"
 slug: "surface-ubuntu"
 categories:
-  - "explanations"
+  - "紹介記事"
 tags:
   - "Surface"
   - "Windows"
@@ -69,7 +69,7 @@ thumbnail: "/posts/2015-11-03-surface-ubuntu/icon.jpg"
 
 ### 4.Ubuntu用のパーティション作成
 
-{{< postfig src="gparted.png" title="GParted" width="360px" >}}
+{{< postfig src="gparted.png" title="GParted" >}}
 
   1. Altボタンを一度押して、「GParted」アプリを起動する。
   1. 右上のメニューでUbuntuをインストールするDisk(SSD)を選択する。

@@ -3,8 +3,15 @@ date: "2016-04-03"
 title: "電力つぶやきbot"
 slug: "power-tweeter"
 categories:
-  - "works"
-tags: ["ソーラー", "ESP-WROOM-02", "ESP8266", "Twitter", "電子工作", "bot", "電力計測", "C++", "Arduino"]
+  - "作品紹介"
+tags:
+  - "ソーラー"
+  - "ESP8266"
+  - "ESP8266"
+  - "Twitter"
+  - "電力"
+  - "bot"
+  - "Arduino"
 thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 ---
 
@@ -17,18 +24,18 @@ thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 
 僕の家には[自作の100W級ソーラーシステム](/posts/2014-09-14-solar-system/)があります。このソーラーシステムの発電量を定期的にツイートすることにしました。
 
-{{< postfig src="solar.jpg" title="Solar" width="360px" >}}
+{{< postfig src="solar.jpg" title="Solar" width="480px" >}}
 <!--more-->
 
 ## 見た目
 
 左側の宙に浮いた基板が今回の電力つぶやきbotです。
 
-{{< postfig src="power-tweeter1.jpg" title="Power-Tweeter" width="360px" >}}
+{{< postfig src="power-tweeter1.jpg" title="Power-Tweeter" width="480px" >}}
 
 拡大
 
-{{< postfig src="power-tweeter2.jpg" title="Power-Tweeter" width="360px" >}}
+{{< postfig src="power-tweeter2.jpg" title="Power-Tweeter" width="480px" >}}
 
 
 ## 実際のつぶやき
@@ -39,19 +46,19 @@ thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 
 【自動】けりの100W級ソーラーシステムは、現在38.4[W]発電中です。本日は、33.38[Wh]発電しました。現在時刻: 2016年3月31日(木)8時0分0秒
 
-{{< postfig src="tweet-8h.png" title="tweet-8h" width="360px" >}}
+{{< postfig src="tweet-8h.png" title="tweet-8h" >}}
 
 ### 正午12時
 
 【自動】けりの100W級ソーラーシステムは、現在53.09[W]発電中です。本日は、202.07[Wh]発電しました。現在時刻: 2016年3月31日(木)12時0分0秒
 
-{{< postfig src="tweet-12h.png" title="tweet-12h" width="360px" >}}
+{{< postfig src="tweet-12h.png" title="tweet-12h" >}}
 
 ### 夕方16時
 
 【自動】けりの100W級ソーラーシステムは、現在8.79[W]発電中です。本日は、301.88[Wh]発電しました。現在時刻: 2016年3月31日(木)16時0分0秒
 
-{{< postfig src="tweet-16h.png" title="tweet-16h" width="360px" >}}
+{{< postfig src="tweet-16h.png" title="tweet-16h" >}}
 
 ### 夜20時
 
@@ -59,7 +66,7 @@ thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 
 【自動】けりの100W級ソーラーシステムは、本日 310.30[Wh]発電しました。昨日に比べて 50.16%増えました。日付: 2016年3月31日(木)
 
-{{< postfig src="tweet-20h.png" title="tweet-20h" width="360px" >}}
+{{< postfig src="tweet-20h.png" title="tweet-20h" >}}
 
 ## 大問題発生！！
 
@@ -99,5 +106,5 @@ thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
 
 電子工作がインターネットにつなげるようになると世界が広がりますね！もっともっといろいろなことに挑戦していきたいです。
 
-{{< postfig src="esp-wroom-02.jpg" title="ESP-WROOM-02" width="360px" >}}
+{{< postfig src="esp-wroom-02.jpg" title="ESP-WROOM-02" width="240px" >}}
 

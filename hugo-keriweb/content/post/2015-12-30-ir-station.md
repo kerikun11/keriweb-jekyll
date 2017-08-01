@@ -3,8 +3,13 @@ date: "2015-12-30"
 title: "ESP8266で赤外線学習リモコン"
 slug: "ir-station"
 categories:
-  - "works"
-tags: ["IR-Station","ESP8266","ESP-WROOM-02","電子工作","Arduino","WiFi"]
+  - "作品紹介"
+tags:
+  - "IR-Station"
+  - "ESP8266"
+  - "ESP8266"
+  - "Arduino"
+  - "WiFi"
 thumbnail: "/posts/2015-12-30-ir-station/icon.jpg"
 ---
 
@@ -18,7 +23,7 @@ ESP8266とはWiFi制御用マイコンです。もともと中国で流行って
 
 その価格はなんと、たったの**550円**です！！  
 [ESP-WROOM-02](http://akizukidenshi.com/catalog/g/gM-09607/)←秋月電子などで売っています。  
-[![ESP8266](esp8266.jpg)](http://akizukidenshi.com/catalog/g/gM-09607/)
+[![ESP8266](esp8266.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
 <!--more-->
 
 ### 開発の簡単さも流行りの理由
@@ -57,7 +62,7 @@ RAMも大量にあって、**81kB**もあります。
 今回は試作なのでブレッドボードで作りました。  
 右に４つの赤外線LEDがついています。
 
-{{< postfig src="body.jpg" title="ESP8266-Remocon" width="360px" >}}
+{{< postfig src="body.jpg" title="ESP8266-Remocon" >}}
 
 ### WiFiの設定
 
@@ -65,7 +70,7 @@ RAMも大量にあって、**81kB**もあります。
 
 ここで、家のWiFiのSSIDを選んでパスワードを入力すると、家のWiFiにアクセスを試みます。
 
-{{< postfig src="page_wifi.png" title="ESP8266-Remocon" width="360px" >}}
+{{< postfig src="page_wifi.png" title="ESP8266-Remocon" >}}
 
 ### スマホでの操作画面
 
@@ -73,7 +78,7 @@ RAMも大量にあって、**81kB**もあります。
 
 リモコンを登録するときは下の好きなチャンネルの欄にボタンの名前を書いて「Recode」ボタンを押すとリモコンのサンプリングを開始します。リモコンの登録がうまくいくと、上のボタンにさっき入力した名前が表示されてボタンが使えるようになります。
 
-{{< postfig src="page_button.png" title="ESP8266-Remocon" width="360px" >}}
+{{< postfig src="page_button.png" title="ESP8266-Remocon" >}}
 
 
 ## 作り方

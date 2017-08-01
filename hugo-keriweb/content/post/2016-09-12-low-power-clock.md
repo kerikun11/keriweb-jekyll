@@ -3,9 +3,8 @@ date: "2016-09-12"
 title: "PICで省エネ時計を作る"
 slug: "low-power-clock"
 categories:
-  - "works"
+  - "作品紹介"
 tags:
-  - "電子工作"
   - "PIC"
   - "PIC18F27J53"
   - "時計"
@@ -49,7 +48,7 @@ PICの電源を完全に切って，消費電力を極限まで抑えます．�
 
 ブレッドボードでの製作ですが，見た目の美しさにこだわりました．
 
-{{< postfig src="clock.jpg" title="PICで時計" width="360px" >}}
+{{< postfig src="clock.jpg" title="PICで時計" width="480px" >}}
 
 ### 表示をオンオフ
 
@@ -71,13 +70,13 @@ PICの電源を完全に切って，消費電力を極限まで抑えます．�
 
 7セグLED表示中が2.5mA程で，スリープ中はほぼ0mAです．
 
-{{< postfig src="with-7seg.png" title="ダイナミック点灯" width="360px" >}}
+{{< postfig src="with-7seg.png" title="ダイナミック点灯" >}}
 
 ### ディープスリープの様子
 
 平均1.5uA程であることがわかります．
 
-{{< postfig src="deep-sleep.png" title="deep sleep" width="360px" >}}
+{{< postfig src="deep-sleep.png" title="deep sleep" >}}
 
 ## バッテリーの持ち時間の概算
 
@@ -384,7 +383,7 @@ void print_7seg(uint8_t col, char c) {
 
 7セグLEDは[こちら](http://akizukidenshi.com/catalog/g/gI-09964/)を使いました．
 
-{{< postfig src="circuit-diagram.png" title="回路図" width="360px" >}}
+{{< postfig src="circuit-diagram.png" title="回路図" >}}
 
 ## まとめ
 

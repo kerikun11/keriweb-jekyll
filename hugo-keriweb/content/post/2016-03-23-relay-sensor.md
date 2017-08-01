@@ -1,11 +1,13 @@
 ---
-## 2016-03-23-relay-sensor.md
 date: "2016-03-23"
 title: "ESP-WROOM-02による中継型電力計"
 slug: "relay-sensor"
 categories:
-  - "works"
-tags: ["ESP-WROOM-02", "ESP8266", "電流計", "電圧計", "電子工作", "Wi-Fi", "Arduino"]
+  - "作品紹介"
+tags:
+  - "ESP8266"
+  - "ESP8266"
+  - "Arduino"
 thumbnail: "/posts/2016-03-23-relay-sensor/icon.jpg"
 ---
 
@@ -17,7 +19,7 @@ ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュ�
 
 今回はこれを使って中継型電力計を作りました。
 
-[![ESP8266](esp8266.jpg)](http://akizukidenshi.com/catalog/g/gM-09607/)
+[![ESP8266](esp8266.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gM-09607/)
 
 ### 中継型とは
 
@@ -30,9 +32,9 @@ ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュ�
 
 ## ギャラリー
 
-{{< postfig src="pm1.jpg" title="電力計" width="360px" >}}
-{{< postfig src="pm2.jpg" title="電力計" width="360px" >}}
-{{< postfig src="pm3.jpg" title="電力計" width="360px" >}}
+{{< postfig src="pm1.jpg" title="電力計" >}}
+{{< postfig src="pm2.jpg" title="電力計" >}}
+{{< postfig src="pm3.jpg" title="電力計" >}}
 
 ## 電力の計測方法
 
@@ -48,19 +50,19 @@ ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュ�
 
 内部抵抗を小さくするため、10mΩの精密抵抗を使います。精度は1%です。
 
-[![精密抵抗](10mR.jpg)](http://akizukidenshi.com/catalog/g/gP-01886/)
+[![精密抵抗](10mR.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gP-01886/)
 
 #### ハイサイド電流計測用オペアンプ LT6106
 
 電流を計る対象の＋側で電流を計ることができるので、GNDを共通にすることができます。精度もかなり高いオペアンプです。
 
-[![LT6106](LT6106.jpg)](http://akizukidenshi.com/catalog/g/gI-07300/)
+[![LT6106](LT6106.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gI-07300/)
 
 #### 超高精度ADコンバータ MCP3425
 
 16bitの分解能があります。さらに内蔵の基準電圧2.048Vは精度0.05%です！
 
-[![MCP3425](MCP3425.jpg)](http://akizukidenshi.com/catalog/g/gI-07638/)
+[![MCP3425](MCP3425.jpg){: .img-small}](http://akizukidenshi.com/catalog/g/gI-07638/)
 
 ## 回路図
 
@@ -175,7 +177,7 @@ void loop() {
 
 このサーバーについては[この記事](/posts/2016-03-12-sinatra/)で紹介しています。
 
-{{< postfig src="index.png" title="表示" width="360px" >}}
+{{< postfig src="index.png" title="表示" >}}
 
 ## まとめ
 

@@ -9,16 +9,29 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 08 Apr 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>シンガポールでロボコンしてきました</title>
-      <link>http://kerikeri.top/post/1/01/01/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%E3%81%A7%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>昔作った電子工作たち～ロボット編～</title>
+      <link>http://kerikeri.top/posts/2016-04-08-old-works-robot/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%E3%81%A7%E3%83%AD%E3%83%9C%E3%82%B3%E3%83%B3%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
+      <guid>http://kerikeri.top/posts/2016-04-08-old-works-robot/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>シンガポールでロボコンしてきました</title>
+      <link>http://kerikeri.top/posts/2015-08-12-idc-robocon/</link>
+      <pubDate>Wed, 12 Aug 2015 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2015-08-12-idc-robocon/</guid>
       <description>みなさんこんにちは！ 椋けり(@Ryokeri14)です。 夏休みになりました。ロ技研のみなさんは進捗めまぐるしいことでしょう。 今回の話題は僕が</description>
     </item>
     

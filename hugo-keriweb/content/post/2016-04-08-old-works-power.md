@@ -3,8 +3,9 @@ date: "2016-04-08"
 title: "昔作った電子工作たち～充電・電力編～"
 slug: "old-works-power"
 categories:
-  - "works"
-tags: ["電子工作", "自作"]
+  - "作品紹介"
+tags:
+  - "電力"
 thumbnail: "/posts/2016-04-08-old-works-power/icon.png"
 ---
 
@@ -15,31 +16,31 @@ thumbnail: "/posts/2016-04-08-old-works-power/icon.png"
 
 ## 電流計
 
-{{< postfig src="Current Meter (1).jpg" title="電流計" width="360px" >}}
-{{< postfig src="Current Meter (2).jpg" title="電流計" width="360px" >}}
-{{< postfig src="Current Meter (3).jpg" title="電流計" width="360px" >}}
+{{< postfig src="Current Meter (1).jpg" title="電流計" >}}
+{{< postfig src="Current Meter (2).jpg" title="電流計" >}}
+{{< postfig src="Current Meter (3).jpg" title="電流計" >}}
 
 ## 初代充電ステーション
 
-{{< postfig src="eneloop Charge Station (1).jpg" title="eneloop Charge Station" width="360px" >}}
-{{< postfig src="eneloop Charge Station (2).jpg" title="eneloop Charge Station" width="360px" >}}
-{{< postfig src="eneloop Charge Station (3).jpg" title="eneloop Charge Station" width="360px" >}}
-{{< postfig src="eneloop Charge Station (4).jpg" title="eneloop Charge Station" width="360px" >}}
-{{< postfig src="eneloop Charge Station (5).jpg" title="eneloop Charge Station" width="360px" >}}
+{{< postfig src="eneloop Charge Station (1).jpg" title="eneloop Charge Station" >}}
+{{< postfig src="eneloop Charge Station (2).jpg" title="eneloop Charge Station" >}}
+{{< postfig src="eneloop Charge Station (3).jpg" title="eneloop Charge Station" >}}
+{{< postfig src="eneloop Charge Station (4).jpg" title="eneloop Charge Station" >}}
+{{< postfig src="eneloop Charge Station (5).jpg" title="eneloop Charge Station" >}}
 
 ## 鉛蓄電池式充電ステーション
 
-{{< postfig src="Pb Charge Station (1).jpg" title="Pb Charge Station" width="360px" >}}
-{{< postfig src="Pb Charge Station (2).jpg" title="Pb Charge Station" width="360px" >}}
+{{< postfig src="Pb Charge Station (1).jpg" title="Pb Charge Station" >}}
+{{< postfig src="Pb Charge Station (2).jpg" title="Pb Charge Station" >}}
 
 ## ポータブルソーラーチャージャー
 
-{{< postfig src="Portable Solar Charger (1).png" title="Portable Solar Charger" width="360px" >}}
-{{< postfig src="Portable Solar Charger (2).png" title="Portable Solar Charger" width="360px" >}}
+{{< postfig src="Portable Solar Charger (1).png" title="Portable Solar Charger" >}}
+{{< postfig src="Portable Solar Charger (2).png" title="Portable Solar Charger" >}}
 
 ## DCジャック中継型PWM調光器
 
-{{< postfig src="PWM controller (1).jpg" title="PWM Controller" width="360px" >}}
-{{< postfig src="PWM controller (2).jpg" title="PWM Controller" width="360px" >}}
-{{< postfig src="PWM controller (3).jpg" title="PWM Controller" width="360px" >}}
+{{< postfig src="PWM controller (1).jpg" title="PWM Controller" >}}
+{{< postfig src="PWM controller (2).jpg" title="PWM Controller" >}}
+{{< postfig src="PWM controller (3).jpg" title="PWM Controller" >}}
 

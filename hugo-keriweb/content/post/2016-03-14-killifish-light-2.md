@@ -1,11 +1,16 @@
 ---
-## 2016-03-14-killifish-light-2.md
 date: "2016-03-14"
 title: "メダカの照明 Ver.2"
 slug: "killifish-light-2"
 categories:
-  - "works"
-tags: ["ESP-WROOM-02", "ESP8266", "WiFi", "サーバー", "電子工作", "めだか", "LED", "制御", "時計", "Arduino"]
+  - "作品紹介"
+tags:
+  - "ESP8266"
+  - "ESP8266"
+  - "WiFi"
+  - "サーバー"
+  - "めだか"
+  - "Arduino"
 thumbnail: "/posts/2016-03-14-killifish-light-2/icon.png"
 ---
 
@@ -15,7 +20,7 @@ thumbnail: "/posts/2016-03-14-killifish-light-2/icon.png"
 
 以前、PICで作った[メダカの水槽の照明](/posts/2015-06-04-killifish-light/)(←リンク)を紹介しましたが、今回はこれをバージョンアップしました。めだかの照明がどのようなものかは以前の記事を参考にしてください。
 
-{{< postfig src="fish.jpg" title="めだか" width="360px" >}}
+{{< postfig src="fish.jpg" title="めだか" >}}
 
 ### 格安WiFiモジュール
 
@@ -28,7 +33,7 @@ thumbnail: "/posts/2016-03-14-killifish-light-2/icon.png"
 
 [ESP-WROOM-02 WiFiモジュール　秋月電子にて550円(2016/3/14現在)](http://akizukidenshi.com/catalog/g/gM-09607/)
 
-{{< postfig src="esp-wroom-02.jpg" title="ESP-WROOM-02" width="360px" >}}
+{{< postfig src="esp-wroom-02.jpg" title="ESP-WROOM-02" width="240px" >}}
 <!--more-->
 
 ## ギャラリー
@@ -44,19 +49,19 @@ LEDはなんと、
 
 の計30個の1WパワーLEDを備えています。
 
-{{< postfig src="all.jpg" title="全体" width="360px" >}}
+{{< postfig src="all.jpg" title="全体" >}}
 
 ### 基板
 
 Dサイズのユニバーサル基板に実装しました。回路はとても簡単です。
 
-{{< postfig src="board1.jpg" title="基板1" width="360px" >}}
-{{< postfig src="board2.jpg" title="基板2" width="360px" >}}
+{{< postfig src="board1.jpg" title="基板1" >}}
+{{< postfig src="board2.jpg" title="基板2" >}}
 
 ### LED
 
 
-{{< postfig src="light.jpg" title="光っているところ" width="360px" >}}
+{{< postfig src="light.jpg" title="光っているところ" >}}
 
 ### 回路図
 
@@ -66,7 +71,7 @@ Dサイズのユニバーサル基板に実装しました。回路はとても�
 
 ボタンを押すことでLEDの明るさを11段階で変えることができます。
 
-{{< postfig src="page.png" title="操作画面" width="360px" >}}
+{{< postfig src="page.png" title="操作画面" >}}
 
 ## 時間同期モード
 
@@ -85,5 +90,5 @@ Dサイズのユニバーサル基板に実装しました。回路はとても�
 
 シリアルによるコントロールだった前のバージョンに比べてかなり進化しました！今後はJavaScriptなどを使ってさらに進化させていきたいですね！
 
-{{< postfig src="fish_up.jpg" title="めだか" width="360px" >}}
+{{< postfig src="fish_up.jpg" title="めだか" >}}
 

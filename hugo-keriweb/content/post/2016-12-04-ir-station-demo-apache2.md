@@ -53,7 +53,7 @@ $ sudo vim /etc/apache2/sites-available/myconf.conf
 
 以下を追記
 
-~~~conf
+~~~kconfig
 <VirtualHost *:80>
         # The ServerName directive sets the request scheme, hostname and port that
         # the server uses to identify itself. This is used when creating

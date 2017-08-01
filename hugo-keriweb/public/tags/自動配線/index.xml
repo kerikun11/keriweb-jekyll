@@ -9,19 +9,30 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 22 Apr 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KiCadで自動配線</title>
-      <link>http://kerikeri.top/post/1/01/01/kicad%E3%81%A7%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-04-22-freerouting/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/kicad%E3%81%A7%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</guid>
+      <guid>http://kerikeri.top/posts/2016-04-22-freerouting/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;kicad.jpg&#34; alt=&#34;KiCad&#34; /&gt;&lt;/p&gt;
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;KiCad&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;kicad.jpg&#34; alt=&#34;KiCad&#34; /&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;h3 id=&#34;自動配線ツールを使おう&#34;&gt;自動配線ツールを使おう&lt;/h3&gt;
 

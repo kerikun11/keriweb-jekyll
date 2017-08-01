@@ -9,16 +9,17 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 21 Oct 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gitの使い方</title>
-      <link>http://kerikeri.top/post/1/01/01/git%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2015-10-21-git/</link>
+      <pubDate>Wed, 21 Oct 2015 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/git%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>http://kerikeri.top/posts/2015-10-21-git/</guid>
       <description>&lt;p&gt;ここではGithubを使ったGitの使い方を説明する。&lt;/p&gt;
 
 &lt;h2 id=&#34;主なコマンド&#34;&gt;主なコマンド&lt;/h2&gt;

@@ -3,8 +3,9 @@ date: "2016-06-14"
 title: "おすすめ PDF Viewer"
 slug: "pdf"
 categories:
-  - "explanations"
-tags: ["PC","Windows","pdf","tex","viewer","editor"]
+  - "紹介記事"
+tags:
+  - "pdf"
 thumbnail: "/posts/2016-06-14-pdf/icon.jpg"
 ---
 

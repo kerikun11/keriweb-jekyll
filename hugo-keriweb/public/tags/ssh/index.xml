@@ -9,16 +9,17 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 20 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SSHのPort Forwarding</title>
-      <link>http://kerikeri.top/post/1/01/01/ssh%E3%81%AEport-forwarding/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</link>
+      <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/ssh%E3%81%AEport-forwarding/</guid>
+      <guid>http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</guid>
       <description>&lt;h2 id=&#34;port-forwardingとは&#34;&gt;Port Forwardingとは&lt;/h2&gt;
 
 &lt;p&gt;SSHは通常ターミナル上で使うが，接続をlocalhostの適当なポートに転送してくれるのがPort Forwardingらしい．これにより，ブラウザからLAN内にアクセスできる．&lt;/p&gt;
@@ -30,10 +31,10 @@
     
     <item>
       <title>SSHの使い方</title>
-      <link>http://kerikeri.top/post/1/01/01/ssh%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2015-10-31-ssh/</link>
+      <pubDate>Sat, 31 Oct 2015 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/ssh%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>http://kerikeri.top/posts/2015-10-31-ssh/</guid>
       <description>&lt;h2 id=&#34;ssh&#34;&gt;SSH&lt;/h2&gt;
 
 &lt;h3 id=&#34;sshとは&#34;&gt;SSHとは&lt;/h3&gt;

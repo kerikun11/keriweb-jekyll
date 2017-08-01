@@ -9,16 +9,17 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 02 Mar 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/kicad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ESP-WROOM-32のブレイクアウトボード</title>
-      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2017-03-02-keriesp32/</link>
+      <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89/</guid>
+      <guid>http://kerikeri.top/posts/2017-03-02-keriesp32/</guid>
       <description>&lt;h2 id=&#34;esp-wroom-32とは&#34;&gt;ESP-WROOM-32とは&lt;/h2&gt;
 
 &lt;p&gt;ESP-WROOM-32とは，ESP32というハイスペックなマイコンが搭載されたWiFi&amp;amp;Bluetoothモジュールです．無線モジュールとしてだけでなく，メインマイコンとしても十分使用できます．&lt;/p&gt;
@@ -27,20 +28,40 @@
 
 &lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;秋月電子&lt;/a&gt;で購入できます．&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; /&gt;{: .img-small}&lt;/p&gt;
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;ESP-WROOM-32&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>KiCadで自動配線</title>
-      <link>http://kerikeri.top/post/1/01/01/kicad%E3%81%A7%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-04-22-freerouting/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/kicad%E3%81%A7%E8%87%AA%E5%8B%95%E9%85%8D%E7%B7%9A/</guid>
+      <guid>http://kerikeri.top/posts/2016-04-22-freerouting/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;kicad.jpg&#34; alt=&#34;KiCad&#34; /&gt;&lt;/p&gt;
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;KiCad&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;kicad.jpg&#34; alt=&#34;KiCad&#34; /&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;h3 id=&#34;自動配線ツールを使おう&#34;&gt;自動配線ツールを使おう&lt;/h3&gt;
 
@@ -52,35 +73,6 @@
 
 &lt;p&gt;今回は自動配線ツールの使い方を説明する．
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>赤外線学習リモコンの基板が届きました！</title>
-      <link>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%81%AE%E5%9F%BA%E6%9D%BF%E3%81%8C%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%81%AE%E5%9F%BA%E6%9D%BF%E3%81%8C%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F/</guid>
-      <description>&lt;h2 id=&#34;基板が届きました&#34;&gt;基板が届きました&lt;/h2&gt;
-
-&lt;h3 id=&#34;思ったより早かった&#34;&gt;思ったより早かった&lt;/h3&gt;
-
-&lt;p&gt;基板加工サービス&lt;a href=&#34;http://www.elecrow.com/&#34; target=&#34;_blank&#34;&gt;Elecrow&lt;/a&gt;に発注した基板が届きました！発送方法は一番安い&lt;code&gt;Registered Airmail&lt;/code&gt;だったのですが，なんと発注から10日で届きました！
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>赤外線学習リモコン完成</title>
-      <link>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/%E8%B5%A4%E5%A4%96%E7%B7%9A%E5%AD%A6%E7%BF%92%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E5%AE%8C%E6%88%90/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;赤外線学習リモコンとは，市販の家電製品などのリモコンの赤外線信号を記憶し，送信することができるものです．&lt;/p&gt;
-
-&lt;p&gt;今回は，WiFi接続に対応した赤外線学習リモコンを作りました．スマートフォンやパソコンなどから，家電製品をコントロールすることができます．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

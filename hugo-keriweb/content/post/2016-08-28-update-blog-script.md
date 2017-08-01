@@ -3,10 +3,10 @@ date: "2016-08-28"
 title: "ブログを更新するスクリプト"
 slug: "update-blog-script"
 categories:
-  - "memos"
+  - "備忘録"
 tags:
+  - "Raspberry Pi"
   - "シェルスクリプト"
-  - "ラズパイ"
 thumbnail: "/posts/2016-08-28-update-blog-script/icon.png"
 ---
 
@@ -20,7 +20,7 @@ thumbnail: "/posts/2016-08-28-update-blog-script/icon.png"
 
 ### ~/.ssh/config
 
-~~~config
+~~~kconfig
 Host github
 	HostName github.com
 	User git
@@ -32,7 +32,7 @@ Host github
 
 ### /etc/apache2/sites-available/myconf.conf
 
-~~~config
+~~~kconfig
 <VirtualHost *:80>
 	# The ServerName directive sets the request scheme, hostname and port that
 	# the server uses to identify itself. This is used when creating

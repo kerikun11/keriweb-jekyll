@@ -3,10 +3,10 @@ date: "2016-08-28"
 title: "ラズパイセットアップのコマンド群"
 slug: "raspi-setup"
 categories:
-  - "memos"
+  - "備忘録"
 tags:
   - "Raspberry Pi"
-  - "ラズパイ"
+  - "サーバー"
 thumbnail: "/posts/2016-08-28-raspi-setup/icon.png"
 ---
 
@@ -52,7 +52,7 @@ thumbnail: "/posts/2016-08-28-raspi-setup/icon.png"
 
 	$ sudo vim /etc/network/interfaces
 
-~~~config
+~~~kconfig
 # interfaces(5) file used by ifup(8) and ifdown(8)
 
 # Please note that this file is written to be used with dhcpcd

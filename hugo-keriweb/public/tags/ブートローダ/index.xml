@@ -9,21 +9,22 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 13 Jan 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PICでブートローダ</title>
-      <link>http://kerikeri.top/post/1/01/01/pic%E3%81%A7%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</link>
+      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/pic%E3%81%A7%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80/</guid>
+      <guid>http://kerikeri.top/posts/2016-01-13-pic-bootloader/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
 &lt;h3 id=&#34;pic18f27j53を使おう&#34;&gt;PIC18F27J53を使おう&lt;/h3&gt;
 
-&lt;p&gt;以前 &lt;a href=&#34;{% post_url 2016-01-08-pic18f27j53 %}&#34; target=&#34;_blank&#34;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
+&lt;p&gt;以前 &lt;a href=&#34;http://kerikeri.top/posts/2016-01-08-pic18f27j53/&#34;&gt;PIC18F27J53のすすめ&lt;/a&gt; という記事を書きました。それの続きで、今回はUSBブートローダの使い方について書きたいと思います。&lt;/p&gt;
 
 &lt;h3 id=&#34;ブートローダとは&#34;&gt;ブートローダとは&lt;/h3&gt;
 

@@ -3,8 +3,13 @@ date: "2016-03-11"
 title: "IR Station"
 slug: "ir-station-reference"
 categories:
-  - "works"
-tags: ["IR-Station","IR", "Remote Control", "ESP8266", "ESP-WROOM-02", "Server", "LED", "WiFi"]
+  - "作品紹介"
+tags:
+  - "IR-Station"
+  - "Remote Control"
+  - "Wi-Fi"
+  - "ESP8266"
+  - "ESP8266"
 thumbnail: "/posts/2016-03-11-ir-station-reference/icon.jpg"
 ---
 
@@ -26,11 +31,11 @@ The latest information is [here](https://github.com/kerikun11/IR-station)
 
 ### The Device's Appearance
 
-{{< postfig src="images/body.jpg" title="body" width="360px" >}}
+{{< postfig src="images/body.jpg" title="body" >}}
 
 ### Display Sample
 
-{{< postfig src="images/display.png" title="display" width="360px" >}}
+{{< postfig src="images/display.png" title="display" >}}
 
 ## How to Use
 
@@ -127,7 +132,7 @@ Please Add the Libraries below to your Arduino IDE
 |Poly Switch					|MICROSMD035F-02	| 1			|up to 350mA			|
 |USB Conncector					|USB-Micro-B		| 1			|Power Only				|
 
-{{< postfig src="images/components.jpg" title="Components" width="360px" >}}
+{{< postfig src="images/components.jpg" title="Components" >}}
 
 #### Requires
 
@@ -137,19 +142,19 @@ Please Add the Libraries below to your Arduino IDE
 
 ### Circuit Diagram
 
-{{< postfig src="images/sketch.png" title="sketch" width="360px" >}}
+{{< postfig src="images/sketch.png" title="sketch" >}}
 
 ### Breadboard Sample
 
-{{< postfig src="images/sample.jpg" title="sample" width="360px" >}}
+{{< postfig src="images/sample.jpg" title="sample" >}}
 
 ### 3D shape
 
-{{< postfig src="images/3d.png" title="3D" width="360px" >}}
+{{< postfig src="images/3d.png" title="3D" >}}
 
 ### PCB pattern sample
 
-{{< postfig src="images/pcb.png" title="PCB" width="360px" >}}
+{{< postfig src="images/pcb.png" title="PCB" >}}
 
 ## IR data JSON format
 

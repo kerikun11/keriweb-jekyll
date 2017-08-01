@@ -3,11 +3,11 @@ date: "2016-10-16"
 title: "IR-Station v1.5.0 アップデート"
 slug: "ir-station-v1.5.0"
 categories:
-  - "works"
+  - "作品紹介"
 tag:
   - "IR-Station"
   - "赤外線学習リモコン"
-  - "ESP-WROOM-02"
+  - "ESP8266"
 thumbnail: "/posts/2016-10-16-ir-station-v1.5.0/icon.png"
 ---
 
@@ -19,7 +19,7 @@ IR-Stationについては，[IR-Stationについての記事一覧](/tags/#tag-i
 
 <!--more-->
 
-{{< postfig src="main-page.png" title="操作画面" width="360px" >}}
+{{< postfig src="main-page.png" title="操作画面" >}}
 
 ## 新機能
 
@@ -38,13 +38,13 @@ v1.5.0の目玉機能は，赤外線信号の送信スケジュール機能で�
 
 信号の登録などと同様に，画面下部のメニューからスケジュールを追加します．
 
-{{< postfig src="schedule-new.png" title="スケジュールの追加" width="360px" >}}
+{{< postfig src="schedule-new.png" title="スケジュールの追加" >}}
 
 #### スケジュールの確認
 
 画面下部にはスケジュール一覧が表示されています．ここからスケジュールを削除することもできます．
 
-{{< postfig src="schedule-list.png" title="スケジュールの確認" width="360px" >}}
+{{< postfig src="schedule-list.png" title="スケジュールの確認" >}}
 
 #### あとは自動的に送信
 
@@ -54,7 +54,7 @@ v1.5.0の目玉機能は，赤外線信号の送信スケジュール機能で�
 
 新機能の2つ目は，画面のレイアウトです．
 
-{{< postfig src="layout.png" title="自由なレイアウト" width="360px" >}}
+{{< postfig src="layout.png" title="自由なレイアウト" >}}
 
 #### ボタンの位置を座標で指定
 
@@ -68,7 +68,7 @@ v1.5.0の目玉機能は，赤外線信号の送信スケジュール機能で�
 
 もちろん，一度設定したボタンの移動もできます．
 
-{{< postfig src="move.png" title="ボタンの移動" width="360px" >}}
+{{< postfig src="move.png" title="ボタンの移動" >}}
 
 ## まとめ
 
