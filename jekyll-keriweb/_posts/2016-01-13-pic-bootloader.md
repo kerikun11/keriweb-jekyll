@@ -2,7 +2,12 @@
 layout: "post"
 title: "PICでブートローダ"
 category: "explanations"
-tags: ["PIC", "PIC18F27J53", "USB", "ブートローダ", "電子工作", "C言語", "Microchip Library for Application", "MLA"]
+tags:
+  - "電子工作"
+  - "PIC"
+  - "PIC18F27J53"
+  - "USB"
+  - "ブートローダ"
 icon: "icon.jpg"
 ---
 

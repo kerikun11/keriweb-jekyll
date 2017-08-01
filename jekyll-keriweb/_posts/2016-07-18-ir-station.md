@@ -2,7 +2,14 @@
 layout: post
 title: "赤外線学習リモコン完成"
 category: works
-tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad","IoT"]
+tags:
+  - "電子工作"
+  - "赤外線学習リモコン"
+  - "WiFi"
+  - "ESP8266"
+  - "ESP-WROOM-02"
+  - "Arduino"
+  - "IR-Station"
 pickup: true
 icon: "icon.jpg"
 ---

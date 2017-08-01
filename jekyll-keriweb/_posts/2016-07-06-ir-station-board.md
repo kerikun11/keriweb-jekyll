@@ -2,7 +2,9 @@
 layout: post
 title: "赤外線学習リモコンの基板が届きました！"
 category: works
-tags: ["電子工作","赤外線学習リモコン","WiFi","ESP8266","ESP-WROOM-02","Arduino","IR-Station","基板","KiCad"]
+tags:
+  - "電子工作"
+  - "IR-Station"
 icon: "icon.jpg"
 ---
 

@@ -2,7 +2,9 @@
 layout: "post"
 title: "Jekyll & Asciidocでシンタックスハイライト"
 category: "memos"
-tags: ["Jekyll","Asciidoc","Blog","Source Code","SyntaxHighlighting"]
+tags:
+  - "Jekyll"
+  - "Asciidoc"
 icon: "icon.png"
 ---
 

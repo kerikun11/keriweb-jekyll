@@ -2,7 +2,9 @@
 layout: "post"
 title: "割れちゃったiPhoneの液晶を直したお話"
 category: "blogs"
-tags: ["iPhone","Apple","分解","修理"]
+tags:
+  - "iPhone"
+  - "分解"
 icon: "icon.jpg"
 ---
 

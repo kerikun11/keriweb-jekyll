@@ -139,7 +139,7 @@
 
 <p>秋月の液晶もaitendoの液晶も共通の液晶制御ICを使っている。その型番が「ST7032」なので、液晶のこともその名前で呼ぶ。<br />
 <a href="http://akizukidenshi.com/catalog/g/gK-06795/">秋月のI2C液晶(AQM0802)</a><br />
-<img src="AQM0802.jpg" alt="AQM0802" title="I2C_LCD" />
+<img src="AQM0802.jpg" alt="AQM0802" />
 <!--more--></p>
 
 <h2 id="ロジックアナライザで一目瞭然">ロジック・アナライザで一目瞭然！</h2>
@@ -148,10 +148,10 @@
 上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。</p>
 
 <p>ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
-<a href="i2c_old.png"><img src="i2c_old.png" alt="old program" title="ダメな方" /></a></p>
+<a href="i2c_old.png"><img src="i2c_old.png" alt="old program" /></a></p>
 
 <p>良い方（I2C通信をしながらメインループもしっかり動いている。）
-<a href="i2c_new.png"><img src="i2c_new.png" alt="new program" title="良いな方" /></a></p>
+<a href="i2c_new.png"><img src="i2c_new.png" alt="new program" /></a></p>
 
 <p>※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。</p>
 

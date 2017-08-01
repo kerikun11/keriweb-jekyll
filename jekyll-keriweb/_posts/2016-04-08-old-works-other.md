@@ -2,7 +2,8 @@
 layout: "post"
 title: "昔作った電子工作たち～その他～"
 category: "works"
-tags: ["電子工作", "自作"]
+tags:
+  - "電子工作"
 icon: "icon.jpg"
 ---
 

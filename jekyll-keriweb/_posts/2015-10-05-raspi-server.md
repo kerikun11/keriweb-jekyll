@@ -5,7 +5,6 @@ category: "explanations"
 tags:
   - "Raspberry Pi"
   - "サーバー"
-  - "ラズパイ"
 icon: "icon.jpg"
 ---
 

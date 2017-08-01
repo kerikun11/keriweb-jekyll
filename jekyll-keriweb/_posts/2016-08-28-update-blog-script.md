@@ -3,8 +3,8 @@ layout: post
 title: "ブログを更新するスクリプト"
 category: "memos"
 tags:
+  - "Raspberry Pi"
   - "シェルスクリプト"
-  - "ラズパイ"
 icon: "icon.png"
 ---
 

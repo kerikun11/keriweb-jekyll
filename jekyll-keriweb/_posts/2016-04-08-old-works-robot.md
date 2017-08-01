@@ -2,7 +2,9 @@
 layout: "post"
 title: "昔作った電子工作たち～ロボット編～"
 category: "works"
-tags: ["電子工作", "自作"]
+tags:
+  - "電子工作"
+  - "ロボコン"
 icon: "icon.png"
 ---
 

@@ -2,7 +2,8 @@
 layout: "post"
 title: "ラズパイでシリアルモニタを使うには"
 category: "memos"
-tags: ["Raspberry Pi", "ラズパイ", "シリアル", "電子工作", "Arduino", "ターミナル"]
+tags:
+  - "Raspberry Pi"
 ---
 
 ## 概要

@@ -2,7 +2,8 @@
 layout: "post"
 title: "おすすめ PDF Viewer"
 category: "explanations"
-tags: ["PC","Windows","pdf","tex","viewer","editor"]
+tags:
+  - "pdf"
 icon: "icon.jpg"
 ---
 

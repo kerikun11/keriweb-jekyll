@@ -3,11 +3,10 @@ layout: post
 title: "VolumioでiTunesのプレイリストを使う"
 category: "memos"
 tags:
-  - "ラズパイ"
+  - "Raspberry Pi"
   - "ミュージックサーバー"
   - "Volumio"
   - "iTunes"
-  - "プレイリスト"
 icon: "icon.png"
 ---
 

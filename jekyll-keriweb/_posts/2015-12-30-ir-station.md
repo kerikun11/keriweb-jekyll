@@ -2,7 +2,13 @@
 layout: "post"
 title: "ESP8266で赤外線学習リモコン"
 category: "works"
-tags: ["IR-Station","ESP8266","ESP-WROOM-02","電子工作","Arduino","WiFi"]
+tags:
+  - "IR-Station"
+  - "ESP8266"
+  - "ESP-WROOM-02"
+  - "電子工作"
+  - "Arduino"
+  - "WiFi"
 icon: "icon.jpg"
 ---
 

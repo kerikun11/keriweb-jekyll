@@ -4,7 +4,7 @@ title: "ラズパイセットアップのコマンド群"
 category: "memos"
 tags:
   - "Raspberry Pi"
-  - "ラズパイ"
+  - "サーバー"
 icon: "icon.png"
 ---
 

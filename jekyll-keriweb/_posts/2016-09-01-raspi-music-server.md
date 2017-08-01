@@ -3,7 +3,7 @@ layout: post
 title: "ラズパイでミュージックサーバー"
 category: "works"
 tags:
-  - "ラズパイ"
+  - "Raspberry Pi"
   - "ミュージックサーバー"
   - "Volumio"
 icon: "icon.jpg"

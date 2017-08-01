@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Jul 2017 00:39:42 +0900</pubDate>
-    <lastBuildDate>Sun, 30 Jul 2017 00:39:42 +0900</lastBuildDate>
+    <pubDate>Tue, 01 Aug 2017 21:04:23 +0900</pubDate>
+    <lastBuildDate>Tue, 01 Aug 2017 21:04:23 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -72,6 +72,8 @@
         <category>NTP</category>
         
         <category>時計</category>
+        
+        <category>秋月</category>
         
         
         <category>works</category>
@@ -181,8 +183,6 @@
         <category>PINE64 A+</category>
         
         <category>Raspberry Pi</category>
-        
-        <category>ラズパイ</category>
         
         <category>サーバー</category>
         
@@ -317,15 +317,9 @@
         <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
         
-        <category>UI</category>
-        
-        <category>ボタン</category>
-        
-        <category>ブザー</category>
+        <category>ESP-WROOM-32</category>
         
         <category>Arduino</category>
-        
-        <category>ESP-WROOM-32</category>
         
         
         <category>memos</category>
@@ -401,8 +395,6 @@
         
         <category>マイクロマウス</category>
         
-        <category>ハーフサイズ</category>
-        
         <category>迷路</category>
         
         
@@ -427,8 +419,6 @@ KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷�
         <category>KERISEv2</category>
         
         <category>迷路</category>
-        
-        <category>ハーフサイズ</category>
         
         
         <category>works</category>
@@ -679,8 +669,6 @@ KERISEv1&lt;/p&gt;
         
         <category>電子工作</category>
         
-        <category>C言語</category>
-        
         <category>RTCC</category>
         
         
@@ -703,7 +691,7 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-09-01-raspi-music-server/</guid>
         
-        <category>ラズパイ</category>
+        <category>Raspberry Pi</category>
         
         <category>ミュージックサーバー</category>
         
@@ -737,15 +725,13 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-31-volumio-playlist/</guid>
         
-        <category>ラズパイ</category>
+        <category>Raspberry Pi</category>
         
         <category>ミュージックサーバー</category>
         
         <category>Volumio</category>
         
         <category>iTunes</category>
-        
-        <category>プレイリスト</category>
         
         
         <category>memos</category>
@@ -763,9 +749,9 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
         
-        <category>シェルスクリプト</category>
+        <category>Raspberry Pi</category>
         
-        <category>ラズパイ</category>
+        <category>シェルスクリプト</category>
         
         
         <category>memos</category>
@@ -789,7 +775,7 @@ KERISEv1&lt;/p&gt;
         
         <category>Raspberry Pi</category>
         
-        <category>ラズパイ</category>
+        <category>サーバー</category>
         
         
         <category>memos</category>
@@ -815,11 +801,9 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-08-21-raspi3/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-21-raspi3/</guid>
         
-        <category>Blog</category>
+        <category>ブログ</category>
         
-        <category>Raspberrypi</category>
-        
-        <category>ラズパイ</category>
+        <category>Raspberry Pi</category>
         
         
         <category>blogs</category>
@@ -930,8 +914,6 @@ KERISEv1&lt;/p&gt;
         
         <category>SSH</category>
         
-        <category>サーバー</category>
-        
         
         <category>memos</category>
         
@@ -963,12 +945,6 @@ KERISEv1&lt;/p&gt;
         <category>Arduino</category>
         
         <category>IR-Station</category>
-        
-        <category>基板</category>
-        
-        <category>KiCad</category>
-        
-        <category>IoT</category>
         
         
         <category>works</category>
@@ -1013,21 +989,7 @@ KERISEv1&lt;/p&gt;
         
         <category>電子工作</category>
         
-        <category>赤外線学習リモコン</category>
-        
-        <category>WiFi</category>
-        
-        <category>ESP8266</category>
-        
-        <category>ESP-WROOM-02</category>
-        
-        <category>Arduino</category>
-        
         <category>IR-Station</category>
-        
-        <category>基板</category>
-        
-        <category>KiCad</category>
         
         
         <category>works</category>
@@ -1063,11 +1025,7 @@ KERISEv1&lt;/p&gt;
         
         <category>iPhone</category>
         
-        <category>Apple</category>
-        
         <category>分解</category>
-        
-        <category>修理</category>
         
         
         <category>blogs</category>
@@ -1089,17 +1047,7 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-06-14-pdf/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-06-14-pdf/</guid>
         
-        <category>PC</category>
-        
-        <category>Windows</category>
-        
         <category>pdf</category>
-        
-        <category>tex</category>
-        
-        <category>viewer</category>
-        
-        <category>editor</category>
         
         
         <category>explanations</category>
@@ -1125,12 +1073,6 @@ KERISEv1&lt;/p&gt;
         <category>Jekyll</category>
         
         <category>Asciidoc</category>
-        
-        <category>Blog</category>
-        
-        <category>Source Code</category>
-        
-        <category>SyntaxHighlighting</category>
         
         
         <category>memos</category>
@@ -1187,25 +1129,11 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-05-18-circuit-lecture/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-18-circuit-lecture/</guid>
         
-        <category>回路</category>
-        
         <category>電子工作</category>
         
-        <category>講習会</category>
+        <category>回路講習会</category>
         
         <category>ロボット技術研究会</category>
-        
-        <category>初心者</category>
-        
-        <category>自作</category>
-        
-        <category>入門</category>
-        
-        <category>Arduino</category>
-        
-        <category>PIC</category>
-        
-        <category>トランジスタ</category>
         
         
         <category>explanations</category>
@@ -1237,8 +1165,6 @@ KERISEv1&lt;/p&gt;
         
         <category>自動配線</category>
         
-        <category>回路</category>
-        
         <category>電子工作</category>
         
         <category>基板</category>
@@ -1261,16 +1187,6 @@ KERISEv1&lt;/p&gt;
         
         <category>Raspberry Pi</category>
         
-        <category>ラズパイ</category>
-        
-        <category>シリアル</category>
-        
-        <category>電子工作</category>
-        
-        <category>Arduino</category>
-        
-        <category>ターミナル</category>
-        
         
         <category>memos</category>
         
@@ -1291,19 +1207,13 @@ KERISEv1&lt;/p&gt;
         
         <category>ThingSpeak</category>
         
-        <category>IoT</category>
-        
         <category>ESP8266</category>
         
         <category>ESP-WROOM-02</category>
         
         <category>Arduino</category>
         
-        <category>Solar Power</category>
-        
         <category>ソーラー</category>
-        
-        <category>太陽光発電</category>
         
         
         <category>works</category>
@@ -1321,15 +1231,7 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
         
-        <category>exiftool</category>
-        
-        <category>geotag</category>
-        
-        <category>写真</category>
-        
-        <category>位置情報</category>
-        
-        <category>タグ</category>
+        <category>Exiftool</category>
         
         
         <category>memos</category>
@@ -1349,7 +1251,7 @@ KERISEv1&lt;/p&gt;
         
         <category>電子工作</category>
         
-        <category>自作</category>
+        <category>ロボコン</category>
         
         
         <category>works</category>
@@ -1368,8 +1270,6 @@ KERISEv1&lt;/p&gt;
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-power/</guid>
         
         <category>電子工作</category>
-        
-        <category>自作</category>
         
         
         <category>works</category>
@@ -1391,8 +1291,6 @@ KERISEv1&lt;/p&gt;
         
         <category>電子工作</category>
         
-        <category>自作</category>
-        
         
         <category>works</category>
         
@@ -1410,8 +1308,6 @@ KERISEv1&lt;/p&gt;
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
         
         <category>電子工作</category>
-        
-        <category>自作</category>
         
         
         <category>works</category>
