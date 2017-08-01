@@ -4,6 +4,7 @@ title: "昔作った電子工作たち～充電・電力編～"
 category: "works"
 tags:
   - "電子工作"
+  - "電力"
 icon: "icon.png"
 ---
 

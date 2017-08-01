@@ -3,11 +3,11 @@ layout: post
 title: "IR-Stationの使い方"
 category: "works"
 tags:
-  - IR-Station
-  - ESP8266
-  - ESP-WROOM-02
-  - 赤外線学習リモコン
-  - 電子工作
+  - "IR-Station"
+  - "ESP8266"
+  - "ESP-WROOM-02"
+  - "赤外線学習リモコン"
+  - "電子工作"
 icon: "icon.png"
 ---
 

@@ -8,6 +8,7 @@ tags:
   - "ESP8266"
   - "Twitter"
   - "電子工作"
+  - "電力"
   - "bot"
   - "Arduino"
 icon: "icon.png"
