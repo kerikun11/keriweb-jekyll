@@ -33,12 +33,14 @@
 				{{- end }}
 				</p>
 				{{- end }}
+				{{ partial "twitter-share.html" . }}
 			</div>
 		</header>
 		<div class="post__content clearfix">
 			{{ .Content }}
 		</div>
 		{{ partial "post_tags.html" . }}
+		{{ partial "ads-horizontal.html" . }}
 	</article>
 	<!--{{ partial "authorbox.html" . }}-->
 	{{ partial "post_nav.html" . }}

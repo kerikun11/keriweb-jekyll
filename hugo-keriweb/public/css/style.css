@@ -73,8 +73,8 @@ html {
 
 body {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-size: 0.875rem;
+	//font-size: 16px;
+	//font-size: 0.875rem;
 	line-height: 1.6;
 	//background: #f7f7f7;
 	word-wrap: break-word;
@@ -100,7 +100,7 @@ body {
 .wrapper {
 	padding: 25px;
 	//background: #fff;
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.9);
 }
 
 .content {
@@ -394,10 +394,14 @@ select {
 	max-width: 100%;
 }
 
+.ads-horizontal {
+	margin: 25px 0;
+}
+
 /*** Header ***/
 .header {
 	//background: #fff;
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.9);
 }
 
 .logo {
@@ -710,7 +714,8 @@ select {
 .authorbox__avatar {
 	float: left;
 	padding: 3px;
-	margin-right: 25px;
+	//margin-right: 25px;
+	margin-right: 10px;
 	border: 1px solid #ebebeb;
 }
 
