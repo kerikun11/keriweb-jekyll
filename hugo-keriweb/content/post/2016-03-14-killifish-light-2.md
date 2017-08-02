@@ -5,7 +5,7 @@ slug: "killifish-light-2"
 categories:
   - "作品紹介"
 tags:
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "ESP8266"
   - "WiFi"
   - "サーバー"
@@ -65,7 +65,7 @@ Dサイズのユニバーサル基板に実装しました。回路はとても�
 
 ### 回路図
 
-[![回路図](sketch.png)](sketch.png)
+{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
 
 ### スマホからの操作画面
 

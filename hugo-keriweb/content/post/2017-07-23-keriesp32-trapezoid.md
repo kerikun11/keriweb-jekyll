@@ -65,7 +65,7 @@ Micro SDカードを使わない場合はSDスロットをはんだ付けしな�
 
 とてもシンプルです．
 
-[![回路図](sketch.png)](sketch.png)
+{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
 
 ## まとめ
 

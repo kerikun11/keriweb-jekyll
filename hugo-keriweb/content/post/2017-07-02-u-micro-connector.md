@@ -27,7 +27,7 @@ digikey surfingをしていたら，下記のコネクタを見つけました�
 
 ### Amphenol FCIという会社の10114829-10102LF
 
-[ボックスヘッダ(10114829-10102LF)<br/>![ボックスヘッダ](10114829-10102LF_sml.webp)](https://www.digikey.jp/product-detail/ja/amphenol-fci/10114829-10102LF/609-4383-1-ND/2658914)
+{{< postfig src="10114829-10102LF_sml.webp" title="ボックスヘッダ(10114829-10102LF)" width="240px" link="https://www.digikey.jp/product-detail/ja/amphenol-fci/10114829-10102LF/609-4383-1-ND/2658914" >}}
 
 ### 表面実装のタイプも発見！
 
@@ -35,7 +35,7 @@ digikey surfingをしていたら，下記のコネクタを見つけました�
 
 ただ，ちょっとサイズが大きいように思えます．
 
-[表面実装のボックスヘッダ(10114828-10102LF)<br/>![表面実装のボックスヘッダ](10114828-10102LF_sml.webp)](https://www.digikey.jp/product-detail/ja/amphenol-fci/10114828-10102LF/609-4387-1-ND/2658916)
+{{< postfig src="10114828-10102LF_sml.webp" title="表面実装のボックスヘッダ(10114828-10102LF)" width="240px" link="https://www.digikey.jp/product-detail/ja/amphenol-fci/10114828-10102LF/609-4387-1-ND/2658916" >}}
 
 
 
@@ -43,9 +43,9 @@ digikey surfingをしていたら，下記のコネクタを見つけました�
 
 予備としていくつか買っておけば，コネクタを壊してしまっても大丈夫ですね！
 
-[コンタクトピン(10114827-001LF)<br/>![コンタクトピン](10114827-001LF_sml.webp)](https://www.digikey.jp/product-detail/ja/amphenol-fci/10114827-001LF/609-4395-1-ND/2658909)
+{{< postfig src="10114827-001LF_sml.webp" title="コンタクトピン(10114827-001LF)" width="240px" link="https://www.digikey.jp/product-detail/ja/amphenol-fci/10114827-001LF/609-4395-1-ND/2658909" >}}
 
-[ハウジング(10114826-00002LF)<br/>![ハウジング](10114826-00002LF_sml.webp)](https://www.digikey.jp/product-detail/ja/amphenol-fci/10114826-00002LF/609-4391-ND/2658910)
+{{< postfig src="10114826-00002LF_sml.webp" title="ハウジング(10114826-00002LF)" width="240px" link="https://www.digikey.jp/product-detail/ja/amphenol-fci/10114826-00002LF/609-4391-ND/2658910" >}}
 
 ## まとめ
 

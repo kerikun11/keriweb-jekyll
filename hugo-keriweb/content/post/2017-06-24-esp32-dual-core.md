@@ -40,7 +40,7 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
 
 ### FreeRTOS
 
-[![FreeRTOS](freertos.jpg){: .img-small}<br/>FreeRTOS公式ページ](http://www.freertos.org/)
+{{< postfig src="freertos.jpg" title="FreeRTOS" width="240px" link="http://www.freertos.org/" >}}
 
 ESP32の中ではFreeRTOSというリアルタイムOSが動いています．  
 FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキテクチャに対応しています．オープンソースのRTOSの中では最も有名なものと言えるでしょう．

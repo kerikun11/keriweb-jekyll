@@ -6,7 +6,7 @@ categories:
   - "作品紹介"
 tags:
   - "ソーラー"
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "ESP8266"
   - "Twitter"
   - "電力"

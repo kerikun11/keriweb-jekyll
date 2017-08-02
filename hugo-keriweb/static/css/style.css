@@ -756,11 +756,12 @@ select {
 .list__thumbnail {
 	float: left;
 	margin-right: 20px;
+	margin-bottom: 0px;
 }
 
 .list__thumbnail img {
 	width: 100%;
-	max-width: 120px;
+	max-width: 150px;
 }
 
 .list__footer-readmore {

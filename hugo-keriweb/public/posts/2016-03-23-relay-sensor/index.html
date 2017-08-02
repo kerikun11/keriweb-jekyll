@@ -21,7 +21,17 @@ ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュ�
 
 今回はこれを使って中継型電力計を作りました。
 
-{: .img-small}
+
+	
+		
+		
+			ESP8266
+		
+		
+		
+	
+
+
 
 中継型とは
 
@@ -107,7 +117,7 @@ ga('send', 'pageview');
 					<a class="meta-categories__link" href="/categories/%e4%bd%9c%e5%93%81%e7%b4%b9%e4%bb%8b" rel="category">作品紹介</a></span>
 				<span class="post__meta-tags meta-tags">
 					<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
-					<a class="meta-tag__link" href="/tags/esp8266" rel="tag">ESP8266</a>, <a class="meta-tag__link" href="/tags/esp8266" rel="tag">ESP8266</a>, <a class="meta-tag__link" href="/tags/arduino" rel="tag">Arduino</a></span>
+					<a class="meta-tag__link" href="/tags/esp-wroom-02" rel="tag">ESP-WROOM-02</a>, <a class="meta-tag__link" href="/tags/esp8266" rel="tag">ESP8266</a>, <a class="meta-tag__link" href="/tags/arduino" rel="tag">Arduino</a></span>
 				</p>
 			</div>
 		</header>
@@ -120,7 +130,17 @@ ga('send', 'pageview');
 
 <p>今回はこれを使って中継型電力計を作りました。</p>
 
-<p><a href="http://akizukidenshi.com/catalog/g/gM-09607/" target="_blank"><img src="esp8266.jpg" alt="ESP8266" />{: .img-small}</a></p>
+<figure >
+	<a href="http://akizukidenshi.com/catalog/g/gM-09607/" target="blank">
+		
+		<figcaption>
+			<h4>ESP8266</h4>
+		</figcaption>
+		
+		<img src="esp8266.jpg" alt="ESP8266" style="width: 240px;"/>
+	</a>
+</figure>
+
 
 <h3 id="中継型とは">中継型とは</h3>
 
@@ -181,23 +201,63 @@ ga('send', 'pageview');
 
 <p>内部抵抗を小さくするため、10mΩの精密抵抗を使います。精度は1%です。</p>
 
-<p><a href="http://akizukidenshi.com/catalog/g/gP-01886/" target="_blank"><img src="10mR.jpg" alt="精密抵抗" />{: .img-small}</a></p>
+<figure >
+	<a href="http://akizukidenshi.com/catalog/g/gP-01886/" target="blank">
+		
+		<figcaption>
+			<h4>精密抵抗</h4>
+		</figcaption>
+		
+		<img src="10mR.jpg" alt="精密抵抗" style="width: 240px;"/>
+	</a>
+</figure>
+
 
 <h4 id="ハイサイド電流計測用オペアンプ-lt6106">ハイサイド電流計測用オペアンプ LT6106</h4>
 
 <p>電流を計る対象の＋側で電流を計ることができるので、GNDを共通にすることができます。精度もかなり高いオペアンプです。</p>
 
-<p><a href="http://akizukidenshi.com/catalog/g/gI-07300/" target="_blank"><img src="LT6106.jpg" alt="LT6106" />{: .img-small}</a></p>
+<figure >
+	<a href="http://akizukidenshi.com/catalog/g/gI-07300/" target="blank">
+		
+		<figcaption>
+			<h4>LT6106</h4>
+		</figcaption>
+		
+		<img src="LT6106.jpg" alt="LT6106" style="width: 240px;"/>
+	</a>
+</figure>
+
 
 <h4 id="超高精度adコンバータ-mcp3425">超高精度ADコンバータ MCP3425</h4>
 
 <p>16bitの分解能があります。さらに内蔵の基準電圧2.048Vは精度0.05%です！</p>
 
-<p><a href="http://akizukidenshi.com/catalog/g/gI-07638/" target="_blank"><img src="MCP3425.jpg" alt="MCP3425" />{: .img-small}</a></p>
+<figure >
+	<a href="http://akizukidenshi.com/catalog/g/gI-07638/" target="blank">
+		
+		<figcaption>
+			<h4>MCP3425</h4>
+		</figcaption>
+		
+		<img src="MCP3425.jpg" alt="MCP3425" style="width: 240px;"/>
+	</a>
+</figure>
+
 
 <h2 id="回路図">回路図</h2>
 
-<p><a href="sketch.png" target="_blank"><img src="sketch.png" alt="回路図" /></a></p>
+<figure >
+	<a href="sketch.png" target="blank">
+		
+		<figcaption>
+			<h4>回路図</h4>
+		</figcaption>
+		
+		<img src="sketch.png" alt="回路図" style="width: 240px;"/>
+	</a>
+</figure>
+
 
 <h2 id="ソースファイル">ソースファイル</h2>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;ESP8266WiFi.h&gt;</span><span style="color: #BC7A00"></span>
@@ -328,7 +388,7 @@ WiFiClient client;
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/esp8266/" rel="tag">ESP8266</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/esp-wroom-02/" rel="tag">ESP-WROOM-02</a></li>
 		<li class="tags__item"><a class="tags__link" href="/tags/esp8266/" rel="tag">ESP8266</a></li>
 		<li class="tags__item"><a class="tags__link" href="/tags/arduino/" rel="tag">Arduino</a></li>
 	</ul>
@@ -501,8 +561,10 @@ WiFiClient client;
 		<a class="widget__link widget__link--taglist" href="/tags/ctrl" title="ctrl">ctrl (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cygwin" title="cygwin">cygwin (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/e-mail" title="e-mail">e-mail (1)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (16)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (18)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-02" title="esp-wroom-02">esp-wroom-02 (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (6)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (10)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (9)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/exiftool" title="exiftool">exiftool (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/fft" title="fft">fft (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/freertos" title="freertos">freertos (1)</a>

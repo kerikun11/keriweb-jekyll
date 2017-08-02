@@ -7,7 +7,7 @@ tags:
   - "赤外線学習リモコン"
   - "WiFi"
   - "ESP8266"
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "Arduino"
   - "IR-Station"
 pickup: true

@@ -5,7 +5,7 @@ slug: "user-interface"
 categories:
   - "備忘録"
 tags:
-  - "ESP32"
+  - "ESP-WROOM-32"
   - "Arduino"
 ---
 

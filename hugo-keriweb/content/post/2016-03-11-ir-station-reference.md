@@ -9,7 +9,7 @@ tags:
   - "Remote Control"
   - "Wi-Fi"
   - "ESP8266"
-  - "ESP8266"
+  - "ESP-WROOM-02"
 thumbnail: "/posts/2016-03-11-ir-station-reference/icon.jpg"
 ---
 

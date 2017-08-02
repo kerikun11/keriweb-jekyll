@@ -7,7 +7,7 @@ categories:
 tags:
   - "ThingSpeak"
   - "ESP8266"
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "Arduino"
   - "ソーラー"
   - "電力"

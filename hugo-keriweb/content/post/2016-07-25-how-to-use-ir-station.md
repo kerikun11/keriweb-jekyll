@@ -7,7 +7,7 @@ categories:
 tags:
   - "IR-Station"
   - "ESP8266"
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "赤外線学習リモコン"
 thumbnail: "/posts/2016-07-25-how-to-use-ir-station/icon.png"
 ---

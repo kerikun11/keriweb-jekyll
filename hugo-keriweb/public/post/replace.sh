@@ -12,6 +12,10 @@ do
 #		-i -e 's/category: "\(.\+\)"/categories:\n  - "\1"/g' \
 
 	sed \
+		-i -e '/^slug:/d' \
+		-i -e '/^  - "電子工作"/d' \
+		$filename
+	sed \
 		-i -e 's/layout: .*/date: "'$date'"/g' \
 		-i -e 's/^\(title: .*\)/\1\nslug: "'$slug'"/g' \
 		-i -e 's/category: "works"/categories:\n  - "作品紹介"/g' \
@@ -24,13 +28,10 @@ do
 		-i -e 's/^!\[\(.\+\)\](\(.\+\)){:\s*.img-small\s*}/{{< postfig src="\2" title="\1" width="240px" >}}/g' \
 		-i -e 's/^!\[\(.\+\)\](\(.\+\)){:\s*.img-medium\s*}/{{< postfig src="\2" title="\1" width="480px" >}}/g' \
 		-i -e 's/^!\[\(.\+\)\](\(.\+\))/{{< postfig src="\2" title="\1" >}}/g' \
-		-i -e 's/^\[!\[\([^\]]*\)\](\([^)]*\))\](\([^)]*\))/{{< postfig src="\2" title="\1" width="360px" link="\3" >}}/g' \
+		-i -e 's/^\[!\[\([^]]*\)](\([^)]*\))](\([^)]\+\))/{{< postfig src="\2" title="\1" width="240px" link="\3" >}}/g' \
+		-i -e 's/^\[!\[\([^]]*\)](\([^)]*\)){:\s*\.img-small\s*}.*](\([^)]\+\))/{{< postfig src="\2" title="\1" width="240px" link="\3" >}}/g' \
+		-i -e 's/^\[\([^<]*\)<br\/>!\[[^]]*](\([^)]*\))](\(.*\))/{{< postfig src="\2" title="\1" width="240px" link="\3" >}}/g' \
 		-i -e 's/{% post_url \(.\+\) %}/\/posts\/\1\//g' \
 		-i -e 's/~~~conf.*/~~~kconfig/g' \
-		-i -e '/^  - "電子工作"/d' \
-		-i -e 's/^  - .*ESP8266.*/  - "ESP8266"/g' \
-		-i -e 's/^  - .*ESP-WROOM-02.*/  - "ESP8266"/g' \
-		-i -e 's/^  - .*ESP32.*/  - "ESP32"/g' \
-		-i -e 's/^  - .*ESP-WROOM-32.*/  - "ESP32"/g' \
 		$filename
 done

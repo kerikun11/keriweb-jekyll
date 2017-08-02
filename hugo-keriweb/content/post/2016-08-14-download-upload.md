@@ -9,7 +9,7 @@ tags:
   - "HTML"
   - "CSS"
   - "JavaScript"
-  - "ESP8266"
+  - "ESP-WROOM-02"
   - "ESP8266"
   - "赤外線学習リモコン"
 thumbnail: "/posts/2016-08-14-download-upload/icon.png"

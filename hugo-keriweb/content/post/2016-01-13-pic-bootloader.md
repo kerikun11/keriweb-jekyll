@@ -39,7 +39,7 @@ thumbnail: "/posts/2016-01-13-pic-bootloader/icon.jpg"
 どちらもユーザープログラムには影響はありません。
 
 回路図  
-[![PIC18F27J53の回路図](sketch.png)](sketch.png)
+{{< postfig src="sketch.png" title="PIC18F27J53の回路図" width="240px" link="sketch.png" >}}
 
 ## ブートローダプログラム
 

@@ -1,10 +1,11 @@
 ---
-date: "2017-07-04"
+date: "2017-08-01"
 title: "作品集"
 menu:
   main:
     name: "Works"
 weight: 2
+disable_comments: true
 ---
 
 ## IR-Station

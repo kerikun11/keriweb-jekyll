@@ -9,16 +9,30 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 26 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/esp-wroom-32/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ESP-WROOM-32からメールを送る</title>
-      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%8B%E3%82%89%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8B/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>ESP32で時間取得</title>
+      <link>http://kerikeri.top/posts/2017-04-26-esp32-time/</link>
+      <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%8B%E3%82%89%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8B/</guid>
+      <guid>http://kerikeri.top/posts/2017-04-26-esp32-time/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回はESP32で現在時刻を取得するサンプルコードの紹介です．&lt;/p&gt;
+
+&lt;p&gt;今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP-WROOM-32からメールを送る</title>
+      <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-04-08-esp32-mail/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;ESP32にはHTTPSクライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
@@ -30,10 +44,10 @@
     
     <item>
       <title>ESP-WROOM-32で秋月の売場表示</title>
-      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2017-03-29-aki-shelf/</link>
+      <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%A7%E7%A7%8B%E6%9C%88%E3%81%AE%E5%A3%B2%E5%A0%B4%E8%A1%A8%E7%A4%BA/</guid>
+      <guid>http://kerikeri.top/posts/2017-03-29-aki-shelf/</guid>
       <description>&lt;h2 id=&#34;まずはじめに&#34;&gt;まずはじめに&lt;/h2&gt;
 
 &lt;h3 id=&#34;秋月の通販サイトが進化&#34;&gt;秋月の通販サイトが進化&lt;/h3&gt;
@@ -45,60 +59,11 @@
     </item>
     
     <item>
-      <title>ESP-WROOM-32のピッチ変換</title>
-      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%94%E3%83%83%E3%83%81%E5%A4%89%E6%8F%9B/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%94%E3%83%83%E3%83%81%E5%A4%89%E6%8F%9B/</guid>
-      <description>&lt;h2 id=&#34;格安wifi-bleモジュール-esp-wroom-32&#34;&gt;格安WiFi+BLEモジュール「ESP-WROOM-32」&lt;/h2&gt;
-
-&lt;p&gt;ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．&lt;/p&gt;
-
-&lt;p&gt;秋月電子で買うことができます→&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;リンク&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;esp32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; /&gt;{: .img-small}&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ESP-WROOM-32のブレイクアウトボード</title>
-      <link>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp-wroom-32%E3%81%AE%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89/</guid>
-      <description>&lt;h2 id=&#34;esp-wroom-32とは&#34;&gt;ESP-WROOM-32とは&lt;/h2&gt;
-
-&lt;p&gt;ESP-WROOM-32とは，ESP32というハイスペックなマイコンが搭載されたWiFi&amp;amp;Bluetoothモジュールです．無線モジュールとしてだけでなく，メインマイコンとしても十分使用できます．&lt;/p&gt;
-
-&lt;p&gt;ESP-WROOM-32のすごいところはその価格です．ハイスペックなマイコンとWiFiとBluetoothがついているのに，2017年2月現在たったの700円なのです！！&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;秋月電子&lt;/a&gt;で購入できます．&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; /&gt;{: .img-small}&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ESP32で時間取得</title>
-      <link>http://kerikeri.top/post/1/01/01/esp32%E3%81%A7%E6%99%82%E9%96%93%E5%8F%96%E5%BE%97/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp32%E3%81%A7%E6%99%82%E9%96%93%E5%8F%96%E5%BE%97/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;今回はESP32で現在時刻を取得するサンプルコードの紹介です．&lt;/p&gt;
-
-&lt;p&gt;今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>ESP32用UIライブラリ</title>
-      <link>http://kerikeri.top/post/1/01/01/esp32%E7%94%A8ui%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
+      <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/post/1/01/01/esp32%E7%94%A8ui%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA/</guid>
+      <guid>http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;ESP32も徐々に使い慣れてきました．今回の記事では，ちょっとした工作には欠かせないユーザーインターフェースのコードを紹介します．&lt;/p&gt;
@@ -109,6 +74,62 @@
 &lt;/ul&gt;
 
 &lt;p&gt;今回のコードは，ESP32用に書かれています．ご注意ください．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP-WROOM-32のブレイクアウトボード</title>
+      <link>http://kerikeri.top/posts/2017-03-02-keriesp32/</link>
+      <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-03-02-keriesp32/</guid>
+      <description>&lt;h2 id=&#34;esp-wroom-32とは&#34;&gt;ESP-WROOM-32とは&lt;/h2&gt;
+
+&lt;p&gt;ESP-WROOM-32とは，ESP32というハイスペックなマイコンが搭載されたWiFi&amp;amp;Bluetoothモジュールです．無線モジュールとしてだけでなく，メインマイコンとしても十分使用できます．&lt;/p&gt;
+
+&lt;p&gt;ESP-WROOM-32のすごいところはその価格です．ハイスペックなマイコンとWiFiとBluetoothがついているのに，2017年2月現在たったの700円なのです！！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;秋月電子&lt;/a&gt;で購入できます．&lt;/p&gt;
+
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;ESP-WROOM-32&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
+	
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP-WROOM-32のピッチ変換</title>
+      <link>http://kerikeri.top/posts/2017-02-05-first-esp32/</link>
+      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-02-05-first-esp32/</guid>
+      <description>&lt;h2 id=&#34;格安wifi-bleモジュール-esp-wroom-32&#34;&gt;格安WiFi+BLEモジュール「ESP-WROOM-32」&lt;/h2&gt;
+
+&lt;p&gt;ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．&lt;/p&gt;
+
+&lt;p&gt;秋月電子で買うことができます→&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;リンク&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure &gt;
+	
+		
+		&lt;figcaption&gt;
+			&lt;h4&gt;ESP-WROOM-32&lt;/h4&gt;
+		&lt;/figcaption&gt;
+		
+		&lt;img src=&#34;esp32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
+	
+&lt;/figure&gt;
+
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

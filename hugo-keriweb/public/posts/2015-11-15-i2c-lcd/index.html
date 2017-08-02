@@ -134,10 +134,30 @@ ga('send', 'pageview');
 上の２つのデータがI2C、一番下のデータがメインループのループ回数を表している。</p>
 
 <p>ダメな方（I2C通信をしている間は、メインループが止まってしまっている。）
-<a href="i2c_old.png" target="_blank"><img src="i2c_old.png" alt="old program" /></a></p>
+<figure >
+	<a href="i2c_old.png" target="blank">
+		
+		<figcaption>
+			<h4>old program</h4>
+		</figcaption>
+		
+		<img src="i2c_old.png" alt="old program" style="width: 240px;"/>
+	</a>
+</figure>
+</p>
 
 <p>良い方（I2C通信をしながらメインループもしっかり動いている。）
-<a href="i2c_new.png" target="_blank"><img src="i2c_new.png" alt="new program" /></a></p>
+<figure >
+	<a href="i2c_new.png" target="blank">
+		
+		<figcaption>
+			<h4>new program</h4>
+		</figcaption>
+		
+		<img src="i2c_new.png" alt="new program" style="width: 240px;"/>
+	</a>
+</figure>
+</p>
 
 <p>※双方のメインループに停止時間があるが、これは、送信リングバッファに送る処理に時間がかかっているだけなので今回は無視して欲しい。</p>
 
@@ -422,8 +442,10 @@ ringbuf_t lcd_tx;
 		<a class="widget__link widget__link--taglist" href="/tags/ctrl" title="ctrl">ctrl (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/cygwin" title="cygwin">cygwin (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/e-mail" title="e-mail">e-mail (1)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (16)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (18)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-02" title="esp-wroom-02">esp-wroom-02 (9)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (6)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (10)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (9)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/exiftool" title="exiftool">exiftool (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/fft" title="fft">fft (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/freertos" title="freertos">freertos (1)</a>
