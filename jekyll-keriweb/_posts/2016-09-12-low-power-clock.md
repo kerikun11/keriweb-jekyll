@@ -382,7 +382,7 @@ void print_7seg(uint8_t col, char c) {
 
 7セグLEDは[こちら](http://akizukidenshi.com/catalog/g/gI-09964/)を使いました．
 
-![回路図](circuit-diagram.png)
+[![回路図](circuit-diagram.png)](circuit-diagram.png)
 
 ## まとめ
 
