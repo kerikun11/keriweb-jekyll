@@ -408,6 +408,12 @@
   </url>
   
   <url>
+    <loc>http://kerikeri.top/archives/2016/</loc>
+    <lastmod>2014-09-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</loc>
     <lastmod>2016-09-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -421,6 +427,7 @@
   
   <url>
     <loc>http://kerikeri.top/archives/</loc>
+    <lastmod>2014-09-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -642,12 +649,6 @@
   <url>
     <loc>http://kerikeri.top/tags/mft2016/</loc>
     <lastmod>2016-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kerikeri.top/tags/micro-sd/</loc>
-    <lastmod>2017-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

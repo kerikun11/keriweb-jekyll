@@ -65,7 +65,7 @@ Micro SDカードを使わない場合はSDスロットをはんだ付けしな�
 
 とてもシンプルです．
 
-{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
+{{< postfig src="sketch.png" title="回路図" width="720px" link="sketch.png" >}}
 
 ## まとめ
 

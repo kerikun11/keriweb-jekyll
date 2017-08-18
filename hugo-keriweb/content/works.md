@@ -8,6 +8,8 @@ weight: 2
 disable_comments: true
 ---
 
+今までに私が製作した作品を紹介します．詳しくはそれぞれの記事をご覧ください．
+
 ## IR-Station
 
 IR-Stationとは，WiFi接続の赤外線学習リモコンです．  
