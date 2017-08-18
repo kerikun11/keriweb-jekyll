@@ -5,9 +5,183 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Aug 2017 10:43:40 +0900</pubDate>
-    <lastBuildDate>Wed, 02 Aug 2017 10:43:40 +0900</lastBuildDate>
+    <pubDate>Sat, 19 Aug 2017 00:13:30 +0900</pubDate>
+    <lastBuildDate>Sat, 19 Aug 2017 00:13:30 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>ESP-WROOM-32の短冊基板の紹介</title>
+        <description>&lt;h2 id=&quot;また作ったesp-wroom-32の変換基板&quot;&gt;また作ったESP-WROOM-32の変換基板&lt;/h2&gt;
+
+&lt;p&gt;以前にも&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2017-03-02-keriesp32/&quot;&gt;C基板型ESP-WROOM-32ブレークアウト基板&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/posts/2017-07-23-keriesp32-trapezoid/&quot;&gt;台形型ESP32-WROOM-32ブレークアウト基板&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;を作りましたが，今回は短冊形のものを作りました．&lt;/p&gt;
+
+&lt;p&gt;Micro-USBコネクタとシリアル変換ICが乗っているので，PCにつなぐだけですぐに使うことができます．&lt;/p&gt;
+
+&lt;h2 id=&quot;keriesp32-rectangle&quot;&gt;KERIESP32-Rectangle&lt;/h2&gt;
+
+&lt;p&gt;I/Oピンが1列にならんだSIP型基板です．普通のピンヘッダをつけてもよし，L字ピンヘッダをつけてもよいでしょう．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;keriesp32-rectangle.jpg&quot; alt=&quot;KERIESP32-Rectangle&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;今回の基板の特徴&quot;&gt;今回の基板の特徴&lt;/h2&gt;
+
+&lt;h3 id=&quot;小型の短冊基板&quot;&gt;小型の短冊基板&lt;/h3&gt;
+
+&lt;p&gt;ESP32をを横向きにおいて基板をなるべく小さくしました．&lt;/p&gt;
+
+&lt;p&gt;部品の配置やこの形，結構気に入っています．&lt;/p&gt;
+
+&lt;h3 id=&quot;すべて秋葉原で手に入る部品たち&quot;&gt;すべて秋葉原で手に入る部品たち&lt;/h3&gt;
+
+&lt;p&gt;今回使っている部品はすべて秋月電子と千石電商で手に入るものでできています．なので，基板さえあればすぐに作ることができます．&lt;/p&gt;
+
+&lt;p&gt;ちなみに，USB-UART変換ICは秋月電子に売っている&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-06713/&quot;&gt;FT231X&lt;/a&gt;を使用しています．&lt;/p&gt;
+
+&lt;p&gt;有名なICである&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-01739/&quot;&gt;FT232RL&lt;/a&gt;よりも安価なのでこちらを使いました．&lt;/p&gt;
+
+&lt;h3 id=&quot;二つ並んだボタン&quot;&gt;二つ並んだボタン&lt;/h3&gt;
+
+&lt;p&gt;基板の右端には，リセットボタンとブート切替ボタンが並んでいます．&lt;/p&gt;
+
+&lt;p&gt;ボタン同士の距離が近くて押しづらいのではないかと思われるかもしれませんが，これには意味があります．&lt;/p&gt;
+
+&lt;p&gt;ESP32を開発する際，プログラムを修正しては書き込んでを繰り返します．その時，ブート切替ボタンを押しながらリセットボタンを押すのは結構大変です．&lt;/p&gt;
+
+&lt;p&gt;しかし，この位置にボタンが並んでいれば片手で一気に押すことができるのです．&lt;/p&gt;
+
+&lt;h2 id=&quot;回路図&quot;&gt;回路図&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;keriesp32-diagram.png&quot;&gt;&lt;img src=&quot;keriesp32-diagram.png&quot; alt=&quot;回路図&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;部品表&quot;&gt;部品表&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;リファレンス&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;部品&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;型番&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;備考&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;U1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP32&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gM-11647/&quot;&gt;ESP-WROOM-32&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;U2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;レギュレータ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-10673/&quot;&gt;NJM2884U1-33&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SOT-89-5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;U3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;USB-UART変換IC&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-06713/&quot;&gt;FT231X&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;C1,2,3,5,6&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;チップコンデンサ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-04940/&quot;&gt;0.1uF・1608サイズ&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;パスコン&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;C4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;チップコンデンサ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-06039/&quot;&gt;47uF・3216サイズ&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;電源安定化用&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;R1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;チップ抵抗&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;10kΩ・1608サイズ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ESP32のEnable&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;R2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;チップ抵抗&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1kΩ・1608サイズ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;電源LED用&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;F1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ポリスイッチ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-09512/&quot;&gt;FEMTOSMDC035F-02&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SW1,2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;タクトスイッチ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gP-06185/&quot;&gt;SKRPACE010&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;リセット/ブートセレクト&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;D1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;電源LED&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gI-03982/&quot;&gt;1608サイズ&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;P1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;細ピンヘッダ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gC-06631/&quot;&gt;1x30&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;J1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;USB-Micro-Bメスコネクタ&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gC-05254/&quot;&gt;ZX62R-B-5P&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SD1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;マイクロSDスロット&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;a href=&quot;http://akizukidenshi.com/catalog/g/gC-02395/&quot;&gt;DM3AT-SF-PEJM5&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;配線パターン&quot;&gt;配線パターン&lt;/h2&gt;
+
+&lt;p&gt;例によってKiCadで作成しました．配線は&lt;a href=&quot;/posts/2016-04-22-freerouting/&quot;&gt;自動配線&lt;/a&gt;です．&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;keriesp32-pcb.png&quot; alt=&quot;配線パターン&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;3d-top.png&quot; alt=&quot;表面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;3d-back.png&quot; alt=&quot;裏面&quot; class=&quot;img-medium&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;esp32を使おう&quot;&gt;ESP32を使おう&lt;/h2&gt;
+
+&lt;p&gt;最近ESP32を使いまくっているので，こんな基板があったらいいなという思いを詰め込んでこの基板を作りました．&lt;/p&gt;
+
+&lt;p&gt;いろいろな種類の基板をいっぱい作ってESP32の布教活動を地味に進めています．&lt;/p&gt;
+
+&lt;p&gt;みなさんも是非，ESP32を使ってみてください～&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 18 Aug 2017 00:00:00 +0900</pubDate>
+        <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
+        <guid isPermaLink="true">http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</guid>
+        
+        <category>ESP-WROOM-32</category>
+        
+        
+        <category>works</category>
+        
+      </item>
     
       <item>
         <title>ESP32とMicro SDカード</title>
@@ -1292,24 +1466,6 @@ KERISEv1&lt;/p&gt;
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-old-works-other/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-other/</guid>
-        
-        <category>電子工作</category>
-        
-        
-        <category>works</category>
-        
-      </item>
-    
-      <item>
-        <title>昔作った電子工作たち～LEDイルミネーション～</title>
-        <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;今回の記事では、昔作った(僕にとって)懐かしい電子工作たちを写真で簡単に紹介します。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
-        <link>http://kerikeri.top/posts/2016-04-08-old-works-illumination/</link>
-        <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-old-works-illumination/</guid>
         
         <category>電子工作</category>
         
