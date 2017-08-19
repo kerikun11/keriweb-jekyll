@@ -3,6 +3,7 @@ layout: "post"
 title: "写真から位置情報タグを削除する"
 category: "memos"
 tags:
+  - "ターミナル"
   - "Exiftool"
 ---
 

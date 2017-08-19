@@ -5,6 +5,7 @@ category: "memos"
 tags:
   - "Raspberry Pi"
   - "シェルスクリプト"
+  - "ブログ"
 icon: "icon.png"
 ---
 

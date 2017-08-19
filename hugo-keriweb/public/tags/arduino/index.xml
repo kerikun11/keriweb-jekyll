@@ -9,10 +9,23 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 24 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP32とMicro SDカード</title>
+      <link>http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</link>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;今回は，ESP32で何か作るときはとりあえず一緒にMicro SDスロットも載せましょうという話です．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP32でデュアルコアを使おう！</title>
@@ -60,6 +73,21 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
 &lt;p&gt;みんなどうせ同じようなことをするでしょうということで，ESP32ではライブラリが用意されていました．&lt;/p&gt;
 
 &lt;p&gt;不揮発性のフラッシュ領域を使ってデータを保存&amp;amp;復元します．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ESP32からメールを送る</title>
+      <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
+      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-04-08-esp32-mail/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;ESP32にはHTTPSクライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
+
+&lt;p&gt;Arduino上で動くコードです．esp32-arduino-coreは最新のものを使用してください．古いものだと，SSLまわりでエラーが発生します．&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

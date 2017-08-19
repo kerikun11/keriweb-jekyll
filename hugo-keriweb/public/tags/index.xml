@@ -9,19 +9,10 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 12 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Mar 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>7セグメントled</title>
-      <link>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</link>
-      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/7%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88led/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Active Record</title>
@@ -33,9 +24,18 @@
     </item>
     
     <item>
+      <title>Apache2</title>
+      <link>http://kerikeri.top/tags/apache2/</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/apache2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Arduino</title>
       <link>http://kerikeri.top/tags/arduino/</link>
-      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/arduino/</guid>
       <description></description>
@@ -69,20 +69,11 @@
     </item>
     
     <item>
-      <title>Css</title>
-      <link>http://kerikeri.top/tags/css/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      <title>Crontab</title>
+      <link>http://kerikeri.top/tags/crontab/</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ctrl</title>
-      <link>http://kerikeri.top/tags/ctrl/</link>
-      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/ctrl/</guid>
+      <guid>http://kerikeri.top/tags/crontab/</guid>
       <description></description>
     </item>
     
@@ -92,6 +83,15 @@
       <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/cygwin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ddns</title>
+      <link>http://kerikeri.top/tags/ddns/</link>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/ddns/</guid>
       <description></description>
     </item>
     
@@ -107,7 +107,7 @@
     <item>
       <title>Esp Wroom 02</title>
       <link>http://kerikeri.top/tags/esp-wroom-02/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/esp-wroom-02/</guid>
       <description></description>
@@ -116,7 +116,7 @@
     <item>
       <title>Esp Wroom 32</title>
       <link>http://kerikeri.top/tags/esp-wroom-32/</link>
-      <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/esp-wroom-32/</guid>
       <description></description>
@@ -168,15 +168,6 @@
     </item>
     
     <item>
-      <title>Ft232</title>
-      <link>http://kerikeri.top/tags/ft232/</link>
-      <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/ft232/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ft232rl</title>
       <link>http://kerikeri.top/tags/ft232rl/</link>
       <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
@@ -195,24 +186,6 @@
     </item>
     
     <item>
-      <title>Html</title>
-      <link>http://kerikeri.top/tags/html/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hyperion</title>
-      <link>http://kerikeri.top/tags/hyperion/</link>
-      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/hyperion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Iphone</title>
       <link>http://kerikeri.top/tags/iphone/</link>
       <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
@@ -224,7 +197,7 @@
     <item>
       <title>Ir Station</title>
       <link>http://kerikeri.top/tags/ir-station/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/ir-station/</guid>
       <description></description>
@@ -236,15 +209,6 @@
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/itunes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>http://kerikeri.top/tags/javascript/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -281,6 +245,42 @@
       <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
       <guid>http://kerikeri.top/tags/kerisev3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kicad</title>
+      <link>http://kerikeri.top/tags/kicad/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/kicad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Li Po</title>
+      <link>http://kerikeri.top/tags/li-po/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/li-po/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://kerikeri.top/tags/linux/</link>
+      <pubDate>Tue, 03 Nov 2015 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maker Faire Tokyo</title>
+      <link>http://kerikeri.top/tags/maker-faire-tokyo/</link>
+      <pubDate>Fri, 05 Aug 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/maker-faire-tokyo/</guid>
       <description></description>
     </item>
     

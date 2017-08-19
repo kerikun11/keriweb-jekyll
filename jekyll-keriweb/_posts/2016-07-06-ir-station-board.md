@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "赤外線学習リモコンの基板が届きました！"
-category: works
+category: "works"
 tags:
-  - "電子工作"
   - "IR-Station"
 icon: "icon.jpg"
 ---

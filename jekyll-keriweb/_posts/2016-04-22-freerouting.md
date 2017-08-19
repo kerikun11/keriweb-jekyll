@@ -6,7 +6,6 @@ tags:
   - "KiCad"
   - "自動配線"
   - "電子工作"
-  - "基板"
 icon: "icon.png"
 ---
 

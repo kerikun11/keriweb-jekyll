@@ -32,6 +32,19 @@
     </item>
     
     <item>
+      <title>ブログを更新するスクリプト</title>
+      <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
+      <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
+      <description>&lt;h2 id=&#34;github上にあるブログを同期するシェルスクリプト&#34;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
+
+&lt;p&gt;自分用のメモ&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ブログのサーバーが新しくなりました！</title>
       <link>http://kerikeri.top/posts/2016-08-21-raspi3/</link>
       <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>

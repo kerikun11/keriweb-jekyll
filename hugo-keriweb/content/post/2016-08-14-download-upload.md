@@ -6,9 +6,6 @@ categories:
   - "作品紹介"
 tags:
   - "IR-Station"
-  - "HTML"
-  - "CSS"
-  - "JavaScript"
   - "ESP-WROOM-02"
   - "ESP8266"
   - "赤外線学習リモコン"

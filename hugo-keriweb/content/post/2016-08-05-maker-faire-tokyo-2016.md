@@ -6,7 +6,6 @@ categories:
   - "イベント"
 tags:
   - "Maker Faire Tokyo"
-  - "MFT2016"
   - "IR-Station"
 thumbnail: "/posts/2016-08-05-maker-faire-tokyo-2016/logo.jpg"
 ---

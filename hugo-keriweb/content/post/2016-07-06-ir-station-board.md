@@ -2,7 +2,8 @@
 date: "2016-07-06"
 title: "赤外線学習リモコンの基板が届きました！"
 slug: "ir-station-board"
-category: works
+categories:
+  - "作品紹介"
 tags:
   - "IR-Station"
 thumbnail: "/posts/2016-07-06-ir-station-board/icon.jpg"

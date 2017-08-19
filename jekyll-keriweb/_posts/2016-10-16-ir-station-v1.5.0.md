@@ -2,7 +2,7 @@
 layout: post
 title: "IR-Station v1.5.0 アップデート"
 category: "works"
-tag:
+tags:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "ESP-WROOM-02"

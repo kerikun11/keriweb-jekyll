@@ -4,12 +4,10 @@ title: "IR-Stationのデモンストレーションサイト"
 slug: "ir-station-demo"
 categories:
   - "作品紹介"
-tag:
+tags:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "Sinatra"
-  - "JavaScript"
-  - "HTML"
 thumbnail: "/posts/2016-10-20-ir-station-demo/icon.png"
 ---
 

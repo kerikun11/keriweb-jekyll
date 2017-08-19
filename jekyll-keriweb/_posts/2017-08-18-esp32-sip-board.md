@@ -3,7 +3,9 @@ layout: post
 title: "ESP-WROOM-32の短冊基板の紹介"
 category: "works"
 tags:
+  - "電子工作"
   - "ESP-WROOM-32"
+  - "KiCad"
 icon: "icon.png"
 ---
 

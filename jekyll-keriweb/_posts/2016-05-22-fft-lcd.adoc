@@ -3,13 +3,9 @@ layout: "post"
 title: "高速フーリエ変換でスペクトル表示"
 category: "works"
 tags:
-  - "FFT"
-  - "高速フーリエ変換"
   - "電子工作"
+  - "FFT"
   - "Nucleo"
-  - "音声解析"
-  - "グラフィック液晶"
-  - "シリアル通信"
 icon: "icon.jpg"
 ---
 

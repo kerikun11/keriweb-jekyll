@@ -7,7 +7,6 @@ tags:
   - "PIC"
   - "PIC18F27J53"
   - "時計"
-  - "7セグメントLED"
 icon: "icon.jpg"
 ---
 

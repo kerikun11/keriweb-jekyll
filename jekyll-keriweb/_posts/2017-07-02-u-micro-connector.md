@@ -4,7 +4,6 @@ title: "U-Microコネクタの正体"
 category: "memos"
 tags:
   - "Li-Po"
-  - "Hyperion"
   - "U-Micro"
   - "マイクロマウス"
 icon: "icon.png"

@@ -418,6 +418,7 @@ select {
 	font-size: 32px;
 	font-size: 2rem;
 	line-height: 1;
+	text-shadow: 2px 2px 5px #888;
 }
 
 .logo__tagline {

@@ -193,18 +193,6 @@
     </item>
     
     <item>
-      <title>IR Station</title>
-      <link>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</link>
-      <pubDate>Fri, 11 Mar 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-03-11-ir-station-reference/</guid>
-      <description>IR-Station Infrared Remote Controller with ESP8266 WiFi-module
-You can control your home appliances with your smartphone or laptop.
-The latest information is here
-Main parts  ESP-WROOM-02 (ESP8266 WiFi Module) IR Receiver IR LED Indicator LED  Looks The Device&amp;rsquo;s Appearance  body   Display Sample  display   How to Use Setup the Device  Supply power to the device. Connect your cellphone or laptop to Wi-Fi SSID &amp;ldquo;IR-Station&amp;rdquo;.</description>
-    </item>
-    
-    <item>
       <title>ESP8266で赤外線学習リモコン</title>
       <link>http://kerikeri.top/posts/2015-12-30-ir-station/</link>
       <pubDate>Wed, 30 Dec 2015 00:00:00 +0000</pubDate>

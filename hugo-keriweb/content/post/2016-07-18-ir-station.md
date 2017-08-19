@@ -2,7 +2,8 @@
 date: "2016-07-18"
 title: "赤外線学習リモコン完成"
 slug: "ir-station"
-category: works
+categories:
+  - "作品紹介"
 tags:
   - "赤外線学習リモコン"
   - "WiFi"

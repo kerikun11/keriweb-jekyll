@@ -2,9 +2,9 @@
 layout: post
 title: "Apache2でIR-Stationデモ"
 category: memos
-tag:
+tags:
  - "サーバー"
- - "ラズパイ"
+ - "Raspberry Pi"
  - "Apache2"
  - "IR-Station"
  - "Sinatra"

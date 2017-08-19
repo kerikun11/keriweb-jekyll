@@ -5,7 +5,6 @@ category: "explanations"
 tags:
   - "ESP32"
   - "Arduino"
-  - "Preferences"
 icon: "icon.jpg"
 ---
 

@@ -1,6 +1,7 @@
 {{- if .Site.Menus.main }}
 <nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<ul class="menu__list">
+		<li class="menu__item {{if .IsHome }}menu__item--active{{end}}"><a class="menu__link" href="/">Home</a></li>
 		{{- $currentNode := . }}
 		{{- range sort .Site.Menus.main }}
 		{{- if .Name}}

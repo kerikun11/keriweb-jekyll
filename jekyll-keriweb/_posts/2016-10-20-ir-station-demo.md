@@ -2,12 +2,10 @@
 layout: post
 title: "IR-Stationのデモンストレーションサイト"
 category: "works"
-tag:
+tags:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "Sinatra"
-  - "JavaScript"
-  - "HTML"
 icon: "icon.png"
 ---
 

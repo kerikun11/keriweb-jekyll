@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Aug 2017 00:13:30 +0900</pubDate>
-    <lastBuildDate>Sat, 19 Aug 2017 00:13:30 +0900</lastBuildDate>
+    <pubDate>Sat, 19 Aug 2017 23:48:58 +0900</pubDate>
+    <lastBuildDate>Sat, 19 Aug 2017 23:48:58 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -176,7 +176,11 @@
         <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</guid>
         
+        <category>電子工作</category>
+        
         <category>ESP-WROOM-32</category>
+        
+        <category>KiCad</category>
         
         
         <category>works</category>
@@ -195,6 +199,8 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</guid>
         
         <category>電子工作</category>
+        
+        <category>Arduino</category>
         
         <category>ESP32</category>
         
@@ -218,7 +224,9 @@
         
         <category>電子工作</category>
         
-        <category>ESP32</category>
+        <category>ESP-WROOM-32</category>
+        
+        <category>KiCad</category>
         
         
         <category>works</category>
@@ -269,8 +277,6 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-07-02-u-micro-connector/</guid>
         
         <category>Li-Po</category>
-        
-        <category>Hyperion</category>
         
         <category>U-Micro</category>
         
@@ -332,8 +338,6 @@
         
         <category>Arduino</category>
         
-        <category>Preferences</category>
-        
         
         <category>explanations</category>
         
@@ -392,7 +396,7 @@
       </item>
     
       <item>
-        <title>ESP-WROOM-32からメールを送る</title>
+        <title>ESP32からメールを送る</title>
         <description>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 
 &lt;p&gt;ESP32にはHTTPSクライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
@@ -406,13 +410,11 @@
         
         <category>ESP32</category>
         
-        <category>ESP-WROOM-32</category>
+        <category>Arduino</category>
         
         <category>E-mail</category>
         
         <category>SMTP</category>
-        
-        <category>WiFi</category>
         
         
         <category>memos</category>
@@ -545,7 +547,7 @@
         <link>http://kerikeri.top/posts/2017-02-05-first-esp32/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-02-05-first-esp32/</guid>
         
-        <category>ESP32</category>
+        <category>電子工作</category>
         
         <category>ESP-WROOM-32</category>
         
@@ -641,13 +643,13 @@ KERISEv1&lt;/p&gt;
         
         <category>マイクロマウス</category>
         
-        <category>全日本マイクロマウス大会</category>
-        
         <category>電子工作</category>
         
         <category>STM32</category>
         
         <category>mbed</category>
+        
+        <category>KiCad</category>
         
         
         <category>works</category>
@@ -666,8 +668,6 @@ KERISEv1&lt;/p&gt;
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-12-04-update-mydns/</guid>
         
         <category>サーバー</category>
-        
-        <category>MyDNS.jp</category>
         
         <category>Crontab</category>
         
@@ -694,7 +694,7 @@ KERISEv1&lt;/p&gt;
         
         <category>サーバー</category>
         
-        <category>ラズパイ</category>
+        <category>Raspberry Pi</category>
         
         <category>Apache2</category>
         
@@ -723,13 +723,7 @@ KERISEv1&lt;/p&gt;
         
         <category>迷路</category>
         
-        <category>ロボット</category>
-        
         <category>ロボコン</category>
-        
-        <category>STM32</category>
-        
-        <category>mbed</category>
         
         
         <category>blogs</category>
@@ -762,10 +756,6 @@ KERISEv1&lt;/p&gt;
         <category>赤外線学習リモコン</category>
         
         <category>Sinatra</category>
-        
-        <category>JavaScript</category>
-        
-        <category>HTML</category>
         
         
         <category>works</category>
@@ -818,8 +808,6 @@ KERISEv1&lt;/p&gt;
         <category>PIC18F27J53</category>
         
         <category>時計</category>
-        
-        <category>7セグメントLED</category>
         
         
         <category>works</category>
@@ -927,6 +915,8 @@ KERISEv1&lt;/p&gt;
         
         <category>シェルスクリプト</category>
         
+        <category>ブログ</category>
+        
         
         <category>memos</category>
         
@@ -1001,15 +991,9 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-08-14-download-upload/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-14-download-upload/</guid>
         
-        <category>IR-Station</category>
-        
         <category>電子工作</category>
         
-        <category>HTML</category>
-        
-        <category>CSS</category>
-        
-        <category>JavaScript</category>
+        <category>IR-Station</category>
         
         <category>ESP-WROOM-02</category>
         
@@ -1035,8 +1019,6 @@ KERISEv1&lt;/p&gt;
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-08-05-maker-faire-tokyo-2016/</guid>
         
         <category>Maker Faire Tokyo</category>
-        
-        <category>MFT2016</category>
         
         <category>IR-Station</category>
         
@@ -1085,6 +1067,8 @@ KERISEv1&lt;/p&gt;
         <pubDate>Wed, 20 Jul 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-20-ssh-port-forwarding/</guid>
+        
+        <category>ターミナル</category>
         
         <category>SSH</category>
         
@@ -1160,8 +1144,6 @@ KERISEv1&lt;/p&gt;
         <pubDate>Wed, 06 Jul 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-07-06-ir-station-board/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-07-06-ir-station-board/</guid>
-        
-        <category>電子工作</category>
         
         <category>IR-Station</category>
         
@@ -1271,19 +1253,11 @@ KERISEv1&lt;/p&gt;
         <link>http://kerikeri.top/posts/2016-05-22-fft-lcd/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-05-22-fft-lcd/</guid>
         
-        <category>FFT</category>
-        
-        <category>高速フーリエ変換</category>
-        
         <category>電子工作</category>
         
+        <category>FFT</category>
+        
         <category>Nucleo</category>
-        
-        <category>音声解析</category>
-        
-        <category>グラフィック液晶</category>
-        
-        <category>シリアル通信</category>
         
         
         <category>works</category>
@@ -1341,8 +1315,6 @@ KERISEv1&lt;/p&gt;
         
         <category>電子工作</category>
         
-        <category>基板</category>
-        
         
         <category>explanations</category>
         
@@ -1383,8 +1355,6 @@ KERISEv1&lt;/p&gt;
         
         <category>ESP8266</category>
         
-        <category>ESP-WROOM-02</category>
-        
         <category>Arduino</category>
         
         <category>ソーラー</category>
@@ -1406,6 +1376,8 @@ KERISEv1&lt;/p&gt;
         <pubDate>Fri, 08 Apr 2016 00:00:00 +0900</pubDate>
         <link>http://kerikeri.top/posts/2016-04-08-remove-geotag/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2016-04-08-remove-geotag/</guid>
+        
+        <category>ターミナル</category>
         
         <category>Exiftool</category>
         

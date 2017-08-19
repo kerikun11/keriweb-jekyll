@@ -34,7 +34,6 @@ rssLimit = 30 #default: 15
 [taxonomies]
     tag = "tags"
     category = "categories"
-    archive = "archives"
 
 
 [Params.widgets]

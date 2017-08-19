@@ -2,10 +2,10 @@
 date: "2016-12-04"
 title: "CrontabでMyDNS.jpのIP通知"
 slug: "update-mydns"
-category: memos
-tag:
+categories:
+  - "備忘録"
+tags:
  - "サーバー"
- - "MyDNS.jp"
  - "Crontab"
  - "DDNS"
 ---

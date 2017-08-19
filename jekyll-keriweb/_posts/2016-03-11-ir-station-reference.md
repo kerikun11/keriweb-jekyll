@@ -6,7 +6,6 @@ tags:
   - "IR-Station"
   - "Remote Control"
   - "Wi-Fi"
-  - "ESP8266"
   - "ESP-WROOM-02"
 icon: "icon.jpg"
 ---

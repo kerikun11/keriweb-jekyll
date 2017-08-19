@@ -9,10 +9,32 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 26 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/esp-wroom-32/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP-WROOM-32の短冊基板の紹介</title>
+      <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</guid>
+      <description>また作ったESP-WROOM-32の変換基板 以前にも C基板型ESP-WROOM-32ブレークアウト基板 台形型ESP32-WROOM-32ブレ</description>
+    </item>
+    
+    <item>
+      <title>KERIESP32 Trapezoid</title>
+      <link>http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/</link>
+      <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/</guid>
+      <description>&lt;h2 id=&#34;esp-wroom-32のブレークアウトボード&#34;&gt;ESP-WROOM-32のブレークアウトボード&lt;/h2&gt;
+
+&lt;p&gt;WiFiとBluetoothが載ったデュアルコアなマイコン&lt;strong&gt;ESP32&lt;/strong&gt;のピッチ変換基板を新たに作ったので紹介します．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP32で時間取得</title>
@@ -25,21 +47,6 @@
 &lt;p&gt;今回はESP32で現在時刻を取得するサンプルコードの紹介です．&lt;/p&gt;
 
 &lt;p&gt;今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ESP-WROOM-32からメールを送る</title>
-      <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
-      <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-04-08-esp32-mail/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;ESP32にはHTTPSクライアントライブラリがあるので，SMTPプロトコルを使ってGmailを送信してみました．意外にもうまくいってしまったので，共有します．&lt;/p&gt;
-
-&lt;p&gt;Arduino上で動くコードです．esp32-arduino-coreは最新のものを使用してください．古いものだと，SSLまわりでエラーが発生します．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

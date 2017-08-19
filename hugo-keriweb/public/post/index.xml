@@ -9,10 +9,19 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP-WROOM-32の短冊基板の紹介</title>
+      <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</guid>
+      <description>また作ったESP-WROOM-32の変換基板 以前にも C基板型ESP-WROOM-32ブレークアウト基板 台形型ESP32-WROOM-32ブレ</description>
+    </item>
     
     <item>
       <title>ESP32とMicro SDカード</title>
@@ -161,7 +170,7 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
     </item>
     
     <item>
-      <title>ESP-WROOM-32からメールを送る</title>
+      <title>ESP32からメールを送る</title>
       <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
@@ -565,27 +574,6 @@ KERISEv1&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ ssh pi@192.168.11.13
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ブログのサーバーが新しくなりました！</title>
-      <link>http://kerikeri.top/posts/2016-08-21-raspi3/</link>
-      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-08-21-raspi3/</guid>
-      <description>&lt;h2 id=&#34;ラズパイ3を購入&#34;&gt;ラズパイ3を購入&lt;/h2&gt;
-
-&lt;h3 id=&#34;ハイスペックなラズパイ3&#34;&gt;ハイスペックなラズパイ3&lt;/h3&gt;
-
-&lt;p&gt;64bitのARM-CPUが搭載されたラズパイ3が話題になったのは記憶に新しいですが，ラズパイ3は，秋月では6,200円ですし，公式でも5,000円ほどします．&lt;/p&gt;
-
-&lt;h3 id=&#34;税込4-000円かつカード払いok&#34;&gt;税込4,000円かつカード払いOK！&lt;/h3&gt;
-
-&lt;p&gt;そんなラズパイ3が，Maker Faire Tokyo 2016 で税込4,000円かつカード払いOKで販売しているではありませんか！！&lt;/p&gt;
-
-&lt;p&gt;これは安い！と思い，使う予定もないのに衝動買いしちゃいました&amp;hellip;(汗&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -7,7 +7,6 @@ categories:
 tags:
   - "KiCad"
   - "自動配線"
-  - "基板"
 thumbnail: "/posts/2016-04-22-freerouting/icon.png"
 ---
 

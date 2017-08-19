@@ -9,10 +9,25 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 12 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/tags/%E8%BF%B7%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ハーフサイズ迷路の自作</title>
+      <link>http://kerikeri.top/posts/2017-01-13-half-maze/</link>
+      <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-01-13-half-maze/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;昨年夏に始めたマイクロマウス．&lt;br /&gt;
+&lt;a href=&#34;http://kerikeri.top/tags/#tag-index-KERISEv2&#34;&gt;KERISEv2&lt;/a&gt;ができてついにハーフにデビューしました！&lt;br /&gt;
+しかし，自宅には迷路がないので試しに自分で作ってみることにしました．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ハーフ迷路を走ってみました！</title>
@@ -24,6 +39,20 @@
 
 &lt;p&gt;こんにちは，けりです．&lt;br /&gt;
 KERSEv2の制御が落ち着てきたので，ついにハーフサイズの迷路で走らせてみることにしました！&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>全日本マイクロマウス2016の結果報告</title>
+      <link>http://kerikeri.top/posts/2016-11-21-micromouse2016/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2016-11-21-micromouse2016/</guid>
+      <description>&lt;h2 id=&#34;全日本マイクロマウス大会2016&#34;&gt;全日本マイクロマウス大会2016&lt;/h2&gt;
+
+&lt;p&gt;今年春に先輩から誘われて8月ごろから設計を始めたマイクロマウス．&lt;br /&gt;
+11月に開催された全日本マイクロマウス大会2016に出場してきました！&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

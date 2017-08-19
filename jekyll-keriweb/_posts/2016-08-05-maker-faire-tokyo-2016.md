@@ -4,7 +4,6 @@ title: "Maker Faire Tokyo 2016 に出展します！"
 category: "blogs"
 tags:
   - "Maker Faire Tokyo"
-  - "MFT2016"
   - "IR-Station"
   - "電子工作"
 icon: "logo.jpg"

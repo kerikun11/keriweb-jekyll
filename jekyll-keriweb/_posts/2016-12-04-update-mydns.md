@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "CrontabでMyDNS.jpのIP通知"
-category: memos
-tag:
+category: "memos"
+tags:
  - "サーバー"
- - "MyDNS.jp"
  - "Crontab"
  - "DDNS"
 ---

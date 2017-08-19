@@ -3,11 +3,8 @@ layout: post
 title: "IR-Stationの赤外線ダウンロード機能"
 category: "works"
 tags:
-  - "IR-Station"
   - "電子工作"
-  - "HTML"
-  - "CSS"
-  - "JavaScript"
+  - "IR-Station"
   - "ESP-WROOM-02"
   - "ESP8266"
   - "赤外線学習リモコン"

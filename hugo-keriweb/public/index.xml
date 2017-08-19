@@ -33,6 +33,42 @@
     </item>
     
     <item>
+      <title>カテゴリー</title>
+      <link>http://kerikeri.top/categories/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/categories/</guid>
+      <description>イベント 内容 運用関連や，参加したイベントについての記事です． 対象の読み手 このブログに興味のある方 作品紹介 内容 私が作ったものや発見したことの紹</description>
+    </item>
+    
+    <item>
+      <title>タグ</title>
+      <link>http://kerikeri.top/tags/</link>
+      <pubDate>Sat, 19 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>アーカイブ</title>
+      <link>http://kerikeri.top/archives/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ESP-WROOM-32の短冊基板の紹介</title>
+      <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</guid>
+      <description>また作ったESP-WROOM-32の変換基板 以前にも C基板型ESP-WROOM-32ブレークアウト基板 台形型ESP32-WROOM-32ブレ</description>
+    </item>
+    
+    <item>
       <title>ESP32とMicro SDカード</title>
       <link>http://kerikeri.top/posts/2017-07-29-esp32-wifi-sd/</link>
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
@@ -179,7 +215,7 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
     </item>
     
     <item>
-      <title>ESP-WROOM-32からメールを送る</title>
+      <title>ESP32からメールを送る</title>
       <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
@@ -489,84 +525,6 @@ KERISEv1&lt;/p&gt;
 &lt;p&gt;久しぶりにPICの話題です．しばらくESP8266やARMマイコンなど，上級のマイコンを使っていましたが，またPICを使ってみたくなりました．&lt;/p&gt;
 
 &lt;p&gt;他のマイコンには真似できないような超低消費電力の時計を作ってみました．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PICでリアルタイムクロック</title>
-      <link>http://kerikeri.top/posts/2016-09-02-pic-rtcc/</link>
-      <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-09-02-pic-rtcc/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;PIC18F27J53は，リアルタイムクロック&amp;amp;カレンダー(RTCC)モジュールをハードウェアで持っています．今回はそれを使用するためのライブラリを作ったので紹介します．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ラズパイでミュージックサーバー</title>
-      <link>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-09-01-raspi-music-server/</guid>
-      <description>&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
-
-&lt;h3 id=&#34;ラズパイミュージックサーバー&#34;&gt;ラズパイミュージックサーバー&lt;/h3&gt;
-
-&lt;p&gt;スマートフォンでコントロールできるステレオコンポです．&lt;/p&gt;
-
-&lt;figure &gt;
-	
-		
-		&lt;figcaption&gt;
-			&lt;h4&gt;ミュージックサーバー&lt;/h4&gt;
-		&lt;/figcaption&gt;
-		
-		&lt;img src=&#34;music-server.jpg&#34; alt=&#34;ミュージックサーバー&#34; style=&#34;width: 480px;&#34;/&gt;
-	
-&lt;/figure&gt;
-
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>VolumioでiTunesのプレイリストを使う</title>
-      <link>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</link>
-      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-08-31-volumio-playlist/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&#34;volumio&#34;&gt;Volumio&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Volumio&lt;/strong&gt;というミュージックサーバーソフトウェアがある．&lt;/p&gt;
-
-&lt;p&gt;ラズベリーパイにVolumioのOSを書き込むだけで，ミュージックサーバーが出来上がるし，Air Playや，SMBにも対応していて，素晴らしいものだ．&lt;/p&gt;
-
-&lt;h3 id=&#34;プレイリスト問題&#34;&gt;プレイリスト問題&lt;/h3&gt;
-
-&lt;p&gt;しかし，そのプレイリストは独自の形式で，iTunesなどのプレイリストを読み込むことができず，新たに作らなくてはならない．&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;めんどくさい！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;ということで，今回は，iTunesのプレイリストをvolumioのプレイリストに変換するスクリプトを紹介する．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ブログを更新するスクリプト</title>
-      <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
-      <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
-      <description>&lt;h2 id=&#34;github上にあるブログを同期するシェルスクリプト&#34;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
-
-&lt;p&gt;自分用のメモ&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

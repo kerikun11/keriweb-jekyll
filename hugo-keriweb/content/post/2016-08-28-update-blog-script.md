@@ -7,6 +7,7 @@ categories:
 tags:
   - "Raspberry Pi"
   - "シェルスクリプト"
+  - "ブログ"
 thumbnail: "/posts/2016-08-28-update-blog-script/icon.png"
 ---
 

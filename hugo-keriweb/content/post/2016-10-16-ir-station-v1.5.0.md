@@ -4,7 +4,7 @@ title: "IR-Station v1.5.0 アップデート"
 slug: "ir-station-v1.5.0"
 categories:
   - "作品紹介"
-tag:
+tags:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "ESP-WROOM-02"

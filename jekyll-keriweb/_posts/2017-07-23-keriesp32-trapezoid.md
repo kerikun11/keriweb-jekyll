@@ -4,7 +4,8 @@ title: "KERIESP32 Trapezoid"
 category: "works"
 tags:
   - "電子工作"
-  - "ESP32"
+  - "ESP-WROOM-32"
+  - "KiCad"
 icon: "icon.png"
 ---
 

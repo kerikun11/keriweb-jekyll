@@ -5,6 +5,7 @@ slug: "ssh-port-forwarding"
 categories:
   - "備忘録"
 tags:
+  - "ターミナル"
   - "SSH"
 ---
 

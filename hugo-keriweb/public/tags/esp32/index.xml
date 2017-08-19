@@ -28,19 +28,6 @@
     </item>
     
     <item>
-      <title>KERIESP32 Trapezoid</title>
-      <link>http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/</link>
-      <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-07-23-keriesp32-trapezoid/</guid>
-      <description>&lt;h2 id=&#34;esp-wroom-32のブレークアウトボード&#34;&gt;ESP-WROOM-32のブレークアウトボード&lt;/h2&gt;
-
-&lt;p&gt;WiFiとBluetoothが載ったデュアルコアなマイコン&lt;strong&gt;ESP32&lt;/strong&gt;のピッチ変換基板を新たに作ったので紹介します．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>秋月の時計キットをNTP時計化</title>
       <link>http://kerikeri.top/posts/2017-07-23-aki-clock/</link>
       <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
@@ -118,7 +105,7 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
     </item>
     
     <item>
-      <title>ESP-WROOM-32からメールを送る</title>
+      <title>ESP32からメールを送る</title>
       <link>http://kerikeri.top/posts/2017-04-08-esp32-mail/</link>
       <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
@@ -170,33 +157,6 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
 		&lt;/figcaption&gt;
 		
 		&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
-	
-&lt;/figure&gt;
-
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ESP-WROOM-32のピッチ変換</title>
-      <link>http://kerikeri.top/posts/2017-02-05-first-esp32/</link>
-      <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-02-05-first-esp32/</guid>
-      <description>&lt;h2 id=&#34;格安wifi-bleモジュール-esp-wroom-32&#34;&gt;格安WiFi+BLEモジュール「ESP-WROOM-32」&lt;/h2&gt;
-
-&lt;p&gt;ついにESP32が日本にやってまいりました．海外では既に話題になっていたのですが，日本では技適を取得するまで使うことができなかったのであまり知っている人はいないかもしれません．これから話題になるでしょう．&lt;/p&gt;
-
-&lt;p&gt;秋月電子で買うことができます→&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;リンク&lt;/a&gt;&lt;/p&gt;
-
-&lt;figure &gt;
-	
-		
-		&lt;figcaption&gt;
-			&lt;h4&gt;ESP-WROOM-32&lt;/h4&gt;
-		&lt;/figcaption&gt;
-		
-		&lt;img src=&#34;esp32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
 	
 &lt;/figure&gt;
 

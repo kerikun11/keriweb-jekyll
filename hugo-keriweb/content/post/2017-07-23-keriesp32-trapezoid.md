@@ -5,7 +5,8 @@ slug: "keriesp32-trapezoid"
 categories:
   - "作品紹介"
 tags:
-  - "ESP32"
+  - "ESP-WROOM-32"
+  - "KiCad"
 thumbnail: "/posts/2017-07-23-keriesp32-trapezoid/icon.png"
 ---
 
@@ -58,14 +59,13 @@ ESP32はSDIOを持っており，SDカードと高速に通信することがで
 
 Micro SDカードを使わない場合はSDスロットをはんだ付けしなければ，SDカード用のI/Oピンは自由に使うことができます．
 
-裏側  
 {{< postfig src="back.jpg" title="裏側" width="480px" >}}
 
 ## 回路図
 
 とてもシンプルです．
 
-{{< postfig src="sketch.png" title="回路図" width="720px" link="sketch.png" >}}
+{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
 
 ## まとめ
 

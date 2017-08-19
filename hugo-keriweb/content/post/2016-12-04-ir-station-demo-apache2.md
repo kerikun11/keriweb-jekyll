@@ -2,10 +2,11 @@
 date: "2016-12-04"
 title: "Apache2でIR-Stationデモ"
 slug: "ir-station-demo-apache2"
-category: memos
-tag:
+categories:
+  - "備忘録"
+tags:
  - "サーバー"
- - "ラズパイ"
+ - "Raspberry Pi"
  - "Apache2"
  - "IR-Station"
  - "Sinatra"

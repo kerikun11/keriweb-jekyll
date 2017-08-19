@@ -8,7 +8,6 @@ tags:
   - "PIC"
   - "PIC18F27J53"
   - "時計"
-  - "7セグメントLED"
 thumbnail: "/posts/2016-09-12-low-power-clock/icon.jpg"
 ---
 
