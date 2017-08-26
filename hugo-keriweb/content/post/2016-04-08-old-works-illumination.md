@@ -5,7 +5,7 @@ slug: "old-works-illumination"
 categories:
   - "作品紹介"
 tags:
-thumbnail: "/posts/2016-04-08-old-works-illumination/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

@@ -5,7 +5,7 @@ slug: "old-works-audio"
 categories:
   - "作品紹介"
 tags:
-thumbnail: "/posts/2016-04-08-old-works-audio/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

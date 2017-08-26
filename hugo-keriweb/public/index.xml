@@ -60,6 +60,23 @@
     </item>
     
     <item>
+      <title>HPをHugoに移行しました</title>
+      <link>http://kerikeri.top/posts/2017-08-26-hugo-migration/</link>
+      <pubDate>Sat, 26 Aug 2017 09:09:01 +0900</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-26-hugo-migration/</guid>
+      <description>&lt;h2 id=&#34;以前のkeri-s-lab&#34;&gt;以前のKERI&amp;rsquo;s Lab&lt;/h2&gt;
+
+&lt;h3 id=&#34;jekyllを使っていた&#34;&gt;Jekyllを使っていた&lt;/h3&gt;
+
+&lt;p&gt;以前のKERI&amp;rsquo;s LabのHPは，静的ブログジェネレータである&lt;a href=&#34;https://jekyllrb-ja.github.io://jekyllrb-ja.github.io/&#34; target=&#34;_blank&#34;&gt;Jekyll&lt;/a&gt;で生成されていました．&lt;/p&gt;
+
+&lt;p&gt;Jekyllは，静的ブログジェネレータの中で最も有名なものの1つです．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>ESP-WROOM-32の短冊基板の紹介</title>
       <link>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</link>
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
@@ -508,23 +525,6 @@ KERISEv1&lt;/p&gt;
 &lt;p&gt;この度，IR-Stationのファームウェアがv1.5.0にアップデートされ，新機能が追加されました．&lt;/p&gt;
 
 &lt;p&gt;IR-Stationについては，&lt;a href=&#34;http://kerikeri.top/tags/#tag-index-IR-Station&#34;&gt;IR-Stationについての記事一覧&lt;/a&gt;をご覧ください．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PICで省エネ時計を作る</title>
-      <link>http://kerikeri.top/posts/2016-09-12-low-power-clock/</link>
-      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-09-12-low-power-clock/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&#34;picで時計&#34;&gt;PICで時計&lt;/h3&gt;
-
-&lt;p&gt;久しぶりにPICの話題です．しばらくESP8266やARMマイコンなど，上級のマイコンを使っていましたが，またPICを使ってみたくなりました．&lt;/p&gt;
-
-&lt;p&gt;他のマイコンには真似できないような超低消費電力の時計を作ってみました．&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

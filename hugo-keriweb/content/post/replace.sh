@@ -22,13 +22,13 @@ do
 		-i -e 's/category: "\?memos"\?/categories:\n  - "備忘録"/g' \
 		-i -e 's/category: "\?explanations"\?/categories:\n  - "説明記事"/g' \
 		-i -e 's/category: "\?blogs"\?/categories:\n  - "イベント"/g' \
-		-i -e 's/^icon: "\(.\+\)"/thumbnail: "\/posts\/'$date'-'$slug'\/\1"/g' \
+		-i -e 's/^icon: "\(.\+\)"/thumbnail: "\1"/g' \
 		-i -e 's/{% highlight \(.\+\) %}/~~~\1/g' \
 		-i -e 's/{% endhighlight %}/~~~/g' \
 		-i -e 's/^!\[\(.\+\)\](\(.\+\)){:\s*.img-small\s*}/{{< postfig src="\2" title="\1" width="240px" >}}/g' \
 		-i -e 's/^!\[\(.\+\)\](\(.\+\)){:\s*.img-medium\s*}/{{< postfig src="\2" title="\1" width="480px" >}}/g' \
 		-i -e 's/^!\[\(.\+\)\](\(.\+\))/{{< postfig src="\2" title="\1" >}}/g' \
-		-i -e 's/^\[!\[\([^]]*\)](\([^)]*\))](\([^)]\+\))/{{< postfig src="\2" title="\1" width="240px" link="\3" >}}/g' \
+		-i -e 's/^\[!\[\([^]]*\)](\([^)]*\))](\([^)]\+\))/{{< postfig src="\2" title="\1" link="\3" >}}/g' \
 		-i -e 's/^\[!\[\([^]]*\)](\([^)]*\)){:\s*\.img-small\s*}.*](\([^)]\+\))/{{< postfig src="\2" title="\1" width="240px" link="\3" >}}/g' \
 		-i -e 's/^\[\([^<]*\)<br\/>!\[[^]]*](\([^)]*\))](\(.*\))/{{< postfig src="\2" title="\1" link="\3" >}}/g' \
 		-i -e 's/{% post_url \(.\+\) %}/\/posts\/\1\//g' \

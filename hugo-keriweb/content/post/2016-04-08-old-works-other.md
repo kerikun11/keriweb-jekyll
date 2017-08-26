@@ -5,7 +5,7 @@ slug: "old-works-other"
 categories:
   - "作品紹介"
 tags:
-thumbnail: "/posts/2016-04-08-old-works-other/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

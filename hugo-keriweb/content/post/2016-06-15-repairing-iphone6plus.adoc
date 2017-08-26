@@ -7,7 +7,7 @@ categories:
 tags:
   - "iPhone"
   - "分解"
-thumbnail: "/posts/2016-06-15-repairing-iphone6plus/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 == 概要

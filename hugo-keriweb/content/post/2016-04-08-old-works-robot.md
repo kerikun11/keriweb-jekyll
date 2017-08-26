@@ -6,7 +6,7 @@ categories:
   - "作品紹介"
 tags:
   - "ロボコン"
-thumbnail: "/posts/2016-04-08-old-works-robot/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## 概要

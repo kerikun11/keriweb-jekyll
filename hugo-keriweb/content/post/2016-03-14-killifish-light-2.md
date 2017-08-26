@@ -11,7 +11,7 @@ tags:
   - "サーバー"
   - "めだか"
   - "Arduino"
-thumbnail: "/posts/2016-03-14-killifish-light-2/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## 概要
@@ -65,7 +65,7 @@ Dサイズのユニバーサル基板に実装しました。回路はとても�
 
 ### 回路図
 
-{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
+{{< postfig src="sketch.png" title="回路図" link="sketch.png" >}}
 
 ### スマホからの操作画面
 

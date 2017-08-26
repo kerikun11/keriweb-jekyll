@@ -5,7 +5,7 @@ slug: "create-cpu"
 categories:
   - "作品紹介"
 tags:
-thumbnail: "/posts/2015-11-04-create-cpu/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 書籍「CPUの創り方」（2003年）渡波郁 著

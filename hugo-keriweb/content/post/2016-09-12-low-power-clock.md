@@ -8,7 +8,7 @@ tags:
   - "PIC"
   - "PIC18F27J53"
   - "時計"
-thumbnail: "/posts/2016-09-12-low-power-clock/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要
@@ -382,7 +382,7 @@ void print_7seg(uint8_t col, char c) {
 
 7セグLEDは[こちら](http://akizukidenshi.com/catalog/g/gI-09964/)を使いました．
 
-{{< postfig src="circuit-diagram.png" title="回路図" width="240px" link="circuit-diagram.png" >}}
+{{< postfig src="circuit-diagram.png" title="回路図" link="circuit-diagram.png" >}}
 
 ## まとめ
 

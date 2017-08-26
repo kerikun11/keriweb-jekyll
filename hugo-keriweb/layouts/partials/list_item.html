@@ -1,10 +1,16 @@
 <article class="list__item post clearfix">
+	{{- if .Params.thumbnail }}
 	<figure class="list__thumbnail">
 		<a href="{{ .RelPermalink }}">
-			<img src="{{ (.Params.thumbnail | default .Site.Params.thumbnailDefault) | relURL }}" alt="{{ .Title }}" />
+			<img src="{{ .RelPermalink }}{{ (.Params.thumbnail | default .Site.Params.thumbnailDefault) | relURL }}" alt="{{ .Title }}" />
 		</a>
 	</figure>
-	{{- if .Params.thumbnail }}
+	{{- else }}
+	<figure class="list__thumbnail">
+		<a href="{{ .RelPermalink }}">
+			<img src="{{ .Site.Params.thumbnailDefault | relURL }}" alt="{{ .Title }}" />
+		</a>
+	</figure>
 	{{- end }}
 	<div class="list__content clearfix">
 		<header class="list__header">

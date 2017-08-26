@@ -7,7 +7,7 @@ categories:
 tags:
   - "回路講習会"
   - "ロボット技術研究会"
-thumbnail: "/posts/2016-05-18-circuit-lecture/icon.png"
+thumbnail: "icon.png"
 ---
 
 

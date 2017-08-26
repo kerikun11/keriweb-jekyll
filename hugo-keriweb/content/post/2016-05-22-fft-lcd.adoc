@@ -7,7 +7,7 @@ categories:
 tags:
   - "FFT"
   - "Nucleo"
-thumbnail: "/posts/2016-05-22-fft-lcd/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 == 概要

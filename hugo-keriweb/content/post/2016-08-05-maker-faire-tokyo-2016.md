@@ -7,7 +7,7 @@ categories:
 tags:
   - "Maker Faire Tokyo"
   - "IR-Station"
-thumbnail: "/posts/2016-08-05-maker-faire-tokyo-2016/logo.jpg"
+thumbnail: "logo.jpg"
 ---
 
 ## Maker Faire Tokyo 2016

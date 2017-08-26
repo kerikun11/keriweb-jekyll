@@ -7,7 +7,7 @@ categories:
 tags:
   - "Raspberry Pi"
   - "サーバー"
-thumbnail: "/posts/2016-08-28-raspi-setup/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## はじめに

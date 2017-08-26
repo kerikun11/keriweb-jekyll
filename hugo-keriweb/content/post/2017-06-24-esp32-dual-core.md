@@ -8,7 +8,7 @@ tags:
   - "ESP32"
   - "FreeRTOS"
   - "Arduino"
-thumbnail: "/posts/2017-06-24-esp32-dual-core/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

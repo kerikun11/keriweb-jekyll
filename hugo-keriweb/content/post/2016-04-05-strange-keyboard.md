@@ -10,7 +10,7 @@ tags:
   - "キーボード"
   - "電光掲示板"
   - "ドットマトリクスLED"
-thumbnail: "/posts/2016-04-05-strange-keyboard/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## つくったもの

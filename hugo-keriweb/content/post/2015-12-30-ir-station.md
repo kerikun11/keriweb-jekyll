@@ -10,7 +10,7 @@ tags:
   - "ESP-WROOM-02"
   - "Arduino"
   - "WiFi"
-thumbnail: "/posts/2015-12-30-ir-station/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## ESP8266とは 

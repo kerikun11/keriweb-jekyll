@@ -9,10 +9,27 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Aug 2017 09:09:01 +0900</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HPをHugoに移行しました</title>
+      <link>http://kerikeri.top/posts/2017-08-26-hugo-migration/</link>
+      <pubDate>Sat, 26 Aug 2017 09:09:01 +0900</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-26-hugo-migration/</guid>
+      <description>&lt;h2 id=&#34;以前のkeri-s-lab&#34;&gt;以前のKERI&amp;rsquo;s Lab&lt;/h2&gt;
+
+&lt;h3 id=&#34;jekyllを使っていた&#34;&gt;Jekyllを使っていた&lt;/h3&gt;
+
+&lt;p&gt;以前のKERI&amp;rsquo;s LabのHPは，静的ブログジェネレータである&lt;a href=&#34;https://jekyllrb-ja.github.io://jekyllrb-ja.github.io/&#34; target=&#34;_blank&#34;&gt;Jekyll&lt;/a&gt;で生成されていました．&lt;/p&gt;
+
+&lt;p&gt;Jekyllは，静的ブログジェネレータの中で最も有名なものの1つです．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ブログのサーバーをラズパイ3からPINE64 A&#43;に移行</title>

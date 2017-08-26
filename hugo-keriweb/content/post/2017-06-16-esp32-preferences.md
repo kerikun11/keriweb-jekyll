@@ -7,7 +7,7 @@ categories:
 tags:
   - "ESP32"
   - "Arduino"
-thumbnail: "/posts/2017-06-16-esp32-preferences/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

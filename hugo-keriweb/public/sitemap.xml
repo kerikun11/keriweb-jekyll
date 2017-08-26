@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>http://kerikeri.top/posts/2017-08-26-hugo-migration/</loc>
+    <lastmod>2017-08-26T09:09:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kerikeri.top/posts/2017-08-18-esp32-sip-board/</loc>
     <lastmod>2017-08-18T00:00:00+00:00</lastmod>
   </url>
@@ -547,6 +552,12 @@
   </url>
   
   <url>
+    <loc>http://kerikeri.top/tags/hugo/</loc>
+    <lastmod>2017-08-26T09:09:01+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://kerikeri.top/tags/iphone/</loc>
     <lastmod>2016-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -680,7 +691,7 @@
   
   <url>
     <loc>http://kerikeri.top/post/</loc>
-    <lastmod>2017-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-26T09:09:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -836,7 +847,7 @@
   
   <url>
     <loc>http://kerikeri.top/categories/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/</loc>
-    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-26T09:09:01+09:00</lastmod>
     <priority>0</priority>
   </url>
   

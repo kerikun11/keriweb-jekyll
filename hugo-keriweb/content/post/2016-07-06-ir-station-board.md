@@ -6,7 +6,7 @@ categories:
   - "作品紹介"
 tags:
   - "IR-Station"
-thumbnail: "/posts/2016-07-06-ir-station-board/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 基板が届きました

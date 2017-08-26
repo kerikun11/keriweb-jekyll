@@ -7,7 +7,7 @@ categories:
 tags:
   - "KERISEv3"
   - "マイクロマウス"
-thumbnail: "/posts/2017-03-28-kerisev3-coming/icon.jpg"
+thumbnail: "icon.jpg"
 pickup: true
 ---
 

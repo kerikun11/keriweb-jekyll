@@ -7,7 +7,7 @@ categories:
 tags:
   - "ESP-WROOM-32"
   - "KiCad"
-thumbnail: "/posts/2017-08-18-esp32-sip-board/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## また作ったESP-WROOM-32の変換基板
@@ -55,7 +55,7 @@ ESP32を開発する際，プログラムを修正しては書き込んでを繰
 
 ## 回路図
 
-{{< postfig src="keriesp32-diagram.png" title="回路図" width="240px" link="keriesp32-diagram.png" >}}
+{{< postfig src="keriesp32-diagram.png" title="回路図" link="keriesp32-diagram.png" >}}
 
 ## 部品表
 

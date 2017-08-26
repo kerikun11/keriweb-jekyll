@@ -8,7 +8,7 @@ tags:
   - "Raspberry Pi"
   - "ミュージックサーバー"
   - "Volumio"
-thumbnail: "/posts/2016-09-01-raspi-music-server/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 作ったもの

@@ -10,7 +10,7 @@ tags:
   - "Arduino"
   - "ソーラー"
   - "電力"
-thumbnail: "/posts/2016-04-20-power-monitor/img.jpg"
+thumbnail: "img.jpg"
 ---
 
 ## 概要

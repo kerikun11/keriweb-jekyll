@@ -8,7 +8,7 @@ tags:
   - "IR-Station"
   - "赤外線学習リモコン"
   - "Sinatra"
-thumbnail: "/posts/2016-10-20-ir-station-demo/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## IR-Stationの操作を体験できます！

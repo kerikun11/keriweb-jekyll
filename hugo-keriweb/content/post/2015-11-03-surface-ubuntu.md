@@ -10,7 +10,7 @@ tags:
   - "Ubuntu"
   - "Linux"
   - "UEFI"
-thumbnail: "/posts/2015-11-03-surface-ubuntu/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 ## UEFIとは  
 　BIOSの代わりに最近のパソコンに導入されたインターフェース。BIOS特有の制約を解消したものと言える。UEFI環境でブートするには、ディスクの先頭にUEFIシステムパティションというものを置かなければならない。

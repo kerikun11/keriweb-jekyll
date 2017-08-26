@@ -7,7 +7,7 @@ categories:
 tags:
   - "Jekyll"
   - "Asciidoc"
-thumbnail: "/posts/2016-05-26-syntax/icon.png"
+thumbnail: "icon.png"
 ---
 
 == Jekyllのシンタックスハイライトテーマを変更する

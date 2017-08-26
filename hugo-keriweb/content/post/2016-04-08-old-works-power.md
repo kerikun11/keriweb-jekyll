@@ -6,7 +6,7 @@ categories:
   - "作品紹介"
 tags:
   - "電力"
-thumbnail: "/posts/2016-04-08-old-works-power/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## 概要

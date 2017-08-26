@@ -8,7 +8,7 @@ tags:
   - "Li-Po"
   - "U-Micro"
   - "マイクロマウス"
-thumbnail: "/posts/2017-07-02-u-micro-connector/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## U-Microコネクタとは

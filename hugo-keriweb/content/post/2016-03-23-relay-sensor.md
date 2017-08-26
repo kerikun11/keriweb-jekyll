@@ -8,7 +8,7 @@ tags:
   - "ESP-WROOM-02"
   - "ESP8266"
   - "Arduino"
-thumbnail: "/posts/2016-03-23-relay-sensor/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要
@@ -66,7 +66,7 @@ ESP8266という高性能マイコンを積んだ話題のESP-WROOM-02モジュ�
 
 ## 回路図
 
-{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
+{{< postfig src="sketch.png" title="回路図" link="sketch.png" >}}
 
 ## ソースファイル
 

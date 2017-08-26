@@ -12,7 +12,7 @@ tags:
   - "Arduino"
   - "IR-Station"
 pickup: true
-thumbnail: "/posts/2016-07-18-ir-station/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## 概要

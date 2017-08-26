@@ -9,7 +9,7 @@ tags:
   - "Remote Control"
   - "Wi-Fi"
   - "ESP-WROOM-02"
-thumbnail: "/posts/2016-03-11-ir-station-reference/icon.jpg"
+thumbnail: "icon.jpg"
 ---
 
 ## IR-Station

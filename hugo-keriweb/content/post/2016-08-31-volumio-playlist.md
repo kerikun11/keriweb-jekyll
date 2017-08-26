@@ -9,7 +9,7 @@ tags:
   - "ミュージックサーバー"
   - "Volumio"
   - "iTunes"
-thumbnail: "/posts/2016-08-31-volumio-playlist/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## 概要

@@ -7,7 +7,7 @@ categories:
 tags:
   - "ESP-WROOM-32"
   - "KiCad"
-thumbnail: "/posts/2017-07-23-keriesp32-trapezoid/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## ESP-WROOM-32のブレークアウトボード
@@ -65,7 +65,7 @@ Micro SDカードを使わない場合はSDスロットをはんだ付けしな�
 
 とてもシンプルです．
 
-{{< postfig src="sketch.png" title="回路図" width="240px" link="sketch.png" >}}
+{{< postfig src="sketch.png" title="回路図" link="sketch.png" >}}
 
 ## まとめ
 

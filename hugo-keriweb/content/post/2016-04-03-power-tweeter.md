@@ -12,7 +12,7 @@ tags:
   - "電力"
   - "bot"
   - "Arduino"
-thumbnail: "/posts/2016-04-03-power-tweeter/icon.png"
+thumbnail: "icon.png"
 ---
 
 ## 概要
