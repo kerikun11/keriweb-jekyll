@@ -36,6 +36,8 @@ Charge Stationとは，携帯電話の充電器です．充電が終了すると
 
 ## 100W級ソーラーシステム
 
+自宅のベランダに100Wのソーラーパネルを設置し，ソーラー発電システムを作りました．
+
 [ソーラーの記事一覧](/tags/ソーラー/)
 {{< postfig src="solar.jpg" title="ソーラーパネル" width="240px" link="/tags/ソーラー/" >}}
 
@@ -45,6 +47,8 @@ Charge Stationとは，携帯電話の充電器です．充電が終了すると
 {{< postfig src="killifish-light.jpg" title="めだかの照明" width="240px" link="/tags/めだか/" >}}
 
 ## 電力つぶやきbot
+
+ソーラーの電力をつぶやくbotです．ESP-WROOM-02で作りました．
 
 [botの記事一覧](/tags/bot/)
 {{< postfig src="power-tweeter.png" title="電力つぶやきbot" width="240px" link="/tags/bot/" >}}
@@ -62,6 +66,8 @@ Charge Stationとは，携帯電話の充電器です．充電が終了すると
 {{< postfig src="music-server.jpg" title="ミュージックサーバー" width="240px" link="/tags/raspberry-pi/" >}}
 
 ## 変なキーボード
+
+PICマイコンを使ってダイヤル式のキーボードとその表示器を作りました．
 
 [PICの記事一覧](/tags/pic/)
 {{< postfig src="strange-keyboard.png" title="変なキーボード" width="240px" link="/tags/キーボード/" >}}

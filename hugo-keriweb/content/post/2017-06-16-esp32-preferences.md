@@ -3,7 +3,7 @@ date: "2017-06-16"
 title: "ESP32の設定管理ライブラリの紹介"
 slug: "esp32-preferences"
 categories:
-  - "紹介記事"
+  - "説明記事"
 tags:
   - "ESP32"
   - "Arduino"

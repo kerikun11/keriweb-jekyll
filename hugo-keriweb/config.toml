@@ -9,10 +9,11 @@ hasCJKLanguage = true
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 rssLimit = 30 #default: 15
 #rssuri = "feed.xml" # default: "index.xml"
+newContentEditor = "vim"
 
 [Author]
 	name = "KERI"
-	bio = "制御工学を専攻する大学4年生．趣味は電子工作．最近はESP32に興味あり．マイクロマウスに挑戦中．"
+	bio = "某工業大学のロボット技術研究会所属．趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．"
 	avatar = "/img/avatar.png"
 	email = "kerikun11+web@gmail.com"
     location = "Earth"

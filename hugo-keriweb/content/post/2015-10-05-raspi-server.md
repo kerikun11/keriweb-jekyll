@@ -3,7 +3,7 @@ date: "2015-10-05"
 title: "Raspberry Pi 2 Type Bでサーバー作り"
 slug: "raspi-server"
 categories:
-  - "紹介記事"
+  - "説明記事"
 tags:
   - "Raspberry Pi"
   - "サーバー"

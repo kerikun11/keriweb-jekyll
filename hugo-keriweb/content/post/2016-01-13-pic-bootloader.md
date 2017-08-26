@@ -3,7 +3,7 @@ date: "2016-01-13"
 title: "PICでブートローダ"
 slug: "pic-bootloader"
 categories:
-  - "紹介記事"
+  - "説明記事"
 tags:
   - "PIC"
   - "PIC18F27J53"

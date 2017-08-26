@@ -3,7 +3,7 @@ date: "2016-04-22"
 title: "KiCadで自動配線"
 slug: "freerouting"
 categories:
-  - "紹介記事"
+  - "説明記事"
 tags:
   - "KiCad"
   - "自動配線"

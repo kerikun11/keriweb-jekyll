@@ -3,7 +3,7 @@ date: "2016-05-18"
 title: "回路講習会2015"
 slug: "circuit-lecture"
 categories:
-  - "紹介記事"
+  - "説明記事"
 tags:
   - "回路講習会"
   - "ロボット技術研究会"

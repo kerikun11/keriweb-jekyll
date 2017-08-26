@@ -20,7 +20,7 @@ do
 		-i -e 's/^\(title: .*\)/\1\nslug: "'$slug'"/g' \
 		-i -e 's/category: "\?works"\?/categories:\n  - "作品紹介"/g' \
 		-i -e 's/category: "\?memos"\?/categories:\n  - "備忘録"/g' \
-		-i -e 's/category: "\?explanations"\?/categories:\n  - "紹介記事"/g' \
+		-i -e 's/category: "\?explanations"\?/categories:\n  - "説明記事"/g' \
 		-i -e 's/category: "\?blogs"\?/categories:\n  - "イベント"/g' \
 		-i -e 's/^icon: "\(.\+\)"/thumbnail: "\/posts\/'$date'-'$slug'\/\1"/g' \
 		-i -e 's/{% highlight \(.\+\) %}/~~~\1/g' \
