@@ -276,7 +276,7 @@ ga('send', 'pageview');
 <span style="color: #408080; font-style: italic"> */</span>
 
 <span style="color: #BC7A00">#ifndef MY_RINGBUF_H</span>
-<span style="color: #BC7A00">#define	MY_RINGBUF_H</span>
+<span style="color: #BC7A00">#define MY_RINGBUF_H</span>
 
 <span style="color: #BC7A00">#include</span> <span style="color: #408080; font-style: italic">&lt;stdint.h&gt;</span><span style="color: #BC7A00"></span>
 
@@ -306,7 +306,7 @@ ga('send', 'pageview');
 
 <span style="color: #B00040">void</span> <span style="color: #0000FF">ringbuf_delete</span>(ringbuf_t <span style="color: #666666">*</span>rb);
 
-<span style="color: #BC7A00">#endif	</span><span style="color: #408080; font-style: italic">/* MY_RINGBUF_H */</span><span style="color: #BC7A00"></span>
+<span style="color: #BC7A00">#endif  </span><span style="color: #408080; font-style: italic">/* MY_RINGBUF_H */</span><span style="color: #BC7A00"></span>
 </pre></div>
 
 <h2 id="ライブラリファイルの追加">ライブラリファイルの追加</h2>
@@ -414,17 +414,17 @@ ga('send', 'pageview');
     <span style="color: #408080; font-style: italic">// メインループ</span>
     <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>) {
 
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理1 */</span>
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理1 */</span>
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
 
         <span style="color: #408080; font-style: italic">// ここで割り込みが起きる</span>
-	
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理2 */</span>
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
+    
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理2 */</span>
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
         
-	<span style="color: #408080; font-style: italic">// ここで割り込みが起きる</span>
+    <span style="color: #408080; font-style: italic">// ここで割り込みが起きる</span>
 
         __delay_ms(<span style="color: #666666">100</span>); <span style="color: #408080; font-style: italic">// delayなどは割り込み許可エリアに書く</span>
     }
@@ -440,8 +440,8 @@ ga('send', 'pageview');
 <h3 id="main-c">main.c</h3>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">/*</span>
 <span style="color: #408080; font-style: italic"> * PIC18F27J53用USB-CDCサンプルプログラム </span>
-<span style="color: #408080; font-style: italic"> * Date:	2016.01.08</span>
-<span style="color: #408080; font-style: italic"> * Author:	@Ryokeri</span>
+<span style="color: #408080; font-style: italic"> * Date:    2016.01.08</span>
+<span style="color: #408080; font-style: italic"> * Author:  @Ryokeri</span>
 <span style="color: #408080; font-style: italic"> */</span>
 
 <span style="color: #408080; font-style: italic">// CONFIG1L</span>
@@ -482,14 +482,14 @@ ga('send', 'pageview');
     USB_CDC_init();
 
     <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>) {
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
-	<span style="color: #408080; font-style: italic">// 受信したデータをそのまま送信する。</span>
-	<span style="color: #008000; font-weight: bold">if</span> (ringbuf_num(<span style="color: #666666">&amp;</span>usb_rx)) {
-	    <span style="color: #B00040">uint8_t</span> data <span style="color: #666666">=</span> ringbuf_pop(<span style="color: #666666">&amp;</span>usb_rx);
-	    ringbuf_put(<span style="color: #666666">&amp;</span>usb_tx, data);
-	}
-	USB_CDC_task();
-	INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 関数の二重呼び出しを防ぐために割り込み禁止</span>
+    <span style="color: #408080; font-style: italic">// 受信したデータをそのまま送信する。</span>
+    <span style="color: #008000; font-weight: bold">if</span> (ringbuf_num(<span style="color: #666666">&amp;</span>usb_rx)) {
+        <span style="color: #B00040">uint8_t</span> data <span style="color: #666666">=</span> ringbuf_pop(<span style="color: #666666">&amp;</span>usb_rx);
+        ringbuf_put(<span style="color: #666666">&amp;</span>usb_tx, data);
+    }
+    USB_CDC_task();
+    INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 割り込み禁止の解除</span>
     }
 }
 </pre></div>

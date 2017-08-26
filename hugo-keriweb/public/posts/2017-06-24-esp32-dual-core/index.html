@@ -185,25 +185,25 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
 
 <p>普段FreeRTOSでタスクを作成するときは</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BaseType_t <span style="color: #0000FF">xTaskCreate</span>(
-		TaskFunction_t pxTaskCode,         	<span style="color: #408080; font-style: italic">//&lt; タスクの関数ポインタ</span>
-		<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pcName,         	<span style="color: #408080; font-style: italic">//&lt; タスク名</span>
-		<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">uint16_t</span> usStackDepth,       	<span style="color: #408080; font-style: italic">//&lt; タスクのスタックサイズ</span>
-		<span style="color: #B00040">void</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pvParameters,         	<span style="color: #408080; font-style: italic">//&lt; タスク関数に渡す引数</span>
-		UBaseType_t uxPriority,            	<span style="color: #408080; font-style: italic">//&lt; タスクの優先度</span>
-		TaskHandle_t <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pxCreatedTask,	<span style="color: #408080; font-style: italic">//&lt; タスクのハンドル</span>
+        TaskFunction_t pxTaskCode,          <span style="color: #408080; font-style: italic">//&lt; タスクの関数ポインタ</span>
+        <span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pcName,          <span style="color: #408080; font-style: italic">//&lt; タスク名</span>
+        <span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">uint16_t</span> usStackDepth,        <span style="color: #408080; font-style: italic">//&lt; タスクのスタックサイズ</span>
+        <span style="color: #B00040">void</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pvParameters,          <span style="color: #408080; font-style: italic">//&lt; タスク関数に渡す引数</span>
+        UBaseType_t uxPriority,             <span style="color: #408080; font-style: italic">//&lt; タスクの優先度</span>
+        TaskHandle_t <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pxCreatedTask, <span style="color: #408080; font-style: italic">//&lt; タスクのハンドル</span>
 );
 </pre></div>
 
 <p>という関数を使いますが，代わりに</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>BaseType_t <span style="color: #0000FF">xTaskCreatePinnedToCore</span>(
-		TaskFunction_t pxTaskCode,         	<span style="color: #408080; font-style: italic">//&lt; タスクの関数ポインタ</span>
-		<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pcName,         	<span style="color: #408080; font-style: italic">//&lt; タスク名</span>
-		<span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">uint16_t</span> usStackDepth,       	<span style="color: #408080; font-style: italic">//&lt; タスクのスタックサイズ</span>
-		<span style="color: #B00040">void</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pvParameters,         	<span style="color: #408080; font-style: italic">//&lt; タスク関数に渡す引数</span>
-		UBaseType_t uxPriority,            	<span style="color: #408080; font-style: italic">//&lt; タスクの優先度</span>
-		TaskHandle_t <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pxCreatedTask,	<span style="color: #408080; font-style: italic">//&lt; タスクのハンドル</span>
-		<span style="color: #008000; font-weight: bold">const</span> BaseType_t xCoreID           	<span style="color: #408080; font-style: italic">//&lt; コア番号</span>
-	);
+        TaskFunction_t pxTaskCode,          <span style="color: #408080; font-style: italic">//&lt; タスクの関数ポインタ</span>
+        <span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">char</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pcName,          <span style="color: #408080; font-style: italic">//&lt; タスク名</span>
+        <span style="color: #008000; font-weight: bold">const</span> <span style="color: #B00040">uint16_t</span> usStackDepth,        <span style="color: #408080; font-style: italic">//&lt; タスクのスタックサイズ</span>
+        <span style="color: #B00040">void</span> <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pvParameters,          <span style="color: #408080; font-style: italic">//&lt; タスク関数に渡す引数</span>
+        UBaseType_t uxPriority,             <span style="color: #408080; font-style: italic">//&lt; タスクの優先度</span>
+        TaskHandle_t <span style="color: #666666">*</span> <span style="color: #008000; font-weight: bold">const</span> pxCreatedTask, <span style="color: #408080; font-style: italic">//&lt; タスクのハンドル</span>
+        <span style="color: #008000; font-weight: bold">const</span> BaseType_t xCoreID            <span style="color: #408080; font-style: italic">//&lt; コア番号</span>
+    );
 </pre></div>
 
 <p>という関数を使い，引数の最後に使用するCPUのコア番号を指定します．</p>

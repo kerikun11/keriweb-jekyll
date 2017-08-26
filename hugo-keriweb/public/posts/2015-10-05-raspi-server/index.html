@@ -144,17 +144,17 @@ iface lo inet loopback
 auto eth0
 allow-hotplug eth0
 iface eth0 inet static
-address 192.168.11.2	←your IP
-netmask 255.255.255.0	←your subnetmask
-gateway 192.168.11.1	←your router IP
+address 192.168.11.2    ←your IP
+netmask 255.255.255.0   ←your subnetmask
+gateway 192.168.11.1    ←your router IP
 dns-nameserver 8.8.8.8 10.255.0.1
 
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet static
-address 192.168.11.2	←your IP
-netmask 255.255.255.0	←your subnetmask
-gateway 192.168.11.1	←your router IP
+address 192.168.11.2    ←your IP
+netmask 255.255.255.0   ←your subnetmask
+gateway 192.168.11.1    ←your router IP
 dns-nameserver 8.8.8.8 10.255.0.1
 
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
@@ -173,13 +173,13 @@ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 ~~~
 network={
-	ssid=&quot;your SSID&quot;
+    ssid=&quot;your SSID&quot;
 #psk=&quot;Password&quot;
-		psk=&quot;.......&quot;
-		key_mgmt=WPA-PSK
-		proto=WPA WPA2
-		pairwise=CCMP TKIP
-		group=CCMP TKIP WEP104 WEP40
+        psk=&quot;.......&quot;
+        key_mgmt=WPA-PSK
+        proto=WPA WPA2
+        pairwise=CCMP TKIP
+        group=CCMP TKIP WEP104 WEP40
 }
 </code></pre>
 

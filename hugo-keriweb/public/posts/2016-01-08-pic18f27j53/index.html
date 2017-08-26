@@ -367,9 +367,9 @@ ga('send', 'pageview');
 <p>クロックは内蔵8MHzをPLLで6倍してできる、48MHzを使うのが一般的です。これはUSBとして使える周波数です。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">// OSC Settings</span>
 <span style="color: #B00040">void</span> <span style="color: #0000FF">OSC_init</span>(<span style="color: #B00040">void</span>){
-	OSCCONbits.IRCF <span style="color: #666666">=</span> <span style="color: #666666">7</span>;	<span style="color: #408080; font-style: italic">// 内蔵発振周波数は8MHz</span>
-	OSCTUNEbits.PLLEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;	<span style="color: #408080; font-style: italic">// PLL(x6)をEnable</span>
-	OSCCONbits.SCS <span style="color: #666666">=</span> <span style="color: #666666">0</span>;	<span style="color: #408080; font-style: italic">// クロックソースは内蔵発振or外部クロック</span>
+    OSCCONbits.IRCF <span style="color: #666666">=</span> <span style="color: #666666">7</span>;    <span style="color: #408080; font-style: italic">// 内蔵発振周波数は8MHz</span>
+    OSCTUNEbits.PLLEN <span style="color: #666666">=</span> <span style="color: #666666">1</span>;  <span style="color: #408080; font-style: italic">// PLL(x6)をEnable</span>
+    OSCCONbits.SCS <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// クロックソースは内蔵発振or外部クロック</span>
 }
 </pre></div>
 
@@ -386,14 +386,14 @@ ga('send', 'pageview');
 <p>内蔵プルアップはポートBのみについているので、デジタル入力はポートBでするのがいいでしょう。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">// I/O Port Settings</span>
 <span style="color: #B00040">void</span> <span style="color: #0000FF">IO_init</span>(<span style="color: #B00040">void</span>){
-	<span style="color: #408080; font-style: italic">// 0が出力、1が入力</span>
-	TRISA <span style="color: #666666">=</span>  <span style="color: #666666">0</span>bxxx1xxxx; <span style="color: #408080; font-style: italic">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0</span>
-	TRISB <span style="color: #666666">=</span>  <span style="color: #666666">0</span>bxx11xxxx; <span style="color: #408080; font-style: italic">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0</span>
-	TRISC <span style="color: #666666">=</span>  <span style="color: #666666">0</span>b10111x10; <span style="color: #408080; font-style: italic">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO</span>
-	<span style="color: #408080; font-style: italic">// 0がアナログ、1がデジタル</span>
-	ANCON0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b111xxxxx; <span style="color: #408080; font-style: italic">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)</span>
-	ANCON1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b000xxxxx; <span style="color: #408080; font-style: italic">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)</span>
-	INTCON2bits.RBPU <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// PORTB Pull-up Pnable</span>
+    <span style="color: #408080; font-style: italic">// 0が出力、1が入力</span>
+    TRISA <span style="color: #666666">=</span>  <span style="color: #666666">0</span>bxxx1xxxx; <span style="color: #408080; font-style: italic">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0</span>
+    TRISB <span style="color: #666666">=</span>  <span style="color: #666666">0</span>bxx11xxxx; <span style="color: #408080; font-style: italic">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0</span>
+    TRISC <span style="color: #666666">=</span>  <span style="color: #666666">0</span>b10111x10; <span style="color: #408080; font-style: italic">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO</span>
+    <span style="color: #408080; font-style: italic">// 0がアナログ、1がデジタル</span>
+    ANCON0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b111xxxxx; <span style="color: #408080; font-style: italic">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)</span>
+    ANCON1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>b000xxxxx; <span style="color: #408080; font-style: italic">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)</span>
+    INTCON2bits.RBPU <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// PORTB Pull-up Pnable</span>
 }
 </pre></div>
 
@@ -410,10 +410,10 @@ ga('send', 'pageview');
     T0CONbits.T08BIT <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 8-bit timer</span>
     T0CONbits.T0CS <span style="color: #666666">=</span> <span style="color: #666666">0</span>;   <span style="color: #408080; font-style: italic">// use internal-OSC</span>
     <span style="color: #008000; font-weight: bold">if</span> (prescaler <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
-	T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Not use prescaler</span>
+    T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Not use prescaler</span>
     } <span style="color: #008000; font-weight: bold">else</span> {
-	T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// use prescaler</span>
-	T0CONbits.T0PS <span style="color: #666666">=</span> prescaler <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
+    T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// use prescaler</span>
+    T0CONbits.T0PS <span style="color: #666666">=</span> prescaler <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
     }
     INTCONbits.T0IE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;    <span style="color: #408080; font-style: italic">// Timer 0 Enable</span>
     INTCONbits.TMR0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>;  <span style="color: #408080; font-style: italic">// interrupt Flag clear</span>
@@ -500,23 +500,23 @@ ga('send', 'pageview');
 <span style="color: #B00040">void</span> interrupt <span style="color: #0000FF">ISR</span>(<span style="color: #B00040">void</span>) {
     <span style="color: #408080; font-style: italic">// UART受信割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIE1bits.RCIE <span style="color: #666666">&amp;&amp;</span> PIR1bits.RCIF) {
-	<span style="color: #B00040">char</span> recv_char <span style="color: #666666">=</span> RCREG1; <span style="color: #408080; font-style: italic">// RCREG1を読み取ることで割り込みフラグはクリアされる</span>
-	<span style="color: #408080; font-style: italic">/* 受信データrecv_charを使った何らかの処理 */</span>
+    <span style="color: #B00040">char</span> recv_char <span style="color: #666666">=</span> RCREG1; <span style="color: #408080; font-style: italic">// RCREG1を読み取ることで割り込みフラグはクリアされる</span>
+    <span style="color: #408080; font-style: italic">/* 受信データrecv_charを使った何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ0割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (INTCONbits.T0IF <span style="color: #666666">&amp;&amp;</span> INTCONbits.T0IE) {
-	INTCONbits.T0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    INTCONbits.T0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ1割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIR1bits.TMR1IF <span style="color: #666666">&amp;&amp;</span> PIE1bits.TMR1IE) {
-	PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ3割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIR2bits.TMR3IF <span style="color: #666666">&amp;&amp;</span> PIE2bits.TMR3IE) {
-	PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
 }
 </pre></div>
@@ -548,8 +548,8 @@ ga('send', 'pageview');
 <p>このままコピペで動くはずです。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">/*</span>
 <span style="color: #408080; font-style: italic"> * PIC18F27J53用サンプルプログラム </span>
-<span style="color: #408080; font-style: italic"> * Date:	2016.01.08</span>
-<span style="color: #408080; font-style: italic"> * Author:	@Ryokeri</span>
+<span style="color: #408080; font-style: italic"> * Date:    2016.01.08</span>
+<span style="color: #408080; font-style: italic"> * Author:  @Ryokeri</span>
 <span style="color: #408080; font-style: italic"> */</span>
 <span style="color: #408080; font-style: italic">// CONFIG1L</span>
 <span style="color: #BC7A00">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF</span>
@@ -600,10 +600,10 @@ ga('send', 'pageview');
     T0CONbits.T08BIT <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// 8-bit timer</span>
     T0CONbits.T0CS <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// use internal-OSC</span>
     <span style="color: #008000; font-weight: bold">if</span> (prescaler <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
-	T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Not use prescaler</span>
+    T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Not use prescaler</span>
     } <span style="color: #008000; font-weight: bold">else</span> {
-	T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// use prescaler</span>
-	T0CONbits.T0PS <span style="color: #666666">=</span> prescaler <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
+    T0CONbits.PSA <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// use prescaler</span>
+    T0CONbits.T0PS <span style="color: #666666">=</span> prescaler <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
     }
     INTCONbits.T0IE <span style="color: #666666">=</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">// Timer 0 Enable</span>
     INTCONbits.TMR0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// interrupt Flag clear</span>
@@ -664,25 +664,25 @@ ga('send', 'pageview');
 <span style="color: #B00040">void</span> interrupt <span style="color: #0000FF">ISR</span>(<span style="color: #B00040">void</span>) {
     <span style="color: #408080; font-style: italic">// UART受信割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIE1bits.RCIE <span style="color: #666666">&amp;&amp;</span> PIR1bits.RCIF) {
-	<span style="color: #B00040">char</span> recv_char <span style="color: #666666">=</span> RCREG1; <span style="color: #408080; font-style: italic">// RCREG1を読み取ることで割り込みフラグはクリアされる</span>
-	tx_send(recv_char);
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    <span style="color: #B00040">char</span> recv_char <span style="color: #666666">=</span> RCREG1; <span style="color: #408080; font-style: italic">// RCREG1を読み取ることで割り込みフラグはクリアされる</span>
+    tx_send(recv_char);
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ0割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (INTCONbits.T0IF <span style="color: #666666">&amp;&amp;</span> INTCONbits.T0IE) {
-	INTCONbits.T0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    INTCONbits.T0IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ1割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIR1bits.TMR1IF <span style="color: #666666">&amp;&amp;</span> PIE1bits.TMR1IE) {
-	PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	TMR1H <span style="color: #666666">=</span> <span style="color: #666666">0xC0</span>; <span style="color: #408080; font-style: italic">// 0.5秒ごとの割り込みにするため</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    PIR1bits.TMR1IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    TMR1H <span style="color: #666666">=</span> <span style="color: #666666">0xC0</span>; <span style="color: #408080; font-style: italic">// 0.5秒ごとの割り込みにするため</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
     <span style="color: #408080; font-style: italic">// タイマ3割り込み処理</span>
     <span style="color: #008000; font-weight: bold">if</span> (PIR2bits.TMR3IF <span style="color: #666666">&amp;&amp;</span> PIE2bits.TMR3IE) {
-	PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
-	<span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
+    PIR2bits.TMR3IF <span style="color: #666666">=</span> <span style="color: #666666">0</span>; <span style="color: #408080; font-style: italic">// 割り込みフラグをクリア</span>
+    <span style="color: #408080; font-style: italic">/* 何らかの処理 */</span>
     }
 }
 <span style="color: #408080; font-style: italic">// main関数</span>
@@ -699,14 +699,14 @@ ga('send', 'pageview');
     INTCONbits.GIE <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
 
     <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">1</span>) {
-	<span style="color: #408080; font-style: italic">// UART送信</span>
-	tx_send(<span style="color: #BA2121">&#39;H&#39;</span>);
-	tx_send(<span style="color: #BA2121">&#39;e&#39;</span>);
-	tx_send(<span style="color: #BA2121">&#39;l&#39;</span>);
-	tx_send(<span style="color: #BA2121">&#39;l&#39;</span>);
-	tx_send(<span style="color: #BA2121">&#39;o&#39;</span>);
-	tx_send(<span style="color: #BA2121">&#39;\n&#39;</span>);
-	delay_ms(<span style="color: #666666">1000</span>);
+    <span style="color: #408080; font-style: italic">// UART送信</span>
+    tx_send(<span style="color: #BA2121">&#39;H&#39;</span>);
+    tx_send(<span style="color: #BA2121">&#39;e&#39;</span>);
+    tx_send(<span style="color: #BA2121">&#39;l&#39;</span>);
+    tx_send(<span style="color: #BA2121">&#39;l&#39;</span>);
+    tx_send(<span style="color: #BA2121">&#39;o&#39;</span>);
+    tx_send(<span style="color: #BA2121">&#39;\n&#39;</span>);
+    delay_ms(<span style="color: #666666">1000</span>);
     }
     <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">0</span>;
 }
