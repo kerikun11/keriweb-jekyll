@@ -1,7 +1,6 @@
 ---
 date: "2016-04-03"
 title: "電力つぶやきbot"
-slug: "power-tweeter"
 categories:
   - "作品紹介"
 tags:

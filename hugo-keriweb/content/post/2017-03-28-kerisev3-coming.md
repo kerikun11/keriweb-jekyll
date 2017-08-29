@@ -1,7 +1,6 @@
 ---
 date: "2017-03-28"
 title: "KERISE v3 ができました！"
-slug: "kerisev3-coming"
 categories:
   - "作品紹介"
 tags:

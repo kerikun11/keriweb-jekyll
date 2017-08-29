@@ -1,7 +1,6 @@
 ---
 date: "2016-05-22"
 title: "高速フーリエ変換でスペクトル表示"
-slug: "fft-lcd"
 categories:
   - "作品紹介"
 tags:

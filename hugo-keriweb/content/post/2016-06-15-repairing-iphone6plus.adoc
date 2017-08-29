@@ -1,7 +1,6 @@
 ---
 date: "2016-06-15"
 title: "割れちゃったiPhoneの液晶を直したお話"
-slug: "repairing-iphone6plus"
 categories:
   - "作品紹介"
 tags:

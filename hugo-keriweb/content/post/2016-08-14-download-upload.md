@@ -1,7 +1,6 @@
 ---
 date: "2016-08-14"
 title: "IR-Stationの赤外線ダウンロード機能"
-slug: "download-upload"
 categories:
   - "作品紹介"
 tags:

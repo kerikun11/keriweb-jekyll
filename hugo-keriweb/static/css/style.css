@@ -76,10 +76,12 @@ body {
 	//font-size: 16px;
 	//font-size: 0.875rem;
 	line-height: 1.6;
-	//background: #f7f7f7;
 	word-wrap: break-word;
+	background-image:url('/img/solar2.png');
 	background-image:url('/img/bgi.png');
-	background-image:url('/img/solar8.jpg');
+	background-image:url('/img/breadboard.png');
+	background-image:url('/img/solar.png');
+	background: #228;
 	background-repeat:repeat;
 }
 
@@ -700,7 +702,7 @@ select {
 /*** Author Box ***/
 .authorbox {
 	line-height: 1.5;
-	padding: 25px 0;
+	//padding: 25px 0;
 	margin-bottom: 25px;
 	border-top: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
@@ -764,7 +766,7 @@ select {
 
 .list__thumbnail img {
 	width: 100%;
-	max-width: 150px;
+	max-width: 120px;
 }
 
 .list__footer-readmore {

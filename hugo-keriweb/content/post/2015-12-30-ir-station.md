@@ -1,7 +1,6 @@
 ---
 date: "2015-12-30"
 title: "ESP8266で赤外線学習リモコン"
-slug: "ir-station"
 categories:
   - "作品紹介"
 tags:

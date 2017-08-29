@@ -1,7 +1,6 @@
 ---
 date: "2016-09-12"
 title: "PICで省エネ時計を作る"
-slug: "low-power-clock"
 categories:
   - "作品紹介"
 tags:

@@ -1,7 +1,6 @@
 ---
 date: "2016-03-11"
 title: "IR Station"
-slug: "ir-station-reference"
 categories:
   - "作品紹介"
 tags:

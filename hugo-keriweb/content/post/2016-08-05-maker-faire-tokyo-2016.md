@@ -1,7 +1,6 @@
 ---
 date: "2016-08-05"
 title: "Maker Faire Tokyo 2016 に出展します！"
-slug: "maker-faire-tokyo-2016"
 categories:
   - "イベント"
 tags:

@@ -13,7 +13,7 @@ newContentEditor = "vim"
 
 [Author]
 	name = "KERI"
-	bio = "某工業大学のロボット技術研究会所属．趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．"
+	bio = "趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．"
 	avatar = "/img/avatar.png"
 	email = "kerikun11+web@gmail.com"
     location = "Earth"
@@ -52,8 +52,7 @@ newContentEditor = "vim"
     social_email = "kerikun11+web@gmail.com"
 
 [permalinks]
-    post = "/posts/:year-:month-:day-:slug/"
-#    post = "/posts/:slug/"
+    post = "/posts/:filename/"
 
 [blackfriday]
 #   plainIDAnchors = true

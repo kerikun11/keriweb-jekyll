@@ -1,7 +1,6 @@
 ---
 date: "2016-03-14"
 title: "メダカの照明 Ver.2"
-slug: "killifish-light-2"
 categories:
   - "作品紹介"
 tags:

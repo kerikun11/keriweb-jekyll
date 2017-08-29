@@ -1,7 +1,6 @@
 ---
 date: "2017-07-02"
 title: "U-Microコネクタの正体"
-slug: "u-micro-connector"
 categories:
   - "備忘録"
 tags:

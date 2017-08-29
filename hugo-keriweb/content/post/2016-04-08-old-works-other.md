@@ -1,7 +1,6 @@
 ---
 date: "2016-04-08"
 title: "昔作った電子工作たち～その他～"
-slug: "old-works-other"
 categories:
   - "作品紹介"
 tags:

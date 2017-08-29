@@ -1,7 +1,6 @@
 ---
 date: "2016-04-08"
 title: "昔作った電子工作たち～in FRISK 編～"
-slug: "old-works-frisk"
 categories:
   - "作品紹介"
 tags:

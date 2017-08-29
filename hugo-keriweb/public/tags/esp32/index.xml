@@ -136,30 +136,21 @@ ESP-WROOM-32という700円ほどの無線モジュールの中に入ってい�
     </item>
     
     <item>
-      <title>ESP-WROOM-32のブレイクアウトボード</title>
-      <link>http://kerikeri.top/posts/2017-03-02-keriesp32/</link>
-      <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
+      <title>ESP32用UIライブラリ</title>
+      <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
+      <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-03-02-keriesp32/</guid>
-      <description>&lt;h2 id=&#34;esp-wroom-32とは&#34;&gt;ESP-WROOM-32とは&lt;/h2&gt;
+      <guid>http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
-&lt;p&gt;ESP-WROOM-32とは，ESP32というハイスペックなマイコンが搭載されたWiFi&amp;amp;Bluetoothモジュールです．無線モジュールとしてだけでなく，メインマイコンとしても十分使用できます．&lt;/p&gt;
+&lt;p&gt;ESP32も徐々に使い慣れてきました．今回の記事では，ちょっとした工作には欠かせないユーザーインターフェースのコードを紹介します．&lt;/p&gt;
 
-&lt;p&gt;ESP-WROOM-32のすごいところはその価格です．ハイスペックなマイコンとWiFiとBluetoothがついているのに，2017年2月現在たったの700円なのです！！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;スピーカーから音階を鳴らすブザークラス&lt;/li&gt;
+&lt;li&gt;タクトスイッチなどのボタンを扱うボタンクラス&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gM-11647/&#34; target=&#34;_blank&#34;&gt;秋月電子&lt;/a&gt;で購入できます．&lt;/p&gt;
-
-&lt;figure &gt;
-	
-		
-		&lt;figcaption&gt;
-			&lt;h4&gt;ESP-WROOM-32&lt;/h4&gt;
-		&lt;/figcaption&gt;
-		
-		&lt;img src=&#34;esp-wroom-32.jpg&#34; alt=&#34;ESP-WROOM-32&#34; style=&#34;width: 240px;&#34;/&gt;
-	
-&lt;/figure&gt;
-
+&lt;p&gt;今回のコードは，ESP32用に書かれています．ご注意ください．&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

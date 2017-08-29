@@ -1,7 +1,6 @@
 ---
 date: "2016-05-26"
 title: "Jekyll & Asciidocでシンタックスハイライト"
-slug: "syntax"
 categories:
   - "備忘録"
 tags:

@@ -1,7 +1,6 @@
 ---
 date: "2016-04-08"
 title: "昔作った電子工作たち～充電・電力編～"
-slug: "old-works-power"
 categories:
   - "作品紹介"
 tags:

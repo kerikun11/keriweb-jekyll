@@ -1,7 +1,6 @@
 ---
 date: "2016-12-04"
 title: "CrontabでMyDNS.jpのIP通知"
-slug: "update-mydns"
 categories:
   - "備忘録"
 tags:

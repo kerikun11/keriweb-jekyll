@@ -1,7 +1,6 @@
 ---
 date: "2016-09-01"
 title: "ラズパイでミュージックサーバー"
-slug: "raspi-music-server"
 categories:
   - "作品紹介"
 tags:

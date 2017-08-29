@@ -1,7 +1,6 @@
 ---
 date: "{{ .Date }}"
 title: ""
-slug: ""
 categories:
   - ""
 tags:

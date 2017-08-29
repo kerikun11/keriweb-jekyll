@@ -1,7 +1,6 @@
 ---
 date: "2016-08-28"
 title: "ブログを更新するスクリプト"
-slug: "update-blog-script"
 categories:
   - "備忘録"
 tags:

@@ -1,7 +1,6 @@
 ---
 date: "2016-04-20"
 title: "ソーラー発電量モニター"
-slug: "power-monitor"
 categories:
   - "作品紹介"
 tags:

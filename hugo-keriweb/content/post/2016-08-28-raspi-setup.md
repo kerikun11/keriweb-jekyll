@@ -1,7 +1,6 @@
 ---
 date: "2016-08-28"
 title: "ラズパイセットアップのコマンド群"
-slug: "raspi-setup"
 categories:
   - "備忘録"
 tags:

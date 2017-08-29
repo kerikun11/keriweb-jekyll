@@ -1,7 +1,6 @@
 ---
 date: "2016-05-18"
 title: "回路講習会2015"
-slug: "circuit-lecture"
 categories:
   - "説明記事"
 tags:

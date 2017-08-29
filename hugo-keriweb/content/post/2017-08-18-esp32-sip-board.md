@@ -1,7 +1,6 @@
 ---
 date: "2017-08-18"
 title: "ESP-WROOM-32の短冊基板の紹介"
-slug: "esp32-sip-board"
 categories:
   - "作品紹介"
 tags:

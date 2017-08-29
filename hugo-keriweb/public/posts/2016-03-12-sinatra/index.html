@@ -192,50 +192,50 @@ ga('send', 'pageview');
 <span style="color: #008000">require</span> <span style="color: #BA2121">&#39;active_record&#39;</span>
 
 <span style="color: #880000">ActiveRecord</span><span style="color: #666666">::</span><span style="color: #880000">Base</span><span style="color: #666666">.</span>establish_connection(
-    <span style="color: #BA2121">&quot;adapter&quot;</span> <span style="color: #666666">=&gt;</span> <span style="color: #BA2121">&quot;sqlite3&quot;</span>,
-    <span style="color: #BA2121">&quot;database&quot;</span> <span style="color: #666666">=&gt;</span> <span style="color: #BA2121">&quot;./PowerStation.db&quot;</span>
+	<span style="color: #BA2121">&quot;adapter&quot;</span> <span style="color: #666666">=&gt;</span> <span style="color: #BA2121">&quot;sqlite3&quot;</span>,
+	<span style="color: #BA2121">&quot;database&quot;</span> <span style="color: #666666">=&gt;</span> <span style="color: #BA2121">&quot;./PowerStation.db&quot;</span>
 )
 
 <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Samples</span> <span style="color: #666666">&lt;</span> <span style="color: #880000">ActiveRecord</span><span style="color: #666666">::</span><span style="color: #880000">Base</span>
 <span style="color: #008000; font-weight: bold">end</span>
 
 helpers <span style="color: #008000; font-weight: bold">do</span>
-    <span style="color: #008000">include</span> <span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">Utils</span>
-    alias_method <span style="color: #19177C">:esc</span>,<span style="color: #19177C">:escape_html</span>
+	<span style="color: #008000">include</span> <span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">Utils</span>
+	alias_method <span style="color: #19177C">:esc</span>,<span style="color: #19177C">:escape_html</span>
 <span style="color: #008000; font-weight: bold">end</span>
 
 get <span style="color: #BA2121">&#39;/&#39;</span> <span style="color: #008000; font-weight: bold">do</span>
-    <span style="color: #19177C">@title</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Power Station&quot;</span>
-    <span style="color: #19177C">@samples</span> <span style="color: #666666">=</span> <span style="color: #880000">Samples</span><span style="color: #666666">.</span>order(<span style="color: #BA2121">&quot;id desc&quot;</span>)<span style="color: #666666">.</span>all
-    <span style="color: #19177C">@intCurrent</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
-    <span style="color: #19177C">@intPower</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
-    <span style="color: #880000">Samples</span><span style="color: #666666">.</span>all<span style="color: #666666">.</span>each <span style="color: #008000; font-weight: bold">do</span> <span style="color: #666666">|</span>sample<span style="color: #666666">|</span>
-        c<span style="color: #666666">=</span>sample<span style="color: #666666">.</span>currentValue<span style="color: #666666">.</span>to_f
-        v<span style="color: #666666">=</span>sample<span style="color: #666666">.</span>voltageValue<span style="color: #666666">.</span>to_f
-        <span style="color: #19177C">@intCurrent</span> <span style="color: #666666">+=</span> c <span style="color: #666666">*</span> <span style="color: #666666">12</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span>
-        <span style="color: #19177C">@intPower</span> <span style="color: #666666">+=</span> c <span style="color: #666666">*</span> v <span style="color: #666666">*</span> <span style="color: #666666">12</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span>
-    <span style="color: #008000; font-weight: bold">end</span>
-    erb <span style="color: #19177C">:index</span>
+	<span style="color: #19177C">@title</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Power Station&quot;</span>
+	<span style="color: #19177C">@samples</span> <span style="color: #666666">=</span> <span style="color: #880000">Samples</span><span style="color: #666666">.</span>order(<span style="color: #BA2121">&quot;id desc&quot;</span>)<span style="color: #666666">.</span>all
+	<span style="color: #19177C">@intCurrent</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+	<span style="color: #19177C">@intPower</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+	<span style="color: #880000">Samples</span><span style="color: #666666">.</span>all<span style="color: #666666">.</span>each <span style="color: #008000; font-weight: bold">do</span> <span style="color: #666666">|</span>sample<span style="color: #666666">|</span>
+		c<span style="color: #666666">=</span>sample<span style="color: #666666">.</span>currentValue<span style="color: #666666">.</span>to_f
+		v<span style="color: #666666">=</span>sample<span style="color: #666666">.</span>voltageValue<span style="color: #666666">.</span>to_f
+		<span style="color: #19177C">@intCurrent</span> <span style="color: #666666">+=</span> c <span style="color: #666666">*</span> <span style="color: #666666">12</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span>
+		<span style="color: #19177C">@intPower</span> <span style="color: #666666">+=</span> c <span style="color: #666666">*</span> v <span style="color: #666666">*</span> <span style="color: #666666">12</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span> <span style="color: #666666">/</span> <span style="color: #666666">60</span>
+	<span style="color: #008000; font-weight: bold">end</span>
+	erb <span style="color: #19177C">:index</span>
 <span style="color: #008000; font-weight: bold">end</span>
 
 post <span style="color: #BA2121">&quot;/new&quot;</span> <span style="color: #008000; font-weight: bold">do</span>
-    <span style="color: #880000">Samples</span><span style="color: #666666">.</span>create(
-        {
-            <span style="color: #19177C">:deviceName</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:deviceName</span><span style="color: #666666">]</span>,
-            <span style="color: #19177C">:currentValue</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:currentValue</span><span style="color: #666666">]</span>,
-            <span style="color: #19177C">:voltageValue</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:voltageValue</span><span style="color: #666666">]</span>
-        }
-    )
-    redirect <span style="color: #BA2121">&#39;/&#39;</span>
-    erb <span style="color: #19177C">:index</span>
+	<span style="color: #880000">Samples</span><span style="color: #666666">.</span>create(
+		{
+			<span style="color: #19177C">:deviceName</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:deviceName</span><span style="color: #666666">]</span>,
+			<span style="color: #19177C">:currentValue</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:currentValue</span><span style="color: #666666">]</span>,
+			<span style="color: #19177C">:voltageValue</span> <span style="color: #666666">=&gt;</span> params<span style="color: #666666">[</span><span style="color: #19177C">:voltageValue</span><span style="color: #666666">]</span>
+		}
+	)
+	redirect <span style="color: #BA2121">&#39;/&#39;</span>
+	erb <span style="color: #19177C">:index</span>
 <span style="color: #008000; font-weight: bold">end</span>
 
 post <span style="color: #BA2121">&#39;/deleteAll&#39;</span> <span style="color: #008000; font-weight: bold">do</span>
-    <span style="color: #880000">Samples</span><span style="color: #666666">.</span>destroy_all
+	<span style="color: #880000">Samples</span><span style="color: #666666">.</span>destroy_all
 <span style="color: #008000; font-weight: bold">end</span>
 
 post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #008000; font-weight: bold">do</span>
-    <span style="color: #880000">Samples</span><span style="color: #666666">.</span>find(params<span style="color: #666666">[</span><span style="color: #19177C">:id</span><span style="color: #666666">]</span>)<span style="color: #666666">.</span>destroy
+	<span style="color: #880000">Samples</span><span style="color: #666666">.</span>find(params<span style="color: #666666">[</span><span style="color: #19177C">:id</span><span style="color: #666666">]</span>)<span style="color: #666666">.</span>destroy
 <span style="color: #008000; font-weight: bold">end</span>
 </pre></div>
 
@@ -244,13 +244,13 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 <p>サイト内共通のHTMLヘッダーやフッターはここに書きます。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ja&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;/&gt;
-        &lt;title&gt;<span style="color: #BC7A00">&lt;%=</span> <span style="color: #19177C">@title</span> <span style="color: #BC7A00">%&gt;</span>&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div&gt;<span style="color: #BC7A00">&lt;%=</span> <span style="color: #008000; font-weight: bold">yield</span> <span style="color: #BC7A00">%&gt;</span>&lt;/div&gt;
-    &lt;/body&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;/&gt;
+		&lt;title&gt;<span style="color: #BC7A00">&lt;%=</span> <span style="color: #19177C">@title</span> <span style="color: #BC7A00">%&gt;</span>&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div&gt;<span style="color: #BC7A00">&lt;%=</span> <span style="color: #008000; font-weight: bold">yield</span> <span style="color: #BC7A00">%&gt;</span>&lt;/div&gt;
+	&lt;/body&gt;
 &lt;/html&gt;
 </pre></div>
 
@@ -266,20 +266,20 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 
 &lt;h2&gt;Data&lt;/h2&gt;
 &lt;ul style=&quot;height:30em;overflow:scroll;&quot;&gt;
-    <span style="color: #BC7A00">&lt;%</span> <span style="color: #19177C">@samples</span><span style="color: #666666">.</span>each <span style="color: #008000; font-weight: bold">do</span> <span style="color: #666666">|</span>sample<span style="color: #666666">|</span> <span style="color: #BC7A00">%&gt;</span>
-        &lt;li data-id=&quot;<span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>id <span style="color: #BC7A00">%&gt;</span>&quot;&gt;
-            &lt;button class=&quot;deleteCmd&quot; style=&quot;cursor:pointer;color:blue;}&quot;&gt;delete&lt;/button&gt;
-            <span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>created_at <span style="color: #BC7A00">%&gt;</span> (<span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>deviceName <span style="color: #BC7A00">%&gt;</span>) : <span style="color: #BC7A00">&lt;%=</span> esc sample<span style="color: #666666">.</span>voltageValue <span style="color: #BC7A00">%&gt;</span> [V], <span style="color: #BC7A00">&lt;%=</span> esc sample<span style="color: #666666">.</span>currentValue <span style="color: #BC7A00">%&gt;</span> [A]
-        &lt;/li&gt;
-    <span style="color: #BC7A00">&lt;%</span> <span style="color: #008000; font-weight: bold">end</span> <span style="color: #BC7A00">%&gt;</span>
+	<span style="color: #BC7A00">&lt;%</span> <span style="color: #19177C">@samples</span><span style="color: #666666">.</span>each <span style="color: #008000; font-weight: bold">do</span> <span style="color: #666666">|</span>sample<span style="color: #666666">|</span> <span style="color: #BC7A00">%&gt;</span>
+		&lt;li data-id=&quot;<span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>id <span style="color: #BC7A00">%&gt;</span>&quot;&gt;
+			&lt;button class=&quot;deleteCmd&quot; style=&quot;cursor:pointer;color:blue;}&quot;&gt;delete&lt;/button&gt;
+			<span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>created_at <span style="color: #BC7A00">%&gt;</span> (<span style="color: #BC7A00">&lt;%=</span> sample<span style="color: #666666">.</span>deviceName <span style="color: #BC7A00">%&gt;</span>) : <span style="color: #BC7A00">&lt;%=</span> esc sample<span style="color: #666666">.</span>voltageValue <span style="color: #BC7A00">%&gt;</span> [V], <span style="color: #BC7A00">&lt;%=</span> esc sample<span style="color: #666666">.</span>currentValue <span style="color: #BC7A00">%&gt;</span> [A]
+		&lt;/li&gt;
+	<span style="color: #BC7A00">&lt;%</span> <span style="color: #008000; font-weight: bold">end</span> <span style="color: #BC7A00">%&gt;</span>
 &lt;/ul&gt;
 
 &lt;h2&gt;Add new&lt;/h2&gt;
 &lt;form method=&quot;post&quot; action=&quot;/new&quot;&gt;
-    Device Name:&lt;input type=&quot;text&quot; name=&quot;deviceName&quot;&gt;
-    Voltage:&lt;input type=&quot;text&quot; name=&quot;voltageValue&quot;&gt;
-    Current:&lt;input type=&quot;text&quot; name=&quot;currentValue&quot;&gt;
-    &lt;button type=&quot;submit&quot;&gt;Post!&lt;/button&gt;
+	Device Name:&lt;input type=&quot;text&quot; name=&quot;deviceName&quot;&gt;
+	Voltage:&lt;input type=&quot;text&quot; name=&quot;voltageValue&quot;&gt;
+	Current:&lt;input type=&quot;text&quot; name=&quot;currentValue&quot;&gt;
+	&lt;button type=&quot;submit&quot;&gt;Post!&lt;/button&gt;
 &lt;/form&gt;
 
 &lt;h2&gt;Delete&lt;/h2&gt;
@@ -287,22 +287,22 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 
 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
-    $(&#39;.deleteAll&#39;).click(function(){
-        if(confirm(&#39;Are you sure to delete?&#39;)){
-            $.post(&#39;/deleteAll&#39;);
-            location.href = document.URL;
-        }
-    })
-    $(&#39;.deleteCmd&#39;).click(function(){
-        var el = $(this).parent();
-        if(confirm(&#39;Are you sure to delete?&#39;)){
-            $.post(&#39;/delete&#39;,{
-                id: el.data(&#39;id&#39;)
-            },function(){
-                el.fadeOut(800);
-            });
-        }
-    })
+	$(&#39;.deleteAll&#39;).click(function(){
+		if(confirm(&#39;Are you sure to delete?&#39;)){
+			$.post(&#39;/deleteAll&#39;);
+			location.href = document.URL;
+		}
+	})
+	$(&#39;.deleteCmd&#39;).click(function(){
+		var el = $(this).parent();
+		if(confirm(&#39;Are you sure to delete?&#39;)){
+			$.post(&#39;/delete&#39;,{
+				id: el.data(&#39;id&#39;)
+			},function(){
+				el.fadeOut(800);
+			});
+		}
+	})
 &lt;/script&gt;
 </pre></div>
 
@@ -387,7 +387,7 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 		<span class="authorbox__name">About KERI</span>
 	</div>
 	<div class="authorbox__description">
-		某工業大学のロボット技術研究会所属．趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．
+		趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．
 	</div>
 	</a>
 </div>
@@ -439,7 +439,7 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-26-hugo-migration/">HPをHugoに移行しました</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-29-hugo-migration/">HPをHugoに移行しました</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-18-esp32-sip-board/">ESP-WROOM-32の短冊基板の紹介</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-29-esp32-wifi-sd/">ESP32とMicro SDカード</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-23-keriesp32-trapezoid/">KERIESP32 Trapezoid</a></li>
@@ -502,7 +502,7 @@ post <span style="color: #BA2121">&#39;/delete&#39;</span> <span style="color: #
 		<a class="widget__link widget__link--taglist" href="/tags/ddns" title="ddns">ddns (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/e-mail" title="e-mail">e-mail (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-02" title="esp-wroom-02">esp-wroom-02 (9)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (6)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (8)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (8)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/exiftool" title="exiftool">exiftool (1)</a>

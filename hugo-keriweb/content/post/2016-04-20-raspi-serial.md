@@ -1,7 +1,6 @@
 ---
 date: "2016-04-20"
 title: "ラズパイでシリアルモニタを使うには"
-slug: "raspi-serial"
 categories:
   - "備忘録"
 tags:

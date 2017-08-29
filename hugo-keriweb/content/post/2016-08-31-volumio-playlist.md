@@ -1,7 +1,6 @@
 ---
 date: "2016-08-31"
 title: "VolumioでiTunesのプレイリストを使う"
-slug: "volumio-playlist"
 categories:
   - "備忘録"
 tags:

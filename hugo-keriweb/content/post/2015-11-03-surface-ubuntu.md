@@ -1,7 +1,6 @@
 ---
 date: "2015-11-03"
 title: "Surface Pro 3 に Ubuntu15.10を入れる(UEFI環境のデュアルブート)"
-slug: "surface-ubuntu"
 categories:
   - "説明記事"
 tags:

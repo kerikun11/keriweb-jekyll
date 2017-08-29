@@ -1,7 +1,6 @@
 ---
 date: "2015-11-04"
 title: "CPUの創り方"
-slug: "create-cpu"
 categories:
   - "作品紹介"
 tags:

@@ -37,16 +37,17 @@
     </item>
     
     <item>
-      <title>ESP32で時間取得</title>
-      <link>http://kerikeri.top/posts/2017-04-26-esp32-time/</link>
-      <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
+      <title>秋月の時計キットをNTP時計化</title>
+      <link>http://kerikeri.top/posts/2017-07-23-aki-clock/</link>
+      <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
       <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-04-26-esp32-time/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+      <guid>http://kerikeri.top/posts/2017-07-23-aki-clock/</guid>
+      <description>&lt;h2 id=&#34;家の玄関で地味に役に立っていた時計&#34;&gt;家の玄関で地味に役に立っていた時計&lt;/h2&gt;
 
-&lt;p&gt;今回はESP32で現在時刻を取得するサンプルコードの紹介です．&lt;/p&gt;
+&lt;p&gt;かなり前に秋月電子で買った&lt;a href=&#34;http://akizukidenshi.com/catalog/g/gK-04379/&#34; target=&#34;_blank&#34;&gt;時計キット&lt;/a&gt;．&lt;br /&gt;
+数字が大きく，遠くからでもよく見えるので自宅の玄関で地味に役立っていました．&lt;/p&gt;
 
-&lt;p&gt;今回のコードではC++標準の時刻を合わせるので，std::time()関数で時刻を取得することができるようになります．&lt;/p&gt;</description>
+&lt;p&gt;しかし，水晶の精度がいまいちでよくズレるので，7セグの表示部だけを残してESP32によるNTP時計にアップデートしました．&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,26 +62,6 @@
 
 &lt;p&gt;少し前から，&lt;a href=&#34;http://akizukidenshi.com/&#34; target=&#34;_blank&#34;&gt;秋月の通販サイト&lt;/a&gt;で店舗の在庫数と売場の場所が見れるようになりました．&lt;br /&gt;
 商品写真の下の「店舗情報」というボタンを押すとポップアップが現れ，在庫数と売場が表示されます．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ESP32用UIライブラリ</title>
-      <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
-      <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;p&gt;ESP32も徐々に使い慣れてきました．今回の記事では，ちょっとした工作には欠かせないユーザーインターフェースのコードを紹介します．&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;スピーカーから音階を鳴らすブザークラス&lt;/li&gt;
-&lt;li&gt;タクトスイッチなどのボタンを扱うボタンクラス&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今回のコードは，ESP32用に書かれています．ご注意ください．&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

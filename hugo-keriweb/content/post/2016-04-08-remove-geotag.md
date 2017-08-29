@@ -1,7 +1,6 @@
 ---
 date: "2016-04-08"
 title: "写真から位置情報タグを削除する"
-slug: "remove-geotag"
 categories:
   - "備忘録"
 tags:

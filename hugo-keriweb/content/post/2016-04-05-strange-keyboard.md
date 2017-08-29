@@ -1,7 +1,6 @@
 ---
 date: "2016-04-05"
 title: "変なキーボード"
-slug: "strange-keyboard"
 categories:
   - "作品紹介"
 tags:

@@ -1,7 +1,6 @@
 ---
 date: "2016-07-25"
 title: "IR-Stationの使い方"
-slug: "how-to-use-ir-station"
 categories:
   - "作品紹介"
 tags:

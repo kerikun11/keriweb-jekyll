@@ -1,7 +1,6 @@
 ---
 date: "2016-01-13"
 title: "PICでブートローダ"
-slug: "pic-bootloader"
 categories:
   - "説明記事"
 tags:

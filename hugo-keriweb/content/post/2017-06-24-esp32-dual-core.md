@@ -1,7 +1,6 @@
 ---
 date: "2017-06-24"
 title: "ESP32でデュアルコアを使おう！"
-slug: "esp32-dual-core"
 categories:
   - "説明記事"
 tags:

@@ -1,11 +1,10 @@
 ---
 date: "2017-03-26"
 title: "ESP32用UIライブラリ"
-slug: "user-interface"
 categories:
   - "備忘録"
 tags:
-  - "ESP-WROOM-32"
+  - "ESP32"
   - "Arduino"
 ---
 

@@ -1,7 +1,6 @@
 ---
 date: "2016-03-23"
 title: "ESP-WROOM-02による中継型電力計"
-slug: "relay-sensor"
 categories:
   - "作品紹介"
 tags:

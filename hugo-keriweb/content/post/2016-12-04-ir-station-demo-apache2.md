@@ -1,7 +1,6 @@
 ---
 date: "2016-12-04"
 title: "Apache2でIR-Stationデモ"
-slug: "ir-station-demo-apache2"
 categories:
   - "備忘録"
 tags:

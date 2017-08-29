@@ -1,7 +1,6 @@
 ---
 date: "2016-10-20"
 title: "IR-Stationのデモンストレーションサイト"
-slug: "ir-station-demo"
 categories:
   - "作品紹介"
 tags:

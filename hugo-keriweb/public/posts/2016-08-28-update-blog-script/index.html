@@ -115,56 +115,56 @@ ga('send', 'pageview');
 
 <h3 id="ssh-config">~/.ssh/config</h3>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>Host github
-    HostName github.com
-    User git
-    Port <span style="color: #666666">22</span>
-    IdentityFile ~/.ssh/id_ecdsa
+	HostName github.com
+	User git
+	Port <span style="color: #666666">22</span>
+	IdentityFile ~/.ssh/id_ecdsa
 </pre></div>
 
 <h2 id="apache2の設定">Apache2の設定</h2>
 
 <h3 id="etc-apache2-sites-available-myconf-conf">/etc/apache2/sites-available/myconf.conf</h3>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>&lt;VirtualHost *:80&gt;
-    <span style="color: #408080; font-style: italic"># The ServerName directive sets the request scheme, hostname and port that</span>
-    <span style="color: #408080; font-style: italic"># the server uses to identify itself. This is used when creating</span>
-    <span style="color: #408080; font-style: italic"># redirection URLs. In the context of virtual hosts, the ServerName</span>
-    <span style="color: #408080; font-style: italic"># specifies what hostname must appear in the request&#39;s Host: header to</span>
-    <span style="color: #408080; font-style: italic"># match this virtual host. For the default virtual host (this file) this</span>
-    <span style="color: #408080; font-style: italic"># value is not decisive as it is used as a last resort host regardless.</span>
-    <span style="color: #408080; font-style: italic"># However, you must set it for any further virtual host explicitly.</span>
-    ServerName <span style="color: #BA2121">&quot;kerikeri.top&quot;</span>
-    ServerAdmin <span style="color: #BA2121">&quot;kerikun11@gmail.com&quot;</span>
-    DocumentRoot <span style="color: #BA2121">&quot;/var/keriweb&quot;</span>
-    
-    &lt;Directory /&gt;
-        Options FollowSymLinks
-        AllowOverride None
-    &lt;/Directory&gt;
-    
-    &lt;Directory /var/keriweb/&gt;
-        Options FollowSymLinks Indexes MultiViews
-        AllowOverride All
-        Order allow,deny
-        Allow from all
-        Require all granted
-    &lt;/Directory&gt;
+	<span style="color: #408080; font-style: italic"># The ServerName directive sets the request scheme, hostname and port that</span>
+	<span style="color: #408080; font-style: italic"># the server uses to identify itself. This is used when creating</span>
+	<span style="color: #408080; font-style: italic"># redirection URLs. In the context of virtual hosts, the ServerName</span>
+	<span style="color: #408080; font-style: italic"># specifies what hostname must appear in the request&#39;s Host: header to</span>
+	<span style="color: #408080; font-style: italic"># match this virtual host. For the default virtual host (this file) this</span>
+	<span style="color: #408080; font-style: italic"># value is not decisive as it is used as a last resort host regardless.</span>
+	<span style="color: #408080; font-style: italic"># However, you must set it for any further virtual host explicitly.</span>
+	ServerName <span style="color: #BA2121">&quot;kerikeri.top&quot;</span>
+	ServerAdmin <span style="color: #BA2121">&quot;kerikun11@gmail.com&quot;</span>
+	DocumentRoot <span style="color: #BA2121">&quot;/var/keriweb&quot;</span>
+	
+	&lt;Directory /&gt;
+		Options FollowSymLinks
+		AllowOverride None
+	&lt;/Directory&gt;
+	
+	&lt;Directory /var/keriweb/&gt;
+		Options FollowSymLinks Indexes MultiViews
+		AllowOverride All
+		Order allow,deny
+		Allow from all
+		Require all granted
+	&lt;/Directory&gt;
 
-    <span style="color: #408080; font-style: italic"># Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span>
-    <span style="color: #408080; font-style: italic"># error, crit, alert, emerg.</span>
-    <span style="color: #408080; font-style: italic"># It is also possible to configure the loglevel for particular</span>
-    <span style="color: #408080; font-style: italic"># modules, e.g.</span>
-    <span style="color: #408080; font-style: italic">#LogLevel info ssl:warn</span>
+	<span style="color: #408080; font-style: italic"># Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span>
+	<span style="color: #408080; font-style: italic"># error, crit, alert, emerg.</span>
+	<span style="color: #408080; font-style: italic"># It is also possible to configure the loglevel for particular</span>
+	<span style="color: #408080; font-style: italic"># modules, e.g.</span>
+	<span style="color: #408080; font-style: italic">#LogLevel info ssl:warn</span>
 
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-    <span style="color: #408080; font-style: italic"># For most configuration files from conf-available/, which are</span>
-    <span style="color: #408080; font-style: italic"># enabled or disabled at a global level, it is possible to</span>
-    <span style="color: #408080; font-style: italic"># include a line for only one particular virtual host. For example the</span>
-    <span style="color: #408080; font-style: italic"># following line enables the CGI configuration for this host only</span>
-    <span style="color: #408080; font-style: italic"># after it has been globally disabled with &quot;a2disconf&quot;.</span>
-    <span style="color: #408080; font-style: italic">#Include conf-available/serve-cgi-bin.conf</span>
-    ErrorDocument <span style="color: #666666">404</span> /error/404/
+	<span style="color: #408080; font-style: italic"># For most configuration files from conf-available/, which are</span>
+	<span style="color: #408080; font-style: italic"># enabled or disabled at a global level, it is possible to</span>
+	<span style="color: #408080; font-style: italic"># include a line for only one particular virtual host. For example the</span>
+	<span style="color: #408080; font-style: italic"># following line enables the CGI configuration for this host only</span>
+	<span style="color: #408080; font-style: italic"># after it has been globally disabled with &quot;a2disconf&quot;.</span>
+	<span style="color: #408080; font-style: italic">#Include conf-available/serve-cgi-bin.conf</span>
+	ErrorDocument <span style="color: #666666">404</span> /error/404/
 &lt;/VirtualHost&gt;
 
 <span style="color: #408080; font-style: italic"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
@@ -192,14 +192,14 @@ $ sudo chgrp kerikun11 /var/keriweb
 <span style="color: #19177C">basename</span><span style="color: #666666">=</span><span style="color: #BA2121">`</span>basename <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$tmpdir</span><span style="color: #BA2121">&quot;`</span>
 
 <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">[</span> -d <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$tmpdir</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">]</span>;<span style="color: #008000; font-weight: bold">then</span>
-    <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;found keriweb directory&quot;</span>
-    <span style="color: #008000">cd</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$tmpdir</span><span style="color: #BA2121">&quot;</span>
-    <span style="color: #008000; font-weight: bold">if</span> git pull; <span style="color: #008000; font-weight: bold">then</span>
-        <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;start rsync&quot;</span>
-        <span style="color: #19177C">$rsync</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncfrom</span><span style="color: #BA2121">&quot;</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncto</span><span style="color: #BA2121">&quot;</span>
-        <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;end&quot;</span>
-        <span style="color: #008000">exit</span> <span style="color: #666666">0</span>
-    <span style="color: #008000; font-weight: bold">fi</span>
+	<span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;found keriweb directory&quot;</span>
+	<span style="color: #008000">cd</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$tmpdir</span><span style="color: #BA2121">&quot;</span>
+	<span style="color: #008000; font-weight: bold">if</span> git pull; <span style="color: #008000; font-weight: bold">then</span>
+		<span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;start rsync&quot;</span>
+		<span style="color: #19177C">$rsync</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncfrom</span><span style="color: #BA2121">&quot;</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncto</span><span style="color: #BA2121">&quot;</span>
+		<span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;end&quot;</span>
+		<span style="color: #008000">exit</span> <span style="color: #666666">0</span>
+	<span style="color: #008000; font-weight: bold">fi</span>
 <span style="color: #008000; font-weight: bold">fi</span>
 
 <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;not found </span><span style="color: #19177C">$basename</span><span style="color: #BA2121">&quot;</span>
@@ -209,10 +209,10 @@ mkdir -p <span style="color: #BA2121">&quot;</span><span style="color: #19177C">
 rm -rf <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$basename</span><span style="color: #BA2121">&quot;</span>
 
 <span style="color: #008000; font-weight: bold">if</span> git clone <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$repo</span><span style="color: #BA2121">&quot;</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$basename</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">then</span>
-    <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;clone keriweb&quot;</span>
-    <span style="color: #008000">cd</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$basename</span><span style="color: #BA2121">&quot;</span>
-    <span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;start rsync&quot;</span>
-    <span style="color: #19177C">$rsync</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncfrom</span><span style="color: #BA2121">&quot;</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncto</span><span style="color: #BA2121">&quot;</span>
+	<span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;clone keriweb&quot;</span>
+	<span style="color: #008000">cd</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$basename</span><span style="color: #BA2121">&quot;</span>
+	<span style="color: #008000">echo</span> <span style="color: #BA2121">&quot;start rsync&quot;</span>
+	<span style="color: #19177C">$rsync</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncfrom</span><span style="color: #BA2121">&quot;</span> <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$rsyncto</span><span style="color: #BA2121">&quot;</span>
 <span style="color: #008000; font-weight: bold">fi</span>
 </pre></div>
 		</div>
@@ -289,7 +289,7 @@ rm -rf <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$b
 		<span class="authorbox__name">About KERI</span>
 	</div>
 	<div class="authorbox__description">
-		某工業大学のロボット技術研究会所属．趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．
+		趣味は電子工作．最近はESP32に夢中．マイクロマウスを始めました．
 	</div>
 	</a>
 </div>
@@ -318,7 +318,7 @@ rm -rf <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$b
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-26-hugo-migration/">HPをHugoに移行しました</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-29-hugo-migration/">HPをHugoに移行しました</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-08-18-esp32-sip-board/">ESP-WROOM-32の短冊基板の紹介</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-29-esp32-wifi-sd/">ESP32とMicro SDカード</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/2017-07-23-keriesp32-trapezoid/">KERIESP32 Trapezoid</a></li>
@@ -381,7 +381,7 @@ rm -rf <span style="color: #BA2121">&quot;</span><span style="color: #19177C">$b
 		<a class="widget__link widget__link--taglist" href="/tags/ddns" title="ddns">ddns (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/e-mail" title="e-mail">e-mail (1)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-02" title="esp-wroom-02">esp-wroom-02 (9)</a>
-		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (7)</a>
+		<a class="widget__link widget__link--taglist" href="/tags/esp-wroom-32" title="esp-wroom-32">esp-wroom-32 (6)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp32" title="esp32">esp32 (8)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/esp8266" title="esp8266">esp8266 (8)</a>
 		<a class="widget__link widget__link--taglist" href="/tags/exiftool" title="exiftool">exiftool (1)</a>

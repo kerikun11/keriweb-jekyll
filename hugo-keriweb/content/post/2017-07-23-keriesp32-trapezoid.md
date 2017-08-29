@@ -1,7 +1,6 @@
 ---
 date: "2017-07-23"
 title: "KERIESP32 Trapezoid"
-slug: "keriesp32-trapezoid"
 categories:
   - "作品紹介"
 tags:

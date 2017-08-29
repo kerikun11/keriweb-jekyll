@@ -1,7 +1,6 @@
 ---
 date: "2016-10-16"
 title: "IR-Station v1.5.0 アップデート"
-slug: "ir-station-v1.5.0"
 categories:
   - "作品紹介"
 tags:
