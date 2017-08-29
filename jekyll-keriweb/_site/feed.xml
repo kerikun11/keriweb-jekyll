@@ -5,8 +5,8 @@
     <description>KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。</description>
     <link>http://kerikeri.top/</link>
     <atom:link href="http://kerikeri.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Aug 2017 23:48:58 +0900</pubDate>
-    <lastBuildDate>Sat, 19 Aug 2017 23:48:58 +0900</lastBuildDate>
+    <pubDate>Tue, 29 Aug 2017 18:06:03 +0900</pubDate>
+    <lastBuildDate>Tue, 29 Aug 2017 18:06:03 +0900</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -251,6 +251,8 @@
         
         <category>ESP32</category>
         
+        <category>ESP-WROOM-32</category>
+        
         <category>NTP</category>
         
         <category>時計</category>
@@ -386,8 +388,6 @@
         
         <category>ESP32</category>
         
-        <category>ESP-WROOM-32</category>
-        
         <category>NTP</category>
         
         
@@ -493,7 +493,7 @@
         <link>http://kerikeri.top/posts/2017-03-26-user-interface/</link>
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-26-user-interface/</guid>
         
-        <category>ESP-WROOM-32</category>
+        <category>ESP32</category>
         
         <category>Arduino</category>
         
@@ -520,8 +520,6 @@
         <guid isPermaLink="true">http://kerikeri.top/posts/2017-03-02-keriesp32/</guid>
         
         <category>ESP-WROOM-32</category>
-        
-        <category>ESP32</category>
         
         <category>FT232RL</category>
         

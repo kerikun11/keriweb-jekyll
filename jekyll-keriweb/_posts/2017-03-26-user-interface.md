@@ -3,7 +3,7 @@ layout: post
 title: "ESP32用UIライブラリ"
 category: "memos"
 tags:
-  - "ESP-WROOM-32"
+  - "ESP32"
   - "Arduino"
 ---
 
