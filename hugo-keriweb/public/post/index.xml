@@ -9,10 +9,26 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 29 Aug 2017 09:09:01 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 30 Aug 2017 10:55:38 +0900</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP32 Timeライブラリを作りました</title>
+      <link>http://kerikeri.top/posts/2017-08-30-esp32-time-lib/</link>
+      <pubDate>Wed, 30 Aug 2017 10:55:38 +0900</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-30-esp32-time-lib/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;こんにちは，けりです．
+みなさん，ESP32使ってますか？&lt;/p&gt;
+
+&lt;p&gt;今回はESP32の時刻合わせのArduinoライブラリを作ったので紹介します．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HPをHugoに移行しました</title>
@@ -562,19 +578,6 @@ KERISEv1&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;めんどくさい！&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;ということで，今回は，iTunesのプレイリストをvolumioのプレイリストに変換するスクリプトを紹介する．&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>ブログを更新するスクリプト</title>
-      <link>http://kerikeri.top/posts/2016-08-28-update-blog-script/</link>
-      <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-08-28-update-blog-script/</guid>
-      <description>&lt;h2 id=&#34;github上にあるブログを同期するシェルスクリプト&#34;&gt;github上にあるブログを同期するシェルスクリプト&lt;/h2&gt;
-
-&lt;p&gt;自分用のメモ&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -15,8 +15,7 @@ WiFiとBluetoothが載ったデュアルコアなマイコン**ESP32**のピッ�
 
 <!--more-->
 
-[ESP-WROOM-32](http://akizukidenshi.com/catalog/g/gM-11647/)  
-{{< postfig src="esp-wroom-32.jpg" title="ESP-WROOM-32" width="240px" >}}
+{{< postfig src="esp-wroom-32.jpg" title="ESP-WROOM-32" link="http://akizukidenshi.com/catalog/g/gM-11647/" width="240px" >}}
 
 ## 基板名: KERIESP32 Trapezoid
 
@@ -50,7 +49,7 @@ IO6-IO11はモジュール内部にあるSPI-Flashメモリと接続されてい
 
 そのおかげでSIPの30pinに収めることができ，ブレッドボードにさすことができます．
 
-{{< postfig src="brb.jpg" title="brb.jpg" width="480px" >}}
+{{< postfig src="brb.jpg" title="ブレッドボードに刺した様子" width="480px" >}}
 
 ### 4. 裏側にはMicro-SDカードスロットがある
 

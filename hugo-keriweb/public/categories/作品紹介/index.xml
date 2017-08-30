@@ -9,10 +9,26 @@
     <managingEditor>kerikun11&#43;web@gmail.com (KERI)</managingEditor>
     <webMaster>kerikun11&#43;web@gmail.com (KERI)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 18 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Aug 2017 10:55:38 +0900</lastBuildDate>
     
 	<atom:link href="http://kerikeri.top/categories/%E4%BD%9C%E5%93%81%E7%B4%B9%E4%BB%8B/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP32 Timeライブラリを作りました</title>
+      <link>http://kerikeri.top/posts/2017-08-30-esp32-time-lib/</link>
+      <pubDate>Wed, 30 Aug 2017 10:55:38 +0900</pubDate>
+      <author>kerikun11&#43;web@gmail.com (KERI)</author>
+      <guid>http://kerikeri.top/posts/2017-08-30-esp32-time-lib/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;p&gt;こんにちは，けりです．
+みなさん，ESP32使ってますか？&lt;/p&gt;
+
+&lt;p&gt;今回はESP32の時刻合わせのArduinoライブラリを作ったので紹介します．&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP-WROOM-32の短冊基板の紹介</title>
@@ -541,36 +557,6 @@ KERISEv1&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>電力つぶやきbot</title>
-      <link>http://kerikeri.top/posts/2016-04-03-power-tweeter/</link>
-      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
-      <author>kerikun11&#43;web@gmail.com (KERI)</author>
-      <guid>http://kerikeri.top/posts/2016-04-03-power-tweeter/</guid>
-      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&#34;中継型電力計&#34;&gt;中継型電力計&lt;/h3&gt;
-
-&lt;p&gt;先日の記事で&lt;a href=&#34;http://kerikeri.top/posts/2016-03-23-relay-sensor/&#34;&gt;ESP-WROOM-02による中継型電力計&lt;/a&gt;を紹介しましたが、それを使って、電力を自動でつぶやくbotを作りました。&lt;/p&gt;
-
-&lt;h3 id=&#34;何の電力をつぶやくのか&#34;&gt;何の電力をつぶやくのか&lt;/h3&gt;
-
-&lt;p&gt;僕の家には&lt;a href=&#34;http://kerikeri.top/posts/2014-09-14-solar-system/&#34;&gt;自作の100W級ソーラーシステム&lt;/a&gt;があります。このソーラーシステムの発電量を定期的にツイートすることにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;figure &gt;
-	
-		
-		&lt;figcaption&gt;
-			&lt;h4&gt;Solar&lt;/h4&gt;
-		&lt;/figcaption&gt;
-		
-		&lt;img src=&#34;solar.jpg&#34; alt=&#34;Solar&#34; style=&#34;width: 480px;&#34;/&gt;
-	
-&lt;/figure&gt;
-
-&lt;/p&gt;</description>
     </item>
     
   </channel>
