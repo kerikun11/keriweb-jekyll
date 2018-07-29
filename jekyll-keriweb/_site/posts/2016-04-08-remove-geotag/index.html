@@ -152,9 +152,8 @@
 
 <h3 id="インストール方法linux">インストール方法(Linux)</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install exiftool
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install exiftool
+</code></pre></div></div>
 
 <h3 id="インストール方法windows">インストール方法(Windows)</h3>
 
@@ -166,17 +165,15 @@
 
 <p><code class="highlighter-rouge">geotag=</code>で何も書かなければ、位置情報はなくなる。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ exiftool -overwrite_original -geotag= filename
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ exiftool -overwrite_original -geotag= filename
+</code></pre></div></div>
 
 <h3 id="ついでに回転した写真の修正方法も">ついでに回転した写真の修正方法も</h3>
 
 <p>エクスプローラ上では正常な写真がBlogなどに乗せると回転してしまう現象がある。それは写真の回転タグが影響しているので、下記コマンドで修正できる。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ exiftool -overwrite_original -n -Orientation=1 filename
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ exiftool -overwrite_original -n -Orientation=1 filename
+</code></pre></div></div>
 
 
 	</div>

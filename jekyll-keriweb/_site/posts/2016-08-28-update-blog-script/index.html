@@ -152,19 +152,18 @@
 
 <h3 id="sshconfig">~/.ssh/config</h3>
 
-<div class="language-config highlighter-rouge"><pre class="highlight"><code><span class="n">Host</span> <span class="n">github</span>
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Host</span> <span class="n">github</span>
 	<span class="n">HostName</span> <span class="n">github</span>.<span class="n">com</span>
 	<span class="n">User</span> <span class="n">git</span>
 	<span class="n">Port</span> <span class="m">22</span>
 	<span class="n">IdentityFile</span> ~/.<span class="n">ssh</span>/<span class="n">id_ecdsa</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="apache2の設定">Apache2の設定</h2>
 
 <h3 id="etcapache2sites-availablemyconfconf">/etc/apache2/sites-available/myconf.conf</h3>
 
-<div class="language-config highlighter-rouge"><pre class="highlight"><code>&lt;<span class="n">VirtualHost</span> *:<span class="m">80</span>&gt;
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="n">VirtualHost</span> *:<span class="m">80</span>&gt;
 	<span class="c"># The ServerName directive sets the request scheme, hostname and port that
 </span>	<span class="c"># the server uses to identify itself. This is used when creating
 </span>	<span class="c"># redirection URLs. In the context of virtual hosts, the ServerName
@@ -208,36 +207,34 @@
 &lt;/<span class="n">VirtualHost</span>&gt;
 
 <span class="c"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo a2ensite myconf
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo a2ensite myconf
 $ sudo a2dissite default-000
 $ sudo service apache2 restart
 
 $ sudo mkdir /var/keriweb
 $ sudo chown kerikun11 /var/keriweb
 $ sudo chgrp kerikun11 /var/keriweb
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="スクリプト">スクリプト</h2>
 
 <h3 id="update-keriwebsh">update-keriweb.sh</h3>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 <span class="nv">tmpdir</span><span class="o">=</span>/home/kerikun11/keriweb
 <span class="nv">repo</span><span class="o">=</span>github:kerikun11/keriweb.git
 <span class="nv">rsyncfrom</span><span class="o">=</span>./jekyll-keriweb/_site/
 <span class="nv">rsyncto</span><span class="o">=</span>/var/keriweb
 <span class="nv">rsync</span><span class="o">=</span><span class="s1">'rsync -vrtl --delete'</span>
-<span class="nv">dirname</span><span class="o">=</span><span class="sb">`</span>dirname <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span><span class="sb">`</span>
-<span class="nv">basename</span><span class="o">=</span><span class="sb">`</span>basename <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span><span class="sb">`</span>
+<span class="nb">dirname</span><span class="o">=</span><span class="sb">`</span><span class="nb">dirname</span> <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span><span class="sb">`</span>
+<span class="nb">basename</span><span class="o">=</span><span class="sb">`</span><span class="nb">basename</span> <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span><span class="sb">`</span>
 
-<span class="k">if</span> <span class="o">[</span> -d <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span> <span class="o">]</span>;<span class="k">then
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span><span class="k">then
 	</span><span class="nb">echo</span> <span class="s2">"found keriweb directory"</span>
 	<span class="nb">cd</span> <span class="s2">"</span><span class="nv">$tmpdir</span><span class="s2">"</span>
-	<span class="k">if </span>git pull; <span class="k">then
+	<span class="k">if </span>git pull<span class="p">;</span> <span class="k">then
 		</span><span class="nb">echo</span> <span class="s2">"start rsync"</span>
 		<span class="nv">$rsync</span> <span class="s2">"</span><span class="nv">$rsyncfrom</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$rsyncto</span><span class="s2">"</span>
 		<span class="nb">echo</span> <span class="s2">"end"</span>
@@ -247,18 +244,17 @@ fi
 
 </span><span class="nb">echo</span> <span class="s2">"not found </span><span class="nv">$basename</span><span class="s2">"</span>
 
-mkdir -p <span class="s2">"</span><span class="nv">$dirname</span><span class="s2">"</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$dirname</span><span class="s2">"</span>
 <span class="nb">cd</span> <span class="s2">"</span><span class="nv">$dirname</span><span class="s2">"</span>
-rm -rf <span class="s2">"</span><span class="nv">$basename</span><span class="s2">"</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="s2">"</span><span class="nv">$basename</span><span class="s2">"</span>
 
-<span class="k">if </span>git clone <span class="s2">"</span><span class="nv">$repo</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$basename</span><span class="s2">"</span>; <span class="k">then
+<span class="k">if </span>git clone <span class="s2">"</span><span class="nv">$repo</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$basename</span><span class="s2">"</span><span class="p">;</span> <span class="k">then
 	</span><span class="nb">echo</span> <span class="s2">"clone keriweb"</span>
 	<span class="nb">cd</span> <span class="s2">"</span><span class="nv">$basename</span><span class="s2">"</span>
 	<span class="nb">echo</span> <span class="s2">"start rsync"</span>
 	<span class="nv">$rsync</span> <span class="s2">"</span><span class="nv">$rsyncfrom</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$rsyncto</span><span class="s2">"</span>
 <span class="k">fi</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 	</div>

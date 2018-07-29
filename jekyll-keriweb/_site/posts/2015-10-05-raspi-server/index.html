@@ -154,20 +154,18 @@
 
 <p>　WiFiドングルをラズパイに差す。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ifconfig
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ifconfig
+</code></pre></div></div>
 
 <p>このコマンドで、インターフェースを確認する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$iwconfig
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$iwconfig
+</code></pre></div></div>
 
 <p>このコマンドでWiFi情報を確認できる。<br />
 　次のファイルを編集して、ハードウェアインターフェースの設定をする。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$sudo vim /etc/network/interfaces
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$sudo vim /etc/network/interfaces
 
 auto lo
 iface lo inet loopback
@@ -194,14 +192,13 @@ auto wlan1
 allow-hotplug wlan1
 iface wlan0 inet manual
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次のコマンド
 	$wpa_passphrase “your SSID” “Password”
 で表示された内容をもとに次のファイルの下に追加で記述する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
 
 ~~~
 network={
@@ -213,8 +210,7 @@ network={
 		pairwise=CCMP TKIP
 		group=CCMP TKIP WEP104 WEP40
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>　これでラズパイを再起動すればつながるはず。</p>
 
@@ -224,17 +220,15 @@ network={
 
 <p>ラズパイ上でラズパイ自身のローカルIPアドレスを確認しておく。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ip addr
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ip addr
+</code></pre></div></div>
 
 <p>家のルーターの管理設定にログインして、ラズパイのIPの設定を、「自動割り当て」から「手動割り当て」に変更する。</p>
 
 <p>　次に、Webサーバーアプリの「Apache2」をインストールする。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$sudo apt-get install apache2
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$sudo apt-get install apache2
+</code></pre></div></div>
 
 <p>　これで、とりあえずはローカルでサーバーとして使うことができる。ローカルネットワークの端末のブラウザでラズパイのローカルIPアドレスを入力すれば、アクセスできる。</p>
 
@@ -253,9 +247,8 @@ network={
   <li>ポートの開放状況は以下のコマンドで確認できる。</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$nmap
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$nmap
+</code></pre></div></div>
 
 <p>　次に、<a href="http://www.ugtop.com/spill.shtml">確認くん</a>により自分の家のグローバルIPアドレスを確認する。家のネットワークからアクセスしましょう。<br />
 　これで、適当なブラウザから、このグローバルIPアドレスにアクセスすれば、どこからでもラズパイのWebサーバーにアクセスできる。（ドメインはまだ取得していないので、IPアドレスを直打ちして接続している）</p>
@@ -288,9 +281,8 @@ network={
 
 <p>　ムームードメインで、独自ドメインを取得した。MyDNS.jpにも登録した。次にやることは、動的IPアドレスの自動更新である。定期的にグローバルIPの変更をチェックして<a href="http://www.mydns.jp">MyDNS.jp</a>に通知をすればよい。それには以下のコマンドを実行する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ wget -O- 'http://mydnsXXXXXX:PASSWORD@www.mydns.jp/login.html'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -O- 'http://mydnsXXXXXX:PASSWORD@www.mydns.jp/login.html'
+</code></pre></div></div>
 
 <p>これをcronなどを使って定期的に実行すればよい。</p>
 

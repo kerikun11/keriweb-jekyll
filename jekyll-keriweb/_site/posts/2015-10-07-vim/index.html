@@ -144,7 +144,7 @@
 
 <h3 id="vimrc">.vimrc</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>syntax enable
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>syntax enable
 set number
 set autoindent
 set smartindent
@@ -176,29 +176,25 @@ if has('vim_starting')
 endif
 
 filetype plugin indent on
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="pluginの設定">pluginの設定</h3>
 
 <p>NeoBundleをダウンロードする。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir -p ~.vim/bundle
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p ~.vim/bundle
 $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>プラグインを入れるには.vimrcにNeoBundleから続けてプラグイン名を書き、保存して、vim上で、</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>:NeoBundleInstall
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:NeoBundleInstall
+</code></pre></div></div>
 
 <p>または</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>:NeoBundleUpdate
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:NeoBundleUpdate
+</code></pre></div></div>
 
 <p>を実行する。</p>
 

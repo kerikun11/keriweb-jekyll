@@ -231,44 +231,44 @@
 
 <h3 id="mainc">main.c</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
  * Title:   PIC18F27J53 Low Power Clock
  * Date:	2016.09.12
  * Author:	kerikun11
  */</span>
 
-<span class="c1">// CONFIG1L
-</span><span class="cp">#pragma config WDTEN = OFF      // Watchdog Timer (Disabled - Controlled by SWDTEN bit)
+<span class="c1">// CONFIG1L</span>
+<span class="cp">#pragma config WDTEN = OFF      // Watchdog Timer (Disabled - Controlled by SWDTEN bit)
 #pragma config PLLDIV = 2       // PLL Prescaler Selection (Divide by 2 (8 MHz oscillator input))
 #pragma config CFGPLLEN = OFF   // PLL Enable Configuration Bit (PLL Disabled)
 #pragma config STVREN = OFF     // Stack Overflow/Underflow Reset (Disabled)
 #pragma config XINST = OFF      // Extended Instruction Set (Disabled)
-</span><span class="c1">// CONFIG1H
-</span><span class="cp">#pragma config CPUDIV = OSC1    // CPU System Clock Postscaler (No CPU system clock divide)
+</span><span class="c1">// CONFIG1H</span>
+<span class="cp">#pragma config CPUDIV = OSC1    // CPU System Clock Postscaler (No CPU system clock divide)
 #pragma config CP0 = OFF        // Code Protect (Program memory is not code-protected)
-</span><span class="c1">// CONFIG2L
-</span><span class="cp">#pragma config OSC = INTOSC     // Oscillator (INTOSC)
+</span><span class="c1">// CONFIG2L</span>
+<span class="cp">#pragma config OSC = INTOSC     // Oscillator (INTOSC)
 #pragma config SOSCSEL = HIGH   // T1OSC/SOSC Power Selection Bits (High Power T1OSC/SOSC circuit selected)
 #pragma config CLKOEC = OFF     // EC Clock Out Enable Bit  (CLKO output disabled on the RA6 pin)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor (Disabled)
 #pragma config IESO = OFF       // Internal External Oscillator Switch Over Mode (Disabled)
-</span><span class="c1">// CONFIG2H
-</span><span class="cp">#pragma config WDTPS = 1024     // Watchdog Postscaler (1:1024)
-</span><span class="c1">// CONFIG3L
-</span><span class="cp">#pragma config DSWDTOSC = T1OSCREF// DSWDT Clock Select (DSWDT uses T1OSC/T1CKI)
+</span><span class="c1">// CONFIG2H</span>
+<span class="cp">#pragma config WDTPS = 1024     // Watchdog Postscaler (1:1024)
+</span><span class="c1">// CONFIG3L</span>
+<span class="cp">#pragma config DSWDTOSC = T1OSCREF// DSWDT Clock Select (DSWDT uses T1OSC/T1CKI)
 #pragma config RTCOSC = T1OSCREF// RTCC Clock Select (RTCC uses T1OSC/T1CKI)
 #pragma config DSBOREN = OFF    // Deep Sleep BOR (Disabled)
 #pragma config DSWDTEN = OFF    // Deep Sleep Watchdog Timer (Disabled)
 #pragma config DSWDTPS = G2     // Deep Sleep Watchdog Postscaler (1:2,147,483,648 (25.7 days))
-</span><span class="c1">// CONFIG3H
-</span><span class="cp">#pragma config IOL1WAY = OFF    // IOLOCK One-Way Set Enable bit (The IOLOCK bit (PPSCON&lt;0&gt;) can be set and cleared as needed)
+</span><span class="c1">// CONFIG3H</span>
+<span class="cp">#pragma config IOL1WAY = OFF    // IOLOCK One-Way Set Enable bit (The IOLOCK bit (PPSCON&lt;0&gt;) can be set and cleared as needed)
 #pragma config ADCSEL = BIT12   // ADC 10 or 12 Bit Select (12 - Bit ADC Enabled)
 #pragma config MSSP7B_EN = MSK7 // MSSP address masking (7 Bit address masking mode)
-</span><span class="c1">// CONFIG4L
-</span><span class="cp">#pragma config WPFP = PAGE_127  // Write/Erase Protect Page Start/End Location (Write Protect Program Flash Page 127)
+</span><span class="c1">// CONFIG4L</span>
+<span class="cp">#pragma config WPFP = PAGE_127  // Write/Erase Protect Page Start/End Location (Write Protect Program Flash Page 127)
 #pragma config WPCFG = OFF      // Write/Erase Protect Configuration Region  (Configuration Words page not erase/write-protected)
-</span><span class="c1">// CONFIG4H
-</span><span class="cp">#pragma config WPDIS = OFF      // Write Protect Disable bit (WPFP&lt;6:0&gt;/WPEND region ignored)
+</span><span class="c1">// CONFIG4H</span>
+<span class="cp">#pragma config WPDIS = OFF      // Write Protect Disable bit (WPFP&lt;6:0&gt;/WPEND region ignored)
 #pragma config WPEND = PAGE_WPFP// Write/Erase Protect Region Select bit (valid when WPDIS = 0) (Pages WPFP&lt;6:0&gt; through Configuration Words erase/write protected)
 #pragma config LS48MHZ = SYS48X8// Low Speed USB mode with 48 MHz system clock bit (System clock at 48 MHz USB CLKEN divide-by is set to 8)
 </span>
@@ -365,42 +365,42 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">SCS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">DSCONLbits</span><span class="p">.</span><span class="n">RELEASE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b01110001</span><span class="p">;</span> <span class="c1">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0
-</span>    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00000001</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
-</span>    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111110</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
-</span>    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
-</span>    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
-</span>
-    <span class="c1">// Timer1
-</span>    <span class="n">T1CON</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10001101</span><span class="p">;</span>
+    <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b01110001</span><span class="p">;</span> <span class="c1">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0</span>
+    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00000001</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0</span>
+    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111110</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO</span>
+    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)</span>
+    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)</span>
+
+    <span class="c1">// Timer1</span>
+    <span class="n">T1CON</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10001101</span><span class="p">;</span>
     <span class="n">PIE1bits</span><span class="p">.</span><span class="n">TMR1IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="c1">// RTC
-</span>    <span class="n">EECON2</span> <span class="o">=</span> <span class="mh">0x55</span><span class="p">;</span>
+    <span class="c1">// RTC</span>
+    <span class="n">EECON2</span> <span class="o">=</span> <span class="mh">0x55</span><span class="p">;</span>
     <span class="n">EECON2</span> <span class="o">=</span> <span class="mh">0xAA</span><span class="p">;</span>
     <span class="n">RTCCFGbits</span><span class="p">.</span><span class="n">RTCWREN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">RTCCFG</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10100000</span><span class="p">;</span>
     <span class="n">RTCCAL</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
 
-    <span class="c1">// INT0
-</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// INT0</span>
+    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">INT0IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">INT0IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="c1">// INT1
-</span>    <span class="n">RPINR1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// INT1 -&gt; RP2
-</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// INT1</span>
+    <span class="n">RPINR1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// INT1 -&gt; RP2</span>
+    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCON3bits</span><span class="p">.</span><span class="n">INT1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCON3bits</span><span class="p">.</span><span class="n">INT1IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="c1">// INT2
-</span>    <span class="n">RPINR2</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span> <span class="c1">// INT2 -&gt; RP13
-</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// INT2</span>
+    <span class="n">RPINR2</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span> <span class="c1">// INT2 -&gt; RP13</span>
+    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">INTEDG2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCON3bits</span><span class="p">.</span><span class="n">INT2IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">INTCON3bits</span><span class="p">.</span><span class="n">INT2IE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="c1">// Enable Interrupts
-</span>    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// Enable Interrupts</span>
+    <span class="n">INTCONbits</span><span class="p">.</span><span class="n">PEIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -409,12 +409,11 @@
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="7segh">7seg.h</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* 
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 
  * File:   7seg.h
  * Author: kerikun11
  *
@@ -438,12 +437,11 @@
 <span class="cp">#endif
 </span>
 <span class="cp">#endif	</span><span class="cm">/* 7SEG_H */</span><span class="cp">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="7segc">7seg.c</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "7seg.h"
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "7seg.h"
 </span>
 <span class="cp">#define SEG_1   LATA1
 #define SEG_2   LATA2
@@ -464,19 +462,19 @@
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">print_7seg</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">col</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// BGACDEHF
-</span>    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">pattern</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="mi">0</span><span class="n">b10111110</span><span class="p">,</span> <span class="c1">//0
-</span>        <span class="mi">0</span><span class="n">b10010000</span><span class="p">,</span> <span class="c1">//1
-</span>        <span class="mi">0</span><span class="n">b11101100</span><span class="p">,</span> <span class="c1">//2
-</span>        <span class="mi">0</span><span class="n">b11111000</span><span class="p">,</span> <span class="c1">//3
-</span>        <span class="mi">0</span><span class="n">b11010010</span><span class="p">,</span> <span class="c1">//4
-</span>        <span class="mi">0</span><span class="n">b01111010</span><span class="p">,</span> <span class="c1">//5
-</span>        <span class="mi">0</span><span class="n">b01111110</span><span class="p">,</span> <span class="c1">//6
-</span>        <span class="mi">0</span><span class="n">b10110010</span><span class="p">,</span> <span class="c1">//7
-</span>        <span class="mi">0</span><span class="n">b11111110</span><span class="p">,</span> <span class="c1">//8
-</span>        <span class="mi">0</span><span class="n">b11111010</span><span class="p">,</span> <span class="c1">//9
-</span>    <span class="p">};</span>
+    <span class="c1">// BGACDEHF</span>
+    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">pattern</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="n">b10111110</span><span class="p">,</span> <span class="c1">//0</span>
+        <span class="mi">0</span><span class="n">b10010000</span><span class="p">,</span> <span class="c1">//1</span>
+        <span class="mi">0</span><span class="n">b11101100</span><span class="p">,</span> <span class="c1">//2</span>
+        <span class="mi">0</span><span class="n">b11111000</span><span class="p">,</span> <span class="c1">//3</span>
+        <span class="mi">0</span><span class="n">b11010010</span><span class="p">,</span> <span class="c1">//4</span>
+        <span class="mi">0</span><span class="n">b01111010</span><span class="p">,</span> <span class="c1">//5</span>
+        <span class="mi">0</span><span class="n">b01111110</span><span class="p">,</span> <span class="c1">//6</span>
+        <span class="mi">0</span><span class="n">b10110010</span><span class="p">,</span> <span class="c1">//7</span>
+        <span class="mi">0</span><span class="n">b11111110</span><span class="p">,</span> <span class="c1">//8</span>
+        <span class="mi">0</span><span class="n">b11111010</span><span class="p">,</span> <span class="c1">//9</span>
+    <span class="p">};</span>
     <span class="kt">uint8_t</span> <span class="n">pat</span><span class="p">;</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">case</span> <span class="sc">' '</span><span class="p">:</span>
@@ -508,8 +506,7 @@
     <span class="n">print_pattern</span><span class="p">(</span><span class="n">pat</span><span class="p">);</span>
     <span class="n">print_column</span><span class="p">(</span><span class="n">col</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="回路図">回路図</h2>
 

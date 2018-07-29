@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="layout-poster">
+
+	<head lang="ja">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@Ryokeri14" />
+	<meta name="twitter:title" content="省電力時計 - KERI's Lab" />
+	<meta name="twitter:description" content="マイコンは「PIC18F27J53」を使用	ブレッドボードで実装	" />
+	<meta name="twitter:image" content="http://localhost:4000/posters/low-power-clock/icon.jpg" />
+
+	<title>省電力時計 - KERI's Lab</title>
+	<meta name="description" content="マイコンは「PIC18F27J53」を使用	ブレッドボードで実装	">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000/posters/low-power-clock/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script language="JavaScript">
+		$(document).ready( function () {
+				$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+				})
+</script>
+
+</head>
+
+
+	<body>
+
+
+		<div class="page-content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+					<header class="post-header">
+						<img src="/posters/low-power-clock/icon.jpg" title="省電力時計" alt="省電力時計">
+						<div class="post-head-char">
+							<h1 class="post-title" itemprop="name headline">省電力時計</h1>
+							<p class="post-meta">
+								タグ: 
+								
+								電子工作
+								, 
+								
+								マイコン
+								, 
+								
+								PIC
+								, 
+								
+								省電力
+								, 
+								
+								時計
+								, 
+								
+								7セグメントLED
+								
+								
+							</p>
+							
+							
+							<p class="post-meta">
+								作者: けり (id研)
+							</p>
+							
+						</div>
+					</header>
+					<div class="post-content" itemprop="articleBody">
+						<h2>マイコンは「PIC18F27J53」を使用</h2>
+<div class="poster-img">
+	<span>ブレッドボードで実装</span><br/>
+	<img src="clock.jpg" title="本体" alt="本体" style="width:255px;"/>
+</div>
+<!--more-->
+<div class="poster-p" style="width:420px;">
+	<h3>ナノワットテクノロジ-</h3>
+	<p>　PIC18F27J53は省電力に特化しています．そんなPICを使って超低消費電力の時計を作りました．</p>
+	<h3>リアルタイムクロックモジュール</h3>
+	<p>　PIC18F27J53はリアルタイムクロックモジュールをハードウェアで内蔵しています．これは電力をほとんど消費しない時刻カウンタです．CPUの動作とは関係なく，スリープ中やリセット中でも動作し続けます．</p>
+	<h3>ディープスリープ機能</h3>
+	<p>　PIC18F27J53はディープスリープ機能を持っています．普通のスリープとは異なり，CPUの電源を完全に切るので，その間の消費電力はほぼ0です．ただしリアルタイムクロックはCPUと関係ないので動作を続けます．</p>
+</div>
+
+<h2>電流の変化</h2>
+<div class="poster-p" style="width:335px;">
+	<h3>ダイナミック点灯時</h3>
+	<p>　7セグLEDの点灯時は定期的に数mAの電流が流れています．平均は約1mA程度です．これはダイナミック点灯によるものです．</p>
+</div>
+<div class="poster-p" style="width:335px;">
+	<h3>ディープスリープ時</h3>
+	<p>　7セグの消灯時は電流が正弦波のように変化しています．平均はわずか1.7μA程度です．これならば数年間は電池交換の必要がありません．</p>
+</div>
+<div class="poster-img">
+	<img src="with-7seg.png" title="7seg" alt="7seg" style="width:335px;"/>
+</div>
+<div class="poster-img">
+	<img src="deep-sleep.png" title="7seg" alt="7seg" style="width:335px;"/>
+</div>
+
+<div class="poster-footer">
+	<p>Twitter: @Ryokeri14　HP: http://kerikeri.top</p>
+</div>
+
+					</div>
+
+				</article>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>

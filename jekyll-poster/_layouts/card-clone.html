@@ -1,0 +1,31 @@
+---
+---
+
+<!DOCTYPE html>
+<html class="layout-card">
+
+	{% include head.html %}
+
+	<body>
+
+		<div class="page-content">
+			{% for i in (1..10) %}
+
+			<div class="card">
+				<div class="wrapper">
+					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+						<div class="post-content" itemprop="articleBody">
+							{{ content }}
+						</div>
+
+					</article>
+				</div>
+			</div>
+
+			{% endfor %}
+		</div>
+
+	</body>
+
+</html>

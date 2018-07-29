@@ -189,11 +189,10 @@
 
 <p>Cygwinを起動したら、以下のコマンドを実行する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg
 $ chmod 755 apt-cyg
 $ mv apt-cyg /usr/local/bin/
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>インストール画面
 <img src="12.png" alt="インストール画面12" /></p>
@@ -202,15 +201,14 @@ $ mv apt-cyg /usr/local/bin/
 
 <p>あとは、欲しいソフトをインストールする</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ apt-cyg install vim
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ apt-cyg install vim
 $ apt-cyg install make
 $ apt-cyg install gcc-core
 $ apt-cyg install gcc-g++
 $ apt-cyg install zsh
 $ apt-cyg install tmux
 $ apt-cyg install git
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>などなど</p>
 
@@ -238,22 +236,19 @@ $ apt-cyg install git
 
 <h3 id="デフォルトのシェルをzshにする">デフォルトのシェルをzshにする</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ apt-cyg install zsh
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ apt-cyg install zsh
 $ ls /etc/passwd
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ここで<code class="highlighter-rouge">/etc/passwd</code>が存在しないときは以下のコマンドを打ち作る。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkpasswd &gt; /etc/passwd
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkpasswd &gt; /etc/passwd
+</code></pre></div></div>
 
 <p>作ったら開く</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ vim /etc/passwd
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vim /etc/passwd
+</code></pre></div></div>
 
 <p>一番下のほうの自分のユーザー名のところで、<code class="highlighter-rouge">/bin/bash</code>を<code class="highlighter-rouge">/bin/zsh</code>に変更する。<br />
 あとはCygwinを再起動すればデフォルトがzshellになっている。</p>

@@ -1,0 +1,19 @@
+---
+layout:		default
+title:		カード
+permalink:	/cards/
+---
+
+<div class="posts">
+
+	<header class="post-header">
+		<h1 class="post-title">カード</h1>
+	</header>
+	<ul class="post-list">
+		{% for card in site.cards %}
+		{% include card-list.html %}
+		{% endfor %}
+	</ul>
+
+</div>
+

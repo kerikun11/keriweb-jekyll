@@ -143,53 +143,46 @@
 
 <h2 id="インストールするもの">インストールするもの</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install cu
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install cu
+</code></pre></div></div>
 
 <h2 id="使い方">使い方</h2>
 
 <h3 id="接続されているか確認する">接続されているか確認する</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lsusb
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lsusb
+</code></pre></div></div>
 
 <h3 id="デバイス名を調べる">デバイス名を調べる</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ls /dev/tty*
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls /dev/tty*
+</code></pre></div></div>
 
 <p>ここでUSBシリアルは<code class="highlighter-rouge">/dev/ttyUSB0</code>や<code class="highlighter-rouge">/dev/ttyUSB1</code>で、ラズパイのシリアルは<code class="highlighter-rouge">/dev/ttyAMA0</code>などになります。</p>
 
 <h3 id="一般ユーザが扱えるようにする">一般ユーザが扱えるようにする</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo chmod 666 /dev/ttyUSB*
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo chmod 666 /dev/ttyUSB*
 or
 $ sudo chmod 666 /dev/ttyAMA0
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="シリアルモニタを開く">シリアルモニタを開く</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cu -s &lt;ボーレート&gt; -l &lt;デバイス名&gt;
+</code></pre></div></div>
 
 <p>たとえば、</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cu -s 115200 -l /dev/ttyUSB0
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cu -s 115200 -l /dev/ttyUSB0
+</code></pre></div></div>
 
 <h3 id="終わらせ方">終わらせ方</h3>
 
 <p>素早く以下のように打つと終了する。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>~.
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~.
+</code></pre></div></div>
 
 
 	</div>

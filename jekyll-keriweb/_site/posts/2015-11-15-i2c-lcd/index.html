@@ -177,13 +177,15 @@ main.c</p>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
 	<span class="n">Hardware_initialize</span><span class="p">();</span><span class="c1">// いろいろ初期設定する
-</span>	<span class="n">ST7032_init</span><span class="p">();</span>
+</span>
+	<span class="n">ST7032_init</span><span class="p">();</span>
 
 	<span class="n">ST7032_cursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
 	<span class="n">ST7032_puts</span><span class="p">(</span><span class="s">"PIC18F27J53"</span><span class="p">);</span>
 
 	<span class="c1">// main loop
-</span>	<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span>
+	<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
 		<span class="n">ST7032_task</span><span class="p">();</span>
 	<span class="p">}</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -210,10 +212,14 @@ main.c</p>
 <span class="kt">void</span> <span class="nf">ST7032_put</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="p">(</span><span class="n">ST7032_ADDRESS</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">W_0</span><span class="p">);</span>
 	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="mi">0</span><span class="n">b11000000</span><span class="p">);</span> <span class="c1">// control byte
-</span>	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span> <span class="c1">// data byte 
-</span>	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// stop bit
-</span>	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="n">WAIT_26US</span><span class="p">);</span> <span class="c1">// wait
-</span><span class="p">}</span>
+</span>
+	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span> <span class="c1">// data byte 
+</span>
+	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// stop bit
+</span>
+	<span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">,</span> <span class="n">WAIT_26US</span><span class="p">);</span> <span class="c1">// wait
+</span>
+<span class="p">}</span>
 <span class="kt">void</span> <span class="nf">ST7032_ISR</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span> <span class="p">(</span><span class="n">PIE1bits</span><span class="p">.</span><span class="n">SSP1IE</span> <span class="o">&amp;&amp;</span> <span class="n">PIR1bits</span><span class="p">.</span><span class="n">SSP1IF</span><span class="p">)</span> <span class="p">{</span>
 		<span class="n">PIR1bits</span><span class="p">.</span><span class="n">SSP1IF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -227,7 +233,8 @@ main.c</p>
 <span class="kt">void</span> <span class="nf">ST7032_task</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span> <span class="p">((</span><span class="n">SSP1CON2</span> <span class="o">&amp;</span> <span class="mh">0x1F</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">SSP1STAT</span> <span class="o">&amp;</span> <span class="mh">0x05</span><span class="p">))</span> <span class="p">{</span>
 		<span class="c1">// SSP is busy
-</span>		<span class="k">return</span><span class="p">;</span>
+</span>
+		<span class="k">return</span><span class="p">;</span>
 	<span class="p">}</span>
 	<span class="k">static</span> <span class="kt">uint16_t</span> <span class="n">wait</span><span class="p">;</span>
 	<span class="k">static</span> <span class="n">st7032_state_t</span> <span class="n">st7032_state</span> <span class="o">=</span> <span class="n">ST7032_IDLE</span><span class="p">;</span>
@@ -246,7 +253,8 @@ main.c</p>
 		<span class="k">case</span> <span class="n">ST7032_SEND</span><span class="p">:</span>
 			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">st7032_flag</span><span class="p">)</span> <span class="p">{</span>
 				<span class="c1">// no SSPIF
-</span>				<span class="k">return</span><span class="p">;</span>
+</span>
+				<span class="k">return</span><span class="p">;</span>
 			<span class="p">}</span>
 			<span class="kt">char</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lcd_tx</span><span class="p">);</span>
 			<span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>

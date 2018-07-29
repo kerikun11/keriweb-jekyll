@@ -1,0 +1,6 @@
+<div class="tag-list">
+	{% for tag in site.tags %}
+	<a href="/tags/#tag-index-{{ tag[0] }}" style="font-size:{{ tag[1].size | divided_by:1 | plus:14 }}px">{{ tag[0] }}</a>
+	{% if forloop.last == false %}, {% endif %}
+	{% endfor %}
+</div>

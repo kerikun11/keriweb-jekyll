@@ -143,22 +143,20 @@
 
 <p>これらの作業はすべてSSHで行う．fingなどを使ってIPアドレスを調べる．</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh pi@192.168.11.13
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh pi@192.168.11.13
+</code></pre></div></div>
 
 <!--more-->
 
 <h2 id="更新">更新</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get update
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get update
 $ sudo apt-get upgrade
 
 $ sudo rpi-update
 
 $ sudo raspi-config
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Expand Filesystem</li>
@@ -179,15 +177,13 @@ $ sudo raspi-config
 
 <h2 id="必要なパッケージのインストール">必要なパッケージのインストール</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install -y vim tmux zsh git
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install -y vim tmux zsh git
+</code></pre></div></div>
 
 <h2 id="ルートパスワードの変更">ルートパスワードの変更</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo passwd root
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo passwd root
+</code></pre></div></div>
 
 <h2 id="ipアドレスの固定化">IPアドレスの固定化</h2>
 
@@ -195,11 +191,10 @@ $ sudo raspi-config
 
 <p>あらかじめルーターの管理画面で，192.168.11.2をDHCPの割り当て範囲から外しておく．</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/network/interfaces
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo vim /etc/network/interfaces
+</code></pre></div></div>
 
-<div class="language-config highlighter-rouge"><pre class="highlight"><code><span class="c"># interfaces(5) file used by ifup(8) and ifdown(8)
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># interfaces(5) file used by ifup(8) and ifdown(8)
 </span>
 <span class="c"># Please note that this file is written to be used with dhcpcd
 # For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
@@ -226,55 +221,47 @@ $ sudo raspi-config
 <span class="n">allow</span>-<span class="n">hotplug</span> <span class="n">wlan1</span>
 <span class="n">iface</span> <span class="n">wlan1</span> <span class="n">inet</span> <span class="n">manual</span>
 	<span class="n">wpa</span>-<span class="n">conf</span> /<span class="n">etc</span>/<span class="n">wpa_supplicant</span>/<span class="n">wpa_supplicant</span>.<span class="n">conf</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="再起動">再起動</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo reboot
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo reboot
+</code></pre></div></div>
 
 <h2 id="使用ユーザーの作成">使用ユーザーの作成</h2>
 
 <h3 id="ユーザーを新規作成">ユーザーを新規作成</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo adduser hoge
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo adduser hoge
 $ sudo gpasswd -a hoge sudo
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="ホームディレクトリがなければ作る">ホームディレクトリがなければ作る</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ls -l /home
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ls -l /home
 $ sudo mkdir /home/hoge
 $ sudo chown hoge /home/hoge
 $ sudo chgrp hoge /home/hoge
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="デフォルトシェルの変更">デフォルトシェルの変更</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/passwd
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo vim /etc/passwd
+</code></pre></div></div>
 
-<div class="language-diff highlighter-rouge"><pre class="highlight"><code><span class="gd">- hoge:x:1001:1001:,,,:/home/hoge:/bin/bash
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- hoge:x:1001:1001:,,,:/home/hoge:/bin/bash
 </span><span class="gi">+ hoge:x:1001:1001:,,,:/home/hoge:/bin/zsh
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="ログイン">ログイン</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ su hoge
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ su hoge
+</code></pre></div></div>
 
 <h2 id="ユーザーpiの削除">ユーザーpiの削除</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo userdel -r pi
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo userdel -r pi
+</code></pre></div></div>
 
 <h2 id="公開鍵認証">公開鍵認証</h2>
 
@@ -282,45 +269,39 @@ $ sudo chgrp hoge /home/hoge
 
 <h4 id="必要があれば鍵の作成">必要があれば鍵の作成</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd .ssh
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd .ssh
 $ ssh-keygen -t ecdsa -C "foo"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="公開鍵の送信">公開鍵の送信</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ scp ~/.ssh/id_ecdsa.pub hoge@192.168.11.2:
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ scp ~/.ssh/id_ecdsa.pub hoge@192.168.11.2:
+</code></pre></div></div>
 
 <h3 id="ホスト上">ホスト上</h3>
 
 <h4 id="受け取った公開鍵の登録">受け取った公開鍵の登録</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir ~/.ssh
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir ~/.ssh
 $ cat ~/id_ecdsa.pub &gt;&gt; ~/.ssh/authorized_keys
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="接続方法">接続方法</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh hoge@192.168.11.2 -p 22 -i ~/.ssh/id_ecdsa
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh hoge@192.168.11.2 -p 22 -i ~/.ssh/id_ecdsa
+</code></pre></div></div>
 
 <h2 id="sshポートの変更パスワード認証の禁止">SSHポートの変更，パスワード認証の禁止</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo vim /etc/ssh/sshd_config
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo vim /etc/ssh/sshd_config
+</code></pre></div></div>
 
-<div class="language-diff highlighter-rouge"><pre class="highlight"><code><span class="gd">- Port 22
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- Port 22
 </span><span class="gi">+ Port 22222
 </span>
 <span class="gd">- #PasswordAuthentication yes
 </span><span class="gi">+ PasswordAuthentication no
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 
 	</div>

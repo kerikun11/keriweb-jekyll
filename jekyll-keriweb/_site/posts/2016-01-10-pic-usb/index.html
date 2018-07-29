@@ -277,8 +277,10 @@
 <span class="cp">#include &lt;stdint.h&gt;
 </span>
 <span class="c1">//*************************** ringbuf ***************************//
-// headは次に入れるバッファを指す。tailは次に出すバッファを指す。
 </span>
+<span class="c1">// headは次に入れるバッファを指す。tailは次に出すバッファを指す。
+</span>
+
 <span class="k">typedef</span> <span class="k">struct</span> <span class="n">ringbuf</span> <span class="p">{</span>
     <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buf</span><span class="p">;</span>
     <span class="kt">uint16_t</span> <span class="n">size</span><span class="p">;</span>
@@ -340,26 +342,23 @@
 
 <p>送りたいデータを<code class="highlighter-rouge">usb_tx</code>というリングバッファにプットすると自動で送信されます。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put(&amp;usb_tx, data);
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ringbuf_put(&amp;usb_tx, data);
+</code></pre></div></div>
 
 <p>または</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ringbuf_put_str(&amp;usb_tx, "Hello World!\n");
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ringbuf_put_str(&amp;usb_tx, "Hello World!\n");
+</code></pre></div></div>
 
 <h4 id="データの受信">データの受信</h4>
 
 <p>受信データは<code class="highlighter-rouge">usb_rx</code>というリングバッファに入っているのでポップします。<br />
 受信データの個数は<code class="highlighter-rouge">ringbuf_num(&amp;usb_rx)</code>関数で確認できます。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>if(ringbuf_num(&amp;usb_rx)){
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(ringbuf_num(&amp;usb_rx)){
     recieved_data = ringbuf_pop(&amp;usb_rx);
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="注意">注意</h2>
 
@@ -391,22 +390,30 @@
     <span class="cm">/* 各種設定 */</span>
 
     <span class="c1">// メインループ
-</span>    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
 
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 関数の二重呼び出しを防ぐために割り込み禁止
-</span>	<span class="cm">/* 何らかの処理1 */</span>
+</span>
+	<span class="cm">/* 何らかの処理1 */</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 割り込み禁止の解除
 </span>
+
         <span class="c1">// ここで割り込みが起きる
-</span>	
+</span>
+	
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 関数の二重呼び出しを防ぐために割り込み禁止
-</span>	<span class="cm">/* 何らかの処理2 */</span>
+</span>
+	<span class="cm">/* 何らかの処理2 */</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 割り込み禁止の解除
-</span>        
+</span>
+        
 	<span class="c1">// ここで割り込みが起きる
 </span>
+
         <span class="n">__delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// delayなどは割り込み許可エリアに書く
-</span>    <span class="p">}</span>
+</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="プログラムの例">プログラムの例</h2>
@@ -424,21 +431,29 @@
  */</span>
 
 <span class="c1">// CONFIG1L
-</span><span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
+</span>
+<span class="cp">#pragma config WDTEN = OFF, PLLDIV = 2, CFGPLLEN = ON, STVREN = OFF, XINST = OFF
 </span><span class="c1">// CONFIG1H
-</span><span class="cp">#pragma config CPUDIV = OSC1, CP0 = OFF
+</span>
+<span class="cp">#pragma config CPUDIV = OSC1, CP0 = OFF
 </span><span class="c1">// CONFIG2L
-</span><span class="cp">#pragma config OSC = INTOSCPLL, SOSCSEL = LOW, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
+</span>
+<span class="cp">#pragma config OSC = INTOSCPLL, SOSCSEL = LOW, CLKOEC = OFF, FCMEN = OFF, IESO = OFF
 </span><span class="c1">// CONFIG2H
-</span><span class="cp">#pragma config WDTPS = 1024
+</span>
+<span class="cp">#pragma config WDTPS = 1024
 </span><span class="c1">// CONFIG3L
-</span><span class="cp">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
+</span>
+<span class="cp">#pragma config DSWDTOSC = T1OSCREF, RTCOSC = T1OSCREF, DSBOREN = OFF, DSWDTEN = OFF, DSWDTPS = G2
 </span><span class="c1">// CONFIG3H
-</span><span class="cp">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
+</span>
+<span class="cp">#pragma config IOL1WAY = OFF, ADCSEL = BIT12, MSSP7B_EN = MSK7
 </span><span class="c1">// CONFIG4L
-</span><span class="cp">#pragma config WPFP = PAGE_127, WPCFG = OFF
+</span>
+<span class="cp">#pragma config WPFP = PAGE_127, WPCFG = OFF
 </span><span class="c1">// CONFIG4H
-</span><span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
+</span>
+<span class="cp">#pragma config WPDIS = OFF, WPEND = PAGE_WPFP, LS48MHZ = SYS48X8
 </span>
 <span class="cp">#include &lt;xc.h&gt;
 #include &lt;My_USB_CDC.h&gt;
@@ -452,24 +467,33 @@
     <span class="n">OSCTUNEbits</span><span class="p">.</span><span class="n">PLLEN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">OSCCONbits</span><span class="p">.</span><span class="n">SCS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">TRISA</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00010000</span><span class="p">;</span> <span class="c1">// RA7, RA6, RA5, Vcap, RA3, RA2, RA1,  RA0
-</span>    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111111</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
-</span>    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10111010</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
-</span>    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
-</span>    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
-</span>    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">RBPU</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// PORTB Pull-up Pnable
 </span>
+    <span class="n">TRISB</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00111111</span><span class="p">;</span> <span class="c1">// RB7, RB6, SDA, SCL,  RB3, RB2, RB1,  RB0
+</span>
+    <span class="n">TRISC</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10111010</span><span class="p">;</span> <span class="c1">// RXD, TXD, D+,  D-,   Vusb,RC2, T1OSI,T1OSO
+</span>
+    <span class="n">ANCON0</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b11111111</span><span class="p">;</span> <span class="c1">// x,x,x,AN4(RA5),AN3(RA3),AN2(RA2),AN1(RA1),AN0(RA0)
+</span>
+    <span class="n">ANCON1</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b00011111</span><span class="p">;</span> <span class="c1">// VBG,x,x,AN12(RB0),AN11(RC2),AN10(RB1),AN9(RB3),AN8(RB2)
+</span>
+    <span class="n">INTCON2bits</span><span class="p">.</span><span class="n">RBPU</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// PORTB Pull-up Pnable
+</span>
+
     <span class="n">USB_CDC_init</span><span class="p">();</span>
 
     <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 関数の二重呼び出しを防ぐために割り込み禁止
-</span>	<span class="c1">// 受信したデータをそのまま送信する。
-</span>	<span class="k">if</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">))</span> <span class="p">{</span>
+</span>
+	<span class="c1">// 受信したデータをそのまま送信する。
+</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">ringbuf_num</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">))</span> <span class="p">{</span>
 	    <span class="kt">uint8_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ringbuf_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_rx</span><span class="p">);</span>
 	    <span class="n">ringbuf_put</span><span class="p">(</span><span class="o">&amp;</span><span class="n">usb_tx</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
 	<span class="p">}</span>
 	<span class="n">USB_CDC_task</span><span class="p">();</span>
 	<span class="n">INTCONbits</span><span class="p">.</span><span class="n">GIE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 割り込み禁止の解除
-</span>    <span class="p">}</span>
+</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="まとめ">まとめ</h2>

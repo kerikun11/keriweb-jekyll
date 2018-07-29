@@ -159,7 +159,7 @@
 <p>C++のメンバ関数をFreeRTOSに渡すためのクラスです．タスクを作るときはこのクラスを継承して使います． 
 こちらのコードは，<a href="http://idken.net/posts/2017-02-01-freertos_task_cpp/">id研</a>さんから教えて頂いたものを改変しております．</p>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#pragma once
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma once
 </span>
 <span class="cp">#include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -178,8 +178,8 @@
       <span class="k">if</span> <span class="p">(</span><span class="n">handle</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span><span class="p">;</span>
       <span class="p">}</span>
-      <span class="c1">//      xTaskCreate(task_entry_point, name, stack_size, this, priority, &amp;handle);
-</span>      <span class="n">xTaskCreatePinnedToCore</span><span class="p">(</span><span class="n">task_entry_point</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">stack_size</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="n">priority</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">handle</span><span class="p">,</span> <span class="n">xCoreID</span><span class="p">);</span>
+      <span class="c1">//      xTaskCreate(task_entry_point, name, stack_size, this, priority, &amp;handle);</span>
+      <span class="n">xTaskCreatePinnedToCore</span><span class="p">(</span><span class="n">task_entry_point</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">stack_size</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="n">priority</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">handle</span><span class="p">,</span> <span class="n">xCoreID</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="kt">void</span> <span class="n">delete_task</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="n">handle</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
@@ -201,22 +201,20 @@
       <span class="n">static_cast</span><span class="o">&lt;</span><span class="n">TaskBase</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">task_instance</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">task</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="ブザークラス">ブザークラス</h2>
 
 <p>圧電スピーカを鳴らすライブラリです．</p>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">Buzzer</span><span class="o">::</span><span class="n">sound</span><span class="p">(</span><span class="n">note_t</span> <span class="n">note</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">octave</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">time_ms</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">Buzzer</span><span class="o">::</span><span class="n">sound</span><span class="p">(</span><span class="n">note_t</span> <span class="n">note</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">octave</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">time_ms</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>この関数に音階，オクターブ，鳴らす時間を与えると自分で好きなメロディを作ることができます．その時は<code class="highlighter-rouge">enum Music</code>に新しいエントリを追加して，下のswitch文の中に書いてください．</p>
 
 <h3 id="buzzerh">Buzzer.h</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#pragma once
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma once
 </span>
 <span class="cp">#include &lt;Arduino.h&gt;
 #include "TaskBase.h"
@@ -309,12 +307,11 @@
       <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="使い方">使い方</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "Buzzer.h"
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "Buzzer.h"
 </span>
 <span class="cp">#define PIN_BUZZER      19
 #define LEDC_CH_BUZZER  1
@@ -327,8 +324,7 @@
 
 <span class="kt">void</span> <span class="n">loop</span><span class="p">(){</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="ボタンクラス">ボタンクラス</h2>
 
@@ -340,7 +336,7 @@
 
 <h3 id="buttonh">Button.h</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#pragma once
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma once
 </span>
 <span class="cp">#include &lt;Arduino.h&gt;
 #include "TaskBase.h"
@@ -414,12 +410,11 @@
       <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="使い方-1">使い方</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "Buzzer.h"
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "Buzzer.h"
 #include "Button.h"
 </span>
 <span class="cp">#define BUTTON_PIN      0
@@ -437,18 +432,17 @@
 <span class="kt">void</span> <span class="n">loop</span><span class="p">(){</span>
 
   <span class="k">if</span><span class="p">(</span><span class="n">btn</span><span class="p">.</span><span class="n">pressed</span><span class="p">){</span>
-    <span class="n">btn</span><span class="p">.</span><span class="n">pressed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// フラグを確認したらクリアする
-</span>    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">SELECT</span><span class="p">);</span>
+    <span class="n">btn</span><span class="p">.</span><span class="n">pressed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// フラグを確認したらクリアする</span>
+    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">SELECT</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="k">if</span><span class="p">(</span><span class="n">btn</span><span class="p">.</span><span class="n">long_pressed_1</span> <span class="o">||</span> <span class="n">btn</span><span class="p">.</span><span class="n">long_presssin_2</span><span class="p">){</span>
-    <span class="n">btn</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// まとめてクリア
-</span>    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">CANCEL</span><span class="p">);</span>
+    <span class="n">btn</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// まとめてクリア</span>
+    <span class="n">bz</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">Buzzer</span><span class="o">::</span><span class="n">CANCEL</span><span class="p">);</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="まとめ">まとめ</h2>
 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="layout-poster">
+
+	<head lang="ja">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@Ryokeri14" />
+	<meta name="twitter:title" content="マイクロマウス競技 - KERI's Lab" />
+	<meta name="twitter:description" content="マイクロマウスとは		マイクロマウスの例		迷路		実際の迷路	概要	　マイクロマウスとは，与えられた迷路を探索してゴールを目指す知的ロボットです．マイクロマウスの特徴はその名前の通りとても小さいことです．一般的なマウスの大きさは10cm程度で，手のひらにすっぽり収まる大きさです．	" />
+	<meta name="twitter:image" content="http://localhost:4000/posters/micromouse/icon.jpg" />
+
+	<title>マイクロマウス競技 - KERI's Lab</title>
+	<meta name="description" content="マイクロマウスとは		マイクロマウスの例		迷路		実際の迷路	概要	　マイクロマウスとは，与えられた迷路を探索してゴールを目指す知的ロボットです．マイクロマウスの特徴はその名前の通りとても小さいことです．一般的なマウスの大きさは10cm程度で，手のひらにすっぽり収まる大きさです．	">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000/posters/micromouse/">
+	<link rel="alternate" type="application/rss+xml" title="KERI's Lab" href="http://localhost:4000/feed.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script language="JavaScript">
+		$(document).ready( function () {
+				$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+				})
+</script>
+
+</head>
+
+
+	<body>
+
+
+		<div class="page-content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+					<header class="post-header">
+						<img src="/posters/micromouse/icon.jpg" title="マイクロマウス競技" alt="マイクロマウス競技">
+						<div class="post-head-char">
+							<h1 class="post-title" itemprop="name headline">マイクロマウス競技</h1>
+							<p class="post-meta">
+								タグ: 
+								
+								ロボット
+								, 
+								
+								ロボコン
+								, 
+								
+								迷路探索
+								, 
+								
+								アルゴリズム
+								
+								
+							</p>
+							
+							<p class="post-meta">
+							所属: 東京工業大学ロボット技術研究会Cheese
+							</p>
+							
+							
+						</div>
+					</header>
+					<div class="post-content" itemprop="articleBody">
+						<h2>マイクロマウスとは</h2>
+<div class="poster-img">
+	<img src="kerisev1.jpg" title="マイクロマウス" alt="マイクロマウス" style="width:170px;"/></br>
+	<span>マイクロマウスの例</span><br/>
+	<img src="maze.jpg" title="迷路" alt="迷路" style="width:170px;"/></br>
+	<span>迷路</span><br/>
+	<img src="maze.png" title="迷路" alt="迷路" style="width:170px;"/></br>
+	<span>実際の迷路</span><br/>
+</div>
+<div class="poster-p" style="width:500px;">
+	<h3>概要</h3>
+	<p>　マイクロマウスとは，与えられた迷路を探索してゴールを目指す知的ロボットです．マイクロマウスの特徴はその名前の通りとても小さいことです．一般的なマウスの大きさは10cm程度で，手のひらにすっぽり収まる大きさです．</p>
+	<!--more-->
+	<h3>ルール</h3>
+	<p>　迷路は，16x16区画の計256区画から成ります．競技前にマウスが知っているのは，スタート区画とゴール区画の位置だけです．センサなどを使って壁を判定し，ゴールを目指します．走行回数と持ち時間が決められており，スタート地点を出発してからゴール地点に到達した走行の中で，最短時間のものが記録として残ります．
+	<h3>マイクロマウス競技の歴史</h3>
+	<p>　日本でこの競技が始まったのは1980年です．長い歴史にもかかわらず，ルールがあまり変わらないのがマイクロマウス競技の特徴で， 数年単位という時間をかけて開発することができます．</p>
+</div>
+
+<h2>近年のマイクロマウス</h2>
+<div class="poster-img">
+	<img src="back.jpg" title="吸引機構" alt="吸引機構" style="width:170px;"/></br>
+	<span>吸引機構</span><br/>
+	<img src="half.jpg" title="ハーフサイズマウス" alt="ハーフサイズマウス" style="width:170px;"/></br>
+	<span>ハーフサイズのマウス</span><br/>
+</div>
+<div class="poster-p" style="width:500px;">
+	<h3>吸引機構</h3>
+	<p>　マウスが高速で走行すると，車体が浮き上がってしまい，タイヤが空回りしてしまいます．また，高速でカーブを曲がろうすると遠心力で車体が横転してしまいます．それを防ぐために用いられているのが吸引機構です．車体の裏から地面を吸引することで，タイヤが空回りすることなく高速に走行することができます．</p>
+	<h3>ハーフサイズクラス</h3>
+	<p>　迷路の1区画が18cmから9cmと半分のサイズの競技が追加されました．しかし，迷路全体の大きさは変わらないの区画数は4倍です．</p>
+	<p>　部品のサイズが小さくなっても，工具や工作機械の精度は変わりません．言い換えれば，あらゆる誤差が2倍になるとも言えるので，製作が困難であることがわかります．</p>
+</div>
+
+<div class="poster-footer">
+	<p>Contact: ssrcheese@gmail.com</p>
+</div>
+
+					</div>
+
+				</article>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>

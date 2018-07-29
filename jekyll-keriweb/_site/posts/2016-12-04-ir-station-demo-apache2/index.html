@@ -159,36 +159,33 @@
 
 <h2 id="環境作り">環境作り</h2>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get install rubygems
-<span class="gp">$ </span>sudo apt-get install libapache2-mod-passenger
-<span class="gp">$ </span>sudo gem install sinatra
-<span class="gp">$ </span>sudo gem install sinatra-contrib
-<span class="gp">$ </span>sudo gem install passenger
-<span class="gp">$ </span>sudo apt-get install -y libcurl4-openssl-dev apache2-threaded-dev ruby-dev libapr1-dev libaprutil1-dev
-<span class="gp">$ </span>sudo passenger-install-apache2-module
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>rubygems
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>libapache2-mod-passenger
+<span class="nv">$ </span><span class="nb">sudo </span>gem <span class="nb">install </span>sinatra
+<span class="nv">$ </span><span class="nb">sudo </span>gem <span class="nb">install </span>sinatra-contrib
+<span class="nv">$ </span><span class="nb">sudo </span>gem <span class="nb">install </span>passenger
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> libcurl4-openssl-dev apache2-threaded-dev ruby-dev libapr1-dev libaprutil1-dev
+<span class="nv">$ </span><span class="nb">sudo </span>passenger-install-apache2-module
 いろいろ聞いてくるのでEnterを押しまくる．エラーがなければOK
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="アプリケーションの用意">アプリケーションの用意</h2>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/kerikun11/IR-station.git
-<span class="gp">$ </span>sudo mkdir /var/ir-station
-<span class="gp">$ </span>sudo chown kerikun11 /var/ir-station
-<span class="gp">$ </span>sudo chgrp kerikun11 /var/ir-station
-<span class="gp">$ </span>ln -ds ~/IR-station/server_demo/main /var/ir-station/
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/kerikun11/IR-station.git
+<span class="nv">$ </span><span class="nb">sudo mkdir</span> /var/ir-station
+<span class="nv">$ </span><span class="nb">sudo chown </span>kerikun11 /var/ir-station
+<span class="nv">$ </span><span class="nb">sudo chgrp </span>kerikun11 /var/ir-station
+<span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-ds</span> ~/IR-station/server_demo/main /var/ir-station/
+</code></pre></div></div>
 
 <h2 id="apache2の設定">Apache2の設定</h2>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo vim /etc/apache2/sites-available/myconf.conf
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vim /etc/apache2/sites-available/myconf.conf
+</code></pre></div></div>
 
 <p>以下を追記</p>
 
-<div class="language-conf highlighter-rouge"><pre class="highlight"><code>&lt;<span class="n">VirtualHost</span> *:<span class="m">80</span>&gt;
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="n">VirtualHost</span> *:<span class="m">80</span>&gt;
         <span class="c"># The ServerName directive sets the request scheme, hostname and port that
 </span>        <span class="c"># the server uses to identify itself. This is used when creating
 </span>        <span class="c"># redirection URLs. In the context of virtual hosts, the ServerName
@@ -234,14 +231,12 @@
 </span>&lt;/<span class="n">VirtualHost</span>&gt;
 
 <span class="c"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="設定を反映">設定を反映</h3>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo service apache2 restart
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service apache2 restart
+</code></pre></div></div>
 
 
 	</div>

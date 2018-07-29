@@ -1,0 +1,21 @@
+---
+layout: default
+title: "タグ"
+permalink: /tags/
+---
+
+<h1 class="page-heading">Tags</h1>
+{% include tag-list.html %}
+
+{% for tag in site.tags %}
+
+<h1 class="page-heading" id="tag-index-{{ tag[0] }}">{{ tag[0] }} ({{ tag[1].size }}) <a href="#" style="font-size:14px;">タグ一覧へ</a></h1>
+
+<ul class="post-list">
+	{% for post in tag[1] %}
+	{% include post-list.html %}
+	{% endfor %}
+</ul>
+
+{% endfor %}
+

@@ -269,7 +269,7 @@
 
 <p><code class="highlighter-rouge">$ sudo vi /usr/share/X11/xorg.conf.d/10-evdev.conf</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Section "InputClass"  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Section "InputClass"  
 	Identifier "Surface Pro 3 cover"
 	MatchIsPointer "on"
 	MatchDevicePath "/dev/input/event*"
@@ -278,8 +278,7 @@
 	Option "product" "07dd"
 	Option "IgnoreAbsoluteAxes" "True"
 EndSection
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>「product」の”07dd”はJIS配列のキーボードの場合。US配列は”07dc”とする。</p>
 
@@ -287,34 +286,31 @@ EndSection
 
 <p><code class="highlighter-rouge">$ sudo vi /usr/share/X11/xorg.conf.d/50-synaptics.conf</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Section "InputClass"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Section "InputClass"
     Identifier "Disable clickpad buttons on Apple touchpads"
     MatchProduct "Apple|bcm5974"
     MatchDriver "synaptics"
     Option "SoftButtonAreas" "0 0 0 0 0 0 0 0"
 EndSection
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>再起動する。</p>
 
 <h3 id="7センサー設定">7.センサー設定</h3>
 <p>様々なドライバをインストール</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install -y lm-sensors
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install -y lm-sensors
 $ sudo sensors-detect
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これを実行するといろいろ聞かれるので、yesを打ち続ける。</p>
 
 <p>Bluetoothドライバをインストール</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone git://git.marvell.com/mwifiex-firmware.git
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone git://git.marvell.com/mwifiex-firmware.git
 $ mkdir -p /lib/firmware/mrvl/
 $ sudo cp mwifiex-firmware/mrvl/\* /lib/firmware/mrvl/
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="8必要に応じてlinux-kernelをインストールする">8.必要に応じてLinux-kernelをインストールする。</h3>
 
@@ -323,11 +319,10 @@ $ sudo cp mwifiex-firmware/mrvl/\* /lib/firmware/mrvl/
 <p>不満な点があるならば、<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">Index of /~kernel-ppa/mainline</a>から最新のkernelのdebファイルをダウンロードする。
 例えば、v4.3が最新なら、</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 v4.3-wily/linux-headers-4.3.0-040300_4.3.0-040300.201511020949_all.deb
 v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>の３つのファイルをダウンロードする。</p>
 
@@ -383,9 +378,8 @@ v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
 
 <p>　Ubuntuを日本語でインストールすると、ホームディレクトリのフォルダ類（ドキュメントやダウンロードなど）が日本語になっている。このままだと、ターミナルでのアクセスが少し面倒である。これらを英語に変える方法がある。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ LANG=C xdg-user-dirs-gtk-update
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ LANG=C xdg-user-dirs-gtk-update
+</code></pre></div></div>
 
 <p>を実行して、現れたダイアログで「Don’t ask me again」にチェックを入れて、「Update Names」を押す。</p>
 

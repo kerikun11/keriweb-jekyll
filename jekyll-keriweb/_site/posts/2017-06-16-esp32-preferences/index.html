@@ -162,19 +162,19 @@
 
 <h3 id="preferencesh">Preferences.h</h3>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="c1">// Copyright 2015-2016 Espressif Systems (Shanghai) PTE LTD
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-</span>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Copyright 2015-2016 Espressif Systems (Shanghai) PTE LTD</span>
+<span class="c1">//</span>
+<span class="c1">// Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="c1">// you may not use this file except in compliance with the License.</span>
+<span class="c1">// You may obtain a copy of the License at</span>
+<span class="c1">//     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">//</span>
+<span class="c1">// Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1">// distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="c1">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1">// See the License for the specific language governing permissions and</span>
+<span class="c1">// limitations under the License.</span>
+
 <span class="cp">#ifndef _PREFERENCES_H_
 #define _PREFERENCES_H_
 </span>
@@ -231,14 +231,13 @@
 <span class="p">};</span>
 
 <span class="cp">#endif
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="sampleino">sample.ino</h3>
 
 <p>起動回数をPreferencesとして保存し，再起動を繰り返してもデータが消えないというサンプルです．</p>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
  ESP32 start counter example with Preferences library
 
  This simple example demonstrate using Preferences library to store how many times
@@ -257,45 +256,44 @@
   <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
   <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
 
-  <span class="c1">// Open Preferences with my-app namespace. Each application module, library, etc.
-</span>  <span class="c1">// has to use namespace name to prevent key name collisions. We will open storage in
-</span>  <span class="c1">// RW-mode (second parameter has to be false).
-</span>  <span class="c1">// Note: Namespace name is limited to 15 chars
-</span>  <span class="n">preferences</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">"my-app"</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="c1">// Open Preferences with my-app namespace. Each application module, library, etc.</span>
+  <span class="c1">// has to use namespace name to prevent key name collisions. We will open storage in</span>
+  <span class="c1">// RW-mode (second parameter has to be false).</span>
+  <span class="c1">// Note: Namespace name is limited to 15 chars</span>
+  <span class="n">preferences</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="s">"my-app"</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
 
-  <span class="c1">// Remove all preferences under opened namespace
-</span>  <span class="c1">//preferences.clear();
-</span>
-  <span class="c1">// Or remove the counter key only
-</span>  <span class="c1">//preferences.remove("counter");
-</span>
-  <span class="c1">// Get a counter value, if key is not exist return default value 0
-</span>  <span class="c1">// Note: Key name is limited to 15 chars too
-</span>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">preferences</span><span class="p">.</span><span class="n">getUInt</span><span class="p">(</span><span class="s">"counter"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="c1">// Remove all preferences under opened namespace</span>
+  <span class="c1">//preferences.clear();</span>
 
-  <span class="c1">// Increase counter
-</span>  <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+  <span class="c1">// Or remove the counter key only</span>
+  <span class="c1">//preferences.remove("counter");</span>
 
-  <span class="c1">// Print counter to a Serial
-</span>  <span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">"Current counter value: %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
+  <span class="c1">// Get a counter value, if key is not exist return default value 0</span>
+  <span class="c1">// Note: Key name is limited to 15 chars too</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">preferences</span><span class="p">.</span><span class="n">getUInt</span><span class="p">(</span><span class="s">"counter"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 
-  <span class="c1">// Store counter to the Preferences
-</span>  <span class="n">preferences</span><span class="p">.</span><span class="n">putUInt</span><span class="p">(</span><span class="s">"counter"</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
+  <span class="c1">// Increase counter</span>
+  <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
 
-  <span class="c1">// Close the Preferences
-</span>  <span class="n">preferences</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+  <span class="c1">// Print counter to a Serial</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">"Current counter value: %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
 
-  <span class="c1">// Wait 10 seconds
-</span>  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Restarting in 2 seconds..."</span><span class="p">);</span>
+  <span class="c1">// Store counter to the Preferences</span>
+  <span class="n">preferences</span><span class="p">.</span><span class="n">putUInt</span><span class="p">(</span><span class="s">"counter"</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
+
+  <span class="c1">// Close the Preferences</span>
+  <span class="n">preferences</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+
+  <span class="c1">// Wait 10 seconds</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Restarting in 2 seconds..."</span><span class="p">);</span>
   <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
 
-  <span class="c1">// Restart ESP
-</span>  <span class="n">ESP</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+  <span class="c1">// Restart ESP</span>
+  <span class="n">ESP</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="説明">説明</h2>
 

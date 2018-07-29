@@ -154,24 +154,22 @@
 
 <p>たったこれだけ．</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 <span class="nb">echo</span> <span class="s2">"MyDNS IP UPDATE"</span>
-wget -O- <span class="s1">'http://mydns012345:XXXXXXXXXXX@www.mydns.jp/login.html'</span>
+wget <span class="nt">-O-</span> <span class="s1">'http://mydns012345:XXXXXXXXXXX@www.mydns.jp/login.html'</span>
 <span class="nb">echo</span> <span class="s2">"end"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実行権限をつけるのをお忘れなく．</p>
 
 <h2 id="crontabの設定">Crontabの設定</h2>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
-</code></pre>
-</div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crontab <span class="nt">-e</span>
+</code></pre></div></div>
 
 <p>5分ごとに通知する．</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Edit this file to introduce tasks to be run by cron.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
 # indicating with different fields when the task will be run
@@ -195,8 +193,7 @@ wget -O- <span class="s1">'http://mydns012345:XXXXXXXXXXX@www.mydns.jp/login.htm
 # m h  dom mon dow   command
 
 */5     *       *       *       *       ~/scripts/mydns.sh
-</code></pre>
-</div>
+</code></pre></div></div>
 
 	</div>
 

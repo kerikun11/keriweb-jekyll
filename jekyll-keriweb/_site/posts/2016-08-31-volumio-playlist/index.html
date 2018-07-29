@@ -189,15 +189,14 @@
 
 <h4 id="playlistm3u">Playlist.m3u</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#EXTM3U
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#EXTM3U
 #EXTINF:287,花束　 - back number
 C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\スーパースター\03 花束.m4a
 #EXTINF:294,高嶺の花子さん - back number
 C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\ラブストーリー\06 高嶺の花子さん.m4a
 #EXTINF:203,サイレン - back number
 C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 サイレン.m4a
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="volumioの独自json形式">Volumioの独自JSON形式</h3>
 
@@ -207,34 +206,33 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 
 <h4 id="playlistjson">Playlist.json</h4>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/スーパースター/03 花束.m4a"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花束　"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"スーパースター"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%2F03%20%E8%8A%B1%E6%9D%9F.m4a"</span><span class="w">
+    </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/スーパースター/03 花束.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花束　"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"スーパースター"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%2F03%20%E8%8A%B1%E6%9D%9F.m4a"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/ラブストーリー/06 高嶺の花子さん.m4a"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"高嶺の花子さん"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ラブストーリー"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%2F06%20%E9%AB%98%E5%B6%BA%E3%81%AE%E8%8A%B1%E5%AD%90%E3%81%95%E3%82%93.m4a"</span><span class="w">
+    </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/ラブストーリー/06 高嶺の花子さん.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"高嶺の花子さん"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ラブストーリー"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%83%A9%E3%83%96%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%2F06%20%E9%AB%98%E5%B6%BA%E3%81%AE%E8%8A%B1%E5%AD%90%E3%81%95%E3%82%93.m4a"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/シャンデリア/02 サイレン.m4a"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"サイレン"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"シャンデリア"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2%2F02%20%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3.m4a"</span><span class="w">
+    </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mnt/INTERNAL/back number/シャンデリア/02 サイレン.m4a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"サイレン"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"artist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"back number"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"album"</span><span class="p">:</span><span class="w"> </span><span class="s2">"シャンデリア"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"albumart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/albumart?web=back%20number/%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2/large&amp;path=%2Fmnt%2FINTERNAL%2Fback%20number%2F%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%87%E3%83%AA%E3%82%A2%2F02%20%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3.m4a"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h2 id="変換スクリプト">変換スクリプト</h2>
 
@@ -244,7 +242,7 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 
 <h4 id="m3u2volumiorb">m3u2volumio.rb</h4>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s1">'json'</span>
 <span class="nb">require</span> <span class="s1">'erb'</span>
@@ -282,8 +280,7 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 		<span class="n">json</span><span class="p">.</span><span class="nf">puts</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">pretty_generate</span> <span class="n">output</span>
 	<span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="使い方">使い方</h2>
 
@@ -297,22 +294,20 @@ C:\Users\hoge\Music\iTunes\iTunes Media\Music\back number\シャンデリア\02 
 
 <h3 id="プレイリストの作成">プレイリストの作成</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls
-m3u2volumio.rb  playlist.m3u
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls
+</span>m3u2volumio.rb  playlist.m3u
 
-<span class="gp">$ </span>./m3u2volumio.rb playlist.m3u
+<span class="nv">$ </span>./m3u2volumio.rb playlist.m3u
 Creating playlist.json
 
-<span class="gp">$ </span>ls
-m3u2volumio.rb  playlist.m3u  playlist.json
-</code></pre>
-</div>
+<span class="nv">$ </span><span class="nb">ls
+</span>m3u2volumio.rb  playlist.m3u  playlist.json
+</code></pre></div></div>
 
 <h3 id="プレイリストの送信">プレイリストの送信</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>scp playlist.json volumio@volumio.local:/data/playlist/playlist.json
-</code></pre>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scp playlist.json volumio@volumio.local:/data/playlist/playlist.json
+</code></pre></div></div>
 
 <h3 id="外付けストレージやnasを使う場合">外付けストレージやNASを使う場合</h3>
 

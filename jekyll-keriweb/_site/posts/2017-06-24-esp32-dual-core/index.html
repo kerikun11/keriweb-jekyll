@@ -186,30 +186,28 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
 
 <p>普段FreeRTOSでタスクを作成するときは</p>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">BaseType_t</span> <span class="n">xTaskCreate</span><span class="p">(</span>
-		<span class="n">TaskFunction_t</span> <span class="n">pxTaskCode</span><span class="p">,</span>         	<span class="c1">//&lt; タスクの関数ポインタ
-</span>		<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pcName</span><span class="p">,</span>         	<span class="c1">//&lt; タスク名
-</span>		<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">usStackDepth</span><span class="p">,</span>       	<span class="c1">//&lt; タスクのスタックサイズ
-</span>		<span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pvParameters</span><span class="p">,</span>         	<span class="c1">//&lt; タスク関数に渡す引数
-</span>		<span class="n">UBaseType_t</span> <span class="n">uxPriority</span><span class="p">,</span>            	<span class="c1">//&lt; タスクの優先度
-</span>		<span class="n">TaskHandle_t</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pxCreatedTask</span><span class="p">,</span>	<span class="c1">//&lt; タスクのハンドル
-</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BaseType_t</span> <span class="n">xTaskCreate</span><span class="p">(</span>
+		<span class="n">TaskFunction_t</span> <span class="n">pxTaskCode</span><span class="p">,</span>         	<span class="c1">//&lt; タスクの関数ポインタ</span>
+		<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pcName</span><span class="p">,</span>         	<span class="c1">//&lt; タスク名</span>
+		<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">usStackDepth</span><span class="p">,</span>       	<span class="c1">//&lt; タスクのスタックサイズ</span>
+		<span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pvParameters</span><span class="p">,</span>         	<span class="c1">//&lt; タスク関数に渡す引数</span>
+		<span class="n">UBaseType_t</span> <span class="n">uxPriority</span><span class="p">,</span>            	<span class="c1">//&lt; タスクの優先度</span>
+		<span class="n">TaskHandle_t</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pxCreatedTask</span><span class="p">,</span>	<span class="c1">//&lt; タスクのハンドル</span>
+<span class="p">);</span>
+</code></pre></div></div>
 
 <p>という関数を使いますが，代わりに</p>
 
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">BaseType_t</span> <span class="n">xTaskCreatePinnedToCore</span><span class="p">(</span>
-		<span class="n">TaskFunction_t</span> <span class="n">pxTaskCode</span><span class="p">,</span>         	<span class="c1">//&lt; タスクの関数ポインタ
-</span>		<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pcName</span><span class="p">,</span>         	<span class="c1">//&lt; タスク名
-</span>		<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">usStackDepth</span><span class="p">,</span>       	<span class="c1">//&lt; タスクのスタックサイズ
-</span>		<span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pvParameters</span><span class="p">,</span>         	<span class="c1">//&lt; タスク関数に渡す引数
-</span>		<span class="n">UBaseType_t</span> <span class="n">uxPriority</span><span class="p">,</span>            	<span class="c1">//&lt; タスクの優先度
-</span>		<span class="n">TaskHandle_t</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pxCreatedTask</span><span class="p">,</span>	<span class="c1">//&lt; タスクのハンドル
-</span>		<span class="k">const</span> <span class="n">BaseType_t</span> <span class="n">xCoreID</span>           	<span class="c1">//&lt; コア番号
-</span>	<span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BaseType_t</span> <span class="n">xTaskCreatePinnedToCore</span><span class="p">(</span>
+		<span class="n">TaskFunction_t</span> <span class="n">pxTaskCode</span><span class="p">,</span>         	<span class="c1">//&lt; タスクの関数ポインタ</span>
+		<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pcName</span><span class="p">,</span>         	<span class="c1">//&lt; タスク名</span>
+		<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">usStackDepth</span><span class="p">,</span>       	<span class="c1">//&lt; タスクのスタックサイズ</span>
+		<span class="kt">void</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pvParameters</span><span class="p">,</span>         	<span class="c1">//&lt; タスク関数に渡す引数</span>
+		<span class="n">UBaseType_t</span> <span class="n">uxPriority</span><span class="p">,</span>            	<span class="c1">//&lt; タスクの優先度</span>
+		<span class="n">TaskHandle_t</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pxCreatedTask</span><span class="p">,</span>	<span class="c1">//&lt; タスクのハンドル</span>
+		<span class="k">const</span> <span class="n">BaseType_t</span> <span class="n">xCoreID</span>           	<span class="c1">//&lt; コア番号</span>
+	<span class="p">);</span>
+</code></pre></div></div>
 
 <p>という関数を使い，引数の最後に使用するCPUのコア番号を指定します．</p>
 
@@ -223,7 +221,7 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
 
 <p>※Arduino IDEのBoard設定でCore Debug Levelをinfoにしないとログは見えません．</p>
 
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "esp32-hal-log.h"
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "esp32-hal-log.h"
 #include "freertos/task.h"
 </span>
 <span class="kt">void</span> <span class="nf">task0</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
@@ -248,14 +246,13 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
 
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="ちなみに">ちなみに</h2>
 
 <p>ちなみに，Arduino core for ESP32のmain.cppでは，</p>
 
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#if CONFIG_FREERTOS_UNICORE
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if CONFIG_FREERTOS_UNICORE
 #define ARDUINO_RUNNING_CORE 0
 #else
 #define ARDUINO_RUNNING_CORE 1
@@ -265,8 +262,8 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
 <span class="p">{</span>
     <span class="n">setup</span><span class="p">();</span>
     <span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
-        <span class="n">micros</span><span class="p">();</span> <span class="c1">//update overflow
-</span>        <span class="n">loop</span><span class="p">();</span>
+        <span class="n">micros</span><span class="p">();</span> <span class="c1">//update overflow</span>
+        <span class="n">loop</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -275,8 +272,7 @@ FreeRTOSは，オープンソースのRTOSの1つで，さまざまなアーキ�
     <span class="n">initArduino</span><span class="p">();</span>
     <span class="n">xTaskCreatePinnedToCore</span><span class="p">(</span><span class="n">loopTask</span><span class="p">,</span> <span class="s">"loopTask"</span><span class="p">,</span> <span class="mi">4096</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">ARDUINO_RUNNING_CORE</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こう書かれているので，いつも使っているsetup()とloop()は優先度が1のタスクであることがわかります．</p>
 

@@ -157,48 +157,43 @@
 
 <h3 id="インストール初期設定">インストール&amp;初期設定</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get install ufw
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ufw
 
 $ sudo ufw status
 Status: inactive
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="ipv6サポートをoff">IPv6サポートをOFF</h3>
 
-<div class="language-diff highlighter-rouge"><pre class="highlight"><code>/etc/default/ufw
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/etc/default/ufw
 
 <span class="gd">-IPV6=yes
 </span><span class="gi">+IPV6=no
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="必要があれば初期化">必要があれば初期化</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw reset
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>ufw reset
 Resetting all rules to installed defaults. This may disrupt existing ssh connections. Proceed with operation <span class="o">(</span>y|n<span class="o">)</span>?
 y
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="基本ポリシーを設定">基本ポリシーを設定</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ufw default deny
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>ufw default deny
+</code></pre></div></div>
 
 <h3 id="使用するサービスのポートを開く">使用するサービスのポートを開く</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw allow 80
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ufw allow 80
 Rules updated
 $ sudo ufw allow 22
 Rules updated
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="ufwの有効化">ufwの有効化</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo ufw enable
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ufw enable
 sudo uFirewall is active and enabled on system startup
 
 $ sudo ufw status
@@ -208,8 +203,7 @@ Status: active
  --                         ------      ----
  22                         ALLOW       Anywhere
  80                         ALLOW       Anywhere
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 	</div>
