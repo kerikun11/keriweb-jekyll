@@ -1038,27 +1038,34 @@ html.layout-card {
   color: #555; }
 .layout-card img.card-icon {
   float: left;
-  width: 60px;
-  height: 60px; }
+  width: 70px;
+  height: 70px; }
 .layout-card .card-name {
   display: block;
   float: left;
   font-size: 28px;
-  padding-left: 20px;
-  line-height: 35px; }
+  padding-left: 12px;
+  line-height: 28px; }
 .layout-card .card-alphabet {
   display: block;
   float: left;
   font-size: 14px;
-  padding-left: 20px;
+  padding-left: 12px;
+  line-height: 15px; }
+.layout-card .card-date {
+  display: block;
+  float: left;
+  font-size: 14px;
+  padding-left: 12px;
   line-height: 15px; }
 .layout-card .card-title {
   color: #555;
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  line-height: 100%; }
 .layout-card .card-info {
   clear: both;
-  color: #555;
-  font-size: 16px;
+  color: #666;
+  font-size: 14px;
   line-height: 1.1em;
   padding-top: 10px; }
 .layout-card p {
