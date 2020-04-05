@@ -12,7 +12,7 @@ email: kerikun11+web@gmail.com
 description: KERI's Lab へようこそ。ここでは、趣味の電子工作やサーバーづくりなどを紹介しています。
 baseurl: ""
 url: "http://kerikeri.top"
-twitter_username: Ryokeri14
+twitter_username: kerikun11
 github_username: kerikun11
 permalink: /posts/:year-:month-:day-:title/
 excerpt_separator: <!--more-->
